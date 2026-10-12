@@ -118,3 +118,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   once published, from houses that publish an arabica figure. Until then notes state the comparison
   as "versus trend and an expected off-year". The original figures stay in §1, labelled as
   reference only. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 8: no Conab estimate for the 2027 crop exists until late January
+  2027.** Conab's first survey of a crop comes in January and its final survey in December or the
+  following January. The spec framed every note as "relative to Conab", but no Conab 2027 figure
+  exists before the first survey. Any note published before that survey now says so explicitly,
+  and the §1 "range relative to Conab" rule applies only once a Conab 2027 estimate exists; before
+  that, the range is relative to trend and the expected off-year. §1a's heading said "before
+  mid-2027" while its text said "until Conab's final 2027 survey"; the heading now matches the text.
+  Approved by owner.

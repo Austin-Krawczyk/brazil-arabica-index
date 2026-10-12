@@ -19,17 +19,24 @@ benchmark for an arabica-only index. **Until those estimates exist, notes state 
 For reference only, not a benchmark: the figures in the original draft (StoneX 75.3M bags,
 Sucafina 75.4M, Marex 75.9M) are for **2026/27, the 2026 harvest, total Brazil including conilon**.
 
+**Conab timing (AMENDED 2026-10-12).** Conab publishes four coffee surveys a year. A crop's first
+survey comes in January (between the 18th and 28th in recent years) and its final survey in
+December or the following January. **No Conab estimate for the 2027 crop exists before its first
+survey, expected late January 2027. Any note published before that survey says so explicitly.**
+Confirm the 2027 dates from Conab's published calendar rather than assuming them.
+
 **Design principle, fixed: this is a condition index, not a yield forecast.** Every note says so.
-If someone asks for a number of bags, the answer is a range relative to Conab, never a point.
+If someone asks for a number of bags, the answer is a range, never a point: relative to Conab's
+latest 2027 estimate once one exists, and relative to trend and the expected off-year before that.
 
 **The project exists to open conversations** with softs analysts and desks. A working model with a
 checkable track record is the credential. **Explicitly not a goal:** beating Conab or the trade
 houses on the point estimate.
 
-### 1a What the credential actually is, before mid-2027
+### 1a What the credential actually is, until Conab's final 2027 survey
 
-A live record on the 2027 crop does not exist until Conab's final 2027 survey. **Until then the
-backtest *is* the product.** That raises the stakes on §6 step 8 considerably: a thin or flattering
+A live record on the 2027 crop does not exist until Conab's final 2027 survey (December 2027 or
+January 2028). **Until then the backtest *is* the product.** That raises the stakes on §6 step 8 considerably: a thin or flattering
 backtest is worse than no backtest, because the audience can check it.
 
 ## 2. Success criteria
@@ -209,9 +216,10 @@ field-level analysis, any translation of the index into a price forecast.
 1. **Monthly crop note** (one page, PDF and LinkedIn), first week of each month from November 2026.
    Fixed layout so readers learn where to look: headline with the Brazil-weighted index and its
    direction; chart of index by region against the baseline band; region table (index, flowering
-   rain vs normal, frost nights, one-line comment); benchmark line against Conab and the arabica
-   component of the 2027/28 private estimates, or "versus trend and an expected off-year" until
-   those are published (§1); market context (Coffee C front month, Jul/Dec spread, ICE certified
+   rain vs normal, frost nights, one-line comment); benchmark line against Conab's 2027 estimate, or
+   a statement that none exists yet (§1), and the arabica component of the 2027/28 private estimates,
+   or "versus trend and an expected off-year" until those are published (§1); market context
+   (Coffee C front month, Jul/Dec spread, ICE certified
    stocks, managed-money net from COT); **the view** — one paragraph, one stated lean, and what
    would change it; method and caveats in three lines, always including **"condition index, not a
    yield forecast"** and the Zona da Mata resolution caveat.
