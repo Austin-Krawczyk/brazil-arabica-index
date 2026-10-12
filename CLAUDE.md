@@ -254,6 +254,10 @@ Three bounded v1.5 tasks, in this order:
 2. **A one-time 2021 frost case study** over Mogiana and Sul de Minas.
 3. **One illustrative 3 m figure per public note**, labelled as not an input.
 
+**Start rule.** The tasks begin once the backtest is complete, in the order above, so they never take
+time from it (§8). The figure per public note starts with the first note after the backtest is
+complete.
+
 **Licence and handling.**
 - The Education & Research terms are non-commercial. Planet-derived material appears only in the
   repo and public posts, **never in the note emailed to desks**.

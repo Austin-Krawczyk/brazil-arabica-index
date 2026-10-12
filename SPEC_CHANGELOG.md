@@ -357,7 +357,10 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   public posts, never in the note emailed to desks; no raw scenes are committed, and the README
   states the source and programme. The product is PlanetScope surface reflectance harmonised to
   Sentinel-2. The monthly area quota is to be read from the dashboard and recorded. Planet is
-  removed from "Leave out until v2" except as an index input. Approved by owner.
+  removed from "Leave out until v2" except as an index input. Start rule, added after review the
+  same day: the tasks begin once the backtest is complete, in the order given, so they never take
+  time from it; the figure per public note starts with the first note after the backtest is
+  complete. Approved by owner.
 
 - 2026-10-12 — **AMENDMENT 24: §10 becomes a checklist before the first run, plus a consistency
   sweep.** §10 now holds one table of everything to confirm, each with when it is needed: Conab
