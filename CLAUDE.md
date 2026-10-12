@@ -86,6 +86,7 @@ S, and the trade's S/S+1, so 2026/27 is season 2026. Its windows:
 
 | Window | Months |
 |---|---|
+| Pre-flowering dry season | May–Aug of S−1 |
 | Frost exposure | Jun–Aug of S−1 |
 | Flowering | Sep–Nov of S−1 |
 | Bean fill | Dec of S−1 to Mar of S |
@@ -114,7 +115,7 @@ where a row says otherwise.
 | Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
 | Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
 | Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). **Not yet verified to resolve.** Declared fallback: `COPERNICUS/DEM/GLO30` |
-| Soil moisture | `ECMWF/ERA5_LAND/HOURLY` vol. layer 1, or `NASA/SMAP/SPL4SMGP/007` | 9 km | Drought persistence through the dry season |
+| Soil moisture | `ECMWF/ERA5_LAND/HOURLY`, volumetric soil water layers 1–3 (0–100 cm), depth-weighted | 9 km, hourly | Root-zone moisture through the pre-flowering dry season, May–Aug of S−1 (§5 step 5). Verify band names and layer depths against ECMWF/GEE documentation |
 | Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | Forward frost-risk flag |
 | Coffee mask | MapBiomas Collection 10, **class 46 = Coffee** | 30 m, annual **1985–2024** | Where to compute the indices |
 
@@ -264,13 +265,15 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      on the persistent-pixel mask, as a sensitivity beside the headline, like CHIRPS-prelim and
      VIIRS.
    - Both masks are registered at `prereg-2`.
-2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and NDMI over the mask,
-   cloud-masked. Express as a z-score against the same window across the baseline years.
+2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and EVI from `MOD13Q1`
+   over the mask, cloud-masked. Express as a z-score against the same window across the baseline
+   years. `MOD13Q1` has no 1.6 µm band, so the standard NDMI cannot be computed from it and is not
+   an input.
 3. **Rainfall windows.** CHIRPS totals for flowering (Sep 1–Nov 30) and bean fill (Dec 1–Mar 31).
    Harvest-window rain (May–Sep of S) is not an index input: it falls after every note about the
    crop it affects. This removes the harvest window of year S only. May–Aug of S−1, the
    dry season before flowering, falls before every note about crop S and is not affected; it is the
-   window of the dry-season soil-moisture input (§4). **Flowering deficit is the single most
+   window of the dry-season soil-moisture input (step 5). **Flowering deficit is the single most
    predictive input;** weight it accordingly.
 4. **Frost events (AMENDED 2026-10-12).** Station observations only (§4b). **Assign each frost
    window to the crop it actually affects (§3a).**
@@ -310,7 +313,11 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      is not filled for 2001–2008. The index is scored in two versions, each with its own pass
      mark, and the two are compared only on the seasons they share: without frost, on every
      season; with frost, from crop 2009.
-5. **Heat and dry-season stress.** Days above 34 °C and consecutive dry days during flowering.
+5. **Heat and dry-season stress (AMENDED 2026-10-12).**
+   - During flowering (Sep–Nov of S−1): days above 34 °C (ERA5-Land) and consecutive dry days
+     (CHIRPS).
+   - Through the pre-flowering dry season (May–Aug of S−1): root-zone soil moisture (ERA5-Land,
+     §4), as an anomaly against the same window across the baseline years.
 6. **Condition index.** Weighted sum of standardised inputs, weights fitted by regressing Conab's
    regional yield anomaly on the inputs. **Do not fit anything with more than four parameters.**
    Use ridge or fixed agronomic weights.

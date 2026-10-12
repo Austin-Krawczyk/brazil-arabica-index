@@ -281,3 +281,14 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   Where missing nights could change a station's tier for a season, that tier is reported as
   unresolved and the regional coverage share is reported with and without the station. Approved
   by owner.
+
+- 2026-10-12 — **AMENDMENT 18: vegetation inputs are NDVI and EVI; soil moisture is ERA5-Land
+  root zone over an explicit dry-season window.** §4 listed NDVI/EVI while §5 listed NDVI/NDMI.
+  `MOD13Q1` has no 1.6 µm band, so the standard NDMI cannot be computed from the primary product;
+  the vegetation inputs are NDVI and EVI. SMAP L4 (`NASA/SMAP/SPL4SMGP/007`) starts in 2015 and
+  cannot support a 2001–2025 backtest, so soil moisture is ERA5-Land only. It now uses layers 1–3
+  (0–100 cm), depth-weighted, rather than layer 1 (0–7 cm), which tracks recent rain rather than
+  root-zone drought: arabica's feeder roots sit mostly in the top 60 cm with a taproot below, and
+  layer 4 moves too slowly within one dry season. The pre-flowering dry season, May–Aug of S−1,
+  is now an explicit window in §3a and the soil-moisture input in §5 step 5, which makes §5 step
+  3's statement about that window true. Approved by owner.
