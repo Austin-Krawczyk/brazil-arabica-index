@@ -330,3 +330,19 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   referenced in note text only and kept out of committed data files until ICE's terms are checked;
   CFTC COT is unaffected. (The other cuts from the review, Sentinel-2 and harvest-window rain, are
   Amendments 5 and 10.) Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 22: timeline — note 1 is the frost review, note 3 follows Conab's first
+  survey, and the success date moves to the first week of February 2027.** Six part-time weeks
+  from 12 October reach about 23 November, so a first-week-of-November index note was not
+  achievable. Note 1 is now the Jun–Aug 2026 frost review, published in late November; it needs the
+  station set and frost constants but not the backtest, and carries no index reading. The
+  November-vintage reading is computed as of the November note date and published in the repo no
+  later than note 1, so it can be cited later as made before Conab's survey. The first index note
+  is the first week of December. The note after Conab's first 2027 survey publishes within five
+  business days of it and is the first scorecard: the November and December readings beside
+  Conab's first number, with the surprise-test revision call stated explicitly. If Conab has not
+  published by 31 January, that note goes out on the first business day of February without the
+  Conab line, and a scorecard addendum follows the survey. The §6 rule becomes "first week of each
+  month, except the note that follows Conab's first survey of the crop". A success date of "late
+  January" could be missed by design under that rule, so §2 now reads the first week of February
+  2027, and criterion 3 names the three notes. Approved by owner.

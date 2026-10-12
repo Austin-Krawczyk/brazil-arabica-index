@@ -44,15 +44,18 @@ check it.
 
 ## 2. Success criteria
 
-By **late January 2027** (revised — see SPEC_CHANGELOG, the original "late November" was
-inconsistent with shipping notes in December and January):
+By **the first week of February 2027** (revised twice — see SPEC_CHANGELOG: the original "late
+November" was inconsistent with shipping notes in December and January, and "late January" could
+be missed by design once note 3 was timed to follow Conab's first survey):
 
 1. Public GitHub repo, `brazil-arabica-index`, with a reproducible Earth Engine + Python pipeline,
    rerunnable in an afternoon.
 2. A backtest table against Conab final arabica yield, **by note date** (§5 step 8), with
    crop 2022 (July 2021 frost; declared in-sample, §5 step 6) and crop 2025 (2024 drought)
    reported explicitly, whichever way they come out.
-3. Three monthly notes published (November, December, January), each with one chart and one view.
+3. Three notes published, each with one chart and one view: the Jun–Aug 2026 frost review (late
+   November), the first index note (first week of December), and the post-survey note (within
+   five business days of Conab's first 2027 survey, or 1 February under the fallback; §6).
 4. Sent to at least 20 named people in softs, with replies logged.
 
 ## 3. Scope
@@ -108,8 +111,9 @@ S, and the trade's S/S+1, so 2026/27 is season 2026. Its windows:
 explicitly names a weather window or event. For example, "the July 2021 frost" belongs to crop
 2022.
 
-**Consequence for note 1:** it carries a **backward-looking Jun–Aug 2026 frost assessment as settled
-fact**, not a forward risk. This is an advantage, not merely a correction — the frost question for
+**Consequence for note 1:** note 1 is the **Jun–Aug 2026 frost review**, published in late
+November. It carries that **backward-looking frost assessment as settled fact**, not a forward
+risk. This is an advantage, not merely a correction — the frost question for
 the crop being tracked is already answerable.
 
 ## 4. Data sources
@@ -454,8 +458,22 @@ field-level analysis, any translation of the index into a price forecast.
 
 ## 6. Outputs
 
-1. **Monthly crop note** (one page, PDF and LinkedIn), first week of each month from November 2026.
-   Fixed layout so readers learn where to look: headline with the four-region index, its share of
+1. **Crop notes** (one page, PDF and LinkedIn). **(AMENDED 2026-10-12)**
+   - **Note 1, late November 2026: the Jun–Aug 2026 frost review** (§3a). It reports the frost
+     tiers, flags and coverage shares for crop 2027 (§5 step 4) and carries no index reading, so
+     it does not use the fixed layout below. The November-vintage index reading is computed as of
+     the November note date and published in the repo no later than note 1, so the post-survey
+     scorecard can cite it as made before Conab's survey.
+   - **Index notes** publish in the first week of each month from December 2026, except the note
+     that follows Conab's first survey of the crop.
+   - **The post-survey note** publishes within five business days of Conab's first survey of the
+     crop. It is the first scorecard: the November and December index readings beside Conab's
+     first number, with the surprise-test call stated explicitly (the predicted direction of
+     Conab's first-to-final revision, §5 step 8). If Conab has not published by 31 January, the
+     note goes out on the first business day of February without the Conab line, and a scorecard
+     addendum follows the survey.
+
+   Fixed layout for index notes, so readers learn where to look: headline with the four-region index, its share of
    Brazil arabica, and its direction; chart of index by region against the baseline band; region table (index, flowering
    rain vs normal, frost nights, one-line comment); benchmark line against Conab's 2027 estimate, or
    a statement that none exists yet (§1), and the arabica component of the 2027/28 private estimates,
@@ -493,7 +511,9 @@ crops 2022 and 2025 are not the worst, that is a finding, and nothing is changed
 **W3–W4** backtest by note date (check:
 direction right in a stated majority of seasons, reported per vintage). **W4** note template on
 October–November 2026 data (check: a friend outside ag can read it in two minutes). **W5** scheduled
-run and README (check: a clean clone reproduces the index). **W6** note 1 published and sent.
+run and README (check: a clean clone reproduces the index). **W6** note 1, the Jun–Aug 2026 frost
+review, published and sent in late November; it needs the station set and frost constants, not the
+backtest. The first index note follows in the first week of December.
 
 **Honest scope note:** six weeks part-time alongside a job search, for mask + IBGE reconciliation +
 four regions × five layers + a by-note-date backtest + template + publication + outreach. The mask
