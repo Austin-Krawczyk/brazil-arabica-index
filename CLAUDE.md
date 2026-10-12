@@ -91,7 +91,9 @@ where a row says otherwise.
 
 | Layer | Source | Resolution / cadence | Use |
 |---|---|---|---|
-| **Baseline vegetation — PRIMARY** | `MODIS/061/MOD13Q1` | 250 m, 16-day, 2000– | NDVI/EVI anomalies; the backtest baseline (§4a) |
+| **Baseline vegetation — PRIMARY** | `MODIS/061/MOD13Q1` | 250 m, 16-day, 2000– | NDVI/EVI anomalies; the backtest baseline (§4a). Terra is at end of mission and its orbit is drifting: continuity check, trigger and fallback in §4a |
+| Drift check only | `MODIS/061/MYD13Q1` (Aqua) | 250 m, 16-day, 2002– | Week 0 Terra drift check (§4a). **Not yet verified to resolve.** |
+| Vegetation fallback — declared, not active | `NASA/VIIRS/002/VNP13A1` | 500 m, 16-day composites, 2012– | Used only if the §4a trigger fires; second reference in the Week 0 drift check. **Not yet verified to resolve.** |
 | Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
 | Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
 | Frost — spatial gap-fill only | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | **Not primary** (§4b); heat days above 34 °C |
@@ -133,6 +135,33 @@ and 2024 from *defining* a nine-year baseline that they distort.
 **Caveat to carry in every note and the README: MODIS at 250 m blurs smallholder terrain, so expect
 Zona da Mata skill to be the weakest of the four regions.** Report regional skill separately so this
 is visible rather than averaged away.
+
+**Terra continuity (AMENDED 2026-10-12).** `MOD13Q1` comes from Terra, which stopped orbit
+maintenance in 2022. Its morning overpass is drifting from about 10:30 toward 8:30 by late 2026,
+and NASA's 2023 mission status put end of science at February 2027. The current season is the
+most drift-affected, and it is the season every note reports.
+
+- **Week 0 drift check.** Per region, over the mask, compare `MOD13Q1` NDVI and EVI anomalies
+  with `MYD13Q1` (Aqua) and `VNP13A1` (VIIRS) for 2018–2026. Compare anomalies, not levels: the
+  products differ in resolution and overpass time. Report the difference series and its trend per
+  region. Divergence of Terra from both references while they agree is attributed to Terra.
+- **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
+  fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
+  32 days of the note date; or (b) Terra's anomaly diverges from both references by more than 0.5
+  baseline standard deviations, averaged over 2024–2026, in the coffee-area-weighted Brazil total
+  or in two or more regions. Per-region differences are reported either way.
+- **Fallback, declared now: `NASA/VIIRS/002/VNP13A1`** (500 m, from 2012).
+  - If triggered, the current-season anomaly is computed against VNP13A1's own 2012–2025
+    baseline, never against MODIS's.
+  - The headline backtest stays on MODIS. The vegetation component is rerun on VNP13A1 for crops
+    2013–2026, and the change in skill is reported beside the headline, as for CHIRPS-prelim (§9).
+  - At 500 m, VNP13A1 blurs smallholder terrain more than MODIS does, so the Zona da Mata caveat
+    is stronger under the fallback, and the note says so.
+  - **Mid-season rule.** Trigger (b) is evaluated once, in Week 0, and binds for the whole season.
+    Trigger (a) is evaluated at each note date; if it fires, the fallback applies to that note and
+    every later note for the crop, and each note states which product each reading used. Prior
+    notes are not reissued. No reading within a note mixes products.
+- **Confirm the current `MOD13Q1` end date** in Earth Engine as soon as a client is available.
 
 ### 4b Frost: INMET primary, ERA5-Land as gap-filler (AMENDED 2026-10-12)
 
@@ -247,6 +276,7 @@ assembled by hand from the notebook's charts and tables.
 
 **Week 0 (blocking, before anything else):** resolve §4c Conab granularity; confirm INMET download
 route and that daily minimum temperature is present; check whether CHIRPS ingests Brazilian stations.
+Run the Terra drift check and confirm the current `MOD13Q1` end date (§4a).
 
 Then: **W1** frozen mask and first regional NDVI series (check: mask area within 30% of IBGE per
 municipality, with the removal report). **W2** anomalies and rainfall windows for every MODIS-era

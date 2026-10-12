@@ -153,3 +153,22 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   Zona da Mata's two dominant risks, harvest rain and disease, as outside the index; together with
   the MODIS resolution caveat, that is why Zona da Mata skill is expected to be weakest. Approved by
   owner.
+
+- 2026-10-12 — **AMENDMENT 11: Terra continuity check, trigger and VIIRS fallback.** `MOD13Q1` is
+  the primary vegetation layer, but Terra stopped orbit maintenance in 2022, its overpass is
+  drifting from about 10:30 toward 8:30, and NASA's 2023 status put end of science at February
+  2027. The current season, which every note reports, is the most affected. Week 0 now compares
+  Terra anomalies with Aqua (`MYD13Q1`) and VIIRS (`VNP13A1`) over the mask for 2018–2026; two
+  references are used because Aqua is also drifting, so a Terra–Aqua gap alone cannot be
+  attributed. A trigger is fixed before the check runs: (a) `MOD13Q1` not current at a note date
+  (no composite ending within 32 days), or (b) Terra diverging from both references by more than
+  0.5 baseline SD, averaged over 2024–2026, in the coffee-area-weighted Brazil total or in two or
+  more regions. Trigger (b) is not "any region", so noise in one region (most likely Zona da Mata)
+  cannot switch the product for all four; per-region differences are reported either way. The
+  declared fallback is `NASA/VIIRS/002/VNP13A1` (500 m, 2012–). Under it, the current-season
+  anomaly uses VNP13A1's own 2012–2025 baseline, the headline backtest stays on MODIS, and a
+  VNP13A1 rerun for crops 2013–2026 is reported beside it. Mid-season rule: (b) is evaluated once
+  in Week 0 and binds for the season; (a) is evaluated at each note date and, if it fires, applies
+  to that note and every later note for the crop, with no reissue of prior notes and no mixing of
+  products within a reading. Both new IDs are unverified until a client is available. Approved by
+  owner.
