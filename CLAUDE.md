@@ -254,9 +254,9 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      (the same weights as the step-4 flag). The step-4 trigger at 25% therefore sets the floor,
      and the penalty grows with coverage. Tiers are exclusive: the severe-tier penalty applies to
      the share meeting the severe tier, and the 2 °C penalty to the share meeting the 2 °C tier
-     but not the severe tier. Penalty values come from cited agronomic sources (Embrapa, IAC or
-     peer-reviewed frost-damage work) and are recorded as pre-registered constants before the
-     first backtest run. Where no clean source exists, say so and mark the value provisional.
+     but not the severe tier. Penalty values are registered at `prereg-1` and their sources at
+     `prereg-2` (§9): Embrapa, IAC or peer-reviewed frost-damage work. Where no clean source
+     exists, say so and mark the value provisional.
    - In the regression, the frost penalty is a fixed offset. The fitted weights are estimated on
      the yield anomaly that remains after it.
    - **The crop 2022 call is in-sample.** The constants are being set by someone who knows what
@@ -341,7 +341,9 @@ Run the Terra drift check and confirm the current `MOD13Q1` end date (§4a).
 
 Then: **W1** frozen mask and first regional NDVI series (check: mask area within 30% of IBGE per
 municipality, with the removal report). **W2** anomalies and rainfall windows for every MODIS-era
-season (check: crops 2022 and 2025 show as the worst). **W3–W4** backtest by note date (check:
+season (check: report each season's rank on every input, per region and for the Brazil total; if
+crops 2022 and 2025 are not the worst, that is a finding, and nothing is changed to make them so).
+**W3–W4** backtest by note date (check:
 direction right in a stated majority of seasons, reported per vintage). **W4** note template on
 October–November 2026 data (check: a friend outside ag can read it in two minutes). **W5** scheduled
 run and README (check: a clean clone reproduces the index). **W6** note 1 published and sent.
@@ -386,6 +388,25 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - Log every spec deviation in `SPEC_CHANGELOG.md` with the reason, at the time it happens.
 - **Report negative and inconclusive results as findings.** Do not retune to rescue a result. Say
   "inconclusive" or "not established" when that is the answer, and give the reason.
+- **Pre-registration, in two tagged commits (decided 2026-10-12).** Record every choice that could
+  be tuned in `docs/preregistration.md`, and commit it at two points:
+  - **Tag `prereg-1`, before W2 computes any season-level input.** It records:
+    - the feature list: each input, its source, window and standardisation
+    - the weighting method, and which terms count toward the cap of four
+    - the direction pass marks
+    - the frost tier constants
+  - **Tag `prereg-2`, before the first backtest run.** It records the values that need data but
+    not results:
+    - the frozen mask
+    - the station set and altitude cut
+    - the surprise-test pass mark computed from Conab's base rate
+    - the sources for the frost tier constants, or "provisional, no clean source". A constant
+      whose source changes between `prereg-1` and `prereg-2` is logged like any other change. If
+      a source supports a different value, the registered value stands; the backtest is also
+      reported with the source's value, and the discrepancy is logged.
+  - Any later change goes in SPEC_CHANGELOG with its date and reason. The backtest report lists
+    every change made after `prereg-1`. Changing a registered item because of a backtest result
+    is the retuning this section forbids.
 - When a result looks surprisingly good, flag it and check the subsetting before reporting it.
 - Commit at each checkpoint. **Do not push without asking.**
 

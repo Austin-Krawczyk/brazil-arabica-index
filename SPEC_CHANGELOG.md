@@ -212,3 +212,19 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   is in-sample (Amendment 13), and a required result invites retuning. §5 step 3's harvest window
   is aligned to May–Sep. **Cross-reference fix:** §1a and criterion 2 pointed to "§6 step 8" for
   the backtest; both now point to §5 step 8. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 15: the W2 check reports ranks, and tunable choices are pre-registered.**
+  The W2 check "crops 2022 and 2025 show as the worst" was a check on the result. It invited
+  adjusting inputs until it passed, which §9 forbids. W2 now reports each season's rank on every
+  input; if 2022 and 2025 are not the worst, that is a finding. Every tunable choice is recorded
+  in `docs/preregistration.md` and committed in two tagged steps. `prereg-1` comes before W2
+  computes any season-level input, because the outcome years are already known and an open
+  feature list could be shaped by them. It covers features, windows, standardisation, weighting
+  method, the terms counted toward the cap, direction pass marks and frost constant values.
+  `prereg-2` comes before the first backtest run and covers values that need data but not
+  results: the mask, the station set and altitude cut, the surprise-test pass mark, and the
+  sources for the frost constants (or "provisional, no clean source"), since the citation search
+  may not finish by W2. If a source found after `prereg-1` supports a different value, the
+  registered value stands and the backtest is also reported with the source's value; §5 step 6
+  now says values are registered first and sourced second. Every change after `prereg-1` is
+  logged and listed in the backtest report. Approved by owner.
