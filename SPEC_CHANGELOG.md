@@ -357,3 +357,17 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   states the source and programme. The product is PlanetScope surface reflectance harmonised to
   Sentinel-2. The monthly area quota is to be read from the dashboard and recorded. Planet is
   removed from "Leave out until v2" except as an index input. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 24: §10 becomes a checklist before the first run, plus a consistency
+  sweep.** §10 now holds one table of everything to confirm, each with when it is needed: Conab
+  granularity and the usability of the Minas split (first, third and final surveys); Conab's IBGE
+  unit system; INMET route, daily minima and Jun–Aug 2026 availability; CHIRPS circularity; every
+  unverified ID; how CHC's daily prelim is disaggregated to days (reported as IMERG-based; if
+  confirmed, its dry-day counts are not comparable to final-CHIRPS counts without measuring the
+  gap first); the Terra drift check and `MOD13Q1` end date; whether a 2025 MapBiomas collection
+  exists; exact Conab 2027 dates; the Planet quota; and ICE terms. §8 Week 0 now points to the
+  checklist instead of repeating it. Remaining open questions (Conab vintage for the scoring
+  target, region weights, USDA splits, Cerrado irrigation, outreach names) are listed separately,
+  and closed items are recorded. Consistency edits that follow from earlier amendments: §11's
+  biennial and sample-size rows now describe Amendment 19's design; the W3–W4 check points to the
+  fixed pass marks instead of "a stated majority"; W1 names the EVI series. Approved by owner.

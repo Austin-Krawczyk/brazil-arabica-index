@@ -520,16 +520,16 @@ assembled by hand from the notebook's charts and tables.
 
 ## 8. Timeline
 
-**Week 0 (blocking, before anything else):** resolve §4c Conab granularity; confirm INMET download
-route and that daily minimum temperature is present; check whether CHIRPS ingests Brazilian stations.
-Run the Terra drift check and confirm the current `MOD13Q1` end date (§4a).
+**Week 0 (blocking, before anything else):** every item marked "Week 0" in the §10 checklist,
+including §4c Conab granularity, the INMET checks, the CHIRPS circularity check, the unverified IDs
+and the Terra drift check.
 
-Then: **W1** frozen mask and first regional NDVI series (check: mask area within 30% of IBGE per
+Then: **W1** frozen mask and first regional EVI and NDVI series (check: mask area within 30% of IBGE per
 municipality, with the removal report). **W2** anomalies and rainfall windows for every MODIS-era
 season (check: report each season's rank on every input, per region and for the four-region total; if
 crops 2022 and 2025 are not the worst, that is a finding, and nothing is changed to make them so).
-**W3–W4** backtest by note date (check:
-direction right in a stated majority of seasons, reported per vintage). **W4** note template on
+**W3–W4** backtest by note date (check: against the pass marks fixed in §5 step 8, reported per
+vintage). **W4** note template on
 October–November 2026 data (check: a friend outside ag can read it in two minutes). **W5** scheduled
 run and README (check: a clean clone reproduces the index). **W6** note 1, the Jun–Aug 2026 frost
 review, published and sent in late November; it needs the station set and frost constants, not the
@@ -601,24 +601,50 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 
 ## 10. Open items
 
-1. **§4c Conab granularity** — blocking, Week 0. São Paulo regional split; fallback to state total.
-2. **Conab vintage** — backtest against the final survey of each year, or the following year's
-   revised series? Record which vintage every value came from either way.
-3. **Region weights** — IBGE PAM harvested area or production? Production weights favour the Cerrado.
-4. **Does USDA FAS GAIN give regional splits** usable as a second benchmark?
-5. **Irrigation share in the Cerrado** from IBGE Censo Agro, to down-weight rainfall deficit there.
-6. **Planet** — Education & Research access confirmed; Planet stays out of the index (§4d).
-   Remaining: record the current monthly area quota from the dashboard.
-7. **First five names on the outreach list**, and which note goes to them first.
+### Checklist before the first run (AMENDED 2026-10-12)
+
+| Item | Needed by | Where |
+|---|---|---|
+| Conab granularity: a São Paulo regional split, and whether the Minas regional split (first, third and final surveys) is published in a usable form | Week 0 | §4c, §5 step 7 |
+| Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
+| INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
+| Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
+| Verify the unverified IDs: CHIRPS-prelim community asset and the CHC fallback; `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30`; ERA5-Land soil-layer band names and depths | Week 0 | §4 |
+| Check how CHC's daily prelim is disaggregated to days (reported as IMERG-based); if confirmed, dry-day counts from daily prelim are not comparable to final-CHIRPS counts without measuring the gap first | Week 0 | §4, §9 |
+| Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
+| Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
+| Exact Conab 2027 survey dates, and whether crop 2026's final survey comes in December or January | Before the December note | §1, §6 |
+| Planet monthly area quota, from the dashboard | Before any Planet task | §4d |
+| ICE redistribution terms | Before any ICE data file is committed | §4 |
+
+### Still open
+
+1. **Conab vintage** — score against the final survey of each year, or the following year's
+   revised series? Record which vintage every value came from either way. The surprise test and
+   the biennial term already fix their surveys (first, third, final); this item is about the
+   scoring target only.
+2. **Region weights** for the four-region total — IBGE PAM harvested area or production?
+   Production weights favour the Cerrado.
+3. **Does USDA FAS GAIN give regional splits** usable as a second benchmark?
+4. **Irrigation share in the Cerrado** from IBGE Censo Agro, to down-weight rainfall deficit there.
+   If adopted, it is a fixed multiplier, not a parameter (§5 step 6).
+5. **First five names on the outreach list**, and which note goes to them first.
+
+### Closed
+
+- **Coffee mask** (original open question 1) — MapBiomas Collection 10, class 46 (SPEC_CHANGELOG,
+  2026-10-12).
+- **Planet access** — Education & Research access confirmed (§4d). The quota is in the checklist.
+- **§4c Conab granularity** moved into the checklist above; it is still blocking.
 
 ## 11. Risks
 
 | Risk | Mitigation |
 |---|---|
 | Overclaiming | Condition index framing in every note; range not point; §1a |
-| Biennial bearing | Two-year cycle term; report relative to expected on/off year |
+| Biennial bearing | Coefficient on crop S−1's anomaly from Conab's third survey, so shocks reset the phase (§5 step 7); report relative to the expectation |
 | Irrigation in the Cerrado | Separate weighting; flag irrigation share from Censo Agro |
-| Short fitting sample | MODIS era, ~25 seasons (§4a); ridge or fixed weights; LOYO by note date |
+| Short fitting sample | MODIS era, ~25 seasons (§4a); four pooled ridge weights, frost fixed (§5 step 6); leave-one-season-out by note date |
 | ERA5-Land misses valley frost | INMET stations only; ERA5-Land has no frost role (§4b) |
 | MODIS blurs smallholder terrain | Expect weakest skill in Zona da Mata; report regional skill separately |
 | Mask errors | IBGE cross-check with a removal report (§5 step 1) |
