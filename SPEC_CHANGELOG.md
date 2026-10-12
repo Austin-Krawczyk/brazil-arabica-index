@@ -292,3 +292,20 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   layer 4 moves too slowly within one dry season. The pre-flowering dry season, May–Aug of S−1,
   is now an explicit window in §3a and the soil-moisture input in §5 step 5, which makes §5 step
   3's statement about that window true. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 19: parameter budget, biennial term, comparison models and pass
+  marks.** The cap of four now counts the stage-2 condition weights only, pooled across regions:
+  EVI anomaly, flowering rain deficit, dry-season root-zone soil moisture and heat days in
+  flowering. Stage 1 (intercept, trend and biennial coefficient per region) does not count. EVI
+  is the single vegetation term because NDVI saturates in dense coffee canopies; NDVI, dry days
+  and bean-fill rain are reported, not fitted. Frost is a fixed offset, and any Cerrado irrigation
+  adjustment would be a fixed multiplier. The biennial term is a coefficient on crop S−1's yield
+  anomaly, taken from Conab's third survey of S−1 (published before every note), so a shock such
+  as the July 2021 frost resets the phase instead of breaking a fixed alternation. A season is
+  held out in all regions at once, and the z-scores, trend, biennial coefficient, ridge penalty
+  and weights are all refitted without it. Two targets are scored: condition direction, with
+  pass marks 18 of 25 (no frost, 2001–2025) and 13 of 17 (frost, 2009–2025), raised if the base
+  rate is away from 50%; and yield versus trend, against a biennial-only model. Zero-anomaly,
+  biennial-only and rain-only comparison models are reported on the same seasons. Crop 2026 is
+  added as an addendum once Conab's final exists and is declared not cleanly out of sample.
+  Approved by owner.

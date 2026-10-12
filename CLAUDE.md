@@ -318,9 +318,26 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      (CHIRPS).
    - Through the pre-flowering dry season (May–Aug of S−1): root-zone soil moisture (ERA5-Land,
      §4), as an anomaly against the same window across the baseline years.
-6. **Condition index.** Weighted sum of standardised inputs, weights fitted by regressing Conab's
-   regional yield anomaly on the inputs. **Do not fit anything with more than four parameters.**
-   Use ridge or fixed agronomic weights.
+6. **Condition index (AMENDED 2026-10-12).** Two stages.
+   - **Stage 1, expectation.** For each region: an intercept, a linear trend and a biennial
+     coefficient (step 7). That is three parameters per region, and they do not count toward
+     the cap.
+   - **Stage 2, condition weights.** A ridge regression of the stage-1 yield anomaly, after the
+     frost offset, on four standardised inputs, with one set of weights shared by all four
+     regions:
+     - EVI anomaly
+     - flowering rain deficit
+     - dry-season root-zone soil moisture
+     - heat days during flowering
+     **These four weights are the cap of four.**
+   - **EVI is the single vegetation term.** Coffee canopies are dense, NDVI saturates in them,
+     and EVI was designed for that case. NDVI appears only in the sensitivity report. This is
+     registered at `prereg-1` with that reason.
+   - **Computed and reported, but not fitted:** NDVI, consecutive dry days, and bean-fill rain
+     to date. Frost enters as a fixed offset (below) and does not count. If the Cerrado
+     irrigation adjustment (§10 item 5) is adopted, it is a fixed multiplier, not a parameter.
+   - **The ridge penalty** is chosen by an inner leave-one-year-out loop inside each training
+     set, from a grid fixed at `prereg-1`.
    **Frost is not fitted (AMENDED 2026-10-12).** The backtest window holds one major frost (July
    2021, crop 2022). A fitted frost weight would be set by that one season, and leaving that
    season out would remove the only evidence for it.
@@ -345,9 +362,16 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      pruning and recovery (crop 2023 after July 2021). Crop 2023 is added to the with-and-without
      report, and the backtest table states that 2023 may carry 2021 frost effects the model does
      not represent.
-7. **Biennial adjustment.** Arabica alternates on and off years. Detrend with a two-year cycle term
-   before fitting, and report the index **relative to the expected on/off year**, or every off-year
-   reads as a crop failure.
+7. **Biennial adjustment (AMENDED 2026-10-12).** Arabica alternates on and off years, but shocks
+   reset the cycle. The July 2021 frost cut crop 2022, which was an on-year. A fixed alternating
+   term assumes the phase never moves.
+   - Instead, the expectation for crop S includes a coefficient on crop S−1's yield anomaly.
+     A low year then predicts a rebound and a high year a dip, whatever the calendar phase.
+   - Crop S−1's anomaly uses Conab's third survey of that crop, published in September of S−1,
+     before every note. Every vintage therefore uses the same value, and the third surveys join
+     the Conab extraction work (§4c).
+   - Report the index **relative to this expectation**, or every off-year reads as a crop
+     failure.
 8. **Backtest by note date (AMENDED 2026-10-12).** Leave-one-year-out, **using only inputs available
    as of each note date.** For each season × each of November, December and January, fit on the
    other seasons and predict direction and rough size. **Report hit rate and mean absolute error
@@ -355,6 +379,36 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    **Expect November to be the weakest, and publish that number anyway** — it is the only skill
    figure a desk will take seriously, and a full-season backtest would flatter the model by scoring
    it with information it will not have in production. Call out crops 2022 and 2025 explicitly.
+
+   **Leave-one-season-out, across regions (AMENDED 2026-10-12).** A season is held out in all
+   four regions at once, because the regions share weather. Everything fitted is refitted
+   without the held-out season: the z-score means and standard deviations, the trend, the
+   biennial coefficient, the ridge penalty and the weights.
+
+   **Two targets.**
+   - **Condition direction:** the sign of actual yield minus the stage-1 expectation. This is
+     what the index claims to predict.
+   - **Yield versus trend:** the sign of actual yield minus trend. The full model predicts it as
+     the expectation plus the index.
+
+   **Comparison models, scored on the same seasons:**
+   - **Zero anomaly** (actual equals the expectation): the mean-absolute-error baseline for the
+     condition anomaly.
+   - **Biennial only** (the expectation with no index): the baseline for yield versus trend.
+     The index adds skill only if the full model beats it.
+   - **Rain only** (the expectation plus flowering rain deficit alone): shows whether EVI, soil
+     moisture and heat days add anything beyond rain.
+
+   **Pass marks, fixed in advance, on condition direction:**
+   - without frost, crops 2001–2025: 18 of 25 (p≈0.02, one-sided against a coin flip);
+   - with frost, crops 2009–2025: 13 of 17 (p≈0.02).
+   If the share of positive condition anomalies is away from 50%, the pass mark becomes the
+   larger of these and the count that beats the majority share at p<0.05. That is computed at
+   `prereg-2`.
+
+   **Crop 2026** is added when Conab publishes its final, as an addendum reported with and
+   without it. The pass marks above don't change. It is not a clean out-of-sample test, because
+   Conab's third survey of crop 2026 was public when the features were registered.
 
    **Surprise test (AMENDED 2026-10-12).** For each season and each vintage, score whether the
    index predicted the direction of Conab's revision from its first survey of the crop to its
@@ -477,6 +531,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
     - the station list per region with its count, the altitude cut, and the maximum attainable
       frost coverage per region (§5 step 4)
     - the surprise-test pass mark computed from Conab's base rate
+    - the base-rate check on the direction pass marks (§5 step 8)
     - the sources for the frost tier constants, or "provisional, no clean source". A constant
       whose source changes between `prereg-1` and `prereg-2` is logged like any other change. If
       a source supports a different value, the registered value stands; the backtest is also
