@@ -1,0 +1,13 @@
+# Pinned for reproducibility. Python 3.11.
+earthengine-api==1.7.43
+geemap
+geopandas==1.1.4
+fiona==1.10.1
+rasterio
+pandas==3.0.5
+numpy
+scikit-learn
+matplotlib==3.10.9
+requests
+jupyter
+pypdf

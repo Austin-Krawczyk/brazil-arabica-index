@@ -1,0 +1,26 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+
+# Raw downloads: kept locally, provenance in data/raw/*/SOURCE.md
+data/raw/inmet/*
+!data/raw/inmet/SOURCE.md
+data/raw/conab/*
+!data/raw/conab/SOURCE.md
+data/raw/ibge/*
+!data/raw/ibge/SOURCE.md
+
+# Regenerable derived caches; the small CSV tables ARE committed
+data/derived/*.tif
+data/derived/*.tiff
+data/derived/*.gpkg
+data/derived/_tmp_*
+
+# OS
+Thumbs.db
+.DS_Store
