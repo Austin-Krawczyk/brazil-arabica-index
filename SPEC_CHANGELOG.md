@@ -104,3 +104,8 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   comparing two products on different observations, which §9 forbids. `COPERNICUS/S2_SR_HARMONIZED`
   is dropped from the §4 data table and added to "Leave out until v2". Decisions 1, 3 and 4 of the
   review were reconfirmed unchanged. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 6: repo name set, `brazil-arabica-index`.** Named in §2 criterion 1 and
+  §6 output 2. README title changed from "Brazil Arabica Crop Monitor" to "Brazil Arabica Condition
+  Index" so the name carries the "condition index, not a yield forecast" framing. No GitHub remote
+  exists yet, and the local folder keeps its name. Approved by owner.

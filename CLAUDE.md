@@ -27,7 +27,8 @@ backtest is worse than no backtest, because the audience can check it.
 By **late January 2027** (revised — see SPEC_CHANGELOG, the original "late November" was
 inconsistent with shipping notes in December and January):
 
-1. Public GitHub repo with a reproducible Earth Engine + Python pipeline, rerunnable in an afternoon.
+1. Public GitHub repo, `brazil-arabica-index`, with a reproducible Earth Engine + Python pipeline,
+   rerunnable in an afternoon.
 2. A backtest table against Conab final arabica production, **by note date** (§6 step 8), with the
    2021 frost year and the 2024 drought year called correctly in direction.
 3. Three monthly notes published (November, December, January), each with one chart and one view.
@@ -203,8 +204,8 @@ field-level analysis, any translation of the index into a price forecast.
    stocks, managed-money net from COT); **the view** — one paragraph, one stated lean, and what
    would change it; method and caveats in three lines, always including **"condition index, not a
    yield forecast"** and the Zona da Mata resolution caveat.
-2. **GitHub repo.** Public, MIT licence, README that lets someone rerun it in an afternoon. GEE
-   scripts, the notebook that builds index and backtest, the frozen mask, the backtest table, every
+2. **GitHub repo** (`brazil-arabica-index`). Public, MIT licence, README that lets someone rerun
+   it in an afternoon. GEE scripts, the notebook that builds index and backtest, the frozen mask, the backtest table, every
    note as PDF plus its chart data as CSV.
 3. **Dashboard (optional, v1.5).** Only after three notes are out. Polish, not credibility.
 

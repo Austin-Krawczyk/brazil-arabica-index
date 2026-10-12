@@ -1,4 +1,4 @@
-# Brazil Arabica Crop Monitor
+# Brazil Arabica Condition Index
 
 A public, reproducible growing-conditions index for Brazil's arabica belt, built from free
 satellite and weather data in Google Earth Engine.
