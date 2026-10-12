@@ -251,3 +251,25 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   the removal-report split still applies. The index stays on the full class-46 mask in v1; the
   backtest is also reported on the persistent-pixel mask as a sensitivity beside the headline.
   Both masks are registered at `prereg-2`. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 17: frost from INMET stations only, with agronomic thresholds and an
+  area-weighted regional flag.** The automatic station network grew through the 2000s, so a frost
+  feature over a changing station set would compare seasons on different observations (§9).
+  Stations are now restricted to those with complete Jun–Aug records from 2008 (at least 95% of
+  hourly observations in every window, no gap over 48 consecutive hours), within 25 km of the
+  mask, weighted by coffee area within that radius, with overlapping circles counted once.
+  Stations above the 95th percentile of coffee-mask elevation per region are excluded, using
+  `USGS/SRTMGL1_003` (fallback `COPERNICUS/DEM/GLO30`). Thresholds are agronomic, not fitted:
+  leaf damage at −2 to −3 °C and a 3–4 °C screen-to-leaf offset put first damage at a screen
+  reading of 0–2 °C, so 2 °C is the sensitive tier and 0 °C the severe tier, both reported, with
+  values registered at `prereg-1` and sources at `prereg-2`. A station meets the 2 °C tier with
+  three or more nights ≤ 2 °C, and the severe tier with one night ≤ 0 °C. A region is flagged
+  when stations meeting a tier cover 25% of its coffee area. That replaces "any night below 0 °C",
+  which would fire every winter at high-altitude stations. If qualifying stations cannot reach 25%
+  coverage in a region, that region cannot be frost-flagged and every note says so; the maximum
+  attainable coverage per region and the station list with counts are registered at `prereg-2`,
+  so an unreachable flag is known before the first run. §4b now says calibration applies to
+  gridded products matched to stations, not to station observations, so the two sections no
+  longer conflict. ERA5-Land has no frost role. The frost series starts with crop 2009 and is not
+  filled; the index is scored with and without frost, each version against its own pass mark,
+  compared only on shared seasons. Approved by owner.

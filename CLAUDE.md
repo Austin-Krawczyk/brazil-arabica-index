@@ -112,7 +112,8 @@ where a row says otherwise.
 | Vegetation fallback — declared, not active | `NASA/VIIRS/002/VNP13A1` | 500 m, 16-day composites, 2012– | Used only if the §4a trigger fires; second reference in the Week 0 drift check. **Not yet verified to resolve.** |
 | Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
 | Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
-| Frost — spatial gap-fill only | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | **Not primary** (§4b); heat days above 34 °C |
+| Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
+| Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). **Not yet verified to resolve.** Declared fallback: `COPERNICUS/DEM/GLO30` |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY` vol. layer 1, or `NASA/SMAP/SPL4SMGP/007` | 9 km | Drought persistence through the dry season |
 | Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | Forward frost-risk flag |
 | Coffee mask | MapBiomas Collection 10, **class 46 = Coffee** | 30 m, annual **1985–2024** | Where to compute the indices |
@@ -179,20 +180,22 @@ most drift-affected, and it is the season every note reports.
     notes are not reissued. No reading within a note mixes products.
 - **Confirm the current `MOD13Q1` end date** in Earth Engine as soon as a client is available.
 
-### 4b Frost: INMET primary, ERA5-Land as gap-filler (AMENDED 2026-10-12)
+### 4b Frost: INMET stations only (AMENDED 2026-10-12)
 
-**The original spec had ERA5-Land as the primary frost input. That is flipped.**
+**The original spec had ERA5-Land as the primary frost input. ERA5-Land now has no frost role.**
 
 Direct evidence from the completed almond-frost study: over 2,532 matched frost station-nights,
 **ERA5-Land was the worst of five products at predicting station minima** — median absolute error
 1.41 °C, the largest of all, with the widest central 90% of its error distribution — and that was
 over *flat valley floor with 63 calibration stations*. Brazil's arabica is hilly.
 
-- **Frost is anchored on INMET station minima.**
-- **ERA5-Land is a spatial gap-filler only**, between and around stations.
-- Frost is reported as a **regional flag and probability**, never as a precise area.
-- **The 2 °C threshold is not assumed.** Calibrate it against the 2021 event and against INMET
-  observations before using it; report the sensitivity at 0 °C and 2 °C.
+- **Frost comes from INMET station minima only** (§5 step 4).
+- **ERA5-Land has no frost role.** Its remaining roles are soil moisture and heat days.
+- Frost is reported as a **regional flag with its coffee-area coverage share**, never as a
+  precise area.
+- **The calibration requirement applies to gridded products matched to stations, not to station
+  observations.** The station thresholds are the agronomic constants in §5 step 4, neither
+  fitted nor calibrated.
 
 **Check for circularity before using INMET to validate anything.** CHIRPS blends satellite estimates
 with station data. If Brazilian stations feed CHIRPS, validating CHIRPS against INMET is circular —
@@ -269,10 +272,39 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    dry season before flowering, falls before every note about crop S and is not affected; it is the
    window of the dry-season soil-moisture input (§4). **Flowering deficit is the single most
    predictive input;** weight it accordingly.
-4. **Frost events.** Per §4b: INMET station minima primary, ERA5-Land gap-filling. Count nights
-   below the calibrated threshold in the Jun–Aug window, and the share of masked area affected on
-   the worst night. **Assign each frost window to the crop it actually affects (§3a).** Any night
-   below 0 °C triggers an out-of-cycle note.
+4. **Frost events (AMENDED 2026-10-12).** Station observations only (§4b). **Assign each frost
+   window to the crop it actually affects (§3a).**
+   - **Stations.** INMET automatic stations with complete Jun–Aug records from 2008, inside or
+     within 25 km of the coffee mask. A record is complete when at least 95% of hourly
+     observations are present in every Jun–Aug window from 2008, with no gap longer than 48
+     consecutive hours. Record each station's coffee area within that radius. Leave out of the
+     weighting any station above the 95th percentile of coffee-mask elevation in its region (DEM,
+     §4; station elevation from INMET metadata). Register the resulting station list per region,
+     with its count, and the elevation cut at `prereg-2`, and report every station within 50 m of
+     the cut.
+   - **Coverage share.** For a set of stations, the coffee area inside the union of their 25 km
+     circles, with overlaps counted once, divided by the region's coffee area.
+   - **Thresholds: agronomic, not fitted.** Coffee leaf damage starts around −2 to −3 °C at leaf
+     level. On radiative-cooling nights, screen-height readings run roughly 3–4 °C warmer than
+     the leaf. So first damage corresponds to a screen-height minimum of 0 to 2 °C. **2 °C is the
+     sensitive tier and 0 °C the severe tier, and both are reported.** Values are registered at
+     `prereg-1` and their sources at `prereg-2` (§9):
+     - leaf damage: Embrapa, IAC or peer-reviewed frost-physiology work;
+     - the offset: a published screen-versus-leaf or screen-versus-ground study.
+     If no clean source exists for the offset, say so here and mark it provisional.
+   - **Station tiers.** A station meets the 2 °C tier with three or more nights ≤ 2 °C in
+     Jun–Aug, and the severe tier with one or more nights ≤ 0 °C.
+   - **Regional flag.** A region is flagged for a tier when stations meeting that tier cover at
+     least 25% of its coffee area. Reaching the flag triggers an out-of-cycle note at that point,
+     not at the end of the window.
+   - **Minimum coverage.** If the qualifying stations cover less than 25% of a region's coffee
+     area, that region cannot be frost-flagged at all, and every note says so. Report the maximum
+     attainable coverage per region at `prereg-2`, so an unreachable flag is known before the
+     first run.
+   - **Series.** The frost component starts with crop 2009 (the Jun–Aug 2008 frost window) and
+     is not filled for 2001–2008. The index is scored in two versions, each with its own pass
+     mark, and the two are compared only on the seasons they share: without frost, on every
+     season; with frost, from crop 2009.
 5. **Heat and dry-season stress.** Days above 34 °C and consecutive dry days during flowering.
 6. **Condition index.** Weighted sum of standardised inputs, weights fitted by regressing Conab's
    regional yield anomaly on the inputs. **Do not fit anything with more than four parameters.**
@@ -430,7 +462,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
   - **Tag `prereg-2`, before the first backtest run.** It records the values that need data but
     not results:
     - the mask lag and both masks: full class 46 and persistent-pixel (§5 step 1)
-    - the station set and altitude cut
+    - the station list per region with its count, the altitude cut, and the maximum attainable
+      frost coverage per region (§5 step 4)
     - the surprise-test pass mark computed from Conab's base rate
     - the sources for the frost tier constants, or "provisional, no clean source". A constant
       whose source changes between `prereg-1` and `prereg-2` is logged like any other change. If
@@ -463,7 +496,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Biennial bearing | Two-year cycle term; report relative to expected on/off year |
 | Irrigation in the Cerrado | Separate weighting; flag irrigation share from Censo Agro |
 | Short fitting sample | MODIS era, ~25 seasons (§4a); ridge or fixed weights; LOYO by note date |
-| ERA5-Land misses valley frost | INMET primary, ERA5-Land gap-fill only (§4b) |
+| ERA5-Land misses valley frost | INMET stations only; ERA5-Land has no frost role (§4b) |
 | MODIS blurs smallholder terrain | Expect weakest skill in Zona da Mata; report regional skill separately |
 | Mask errors | IBGE cross-check with a removal report (§5 step 1) |
 | Cloud in Nov–Mar | 16-day composites; CHIRPS and ERA5 carry the signal when optical is thin |

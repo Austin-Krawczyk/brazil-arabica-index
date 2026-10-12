@@ -19,6 +19,5 @@ Status: **Week 0.** Spec adopted 2026-10-12 after review. Nothing computed yet.
 - The private trade houses have field crop tours and farm data that this project does not.
 - MODIS at 250 m blurs smallholder terrain, so Zona da Mata skill is expected to be the weakest
   of the four regions. Regional skill is reported separately rather than averaged away.
-- Frost is anchored on INMET station observations; ERA5-Land fills space between stations and is
-  not trusted on its own, because it was the weakest of five products at station minima in a
-  previous study by the same author.
+- Frost comes from INMET station observations only. ERA5-Land is not used for frost, because it
+  was the weakest of five products at station minima in a previous study by the same author.
