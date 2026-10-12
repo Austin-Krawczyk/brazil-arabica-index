@@ -309,3 +309,15 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   biennial-only and rain-only comparison models are reported on the same seasons. Crop 2026 is
   added as an addendum once Conab's final exists and is declared not cleanly out of sample.
   Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 20: score on yield, and regions follow Conab's units.** Success
+  criterion 2 said production while §5 regressed on yield; the index tracks conditions, which
+  act on yield, and production also moves with area (for example, area pruned after a frost), so
+  scoring is on yield. Region boundaries now follow Conab's groupings: Sul e Centro-Oeste de
+  Minas; Triângulo, Alto Paranaíba e Noroeste; Zona da Mata, Rio Doce e Central; and São Paulo
+  (or its Mogiana split, if Conab publishes one). They do not follow origin designations, because
+  the scoring target is defined on Conab's units. The municipality list per region and the IBGE
+  unit system Conab uses are confirmed in Week 0. Because Conab's Norte, Jequitinhonha e Mucuri
+  unit and arabica outside MG and SP fall outside the index, "Brazil-weighted total" is renamed
+  "four-region total" throughout, and every note states the four units' share of Brazil arabica.
+  Approved by owner.

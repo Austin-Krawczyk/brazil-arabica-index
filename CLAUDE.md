@@ -18,6 +18,8 @@ benchmark for an arabica-only index. **Until those estimates exist, notes state 
 
 For reference only, not a benchmark: the figures in the original draft (StoneX 75.3M bags,
 Sucafina 75.4M, Marex 75.9M) are for **2026/27, the 2026 harvest, total Brazil including conilon**.
+The index covers four Conab units, not all of Brazil's arabica, so every comparison with a
+Brazil-wide arabica estimate states that coverage (§3).
 
 **Conab timing (AMENDED 2026-10-12).** Conab publishes four coffee surveys a year. A crop's first
 survey comes in January (between the 18th and 28th in recent years) and its final survey in
@@ -47,7 +49,7 @@ inconsistent with shipping notes in December and January):
 
 1. Public GitHub repo, `brazil-arabica-index`, with a reproducible Earth Engine + Python pipeline,
    rerunnable in an afternoon.
-2. A backtest table against Conab final arabica production, **by note date** (§5 step 8), with
+2. A backtest table against Conab final arabica yield, **by note date** (§5 step 8), with
    crop 2022 (July 2021 frost; declared in-sample, §5 step 6) and crop 2025 (2024 drought)
    reported explicitly, whichever way they come out.
 3. Three monthly notes published (November, December, January), each with one chart and one view.
@@ -58,12 +60,21 @@ inconsistent with shipping notes in December and January):
 Arabica only, Brazil only, four regions. Robusta (Espírito Santo, Rondônia) is out: different crop
 calendar, different exchange, and it would double the mask work for a market not being pitched.
 
-| Region | State | Why it matters | Dominant risk |
+| Region (Conab unit; trade name) | State | Why it matters | Dominant risk |
 |---|---|---|---|
-| Sul de Minas | MG | Largest arabica area; rain-fed, hilly | Drought at flowering, frost |
-| Cerrado Mineiro | MG | Flat, mechanised, partly irrigated; highest yields | Drought (irrigation masks it), heat |
-| Zona da Mata / Matas de Minas | MG | Steep smallholder terrain, lower yields | Rain at harvest, disease (neither is an index input) |
-| Mogiana | SP | Historic frost zone (1975, 1994, 2021) | Frost, drought |
+| Sul e Centro-Oeste de Minas; "Sul de Minas" | MG | Largest arabica area; rain-fed, hilly | Drought at flowering, frost |
+| Triângulo, Alto Paranaíba e Noroeste; "Cerrado Mineiro" | MG | Flat, mechanised, partly irrigated; highest yields | Drought (irrigation masks it), heat |
+| Zona da Mata, Rio Doce e Central; "Matas de Minas" | MG | Steep smallholder terrain, lower yields | Rain at harvest, disease (neither is an index input) |
+| São Paulo, or its Mogiana split if Conab publishes one (§4c); "Mogiana" | SP | Historic frost zone (1975, 1994, 2021) | Frost, drought |
+
+**Region boundaries (AMENDED 2026-10-12)** follow Conab's own groupings, not origin or marketing
+boundaries such as the Cerrado Mineiro designation.
+- In Week 0, confirm from Conab's methodology which IBGE units each grouping is built from (the
+  older mesoregions or the 2017 intermediate regions). Record the municipality list per region
+  with its source.
+- **Outside the index:** Conab's fourth Minas unit (Norte, Jequitinhonha e Mucuri), and arabica
+  outside MG and SP, such as Espírito Santo, Bahia and Paraná.
+- The four units' share of Brazil's arabica is computed from Conab and stated in every note.
 
 **Spatial unit:** municipality, aggregated to region by IBGE PAM coffee area.
 **Temporal unit:** 16-day composites for the index; daily for frost and rainfall events.
@@ -166,7 +177,7 @@ most drift-affected, and it is the season every note reports.
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
   32 days of the note date; or (b) Terra's anomaly diverges from both references by more than 0.5
-  baseline standard deviations, averaged over 2024–2026, in the coffee-area-weighted Brazil total
+  baseline standard deviations, averaged over 2024–2026, in the coffee-area-weighted four-region total
   or in two or more regions. Per-region differences are reported either way.
 - **Fallback, declared now: `NASA/VIIRS/002/VNP13A1`** (500 m, from 2012).
   - If triggered, the current-season anomaly is computed against VNP13A1's own 2012–2025
@@ -428,9 +439,9 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      always predicts the majority direction. Skill is the hit rate above that, not above 50%.
      The pass mark is the number of hits that beats the base rate at p<0.05 (one-sided). It is
      computed once the Conab series has been extracted, and fixed before the first backtest run.
-   - Score the Brazil arabica total as the headline and each region separately. Report how many
+   - Score the four-region total as the headline and each region separately. Report how many
      seasons have both a first and a final survey on record.
-9. **Output.** Index per region and a Brazil-weighted total, every 16 days; frost and flowering-
+9. **Output.** Index per region and a four-region total, every 16 days; frost and flowering-
    deficit flags daily.
 
 **Leave out until v2:** machine-learning yield models, Planet imagery, Sentinel-2 imagery,
@@ -439,8 +450,8 @@ field-level analysis, any translation of the index into a price forecast.
 ## 6. Outputs
 
 1. **Monthly crop note** (one page, PDF and LinkedIn), first week of each month from November 2026.
-   Fixed layout so readers learn where to look: headline with the Brazil-weighted index and its
-   direction; chart of index by region against the baseline band; region table (index, flowering
+   Fixed layout so readers learn where to look: headline with the four-region index, its share of
+   Brazil arabica, and its direction; chart of index by region against the baseline band; region table (index, flowering
    rain vs normal, frost nights, one-line comment); benchmark line against Conab's 2027 estimate, or
    a statement that none exists yet (§1), and the arabica component of the 2027/28 private estimates,
    or "versus trend and an expected off-year" until those are published (§1); market context
@@ -471,7 +482,7 @@ Run the Terra drift check and confirm the current `MOD13Q1` end date (§4a).
 
 Then: **W1** frozen mask and first regional NDVI series (check: mask area within 30% of IBGE per
 municipality, with the removal report). **W2** anomalies and rainfall windows for every MODIS-era
-season (check: report each season's rank on every input, per region and for the Brazil total; if
+season (check: report each season's rank on every input, per region and for the four-region total; if
 crops 2022 and 2025 are not the worst, that is a finding, and nothing is changed to make them so).
 **W3–W4** backtest by note date (check:
 direction right in a stated majority of seasons, reported per vintage). **W4** note template on
