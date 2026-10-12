@@ -36,8 +36,9 @@ houses on the point estimate.
 ### 1a What the credential actually is, until Conab's final 2027 survey
 
 A live record on the 2027 crop does not exist until Conab's final 2027 survey (December 2027 or
-January 2028). **Until then the backtest *is* the product.** That raises the stakes on §6 step 8 considerably: a thin or flattering
-backtest is worse than no backtest, because the audience can check it.
+January 2028). **Until then the backtest *is* the product.** That raises the stakes on §5 step 8
+considerably: a thin or flattering backtest is worse than no backtest, because the audience can
+check it.
 
 ## 2. Success criteria
 
@@ -46,8 +47,9 @@ inconsistent with shipping notes in December and January):
 
 1. Public GitHub repo, `brazil-arabica-index`, with a reproducible Earth Engine + Python pipeline,
    rerunnable in an afternoon.
-2. A backtest table against Conab final arabica production, **by note date** (§6 step 8), with the
-   2021 frost year and the 2024 drought year called correctly in direction.
+2. A backtest table against Conab final arabica production, **by note date** (§5 step 8), with
+   crop 2022 (July 2021 frost; declared in-sample, §5 step 6) and crop 2025 (2024 drought)
+   reported explicitly, whichever way they come out.
 3. Three monthly notes published (November, December, January), each with one chart and one view.
 4. Sent to at least 20 named people in softs, with replies logged.
 
@@ -78,6 +80,20 @@ damages the trees; the loss appears in the next harvest after the following flow
   **Jun–Aug 2026 frost**. That frost exposure **has already happened** and is knowable now.
 - **Jun–Aug 2027 frost is a 2028 signal**, not a 2027 one. It stays in the monitoring plan, labelled
   as the first 2028 signal.
+
+**Season convention (AMENDED 2026-10-12).** Season S is the crop harvested in year S: Conab's safra
+S, and the trade's S/S+1, so 2026/27 is season 2026. Its windows:
+
+| Window | Months |
+|---|---|
+| Frost exposure | Jun–Aug of S−1 |
+| Flowering | Sep–Nov of S−1 |
+| Bean fill | Dec of S−1 to Mar of S |
+| Harvest | May–Sep of S |
+
+**Every year label in this spec, the backtest table and the notes is a crop year S**, unless it
+explicitly names a weather window or event. For example, "the July 2021 frost" belongs to crop
+2022.
 
 **Consequence for note 1:** it carries a **backward-looking Jun–Aug 2026 frost assessment as settled
 fact**, not a forward risk. This is an advantage, not merely a correction — the frost question for
@@ -129,8 +145,8 @@ an index input and does not appear in the note (Amendment 5).
 Only Sentinel-2 starts in 2017. MapBiomas runs from 1985, MODIS from 2000, CHIRPS from 1981,
 ERA5-Land from 1950, and Conab coffee from 2001. Fitting four parameters plus a biennial term on
 nine seasons is roughly two observations per parameter and about 4.5 biennial cycles — an anecdote.
-The MODIS era gives roughly **25 seasons**, puts 2014 and the 2000s in the sample, and stops 2021
-and 2024 from *defining* a nine-year baseline that they distort.
+The MODIS era gives roughly **25 seasons**, puts 2014 and the 2000s in the sample, and stops the
+2021 frost and the 2024 drought from *defining* a nine-year baseline that they distort.
 
 **Caveat to carry in every note and the README: MODIS at 250 m blurs smallholder terrain, so expect
 Zona da Mata skill to be the weakest of the four regions.** Report regional skill separately so this
@@ -216,8 +232,8 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
 2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and NDMI over the mask,
    cloud-masked. Express as a z-score against the same window across the baseline years.
 3. **Rainfall windows.** CHIRPS totals for flowering (Sep 1–Nov 30) and bean fill (Dec 1–Mar 31).
-   Harvest-window rain (May 1–Aug 31) is not an index input: it falls after every note about the
-   crop it affects. This removes May–Aug of year S only, the harvest of crop S. May–Aug of S−1, the
+   Harvest-window rain (May–Sep of S) is not an index input: it falls after every note about the
+   crop it affects. This removes the harvest window of year S only. May–Aug of S−1, the
    dry season before flowering, falls before every note about crop S and is not affected; it is the
    window of the dry-season soil-moisture input (§4). **Flowering deficit is the single most
    predictive input;** weight it accordingly.
@@ -262,7 +278,7 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    separately for the November, December and January vintages.**
    **Expect November to be the weakest, and publish that number anyway** — it is the only skill
    figure a desk will take seriously, and a full-season backtest would flatter the model by scoring
-   it with information it will not have in production. Call out 2021 and 2024 explicitly.
+   it with information it will not have in production. Call out crops 2022 and 2025 explicitly.
 
    **Surprise test (AMENDED 2026-10-12).** For each season and each vintage, score whether the
    index predicted the direction of Conab's revision from its first survey of the crop to its
@@ -325,7 +341,7 @@ Run the Terra drift check and confirm the current `MOD13Q1` end date (§4a).
 
 Then: **W1** frozen mask and first regional NDVI series (check: mask area within 30% of IBGE per
 municipality, with the removal report). **W2** anomalies and rainfall windows for every MODIS-era
-season (check: 2021 and 2024 show as the worst years). **W3–W4** backtest by note date (check:
+season (check: crops 2022 and 2025 show as the worst). **W3–W4** backtest by note date (check:
 direction right in a stated majority of seasons, reported per vintage). **W4** note template on
 October–November 2026 data (check: a friend outside ag can read it in two minutes). **W5** scheduled
 run and README (check: a clean clone reproduces the index). **W6** note 1 published and sent.

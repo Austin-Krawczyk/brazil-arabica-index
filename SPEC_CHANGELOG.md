@@ -200,3 +200,15 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   frost component. Carryover into the following crop is not modelled in v1; crop 2023 joins the
   with-and-without report, and the backtest table states it may carry unmodelled 2021 frost
   effects. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 14: one season convention, and crop-year labels throughout.** After
+  Amendment 1 moved the frost window, the spec still mixed weather years and crop years ("the 2021
+  frost year", "the 2024 drought year", "2021 and 2024 show as the worst years"). Season S is now
+  defined once in §3a as the crop harvested in year S (Conab safra S, trade S/S+1), with frost
+  Jun–Aug S−1, flowering Sep–Nov S−1, bean fill Dec S−1–Mar S and harvest May–Sep S. Every year
+  label is a crop year unless it names a weather event. Success criterion 2, §5 step 8 and the W2
+  check now name crops 2022 (July 2021 frost) and 2025 (2024 drought). Criterion 2 now requires
+  both to be reported explicitly, whichever way they come out, rather than called correctly: 2022
+  is in-sample (Amendment 13), and a required result invites retuning. §5 step 3's harvest window
+  is aligned to May–Sep. **Cross-reference fix:** §1a and criterion 2 pointed to "§6 step 8" for
+  the backtest; both now point to §5 step 8. Approved by owner.
