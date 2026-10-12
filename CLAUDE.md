@@ -496,15 +496,16 @@ field-level analysis, any translation of the index into a price forecast.
      note goes out on the first business day of February without the Conab line, and a scorecard
      addendum follows the survey.
 
-   Fixed layout for index notes, so readers learn where to look: headline with the four-region index, its share of
-   Brazil arabica, and its direction; chart of index by region against the baseline band; region table (index, flowering
-   rain vs normal, frost nights, one-line comment); benchmark line against Conab's 2027 estimate, or
-   a statement that none exists yet (§1), and the arabica component of the 2027/28 private estimates,
-   or "versus trend and an expected off-year" until those are published (§1); market context
-   (Coffee C front month, Jul/Dec spread, ICE certified
-   stocks, managed-money net from COT); **the view** — one paragraph, one stated lean, and what
-   would change it; method and caveats in three lines, always including **"condition index, not a
-   yield forecast"**, the Zona da Mata resolution caveat, and which months used CHIRPS-prelim.
+   Fixed layout for index notes, so readers learn where to look: headline with the four-region
+   index, its share of Brazil arabica, and its direction; chart of index by region against the
+   baseline band; region table (index, flowering rain vs normal, frost nights, one-line comment);
+   benchmark line against Conab's 2027 estimate, or a statement that none exists yet (§1), and the
+   arabica component of the 2027/28 private estimates, or "versus trend and an expected off-year"
+   until those are published (§1); market context (Coffee C front month, Jul/Dec spread, ICE
+   certified stocks, managed-money net from COT); **the view** — one paragraph, one stated lean,
+   and what would change it; method and caveats in three lines, always including **"condition
+   index, not a yield forecast"**, the Zona da Mata resolution caveat, and which months used
+   CHIRPS-prelim.
 2. **GitHub repo** (`brazil-arabica-index`). Public, MIT licence, README that lets someone rerun
    it in an afternoon. GEE scripts, the notebook that builds index and backtest, the mask rule and
    the live season's frozen mask, the backtest table, every note as PDF plus its chart data as CSV
@@ -513,8 +514,8 @@ field-level analysis, any translation of the index into a price forecast.
 
 **Distribution per note:** LinkedIn post with the chart and three lines; direct email with the PDF;
 optionally a thread in r/commodities or the FIC Slack. Planet-derived figures go in the LinkedIn
-post and the repo copy only, never in the emailed PDF (§4d). Log every reply with name, firm, date and
-what they said.
+post and the repo copy only, never in the emailed PDF (§4d). Log every reply with name, firm, date
+and what they said.
 
 ## 7. Pipeline
 
