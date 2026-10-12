@@ -127,3 +127,20 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   that, the range is relative to trend and the expected off-year. §1a's heading said "before
   mid-2027" while its text said "until Conab's final 2027 survey"; the heading now matches the text.
   Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 9: CHIRPS-prelim for the current season, final CHIRPS for the
+  backtest.** Final CHIRPS lands about three weeks after month-end, so a first-week-of-November
+  note would have final rainfall only through September, one-third of the flowering window.
+  Current-season months not yet final now use CHIRPS-prelim
+  (`projects/climate-engine-pro/assets/ce-chirps-prelim-pentad`, community catalog, pentad,
+  2015–), added to §4 as unverified until checked. The baseline and backtest stay on final CHIRPS
+  so every season is scored on one product. Because that scores the backtest on better data than
+  production will have, a sensitivity rerun with prelim substitution, for note dates inside the
+  prelim archive, is reported beside the headline. Final for month M counts as published from the
+  1st of M+2. Every note discloses which months used prelim. **Fallback declared now**, because the
+  community asset is a single-maintainer dependency: if it does not resolve, is not current, or
+  lags the provider by more than two pentads, use CHC's own prelim files from chc.ucsb.edu,
+  ingested as a private GEE asset; both sources are verified in Week 0 before choosing. Under the
+  community asset, consecutive dry days for prelim months are not available; under the CHC
+  fallback they are computed from its daily files. Recorded in §9 as a decision made before the
+  first run. Approved by owner.

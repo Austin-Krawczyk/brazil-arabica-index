@@ -85,13 +85,15 @@ the crop being tracked is already answerable.
 
 ## 4. Data sources
 
-Every ID below was verified to resolve in Earth Engine on 2026-10-12 (see SPEC_CHANGELOG).
+Every ID below was verified to resolve in Earth Engine on 2026-10-12 (see SPEC_CHANGELOG), except
+where a row says otherwise.
 **Do not substitute an ID. If one is dead, stop and report it.**
 
 | Layer | Source | Resolution / cadence | Use |
 |---|---|---|---|
 | **Baseline vegetation — PRIMARY** | `MODIS/061/MOD13Q1` | 250 m, 16-day, 2000– | NDVI/EVI anomalies; the backtest baseline (§4a) |
-| Rainfall | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Flowering deficit, bean-fill cumulative, harvest rain |
+| Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative, harvest rain |
+| Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
 | Frost — spatial gap-fill only | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | **Not primary** (§4b); heat days above 34 °C |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY` vol. layer 1, or `NASA/SMAP/SPL4SMGP/007` | 9 km | Drought persistence through the dry season |
 | Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | Forward frost-risk flag |
@@ -222,7 +224,7 @@ field-level analysis, any translation of the index into a price forecast.
    (Coffee C front month, Jul/Dec spread, ICE certified
    stocks, managed-money net from COT); **the view** — one paragraph, one stated lean, and what
    would change it; method and caveats in three lines, always including **"condition index, not a
-   yield forecast"** and the Zona da Mata resolution caveat.
+   yield forecast"**, the Zona da Mata resolution caveat, and which months used CHIRPS-prelim.
 2. **GitHub repo** (`brazil-arabica-index`). Public, MIT licence, README that lets someone rerun
    it in an afternoon. GEE scripts, the notebook that builds index and backtest, the frozen mask, the backtest table, every
    note as PDF plus its chart data as CSV.
@@ -269,6 +271,20 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - **Any result of zero, none or empty is verified by an independent method before it is accepted**,
   especially where zero is the expected answer.
 - **Never score a model with information it will not have in production.** See §5 step 8.
+- **CHIRPS product split, decided 2026-10-12 before the first run.**
+  - Final CHIRPS for the baseline and the whole backtest, so every season is scored on the same
+    product. CHIRPS-prelim only for current-season months whose final is not yet published.
+  - Final for month M counts as published from the 1st of month M+2. That matches the provider's
+    ~3-week latency (final appears after about the 20th of the following month).
+  - Production will use prelim where the backtest uses final, so the backtest is optimistic on
+    exactly those months. **Quantify it:** rerun every vintage whose note date falls inside the
+    prelim archive (2015 onward), with prelim substituted for the months not yet final. Report the
+    change in hit rate and mean absolute error beside the headline figures, and the
+    prelim-minus-final difference in window totals over the mask. Do not correct for it.
+  - The community-catalog prelim asset is pentad-only, so under it consecutive dry days for months
+    still in prelim are reported as not yet available, not estimated. If the declared fallback
+    (CHC's own prelim files, §4) is used instead, consecutive dry days for prelim months are
+    computed from its daily files.
 - **Every checkpoint report carries its denominator** — how many municipalities, seasons,
   station-nights were examined, not only how many passed.
 - Never modify anything in `data/raw/`.
