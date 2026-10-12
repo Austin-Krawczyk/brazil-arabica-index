@@ -228,3 +228,26 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   registered value stands and the backtest is also reported with the source's value; §5 step 6
   now says values are registered first and sourced second. Every change after `prereg-1` is
   logged and listed in the backtest report. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 16: mask year follows the publication lag, and the bearing-area bias is
+  reported.** A single 2024 mask applied to every season uses future information. It keeps only
+  land still in coffee in 2024, which drops farms abandoned after the 2014 drought or the 2021
+  frost and adds 2024 coffee that was pasture earlier, so past damage looks smaller. Each backtest
+  season now uses Collection 10's classification for the crop year minus a fixed lag equal to the
+  live lag for crop 2027: S−2 if a collection covering 2025 is published and verified before note
+  1, otherwise S−3. The lag is recorded at `prereg-2`. The owner's original wording, "the latest
+  MapBiomas year published before each note date", was not used literally: older collections
+  differ in method and some lack class 46, so every season stays on Collection 10. The 30% filter
+  runs per season against PAM for the mask year. IBGE PAM excludes non-bearing young plantings,
+  and very likely post-frost pruned area, while MapBiomas includes them. The filter is therefore
+  biased toward removing expanding Cerrado areas and recovering frost-hit municipalities. The
+  removal report splits removed and kept municipalities by three-year MapBiomas area change.
+  Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 16b: persistent-pixel comparison for the 30% filter.** To reduce the
+  bearing-area bias rather than only report it, the filter now compares PAM with MapBiomas pixels
+  classified as coffee in the mask year and each of the two years before it, since arabica does not
+  bear until roughly its third year. This addresses young plantings but not post-frost pruning, so
+  the removal-report split still applies. The index stays on the full class-46 mask in v1; the
+  backtest is also reported on the persistent-pixel mask as a sensitivity beside the headline.
+  Both masks are registered at `prereg-2`. Approved by owner.

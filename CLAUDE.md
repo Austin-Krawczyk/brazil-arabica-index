@@ -229,6 +229,38 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    **Report what the filter removed and whether the removed municipalities differ from the kept**
    (§9) — the 30% trigger very likely correlates with steep smallholder terrain, so it may
    preferentially delete Zona da Mata, the region the mask is least reliable in.
+
+   **Mask year by season (AMENDED 2026-10-12).**
+   - Each backtest season uses the mask production would have had at its note date. Every season
+     uses Collection 10's classifications, so all seasons are on the same product. Older
+     collections are not used: they differ in method, and some predate class 46.
+   - The mask year is the crop year minus a fixed lag, set to the live lag for crop 2027:
+     - S−2 if a collection covering 2025 is published and verified before note 1;
+     - otherwise S−3, since Collection 10's last year is 2024.
+   - The lag is applied unchanged to every season and recorded at `prereg-2`.
+   - The 30% filter runs per season, against IBGE PAM for the mask year.
+
+   **Bearing-area mismatch.**
+   - IBGE PAM counts area intended for harvest. That leaves out young plantings that aren't yet
+     bearing and, very likely, area pruned back after a frost. MapBiomas class 46 includes both.
+   - Wherever coffee is expanding or recovering, MapBiomas exceeds PAM, so the 30% filter is
+     biased toward removing:
+     - the Cerrado's expanding frontier;
+     - frost-hit municipalities in the seasons after a frost, which is exactly where the frost
+       signal is.
+   - The removal report splits removed and kept municipalities by their MapBiomas area change
+     over the three preceding years, so the bias is visible.
+
+   **Persistent-pixel comparison for the filter (Amendment 16b).**
+   - For the 30% filter only, MapBiomas area is counted on pixels classified as coffee in the mask
+     year and each of the two years before it. Arabica does not bear until roughly its third
+     year, and bearing area is what PAM counts.
+   - This removes the young-planting part of the mismatch, not the post-frost pruning part:
+     pruned trees stay class 46. The removal-report split above still applies.
+   - The index itself stays on the full class-46 mask in v1. The backtest is reported once more
+     on the persistent-pixel mask, as a sensitivity beside the headline, like CHIRPS-prelim and
+     VIIRS.
+   - Both masks are registered at `prereg-2`.
 2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and NDMI over the mask,
    cloud-masked. Express as a z-score against the same window across the baseline years.
 3. **Rainfall windows.** CHIRPS totals for flowering (Sep 1–Nov 30) and bean fill (Dec 1–Mar 31).
@@ -319,8 +351,8 @@ field-level analysis, any translation of the index into a price forecast.
    would change it; method and caveats in three lines, always including **"condition index, not a
    yield forecast"**, the Zona da Mata resolution caveat, and which months used CHIRPS-prelim.
 2. **GitHub repo** (`brazil-arabica-index`). Public, MIT licence, README that lets someone rerun
-   it in an afternoon. GEE scripts, the notebook that builds index and backtest, the frozen mask, the backtest table, every
-   note as PDF plus its chart data as CSV.
+   it in an afternoon. GEE scripts, the notebook that builds index and backtest, the mask rule and
+   the live season's frozen mask, the backtest table, every note as PDF plus its chart data as CSV.
 3. **Dashboard (optional, v1.5).** Only after three notes are out. Polish, not credibility.
 
 **Distribution per note:** LinkedIn post with the chart and three lines; direct email with the PDF;
@@ -397,7 +429,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
     - the frost tier constants
   - **Tag `prereg-2`, before the first backtest run.** It records the values that need data but
     not results:
-    - the frozen mask
+    - the mask lag and both masks: full class 46 and persistent-pixel (§5 step 1)
     - the station set and altitude cut
     - the surprise-test pass mark computed from Conab's base rate
     - the sources for the frost tier constants, or "provisional, no clean source". A constant
