@@ -90,7 +90,8 @@ damages the trees; the loss appears in the next harvest after the following flow
 - **The 2027 crop** was set by **Sep–Nov 2026 flowering**, on trees that lived through
   **Jun–Aug 2026 frost**. That frost exposure **has already happened** and is knowable now.
 - **Jun–Aug 2027 frost is a 2028 signal**, not a 2027 one. It stays in the monitoring plan, labelled
-  as the first 2028 signal.
+  as the first 2028 signal. The GFS forward frost-risk flag is built for that window, from June
+  2027; it plays no part in the notes on the 2027 crop.
 
 **Season convention (AMENDED 2026-10-12).** Season S is the crop harvested in year S: Conab's safra
 S, and the trade's S/S+1, so 2026/27 is season 2026. Its windows:
@@ -127,7 +128,7 @@ where a row says otherwise.
 | Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
 | Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). **Not yet verified to resolve.** Declared fallback: `COPERNICUS/DEM/GLO30` |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY`, volumetric soil water layers 1–3 (0–100 cm), depth-weighted | 9 km, hourly | Root-zone moisture through the pre-flowering dry season, May–Aug of S−1 (§5 step 5). Verify band names and layer depths against ECMWF/GEE documentation |
-| Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | Forward frost-risk flag |
+| Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | **Not used before June 2027.** Forward frost-risk flag for the Jun–Aug 2027 window, the first 2028 signal (§3a) |
 | Coffee mask | MapBiomas Collection 10, **class 46 = Coffee** | 30 m, annual **1985–2024** | Where to compute the indices |
 
 MapBiomas asset, verified:
@@ -149,6 +150,10 @@ is needed, and the mask supports the full MODIS-era backtest.
 - **IBGE PAM** municipal coffee area and production; **IBGE Censo Agropecuário** irrigation share.
 - **USDA FAS GAIN Brazil Coffee**, ICO Coffee Market Report, Cecafé monthly exports, Cooxupé.
 - **Market data:** ICE Coffee C settlement, calendar spreads, certified stocks; CFTC COT.
+  **Check ICE's redistribution terms before any ICE settlement, spread or certified-stocks data
+  goes into the public repo.** Until then, ICE figures appear in the note text only, never in
+  committed data files. CFTC COT data are published by a US government agency and are not covered
+  by this check.
 
 ### 4a Baseline: MODIS era, not Sentinel-2 era (AMENDED 2026-10-12)
 
@@ -461,7 +466,8 @@ field-level analysis, any translation of the index into a price forecast.
    yield forecast"**, the Zona da Mata resolution caveat, and which months used CHIRPS-prelim.
 2. **GitHub repo** (`brazil-arabica-index`). Public, MIT licence, README that lets someone rerun
    it in an afternoon. GEE scripts, the notebook that builds index and backtest, the mask rule and
-   the live season's frozen mask, the backtest table, every note as PDF plus its chart data as CSV.
+   the live season's frozen mask, the backtest table, every note as PDF plus its chart data as CSV
+   (no ICE data files until the check in §4 is done).
 3. **Dashboard (optional, v1.5).** Only after three notes are out. Polish, not credibility.
 
 **Distribution per note:** LinkedIn post with the chart and three lines; direct email with the PDF;

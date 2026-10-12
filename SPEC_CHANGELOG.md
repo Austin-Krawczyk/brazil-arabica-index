@@ -321,3 +321,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   unit and arabica outside MG and SP fall outside the index, "Brazil-weighted total" is renamed
   "four-region total" throughout, and every note states the four units' share of Brazil arabica.
   Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 21: cuts — the GFS frost flag moves to June 2027, and ICE data stays
+  out of the repo until its terms are checked.** Frost is not a risk in November–January, so a
+  forward frost flag adds nothing to the notes on the 2027 crop; `NOAA/GFS0P25` stays in §4 but is
+  not used before June 2027, when it serves the Jun–Aug 2027 window, the first 2028 signal. ICE
+  settlement, spread and certified-stocks data may carry redistribution restrictions, so they are
+  referenced in note text only and kept out of committed data files until ICE's terms are checked;
+  CFTC COT is unaffected. (The other cuts from the review, Sentinel-2 and harvest-window rain, are
+  Amendments 5 and 10.) Approved by owner.
