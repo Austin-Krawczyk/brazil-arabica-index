@@ -185,3 +185,18 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   score as skill. The pass mark is computed from the base rate at p<0.05 and fixed before the first
   backtest run. The Brazil arabica total is the headline; regions are reported separately.
   Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 13: the frost component is fixed from agronomy, not fitted.** The
+  backtest window holds one major frost (July 2021, crop 2022): a fitted weight would be set by
+  one season, and leave-one-year-out on that season removes the only evidence for it. Frost now
+  enters as a fixed yield penalty for each tier in each flagged region, from cited agronomic
+  sources, pre-registered before the first backtest run and marked provisional where no clean
+  source exists. Each tier's penalty is scaled by the coffee-area share under stations meeting that
+  tier, so a region at the 25% flag floor is not penalised like one at 90%; tiers are exclusive so
+  severe-frost area is not penalised twice. In the regression it is a fixed offset, so the fitted
+  weights are estimated on the remainder. The crop 2022 call is declared in-sample wherever it
+  appears, because the constants are set with knowledge of the 2021 outcome. Because frost damage
+  also shows up in the vegetation anomaly, frost-flagged seasons are reported with and without the
+  frost component. Carryover into the following crop is not modelled in v1; crop 2023 joins the
+  with-and-without report, and the backtest table states it may carry unmodelled 2021 frost
+  effects. Approved by owner.

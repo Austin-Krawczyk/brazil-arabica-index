@@ -229,6 +229,30 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
 6. **Condition index.** Weighted sum of standardised inputs, weights fitted by regressing Conab's
    regional yield anomaly on the inputs. **Do not fit anything with more than four parameters.**
    Use ridge or fixed agronomic weights.
+   **Frost is not fitted (AMENDED 2026-10-12).** The backtest window holds one major frost (July
+   2021, crop 2022). A fitted frost weight would be set by that one season, and leaving that
+   season out would remove the only evidence for it.
+   - Frost enters as a **fixed yield penalty for each frost tier** in each flagged region. The
+     tiers and the flag are defined in step 4. Each tier's penalty is the yield loss on affected
+     area, multiplied by the share of the region's coffee area under stations meeting that tier
+     (the same weights as the step-4 flag). The step-4 trigger at 25% therefore sets the floor,
+     and the penalty grows with coverage. Tiers are exclusive: the severe-tier penalty applies to
+     the share meeting the severe tier, and the 2 °C penalty to the share meeting the 2 °C tier
+     but not the severe tier. Penalty values come from cited agronomic sources (Embrapa, IAC or
+     peer-reviewed frost-damage work) and are recorded as pre-registered constants before the
+     first backtest run. Where no clean source exists, say so and mark the value provisional.
+   - In the regression, the frost penalty is a fixed offset. The fitted weights are estimated on
+     the yield anomaly that remains after it.
+   - **The crop 2022 call is in-sample.** The constants are being set by someone who knows what
+     the July 2021 frost did, so the 2022 call is not evidence of skill. Say so wherever 2022
+     appears: the backtest table, the notes and the README.
+   - **Double-counting check.** After a frost, the damage also shows up in the vegetation
+     anomaly. Report the 2022 prediction, and that of any other frost-flagged season, with and
+     without the frost component.
+   - **Carryover is not modelled in v1.** Severe frost also cuts the following crop through
+     pruning and recovery (crop 2023 after July 2021). Crop 2023 is added to the with-and-without
+     report, and the backtest table states that 2023 may carry 2021 frost effects the model does
+     not represent.
 7. **Biennial adjustment.** Arabica alternates on and off years. Detrend with a two-year cycle term
    before fitting, and report the index **relative to the expected on/off year**, or every off-year
    reads as a crop failure.
