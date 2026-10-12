@@ -7,7 +7,17 @@ If a task would take the work outside this spec, stop and ask.
 
 Each month: **are growing conditions in each arabica region better, worse or in line with the
 baseline, and what does that imply for the 2027 crop relative to Conab and the private estimates?**
-(StoneX 75.3M bags, Sucafina 75.4M, Marex 75.9M for 2026/27.)
+
+**Benchmark (AMENDED 2026-10-12).** The trade labels crops by marketing year: "2026/27" is the crop
+harvested in 2026, so the 2027 crop is **2027/28**. The 2027 crop is benchmarked against the
+**arabica component** of the private 2027/28 estimates once they are published. The first are
+expected from around December; confirm each publication date rather than assuming it. Use only
+houses that publish an arabica figure: a total-Brazil figure includes conilon and is not a
+benchmark for an arabica-only index. **Until those estimates exist, notes state the comparison as
+"versus trend and an expected off-year"** (§5 step 7).
+
+For reference only, not a benchmark: the figures in the original draft (StoneX 75.3M bags,
+Sucafina 75.4M, Marex 75.9M) are for **2026/27, the 2026 harvest, total Brazil including conilon**.
 
 **Design principle, fixed: this is a condition index, not a yield forecast.** Every note says so.
 If someone asks for a number of bags, the answer is a range relative to Conab, never a point.
@@ -199,8 +209,9 @@ field-level analysis, any translation of the index into a price forecast.
 1. **Monthly crop note** (one page, PDF and LinkedIn), first week of each month from November 2026.
    Fixed layout so readers learn where to look: headline with the Brazil-weighted index and its
    direction; chart of index by region against the baseline band; region table (index, flowering
-   rain vs normal, frost nights, one-line comment); benchmark line against Conab and
-   StoneX/Sucafina/Marex; market context (Coffee C front month, Jul/Dec spread, ICE certified
+   rain vs normal, frost nights, one-line comment); benchmark line against Conab and the arabica
+   component of the 2027/28 private estimates, or "versus trend and an expected off-year" until
+   those are published (§1); market context (Coffee C front month, Jul/Dec spread, ICE certified
    stocks, managed-money net from COT); **the view** — one paragraph, one stated lean, and what
    would change it; method and caveats in three lines, always including **"condition index, not a
    yield forecast"** and the Zona da Mata resolution caveat.

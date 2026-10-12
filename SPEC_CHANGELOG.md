@@ -109,3 +109,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   §6 output 2. README title changed from "Brazil Arabica Crop Monitor" to "Brazil Arabica Condition
   Index" so the name carries the "condition index, not a yield forecast" framing. No GitHub remote
   exists yet, and the local folder keeps its name. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 7: the benchmark was for the wrong crop and included robusta.** The
+  draft benchmarked the 2027 crop against StoneX 75.3M, Sucafina 75.4M and Marex 75.9M "for
+  2026/27". In trade convention 2026/27 is the 2026 harvest, and figures near 75M bags are total
+  Brazil including conilon; Brazil's arabica alone has never been near that. The 2027 crop
+  (2027/28) is now benchmarked against the arabica component of the private 2027/28 estimates,
+  once published, from houses that publish an arabica figure. Until then notes state the comparison
+  as "versus trend and an expected off-year". The original figures stay in §1, labelled as
+  reference only. Approved by owner.
