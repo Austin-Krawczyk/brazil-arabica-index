@@ -172,3 +172,16 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   to that note and every later note for the crop, with no reissue of prior notes and no mixing of
   products within a reading. Both new IDs are unverified until a client is available. Approved by
   owner.
+
+- 2026-10-12 — **AMENDMENT 12: surprise test added to the backtest.** Getting the direction right
+  against the baseline is something a desk can already read from Conab. The question a desk asks is
+  whether the index saw the surprise coming. Each vintage is now also scored on the direction of
+  Conab's first-to-final revision: predicted direction is the sign of the index-implied yield
+  anomaly minus Conab's first-survey anomaly, and actual direction is the sign of final minus
+  first. The index-to-yield mapping is the same leave-one-year-out fit the direction backtest uses,
+  so no season's index value was fit on its own Conab final. Revisions under 1% count as flat, are
+  left out of the hit rate and are reported. The base rate of upward revisions is reported, and
+  skill is measured against an always-majority model, not 50%, so an always-up model does not
+  score as skill. The pass mark is computed from the base rate at p<0.05 and fixed before the first
+  backtest run. The Brazil arabica total is the headline; regions are reported separately.
+  Approved by owner.

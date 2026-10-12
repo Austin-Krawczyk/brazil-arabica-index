@@ -239,6 +239,27 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    **Expect November to be the weakest, and publish that number anyway** — it is the only skill
    figure a desk will take seriously, and a full-season backtest would flatter the model by scoring
    it with information it will not have in production. Call out 2021 and 2024 explicitly.
+
+   **Surprise test (AMENDED 2026-10-12).** For each season and each vintage, score whether the
+   index predicted the direction of Conab's revision from its first survey of the crop to its
+   final survey.
+   - **Predicted direction** = sign of (the index-implied yield anomaly as of the note date minus
+     Conab's first-survey yield anomaly), both measured against the same trend and expected
+     on/off year. The mapping from index to yield anomaly is the leave-one-year-out fit for that
+     season, the same fit the direction backtest uses, so the index value compared with Conab's
+     first survey was never fit on that season's Conab final. Where Conab gives a range, use its
+     midpoint. The November and December readings come before the first survey and are compared
+     with it once it is published, as the post-survey note does in production (§6). No reading
+     uses information later than its own note date.
+   - **Actual direction** = sign of (final minus first), in yield. Revisions smaller than 1% of
+     the first estimate count as flat. They are left out of the hit rate, and their count is
+     reported (§9).
+   - **Report the base rate**: the share of seasons Conab revised upward. The comparison model
+     always predicts the majority direction. Skill is the hit rate above that, not above 50%.
+     The pass mark is the number of hits that beats the base rate at p<0.05 (one-sided). It is
+     computed once the Conab series has been extracted, and fixed before the first backtest run.
+   - Score the Brazil arabica total as the headline and each region separately. Report how many
+     seasons have both a first and a final survey on record.
 9. **Output.** Index per region and a Brazil-weighted total, every 16 days; frost and flowering-
    deficit flags daily.
 
