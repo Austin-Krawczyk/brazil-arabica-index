@@ -157,8 +157,8 @@ is needed, and the mask supports the full MODIS-era backtest.
 - **Market data:** ICE Coffee C settlement, calendar spreads, certified stocks; CFTC COT.
   **Check ICE's redistribution terms before any ICE settlement, spread or certified-stocks data
   goes into the public repo.** Until then, ICE figures appear in the note text only, never in
-  committed data files. CFTC COT data are published by a US government agency and are not covered
-  by this check.
+  committed data files. **CFTC COT data are a public-domain US government work** and sit outside
+  the ICE check.
 
 ### 4a Baseline: MODIS era, not Sentinel-2 era (AMENDED 2026-10-12)
 

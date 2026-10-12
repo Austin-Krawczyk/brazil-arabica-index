@@ -328,8 +328,9 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   not used before June 2027, when it serves the Jun–Aug 2027 window, the first 2028 signal. ICE
   settlement, spread and certified-stocks data may carry redistribution restrictions, so they are
   referenced in note text only and kept out of committed data files until ICE's terms are checked;
-  CFTC COT is unaffected. (The other cuts from the review, Sentinel-2 and harvest-window rain, are
-  Amendments 5 and 10.) Approved by owner.
+  CFTC COT is a public-domain US government work and sits outside the ICE check. (The other cuts
+  from the review, Sentinel-2 and harvest-window rain, are Amendments 5 and 10.) Revised after
+  review the same day to state CFTC COT's public-domain status explicitly. Approved by owner.
 
 - 2026-10-12 — **AMENDMENT 22: timeline — note 1 is the frost review, note 3 follows Conab's first
   survey, and the success date moves to the first week of February 2027.** Six part-time weeks
