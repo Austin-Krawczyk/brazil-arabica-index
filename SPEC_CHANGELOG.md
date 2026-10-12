@@ -144,3 +144,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   community asset, consecutive dry days for prelim months are not available; under the CHC
   fallback they are computed from its daily files. Recorded in §9 as a decision made before the
   first run. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 10: harvest-window rain removed from the index.** Rain in May–Aug of
+  year S falls after every note about crop S (November S−1 to early February S), so it can never
+  be an input at any note date. Removed from §5 step 3 and the §4 CHIRPS row. §5 step 3 now states
+  that only May–Aug of S is removed: May–Aug of S−1, the dry season before flowering, falls before
+  every note and remains the window of the dry-season soil-moisture input. The §3 table now marks
+  Zona da Mata's two dominant risks, harvest rain and disease, as outside the index; together with
+  the MODIS resolution caveat, that is why Zona da Mata skill is expected to be weakest. Approved by
+  owner.

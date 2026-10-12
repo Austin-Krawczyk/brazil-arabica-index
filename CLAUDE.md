@@ -60,7 +60,7 @@ calendar, different exchange, and it would double the mask work for a market not
 |---|---|---|---|
 | Sul de Minas | MG | Largest arabica area; rain-fed, hilly | Drought at flowering, frost |
 | Cerrado Mineiro | MG | Flat, mechanised, partly irrigated; highest yields | Drought (irrigation masks it), heat |
-| Zona da Mata / Matas de Minas | MG | Steep smallholder terrain, lower yields | Rain at harvest, disease |
+| Zona da Mata / Matas de Minas | MG | Steep smallholder terrain, lower yields | Rain at harvest, disease (neither is an index input) |
 | Mogiana | SP | Historic frost zone (1975, 1994, 2021) | Frost, drought |
 
 **Spatial unit:** municipality, aggregated to region by IBGE PAM coffee area.
@@ -92,7 +92,7 @@ where a row says otherwise.
 | Layer | Source | Resolution / cadence | Use |
 |---|---|---|---|
 | **Baseline vegetation — PRIMARY** | `MODIS/061/MOD13Q1` | 250 m, 16-day, 2000– | NDVI/EVI anomalies; the backtest baseline (§4a) |
-| Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative, harvest rain |
+| Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
 | Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
 | Frost — spatial gap-fill only | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | **Not primary** (§4b); heat days above 34 °C |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY` vol. layer 1, or `NASA/SMAP/SPL4SMGP/007` | 9 km | Drought persistence through the dry season |
@@ -186,9 +186,12 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    preferentially delete Zona da Mata, the region the mask is least reliable in.
 2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and NDMI over the mask,
    cloud-masked. Express as a z-score against the same window across the baseline years.
-3. **Rainfall windows.** CHIRPS totals for flowering (Sep 1–Nov 30), bean fill (Dec 1–Mar 31) and
-   harvest (May 1–Aug 31). **Flowering deficit is the single most predictive input;** weight it
-   accordingly.
+3. **Rainfall windows.** CHIRPS totals for flowering (Sep 1–Nov 30) and bean fill (Dec 1–Mar 31).
+   Harvest-window rain (May 1–Aug 31) is not an index input: it falls after every note about the
+   crop it affects. This removes May–Aug of year S only, the harvest of crop S. May–Aug of S−1, the
+   dry season before flowering, falls before every note about crop S and is not affected; it is the
+   window of the dry-season soil-moisture input (§4). **Flowering deficit is the single most
+   predictive input;** weight it accordingly.
 4. **Frost events.** Per §4b: INMET station minima primary, ERA5-Land gap-filling. Count nights
    below the calibrated threshold in the Jun–Aug window, and the share of masked area affected on
    the worst night. **Assign each frost window to the crop it actually affects (§3a).** Any night
