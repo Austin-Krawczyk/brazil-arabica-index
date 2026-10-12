@@ -134,6 +134,7 @@ where a row says otherwise.
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY`, volumetric soil water layers 1–3 (0–100 cm), depth-weighted | 9 km, hourly | Root-zone moisture through the pre-flowering dry season, May–Aug of S−1 (§5 step 5). Verify band names and layer depths against ECMWF/GEE documentation |
 | Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | **Not used before June 2027.** Forward frost-risk flag for the Jun–Aug 2027 window, the first 2028 signal (§3a) |
 | Coffee mask | MapBiomas Collection 10, **class 46 = Coffee** | 30 m, annual **1985–2024** | Where to compute the indices |
+| Planet — v1.5 only, never an input | PlanetScope surface reflectance harmonised to Sentinel-2, via Planet Education & Research access | 3 m | The three bounded tasks in §4d. Not in the index or the backtest. Verify the product name and harmonisation against Planet's documentation |
 
 MapBiomas asset, verified:
 `projects/mapbiomas-public/assets/brazil/lulc/collection10/mapbiomas_brazil_collection10_integration_v1`
@@ -242,6 +243,23 @@ with the most distinctive story.
 
 Also to settle in Week 0: the bulletins are PDFs, so building a ~25-season regional target series is
 extraction work. Budget for it, and record which survey vintage each value came from.
+
+### 4d Planet: bounded v1.5 tasks, never an input (AMENDED 2026-10-12)
+
+Planet Education & Research access is confirmed. **Planet stays out of the index and the
+backtest.**
+
+Three bounded v1.5 tasks, in this order:
+1. **Mask validation** of the municipalities that fail the 30% filter (§5 step 1).
+2. **A one-time 2021 frost case study** over Mogiana and Sul de Minas.
+3. **One illustrative 3 m figure per public note**, labelled as not an input.
+
+**Licence and handling.**
+- The Education & Research terms are non-commercial. Planet-derived material appears only in the
+  repo and public posts, **never in the note emailed to desks**.
+- No raw scenes are committed to the repo. The README states the data source and the programme.
+- Check the current monthly area quota in the Planet dashboard and record it (§10).
+- Use the surface-reflectance product harmonised to Sentinel-2.
 
 ## 5. Method
 
@@ -453,7 +471,8 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
 9. **Output.** Index per region and a four-region total, every 16 days; frost and flowering-
    deficit flags daily.
 
-**Leave out until v2:** machine-learning yield models, Planet imagery, Sentinel-2 imagery,
+**Leave out until v2:** machine-learning yield models, Planet imagery as an index input (v1.5
+tasks only, §4d), Sentinel-2 imagery,
 field-level analysis, any translation of the index into a price forecast.
 
 ## 6. Outputs
@@ -489,7 +508,8 @@ field-level analysis, any translation of the index into a price forecast.
 3. **Dashboard (optional, v1.5).** Only after three notes are out. Polish, not credibility.
 
 **Distribution per note:** LinkedIn post with the chart and three lines; direct email with the PDF;
-optionally a thread in r/commodities or the FIC Slack. Log every reply with name, firm, date and
+optionally a thread in r/commodities or the FIC Slack. Planet-derived figures go in the LinkedIn
+post and the repo copy only, never in the emailed PDF (§4d). Log every reply with name, firm, date and
 what they said.
 
 ## 7. Pipeline
@@ -587,9 +607,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 3. **Region weights** — IBGE PAM harvested area or production? Production weights favour the Cerrado.
 4. **Does USDA FAS GAIN give regional splits** usable as a second benchmark?
 5. **Irrigation share in the Cerrado** from IBGE Censo Agro, to down-weight rainfall deficit there.
-6. **Planet education or research licence** for a later field-scale check. (In the strawberry study
-   the key authenticated and searched but held no asset entitlement — assume the same until shown
-   otherwise.)
+6. **Planet** — Education & Research access confirmed; Planet stays out of the index (§4d).
+   Remaining: record the current monthly area quota from the dashboard.
 7. **First five names on the outreach list**, and which note goes to them first.
 
 ## 11. Risks

@@ -346,3 +346,14 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   month, except the note that follows Conab's first survey of the crop". A success date of "late
   January" could be missed by design under that rule, so §2 now reads the first week of February
   2027, and criterion 3 names the three notes. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 23: Planet as three bounded v1.5 tasks, never an index input.** The
+  owner has Planet Education & Research access, which closes original open item 6. Planet stays
+  out of the index and the backtest. Three bounded v1.5 tasks, in order: mask validation of the
+  municipalities failing the 30% filter; a one-time 2021 frost case study over Mogiana and Sul de
+  Minas; and one illustrative 3 m figure per public note, labelled as not an input. The Education &
+  Research terms are non-commercial, so Planet-derived material appears only in the repo and
+  public posts, never in the note emailed to desks; no raw scenes are committed, and the README
+  states the source and programme. The product is PlanetScope surface reflectance harmonised to
+  Sentinel-2. The monthly area quota is to be read from the dashboard and recorded. Planet is
+  removed from "Leave out until v2" except as an index input. Approved by owner.
