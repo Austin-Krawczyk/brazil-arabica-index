@@ -273,3 +273,11 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   longer conflict. ERA5-Land has no frost role. The frost series starts with crop 2009 and is not
   filled; the index is scored with and without frost, each version against its own pass mark,
   compared only on shared seasons. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 17b: missing station nights are never counted as non-frost.** The
+  completeness rule allows gaps of up to 48 hours, so a station can miss a frost night. Without a
+  rule the count would treat it as a non-frost night, understating frost and breaking §9's rule
+  that a zero is verified. A night is observed only if every hour 18:00–09:00 local is present.
+  Where missing nights could change a station's tier for a season, that tier is reported as
+  unresolved and the regional coverage share is reported with and without the station. Approved
+  by owner.

@@ -294,6 +294,11 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      If no clean source exists for the offset, say so here and mark it provisional.
    - **Station tiers.** A station meets the 2 °C tier with three or more nights ≤ 2 °C in
      Jun–Aug, and the severe tier with one or more nights ≤ 0 °C.
+   - **Missing nights (Amendment 17b).** A night counts as observed only if every hour from
+     18:00 to 09:00 local time is present (INMET timestamps are UTC). A missing night is never
+     counted as a non-frost night. If a station's missing nights could change its tier for a
+     season, its tier for that season is reported as unresolved, and the region's coverage share
+     is reported with and without it.
    - **Regional flag.** A region is flagged for a tier when stations meeting that tier cover at
      least 25% of its coffee area. Reaching the flag triggers an out-of-cycle note at that point,
      not at the end of the window.
