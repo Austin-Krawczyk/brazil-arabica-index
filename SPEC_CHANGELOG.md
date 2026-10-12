@@ -97,3 +97,10 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   filter reports what it removed and whether it differs from what was kept; never compare on
   non-identical observations; verify any zero by an independent method; never score a model with
   information it will not have in production; every checkpoint carries its denominator.
+
+- 2026-10-12 — **AMENDMENT 5: Sentinel-2 is removed from v1 entirely, out of the index and out of
+  the note.** Amendment 2 demoted it to a current-season detail layer, but it feeds neither the
+  index nor the backtest. Showing a 10 m current-season layer beside a 250 m MODIS index invites
+  comparing two products on different observations, which §9 forbids. `COPERNICUS/S2_SR_HARMONIZED`
+  is dropped from the §4 data table and added to "Leave out until v2". Decisions 1, 3 and 4 of the
+  review were reconfirmed unchanged. Approved by owner.

@@ -73,7 +73,6 @@ Every ID below was verified to resolve in Earth Engine on 2026-10-12 (see SPEC_C
 | Layer | Source | Resolution / cadence | Use |
 |---|---|---|---|
 | **Baseline vegetation — PRIMARY** | `MODIS/061/MOD13Q1` | 250 m, 16-day, 2000– | NDVI/EVI anomalies; the backtest baseline (§4a) |
-| Current-season detail | `COPERNICUS/S2_SR_HARMONIZED` | 10 m, 5-day, 2017– | Current-season NDVI/NDMI detail only (**demoted**, §4a) |
 | Rainfall | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Flowering deficit, bean-fill cumulative, harvest rain |
 | Frost — spatial gap-fill only | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | **Not primary** (§4b); heat days above 34 °C |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY` vol. layer 1, or `NASA/SMAP/SPL4SMGP/007` | 9 km | Drought persistence through the dry season |
@@ -102,8 +101,8 @@ is needed, and the mask supports the full MODIS-era backtest.
 
 ### 4a Baseline: MODIS era, not Sentinel-2 era (AMENDED 2026-10-12)
 
-**The backtest and baseline run on MODIS, 2000–2025.** Sentinel-2 is demoted to a current-season
-detail layer.
+**The backtest and baseline run on MODIS, 2000–2025.** Sentinel-2 is out of v1 entirely: it is not
+an index input and does not appear in the note (Amendment 5).
 
 Only Sentinel-2 starts in 2017. MapBiomas runs from 1985, MODIS from 2000, CHIRPS from 1981,
 ERA5-Land from 1950, and Conab coffee from 2001. Fitting four parameters plus a biennial term on
@@ -191,8 +190,8 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
 9. **Output.** Index per region and a Brazil-weighted total, every 16 days; frost and flowering-
    deficit flags daily.
 
-**Leave out until v2:** machine-learning yield models, Planet imagery, field-level analysis, any
-translation of the index into a price forecast.
+**Leave out until v2:** machine-learning yield models, Planet imagery, Sentinel-2 imagery,
+field-level analysis, any translation of the index into a price forecast.
 
 ## 6. Outputs
 
