@@ -442,3 +442,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   July 2017, so its first rainy season (2017/18) has both Sentinel-2 A and B; January–March 2017
   counts are still reported, as information, so the single-sensor step is visible. Approved by
   owner.
+
+- 2026-10-13 — **AMENDMENT 25 (revised): the vegetation fallback order is HLS, then VJ113A1
+  ingested privately, then a declared gap.** Week 0 found that VJ113A1 is not in Earth Engine
+  (the `NASA/VIIRS/002` folder listing and three direct ID probes agree) and that
+  `NASA/HLS/HLSS30/v002` resolves. The order is now: (a) HLS, if it passes the Amendment 30
+  rainy-season coverage test; (b) if it fails, VJ113A1 ingested from NASA as a private Earth
+  Engine asset over the MG/SP window only, built the same way as the CHC prelim ingestion; (c) a
+  declared gap only if both fail. The VJ113A1 ingestion does not start unless HLS fails. The
+  original entry above records the 2026-10-12 decision unchanged. Approved by owner.
