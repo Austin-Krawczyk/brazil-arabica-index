@@ -536,3 +536,16 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   VIIRS alone, with the statement that a single reference cannot attribute cause: a divergence may
   come from Terra or from VIIRS. Aqua is still reported alongside and is still not a reference.
   Amendment 31's NDVI question stays open. Approved by owner.
+
+- 2026-10-13 — **AMENDMENT 30 (second revision): VJ113A1 is held to the same rainy-season
+  coverage test as HLS.** HLS failed Amendment 30's test (7 of 42 November–March baseline months
+  below 60% clear coverage, against 2 allowed), and the fallback moved to VJ113A1. So the fallback
+  is not accepted on an easier standard than the product it replaces, VJ113A1 must pass the same
+  rule before it is relied on: monthly coverage is the coffee-area-weighted share of its pixels
+  within the mask with a "good" pixel reliability (0–3, the range used in the drift check) in at
+  least one composite starting in the month, and no more than two of the 40 November–March months
+  in its 2018–2025 baseline may fall below 60%. If it fails, the fallback moves to a declared gap.
+  The check is probe-gated: one month first, at most 0.25 EECU-hours, keeping the 40 months under
+  about 10 EECU-hours. Ingestion is by NASA AppEEARS (route B), with whole-file download from LP
+  DAAC as the backup if AppEEARS's queue exceeds three days; nothing is submitted until the
+  owner's AppEEARS token is in `.env`. Approved by owner.

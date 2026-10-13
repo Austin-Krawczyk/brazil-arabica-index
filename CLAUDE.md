@@ -227,7 +227,15 @@ most drift-affected, and it is the season every note reports.
   - **Rainy-season coverage test.** Monthly coverage is the share of mask pixels with at least
     one clear HLSS30 observation in the month. If it falls below 60% in more than two months of
     the November–March baseline period, record that HLS cannot carry the rainy season, and the
-    fallback moves to (b).
+    fallback moves to (b). **Result (2026-10-13): HLS failed, 7 of 42 months** (Week 0 report).
+  - **VJ113A1 acceptance check (Amendment 30, second revision).** The fallback is held to the same
+    test as the one that failed. Before VJ113A1 is relied on, for every 16-day composite in its
+    2018–2025 baseline: monthly coverage is the coffee-area-weighted share of VJ113A1 pixels within
+    the mask that have a "good" pixel reliability (0–3, excellent to marginal, as in the drift
+    check) in at least one composite starting in that month. If it falls below 60% in more than two
+    of the 40 November–March months in 2018–2025, record that VJ113A1 cannot carry the rainy
+    season, and the fallback moves to (c). The check is probe-gated: one month first, at most 0.25
+    EECU-hours, which keeps the 40 months under about 10 EECU-hours.
   - If triggered, the current-season anomaly is computed against the fallback's own baseline,
     never against MODIS's.
   - The headline backtest stays on MODIS. The vegetation component is rerun on the fallback for
