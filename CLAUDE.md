@@ -183,11 +183,10 @@ and NASA's 2023 mission status put end of science at February 2027. The current 
 most drift-affected, and it is the season every note reports.
 
 - **Week 0 drift check (method fixed before it runs, Amendment 26).** Compare `MOD13Q1` NDVI and
-  EVI anomalies with the two references (Amendment 31): `VNP13A1` (VIIRS), 2018 to October 2026,
-  and HLSS30 (HLS), from July 2017, on the HLS test's 20,000-pixel sample. `MYD13Q1` (Aqua) is
-  reported alongside but is **not a reference**: its orbit is drifting too, so it is not
-  independent of Terra. Compare anomalies, not levels: the products differ in resolution and
-  overpass time.
+  EVI anomalies with the reference, `VNP13A1` (VIIRS), 2018 to October 2026. HLS is **not** a
+  reference: it failed its cost gate (Amendment 31, revised). `MYD13Q1` (Aqua) is reported
+  alongside but is not a reference: its orbit is drifting too, so it is not independent of Terra.
+  Compare anomalies, not levels: the products differ in resolution and overpass time.
   - **Anomalies** are calendar-month anomalies for every product, against a common July
     2017–2025 baseline (Amendment 26, second revision), each computed over the product's own
     pixels within the mask. Monthly aggregation removes the offset between the products'
@@ -197,12 +196,13 @@ most drift-affected, and it is the season every note reports.
     **Formal run:** per region and for the four-region total, once the regional municipality
     lists exist (§3). Trigger (b) is evaluated on the formal run only. Both go in the Week 0
     report.
-  - Report the difference series and its trend. **Divergence of Terra is attributed to Terra
-    only when VIIRS and HLS agree with each other** (Amendment 31).
+  - Report the difference series and its trend. **With a single reference, the check cannot
+    attribute cause:** a divergence between Terra and VIIRS may come from either, and the report
+    says so (Amendment 31, revised).
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
-  32 days of the note date; or (b) Terra's **EVI** anomaly diverges from both references (VIIRS
-  and HLS) by a **signed** average of more than 0.5 standard deviations of the July 2017–2025
+  32 days of the note date; or (b) Terra's **EVI** anomaly diverges from VIIRS (Amendment 31,
+  revised) by a **signed** average of more than 0.5 standard deviations of the July 2017–2025
   monthly baseline over 2024–2026, in the coffee-area-weighted four-region total or in two or
   more regions. Signed, not absolute: an absolute average fires on ordinary month-to-month noise
   between products (Amendment 26, revised). EVI because it is the index's vegetation input

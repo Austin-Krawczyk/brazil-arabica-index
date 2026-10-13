@@ -525,3 +525,14 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   systematic divergence. NDVI appears only in the sensitivity report, which must now state that
   the NDVI series carries a 2024–26 drift of unresolved cause and that any NDVI-based result is
   unreliable for those years. Approved by owner.
+
+- 2026-10-13 — **AMENDMENT 31 (revised): HLS is not a drift reference; trigger (b) is evaluated
+  on EVI against VIIRS alone and cannot attribute cause.** Amendment 31 made VIIRS and HLS the two
+  references. HLS then failed both gates: its rainy-season coverage test (7 of 42 November–March
+  baseline months below 60% clear coverage, against 2 allowed), and the cost gate for the
+  500-point reference series (3,025 EECU-seconds for one month, against a limit of 540; the cost
+  is per-granule overhead and barely depends on the number of points). With HLS out, trigger (b)
+  could not be evaluated as written. It is now evaluated in the formal run on Terra's EVI against
+  VIIRS alone, with the statement that a single reference cannot attribute cause: a divergence may
+  come from Terra or from VIIRS. Aqua is still reported alongside and is still not a reference.
+  Amendment 31's NDVI question stays open. Approved by owner.
