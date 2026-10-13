@@ -14,7 +14,8 @@ Issue number to be added to `docs/week0_report.md` once filed.*
 footprint geometries whose bounds are ±Infinity. `ImageCollection.filterBounds()` therefore returns
 them for any geometry anywhere on Earth. They contain no data at those locations, so pixel values
 are not affected, but they inflate collection sizes and the cost of any per-point or per-region
-computation. In our case they also contributed to "User memory limit exceeded" errors. HLSL30
+computation. In our case they may also have contributed to "User memory limit exceeded" errors
+(not established). HLSL30
 (`NASA/HLS/HLSL30/v002`) does not show the problem at the same location.
 
 **Reproduce (Code Editor):**
