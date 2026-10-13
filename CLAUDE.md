@@ -637,7 +637,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
-| Verify the unverified IDs: CHIRPS-prelim community asset and the CHC fallback; `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30`; ERA5-Land soil-layer band names and depths | Week 0 | §4 |
+| Verify the unverified IDs: CHIRPS-prelim community asset and the CHC fallback; `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
 | Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
