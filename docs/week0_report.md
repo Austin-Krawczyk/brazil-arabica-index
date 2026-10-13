@@ -265,6 +265,36 @@ to option D (the coverage test only).
   points, and the HLSS30 and HLSL30 lists are identical, as they should be on the shared HLS
   tiling.
 
+### Re-probe attempt 3 (November 2024): **fails the pass rule; option C not started**
+
+7,891 EECU-seconds for the month (limit 4,320), on 1,017 granules (585 HLSS30, 432 HLSL30). The
+one-off tile listing is about 23 of those seconds. The image filter cut granules touched by about
+two-thirds but cost by about a third: each remaining granule contains points and does more work,
+and Earth Engine overhead is still about 65% of the cost. Option C at this rate would be about 185
+EECU-hours. November 2024 values, as information: HLSS30 clear coverage 77.5% (3,875 of 5,000),
+NDVI 0.730, EVI 0.540; HLSL30 74.0%. Profile:
+`docs/week0/profiles/hls_probe_5000pts_20261013T153040Z.txt`.
+
+**HLSS30 footprint issue filed with Google:** draft in `docs/week0/ee_issue_hlss30_footprints.md`;
+issue number to be added here once the owner files it.
+
+### Option D and the reference series — rules set before they run (owner decisions 2026-10-13)
+
+- **HLSL30 dropped.** It was probed at 62–86% clear coverage in three months (January 2025 62.4%,
+  February 2025 85.8%, November 2024 74.0%) and not tested further.
+- **Option D, the coverage test only:** HLSS30, 5,000 points, no NDVI or EVI, the 42
+  November–March months in the July 2017–2025 baseline plus January–March 2017 as information (45
+  months). Probe first on **January 2024** (not computed before). **Pass rule: at most 1.0
+  EECU-hours (3,600 EECU-seconds) for the month.** If it passes, D runs and its actual total is
+  recorded; if not, it stops and is reported.
+- **Reference series, sized for the drift question only:** HLSS30 NDVI and EVI at **500 points**,
+  a nested subset (the 5,000 drawn with seed 20261012, then 500 of those with **seed 20261013**),
+  every month July 2017 to September 2026 (111 months), with the tile filter. Probe first on **June
+  2022** (not computed before). **Pass rule: at most 0.15 EECU-hours (540 EECU-seconds) for the
+  month**, which keeps the series under about 17 EECU-hours. If it fails, HLS stays out as a
+  reference and Amendment 31's NDVI question stays open. The drift comparison is about systematic
+  differences between years, not precision at any point, so 500 points is enough.
+
 ### Probe results (2026-10-13), and the cost of the full run
 
 - **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth

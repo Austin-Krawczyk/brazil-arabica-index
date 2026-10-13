@@ -103,7 +103,10 @@ def export_and_fetch(fc, name, selectors):
     return pd.read_csv(io.BytesIO(blob.download_as_bytes()))
 
 
-def sample_points(states, n_use):
+SUBSET_SEED = 20261013  # draws the 500-point subset from the 5,000 (owner decision 2026-10-13)
+
+
+def sample_points(states, n_use, subset_of=None):
     """Draw the sample once (a batch export), then reuse its coordinates for every month."""
     cache = CACHE / f"_tmp_hls_sample_{SEED}.csv"
     if cache.exists():
@@ -120,8 +123,13 @@ def sample_points(states, n_use):
         pts = export_and_fetch(fc, f"hls_sample_{SEED}", ["lon", "lat"])
         CACHE.mkdir(parents=True, exist_ok=True)
         pts.to_csv(cache, index=False)
-    if n_use < len(pts):  # a seeded random subset of a random sample is itself a random sample
-        pts = pts.iloc[np.sort(np.random.default_rng(SEED).choice(len(pts), n_use, replace=False))]
+    # A seeded random subset of a random sample is itself a random sample. With subset_of, the
+    # subset is nested: first the subset_of points (seed SEED), then n_use of those (SUBSET_SEED).
+    first = subset_of if subset_of else n_use
+    if first < len(pts):
+        pts = pts.iloc[np.sort(np.random.default_rng(SEED).choice(len(pts), first, replace=False))]
+    if subset_of and n_use < len(pts):
+        pts = pts.iloc[np.sort(np.random.default_rng(SUBSET_SEED).choice(len(pts), n_use, replace=False))]
     print(f"sample: {len(pts)} points")
     geom = ee.Geometry.MultiPoint(pts[["lon", "lat"]].values.tolist())
     fc = ee.FeatureCollection(geom.coordinates().map(lambda c: ee.Feature(ee.Geometry.Point(c))))
@@ -237,48 +245,62 @@ def coverage_test(df, n_points):
     return rainy, failing, verdict
 
 
+def months_for(mode):
+    """Option D (coverage): the November-March months inside the July 2017-December 2025 baseline,
+    plus January-March 2017 as information. Reference: every month July 2017-September 2026."""
+    every = pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist()
+    if mode == "coverage":
+        rainy = [m for m in every if int(m[5:7]) in RAINY]
+        return ([m for m in rainy if "2017-01" <= m[:7] <= "2017-03"]
+                + [m for m in rainy if BASELINE[0] <= m[:7] <= BASELINE[1]])
+    return [m for m in every if m[:7] >= "2017-07"]
+
+
 def main():
     args = argparse.ArgumentParser()
+    args.add_argument("--mode", choices=["coverage", "reference"], required=True,
+                      help="coverage: option D; reference: NDVI/EVI series for the drift check")
     args.add_argument("--probe", action="store_true", help="one month only, to measure cost")
-    args.add_argument("--points", type=int, default=SAMPLE, help="points used (subset of the sample)")
-    args.add_argument("--month", default="2025-01", help="probe month, YYYY-MM")
+    args.add_argument("--points", type=int, default=5000, help="points used")
+    args.add_argument("--subset-of", type=int, default=None, help="draw --points from this subset")
+    args.add_argument("--month", default="2024-01", help="probe month, YYYY-MM")
     a = args.parse_args()
-    probe = a.probe
     init()
-    mode = f"{'probe' if probe else 'full'}_{a.points}pts"
+    tag = f"{a.mode}_{'probe' if a.probe else 'full'}_{a.points}pts"
+    with_indices = a.mode == "reference"
     buf = io.StringIO()
     t0 = time.time()
     with ee.profilePrinting(destination=buf):
         states = region()
-        points, n_points, coords = sample_points(states, a.points)
+        points, n_points, coords = sample_points(states, a.points, a.subset_of)
         bounds = states.geometry().bounds()
         # Only granules on tiles containing a sample point (owner decision 2026-10-13): a granule
         # without a point contributes nothing to any point value, so results are unchanged.
-        tiles = {asset: point_tiles(asset, coords) for asset in (S30, L30)}
-        months = ([f"{a.month}-01"] if probe else
-                  pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist())
-        l30_months = months if probe else [m for m in months if int(m[5:7]) in RAINY]
-        cache = None if probe else CACHE / f"_tmp_hls_rows_{a.points}.csv"
-        rows = run(S30, months, points, bounds, with_indices=True, tiles=tiles[S30], cache=cache)
-        rows += run(L30, l30_months, points, bounds, with_indices=False, tiles=tiles[L30], cache=cache)
+        # HLSL30 dropped (owner decision 2026-10-13).
+        tiles = point_tiles(S30, coords)
+        months = [f"{a.month}-01"] if a.probe else months_for(a.mode)
+        cache = None if a.probe else CACHE / f"_tmp_hls_rows_{a.mode}_{a.points}.csv"
+        rows = run(S30, months, points, bounds, with_indices=with_indices, tiles=tiles, cache=cache)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     prof_dir = WEEK0 / "profiles"
     prof_dir.mkdir(parents=True, exist_ok=True)
-    (prof_dir / f"hls_{mode}_{stamp}.txt").write_text(buf.getvalue(), encoding="utf-8")
+    (prof_dir / f"hls_{tag}_{stamp}.txt").write_text(buf.getvalue(), encoding="utf-8")
     cost = eecu_seconds(buf.getvalue())
     batch = sum(c for _, c in BATCH_COSTS)
     df = pd.DataFrame(rows)
-    print(f"\n{mode}: {len(months)} month(s) x 2 products, {n_points} points, "
-          f"{time.time() - t0:.0f} s wall. Interactive: {cost:,.0f} EECU-seconds; "
-          f"batch: {batch:,.0f} EECU-seconds {BATCH_COSTS}")
-    if probe:
+    print(f"\n{tag}: {len(months)} month(s), HLSS30, {n_points} points, {time.time() - t0:.0f} s wall. "
+          f"Interactive: {cost:,.0f} EECU-seconds; batch: {batch:,.0f} EECU-seconds {BATCH_COSTS}")
+    if a.probe:
         print(df.to_string(index=False))
         return
-    df.to_csv(WEEK0 / "hls_monthly.csv", index=False)
-    rainy, failing, verdict = coverage_test(df, n_points)
-    rainy.to_csv(WEEK0 / "hls_coverage_test.csv", index=False)
-    print(f"Rainy-season coverage test: {len(failing)} of {len(rainy)} November-March baseline months "
-          f"below {COVERAGE_MIN:.0%} clear coverage; allowed {MONTHS_ALLOWED}. HLS {verdict}.")
+    out = WEEK0 / f"hls_{a.mode}_{a.points}pts.csv"
+    df.to_csv(out, index=False)
+    print(f"{len(df)} months written to {out.name}")
+    if a.mode == "coverage":
+        rainy, failing, verdict = coverage_test(df, n_points)
+        rainy.to_csv(WEEK0 / "hls_coverage_test.csv", index=False)
+        print(f"Rainy-season coverage test: {len(failing)} of {len(rainy)} November-March baseline "
+              f"months below {COVERAGE_MIN:.0%} clear coverage; allowed {MONTHS_ALLOWED}. HLS {verdict}.")
 
 
 if __name__ == "__main__":
