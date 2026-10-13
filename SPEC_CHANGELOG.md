@@ -404,3 +404,10 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   regional municipality lists, and trigger (b) is evaluated on the formal run only. Both go in the
   Week 0 report. The comparison window ends in October 2026 because VNP13A1 delivery ends on
   2 November (Amendment 25). Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 27: the elevation fallback moves to `COPERNICUS/DEM/GLO30_2024_1`.**
+  The Earth Engine catalog marks `COPERNICUS/DEM/GLO30` as deprecated and superseded by
+  `COPERNICUS/DEM/GLO30_2024_1` (an ImageCollection, band `DEM`, EGM2008 datum). The §4 table now
+  names the new ID and notes that both SRTM and the Copernicus DEM are surface models that include
+  canopy, which does not matter for a station altitude cut at the 95th percentile of coffee-mask
+  elevation. Approved by owner.
