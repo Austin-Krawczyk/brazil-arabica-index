@@ -211,6 +211,25 @@ at most 35% of the 20,000-point probe's cost per granule (perfect scaling is 25%
 option C runs and its actual total is recorded here; if not, the run stops and the numbers are
 reported.
 
+### Scaling probe result (2026-10-13): **fails the pass rule; option C not started**
+
+| Probe | Points | Granules touched (HLSS30 + HLSL30) | EECU-seconds | Per granule |
+|---|---|---|---|---|
+| January 2025 | 20,000 | 1,713 + 1,148 = 2,861 | 22,110 | 7.73 |
+| February 2025 | 5,000 | 1,815 + 1,322 = 3,137 | 12,288 | 3.92 |
+
+Cost per granule at 5,000 points is **51%** of the 20,000-point figure; the rule allowed 35%.
+Quartering the points only halved the cost, because most of it is per-granule overhead, not
+per-point work. At this rate option C would cost about 275 EECU-hours, not 130. Profile:
+`docs/week0/profiles/hls_probe_5000pts_20261013T145010Z.txt`. February 2025 values, as
+information: HLSS30 clear coverage 93.3% (4,666 of 5,000), NDVI 0.776, EVI 0.579; HLSL30 85.8%.
+
+**Found afterwards (a metadata count with no pixel computation):** the script selects every
+granule intersecting the MG/SP bounding box. Only 679 of the 1,815 HLSS30 granules and 471 of the
+1,322 HLSL30 granules in February 2025 contain a sample point (37% and 36%). Selecting by the
+sample points instead would not change any result, because a granule without a point contributes
+nothing, and should cut cost by roughly that factor. Not applied; owner decision.
+
 ### Probe results (2026-10-13), and the cost of the full run
 
 - **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth
@@ -258,6 +277,21 @@ Scope (owner decision, 2026-10-13): every pentad from 2015; daily for Septemberâ
   (`projects/<EE_PROJECT>/assets`) does not exist or does not allow this login to create assets,
   so the collection could not be created. Not yet resolved; the bucket is untouched. A dry run
   also exposed a counting bug (totals carried over from pentad to daily), now fixed.
+- **Diagnosis, 2026-10-13, after the owner confirmed `GCS_BUCKET` in `.env` and both Google
+  accounts as project Owners:**
+  - Creating the collection still fails the same way.
+  - The Cloud Resource Manager API was enabled on the project (owner-authorised) to test
+    permissions directly. The authenticated account **holds every permission involved**:
+    `earthengine.assets.create`, `.list` and `.get`, `earthengine.imports.create`,
+    `earthengine.exports.create`, `earthengine.computations.create`,
+    `serviceusage.services.use`, `resourcemanager.projects.get` and `storage.buckets.create`.
+  - The Earth Engine API is enabled, and the project's Earth Engine config reads
+    `registrationState: REGISTERED_NOT_COMMERCIALLY`.
+  - Called directly on the REST API, both listing the project's root (`projects/<EE_PROJECT>:listAssets`)
+    and creating an asset in it return 404, "Asset 'projects/<EE_PROJECT>/assets' does not exist".
+  - **What is missing is the project's asset root itself, not a permission.** Batch exports to
+    the bucket work, since they need no asset. Fixing the root needs a step outside the API calls
+    tried here: selecting the project in the Code Editor's Assets panel, or Earth Engine support.
 
 ## 6. Other Week 0 checklist items, not yet started
 
