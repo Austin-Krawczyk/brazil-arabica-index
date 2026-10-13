@@ -111,6 +111,10 @@ NDVI by year, Terra − VIIRS: 2023 +0.23, 2024 +0.31, 2025 +0.68, 2026 +1.52. A
 
    The rule as designed cannot tell (a) from (b), because it treats Aqua as an independent
    reference, and Aqua is drifting too.
+
+   **Owner reading, 2026-10-13: the NDVI drift since 2024 is shared by Terra and Aqua, and its
+   cause is unresolved pending HLS.** Amendment 31 makes VIIRS and HLS the references and reports
+   Aqua alongside; HLSS30 NDVI and EVI from July 2017 join the HLS test as the second reference.
 2. **EVI, the index's vegetation term (Amendment 19), shows no systematic divergence.** Signed
    differences stay within ±0.2 SD in 2024–26 for every pair. EVI disagrees more from month to
    month than NDVI does: absolute differences were already 0.50–0.58 SD in 2018–23, and the
@@ -121,11 +125,13 @@ NDVI by year, Terra − VIIRS: 2023 +0.23, 2024 +0.31, 2025 +0.68, 2026 +1.52. A
    2024–2026" can be read either way. Read as an absolute mean, EVI would trip on ordinary
    product noise, which was already 0.50–0.58 SD in 2018–23. A signed mean measures systematic
    drift. To settle before the formal run.
-5. **Earth Engine compute quota.** During this run the project exceeded its noncommercial quota
+5. **Trigger (b) is now a signed average** (Amendment 26, revised), for the reason in item 4.
+6. **Earth Engine compute quota.** During this run the project exceeded its noncommercial quota
    (Community tier, 150 EECU-hours a month) and is in restricted mode: reduced concurrency until
    the quota resets on 1 November (Pacific time). The Contributor tier (1,000 EECU-hours a month)
    needs a billing account, has no charge for noncommercial use, and applies as soon as the tier is
-   changed.
+   changed. The owner is moving the project to Contributor. **Compute cost of this run: not
+   measured** (it predates Amendment 32); from now on every run's EECU cost is recorded here.
 
 ## 4. Live vegetation fallback: VJ113A1 and HLS (Amendments 25 and 30)
 

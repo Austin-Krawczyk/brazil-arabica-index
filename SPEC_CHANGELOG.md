@@ -496,3 +496,13 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   trigger (b) is read against VIIRS and HLS; Aqua is reported alongside but does not count. Open:
   HLS starts in July 2017, so it cannot share Amendment 26's 2013–2025 baseline; the baseline for
   comparisons with HLS is to be settled before the HLS test runs (§10). Approved by owner.
+
+- 2026-10-13 — **AMENDMENT 32: lean Earth Engine runs, with each run's compute cost recorded.**
+  The provisional drift check, three products at native resolution over all coffee in MG and SP
+  plus a first attempt lost to a network failure, took the project past the Community tier's
+  150 EECU-hours a month and into restricted mode. The owner is moving the project to the
+  Contributor tier (1,000 EECU-hours a month). Regardless of tier, §9 now requires samples wherever
+  a sample answers the question, no repeated full-resolution pass over the study area without a
+  recorded reason, and each run's compute cost recorded in the report, measured with Earth
+  Engine's request profiling. The cost of the runs before this rule was not measured. Approved by
+  owner.

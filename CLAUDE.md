@@ -619,6 +619,11 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - Log every spec deviation in `SPEC_CHANGELOG.md` with the reason, at the time it happens.
 - **Report negative and inconclusive results as findings.** Do not retune to rescue a result. Say
   "inconclusive" or "not established" when that is the answer, and give the reason.
+- **Lean Earth Engine runs (decided 2026-10-13, Amendment 32).** Use a sample wherever a sample
+  answers the question. Never repeat a full-resolution pass over the study area without a recorded
+  reason. Record each run's compute cost in EECU-seconds in the report, measured with Earth
+  Engine's request profiling (`ee.profilePrinting`). This holds whatever the project's quota
+  tier.
 - **Pre-registration, in two tagged commits (decided 2026-10-12).** Record every choice that could
   be tuned in `docs/preregistration.md`, and commit it at two points:
   - **Tag `prereg-1`, before W2 computes any season-level input.** It records:
