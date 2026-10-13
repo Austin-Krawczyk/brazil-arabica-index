@@ -230,6 +230,15 @@ granule intersecting the MG/SP bounding box. Only 679 of the 1,815 HLSS30 granul
 sample points instead would not change any result, because a granule without a point contributes
 nothing, and should cut cost by roughly that factor. Not applied; owner decision.
 
+### Re-probe with the image filter — rule set before it runs (owner decision 2026-10-13)
+
+The script now selects only granules that contain a sample point; results are unchanged by
+construction. One month at 5,000 points, **December 2024** (a rainy month not probed before, so no
+cached tiles), both products. **Pass rule: at most 1.2 EECU-hours (4,320 EECU-seconds) for the
+month, both products together**, which keeps option C under about 150 EECU-hours. If it passes,
+option C runs and its actual total is recorded here; if not, the run stops and the project moves
+to option D (the coverage test only).
+
 ### Probe results (2026-10-13), and the cost of the full run
 
 - **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth

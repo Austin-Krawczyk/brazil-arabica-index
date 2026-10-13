@@ -18,6 +18,7 @@ Method, recorded in docs/week0_report.md before this ran:
               over points with data
   months      2017-01 to 2026-09. Baseline July 2017 to December 2025; January-June 2017 reported
               as information
+  granules    only those containing a sample point (owner decision 2026-10-13)
   cost        ee.profilePrinting for every run, saved under docs/week0/profiles/
 
 Anomalies against a baseline are NOT computed here: the baseline for comparisons with HLS is open
@@ -118,7 +119,7 @@ def sample_points(states, n_use):
     print(f"sample: {len(pts)} points")
     geom = ee.Geometry.MultiPoint(pts[["lon", "lat"]].values.tolist())
     fc = ee.FeatureCollection(geom.coordinates().map(lambda c: ee.Feature(ee.Geometry.Point(c))))
-    return fc, len(pts)
+    return fc, len(pts), geom
 
 
 def month_stats(asset, points, bounds, with_indices):
@@ -216,8 +217,9 @@ def main():
     t0 = time.time()
     with ee.profilePrinting(destination=buf):
         states = region()
-        points, n_points = sample_points(states, a.points)
-        bounds = states.geometry().bounds()
+        points, n_points, bounds = sample_points(states, a.points)
+        # Only granules containing a sample point (owner decision 2026-10-13): a granule without a
+        # point contributes nothing to any point value, so results are unchanged and cost falls.
         months = ([f"{a.month}-01"] if probe else
                   pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist())
         l30_months = months if probe else [m for m in months if int(m[5:7]) in RAINY]
