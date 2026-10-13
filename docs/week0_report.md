@@ -97,7 +97,30 @@ NDVI by year, Terra − VIIRS: 2023 +0.23, 2024 +0.31, 2025 +0.68, 2026 +1.52. A
 +0.35, +0.80, +1.31. Full series: `docs/week0/drift_provisional_monthly.csv` and
 `drift_provisional_summary.csv`.
 
-### Findings
+### Recomputed on the July 2017–2025 common baseline (Amendment 26, second revision)
+
+Recomputed from the saved monthly results, with no new Earth Engine compute
+(`docs/week0/drift_provisional_baseline_comparison.csv`, monthly z-scores in
+`drift_provisional_monthly_jul2017_baseline.csv`). Signed mean, absolute mean in brackets:
+
+| Index | Pair | 2018–2023 | 2024 to Sep 2026 |
+|---|---|---|---|
+| NDVI | Terra − Aqua | +0.03 (0.43) | +0.08 (0.50) |
+| NDVI | Terra − VIIRS | −0.14 (0.42) | **+0.88 (0.95)** |
+| NDVI | Aqua − VIIRS | −0.17 (0.32) | **+0.80 (0.88)** |
+| EVI | Terra − Aqua | +0.00 (0.66) | −0.22 (1.07) |
+| EVI | Terra − VIIRS | +0.10 (0.61) | −0.23 (0.78) |
+| EVI | Aqua − VIIRS | +0.10 (0.53) | −0.01 (0.73) |
+
+NDVI by year, Terra − VIIRS: 2023 +0.22, 2024 +0.27, 2025 +0.68, 2026 +1.95.
+
+**The conclusions do not change.** NDVI: Terra and Aqua agree, and both diverge from VIIRS from
+2024, slightly more on the shorter baseline. EVI: no systematic divergence. With the shorter
+baseline the standard deviations are smaller, so absolute differences rise (EVI 0.53–0.66 in
+2018–23), which strengthens the case for the signed average. Against VIIRS alone, Terra's NDVI
+exceeds 0.5 and its EVI does not; under Amendment 31 trigger (b) also needs HLS, which is pending.
+
+### Findings (on the original 2013–2025 baseline)
 
 1. **NDVI: Terra and Aqua agree; both diverge from VIIRS from 2024, growing each year.** The
    attribution rule (Terra diverging from both references while they agree) is not met, because
@@ -176,6 +199,17 @@ Engine catalog and current (`gee/week0_verify_ids.py`).
 13. **No anomalies yet:** the script saves the monthly series only. The baseline for comparisons
     with HLS is open (§10), so the third-reference comparison waits for that decision.
 14. **Cost:** a one-month probe runs first to measure EECU cost before the full run.
+
+### Option C and the scaling probe — rule set before the probe runs (owner decision 2026-10-13)
+
+Option C: 5,000 points, a seeded random subset of the 20,000-point sample (numpy
+`default_rng(20261012)`); HLSS30 for every month 2017-01 to 2026-09; HLSL30 for November–March
+months only, as information. The scaling probe runs one month at 5,000 points on **February 2025**,
+not January, because January's tiles may still be cached from the 20,000-point probe and would
+understate the cost. **Pass rule:** cost per granule touched (HLSS30 + HLSL30) at 5,000 points is
+at most 35% of the 20,000-point probe's cost per granule (perfect scaling is 25%). If it passes,
+option C runs and its actual total is recorded here; if not, the run stops and the numbers are
+reported.
 
 ### Probe results (2026-10-13), and the cost of the full run
 

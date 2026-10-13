@@ -23,8 +23,12 @@ Method, recorded in docs/week0_report.md before this ran:
 Anomalies against a baseline are NOT computed here: the baseline for comparisons with HLS is open
 (§10). This script saves the monthly series only.
 
-Run:    .venv/Scripts/python gee/week0_hls_test.py --probe     (one month, to measure cost)
-        .venv/Scripts/python gee/week0_hls_test.py             (all months)
+Option C (owner decision 2026-10-13): 5,000 points, a seeded random subset of the 20,000-point
+sample (numpy default_rng(20261012)); HLSS30 for every month, HLSL30 for November-March months
+only, as information.
+
+Run:    .venv/Scripts/python gee/week0_hls_test.py --probe [--points N] [--month YYYY-MM]
+        .venv/Scripts/python gee/week0_hls_test.py --points 5000
 Writes: docs/week0/hls_monthly.csv, docs/week0/hls_coverage_test.csv,
         docs/week0/profiles/hls_<mode>_<utc>.txt
 """
@@ -35,9 +39,12 @@ import re
 import time
 
 import ee
+import numpy as np
 import pandas as pd
 
-from common import ROOT, WEEK0, init
+from google.cloud import storage
+
+from common import ROOT, WEEK0, init, setting
 
 MAPBIOMAS = ("projects/mapbiomas-public/assets/brazil/lulc/collection10/"
              "mapbiomas_brazil_collection10_integration_v1")
@@ -63,8 +70,34 @@ def region():
     return fc
 
 
-def sample_points(states):
-    """Draw the sample once, then reuse its coordinates so it is never recomputed per month."""
+BATCH_COSTS = []  # (task, EECU-seconds) for batch tasks, which request profiling does not see
+
+
+def export_and_fetch(fc, name, selectors):
+    """Run a table export to the bucket as a batch task (no interactive time limit) and fetch it."""
+    bucket = setting("GCS_BUCKET")
+    prefix = f"week0/{name}"
+    task = ee.batch.Export.table.toCloudStorage(collection=fc, description=name, bucket=bucket,
+                                                fileNamePrefix=prefix, fileFormat="CSV",
+                                                selectors=selectors)
+    task.start()
+    print(f"  batch task {name} started")
+    while True:
+        status = task.status()
+        if status["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
+            break
+        time.sleep(30)
+    if status["state"] != "COMPLETED":
+        raise SystemExit(f"Batch task {name} {status['state']}: {status.get('error_message', '')}")
+    BATCH_COSTS.append((name, float(status.get("batch_eecu_usage_seconds", 0) or 0)))
+    client = storage.Client(project=setting("EE_PROJECT"),
+                            credentials=ee.data.get_persistent_credentials())
+    blob = client.bucket(bucket).blob(prefix + ".csv")
+    return pd.read_csv(io.BytesIO(blob.download_as_bytes()))
+
+
+def sample_points(states, n_use):
+    """Draw the sample once (a batch export), then reuse its coordinates for every month."""
     cache = CACHE / f"_tmp_hls_sample_{SEED}.csv"
     if cache.exists():
         pts = pd.read_csv(cache)
@@ -74,11 +107,14 @@ def sample_points(states):
         fc = coffee.stratifiedSample(numPoints=SAMPLE, classBand="coffee",
                                      region=states.geometry().bounds(), scale=30, seed=SEED,
                                      classValues=[1], classPoints=[SAMPLE], geometries=True,
-                                     tileScale=8)
-        coords = fc.geometry().coordinates().getInfo()
-        pts = pd.DataFrame(coords, columns=["lon", "lat"])
+                                     tileScale=16)
+        fc = fc.map(lambda f: f.set({"lon": f.geometry().coordinates().get(0),
+                                     "lat": f.geometry().coordinates().get(1)}))
+        pts = export_and_fetch(fc, f"hls_sample_{SEED}", ["lon", "lat"])
         CACHE.mkdir(parents=True, exist_ok=True)
         pts.to_csv(cache, index=False)
+    if n_use < len(pts):  # a seeded random subset of a random sample is itself a random sample
+        pts = pts.iloc[np.sort(np.random.default_rng(SEED).choice(len(pts), n_use, replace=False))]
     print(f"sample: {len(pts)} points")
     geom = ee.Geometry.MultiPoint(pts[["lon", "lat"]].values.tolist())
     fc = ee.FeatureCollection(geom.coordinates().map(lambda c: ee.Feature(ee.Geometry.Point(c))))
@@ -170,27 +206,33 @@ def coverage_test(df, n_points):
 def main():
     args = argparse.ArgumentParser()
     args.add_argument("--probe", action="store_true", help="one month only, to measure cost")
-    probe = args.parse_args().probe
+    args.add_argument("--points", type=int, default=SAMPLE, help="points used (subset of the sample)")
+    args.add_argument("--month", default="2025-01", help="probe month, YYYY-MM")
+    a = args.parse_args()
+    probe = a.probe
     init()
-    mode = "probe" if probe else "full"
+    mode = f"{'probe' if probe else 'full'}_{a.points}pts"
     buf = io.StringIO()
     t0 = time.time()
     with ee.profilePrinting(destination=buf):
         states = region()
-        points, n_points = sample_points(states)
+        points, n_points = sample_points(states, a.points)
         bounds = states.geometry().bounds()
-        months = (["2025-01-01"] if probe else
+        months = ([f"{a.month}-01"] if probe else
                   pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist())
+        l30_months = months if probe else [m for m in months if int(m[5:7]) in RAINY]
         rows = run(S30, months, points, bounds, with_indices=True)
-        rows += run(L30, months, points, bounds, with_indices=False)
+        rows += run(L30, l30_months, points, bounds, with_indices=False)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     prof_dir = WEEK0 / "profiles"
     prof_dir.mkdir(parents=True, exist_ok=True)
     (prof_dir / f"hls_{mode}_{stamp}.txt").write_text(buf.getvalue(), encoding="utf-8")
     cost = eecu_seconds(buf.getvalue())
+    batch = sum(c for _, c in BATCH_COSTS)
     df = pd.DataFrame(rows)
     print(f"\n{mode}: {len(months)} month(s) x 2 products, {n_points} points, "
-          f"{time.time() - t0:.0f} s wall, {cost:,.0f} EECU-seconds ({cost / 3600:.2f} EECU-hours)")
+          f"{time.time() - t0:.0f} s wall. Interactive: {cost:,.0f} EECU-seconds; "
+          f"batch: {batch:,.0f} EECU-seconds {BATCH_COSTS}")
     if probe:
         print(df.to_string(index=False))
         return

@@ -188,11 +188,11 @@ most drift-affected, and it is the season every note reports.
   reported alongside but is **not a reference**: its orbit is drifting too, so it is not
   independent of Terra. Compare anomalies, not levels: the products differ in resolution and
   overpass time.
-  - **Anomalies** are calendar-month anomalies for every product, against a common 2013–2025
-    baseline, each computed over the product's own pixels within the mask. Monthly aggregation
-    removes the offset between the products' compositing windows; the common baseline puts them
-    on the same years. HLS starts in July 2017 and cannot share the 2013–2025 baseline; the
-    baseline for comparisons with HLS is open (§10).
+  - **Anomalies** are calendar-month anomalies for every product, against a common July
+    2017–2025 baseline (Amendment 26, second revision), each computed over the product's own
+    pixels within the mask. Monthly aggregation removes the offset between the products'
+    compositing windows; the common baseline puts every product, HLS included, on the same
+    years.
   - **Provisional run, now:** over all class-46 coffee pixels in MG and SP, labelled provisional.
     **Formal run:** per region and for the four-region total, once the regional municipality
     lists exist (§3). Trigger (b) is evaluated on the formal run only. Both go in the Week 0
@@ -202,7 +202,7 @@ most drift-affected, and it is the season every note reports.
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
   32 days of the note date; or (b) Terra's anomaly diverges from both references (VIIRS and HLS) by a **signed**
-  average of more than 0.5 standard deviations of the 2013–2025 monthly baseline over 2024–2026, in the
+  average of more than 0.5 standard deviations of the July 2017–2025 monthly baseline over 2024–2026, in the
   coffee-area-weighted four-region total or in two or more regions. Signed, not absolute: an
   absolute average fires on ordinary month-to-month noise between products (Amendment 26,
   revised). Per-region differences are reported either way.
@@ -661,7 +661,6 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
-| Drift-check baseline once HLS is a reference: a common July 2017–2025 baseline for every product (recomputable from the saved monthly series), or HLS on its own baseline | Before the HLS test runs | §4a |
 | Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
 | Exact Conab 2027 survey dates, and whether crop 2026's final survey comes in December or January | Before the December note | §1, §6 |
 | Planet monthly area quota, from the dashboard | Before any Planet task | §4d |

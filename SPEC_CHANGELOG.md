@@ -506,3 +506,13 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   recorded reason, and each run's compute cost recorded in the report, measured with Earth
   Engine's request profiling. The cost of the runs before this rule was not measured. Approved by
   owner.
+
+- 2026-10-13 — **AMENDMENT 26 (second revision): the drift check's common baseline is July
+  2017–2025 for every product.** HLS became a reference in Amendment 31 and starts in July 2017,
+  so it could not share the 2013–2025 baseline; giving HLS its own baseline would compare products
+  on different years (§9). Every product in the drift check now uses one baseline, July 2017 to
+  December 2025, and trigger (b)'s standard deviation is that baseline's. The provisional reading
+  was recomputed on it from the saved monthly results, with no new Earth Engine compute: the
+  conclusions do not change. NDVI: Terra and Aqua still agree (+0.08 SD signed, 2024 to Sep
+  2026) and both still diverge from VIIRS (+0.88 and +0.80). EVI: no systematic divergence (signed
+  −0.23 to −0.01). The §10 checklist row for this decision is closed. Approved by owner.
