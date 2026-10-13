@@ -317,6 +317,39 @@ issue number to be added here once the owner files it.
   ingested from NASA as a private asset over the MG/SP window. Not started: it needs the owner's
   go-ahead, including for the download.
 
+### Reference-series gate (2026-10-13): **fails; HLS stays out as a drift reference**
+
+- **Probe:** June 2022, 500 points (nested subset, seed 20261013; 56 tiles contain them), NDVI and
+  EVI: **3,025 EECU-seconds against a limit of 540.** The 111-month series was not run.
+- **What the probes show about cost:** it barely depends on the number of points. January 2024
+  coverage at 5,000 points cost 3,076 EECU-seconds; June 2022 with indices at 500 points cost
+  3,025. Almost all of it is per-granule overhead, so fewer points cannot buy a cheaper series. At
+  about 0.85 EECU-hours a month the reference series would be about 93 EECU-hours; it is not
+  proposed.
+- **June 2022 values, as information:** clear coverage 99.4% (497 of 500), NDVI 0.739, EVI 0.455.
+- **Consequence (owner rule):** HLS stays out as a reference, and Amendment 31's NDVI question (a
+  drift shared by Terra and Aqua, or a VIIRS-specific change) **stays open**. The NDVI caveat of
+  Amendment 33 stands.
+- **Open, for the owner:** trigger (b) is defined against both references, VIIRS and HLS
+  (Amendment 31). With HLS out, it cannot be evaluated as written, and VIIRS delivery ends on
+  2 November 2026.
+
+### Compute used on 2026-10-13, measured (Amendment 32)
+
+| Run | EECU-hours |
+|---|---|
+| HLS sample, batch (20,000 points) | 8.0 |
+| HLS probe, January 2025, 20,000 points, both products | 6.1 |
+| HLS probe, February 2025, 5,000 points, both products | 3.4 |
+| HLS re-probe, November 2024, 5,000 points, both products, tile filter | 2.2 |
+| Option D probe (January 2024) and run (45 months) | 35.7 |
+| Reference probe, June 2022, 500 points | 0.8 |
+| **Total measured** | **56.2** |
+
+Not measured: the provisional drift check and its first attempt, the timed-out sample attempt, the
+failed re-probe attempts, the ID checks, and the CHC ingestion (Earth Engine reported no EECU on
+the ingestion tasks).
+
 ### Probe results (2026-10-13), and the cost of the full run
 
 - **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth
