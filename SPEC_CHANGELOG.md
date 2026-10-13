@@ -516,3 +516,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   conclusions do not change. NDVI: Terra and Aqua still agree (+0.08 SD signed, 2024 to Sep
   2026) and both still diverge from VIIRS (+0.88 and +0.80). EVI: no systematic divergence (signed
   −0.23 to −0.01). The §10 checklist row for this decision is closed. Approved by owner.
+
+- 2026-10-13 — **AMENDMENT 33: trigger (b) is evaluated on EVI; NDVI results for 2024–26 carry a
+  drift caveat.** Trigger (b) did not say which index it applies to. It is now evaluated on EVI,
+  the index's vegetation input (Amendment 19); NDVI is reported alongside but does not trigger. The
+  provisional drift check found that Terra and Aqua NDVI diverge from VIIRS from 2024 (+0.88 and
+  +0.80 SD signed on the July 2017–2025 baseline), cause unresolved pending HLS, while EVI shows no
+  systematic divergence. NDVI appears only in the sensitivity report, which must now state that
+  the NDVI series carries a 2024–26 drift of unresolved cause and that any NDVI-based result is
+  unreliable for those years. Approved by owner.

@@ -201,11 +201,13 @@ most drift-affected, and it is the season every note reports.
     only when VIIRS and HLS agree with each other** (Amendment 31).
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
-  32 days of the note date; or (b) Terra's anomaly diverges from both references (VIIRS and HLS) by a **signed**
-  average of more than 0.5 standard deviations of the July 2017–2025 monthly baseline over 2024–2026, in the
-  coffee-area-weighted four-region total or in two or more regions. Signed, not absolute: an
-  absolute average fires on ordinary month-to-month noise between products (Amendment 26,
-  revised). Per-region differences are reported either way.
+  32 days of the note date; or (b) Terra's **EVI** anomaly diverges from both references (VIIRS
+  and HLS) by a **signed** average of more than 0.5 standard deviations of the July 2017–2025
+  monthly baseline over 2024–2026, in the coffee-area-weighted four-region total or in two or
+  more regions. Signed, not absolute: an absolute average fires on ordinary month-to-month noise
+  between products (Amendment 26, revised). EVI because it is the index's vegetation input
+  (§5 step 6); NDVI is reported alongside but does not trigger (Amendment 33). Per-region
+  differences are reported either way.
 - **Fallback (Amendment 25, revised 2026-10-13).** `VNP13A1` is no longer the live fallback:
   NASA ends delivery of Suomi NPP VIIRS science data on 2 November 2026 (Earthdata, VNP13A1
   v002). It stays only as the second reference in the drift check, 2018 to October 2026. The live
@@ -412,7 +414,9 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      **These four weights are the cap of four.**
    - **EVI is the single vegetation term.** Coffee canopies are dense, NDVI saturates in them,
      and EVI was designed for that case. NDVI appears only in the sensitivity report. This is
-     registered at `prereg-1` with that reason.
+     registered at `prereg-1` with that reason. **The sensitivity report states that the NDVI
+     series carries a 2024–26 drift of unresolved cause (Week 0 drift check) and that any
+     NDVI-based result is unreliable for those years** (Amendment 33).
    - **Computed and reported, but not fitted:** NDVI, consecutive dry days, and bean-fill rain
      to date. Frost enters as a fixed offset (below) and does not count. If the Cerrado
      irrigation adjustment (§10 item 5) is adopted, it is a fixed multiplier, not a parameter.
