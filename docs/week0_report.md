@@ -74,9 +74,58 @@ These are not in the spec and would otherwise be made silently in code:
    use the same rule.
 6. **Denominators reported:** coffee pixels per product, and valid pixels per month.
 
-### Results
+### Results (provisional, run 2026-10-13)
 
-Pending Earth Engine access (`gee/week0_drift_provisional.py`).
+**Denominators:** 543,194 MODIS pixels (250 m) and 218,967 VIIRS pixels (500 m) contain any
+coffee in MG and SP. Valid pixels per month: median 99.8% (Terra), 99.2% (Aqua), 98.2% (VIIRS);
+minimum 52.0%, 71.5%, 62.5%. Monthly series run 2013-01 to 2026-09. October 2026 has no composites
+yet for any product, so the comparison ends in September rather than October.
+
+Mean monthly difference in anomaly, in standard deviations of each product's 2013–2025 monthly
+baseline; signed mean, with the mean absolute difference in brackets:
+
+| Index | Pair | 2018–2023 (72 months) | 2024 to Sep 2026 (33 months) |
+|---|---|---|---|
+| NDVI | Terra − Aqua | +0.07 (0.37) | +0.01 (0.38) |
+| NDVI | Terra − VIIRS | −0.01 (0.34) | **+0.78 (0.83)** |
+| NDVI | Aqua − VIIRS | −0.08 (0.27) | **+0.77 (0.84)** |
+| EVI | Terra − Aqua | +0.04 (0.58) | −0.17 (0.90) |
+| EVI | Terra − VIIRS | +0.13 (0.56) | −0.20 (0.67) |
+| EVI | Aqua − VIIRS | +0.09 (0.50) | −0.04 (0.67) |
+
+NDVI by year, Terra − VIIRS: 2023 +0.23, 2024 +0.31, 2025 +0.68, 2026 +1.52. Aqua − VIIRS: −0.11,
++0.35, +0.80, +1.31. Full series: `docs/week0/drift_provisional_monthly.csv` and
+`drift_provisional_summary.csv`.
+
+### Findings
+
+1. **NDVI: Terra and Aqua agree; both diverge from VIIRS from 2024, growing each year.** The
+   attribution rule (Terra diverging from both references while they agree) is not met, because
+   Terra diverges from VIIRS only. **The cause is not established.** Three explanations fit:
+   - (a) a drift shared by Terra and Aqua. Both orbits are drifting away from local noon, Terra
+     earlier and Aqua later, so the sun is lower for both and NDVI could shift the same way in
+     each;
+   - (b) a change specific to Suomi NPP VIIRS near the end of its mission;
+   - (c) pixel mixing: VIIRS's 500 m pixels hold more non-coffee cover, which may have responded
+     differently to 2024–26 conditions.
+
+   The rule as designed cannot tell (a) from (b), because it treats Aqua as an independent
+   reference, and Aqua is drifting too.
+2. **EVI, the index's vegetation term (Amendment 19), shows no systematic divergence.** Signed
+   differences stay within ±0.2 SD in 2024–26 for every pair. EVI disagrees more from month to
+   month than NDVI does: absolute differences were already 0.50–0.58 SD in 2018–23, and the
+   Terra–Aqua figure rose to 0.90 in 2024–26 (2026 alone, nine months: −0.69 signed).
+3. **Provisional reading of trigger (b)** on the MG+SP total, using the signed mean: not met for
+   NDVI (Terra − Aqua +0.01) or EVI (−0.17 and −0.20). This is not the formal evaluation.
+4. **Trigger (b) does not say signed or absolute.** "Diverges by more than 0.5 SD, averaged over
+   2024–2026" can be read either way. Read as an absolute mean, EVI would trip on ordinary
+   product noise, which was already 0.50–0.58 SD in 2018–23. A signed mean measures systematic
+   drift. To settle before the formal run.
+5. **Earth Engine compute quota.** During this run the project exceeded its noncommercial quota
+   (Community tier, 150 EECU-hours a month) and is in restricted mode: reduced concurrency until
+   the quota resets on 1 November (Pacific time). The Contributor tier (1,000 EECU-hours a month)
+   needs a billing account, has no charge for noncommercial use, and applies as soon as the tier is
+   changed.
 
 ## 4. Live vegetation fallback: VJ113A1 and HLS (Amendments 25 and 30)
 
