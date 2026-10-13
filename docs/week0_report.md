@@ -156,6 +156,27 @@ Engine catalog and current (`gee/week0_verify_ids.py`).
    months in the baseline means HLS cannot carry the rainy season; the fallback then falls to
    VJ113A1 or, failing that, a declared gap.
 
+### Further implementation details — set before the run, within the confirmed method; for owner review
+
+7. **State lines:** GAUL 2025 level 1 (`FAO/GAUL/2025/level1`), following the owner's rule that
+   later runs use GAUL 2025. The drift check used GAUL 2015, so the two masks can differ slightly
+   along state borders.
+8. **Bands:** NIR is HLSS30 `B8A` (narrow NIR) and HLSL30 `B5`; red `B4`; blue `B2`. The bands
+   are reflectance already (checked on images, 2026-10-13), so no scale factor is applied.
+9. **Per-point monthly value:** the median of that point's clear observations in the month,
+   robust to leftover cloud. EVI values outside −1 to 1 are screened out. The month's value is
+   the mean over points with data.
+10. **"Any" coverage** (at least one observation of any quality) is reported beside clear coverage,
+    so gaps in Earth Engine's HLS archive are not mistaken for cloud. Earth Engine's catalog page
+    says historical HLS ingestion was expected to finish in 2025.
+11. **Observation counts** can double-count where Sentinel-2 tiles overlap; coverage (at least one
+    observation) is not affected.
+12. **The sample is drawn once and its coordinates reused,** so it is not recomputed for every
+    month (Amendment 32).
+13. **No anomalies yet:** the script saves the monthly series only. The baseline for comparisons
+    with HLS is open (§10), so the third-reference comparison waits for that decision.
+14. **Cost:** a one-month probe runs first to measure EECU cost before the full run.
+
 ### Results
 
 Pending Earth Engine access.
