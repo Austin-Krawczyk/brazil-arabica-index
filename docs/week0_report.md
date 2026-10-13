@@ -301,6 +301,19 @@ Scope (owner decision, 2026-10-13): every pentad from 2015; daily for September�
   - **What is missing is the project's asset root itself, not a permission.** Batch exports to
     the bucket work, since they need no asset. Fixing the root needs a step outside the API calls
     tried here: selecting the project in the Code Editor's Assets panel, or Earth Engine support.
+- **Resolved, 2026-10-13:** the owner created a folder (`assets/test`) under the project in the
+  Code Editor, which provisioned the asset root. The API login could then see it, so the
+  credential's account was never the problem.
+- **Ingestion proven end to end (122 pentads), 2026-10-13:**
+  - 122 files uploaded to `gs://brazil-arabica-index-ingest/chc_prelim/pentad/`; 122 ingestion
+    tasks, **122 succeeded, 0 failed**, in about 6 minutes. Earth Engine reported no EECU usage on
+    the ingestion tasks.
+  - The collection `projects/<EE_PROJECT>/assets/chc_prelim_pentad_mgsp` **loads**: 122 images,
+    2015-01-01 to 2016-09-06 (the start of pentad 2016.09.2), band `precipitation`, EPSG:4326,
+    0.05° (about 5,566 m). The empty daily collection `chc_prelim_daily_mgsp` was created too.
+  - **Values:** 15 of 15 land pixels (3 each in 5 random pentads) match the local clipped files to
+    within 0.001 mm.
+  - **Missing data:** 5 of 5 cells that are −9999 locally (ocean) are masked in Earth Engine.
 
 ## 6. Other Week 0 checklist items, not yet started
 
