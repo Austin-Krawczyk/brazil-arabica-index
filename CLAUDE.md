@@ -190,8 +190,7 @@ most drift-affected, and it is the season every note reports.
   - **Anomalies** are calendar-month anomalies for every product, against a common July
     2017–2025 baseline (Amendment 26, second revision), each computed over the product's own
     pixels within the mask. Monthly aggregation removes the offset between the products'
-    compositing windows; the common baseline puts every product, HLS included, on the same
-    years.
+    compositing windows; the common baseline puts every product on the same years.
   - **Provisional run, now:** over all class-46 coffee pixels in MG and SP, labelled provisional.
     **Formal run:** per region and for the four-region total, once the regional municipality
     lists exist (§3). Trigger (b) is evaluated on the formal run only. Both go in the Week 0
@@ -210,7 +209,7 @@ most drift-affected, and it is the season every note reports.
   differences are reported either way.
 - **Fallback (Amendment 25, revised 2026-10-13).** `VNP13A1` is no longer the live fallback:
   NASA ends delivery of Suomi NPP VIIRS science data on 2 November 2026 (Earthdata, VNP13A1
-  v002). It stays only as the second reference in the drift check, 2018 to October 2026. The live
+  v002). It stays only as the drift check's reference, 2018 to October 2026. The live
   fallback, in order:
   - (a) **HLS**, `NASA/HLS/HLSS30/v002`, aggregated to monthly EVI over the mask, if it passes the
     rainy-season coverage test below;
@@ -222,9 +221,9 @@ most drift-affected, and it is the season every note reports.
     the first rainy season in it is 2017/18 and the sensor set is Sentinel-2 A/B throughout;
     Sentinel-2C is treated as A's replacement in 2024–25. The per-month observation count is
     reported so any step in the record shows, including January–March 2017, as information.
-    HLSL30 stays out of the baseline; its coverage is reported separately, as information. The
-    same sample gives HLSS30 NDVI and EVI monthly anomalies from July 2017, the second reference
-    in the drift check (Amendment 31).
+    HLSL30 stays out of the baseline; its coverage is reported separately, as information. HLS
+    was also to be the second drift-check reference (Amendment 31); it failed that cost gate and
+    is not a reference (Amendment 31, revised).
   - **Rainy-season coverage test.** Monthly coverage is the share of mask pixels with at least
     one clear HLSS30 observation in the month. If it falls below 60% in more than two months of
     the November–March baseline period, record that HLS cannot carry the rainy season, and the
