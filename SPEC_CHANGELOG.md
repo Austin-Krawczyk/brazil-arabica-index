@@ -477,3 +477,11 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   CHC's daily files are in. The 2015–2024 pentads are needed only for the backtest-stage rerun, so
   note 1 is not affected. Owner decision; the deviation ends when the CHC archive is complete and
   ingested.
+
+- 2026-10-13 — **AMENDMENT 26 (revised): trigger (b) uses the signed average.** Trigger (b) said
+  "diverges ... by more than 0.5 standard deviations, averaged over 2024–2026" without saying
+  signed or absolute. The provisional drift run showed that the absolute month-to-month difference
+  in EVI anomaly between products was already 0.50–0.58 SD in 2018–23, before any drift concern,
+  so an absolute average would fire on noise. A signed average measures systematic drift, which is
+  what the trigger is for. The original entry above records the 2026-10-12 method unchanged.
+  Approved by owner.

@@ -197,9 +197,11 @@ most drift-affected, and it is the season every note reports.
     they agree is attributed to Terra.
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
-  32 days of the note date; or (b) Terra's anomaly diverges from both references by more than 0.5
-  standard deviations of the 2013–2025 monthly baseline, averaged over 2024–2026, in the coffee-area-weighted four-region total
-  or in two or more regions. Per-region differences are reported either way.
+  32 days of the note date; or (b) Terra's anomaly diverges from both references by a **signed**
+  average of more than 0.5 standard deviations of the 2013–2025 monthly baseline over 2024–2026, in the
+  coffee-area-weighted four-region total or in two or more regions. Signed, not absolute: an
+  absolute average fires on ordinary month-to-month noise between products (Amendment 26,
+  revised). Per-region differences are reported either way.
 - **Fallback (Amendment 25, revised 2026-10-13).** `VNP13A1` is no longer the live fallback:
   NASA ends delivery of Suomi NPP VIIRS science data on 2 November 2026 (Earthdata, VNP13A1
   v002). It stays only as the second reference in the drift check, 2018 to October 2026. The live
