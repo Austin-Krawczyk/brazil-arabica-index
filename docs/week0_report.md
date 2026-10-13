@@ -334,6 +334,42 @@ issue number to be added here once the owner files it.
   (Amendment 31). With HLS out, it cannot be evaluated as written, and VIIRS delivery ends on
   2 November 2026.
 
+### VJ113A1 ingestion: scoping only, no download (owner request 2026-10-13)
+
+Sources checked: NASA's Common Metadata Repository (public metadata, no login) and the AppEEARS
+product API.
+
+- **Product:** VJ113A1 version 002, "VIIRS/JPSS1 Vegetation Indices 16-Day L3 Global 500m SIN
+  Grid" (NOAA-20), collection `C2519122065-LPCLOUD`, LP DAAC, **2018-01-01 to present**. The latest
+  composite starts 2026-09-14. Composites are 16-day, starting every 8 days, so 46 a year.
+- **Layers needed:** `500_m_16_days_EVI`, `500_m_16_days_NDVI` (scale 0.0001, fill −15000, valid
+  −1 to 1), and `500_m_16_days_pixel_reliability` (0–11, fill −4).
+- **Tiles:** MG and SP coffee lies in sinusoidal tiles h13v10, h13v11, h14v10 and h14v11. A
+  bounding-box search also returns h12v10 and h12v11, which touch only the box's corners.
+- **Files (route A, whole HDF5 granules):** `VJ113A1.A{YYYYDDD}.h{13,14}v{10,11}.002.{production}.h5`
+  from `https://data.lpdaac.earthdatacloud.nasa.gov/lp-prod-protected/VJ113A1.002/`: **1,604
+  files, 93.9 GB** (median 82 MB; h14v11 is mostly ocean and its files are small). Each would be
+  read, the three layers extracted and clipped, and the original deleted. The local raster library
+  reads HDF5 (checked). Georeferencing from the tile index has to be built, since GDAL may not
+  georeference these files on its own.
+- **Files (route B, AppEEARS area subset):** the same three layers for the MG/SP polygon,
+  2018-01-01 to present, delivered as GeoTIFFs by NASA. That is roughly 1,200 files for 401
+  composites; size is not measurable without submitting a request, but it should be a small
+  fraction of route A because only the window and three layers are delivered. Queue time for a
+  request this long is unknown, from hours to days.
+- **Login:** both routes need a **NASA Earthdata Login** account (free), which only the owner can
+  create. Route A then needs an Earthdata bearer token in `.env`; route B needs an AppEEARS session
+  token, which the owner obtains by logging in. No password is handled by the scripts.
+- **Baseline:** 2018–2025 (owner decision), shorter than the July 2017–2025 baseline of the other
+  products; stated wherever VJ113A1 is used. VJ213A1 (NOAA-21) exists but starts 2023-02-10, too
+  short for a baseline.
+- **Feasibility before the December note: yes, if the Earthdata login is in place by early
+  November.** Route B is the lighter route; route A is the fallback if AppEEARS's queue is slow.
+  After download the path is the proven one: bucket, ingestion, value check against the source
+  files, then the 2018–2025 baseline. Not covered: the rainy-season coverage test was written for
+  HLS. VJ113A1's 16-day composites should cover nearly every pixel by design, but its
+  pixel-reliability share over the mask should be checked the same way before it is relied on.
+
 ### Compute used on 2026-10-13, measured (Amendment 32)
 
 | Run | EECU-hours |
