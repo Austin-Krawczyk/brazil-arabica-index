@@ -18,7 +18,8 @@ Method, recorded in docs/week0_report.md before this ran:
               over points with data
   months      2017-01 to 2026-09. Baseline July 2017 to December 2025; January-June 2017 reported
               as information
-  granules    only those containing a sample point (owner decision 2026-10-13)
+  granules    only those on MGRS tiles (UTM zones 21-24) containing a sample point; excludes
+              HLSS30's date-line granules with infinite footprints (owner decision 2026-10-13)
   cost        ee.profilePrinting for every run, saved under docs/week0/profiles/
 
 Anomalies against a baseline are NOT computed here: the baseline for comparisons with HLS is open
@@ -59,6 +60,11 @@ BASELINE = ("2017-07", "2025-12")
 RAINY = (11, 12, 1, 2, 3)
 COVERAGE_MIN, MONTHS_ALLOWED = 0.60, 2
 CACHE = ROOT / "data" / "derived"
+# HLSS30 in Earth Engine holds granules from date-line tiles (UTM zones 01 and 60) whose footprints
+# are infinite, so filterBounds returns them everywhere (found 2026-10-13). MG and SP lie in UTM
+# zones 22-24; 21 is kept as a margin because tiles extend past zone edges.
+ZONES = (21, 22, 23, 24)
+TILE_YEAR = ("2024-01-01", "2025-01-01")  # a full year of granules to list the tiles covering points
 
 
 def region():
@@ -122,7 +128,18 @@ def sample_points(states, n_use):
     return fc, len(pts), geom
 
 
-def month_stats(asset, points, bounds, with_indices):
+def point_tiles(asset, geom):
+    """MGRS tiles (in zones 21-24) whose granules contain at least one sample point, listed once
+    from a year of granule metadata, so no geometry test runs inside the monthly computation."""
+    zones = ee.Filter.Or(*[ee.Filter.stringStartsWith("system:index", f"T{z}") for z in ZONES])
+    ids = (ee.ImageCollection(asset).filterDate(*TILE_YEAR).filterBounds(geom).filter(zones)
+           .aggregate_array("system:index").getInfo())
+    tiles = sorted({i.split("_")[0] for i in ids})
+    print(f"  {asset.split('/')[-2]}: {len(tiles)} tiles contain sample points")
+    return tiles
+
+
+def month_stats(asset, points, bounds, with_indices, tiles):
     nir_b, red_b, blue_b = BANDS[asset]
 
     def prep(img):
@@ -140,7 +157,9 @@ def month_stats(asset, points, bounds, with_indices):
 
     def per_month(start):
         start = ee.Date(start)
-        col = ee.ImageCollection(asset).filterBounds(bounds).filterDate(start, start.advance(1, "month"))
+        col = (ee.ImageCollection(asset).filterBounds(bounds).filterDate(start, start.advance(1, "month"))
+               .map(lambda i: i.set("tile", ee.String(i.get("system:index")).split("_").get(0)))
+               .filter(ee.Filter.inList("tile", tiles)))
         stack = col.map(prep)
         bands = [stack.select("clear").sum().rename("n_clear"),
                  stack.select("any").sum().rename("n_any")]
@@ -164,22 +183,31 @@ def month_stats(asset, points, bounds, with_indices):
     return per_month
 
 
-def run(asset, months, points, bounds, with_indices):
-    per_month = month_stats(asset, points, bounds, with_indices)
-    rows = []
-    for i in range(0, len(months), 3):
-        chunk = months[i:i + 3]
+def run(asset, months, points, bounds, with_indices, tiles, cache=None):
+    """One month per request (keeps each inside the interactive time limit); with a cache file,
+    each finished month is saved at once and skipped on a rerun."""
+    product = asset.split("/")[-2]
+    done = pd.read_csv(cache, dtype={"month": str}) if cache is not None and cache.exists() else None
+    have = set() if done is None else set(done.loc[done["product"] == product, "month"])
+    per_month = month_stats(asset, points, bounds, with_indices, tiles)
+    rows = [] if done is None else done[done["product"] == product].to_dict("records")
+    for m in months:
+        if m[:7] in have:
+            continue
         for attempt in range(5):
             try:
-                fc = ee.FeatureCollection(ee.List(chunk).map(per_month)).getInfo()
+                fc = ee.FeatureCollection(ee.List([m]).map(per_month)).getInfo()
                 break
             except (ee.EEException, ConnectionError, OSError) as e:
                 if attempt == 4:
                     raise
-                print(f"  {asset.split('/')[-2]} {chunk[0][:7]}: retry {attempt + 1} after {str(e)[:80]}")
+                print(f"  {product} {m[:7]}: retry {attempt + 1} after {str(e)[:80]}")
                 time.sleep(30 * (attempt + 1))
-        rows += [dict(product=asset.split("/")[-2], **f["properties"]) for f in fc["features"]]
-        print(f"  {asset.split('/')[-2]}: through {chunk[-1][:7]}")
+        new_rows = [dict(product=product, **f["properties"]) for f in fc["features"]]
+        rows += new_rows
+        if cache is not None:
+            pd.DataFrame(new_rows).to_csv(cache, mode="a", header=not cache.exists(), index=False)
+        print(f"  {product}: {m[:7]} done")
     return rows
 
 
@@ -217,14 +245,17 @@ def main():
     t0 = time.time()
     with ee.profilePrinting(destination=buf):
         states = region()
-        points, n_points, bounds = sample_points(states, a.points)
-        # Only granules containing a sample point (owner decision 2026-10-13): a granule without a
-        # point contributes nothing to any point value, so results are unchanged and cost falls.
+        points, n_points, geom = sample_points(states, a.points)
+        bounds = states.geometry().bounds()
+        # Only granules on tiles containing a sample point (owner decision 2026-10-13): a granule
+        # without a point contributes nothing to any point value, so results are unchanged.
+        tiles = {asset: point_tiles(asset, geom) for asset in (S30, L30)}
         months = ([f"{a.month}-01"] if probe else
                   pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist())
         l30_months = months if probe else [m for m in months if int(m[5:7]) in RAINY]
-        rows = run(S30, months, points, bounds, with_indices=True)
-        rows += run(L30, l30_months, points, bounds, with_indices=False)
+        cache = None if probe else CACHE / f"_tmp_hls_rows_{a.points}.csv"
+        rows = run(S30, months, points, bounds, with_indices=True, tiles=tiles[S30], cache=cache)
+        rows += run(L30, l30_months, points, bounds, with_indices=False, tiles=tiles[L30], cache=cache)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     prof_dir = WEEK0 / "profiles"
     prof_dir.mkdir(parents=True, exist_ok=True)

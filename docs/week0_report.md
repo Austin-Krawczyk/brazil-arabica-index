@@ -239,6 +239,27 @@ month, both products together**, which keeps option C under about 150 EECU-hours
 option C runs and its actual total is recorded here; if not, the run stops and the project moves
 to option D (the coverage test only).
 
+### Re-probe attempt 1 failed to run; HLSS30 date-line granules found (2026-10-13)
+
+- The point-based filter, applied inside the monthly computation, hit Earth Engine's user memory
+  limit on all five tries for December 2024. The run was stopped; there is no cost figure for it.
+- **Finding: HLSS30 in Earth Engine contains granules with infinite footprints.** They are on
+  date-line tiles (UTM zones 01 and 60, e.g. `T01FBF`, footprint bounds ±infinity), so
+  `filterBounds` returns them for any point on Earth. At one Varginha point in December 2024,
+  56 of the 61 HLSS30 granules returned were these; 5 were from the real tile `T23KMS`. HLSL30 is
+  unaffected. Over the MG/SP bounding box in February 2025 they were 80 of 1,815 HLSS30 granules,
+  but each one intersects every sample point, so they dominated the per-point work in the earlier
+  probes. They hold no data over Brazil, so no value computed so far is affected; only cost was.
+- **Fix, within the owner's image-filter decision:** keep granules from UTM zones 21–24 (MG and
+  SP lie in 22–24; 21 is a margin because tiles extend past zone edges), and restrict each month
+  to the MGRS tiles whose granules contain a sample point, listed once from 2024's granule
+  metadata. No geometry test runs inside the monthly computation. February 2025 counts: HLSS30
+  1,735 granules in zones 21–24 over the bounding box, 599 on point tiles; HLSL30 471 on point
+  tiles.
+- **Probe month moves from December 2024 to November 2024**, because December 2024 was partly
+  computed in the failed attempts and could be cached. The pass rule is unchanged: at most 1.2
+  EECU-hours for the month, both products.
+
 ### Probe results (2026-10-13), and the cost of the full run
 
 - **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth
