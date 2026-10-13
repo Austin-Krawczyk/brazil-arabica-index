@@ -179,8 +179,13 @@ Scope (owner decision, 2026-10-13): every pentad from 2015; daily for Septemberâ
   reported as not yet available until CHC's daily files are in. The 2015â€“2024 pentads are needed
   only for the backtest-stage sensitivity rerun, so note 1 does not depend on them. Logged as a
   temporary deviation in `SPEC_CHANGELOG.md`.
-- **Ingestion** (`gee/chc_prelim_ingest.py`) waits for billing and `GCS_BUCKET`. Bucket name
-  `brazil-arabica-index-ingest`, or with the owner's GitHub handle appended if that is taken.
+- **Ingestion** (`gee/chc_prelim_ingest.py`): billing is on and the bucket
+  `brazil-arabica-index-ingest` exists (owner-created 2026-10-13; US multi-region, uniform access,
+  public access prevented). The first run for the 122 downloaded pentads **stopped before
+  uploading anything**: Earth Engine reports that the project's asset folder
+  (`projects/<EE_PROJECT>/assets`) does not exist or does not allow this login to create assets,
+  so the collection could not be created. Not yet resolved; the bucket is untouched. A dry run
+  also exposed a counting bug (totals carried over from pentad to daily), now fixed.
 
 ## 6. Other Week 0 checklist items, not yet started
 

@@ -97,8 +97,9 @@ def main():
     files = sorted(SOURCE.glob("*/*.tif"))
     if not files:
         raise SystemExit(f"No files in {SOURCE}; run gee/chc_prelim_fetch.py first.")
-    counts = {"uploaded": 0, "upload skipped": 0, "ingest started": 0, "already ingested": 0}
     for kind in ("pentad", "daily"):
+        counts = {"files": 0, "uploaded": 0, "upload skipped": 0, "ingest started": 0,
+                  "already ingested": 0}
         collection = f"projects/{project}/assets/chc_prelim_{kind}_mgsp"
         ensure_collection(collection, args.dry_run)
         done = set() if args.dry_run and not _exists(collection) else existing_images(collection)
@@ -110,6 +111,7 @@ def main():
             done = set()
 
         for path in (f for f in files if f.parent.name == kind):
+            counts["files"] += 1
             with rasterio.open(path) as src:
                 tags = src.tags()
             start = dt.date.fromisoformat(tags["start_date"])
