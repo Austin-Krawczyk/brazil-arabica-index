@@ -438,4 +438,7 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   share of mask pixels with at least one clear HLSS30 observation falls below 60% in more than two
   months of the November–March baseline period, HLS is recorded as unable to carry the rainy
   season, and the fallback falls to VJ113A1 or, failing that, a declared gap with no vegetation
-  reading, stated in the note. Approved by owner.
+  reading, stated in the note. Revised before the first run, the same day: the baseline starts in
+  July 2017, so its first rainy season (2017/18) has both Sentinel-2 A and B; January–March 2017
+  counts are still reported, as information, so the single-sensor step is visible. Approved by
+  owner.
