@@ -126,7 +126,9 @@ where a row says otherwise.
 |---|---|---|---|
 | **Baseline vegetation — PRIMARY** | `MODIS/061/MOD13Q1` | 250 m, 16-day, 2000– | NDVI/EVI anomalies; the backtest baseline (§4a). Terra is at end of mission and its orbit is drifting: continuity check, trigger and fallback in §4a |
 | Drift check only | `MODIS/061/MYD13Q1` (Aqua) | 250 m, 16-day, 2002– | Week 0 Terra drift check (§4a). **Not yet verified to resolve.** |
-| Vegetation fallback — declared, not active | `NASA/VIIRS/002/VNP13A1` | 500 m, 16-day composites, 2012– | Used only if the §4a trigger fires; second reference in the Week 0 drift check. **Not yet verified to resolve.** |
+| Drift-check reference only | `NASA/VIIRS/002/VNP13A1` | 500 m, 16-day composites, 2012– | Second reference in the Week 0 drift check, 2018 to October 2026 only. **Not a fallback:** NASA ends Suomi NPP VIIRS delivery on 2 November 2026 (§4a). **Not yet verified to resolve.** |
+| Vegetation fallback, candidate (a) | VJ113A1 (NOAA-20 VIIRS); Earth Engine ID to be found | 500 m, 16-day composites | Live fallback if it is in the Earth Engine catalog and current (§4a). **Not yet verified.** |
+| Vegetation fallback, candidate (b) | NASA HLS: HLSL30 + HLSS30; Earth Engine IDs to be confirmed | 30 m; Landsat from 2013, Sentinel-2 from 2015 | Live fallback otherwise, as monthly EVI over the mask (§4a). **Not yet verified.** |
 | Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
 | Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
 | Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
@@ -189,13 +191,24 @@ most drift-affected, and it is the season every note reports.
   32 days of the note date; or (b) Terra's anomaly diverges from both references by more than 0.5
   baseline standard deviations, averaged over 2024–2026, in the coffee-area-weighted four-region total
   or in two or more regions. Per-region differences are reported either way.
-- **Fallback, declared now: `NASA/VIIRS/002/VNP13A1`** (500 m, from 2012).
-  - If triggered, the current-season anomaly is computed against VNP13A1's own 2012–2025
-    baseline, never against MODIS's.
-  - The headline backtest stays on MODIS. The vegetation component is rerun on VNP13A1 for crops
-    2013–2026, and the change in skill is reported beside the headline, as for CHIRPS-prelim (§9).
-  - At 500 m, VNP13A1 blurs smallholder terrain more than MODIS does, so the Zona da Mata caveat
-    is stronger under the fallback, and the note says so.
+- **Fallback (Amendment 25).** `VNP13A1` is no longer the live fallback: NASA ends delivery of
+  Suomi NPP VIIRS science data on 2 November 2026 (Earthdata, VNP13A1 v002). It stays only as the
+  second reference in the drift check, 2018 to October 2026. The live fallback, in order of
+  preference:
+  - (a) VJ113A1 (NOAA-20 VIIRS, 500 m), if it is in the Earth Engine catalog and current;
+  - (b) otherwise NASA HLS (HLSL30 + HLSS30, 30 m; Landsat from 2013, Sentinel-2 from 2015),
+    aggregated to monthly EVI over the mask.
+
+  Both are tested once Earth Engine is available, and reported before one is chosen. HLS has no
+  end-of-mission risk through 2027, so it is the safer choice on continuity even if VJ113A1
+  exists.
+  - If triggered, the current-season anomaly is computed against the fallback's own baseline,
+    never against MODIS's.
+  - The headline backtest stays on MODIS. The vegetation component is rerun on the fallback for
+    the crops its record covers, and the change in skill is reported beside the headline, as for
+    CHIRPS-prelim (§9).
+  - Resolution changes the Zona da Mata caveat: VJ113A1 at 500 m blurs smallholder terrain more
+    than MODIS does, HLS at 30 m less. The note says which applies.
   - **Mid-season rule.** Trigger (b) is evaluated once, in Week 0, and binds for the whole season.
     Trigger (a) is evaluated at each note date; if it fires, the fallback applies to that note and
     every later note for the crop, and each note states which product each reading used. Prior

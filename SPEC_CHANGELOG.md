@@ -379,3 +379,16 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   fixed pass marks instead of "a stated majority"; W1 names the EVI series. Revised after review
   the same day: §4c Conab granularity had been listed under "Closed" while still blocking; it is
   now marked as a blocking row in the checklist and removed from "Closed". Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 25: VIIRS VNP13A1 is removed as the live vegetation fallback.** NASA's
+  Earthdata record for VNP13A1 v002 states that delivery of Suomi NPP VIIRS science data products
+  will cease on 2 November 2026 (https://www.earthdata.nasa.gov/data/catalog/lpcloud-vnp13a1-002),
+  before note 1. VNP13A1 stays only as the second reference in the Week 0 drift check, 2018 to
+  October 2026. The live fallback, in order of preference: (a) VJ113A1 (NOAA-20 VIIRS, 500 m), the
+  successor NASA names, if it is in the Earth Engine catalog and current; (b) otherwise NASA HLS
+  (HLSL30 + HLSS30, 30 m; Landsat from 2013, Sentinel-2 from 2015), aggregated to monthly EVI over
+  the mask. Both are tested once Earth Engine is available and reported before one is chosen; HLS
+  has no end-of-mission risk through 2027, so it is the safer choice on continuity even if VJ113A1
+  exists. The rules that applied to VNP13A1 now apply to whichever fallback is chosen: its own
+  baseline, a rerun of the vegetation component over the crops its record covers, the resolution
+  caveat for Zona da Mata, and the mid-season rule. Approved by owner.
