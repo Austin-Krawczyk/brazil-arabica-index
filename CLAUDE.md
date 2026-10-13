@@ -128,7 +128,7 @@ where a row says otherwise.
 | Drift check only | `MODIS/061/MYD13Q1` (Aqua) | 250 m, 16-day, 2002– | Week 0 Terra drift check (§4a). **Not yet verified to resolve.** |
 | Drift-check reference only | `NASA/VIIRS/002/VNP13A1` | 500 m, 16-day composites, 2012– | Second reference in the Week 0 drift check, 2018 to October 2026 only. **Not a fallback:** NASA ends Suomi NPP VIIRS delivery on 2 November 2026 (§4a). **Not yet verified to resolve.** |
 | Vegetation fallback, candidate (a) | VJ113A1 (NOAA-20 VIIRS); Earth Engine ID to be found | 500 m, 16-day composites | Live fallback if it is in the Earth Engine catalog and current (§4a). **Not yet verified.** |
-| Vegetation fallback, candidate (b) | NASA HLS: HLSL30 + HLSS30; Earth Engine IDs to be confirmed | 30 m; Landsat from 2013, Sentinel-2 from 2015 | Live fallback otherwise, as monthly EVI over the mask (§4a). **Not yet verified.** |
+| Vegetation fallback, candidate (b) | NASA HLS: **HLSS30 only** (Sentinel-2); Earth Engine ID to be confirmed | 30 m; baseline 2017–2025 | Live fallback otherwise, as monthly EVI over the mask, subject to the rainy-season coverage test (§4a). HLSL30 coverage reported as information only. **Not yet verified.** |
 | Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
 | Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
 | Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
@@ -211,6 +211,15 @@ most drift-affected, and it is the season every note reports.
   Both are tested once Earth Engine is available, and reported before one is chosen. HLS has no
   end-of-mission risk through 2027, so it is the safer choice on continuity even if VJ113A1
   exists.
+  - **HLS evaluation (Amendment 30).** HLSS30 only, with a 2017–2025 baseline, so the sensor set
+    is Sentinel-2 A/B throughout; Sentinel-2C is treated as A's replacement in 2024–25. The
+    per-month observation count is reported so any step in the record shows. HLSL30 stays out of
+    the baseline; its coverage is reported separately, as information.
+  - **Rainy-season coverage test.** Monthly coverage is the share of mask pixels with at least
+    one clear HLSS30 observation in the month. If it falls below 60% in more than two months of
+    the November–March baseline period, record that HLS cannot carry the rainy season. The
+    fallback then falls to VJ113A1 or, failing that, a declared gap: no vegetation reading, stated
+    in the note.
   - If triggered, the current-season anomaly is computed against the fallback's own baseline,
     never against MODIS's.
   - The headline backtest stays on MODIS. The vegetation component is rerun on the fallback for

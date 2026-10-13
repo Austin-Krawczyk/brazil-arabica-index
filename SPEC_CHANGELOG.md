@@ -427,3 +427,15 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   as not established rather than confirmed. The rule no longer depends on it: dry-day counts from
   daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping
   months, now stated in §9 and the §10 checklist. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 30: how HLS is evaluated as the vegetation fallback.** HLS's
+  observation density changes over its record (Landsat 8 only to 2015, Sentinel-2A from late 2015,
+  2B from 2017, Landsat 9 from 2021, Sentinel-2C from 2024), so a baseline across those years would
+  mix data availability with signal (§9). HLS is now evaluated on HLSS30 only, with a 2017–2025
+  baseline, so the sensor set is Sentinel-2 A/B throughout, with 2C treated as A's replacement in
+  2024–25; the per-month observation count is reported so any step shows. HLSL30 is left out of
+  the baseline and its coverage reported separately as information. Rainy-season test: if the
+  share of mask pixels with at least one clear HLSS30 observation falls below 60% in more than two
+  months of the November–March baseline period, HLS is recorded as unable to carry the rainy
+  season, and the fallback falls to VJ113A1 or, failing that, a declared gap with no vegetation
+  reading, stated in the note. Approved by owner.
