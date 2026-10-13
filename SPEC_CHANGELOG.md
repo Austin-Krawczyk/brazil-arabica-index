@@ -485,3 +485,14 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   so an absolute average would fire on noise. A signed average measures systematic drift, which is
   what the trigger is for. The original entry above records the 2026-10-12 method unchanged.
   Approved by owner.
+
+- 2026-10-13 — **AMENDMENT 31: the drift check's references are VIIRS and HLS; Aqua is no longer
+  a reference.** The provisional run showed Terra and Aqua agreeing on NDVI (+0.01 SD signed,
+  2024 to Sep 2026) while both diverged from VIIRS (+0.78). Aqua's orbit is drifting too, so it is
+  not independent of Terra, and the original rule (Terra diverging from both references while
+  they agree) could not separate a shared MODIS drift from a VIIRS-specific change. HLSS30 NDVI and
+  EVI monthly anomalies from July 2017, on the HLS test's 20,000-pixel sample, become the second
+  reference. Terra divergence is attributed to Terra only when VIIRS and HLS agree with each other;
+  trigger (b) is read against VIIRS and HLS; Aqua is reported alongside but does not count. Open:
+  HLS starts in July 2017, so it cannot share Amendment 26's 2013–2025 baseline; the baseline for
+  comparisons with HLS is to be settled before the HLS test runs (§10). Approved by owner.

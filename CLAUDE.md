@@ -183,21 +183,25 @@ and NASA's 2023 mission status put end of science at February 2027. The current 
 most drift-affected, and it is the season every note reports.
 
 - **Week 0 drift check (method fixed before it runs, Amendment 26).** Compare `MOD13Q1` NDVI and
-  EVI anomalies with `MYD13Q1` (Aqua) and `VNP13A1` (VIIRS), 2018 to October 2026. Compare
-  anomalies, not levels: the products differ in resolution and overpass time.
-  - **Anomalies** are calendar-month anomalies for all three products, against a common 2013–2025
+  EVI anomalies with the two references (Amendment 31): `VNP13A1` (VIIRS), 2018 to October 2026,
+  and HLSS30 (HLS), from July 2017, on the HLS test's 20,000-pixel sample. `MYD13Q1` (Aqua) is
+  reported alongside but is **not a reference**: its orbit is drifting too, so it is not
+  independent of Terra. Compare anomalies, not levels: the products differ in resolution and
+  overpass time.
+  - **Anomalies** are calendar-month anomalies for every product, against a common 2013–2025
     baseline, each computed over the product's own pixels within the mask. Monthly aggregation
-    removes the offset between the products' compositing windows; the common baseline puts all
-    three on the same years.
+    removes the offset between the products' compositing windows; the common baseline puts them
+    on the same years. HLS starts in July 2017 and cannot share the 2013–2025 baseline; the
+    baseline for comparisons with HLS is open (§10).
   - **Provisional run, now:** over all class-46 coffee pixels in MG and SP, labelled provisional.
     **Formal run:** per region and for the four-region total, once the regional municipality
     lists exist (§3). Trigger (b) is evaluated on the formal run only. Both go in the Week 0
     report.
-  - Report the difference series and its trend. Divergence of Terra from both references while
-    they agree is attributed to Terra.
+  - Report the difference series and its trend. **Divergence of Terra is attributed to Terra
+    only when VIIRS and HLS agree with each other** (Amendment 31).
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
-  32 days of the note date; or (b) Terra's anomaly diverges from both references by a **signed**
+  32 days of the note date; or (b) Terra's anomaly diverges from both references (VIIRS and HLS) by a **signed**
   average of more than 0.5 standard deviations of the 2013–2025 monthly baseline over 2024–2026, in the
   coffee-area-weighted four-region total or in two or more regions. Signed, not absolute: an
   absolute average fires on ordinary month-to-month noise between products (Amendment 26,
@@ -216,7 +220,9 @@ most drift-affected, and it is the season every note reports.
     the first rainy season in it is 2017/18 and the sensor set is Sentinel-2 A/B throughout;
     Sentinel-2C is treated as A's replacement in 2024–25. The per-month observation count is
     reported so any step in the record shows, including January–March 2017, as information.
-    HLSL30 stays out of the baseline; its coverage is reported separately, as information.
+    HLSL30 stays out of the baseline; its coverage is reported separately, as information. The
+    same sample gives HLSS30 NDVI and EVI monthly anomalies from July 2017, the second reference
+    in the drift check (Amendment 31).
   - **Rainy-season coverage test.** Monthly coverage is the share of mask pixels with at least
     one clear HLSS30 observation in the month. If it falls below 60% in more than two months of
     the November–March baseline period, record that HLS cannot carry the rainy season, and the
@@ -650,6 +656,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
+| Drift-check baseline once HLS is a reference: a common July 2017–2025 baseline for every product (recomputable from the saved monthly series), or HLS on its own baseline | Before the HLS test runs | §4a |
 | Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
 | Exact Conab 2027 survey dates, and whether crop 2026's final survey comes in December or January | Before the December note | §1, §6 |
 | Planet monthly area quota, from the dashboard | Before any Planet task | §4d |
