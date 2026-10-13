@@ -1,26 +1,40 @@
 # Week 0 report
 
-Status: **in progress**, 2026-10-12. Findings are recorded before anything in the spec changes
-because of them. Earth Engine checks are pending until `EE_PROJECT` is set in `.env`.
+Status: **in progress**, updated 2026-10-13. Findings are recorded before anything in the spec
+changes because of them.
 
 ## 1. Dataset verification (§10 checklist)
 
-Two kinds of check per ID: what the provider's documentation says (done), and whether it
-resolves and is current in Earth Engine (pending; `gee/week0_verify_ids.py`, results to
-`docs/week0/ids.csv`).
+Two kinds of check per ID: what the provider's documentation says, and whether it resolves and
+is current in Earth Engine (`gee/week0_verify_ids.py`, run 2026-10-13, results in
+`docs/week0/ids.csv`). Latest dates are the start date of the newest image.
 
 | ID | Documentation finding | In Earth Engine |
 |---|---|---|
-| `MODIS/061/MOD13Q1` | Primary layer; verified in the 2026-10-12 pre-flight. | End date pending |
-| `MODIS/061/MYD13Q1` | NDVI, EVI scale factor 0.0001; raw range −2000 to 10000; `SummaryQA` bits 0–1 (0 good, 1 marginal, 2 snow/ice, 3 cloudy). Catalog availability to 2026-09-06. | Pending |
-| `NASA/VIIRS/002/VNP13A1` | 500 m, from 2012-01-17. GEE page gives no scale factor. Earthdata: NDVI/EVI int16, fill −15000, valid −10000 to 10000, "scale factor 10000" (read as divide by 10000; to confirm in the V2.1.2 user guide). `pixel_reliability` 0–11. **NASA ends Suomi NPP VIIRS delivery on 2 November 2026**, so it is a drift-check reference only (Amendment 25). | Pending |
-| VJ113A1 (fallback candidate a) | NASA's named successor (NOAA-20 VIIRS, 500 m, 16-day). Earth Engine ID unknown. | Catalog search pending |
-| HLS: HLSL30 + HLSS30 (fallback candidate b) | 30 m; Landsat from 2013, Sentinel-2 from 2015. Earth Engine IDs to confirm. | Catalog search pending |
-| `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` | Community catalog: pentad, 2015 onward, weekly updates, latency under 5 days. | Pending: resolves? current? |
+| `MODIS/061/MOD13Q1` | Primary layer; verified in the 2026-10-12 pre-flight. | Resolves; 612 composites, 2000-02-18 to 2026-09-14. **Still updating** as of 2026-10-13. |
+| `MODIS/061/MYD13Q1` | NDVI, EVI scale factor 0.0001; raw range −2000 to 10000; `SummaryQA` bits 0–1 (0 good, 1 marginal, 2 snow/ice, 3 cloudy). Catalog availability to 2026-09-06. | Resolves; 557 composites, 2002-07-04 to 2026-09-06. |
+| `NASA/VIIRS/002/VNP13A1` | 500 m, from 2012-01-17. GEE page gives no scale factor. Earthdata: NDVI/EVI int16, fill −15000, valid −10000 to 10000, "scale factor 10000" (read as divide by 10000; to confirm in the V2.1.2 user guide). `pixel_reliability` 0–11. **NASA ends Suomi NPP VIIRS delivery on 2 November 2026**, so it is a drift-check reference only (Amendment 25). | Resolves; 674 composites (8-day cadence), 2012-01-17 to 2026-09-06; `pixel_reliability` and `VI_Quality` present. |
+| VJ113A1 (fallback candidate a) | NASA's named successor (NOAA-20 VIIRS, 500 m, 16-day). | **Not in Earth Engine.** `NASA/VIIRS/002` holds only SNPP (`VNP*`) products and a NOAA-20 aerosol product; direct probes of `NASA/VIIRS/002/VJ113A1`, `NASA/VIIRS/001/VJ113A1` and `NOAA/VIIRS/002/VJ113A1` all fail. Two independent methods agree. |
+| HLS (fallback candidate b) | 30 m; Landsat from 2013, Sentinel-2 from 2015. | Resolves as `NASA/HLS/HLSS30/v002` (first image at a Sul de Minas point 2015-11-29, latest 2026-09-27) and `NASA/HLS/HLSL30/v002` (2013-04-19 to 2026-10-08). Both carry `Fmask`. The folders also hold `_RAW` and test variants; only `v002` is used. |
+| `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` | Community catalog: pentad, 2015 onward, weekly updates, latency under 5 days. | Resolves and is current (latest pentad 2026-10-06, matching CHC's 2026.10.2). **But the archive starts on 2025-01-01, not 2015:** 128 pentads, none dated before 2025, checked by both `aggregate_min` and a date-filtered count. |
 | CHC prelim files (fallback) | Reachable. Pentad prelim current to 2026.10.2 (6–10 Oct), posted 2026-10-12. Daily `fixed/` prelim current to 2026-10-10, posted 2026-10-12. | Not an Earth Engine asset |
-| `USGS/SRTMGL1_003` | Image, band `elevation`, metres, 30 m, 56°S–60°N; voids filled from ASTER GDEM v2, GMTED2010, NED. Vertical datum not stated on the GEE or Earthdata pages. | Pending |
-| `COPERNICUS/DEM/GLO30_2024_1` | Replaces the deprecated `COPERNICUS/DEM/GLO30` (Amendment 27). ImageCollection, band `DEM`, EGM2008, surface model. | Pending |
-| ERA5-Land soil layers | Confirmed: `volumetric_soil_water_layer_1/2/3` = 0–7, 7–28, 28–100 cm, volume fraction. Weights 0.07/0.21/0.72 (Amendment 28). Catalog availability to 2026-10-07. | Pending |
+| `USGS/SRTMGL1_003` | Image, band `elevation`, metres, 30 m, 56°S–60°N; voids filled from ASTER GDEM v2, GMTED2010, NED. Vertical datum not stated on the GEE or Earthdata pages. | Resolves; band `elevation`. |
+| `COPERNICUS/DEM/GLO30_2024_1` | Replaces the deprecated `COPERNICUS/DEM/GLO30` (Amendment 27). ImageCollection, band `DEM`, EGM2008, surface model. | Resolves; 26,475 tiles, band `DEM`. |
+| ERA5-Land soil layers | Confirmed: `volumetric_soil_water_layer_1/2/3` = 0–7, 7–28, 28–100 cm, volume fraction. Weights 0.07/0.21/0.72 (Amendment 28). Catalog availability to 2026-10-07. | Resolves; 1950-01-01 to 2026-10-07; soil layers 1–3 and `temperature_2m` present. (The first run reported this as not resolving; that was a bug in the script's date conversion, which fails on Windows for dates before 1970. Fixed and rerun.) |
+
+Also checked: `UCSB-CHG/CHIRPS/DAILY` (final) resolves, 16,679 daily images, 1981-01-01 to
+2026-08-31. September's final is not yet in Earth Engine on 2026-10-13, consistent with the rule
+that final for month M counts as published from the 1st of M+2.
+
+### What this changes, pending the owner's decision
+
+1. **VJ113A1 is not available in Earth Engine**, so under Amendment 25 the live fallback is HLS,
+   subject to the rainy-season coverage test, or else a declared gap.
+2. **The CHIRPS-prelim community asset cannot support the sensitivity rerun.** Amendment 9 reruns
+   the vintages whose note dates fall inside the prelim archive. With an archive starting in 2025,
+   only crop 2026's vintages qualify. CHC's own prelim pentad files go back to 2015. None of the
+   declared fallback triggers fired (it resolves, is current and does not lag), so this needs a
+   decision rather than an automatic switch. The §4 row's "2015–" is also wrong for this asset.
 
 ## 2. CHC daily-prelim day split: not established (Amendment 29)
 
