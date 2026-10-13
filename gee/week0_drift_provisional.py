@@ -22,7 +22,9 @@ import ee
 import numpy as np
 import pandas as pd
 
-from common import WEEK0, init
+from common import ROOT, WEEK0, init
+
+CACHE = ROOT / "data" / "derived"  # _tmp_* files there are gitignored
 
 MAPBIOMAS = ("projects/mapbiomas-public/assets/brazil/lulc/collection10/"
              "mapbiomas_brazil_collection10_integration_v1")
@@ -97,15 +99,15 @@ def fetch(name):
     rows = []
     for i in range(0, len(months), 6):  # small batches keep each request inside time limits
         chunk = months[i:i + 6]
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 fc = ee.FeatureCollection(ee.List(chunk).map(per_month)).getInfo()
                 break
-            except ee.EEException as e:
-                if attempt == 2:
+            except (ee.EEException, ConnectionError, OSError) as e:  # incl. transient DNS failures
+                if attempt == 4:
                     raise
-                print(f"  {name} {chunk[0]}: retrying after {str(e)[:80]}")
-                time.sleep(20)
+                print(f"  {name} {chunk[0]}: retry {attempt + 1} after {type(e).__name__}: {str(e)[:80]}")
+                time.sleep(30 * (attempt + 1))
         for f in fc["features"]:
             p = f["properties"]
             rows.append({
@@ -156,11 +158,19 @@ def summarise(df):
 
 def main():
     init()
-    rows = []
+    frames = []
     for name in PRODUCTS:
+        cache = CACHE / f"_tmp_drift_{name}.csv"
+        if cache.exists():  # a finished product is not refetched after a later failure
+            print(f"{name}: using saved results from {cache.name}")
+            frames.append(pd.read_csv(cache, dtype={"month": str}))
+            continue
         print(f"{name}: fetching monthly coffee-weighted means")
-        rows += fetch(name)
-    monthly = anomalies(pd.DataFrame(rows))
+        df = pd.DataFrame(fetch(name))
+        CACHE.mkdir(parents=True, exist_ok=True)
+        df.to_csv(cache, index=False)
+        frames.append(df)
+    monthly = anomalies(pd.concat(frames, ignore_index=True))
     monthly.to_csv(WEEK0 / "drift_provisional_monthly.csv", index=False)
     summary = summarise(monthly)
     summary.to_csv(WEEK0 / "drift_provisional_summary.csv", index=False)

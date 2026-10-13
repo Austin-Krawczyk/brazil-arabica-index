@@ -61,7 +61,10 @@ These are not in the spec and would otherwise be made silently in code:
 
 1. **State boundaries:** FAO GAUL 2015 level 1 (`FAO/GAUL/2015/level1`) for MG and SP. This is a
    dataset not in §4, used for the provisional run only. The formal run uses IBGE municipal
-   boundaries, which the regional lists need anyway.
+   boundaries, which the regional lists need anyway. *Noted at run time:* Earth Engine flags
+   `FAO/GAUL/2015/level1` as deprecated, superseded by `FAO/GAUL/2025/level1`. It still runs and is
+   kept for this run as confirmed; any later run that needs state lines uses
+   `FAO/GAUL/2025/level1` (owner decision, 2026-10-13).
 2. **Mask year:** MapBiomas Collection 10, `classification_2024`, class 46.
 3. **QA screening:** MODIS `SummaryQA` 0–1 (good, marginal); VIIRS `pixel_reliability` 0–3
    (excellent to marginal). The two QA scales are not identical; this is the closest match.

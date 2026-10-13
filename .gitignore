@@ -14,6 +14,9 @@ data/raw/conab/*
 !data/raw/conab/SOURCE.md
 data/raw/ibge/*
 !data/raw/ibge/SOURCE.md
+data/raw/chc_prelim/*
+!data/raw/chc_prelim/SOURCE.md
+!data/raw/chc_prelim/manifest.csv
 
 # Regenerable derived caches; the small CSV tables ARE committed
 data/derived/*.tif

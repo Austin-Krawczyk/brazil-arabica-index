@@ -23,9 +23,16 @@ def _read_env(path=ROOT / ".env"):
     return env
 
 
+def setting(name):
+    """A configuration value from the environment or .env; exits with a clear message if unset."""
+    value = os.environ.get(name) or _read_env().get(name)
+    if not value:
+        raise SystemExit(f"{name} is not set. Add {name}=<value> to .env (see README, Configuration).")
+    return value
+
+
 def init():
-    project = os.environ.get("EE_PROJECT") or _read_env().get("EE_PROJECT")
-    if not project:
-        raise SystemExit("EE_PROJECT is not set. Add EE_PROJECT=<cloud-project-id> to .env.")
+    project = setting("EE_PROJECT")
     ee.Initialize(project=project)
     WEEK0.mkdir(parents=True, exist_ok=True)
+    return project
