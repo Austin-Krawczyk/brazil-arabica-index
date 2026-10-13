@@ -61,7 +61,34 @@ These are not in the spec and would otherwise be made silently in code:
 
 Pending Earth Engine access (`gee/week0_drift_provisional.py`).
 
-## 4. Other Week 0 checklist items, not yet started
+## 4. Live vegetation fallback: VJ113A1 and HLS (Amendments 25 and 30)
+
+Both candidates are tested and reported before one is chosen. VJ113A1: whether it is in the Earth
+Engine catalog and current (`gee/week0_verify_ids.py`).
+
+### HLS implementation choices — confirmed by the owner, 2026-10-12, before the test runs
+
+1. **Product and baseline:** HLSS30 only, baseline July 2017 to December 2025 (first rainy season
+   2017/18, Sentinel-2 A and B; 2C as A's replacement in 2024–25). HLSL30 coverage is reported
+   separately, as information.
+2. **Coverage:** the share of mask pixels with at least one clear HLSS30 observation in the month.
+   Clear means Fmask flags none of cloud, cloud shadow, adjacent cloud or snow.
+3. **Mask:** the provisional MG/SP coffee mask used by the provisional drift check (MapBiomas
+   Collection 10, `classification_2024` == 46, inside GAUL level 1 MG and SP), labelled
+   provisional.
+4. **Sample:** a fixed random sample of 20,000 mask pixels, **seed 20261012**. The sampling margin
+   on a share is about ±0.7 percentage points (95%).
+5. **Reported as information, outside the baseline:** monthly observation counts for January–March
+   2017, so the single-sensor step is visible, and HLSL30 coverage.
+6. **Rainy-season test (Amendment 30):** coverage below 60% in more than two of the November–March
+   months in the baseline means HLS cannot carry the rainy season; the fallback then falls to
+   VJ113A1 or, failing that, a declared gap.
+
+### Results
+
+Pending Earth Engine access.
+
+## 5. Other Week 0 checklist items, not yet started
 
 Conab granularity (§4c, blocking); Conab's IBGE unit system and municipality lists; INMET route,
 daily minima and Jun–Aug 2026 availability; CHIRPS circularity; MapBiomas 2025 collection; Conab
