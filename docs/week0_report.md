@@ -177,6 +177,23 @@ Engine catalog and current (`gee/week0_verify_ids.py`).
     with HLS is open (§10), so the third-reference comparison waits for that decision.
 14. **Cost:** a one-month probe runs first to measure EECU cost before the full run.
 
+### Probe results (2026-10-13), and the cost of the full run
+
+- **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth
+  Engine's time limit (that attempt's cost was not captured), so it ran as a batch export to the
+  bucket: **28,950 EECU-seconds (8.0 EECU-hours)**, one-off. Coordinates are cached locally.
+- **One month (January 2025), both products: 22,110 EECU-seconds (6.1 EECU-hours)** interactive,
+  17 minutes wall time including the sample. Profile: `docs/week0/profiles/hls_probe_20261013T142120Z.txt`.
+  About 60% of it is Earth Engine overhead from the number of images touched (1,713 HLSS30 and
+  1,148 HLSL30 granules over the MG/SP bounds in one month), not the arithmetic.
+- **January 2025 values:** HLSS30 clear coverage 79.4% (15,887 of 20,000 points), any coverage
+  100%; 1.7 clear observations per point (7.7 of any quality, overlaps included); NDVI 0.789,
+  EVI 0.604 (mean over points). HLSL30 clear coverage 62.4% (12,473 of 19,995 points with data).
+  One rainy-season month above the 60% threshold is not the test; it only shows the method works.
+- **Full run as designed:** about 113 months × 6.1 ≈ **690 EECU-hours**, roughly 15 hours of wall
+  time. That is about 70% of the Contributor tier's 1,000 EECU-hours for October, on top of what
+  the drift check already used. **Not started; owner decision under Amendment 32.**
+
 ### Results
 
 Pending Earth Engine access.
