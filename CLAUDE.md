@@ -529,16 +529,16 @@ assembled by hand from the notebook's charts and tables.
 including §4c Conab granularity, the INMET checks, the CHIRPS circularity check, the unverified IDs
 and the Terra drift check.
 
-Then: **W1** frozen mask and first regional EVI and NDVI series (check: mask area within 30% of IBGE per
-municipality, with the removal report). **W2** anomalies and rainfall windows for every MODIS-era
-season (check: report each season's rank on every input, per region and for the four-region total; if
-crops 2022 and 2025 are not the worst, that is a finding, and nothing is changed to make them so).
-**W3–W4** backtest by note date (check: against the pass marks fixed in §5 step 8, reported per
-vintage). **W4** note template on
-October–November 2026 data (check: a friend outside ag can read it in two minutes). **W5** scheduled
-run and README (check: a clean clone reproduces the index). **W6** note 1, the Jun–Aug 2026 frost
-review, published and sent in late November; it needs the station set and frost constants, not the
-backtest. The first index note follows in the first week of December.
+Then: **W1** frozen mask and first regional EVI and NDVI series (check: mask area within 30% of
+IBGE per municipality, with the removal report). **W2** anomalies and rainfall windows for every
+MODIS-era season (check: report each season's rank on every input, per region and for the
+four-region total; if crops 2022 and 2025 are not the worst, that is a finding, and nothing is
+changed to make them so). **W3–W4** backtest by note date (check: against the pass marks fixed in
+§5 step 8, reported per vintage). **W4** note template on October–November 2026 data (check: a
+friend outside ag can read it in two minutes). **W5** scheduled run and README (check: a clean
+clone reproduces the index). **W6** note 1, the Jun–Aug 2026 frost review, published and sent in
+late November; it needs the station set and frost constants, not the backtest. The first index
+note follows in the first week of December.
 
 **Honest scope note:** six weeks part-time alongside a job search, for mask + IBGE reconciliation +
 four regions × five layers + a by-note-date backtest + template + publication + outreach. The mask
@@ -610,7 +610,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 
 | Item | Needed by | Where |
 |---|---|---|
-| Conab granularity: a São Paulo regional split, and whether the Minas regional split (first, third and final surveys) is published in a usable form | Week 0 | §4c, §5 step 7 |
+| **§4c Conab granularity (blocking):** a São Paulo regional split, and whether the Minas regional split (first, third and final surveys) is published in a usable form | Week 0 | §4c, §5 step 7 |
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
@@ -640,7 +640,6 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - **Coffee mask** (original open question 1) — MapBiomas Collection 10, class 46 (SPEC_CHANGELOG,
   2026-10-12).
 - **Planet access** — Education & Research access confirmed (§4d). The quota is in the checklist.
-- **§4c Conab granularity** moved into the checklist above; it is still blocking.
 
 ## 11. Risks
 

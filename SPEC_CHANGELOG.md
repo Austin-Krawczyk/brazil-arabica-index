@@ -328,7 +328,9 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   not used before June 2027, when it serves the Jun–Aug 2027 window, the first 2028 signal. ICE
   settlement, spread and certified-stocks data may carry redistribution restrictions, so they are
   referenced in note text only and kept out of committed data files until ICE's terms are checked;
-  CFTC COT is a public-domain US government work and sits outside the ICE check. (The other cuts
+  CFTC COT is a public-domain US government work (Data.gov lists the COT dataset as a "U.S.
+  Government Work": https://catalog.data.gov/dataset/commitment-of-traders-cot) and sits outside
+  the ICE check. (The other cuts
   from the review, Sentinel-2 and harvest-window rain, are Amendments 5 and 10.) Revised after
   review the same day to state CFTC COT's public-domain status explicitly. Approved by owner.
 
@@ -374,4 +376,6 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   target, region weights, USDA splits, Cerrado irrigation, outreach names) are listed separately,
   and closed items are recorded. Consistency edits that follow from earlier amendments: §11's
   biennial and sample-size rows now describe Amendment 19's design; the W3–W4 check points to the
-  fixed pass marks instead of "a stated majority"; W1 names the EVI series. Approved by owner.
+  fixed pass marks instead of "a stated majority"; W1 names the EVI series. Revised after review
+  the same day: §4c Conab granularity had been listed under "Closed" while still blocking; it is
+  now marked as a blocking row in the checklist and removed from "Closed". Approved by owner.
