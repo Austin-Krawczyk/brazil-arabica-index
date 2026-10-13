@@ -259,6 +259,11 @@ to option D (the coverage test only).
 - **Probe month moves from December 2024 to November 2024**, because December 2024 was partly
   computed in the failed attempts and could be cached. The pass rule is unchanged: at most 1.2
   EECU-hours for the month, both products.
+- **Attempt 2 also stopped before the probe:** listing the point tiles from a full year of granules
+  in one request exceeded the memory limit. The listing now runs in ten batches of 500 points over
+  two dry-season months (July–August 2024), zone filter first. Result: **86 tiles** contain sample
+  points, and the HLSS30 and HLSL30 lists are identical, as they should be on the shared HLS
+  tiling.
 
 ### Probe results (2026-10-13), and the cost of the full run
 

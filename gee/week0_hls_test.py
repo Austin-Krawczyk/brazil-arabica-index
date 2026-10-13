@@ -64,7 +64,7 @@ CACHE = ROOT / "data" / "derived"
 # are infinite, so filterBounds returns them everywhere (found 2026-10-13). MG and SP lie in UTM
 # zones 22-24; 21 is kept as a margin because tiles extend past zone edges.
 ZONES = (21, 22, 23, 24)
-TILE_YEAR = ("2024-01-01", "2025-01-01")  # a full year of granules to list the tiles covering points
+TILE_WINDOW = ("2024-07-01", "2024-09-01")  # two dry-season months of granules, to list the tiles
 
 
 def region():
@@ -125,18 +125,23 @@ def sample_points(states, n_use):
     print(f"sample: {len(pts)} points")
     geom = ee.Geometry.MultiPoint(pts[["lon", "lat"]].values.tolist())
     fc = ee.FeatureCollection(geom.coordinates().map(lambda c: ee.Feature(ee.Geometry.Point(c))))
-    return fc, len(pts), geom
+    return fc, len(pts), pts[["lon", "lat"]].values
 
 
-def point_tiles(asset, geom):
+def point_tiles(asset, coords):
     """MGRS tiles (in zones 21-24) whose granules contain at least one sample point, listed once
-    from a year of granule metadata, so no geometry test runs inside the monthly computation."""
+    from two months of granule metadata, so no geometry test runs inside the monthly computation.
+    Done in batches of points: one request over all points and a year of granules exceeded Earth
+    Engine's memory limit. Every tile is imaged several times a month, so two months list them all."""
     zones = ee.Filter.Or(*[ee.Filter.stringStartsWith("system:index", f"T{z}") for z in ZONES])
-    ids = (ee.ImageCollection(asset).filterDate(*TILE_YEAR).filterBounds(geom).filter(zones)
-           .aggregate_array("system:index").getInfo())
-    tiles = sorted({i.split("_")[0] for i in ids})
+    col = ee.ImageCollection(asset).filterDate(*TILE_WINDOW).filter(zones)
+    tiles = set()
+    for batch in np.array_split(coords, 10):
+        mp = ee.Geometry.MultiPoint(batch.tolist())
+        ids = col.filterBounds(mp).aggregate_array("system:index").getInfo()
+        tiles |= {i.split("_")[0] for i in ids}
     print(f"  {asset.split('/')[-2]}: {len(tiles)} tiles contain sample points")
-    return tiles
+    return sorted(tiles)
 
 
 def month_stats(asset, points, bounds, with_indices, tiles):
@@ -245,11 +250,11 @@ def main():
     t0 = time.time()
     with ee.profilePrinting(destination=buf):
         states = region()
-        points, n_points, geom = sample_points(states, a.points)
+        points, n_points, coords = sample_points(states, a.points)
         bounds = states.geometry().bounds()
         # Only granules on tiles containing a sample point (owner decision 2026-10-13): a granule
         # without a point contributes nothing to any point value, so results are unchanged.
-        tiles = {asset: point_tiles(asset, geom) for asset in (S30, L30)}
+        tiles = {asset: point_tiles(asset, coords) for asset in (S30, L30)}
         months = ([f"{a.month}-01"] if probe else
                   pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist())
         l30_months = months if probe else [m for m in months if int(m[5:7]) in RAINY]
