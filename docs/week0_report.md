@@ -105,7 +105,29 @@ Engine catalog and current (`gee/week0_verify_ids.py`).
 
 Pending Earth Engine access.
 
-## 5. Other Week 0 checklist items, not yet started
+## 5. CHC prelim download (Amendment 9, revised)
+
+Scope (owner decision, 2026-10-13): every pentad from 2015; daily for September–November
+2015–2025 and from 2026-05-01. In total, 848 pentads and 1,159 days (`gee/chc_prelim_fetch.py`).
+
+- **First attempt blocked.** It used four parallel connections. After 122 pentads (2015-01-1 to
+  2016-09-2, all complete files), CHC's server answered 403 to every request from this machine,
+  including its directory listing, from about 05:34 PDT on 2026-10-13. The run was stopped at once.
+  A single check about 16 minutes later was still refused.
+- **Change made:** the script now fetches one file at a time with a 3-second pause, identifies the
+  project in its User-Agent, and stops completely on the first 403 or 429.
+- **Retry:** not before about 06:00 PDT on 2026-10-14 (owner decision: wait 24 hours). If CHC still
+  refuses then, the download stops and the owner contacts CHC.
+- **Interim, owner decision 2026-10-13:** until CHC's archive is complete, live-season months not
+  yet final use the community-catalog asset `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad`,
+  and every note says so. That asset is pentad-only, so dry-day counts for prelim months are
+  reported as not yet available until CHC's daily files are in. The 2015–2024 pentads are needed
+  only for the backtest-stage sensitivity rerun, so note 1 does not depend on them. Logged as a
+  temporary deviation in `SPEC_CHANGELOG.md`.
+- **Ingestion** (`gee/chc_prelim_ingest.py`) waits for billing and `GCS_BUCKET`. Bucket name
+  `brazil-arabica-index-ingest`, or with the owner's GitHub handle appended if that is taken.
+
+## 6. Other Week 0 checklist items, not yet started
 
 Conab granularity (§4c, blocking); Conab's IBGE unit system and municipality lists; INMET route,
 daily minima and Jun–Aug 2026 availability; CHIRPS circularity; MapBiomas 2025 collection; Conab

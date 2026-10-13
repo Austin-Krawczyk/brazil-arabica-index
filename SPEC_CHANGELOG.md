@@ -465,3 +465,15 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   overlapping months. The community asset is no longer a source and is kept only as a weekly
   cross-check that the ingestion matches. The §4 row is corrected. The original entry above
   records the 2026-10-12 decision unchanged. Approved by owner.
+
+- 2026-10-13 — **Temporary deviation from Amendment 9 (revised): the community-catalog asset
+  supplies live-season prelim until CHC's archive is complete.** The first CHC download used four
+  parallel connections, and CHC's server blocked this machine after 122 of 2,007 files (about
+  05:34 PDT). The download is now sequential with a 3-second pause and stops on the first refusal;
+  the retry waits 24 hours, and if CHC still refuses, the owner contacts CHC. Until CHC's archive
+  is complete, live-season months not yet final use
+  `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad`, and every note says so. That asset
+  is pentad-only, so dry-day counts for prelim months are reported as not yet available until
+  CHC's daily files are in. The 2015–2024 pentads are needed only for the backtest-stage rerun, so
+  note 1 is not affected. Owner decision; the deviation ends when the CHC archive is complete and
+  ingested.
