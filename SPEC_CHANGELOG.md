@@ -411,3 +411,9 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   names the new ID and notes that both SRTM and the Copernicus DEM are surface models that include
   canopy, which does not matter for a station altitude cut at the 95th percentile of coffee-mask
   elevation. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 28: ERA5-Land soil-layer weights confirmed and registered.** The Earth
+  Engine catalog confirms the band names `volumetric_soil_water_layer_1`, `_2` and `_3` with
+  depths 0–7, 7–28 and 28–100 cm, in volume fraction. The 0–100 cm root-zone value is weighted by
+  layer thickness, 0.07 / 0.21 / 0.72, and the weights are registered at `prereg-1`. The §4 row's
+  "verify band names and depths" note is replaced by the confirmed values. Approved by owner.
