@@ -295,6 +295,28 @@ issue number to be added here once the owner files it.
   reference and Amendment 31's NDVI question stays open. The drift comparison is about systematic
   differences between years, not precision at any point, so 500 points is enough.
 
+### Option D result (2026-10-13): **HLS fails the rainy-season coverage test**
+
+- **Gate:** the January 2024 probe cost 3,076 EECU-seconds (limit 3,600): passed.
+- **Run:** 45 months, HLSS30, 5,000 points, 56 minutes. **Actual cost 121,910 EECU-seconds
+  (33.9 EECU-hours)**; with the probe, option D cost 35.7 EECU-hours. Profile in
+  `docs/week0/profiles/`; monthly results in `docs/week0/hls_coverage_5000pts.csv`; the 42 test
+  months in `docs/week0/hls_coverage_test.csv`.
+- **Result: 7 of the 42 November–March baseline months fall below 60% clear coverage; the rule
+  allows 2.** The seven: December 2017 53.9%, November 2018 40.5%, January 2020 54.2%, February
+  2020 31.7%, December 2020 55.6%, February 2021 51.9%, December 2022 35.5%. The median month is
+  80.1%. **Under Amendment 30, HLS cannot carry the rainy season.**
+- **The failures are cloud, not archive gaps:** "any" coverage (an observation of any quality) is
+  100% in every baseline month, at 4.3–9.4 observations per point.
+- **By season**, mean clear coverage: 2017/18 71.9%, 2018/19 82.0%, 2019/20 64.5%, 2020/21 75.6%,
+  2021/22 80.3%, 2022/23 72.8%, 2023/24 87.9%, 2024/25 84.6%, and November–December 2025 95.2%.
+- **Information, January–March 2017** (Sentinel-2A only): clear coverage 17.7%, 38.1% and 76.9%,
+  at about 2.3 observations per point against 4.3–9.4 in the baseline. The single-sensor step is
+  visible, as expected.
+- **Consequence (Amendment 25, revised):** the live vegetation fallback moves to (b), VJ113A1
+  ingested from NASA as a private asset over the MG/SP window. Not started: it needs the owner's
+  go-ahead, including for the download.
+
 ### Probe results (2026-10-13), and the cost of the full run
 
 - **The sample is drawn:** 20,000 points, seed 20261012. Drawing it interactively hit Earth

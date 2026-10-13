@@ -1,0 +1,96 @@
+ EECU·s PeakMem Count  Description
+5146.242    278M 85836388  (plumbing)
+542.691     65M 1385646  Algorithm Image.cast
+511.631     39M 1881856  Algorithm Image.addBands
+261.403    2.1M 29552  Algorithm reduce.median
+254.603    2.0M 59104  Algorithm reduce.sum
+238.850    8.9M 43636  Algorithm Image.divide computing pixels
+218.877     14M  3290  Algorithm Image.reduceRegions
+181.756    157M 1138274  Loading assets: (...)/(...)
+166.823     69M 1808538  Algorithm Image.multiply
+ 65.303    6.4M 818592  Algorithm Image.select
+ 49.780     53M 1562922  Algorithm Image.constant
+ 36.146    7.0M 71460  no description available
+ 35.094    4.8M 700632  Algorithm Image.rename
+ 33.438    949k 11376  Reprojection precalculation between (...) and (...)
+ 24.167    2.5M 335526  Algorithm Image.eq
+ 15.265    1.4M 194562  Algorithm Image.gte
+ 14.724     720 227478  Reprojecting pixels from (...) to (...)
+ 14.699    1.4M 194562  Algorithm Image.bitwiseAnd
+ 14.533    8.9M 21818  Algorithm Image.abs computing pixels
+ 13.141    317M    20  Algorithm Collection.reduceColumns with reducer Reducer.toList
+  9.538    467k  6589  Listing collection
+  6.295    3.8k 292932  Algorithm Image.multiply computing pixels
+  5.465    4.4M 422892  Algorithm Image.updateMask
+  4.641    3.2M 422892  Algorithm Image.add
+  4.251    1.4k 227478  Algorithm Image.cast computing pixels
+  3.804    1.3k 82050  Algorithm Image.constant computing pixels
+  3.124    2.2M 281928  Algorithm Image.divide
+  3.087    2.2M 281928  Algorithm Image.subtract
+  1.653    2.4k 81012  Algorithm Image.bitwiseAnd computing pixels
+  1.604    1.4M 140964  Algorithm Image.abs
+  1.596    2.8k 81012  Algorithm Image.eq computing pixels
+  1.499    4.9k 65454  Algorithm Image.subtract computing pixels
+  1.416    4.5k 65454  Algorithm Image.add computing pixels
+  1.367    1.0M 140964  Algorithm Image.lte
+  1.070     832 65454  Algorithm Image.updateMask computing pixels
+  0.695    2.2k 37376  Algorithm Image.gte computing pixels
+  0.390    1.6k 21818  Algorithm Image.lte computing pixels
+  0.260    3.1k  9856  Algorithm ReduceRegions.AggregationContainer
+  0.101    3.0k     6  Algorithm Geometry.bounds
+  0.085    129k  3282  Computing image mask from geometry
+  0.078    605k     8  Algorithm Collection.geometry
+  0.041     96k     8  Algorithm Collection.reduceColumns with reducer Reducer.count
+  0.015    1.4k     4  Algorithm Collection.reduceColumns with reducer Reducer.sum
+  0.015    190k     2  Algorithm Collection.reduceColumns with reducer Reducer.mean
+   -        43M 49264  Algorithm (user-defined function)
+   -        18M 1393166  Algorithm Element.set
+   -       6.0M 31228  Algorithm List.(construct from elements)
+   -       3.6M  9864  Algorithm Collection
+   -       2.0M    68  Algorithm Collection.reduceColumns
+   -       1.2M    22  Algorithm GeometryConstructors.MultiPoint
+   -       1.0M  9846  Algorithm reduce.median computing pixels
+   -       950k 19692  Algorithm reduce.sum computing pixels
+   -       374k 9121948  Algorithm List.map
+   -       100k 473142  Algorithm List.get
+   -        79k 216826  Algorithm Collection.map
+   -        38k 473142  Algorithm String.split
+   -        14k 98550  Algorithm TypedImageCollection.Constructor
+   -        14k 78912  Algorithm ImageCollection.load
+   -        11k 13156  Algorithm Dictionary.(construct from elements)
+   -      10.0k     9  Algorithm Collection.loadTable
+   -       9.7k 118414  Algorithm Collection.filter
+   -       7.6k    16  Algorithm AggregateFeatureCollection.count
+   -       7.2k  3284  Algorithm ReduceRegions.ReduceRegionsEnumerator
+   -       7.2k  3284  Algorithm Projection
+   -       5.6k    31  Algorithm Collection.size
+   -       4.0k    16  Algorithm AggregateFeatureCollection.sum
+   -       4.0k     8  Algorithm AggregateFeatureCollection.mean
+   -       3.8k    60  Algorithm AggregateFeatureCollection.array
+   -       3.6k 1385646  Algorithm Element.copyProperties
+   -       3.3k 177489  Algorithm PixelType
+   -       3.3k 49290076  Algorithm Feature
+   -       3.3k 39456  Algorithm Filter.intersects
+   -       3.2k  3284  Algorithm Reducer.forEach
+   -       3.2k 25022020  Algorithm If
+   -       3.2k 39458  Algorithm Filter.dateRangeContains
+   -       3.2k 8654440  Algorithm String.cat
+   -       3.2k 26415178  Algorithm Element.get
+   -       3.2k    60  Algorithm Filter.or
+   -       3.1k 13154  Algorithm DateRange
+   -       3.1k 39405  Algorithm Filter.inList
+   -       3.1k   240  Algorithm Filter.stringStartsWith
+   -       3.1k 1385646  Algorithm Image.bandNames
+   -       3.1k     4  Algorithm Date.format
+   -       3.1k 39390  Algorithm ErrorMargin
+   -       3.1k    12  Algorithm Filter.gt
+   -       3.1k     9  Algorithm Filter.eq
+   -       3.0k 26415178  Algorithm String
+   -       2.5k     2  Algorithm Geometry.coordinates
+   -       2.3k     4  Algorithm Date.advance
+   -       1.9k 10002  Algorithm GeometryConstructors.Point
+   -       1.9k     2  Algorithm Filter.notNull
+   -       1.8k     4  Algorithm Date
+   -        608  3286  Algorithm Reducer.first
+   -        328 542936  Expression evaluation
+   -         64 227478  Algorithm Image.load computing pixels
