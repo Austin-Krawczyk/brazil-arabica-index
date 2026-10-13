@@ -417,3 +417,13 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   depths 0–7, 7–28 and 28–100 cm, in volume fraction. The 0–100 cm root-zone value is weighted by
   layer thickness, 0.07 / 0.21 / 0.72, and the weights are registered at `prereg-1`. The §4 row's
   "verify band names and depths" note is replaced by the confirmed values. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 29: CHC daily-prelim day split recorded as not established.** A
+  second-hand source described CHC's daily prelim as IMERG-based. CHC's own readme for the daily
+  prelim (https://data.chc.ucsb.edu/products/CHIRPS-2.0/prelim/global_daily/aaa.readme.txt, dated
+  2019-08-22) describes splitting each pentad into days by cold cloud duration, with residuals
+  placed on the wettest CFS-Reanalysis day, and a `fixed/` version that sums exactly to the pentad
+  totals; it does not mention IMERG. Because the readme is seven years old, the method is recorded
+  as not established rather than confirmed. The rule no longer depends on it: dry-day counts from
+  daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping
+  months, now stated in §9 and the §10 checklist. Approved by owner.

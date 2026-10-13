@@ -594,7 +594,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
   - The community-catalog prelim asset is pentad-only, so under it consecutive dry days for months
     still in prelim are reported as not yet available, not estimated. If the declared fallback
     (CHC's own prelim files, §4) is used instead, consecutive dry days for prelim months are
-    computed from its daily files.
+    computed from its daily files, and are not compared with final-CHIRPS dry-day counts until the
+    gap has been measured on overlapping months (Amendment 29).
 - **Every checkpoint report carries its denominator** — how many municipalities, seasons,
   station-nights were examined, not only how many passed.
 - Never modify anything in `data/raw/`.
@@ -637,7 +638,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
 | Verify the unverified IDs: CHIRPS-prelim community asset and the CHC fallback; `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30`; ERA5-Land soil-layer band names and depths | Week 0 | §4 |
-| Check how CHC's daily prelim is disaggregated to days (reported as IMERG-based); if confirmed, dry-day counts from daily prelim are not comparable to final-CHIRPS counts without measuring the gap first | Week 0 | §4, §9 |
+| CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
 | Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
 | Exact Conab 2027 survey dates, and whether crop 2026's final survey comes in December or January | Before the December note | §1, §6 |
