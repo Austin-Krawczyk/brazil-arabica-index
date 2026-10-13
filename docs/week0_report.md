@@ -476,7 +476,77 @@ Scope (owner decision, 2026-10-13): every pentad from 2015; daily for September�
     within 0.001 mm.
   - **Missing data:** 5 of 5 cells that are −9999 locally (ocean) are masked in Earth Engine.
 
-## 6. Other Week 0 checklist items, not yet started
+## 6. Regional municipality lists (§3) — PROPOSAL, not registered
+
+**Which IBGE units Conab uses: the 1989 mesoregions**, not the 2017 intermediate regions. Conab's
+September 2026 bulletin (3rd survey, safra 2026, p. 17) describes Minas Gerais coffee "with
+prevalence in some *mesorregiões* … such as the Sul e Centro-Oeste mineiro, the Triângulo, the
+Alto Paranaíba, the Noroeste, the Zona da Mata, the Vale do Rio Doce and the Zona Central". The
+bulletin does not publish a membership list.
+
+**Conab's data table** (`site_previsao-de-safra-cafe-set-2026.xls`, sheet "2 Café Arábica")
+reports arabica area in production, yield (sc/ha) and production for the four Minas regions,
+and **São Paulo only as a state total**. For §4c, the São Paulo target is therefore the state
+total, the spec's fallback. The text names São Paulo's coffee areas (Alta Mogiana, Média
+Mogiana, Alta Paulista, Circuito das Águas) but gives no figures for them.
+
+**Proposed membership** (`docs/week0/proposed_region_membership.csv`: every municipality with its
+IBGE code, mesoregion, proposed Conab region, whether it is in the index, the basis of the
+assignment, and PAM 2025 arabica area):
+
+| Conab region | IBGE mesoregions | Municipalities | In index |
+|---|---|---|---|
+| Sul e Centro-Oeste | Sul/Sudoeste de Minas, Oeste de Minas | 190 | yes |
+| Triângulo, Alto Paranaíba e Noroeste | Triângulo Mineiro/Alto Paranaíba, Noroeste de Minas | 85 | yes |
+| Zona da Mata, Rio Doce e Central | Zona da Mata, Vale do Rio Doce, Central Mineira, **Campo das Vertentes**, **Metropolitana de Belo Horizonte** | 415 | yes |
+| Norte, Jequitinhonha e Mucuri | Norte de Minas, Jequitinhonha, Vale do Mucuri | 163 | no |
+| São Paulo (state total) | all of SP | 645 | yes |
+
+**The two mesoregions the bulletin does not name**, tested by comparing IBGE PAM 2025 arabica
+"área destinada à colheita", summed under each assignment, with Conab's 2025 area in production:
+
+| Region | PAM 2025 (ha) | Conab 2025 (ha) | Difference |
+|---|---|---|---|
+| Sul e Centro-Oeste | 537,951 | 521,815 | +3.1% |
+| Triângulo, Alto Paranaíba e Noroeste | 216,208 | 195,941 | +10.3% |
+| Zona da Mata, Rio Doce e Central | 292,696 | 319,734 | −8.5% |
+| Norte, Jequitinhonha e Mucuri | 31,233 | 29,293 | +6.6% |
+| São Paulo | 195,539 | 196,025 | −0.2% |
+
+With Campo das Vertentes (24,559 ha) in Sul e Centro-Oeste instead, the differences become
++7.8% and −16.1%, so the proposal puts it in Zona da Mata, Rio Doce e Central. Metropolitana de
+Belo Horizonte has 816 ha and goes with "Central" on geography. **Both are provisional.** PAM and
+Conab measure different things (area destined for harvest against Conab's surveyed area in
+production), so gaps of around 10% are expected, and the test is suggestive, not proof. The
+Triângulo gap (+10.3%) would shrink if Noroeste de Minas were counted elsewhere, but Conab's
+region name includes Noroeste, so it stays. A direct answer would come from Conab's Minas Gerais
+office.
+
+**Coverage:** the four index units hold 83.4% of Brazil's 2026 arabica area in production and
+83.1% of production (Conab). 120 of the 1,498 MG and SP municipalities have no PAM 2025 arabica
+figure (suppressed, or no coffee).
+
+## 7. Conab survey timing (Amendment 8): the 2026 first survey came on 5 February
+
+Conab's page lists the 1st survey of safra 2026 on **5 February 2026** and the 4th survey of
+safra 2025 on 4 December 2025. Amendment 8 says first surveys came "between the 18th and 28th
+[of January] in recent years"; 2026 broke that. If the first 2027 survey also comes after 31
+January, Amendment 22's fallback applies: note 3 goes out on 1 February without the Conab line,
+and a scorecard addendum follows the survey. The 2027 dates are still to confirm from Conab's
+calendar.
+
+## 8. INMET station set (§5 step 4) — blocked
+
+Both INMET hosts (`portal.inmet.gov.br`, `apitempo.inmet.gov.br`) resolve to 201.57.198.188 and
+accept the connection, then reset it as the secure session starts ("Recv failure: Connection was
+reset"). This is the server refusing this machine, the same failure the spec recorded in an
+earlier sandbox. The station set needs (1) INMET's catalogue of automatic stations (code,
+coordinates, altitude, start date) and (2) the annual hourly archives for 2008–2026 for the
+completeness rule. Once the catalogue exists, the coffee-area weights within 25 km and the
+per-region elevation cut can be computed. The region polygons for the elevation cut can come from
+IBGE's mesh API, which is reachable from here, without a file download.
+
+## 9. Other Week 0 checklist items, not yet started
 
 Conab granularity (§4c, blocking); Conab's IBGE unit system and municipality lists; INMET route,
 daily minima and Jun–Aug 2026 availability; CHIRPS circularity; MapBiomas 2025 collection; Conab
