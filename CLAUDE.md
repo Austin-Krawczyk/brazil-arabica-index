@@ -130,7 +130,7 @@ where a row says otherwise.
 | Vegetation fallback, candidate (a) | `NASA/HLS/HLSS30/v002` (HLS, Sentinel-2 only) | 30 m; baseline July 2017 to 2025 | Live fallback as monthly EVI over the mask, if it passes the rainy-season coverage test (§4a). `NASA/HLS/HLSL30/v002` coverage reported as information only. Both resolve (Week 0 report) |
 | Vegetation fallback, candidate (b) | VJ113A1 (NOAA-20 VIIRS). **Not in Earth Engine**; ingested from NASA as a private asset over the MG/SP window, only if HLS fails the coverage test | 500 m, 16-day composites | §4a. Not started |
 | Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
-| Rainfall — current season | `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (CHIRPS-prelim, community catalog, curated by Climate Engine) | 5 km, pentad, 2015– | Current-season months not yet published as final (§9). **Not yet verified to resolve or to be current: verify before the first run.**<br>**Fallback, declared now:** CHC's own CHIRPS-prelim files (daily and pentad) from chc.ucsb.edu, ingested as a private GEE asset, used if the community asset does not resolve, is not current, or lags the provider by more than two pentads. Verify both sources in Week 0 before choosing. |
+| Rainfall — current season | CHC's own CHIRPS-prelim files (chc.ucsb.edu), **pentad and daily**, ingested as private Earth Engine assets over the MG/SP window | 5 km; pentad and daily; archive from 2015 | Current-season months not yet published as final, and the sensitivity rerun (§9). **Ingestion not yet built.** The community-catalog asset `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (archive from 2025 only) is no longer a source; it is kept as a weekly cross-check that the ingestion matches |
 | Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
 | Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). **Not yet verified to resolve.** Declared fallback: `COPERNICUS/DEM/GLO30_2024_1` (the earlier `COPERNICUS/DEM/GLO30` is deprecated). Both are surface models that include canopy, which does not matter for a station altitude cut at the 95th percentile |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY`, `volumetric_soil_water_layer_1`–`_3` (0–7, 7–28, 28–100 cm; volume fraction), weighted 0.07 / 0.21 / 0.72 by layer thickness | 9 km, hourly | Root-zone moisture through the pre-flowering dry season, May–Aug of S−1 (§5 step 5). Band names and depths confirmed from the Earth Engine catalog; weights registered at `prereg-1` |
@@ -589,21 +589,21 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - **Any result of zero, none or empty is verified by an independent method before it is accepted**,
   especially where zero is the expected answer.
 - **Never score a model with information it will not have in production.** See §5 step 8.
-- **CHIRPS product split, decided 2026-10-12 before the first run.**
+- **CHIRPS product split, decided 2026-10-12 before the first run; prelim source revised
+  2026-10-13 (Amendment 9, revised).**
   - Final CHIRPS for the baseline and the whole backtest, so every season is scored on the same
-    product. CHIRPS-prelim only for current-season months whose final is not yet published.
+    product. CHIRPS-prelim, from CHC's own pentad and daily files (§4), only for current-season
+    months whose final is not yet published.
   - Final for month M counts as published from the 1st of month M+2. That matches the provider's
     ~3-week latency (final appears after about the 20th of the following month).
   - Production will use prelim where the backtest uses final, so the backtest is optimistic on
-    exactly those months. **Quantify it:** rerun every vintage whose note date falls inside the
-    prelim archive (2015 onward), with prelim substituted for the months not yet final. Report the
+    exactly those months. **Quantify it:** rerun every vintage whose note date falls inside CHC's
+    prelim archive (from 2015), with prelim substituted for the months not yet final. Report the
     change in hit rate and mean absolute error beside the headline figures, and the
     prelim-minus-final difference in window totals over the mask. Do not correct for it.
-  - The community-catalog prelim asset is pentad-only, so under it consecutive dry days for months
-    still in prelim are reported as not yet available, not estimated. If the declared fallback
-    (CHC's own prelim files, §4) is used instead, consecutive dry days for prelim months are
-    computed from its daily files, and are not compared with final-CHIRPS dry-day counts until the
-    gap has been measured on overlapping months (Amendment 29).
+  - CHC's daily prelim restores consecutive dry days for months still in prelim. They are not
+    compared with final-CHIRPS dry-day counts until the gap has been measured on overlapping
+    months (Amendment 29).
 - **Every checkpoint report carries its denominator** — how many municipalities, seasons,
   station-nights were examined, not only how many passed.
 - Never modify anything in `data/raw/`.
@@ -645,7 +645,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
-| Verify the unverified IDs: CHIRPS-prelim community asset and the CHC fallback; `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
+| Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
 | Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |

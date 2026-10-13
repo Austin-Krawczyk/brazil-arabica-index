@@ -451,3 +451,17 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   Engine asset over the MG/SP window only, built the same way as the CHC prelim ingestion; (c) a
   declared gap only if both fail. The VJ113A1 ingestion does not start unless HLS fails. The
   original entry above records the 2026-10-12 decision unchanged. Approved by owner.
+
+- 2026-10-13 — **AMENDMENT 9 (revised): CHC's own prelim files replace the community-catalog
+  asset as the single prelim product.** Week 0 found that the community asset
+  (`projects/climate-engine-pro/assets/ce-chirps-prelim-pentad`) resolves and is current, but its
+  archive starts on 2025-01-01, not 2015 as its catalog page says; the sensitivity rerun could
+  then cover only crop 2026's vintages. CHC's own prelim archive runs from 2015, pentad and daily.
+  **The declared fallback triggers did not fire** (the asset resolves, is current and does not
+  lag); the switch is an owner decision made on archive length. CHC's pentad and daily prelim are
+  now the single prelim product for live notes and for the sensitivity rerun, ingested as private
+  Earth Engine assets over the MG/SP window, and the rerun covers vintages from 2015. Daily prelim
+  restores consecutive dry days for prelim months, subject to Amendment 29's gap measurement on
+  overlapping months. The community asset is no longer a source and is kept only as a weekly
+  cross-check that the ingestion matches. The §4 row is corrected. The original entry above
+  records the 2026-10-12 decision unchanged. Approved by owner.
