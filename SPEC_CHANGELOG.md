@@ -392,3 +392,15 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   exists. The rules that applied to VNP13A1 now apply to whichever fallback is chosen: its own
   baseline, a rerun of the vegetation component over the crops its record covers, the resolution
   caveat for Zona da Mata, and the mid-season rule. Approved by owner.
+
+- 2026-10-12 — **AMENDMENT 26: drift-check method fixed before it runs.** The three products
+  composite on different windows (Terra and Aqua are offset by 8 days; VIIRS runs on an 8-day
+  cadence) and start in different years, so comparing them as specified would compare
+  non-identical observations (§9). All three are now reduced to calendar-month anomalies against
+  a common 2013–2025 baseline, each over its own pixels within the mask. Trigger (b)'s "baseline
+  standard deviation" is now that of the same 2013–2025 monthly baseline, so the trigger and the
+  check use one scale. A provisional run over all class-46 coffee pixels in MG and SP runs now,
+  labelled provisional; the formal run, per region and for the four-region total, waits for the
+  regional municipality lists, and trigger (b) is evaluated on the formal run only. Both go in the
+  Week 0 report. The comparison window ends in October 2026 because VNP13A1 delivery ends on
+  2 November (Amendment 25). Approved by owner.

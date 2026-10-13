@@ -182,14 +182,23 @@ maintenance in 2022. Its morning overpass is drifting from about 10:30 toward 8:
 and NASA's 2023 mission status put end of science at February 2027. The current season is the
 most drift-affected, and it is the season every note reports.
 
-- **Week 0 drift check.** Per region, over the mask, compare `MOD13Q1` NDVI and EVI anomalies
-  with `MYD13Q1` (Aqua) and `VNP13A1` (VIIRS) for 2018–2026. Compare anomalies, not levels: the
-  products differ in resolution and overpass time. Report the difference series and its trend per
-  region. Divergence of Terra from both references while they agree is attributed to Terra.
+- **Week 0 drift check (method fixed before it runs, Amendment 26).** Compare `MOD13Q1` NDVI and
+  EVI anomalies with `MYD13Q1` (Aqua) and `VNP13A1` (VIIRS), 2018 to October 2026. Compare
+  anomalies, not levels: the products differ in resolution and overpass time.
+  - **Anomalies** are calendar-month anomalies for all three products, against a common 2013–2025
+    baseline, each computed over the product's own pixels within the mask. Monthly aggregation
+    removes the offset between the products' compositing windows; the common baseline puts all
+    three on the same years.
+  - **Provisional run, now:** over all class-46 coffee pixels in MG and SP, labelled provisional.
+    **Formal run:** per region and for the four-region total, once the regional municipality
+    lists exist (§3). Trigger (b) is evaluated on the formal run only. Both go in the Week 0
+    report.
+  - Report the difference series and its trend. Divergence of Terra from both references while
+    they agree is attributed to Terra.
 - **Trigger, fixed before the check runs.** Switch the current-season vegetation input to the
   fallback if either (a) `MOD13Q1` is not current at a note date, meaning no composite ends within
   32 days of the note date; or (b) Terra's anomaly diverges from both references by more than 0.5
-  baseline standard deviations, averaged over 2024–2026, in the coffee-area-weighted four-region total
+  standard deviations of the 2013–2025 monthly baseline, averaged over 2024–2026, in the coffee-area-weighted four-region total
   or in two or more regions. Per-region differences are reported either way.
 - **Fallback (Amendment 25).** `VNP13A1` is no longer the live fallback: NASA ends delivery of
   Suomi NPP VIIRS science data on 2 November 2026 (Earthdata, VNP13A1 v002). It stays only as the
