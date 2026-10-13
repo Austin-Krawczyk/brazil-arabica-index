@@ -41,7 +41,7 @@ Calendar-month anomalies for `MOD13Q1`, `MYD13Q1` and `VNP13A1`, NDVI and EVI, a
 region and for the four-region total, waits for the regional municipality lists; trigger (b) is
 evaluated on the formal run only.
 
-### Implementation choices for the provisional run — proposed, to confirm before it runs
+### Implementation choices for the provisional run — confirmed by the owner, 2026-10-12, before it ran
 
 These are not in the spec and would otherwise be made silently in code:
 
