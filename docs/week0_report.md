@@ -370,6 +370,20 @@ product API.
   HLS. VJ113A1's 16-day composites should cover nearly every pixel by design, but its
   pixel-reliability share over the mask should be checked the same way before it is relied on.
 
+### VJ113A1 AppEEARS request (route B), submitted 2026-10-13 18:36 UTC
+
+- **Task ID `145e0b79-00e3-41c2-b1c8-eeea5e7e4d49`**, status *pending* at submission.
+- Product VJ113A1.002; layers `500_m_16_days_EVI`, `500_m_16_days_NDVI`,
+  `500_m_16_days_pixel_reliability`; dates 2018-01-01 to 2026-10-13; output GeoTIFF in the
+  product's **native** sinusoidal grid (no resampling).
+- Area: GAUL 2025 level 1 Minas Gerais + São Paulo, simplified at 500 m and buffered by 1 km
+  (13,575 vertices). Request body without the token: `docs/week0/appeears_vj113a1_request.json`;
+  task record: `docs/week0/appeears_vj113a1_task.json`; script: `gee/vj113a1_appeears.py`.
+- **Backup:** if the request is not complete by about 18:36 UTC on 2026-10-16 (three days), switch
+  to route A, whole-file download from LP DAAC.
+- Downloading the results needs a valid AppEEARS token; the owner's tokens expire about 48 hours
+  after issue.
+
 ### Compute used on 2026-10-13, measured (Amendment 32)
 
 | Run | EECU-hours |
