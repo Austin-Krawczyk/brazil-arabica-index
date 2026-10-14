@@ -21,11 +21,15 @@ Sucafina 75.4M, Marex 75.9M) are for **2026/27, the 2026 harvest, total Brazil i
 The index covers four Conab units, not all of Brazil's arabica, so every comparison with a
 Brazil-wide arabica estimate states that coverage (§3).
 
-**Conab timing (AMENDED 2026-10-12).** Conab publishes four coffee surveys a year. A crop's first
-survey comes in January (between the 18th and 28th in recent years) and its final survey in
-December or the following January. **No Conab estimate for the 2027 crop exists before its first
-survey, expected late January 2027. Any note published before that survey says so explicitly.**
-Confirm the 2027 dates from Conab's published calendar rather than assuming them.
+**Conab timing (AMENDED 2026-10-12; revised 2026-10-14).** Conab publishes four coffee surveys a
+year. A crop's first survey has fallen between late January and 5 February in recent years
+(21 January 2021, 18 January 2022, 28 January 2025, **5 February 2026**), and its final survey in
+December or the following January (15 December 2022; 21 January 2025 for the 2024 crop;
+4 December 2025 for the 2025 crop). **No Conab estimate for the 2027 crop exists before its first
+survey, expected late January or early February 2027. Any note published before that survey says
+so explicitly.** A February survey is already covered by the §6 fallback: note 3 goes out on the
+first business day of February without the Conab line, and a scorecard addendum follows the
+survey. Confirm the 2027 dates from Conab's published calendar rather than assuming them.
 
 **Design principle, fixed: this is a condition index, not a yield forecast.** Every note says so.
 If someone asks for a number of bags, the answer is a range, never a point: relative to Conab's

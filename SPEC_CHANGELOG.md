@@ -549,3 +549,16 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   about 10 EECU-hours. Ingestion is by NASA AppEEARS (route B), with whole-file download from LP
   DAAC as the backup if AppEEARS's queue exceeds three days; nothing is submitted until the
   owner's AppEEARS token is in `.env`. Approved by owner.
+
+- 2026-10-14 — **AMENDMENT 8 (revised): Conab's first survey has fallen as late as 5 February.**
+  Amendment 8 said a crop's first survey comes "between the 18th and 28th [of January] in recent
+  years". Conab's coffee page lists the 1st survey of safra 2026 on **5 February 2026** and the
+  4th survey of safra 2025 on 4 December 2025, so §1 now reads "between late January and 5
+  February", with the known dates: first surveys on 21 January 2021, 18 January 2022, 28 January
+  2025 and 5 February 2026; final surveys on 15 December 2022, 21 January 2025 (2024 crop) and
+  4 December 2025 (2025 crop). The 2021, 2022 and 2025 dates come from press reports of Conab's
+  calendars; the 2026 and December 2025 dates from Conab's own page. **Amendment 22 already handles
+  a February survey:** if Conab has not published by 31 January, note 3 goes out on the first
+  business day of February without the Conab line, and a scorecard addendum follows the survey, so
+  the first-week-of-February success date still holds. The original entry above records the
+  2026-10-12 wording unchanged. Approved by owner.
