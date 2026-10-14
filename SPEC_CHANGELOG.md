@@ -575,3 +575,65 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   way) and on geography. The owner is asking Conab's Minas Gerais office; an answer before
   `prereg-2` supersedes the test. The §4c checklist row now tracks only the historical extraction.
   Approved by owner.
+
+- 2026-10-14 — **AMENDMENT 17c: the frost station set is per season, and the flag and penalty are
+  measured on observed coffee.** Amends Amendments 17 and 17b. **Reason, the Week 0 station-set
+  result** (`docs/week0_report.md` §8). Coverage figures are shares of each region's MapBiomas 2024
+  coffee sample, for INMET automatic stations within 25 km and below the elevation cut:
+
+  | Station set | Sul | São Paulo | Triângulo | Zona da Mata |
+  |---|---|---|---|---|
+  | As specified: complete in all 19 Jun–Aug windows 2008–2026 (1 station) | 0.0% | 0.0% | 0.0% | 0.1% |
+  | Every candidate, whatever its record (64 stations) | 25.8% | 29.6% | 25.1% | 29.9% |
+  | Complete in the Jun–Aug 2021 window (crop 2022) | 20.7% | 16.8% | 24.6% | 29.5% |
+  | Complete in the Jun–Aug 2026 window (crop 2027) | 18.5% | 22.8% | 21.7% | 20.4% |
+
+  Under Amendment 17 no region could be flagged in any season, so the frost component could never
+  fire. Even every candidate station reaches only 25.1–29.9%, so the binding limit is network
+  density at 25 km, not completeness alone. And because the penalty was scaled by the share of
+  *total* coffee under stations meeting a tier, a frost hitting every station in a region would
+  still have carried at most about 25–30% of the per-area loss.
+
+  Changes:
+  1. **Per-season membership.** A station counts in every season whose Jun–Aug record meets the
+     completeness rule (95% of hours, no gap over 48 h); Amendment 17b still handles missing
+     nights one at a time. This is a **declared exception to §9's identical-observations rule**,
+     because the alternative is a component that can never fire. The backtest table reports the
+     station count, by network, and the observed coverage per region and season.
+  2. **Flag and penalty on observed coffee.** Observed coffee is the union of the season's
+     qualifying stations' circles. A region is flagged for a tier when stations meeting it cover
+     at least 25% of observed coffee. No flag in a region-season whose observed coverage is under
+     15% of the region's coffee. The penalty is scaled by the tier's share of observed coffee,
+     and the spec states the assumption this makes: unobserved coffee behaves like observed
+     coffee. **The 15% floor was chosen from coverage information only, before any frost night
+     was counted**, and is registered at `prereg-2` with that statement. With automatic stations
+     alone, 19 of 76 region-seasons fall under it: Sul 2008–2016, São Paulo 2009, 2019 and 2025,
+     Triângulo 2017, Zona da Mata 2008–2011, 2017 and 2019 (Jun–Aug window years). 2021 and 2026
+     are above it in every region.
+  3. **INMET conventional stations evaluated before registration**: BDMEP daily minima, the same
+     radius and elevation cut, complete in a season with at least 95% of Jun–Aug days and no
+     gap longer than 3 consecutive missing days, the daily analogue of the 48-hour rule; a longer
+     gap fails that station-season, and Amendment 17b's missing-night rule applies to the
+     remaining missing days. If they
+     lift observed coverage, the networks are combined with the network recorded per station;
+     otherwise the automatic network stands alone. Upper bound before any data, assuming every
+     conventional station complete whenever it operated: 1 of 76 region-seasons under the floor
+     (Triângulo 2017).
+  4. **Note 1** uses the stations with complete 2026 records, as station observations with their
+     coverage shares, alongside the public record (Cooxupé, Conab's September bulletin, Somar,
+     press), with sources distinguished.
+  5. **§5 step 1** records the MapBiomas-against-PAM finding beside the 30% filter.
+
+  **Where the text goes beyond the owner's wording, for review:**
+  - Note 1 also keeps the regional flags, since under the new rule every region is above the 15%
+    floor in 2026 (18.5–22.8%) and a flag can be computed.
+  - The §5 step 1 finding names São Paulo as well as Zona da Mata: São Paulo's ratio of MapBiomas
+    sample share to PAM area share (0.77) is as low as Zona da Mata's (0.80), against 1.15 for Sul
+    and 1.11 for Triângulo.
+  - "Lift observed coverage" is taken literally: any region-season whose observed coverage rises.
+  - Overlaps between the two networks follow the same union rule as overlaps within one.
+  - Which night a conventional daily minimum belongs to is taken from INMET's documentation, not
+    assumed.
+
+  Approved by owner with one change: the daily rule also caps gaps at 3 consecutive missing days
+  within a window (the draft had no gap limit).

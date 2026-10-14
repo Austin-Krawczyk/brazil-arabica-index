@@ -161,6 +161,11 @@ is needed, and the mask supports the full MODIS-era backtest.
   (curl returns 000 while control hosts return 200), so it is a manual download, like DWR and CIMIS
   in the earlier studies. Record retrieval date and checksum in `data/raw/inmet/SOURCE.md`.
   Confirm on first download that daily minimum temperature is present for automatic stations.
+- **INMET conventional station daily minima** — **under evaluation as a second frost network**
+  (§5 step 4, Amendment 17c). Daily "TEMPERATURA MINIMA, DIARIA" from BDMEP
+  (`bdmep.inmet.gov.br`), requested by the owner through BDMEP's e-mail form and stored in
+  `data/raw/inmet/bdmep/` with retrieval date and checksum. The station list comes from BDMEP's
+  own station API, which, unlike the portal's catalogue, includes closed stations.
 - **Conab coffee surveys** — the benchmark and backtest target. Conab has monitored coffee since
   **2001**, which bounds the backtest. Bulletins are PDFs; the regional series must be extracted
   from them. See §4c.
@@ -270,8 +275,8 @@ over *flat valley floor with 63 calibration stations*. Brazil's arabica is hilly
 
 - **Frost comes from INMET station minima only** (§5 step 4).
 - **ERA5-Land has no frost role.** Its remaining roles are soil moisture and heat days.
-- Frost is reported as a **regional flag with its coffee-area coverage share**, never as a
-  precise area.
+- Frost is reported as a **regional flag with its observed coverage share** (§5 step 4), never
+  as a precise area.
 - **The calibration requirement applies to gridded products matched to stations, not to station
   observations.** The station thresholds are the agronomic constants in §5 step 4, neither
   fitted nor calibrated.
@@ -340,6 +345,15 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    (§9) — the 30% trigger very likely correlates with steep smallholder terrain, so it may
    preferentially delete Zona da Mata, the region the mask is least reliable in.
 
+   **Week 0 finding (2026-10-14, Amendment 17c).** In a 20,000-point random sample of MapBiomas
+   class 46 (2024), each region's share of the index's points divided by its share of IBGE PAM
+   2025 arabica area is 0.80 for Zona da Mata, Rio Doce e Central and 0.77 for São Paulo, against
+   1.15 for Sul e Centro-Oeste and 1.11 for Triângulo, Alto Paranaíba e Noroeste. MapBiomas finds
+   relatively less coffee than PAM records in Zona da Mata and in São Paulo. For Zona da Mata that
+   fits under-detection of steep smallholder coffee; for São Paulo the cause is not established.
+   Either way the 30% filter is expected to remove these two regions' municipalities more often
+   than the others', and the removal report is read with that in mind.
+
    **Mask year by season (AMENDED 2026-10-12).**
    - Each backtest season uses the mask production would have had at its note date. Every season
      uses Collection 10's classifications, so all seasons are on the same product. Older
@@ -383,16 +397,31 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    predictive input;** weight it accordingly.
 4. **Frost events (AMENDED 2026-10-12).** Station observations only (§4b). **Assign each frost
    window to the crop it actually affects (§3a).**
-   - **Stations.** INMET automatic stations with complete Jun–Aug records from 2008, inside or
-     within 25 km of the coffee mask. A record is complete when at least 95% of hourly
-     observations are present in every Jun–Aug window from 2008, with no gap longer than 48
-     consecutive hours. Record each station's coffee area within that radius. Leave out of the
-     weighting any station above the 95th percentile of coffee-mask elevation in its region (DEM,
-     §4; station elevation from INMET metadata). Register the resulting station list per region,
-     with its count, and the elevation cut at `prereg-2`, and report every station within 50 m of
-     the cut.
-   - **Coverage share.** For a set of stations, the coffee area inside the union of their 25 km
-     circles, with overlaps counted once, divided by the region's coffee area.
+   - **Stations: per-season membership (Amendment 17c).** INMET automatic stations inside or
+     within 25 km of the coffee mask. A station counts in a season when its Jun–Aug record for
+     that season is complete: at least 95% of hourly observations present, with no gap longer
+     than 48 consecutive hours. Membership therefore changes from season to season, a declared
+     exception to §9's identical-observations rule. Record each station's coffee area within that
+     radius. Leave out of the weighting any station above the 95th percentile of coffee-mask
+     elevation in its region (DEM, §4; station elevation from INMET metadata). Register the
+     station list per region and season, with counts, and the elevation cut at `prereg-2`, and
+     report every station within 50 m of the cut.
+   - **Conventional network (Amendment 17c, under evaluation).** Before `prereg-2`, INMET's
+     conventional stations are evaluated as a second source: daily minimum temperature from BDMEP
+     (§4), the same 25 km radius and elevation cut, and a station counts in a season when at
+     least 95% of its Jun–Aug days have a daily minimum, with no gap longer than 3 consecutive
+     missing days (the daily analogue of the 48-hour rule). A window with a longer gap fails for
+     that station-season, and Amendment 17b's missing-night rule applies to the remaining
+     missing days. If they lift observed coverage, the two
+     networks are combined, with the network recorded per station; if they don't, the automatic
+     network is used alone. For a conventional station a night is observed when its daily minimum
+     is present; which night each daily minimum belongs to is taken from INMET's documentation,
+     not assumed.
+   - **Observed coverage (Amendment 17c).** A region's observed coffee in a season is the coffee
+     area inside the union of the 25 km circles of that season's qualifying stations, with
+     overlaps counted once, including overlaps between networks. Observed coverage is observed
+     coffee divided by the region's coffee area. A tier's share is the observed coffee inside the
+     circles of stations meeting that tier, divided by observed coffee.
    - **Thresholds: agronomic, not fitted.** Coffee leaf damage starts around −2 to −3 °C at leaf
      level. On radiative-cooling nights, screen-height readings run roughly 3–4 °C warmer than
      the leaf. So first damage corresponds to a screen-height minimum of 0 to 2 °C. **2 °C is the
@@ -406,19 +435,22 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    - **Missing nights (Amendment 17b).** A night counts as observed only if every hour from
      18:00 to 09:00 local time is present (INMET timestamps are UTC). A missing night is never
      counted as a non-frost night. If a station's missing nights could change its tier for a
-     season, its tier for that season is reported as unresolved, and the region's coverage share
-     is reported with and without it.
-   - **Regional flag.** A region is flagged for a tier when stations meeting that tier cover at
-     least 25% of its coffee area. Reaching the flag triggers an out-of-cycle note at that point,
-     not at the end of the window.
-   - **Minimum coverage.** If the qualifying stations cover less than 25% of a region's coffee
-     area, that region cannot be frost-flagged at all, and every note says so. Report the maximum
-     attainable coverage per region at `prereg-2`, so an unreachable flag is known before the
+     season, its tier for that season is reported as unresolved, and the region's tier shares
+     are reported with and without it.
+   - **Regional flag (Amendment 17c).** A region is flagged for a tier in a season when stations
+     meeting that tier cover at least 25% of its observed coffee. Reaching the flag triggers an
+     out-of-cycle note at that point, not at the end of the window.
+   - **Coverage floor (Amendment 17c).** No flag in a region-season whose observed coverage is
+     under 15%. Such a region-season is reported as unflaggable, and every note covering it says
+     so. **The 15% floor was chosen from coverage information only, before any frost night was
+     counted**, and is registered at `prereg-2` with that statement. Observed coverage per region
+     and season is reported at `prereg-2`, so every unflaggable region-season is known before the
      first run.
    - **Series.** The frost component starts with crop 2009 (the Jun–Aug 2008 frost window) and
      is not filled for 2001–2008. The index is scored in two versions, each with its own pass
      mark, and the two are compared only on the seasons they share: without frost, on every
-     season; with frost, from crop 2009.
+     season; with frost, from crop 2009. The backtest table reports, per region and season, the
+     station count by network and the observed coverage.
 5. **Heat and dry-season stress (AMENDED 2026-10-12).**
    - During flowering (Sep–Nov of S−1): days above 34 °C (ERA5-Land) and consecutive dry days
      (CHIRPS).
@@ -451,9 +483,10 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    season out would remove the only evidence for it.
    - Frost enters as a **fixed yield penalty for each frost tier** in each flagged region. The
      tiers and the flag are defined in step 4. Each tier's penalty is the yield loss on affected
-     area, multiplied by the share of the region's coffee area under stations meeting that tier
-     (the same weights as the step-4 flag). The step-4 trigger at 25% therefore sets the floor,
-     and the penalty grows with coverage. Tiers are exclusive: the severe-tier penalty applies to
+     area, multiplied by that tier's share of the region's observed coffee (step 4), the same
+     share as the flag. **This assumes that unobserved coffee behaves like observed coffee**
+     (Amendment 17c). The 25% flag therefore sets the floor, and the penalty grows with the
+     tier's share. Tiers are exclusive: the severe-tier penalty applies to
      the share meeting the severe tier, and the 2 °C penalty to the share meeting the 2 °C tier
      but not the severe tier. Penalty values are registered at `prereg-1` and their sources at
      `prereg-2` (§9): Embrapa, IAC or peer-reviewed frost-damage work. Where no clean source
@@ -548,9 +581,12 @@ field-level analysis, any translation of the index into a price forecast.
 ## 6. Outputs
 
 1. **Crop notes** (one page, PDF and LinkedIn). **(AMENDED 2026-10-12)**
-   - **Note 1, late November 2026: the Jun–Aug 2026 frost review** (§3a). It reports the frost
-     tiers, flags and coverage shares for crop 2027 (§5 step 4) and carries no index reading, so
-     it does not use the fixed layout below. The November-vintage index reading is computed as of
+   - **Note 1, late November 2026: the Jun–Aug 2026 frost review** (§3a). It uses the stations
+     with complete Jun–Aug 2026 records, reported as station observations, each with its tier and
+     coverage share, and the regional flags they produce for crop 2027 (§5 step 4). Beside them
+     goes the public record — Cooxupé, Conab's September bulletin, Somar and press reports — with
+     every statement attributed to its source and kept distinct from the station data (Amendment
+     17c). It carries no index reading, so it does not use the fixed layout below. The November-vintage index reading is computed as of
      the November note date and published in the repo no later than note 1, so the post-survey
      scorecard can cite it as made before Conab's survey.
    - **Index notes** publish in the first week of each month from December 2026, except the note
@@ -622,6 +658,10 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
   the result, and the direction is usually knowable in advance.
 - **No two products or seasons are ever compared except on identical observations.** Comparing on
   each product's own available sample measures availability as well as skill.
+  **Declared exception (Amendment 17c): the frost station set changes by season** (§5 step 4).
+  The alternative, a fixed set complete in every season, covers 0.0–0.1% of each region's coffee
+  and gives a frost component that can never fire. Station counts and observed coverage per
+  region and season are reported in the backtest table, so the changing sample stays visible.
 - **Any result of zero, none or empty is verified by an independent method before it is accepted**,
   especially where zero is the expected answer.
 - **Never score a model with information it will not have in production.** See §5 step 8.
@@ -662,8 +702,10 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
   - **Tag `prereg-2`, before the first backtest run.** It records the values that need data but
     not results:
     - the mask lag and both masks: full class 46 and persistent-pixel (§5 step 1)
-    - the station list per region with its count, the altitude cut, and the maximum attainable
-      frost coverage per region (§5 step 4)
+    - the station list per region and season with counts and network, the altitude cut, the
+      observed coverage per region and season, and the 15% coverage floor with the statement
+      that it was chosen from coverage information only, before any frost night was counted
+      (§5 step 4)
     - the surprise-test pass mark computed from Conab's base rate
     - the base-rate check on the direction pass marks (§5 step 8)
     - the sources for the frost tier constants, or "provisional, no clean source". A constant
@@ -685,6 +727,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | **§4c Conab granularity:** São Paulo resolved (state total, Amendment 34). Still open: whether surveys back to 2001 carry the Minas regional split (first, third and final surveys) in usable form | Week 0 | §4c, §5 step 7 |
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
+| INMET conventional network (BDMEP daily minima): completeness per season, observed-coverage lift, and which night a daily minimum belongs to | `prereg-2` | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
 | Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
