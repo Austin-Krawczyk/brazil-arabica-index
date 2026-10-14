@@ -318,6 +318,27 @@ with the most distinctive story.
 Also to settle in Week 0: the bulletins are PDFs, so building a ~25-season regional target series is
 extraction work. Budget for it, and record which survey vintage each value came from.
 
+**Target series, decided 2026-10-14 (Amendment 19b).**
+- **The backtest target is Conab's final figure for each safra as it stands in the current
+  historical series.** Conab's arabica series (`cafearabicaseriehist.xls`) was downloaded on
+  2026-10-14, with SHA-256 in `data/raw/conab/SOURCE.md`; any later download is a new vintage
+  and is logged.
+- **Arabica area and yield by region begin with safra 2008.**
+- **For 2001–2007, Sul e Centro-Oeste, Triângulo, Alto Paranaíba e Noroeste, and São Paulo take
+  area, yield and production from Conab's arabica-plus-conilon series** (`cafetotalseriehist.xls`).
+  The justification: in all 18 safras 2008–2025 the two series are identical in both area and
+  production in these three regions.
+- **Zona da Mata, Rio Doce e Central, which carries conilon, starts in 2008.**
+- **Survey vintage tables** (first, third and final surveys) are used only for the surprise test
+  and for the biennial-term sensitivity (§5 steps 7 and 8).
+- **Findings on Conab's arabica series for 2001–2007,** recorded, not corrected; this is why the
+  early years come wholly from the other series:
+  - it records 2004 regional production as 0 for Sul, Triângulo and Zona da Mata, a missing value
+    written as zero;
+  - in 2002 and 2006 its Sul production exceeds the arabica-plus-conilon total (13,200 against
+    11,633, and 12,043 against 11,633 thousand bags);
+  - which series is right for Sul in those two years is not established.
+
 ### 4d Planet: bounded v1.5 tasks, never an input (AMENDED 2026-10-12)
 
 Planet Education & Research access is confirmed. **Planet stays out of the index and the
@@ -513,9 +534,15 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    term assumes the phase never moves.
    - Instead, the expectation for crop S includes a coefficient on crop S−1's yield anomaly.
      A low year then predicts a rebound and a high year a dip, whatever the calendar phase.
-   - Crop S−1's anomaly uses Conab's third survey of that crop, published in September of S−1,
-     before every note. Every vintage therefore uses the same value, and the third surveys join
-     the Conab extraction work (§4c).
+   - **Crop S−1's anomaly (AMENDED 2026-10-14, Amendment 19b)** uses Conab's final figure for that
+     crop in the current historical series, the same series as the backtest target. Every vintage
+     therefore uses the same value.
+     - **This is a declared leak.** At a November note, production has only the third survey of
+       crop S−1, published in September of S−1, and uses it. Third-to-final yield revisions for
+       safras 2023–2025 averaged 1.9% in absolute size, with a largest of 8.4% (Triângulo 2023).
+     - **Sensitivity, reported beside the headline:** for the crops whose previous crop has a
+       third survey on record (S−1 = 2023–2025), the biennial term is recomputed from the third
+       survey. That measures the effect of the leak where it can be measured.
    - Report the index **relative to this expectation**, or every off-year reads as a crop
      failure.
 8. **Backtest by note date (AMENDED 2026-10-12).** Leave-one-year-out, **using only inputs available
@@ -545,12 +572,18 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    - **Rain only** (the expectation plus flowering rain deficit alone): shows whether EVI, soil
      moisture and heat days add anything beyond rain.
 
-   **Pass marks, fixed in advance, on condition direction:**
-   - without frost, crops 2001–2025: 18 of 25 (p≈0.02, one-sided against a coin flip);
-   - with frost, crops 2009–2025: 13 of 17 (p≈0.02).
-   If the share of positive condition anomalies is away from 50%, the pass mark becomes the
-   larger of these and the count that beats the majority share at p<0.05. That is computed at
-   `prereg-2`.
+   **Pass marks, fixed in advance, on condition direction (AMENDED 2026-10-14, Amendment 19b).**
+   The rule is p < 0.05, one-sided against a coin flip, and **the exact p-value is reported beside
+   every pass mark:**
+   - Without frost, Sul e Centro-Oeste, Triângulo, Alto Paranaíba e Noroeste, and São Paulo,
+     crops 2001–2025: **18 of 25** (p = 0.0216).
+   - Without frost, Zona da Mata, Rio Doce e Central and the four-region total, crops
+     2008–2025: **13 of 18** (p = 0.0481).
+   - With frost, every region and the four-region total, crops 2009–2025: **13 of 17**
+     (p = 0.0245).
+   If the share of positive condition anomalies is away from 50%, each pass mark becomes the
+   larger of its own value and the count that beats the majority share at p<0.05. That is
+   computed at `prereg-2`.
 
    **Crop 2026** is added when Conab publishes its final, as an addendum reported with and
    without it. The pass marks above don't change. It is not a clean out-of-sample test, because
@@ -574,6 +607,11 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      always predicts the majority direction. Skill is the hit rate above that, not above 50%.
      The pass mark is the number of hits that beats the base rate at p<0.05 (one-sided). It is
      computed once the Conab series has been extracted, and fixed before the first backtest run.
+   - **Until more vintages exist, the surprise test is reported, not scored (Amendment 19b).**
+     First- and final-survey figures have been located only for safras 2023–2025 (§4c). So the
+     test is reported for those three safras, with no pass mark, until earlier vintages are
+     found. Archived copies count as sources if the archive URL, capture date and checksum are
+     recorded.
    - Score the four-region total as the headline and each region separately. Report how many
      seasons have both a first and a final survey on record.
 9. **Output.** Index per region and a four-region total, every 16 days; frost and flowering-
@@ -711,7 +749,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
       observed coverage per region and season, and the 15% coverage floor with the statement
       that it was chosen from coverage information only, before any frost night was counted
       (§5 step 4)
-    - the surprise-test pass mark computed from Conab's base rate
+    - the surprise-test pass mark computed from Conab's base rate, once vintages beyond
+      2023–2025 exist; until then, the statement that the test is reported, not scored
     - the base-rate check on the direction pass marks (§5 step 8)
     - the sources for the frost tier constants, or "provisional, no clean source". A constant
       whose source changes between `prereg-1` and `prereg-2` is logged like any other change. If
@@ -744,10 +783,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 
 ### Still open
 
-1. **Conab vintage** — score against the final survey of each year, or the following year's
-   revised series? Record which vintage every value came from either way. The surprise test and
-   the biennial term already fix their surveys (first, third, final); this item is about the
-   scoring target only.
+1. **Conab vintage** — closed 2026-10-14; see Closed.
 2. **Region weights** for the four-region total — IBGE PAM harvested area or production?
    Production weights favour the Cerrado.
 3. **Does USDA FAS GAIN give regional splits** usable as a second benchmark?
@@ -760,13 +796,16 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - **Coffee mask** (original open question 1) — MapBiomas Collection 10, class 46 (SPEC_CHANGELOG,
   2026-10-12).
 - **Planet access** — Education & Research access confirmed (§4d). The quota is in the checklist.
+- **Conab vintage** (still-open item 1) — the backtest target, and the biennial term, use Conab's
+  final figure for each safra in the current historical series, with its download date recorded
+  (§4c, §5 step 7, Amendment 19b).
 
 ## 11. Risks
 
 | Risk | Mitigation |
 |---|---|
 | Overclaiming | Condition index framing in every note; range not point; §1a |
-| Biennial bearing | Coefficient on crop S−1's anomaly from Conab's third survey, so shocks reset the phase (§5 step 7); report relative to the expectation |
+| Biennial bearing | Coefficient on crop S−1's anomaly, so shocks reset the phase (§5 step 7); final figure used, a declared and sized leak with a third-survey sensitivity; report relative to the expectation |
 | Irrigation in the Cerrado | Separate weighting; flag irrigation share from Censo Agro |
 | Short fitting sample | MODIS era, ~25 seasons (§4a); four pooled ridge weights, frost fixed (§5 step 6); leave-one-season-out by note date |
 | ERA5-Land misses valley frost | INMET stations only; ERA5-Land has no frost role (§4b) |

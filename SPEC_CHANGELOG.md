@@ -649,3 +649,44 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   verified to resolve". It and its declared fallback, `COPERNICUS/DEM/GLO30_2024_1`, resolved in
   the Week 0 ID check (2026-10-13), and SRTM was used for the provisional station elevation cut.
   The §10 checklist row records both. Requested by owner.
+
+- 2026-10-14 — **AMENDMENT 19b: the target series, regional seasons and pass marks; the biennial
+  term uses the final figure; the surprise test is reported, not scored, until more vintages
+  exist.** Amends Amendments 19 and 12.
+
+  **Reason: the §4c extraction** (Week 0 report §10).
+  - Conab's arabica series gives regional area and yield only from safra 2008.
+  - Its arabica-plus-conilon series is identical to it in area and production for Sul e
+    Centro-Oeste, Triângulo and São Paulo in all 18 safras 2008–2025.
+  - First- and final-survey tables were located only for safras 2023–2025. The Internet Archive
+    refused the index query twice (HTTP 429, 2026-10-14), and per the owner's instruction was not
+    tried again.
+
+  Changes:
+  1. **Target:** Conab's final figure for each safra as it stands in the current historical
+     series, with the series download date recorded (2026-10-14). This closes §10 still-open
+     item 1.
+  2. **2001–2007:** Sul, Triângulo and São Paulo take area, yield and production from the
+     arabica-plus-conilon series, justified by the identity in 2008–2025. Zona da Mata, which
+     carries conilon, starts in 2008.
+     - **Findings, recorded and not corrected:** Conab's arabica series writes the missing 2004
+       regional production as 0 (Sul, Triângulo, Zona da Mata). In 2002 and 2006 its Sul figure
+       exceeds the arabica-plus-conilon total.
+  3. **Pass marks, with exact one-sided p-values beside each:**
+     - the three long regions, crops 2001–2025: 18 of 25 (p = 0.0216);
+     - Zona da Mata and the four-region total, crops 2008–2025: 13 of 18 (p = 0.0481);
+     - with frost, crops 2009–2025: 13 of 17 (p = 0.0245).
+     The owner kept 13 of 18 rather than raise it: the registered rule is p < 0.05, and raising
+     the bar after seeing the season count is the adjustment the rule exists to prevent.
+  4. **Biennial term (§5 step 7):** crop S−1's anomaly uses the final figure throughout, a
+     declared leak.
+     - Sized: third-to-final yield revisions for 2023–2025 averaged 1.9% in absolute size, with a
+       largest of 8.4%.
+     - A sensitivity recomputes the term from the third survey where one is on record
+       (S−1 = 2023–2025), reported beside the headline.
+     - Survey vintage tables are otherwise used only for the surprise test.
+  5. **Surprise test:** reported for 2023–2025 with no pass mark until earlier vintages exist.
+     Archived copies qualify as sources if the archive URL, capture date and checksum are
+     recorded.
+
+  Approved by owner.
