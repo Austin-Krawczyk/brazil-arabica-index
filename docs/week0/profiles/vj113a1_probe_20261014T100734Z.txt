@@ -1,0 +1,66 @@
+ EECU·s PeakMem Count  Description
+ 20.463     25k  2982  Algorithm reduce.max
+  7.831     87k   509  Algorithm Image.reduceRegion
+  5.983     15M 54634  (plumbing)
+  2.476    256k   660  Algorithm Image.unmask computing pixels
+  1.055    258k  1132  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024025@1791970569315581
+  1.047    258k  1132  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024001@1791970563076453
+  1.035    258k  1132  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024017@1791970570616134
+  1.027    258k  1132  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024009@1791970561062942
+  0.507    513k   476  Loading assets: projects/brazil-arabica-index/assets/vj113a1_coffee_weight_mgsp@1791972417993816
+  0.397    7.8k  3413  Algorithm Image.select
+  0.183    8.6k  1787  Algorithm Image.gte
+  0.175    8.6k  1787  Algorithm Image.lte
+  0.161    9.4k  1787  Algorithm Image.mask
+  0.155      88  2266  Reprojecting pixels from SR-ORG:6974 to SR-ORG:6974
+  0.143    7.4k  1787  Algorithm Image.gt
+  0.142    4.3k  1002  Algorithm Image.multiply
+  0.120    6.7k  1002  Algorithm Image.addBands
+  0.119    4.5k  1002  Algorithm Image.rename
+  0.100     352  1056  Algorithm Image.constant computing pixels
+  0.054    3.0k  2487  Algorithm Image.constant
+  0.034    7.4k  1787  Algorithm Image.and
+  0.028    4.9k  1002  Algorithm Image.unmask
+  0.023    1.7k   660  Algorithm Image.multiply computing pixels
+  0.023    1.0k   968  Algorithm Image.gte computing pixels
+  0.022    1.1k   968  Algorithm Image.lte computing pixels
+  0.019    1.1k   968  Algorithm Image.and computing pixels
+  0.019     416   968  Algorithm Image.mask computing pixels
+  0.018     688   968  Algorithm Image.gt computing pixels
+  0.016    5.8k   500  Algorithm ReduceRegion.AggregationContainer
+  0.000     136     3  Listing collection
+  0.000     208     1  Algorithm Collection.reduceColumns with reducer Reducer.count
+   -       257k   990  Algorithm reduce.max computing pixels
+   -        83k  1491  Algorithm ImageCollection.load
+   -        83k   668  Algorithm Image.load
+   -        23k   664  Algorithm (user-defined function)
+   -        22k  3725  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2
+   -        15k   850  Loading assets: projects/brazil-arabica-index/assets/vj113a1_coffee_weight_mgsp
+   -        15k  3483  Algorithm Collection.map
+   -       9.3k     2  Algorithm Collection.reduceColumns
+   -       9.0k     4  Algorithm Collection.first
+   -       8.4k  1750  Loading assets: projects/brazil-arabica-index/assets
+   -       8.1k   166  Algorithm Projection
+   -       8.0k   243  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024025
+   -       8.0k   243  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024017
+   -       8.0k   243  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024009
+   -       8.0k   244  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2024001
+   -       7.8k     1  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/c_2018001
+   -       4.2k  1986  Algorithm TypedImageCollection.Constructor
+   -       4.0k  1491  Algorithm Collection.filter
+   -       3.8k     6  Algorithm Element.set
+   -       3.3k  1488  Algorithm PixelType
+   -       3.3k     3  Algorithm Collection.size
+   -       3.2k  1491  Algorithm Filter.dateRangeContains
+   -       3.1k   497  Algorithm DateRange
+   -       3.0k     1  Algorithm Date.format
+   -       2.9k     3  Algorithm Image.projection
+   -       2.9k     3  Algorithm Feature
+   -       2.8k     2  Algorithm AggregateFeatureCollection.count
+   -       2.8k   496  Algorithm List.(construct from elements)
+   -       2.1k     1  Algorithm Date.advance
+   -       1.7k     1  Algorithm Date
+   -        608   167  Algorithm Reducer.sum
+   -        224  1161  Expression evaluation
+   -         64  2266  Algorithm Image.load computing pixels
+   -          0     4  no description available

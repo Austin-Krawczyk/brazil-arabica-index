@@ -1,0 +1,58 @@
+ EECU·s PeakMem Count  Description
+774.183     27k 119280  Algorithm reduce.max
+290.362    159k 20360  Algorithm Image.reduceRegion
+220.628     17M 2140697  (plumbing)
+160.514    258k 217330  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2/(...)
+ 95.197    256k 26400  Algorithm Image.unmask computing pixels
+ 20.646    513k 19040  Loading assets: projects/brazil-arabica-index/assets/vj113a1_coffee_weight_mgsp@1791972417993816
+ 14.994    7.9k 135068  Algorithm Image.select
+  6.812    8.6k 70754  Algorithm Image.gte
+  6.648    8.6k 70754  Algorithm Image.lte
+  6.062    9.4k 70754  Algorithm Image.mask
+  5.917      88 89672  Reprojecting pixels from SR-ORG:6974 to SR-ORG:6974
+  5.531    4.4k 40080  Algorithm Image.multiply
+  5.417    7.5k 70754  Algorithm Image.gt
+  4.654    6.8k 40080  Algorithm Image.addBands
+  4.591    4.5k 40080  Algorithm Image.rename
+  3.918     352 42240  Algorithm Image.constant computing pixels
+  2.100    3.0k 99480  Algorithm Image.constant
+  1.300    7.5k 70754  Algorithm Image.and
+  1.098    5.0k 40080  Algorithm Image.unmask
+  0.915    1.8k 26400  Algorithm Image.multiply computing pixels
+  0.898    1.6k 38236  Algorithm Image.gte computing pixels
+  0.813    1.5k 38236  Algorithm Image.lte computing pixels
+  0.744     688 38236  Algorithm Image.mask computing pixels
+  0.724    1.0k 38236  Algorithm Image.gt computing pixels
+  0.693    1.5k 38236  Algorithm Image.and computing pixels
+  0.648    5.9k 20000  Algorithm ReduceRegion.AggregationContainer
+  0.006     136   120  Listing collection
+  0.004     208    40  Algorithm Collection.reduceColumns with reducer Reducer.count
+   -       257k 39600  Algorithm reduce.max computing pixels
+   -        85k 26720  Algorithm Image.load
+   -        84k 59640  Algorithm ImageCollection.load
+   -        23k 26560  Algorithm (user-defined function)
+   -        22k 139906  Loading assets: projects/brazil-arabica-index/assets/vj113a1_mgsp_v2
+   -        16k 27320  Loading assets: projects/brazil-arabica-index/assets/vj113a1_coffee_weight_mgsp
+   -        15k 139320  Algorithm Collection.map
+   -        10k    80  Algorithm Collection.reduceColumns
+   -      10.0k   160  Algorithm Collection.first
+   -       8.5k 54202  Loading assets: projects/brazil-arabica-index/assets
+   -       8.4k  6640  Algorithm Projection
+   -       4.3k 79440  Algorithm TypedImageCollection.Constructor
+   -       4.2k   240  Algorithm Element.set
+   -       4.1k 59640  Algorithm Collection.filter
+   -       3.5k   120  Algorithm Collection.size
+   -       3.3k 59520  Algorithm PixelType
+   -       3.3k 19880  Algorithm DateRange
+   -       3.3k    40  Algorithm Date.format
+   -       3.2k 59640  Algorithm Filter.dateRangeContains
+   -       3.1k   120  Algorithm Image.projection
+   -       3.1k    80  Algorithm AggregateFeatureCollection.count
+   -       3.1k   120  Algorithm Feature
+   -       2.8k 19840  Algorithm List.(construct from elements)
+   -       2.2k    40  Algorithm Date.advance
+   -       1.8k    40  Algorithm Date
+   -        632  6680  Algorithm Reducer.sum
+   -        224 46440  Expression evaluation
+   -         64 89672  Algorithm Image.load computing pixels
+   -          0   160  no description available

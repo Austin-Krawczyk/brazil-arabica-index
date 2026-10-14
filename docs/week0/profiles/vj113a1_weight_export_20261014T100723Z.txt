@@ -1,0 +1,1 @@
+batch export vj113a1_coffee_weight_mgsp: COMPLETED, 1,610 EECU-seconds (batch_eecu_usage_seconds), 515 s wall
