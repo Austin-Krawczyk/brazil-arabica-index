@@ -29,7 +29,7 @@ frost tier constant values.
 | Flowering | Sep 1–Nov 30 of S−1 | §3a, §5 step 3 | decided |
 | Bean fill | Dec 1 of S−1 to Mar 31 of S | §3a, §5 step 3 | decided |
 | Harvest rain | May–Sep of S: not an input (falls after every note on crop S) | §5 step 3 | decided |
-| Backtest seasons | Without frost: crops 2001–2025. With frost: crops 2009–2025 | §5 step 8 | decided, **but see the §4c finding under G** |
+| Backtest seasons | Without frost: Sul e Centro-Oeste, Triângulo and São Paulo, crops 2001–2025; Zona da Mata and the four-region total, crops 2008–2025. With frost: crops 2009–2025 | §5 step 8, Amendment 19b | decided |
 | Note dates per vintage (November, December, January) in the backtest | The calendar date each vintage's inputs are cut at. Production: note 1 late November; index notes in the first week of each month; the post-survey note within five business days of Conab's first survey, or 1 February (§6) | §5 step 8, §6 | **OPEN: fixed calendar dates per vintage** |
 
 ### B. The four fitted inputs (stage 2, the cap of four; §5 step 6)
@@ -64,7 +64,7 @@ frost tier constant values.
 | Item | Value | Status |
 |---|---|---|
 | Terms per region | Intercept, linear trend, and a coefficient on crop S−1's yield anomaly. Three per region; not counted toward the cap | decided |
-| Crop S−1's anomaly | From Conab's **third survey** of crop S−1, published in September of S−1, so every vintage uses the same value | decided, **but see the §4c finding under G** |
+| Crop S−1's anomaly | Conab's **final figure** for crop S−1 in the current historical series (downloaded 2026-10-14). A declared leak: production at a November note has only the third survey. Third-to-final yield revisions for 2023–2025 average 1.9% in absolute size, with a largest of 8.4%. Sensitivity: recomputed from the third survey where one is on record (S−1 = 2023–2025), reported beside the headline | decided (Amendment 19b) |
 | Index reported relative to | This expectation, so off-years do not read as failures | decided |
 
 ### E. Weighting (§5 step 6)
@@ -81,7 +81,8 @@ frost tier constant values.
 |---|---|---|
 | Thresholds (screen-height station minimum) | **2 °C** sensitive tier; **0 °C** severe tier; both reported | decided |
 | Station tiers | 2 °C tier: three or more nights ≤ 2 °C in Jun–Aug. Severe tier: one or more nights ≤ 0 °C. Tiers are exclusive | decided |
-| Observed night | Automatic stations: every hour 18:00–09:00 local present. Conventional stations: daily minimum present, with the night it belongs to taken from INMET documentation. A missing night is never a non-frost night; a tier that missing nights could change is unresolved | decided; **OPEN: which night a BDMEP daily minimum belongs to (not yet established)** |
+| Observed night | Automatic stations: every hour 18:00–09:00 local present. Conventional stations: daily minimum present; a minimum dated D belongs to the night ending the morning of D (read at 12 UTC, covering the preceding 24 hours). A missing night is never a non-frost night; a tier that missing nights could change is unresolved | decided. The conventional rule is **provisional until INMET's documentation is cited** (Amendment 17d); it was checked against six same-site pairs |
+| Stations sharing a site | Within 1 km in INMET's catalogues. Where both have complete records for a season, the automatic station governs the tier and the conventional is left out of the union; the conventional fills only seasons where the automatic is incomplete. Offsets are recorded in `docs/week0/colocated_pairs.csv` and never applied. Any season in which a conventional station alone would change a region's tier is flagged | decided (Amendment 17d) |
 | Station completeness per season | Automatic: ≥ 95% of hours, no gap over 48 h. Conventional: ≥ 95% of days (88 of 92), no gap over 3 days | decided |
 | Radius and elevation cut | 25 km; stations above the 95th percentile of coffee-mask elevation in the region are left out (cut values at `prereg-2`) | decided |
 | Regional flag | Stations meeting a tier cover at least **25% of the region's observed coffee** | decided |
@@ -99,21 +100,10 @@ frost tier constant values.
 | Vintages | November, December, January, each using only inputs available at its note date (dates: OPEN, see A) | decided |
 | Targets | Condition direction: the sign of actual yield minus the stage-1 expectation. Yield versus trend: the sign of actual yield minus trend | decided |
 | Comparison models | Zero anomaly; biennial only; rain only (expectation plus flowering rain deficit) | decided |
-| **Direction pass marks** | Without frost: **18 of 25** (crops 2001–2025, p ≈ 0.02). With frost: **13 of 17** (crops 2009–2025, p ≈ 0.02). If the share of positive anomalies is away from 50%, the mark becomes the larger of these and the count that beats the majority share at p < 0.05 (computed at `prereg-2`) | decided, **but see below** |
-| Conab vintage scored against | Final survey of each year, or the latest revised series | **OPEN** (§10 still-open item 1) |
+| **Direction pass marks** | Rule: p < 0.05, one-sided; the exact p-value is reported beside every mark. Without frost: Sul, Triângulo and São Paulo, crops 2001–2025, **18 of 25** (p = 0.0216); Zona da Mata and the four-region total, crops 2008–2025, **13 of 18** (p = 0.0481). With frost, crops 2009–2025: **13 of 17** (p = 0.0245). If the share of positive anomalies is away from 50%, each mark becomes the larger of its value and the count that beats the majority share at p < 0.05 (computed at `prereg-2`) | decided (Amendment 19b) |
+| Target series | Conab's final figure for each safra in the current historical series, downloaded 2026-10-14. For 2001–2007, Sul, Triângulo and São Paulo take area, yield and production from the arabica-plus-conilon series (identical to arabica there in 2008–2025); Zona da Mata starts in 2008 | decided (Amendment 19b) |
 | Crop 2026 | Added as an addendum once Conab's final is out, with and without it; not a clean out-of-sample test | decided |
-| Surprise test | Rules decided (§5 step 8): revisions under 1% count as flat and are excluded; skill is measured against the base rate; the pass mark is computed at `prereg-2` | decided |
-
-**§4c finding that bears on G and D (Week 0 report §10, 2026-10-14):**
-
-- **Arabica yield by region exists from safra 2008, not 2001.** Conab's arabica series gives
-  regional area and yield from 2008; for 2001–2007 it gives production only. Unless the owner
-  accepts the arabica-plus-conilon series for 2001–2007 (identical to arabica in Sul, Triângulo and
-  São Paulo wherever both exist), the no-frost backtest has 18 seasons, not 25. The pass mark
-  "18 of 25" was set for 25.
-- **Third-survey values (D) are on Conab's site only for safras 2023–2025.**
-
-Both need an owner decision before the tag.
+| Surprise test | Rules as in §5 step 8 (revisions under 1% count as flat; skill against the base rate). **Reported for safras 2023–2025, not scored against a pass mark, until earlier vintages are found** | decided (Amendment 19b) |
 
 ## prereg-2 — to be fixed before the first backtest run (not yet tagged)
 
@@ -122,8 +112,9 @@ Both need an owner decision before the tag.
 | **Region membership** | `docs/week0/proposed_region_membership.csv`: Sul e Centro-Oeste = Sul/Sudoeste + Oeste de Minas (190 municipalities); Triângulo, Alto Paranaíba e Noroeste = Triângulo Mineiro/Alto Paranaíba + Noroeste de Minas (85); Zona da Mata, Rio Doce e Central = Zona da Mata + Vale do Rio Doce + Central Mineira + Campo das Vertentes + Metropolitana de BH (415); São Paulo = all 645 municipalities. Norte, Jequitinhonha e Mucuri (163) outside the index | Conab bulletin, 3rd survey 2026 (1989 mesoregions); Amendment 34 | **registered, provisional.** Campo das Vertentes and Metropolitana de BH by area fit: PAM 2025 against Conab 2025, +3.1% (Sul e Centro-Oeste) and −8.5% (Zona da Mata, Rio Doce e Central), against +7.8% and −16.1% the other way. An answer from Conab's MG office before the tag supersedes this |
 | **São Paulo target (§4c)** | São Paulo state total, as the Mogiana target | Conab 3rd survey 2026 table: SP reported only as a state total; Amendment 34 | **registered** |
 | Mask lag and masks | Full class-46 and persistent-pixel masks | Amendments 16, 16b | pending |
-| Station list per region and season, by network; altitude cut; observed coverage per region and season | Proposal computed on the provisional mask: `docs/week0/station_coverage_17c.csv` (automatic and conventional combined; 1 of 76 region-seasons under the floor). Cut on the provisional sample: Sul 1,216 m, São Paulo 1,126 m, Triângulo 1,192 m, Zona da Mata 1,136 m | §5 step 4; Amendments 17, 17c | pending: recompute on the frozen mask |
+| Station list per region and season, by network; altitude cut; observed coverage per region and season | Proposal computed on the provisional mask: `docs/week0/station_coverage_17c.csv` (automatic and conventional combined; 1 of 76 region-seasons under the floor). Cut on the provisional sample: Sul 1,216 m, São Paulo 1,126 m, Triângulo 1,192 m, Zona da Mata 1,136 m. Stations sharing a site and their offsets: `docs/week0/colocated_pairs.csv` (19 pairs) | §5 step 4; Amendments 17, 17c, 17d | pending: recompute on the frozen mask, and the 2026 windows after the mid-November BDMEP re-request |
+| INMET citation for the conventional night rule | — | Amendment 17d | pending |
 | Coverage floor statement | 15%, "chosen from coverage information only, before any frost night was counted" | Amendment 17c | to register at the tag |
-| Surprise-test pass mark | From Conab's base rate | Amendment 12 | pending: Conab first- and final-survey series (only 2023–2025 located so far) |
+| Surprise-test pass mark | From Conab's base rate, once vintages beyond 2023–2025 exist; until then, the statement that the test is reported, not scored | Amendments 12, 19b | not computable yet |
 | Base-rate check on the direction pass marks | — | Amendment 19 | pending |
 | Frost tier constant sources | — | Amendment 15 | pending |
