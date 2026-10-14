@@ -607,6 +607,45 @@ Scope (owner decision, 2026-10-13): every pentad from 2015; daily for September�
     within 0.001 mm.
   - **Missing data:** 5 of 5 cells that are −9999 locally (ocean) are masked in Earth Engine.
 
+### CHC prelim: download completed and ingested (2026-10-14)
+
+**Download.** The throttled retry sent one request at 13:07:10 UTC, and CHC answered 200. The
+sequential fetch ran to the end without a block.
+
+- **2,007 files:** 848 pentads (2015-01 to 2026-10-06, none missing) and 1,159 days
+  (September–November 2015–2025, plus 2026-05-01 to 2026-10-10). 1,885 were fetched today and
+  122 were already on disk.
+- **Checksums:** every SHA-256 was recomputed after the run, and all match the manifest. The 122
+  files from 2026-10-13 are byte-identical to the committed manifest.
+- **Every file opens** with the expected grid, CRS, type, fill value and date tags.
+- **Five days are missing at the source:** 2026-05-11 to 2026-05-15. CHC's 2026 daily listing
+  jumps from 10 to 16 May. They are not filled; the pentad covering them is present.
+
+**Ingestion,** through the proven path (`gee/chc_prelim_ingest.py`) into the existing
+collections:
+
+- **Gate:** 5 new pentads and 5 daily files first. 30 of 30 values match the local files, and
+  10 of 10 fill cells are masked. Because 13 of the 15 daily checks fell on dry cells (0 = 0),
+  15 extra wet cells were checked; all 15 match.
+- **Remaining batch:** 721 pentads and 1,154 days.
+  - **All 2,007 CHC ingestion tasks succeeded, 0 failed.**
+  - `chc_prelim_pentad_mgsp` holds 848 images (2015-01-01 to 2026-10-06), and
+    `chc_prelim_daily_mgsp` holds 1,159 (2015-09-01 to 2026-10-10). Both counts equal the files
+    on disk.
+- **Random sample of the full batch** (5 pentads and 5 days, seed 20261016):
+  - 30 of 30 values match and 10 of 10 fill cells are masked;
+  - 15 of 15 wet daily cells match (`docs/week0/chc_verify_20261014T162020Z.txt`).
+- **Nothing was deleted.** The bucket copies under `chc_prelim/` remain.
+- **Compute:** Earth Engine reports no EECU for ingestion tasks. The value checks are a few dozen
+  point lookups.
+
+**Still open (§10 checklist):**
+
+- The weekly cross-check of the ingestion against the community asset
+  (`projects/climate-engine-pro/assets/ce-chirps-prelim-pentad`, which covers 2025 on).
+- The daily-split gap measurement, which Amendment 29 requires before daily-prelim dry days are
+  compared with final CHIRPS.
+
 ## 6. Regional municipality lists (§3) — PROPOSAL, not registered
 
 **Which IBGE units Conab uses: the 1989 mesoregions**, not the 2017 intermediate regions. Conab's
