@@ -734,3 +734,27 @@ Every change to scope, dated, with the reason. Newest at the bottom.
     records the rule-window value.
 
   Approved by owner.
+
+- 2026-10-14 — **AMENDMENT 16c: the coffee mask moves to MapBiomas Collection 11; the mask lag is
+  S−2.** Amends Amendment 16.
+  - **What triggered it:** Amendment 16 set the lag at S−2 if a collection covering 2025 was
+    published and verified before note 1.
+    - **Published:** MapBiomas launched Collection 11 on 12 August 2026.
+    - **Asset:** its coverage asset,
+      `projects/mapbiomas-public/assets/brazil/lulc/collection11/mapbiomas_brazil_collection11_coverage_v3`,
+      is listed on MapBiomas's own Earth Engine asset page and carries 41 bands, 1985–2025.
+    - **Legend:** its legend file gives class 46 as "Café".
+  - **Why every season moves, not only the live one:** Amendment 16 keeps all seasons on one
+    product, and mask year 2025 exists only in Collection 11. So every season now uses Collection
+    11, and Collection 10 is no longer used. Crops 2001–2027 use mask years 1999–2025.
+  - **Why the switch is safe:** a Sul de Minas test box (W −45.9, S −21.9, E −45.1, N −21.3),
+    checked at 30 m on 2026-10-14 for 14 EECU-seconds:
+    - class 46 covers 16.4% in Collection 10 (2024), and 17.1% in Collection 11 for both 2024
+      and 2025;
+    - 98% of Collection 10's coffee pixels are also coffee in Collection 11.
+  - **What is now stale:** Week 0 results computed on the provisional Collection 10 mask (the HLS
+    and VJ113A1 tests, the drift check, the station-coverage proposal) used Collection 10's 2024
+    classification. They are not rerun for this amendment; the station coverage is recomputed on
+    the frozen mask before `prereg-2`, as already planned.
+
+  Approved by owner.

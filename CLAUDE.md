@@ -145,14 +145,23 @@ where a row says otherwise.
 | Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). Resolves (Week 0 report §1, 2026-10-13) and was used for the provisional station cut on 2026-10-14. Declared fallback: `COPERNICUS/DEM/GLO30_2024_1`, which also resolves (the earlier `COPERNICUS/DEM/GLO30` is deprecated). Both are surface models that include canopy, which does not matter for a station altitude cut at the 95th percentile |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY`, `volumetric_soil_water_layer_1`–`_3` (0–7, 7–28, 28–100 cm; volume fraction), weighted 0.07 / 0.21 / 0.72 by layer thickness | 9 km, hourly | Root-zone moisture through the pre-flowering dry season, May–Aug of S−1 (§5 step 5). Band names and depths confirmed from the Earth Engine catalog; weights registered at `prereg-1` |
 | Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | **Not used before June 2027.** Forward frost-risk flag for the Jun–Aug 2027 window, the first 2028 signal (§3a) |
-| Coffee mask | MapBiomas Collection 10, **class 46 = Coffee** | 30 m, annual **1985–2024** | Where to compute the indices |
+| Coffee mask | MapBiomas **Collection 11** (Amendment 16c), **class 46 = Coffee** | 30 m, annual **1985–2025** | Where to compute the indices |
 | Planet — v1.5 only, never an input | PlanetScope surface reflectance harmonised to Sentinel-2, via Planet Education & Research access | 3 m | The three bounded tasks in §4d. Not in the index or the backtest. Verify the product name and harmonisation against Planet's documentation |
 
-MapBiomas asset, verified:
-`projects/mapbiomas-public/assets/brazil/lulc/collection10/mapbiomas_brazil_collection10_integration_v1`
-40 annual bands `classification_1985` … `classification_2024`. Class 46 is 6.55% of a Sul de Minas
-test box. **Open question 1 in the original spec is closed:** no fallback to a generic cropland mask
-is needed, and the mask supports the full MODIS-era backtest.
+MapBiomas asset, verified (Amendment 16c, 2026-10-14):
+`projects/mapbiomas-public/assets/brazil/lulc/collection11/mapbiomas_brazil_collection11_coverage_v3`
+41 annual bands `classification_1985` … `classification_2025`.
+- **Release and legend:** Collection 11 was launched on 12 August 2026, and this is the coverage
+  asset named on MapBiomas's own Earth Engine asset page. Its legend (`legend_code_mapbiomas_brazil_collection_11.csv`)
+  gives class 46 as "Café".
+- **It replaces Collection 10**
+  (`projects/mapbiomas-public/assets/brazil/lulc/collection10/mapbiomas_brazil_collection10_integration_v1`,
+  1985–2024), which is no longer used.
+- **Agreement check:** in a Sul de Minas test box (W −45.9, S −21.9, E −45.1, N −21.3), class 46
+  covers 16.4% in Collection 10 (2024), and 17.1% in Collection 11 for both 2024 and 2025. 98% of
+  Collection 10's coffee pixels are coffee in Collection 11.
+- **Open question 1 in the original spec is closed:** no fallback to a generic cropland mask is
+  needed, and the mask supports the full MODIS-era backtest.
 
 **Non-GEE data (download manually, store in `data/raw/`, never modify):**
 
@@ -380,13 +389,13 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    Either way the 30% filter is expected to remove these two regions' municipalities more often
    than the others', and the removal report is read with that in mind.
 
-   **Mask year by season (AMENDED 2026-10-12).**
+   **Mask year by season (AMENDED 2026-10-12; Collection and lag set 2026-10-14, Amendment 16c).**
    - Each backtest season uses the mask production would have had at its note date. Every season
-     uses Collection 10's classifications, so all seasons are on the same product. Older
+     uses **Collection 11's** classifications, so all seasons are on the same product. Older
      collections are not used: they differ in method, and some predate class 46.
-   - The mask year is the crop year minus a fixed lag, set to the live lag for crop 2027:
-     - S−2 if a collection covering 2025 is published and verified before note 1;
-     - otherwise S−3, since Collection 10's last year is 2024.
+   - The mask year is the crop year minus a fixed lag, set to the live lag for crop 2027.
+     **The lag is S−2**, because a collection covering 2025 (Collection 11) was published and
+     verified before note 1. Crops 2001–2027 therefore use mask years 1999–2025.
    - The lag is applied unchanged to every season and recorded at `prereg-2`.
    - The 30% filter runs per season, against IBGE PAM for the mask year.
 
@@ -796,7 +805,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1`. **Done:** VJ113A1 ingested and accepted (2026-10-14); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` resolve (Week 0 report §1) | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
-| Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
+| Whether a MapBiomas collection covering 2025 is published (sets the mask lag): **yes, Collection 11; lag S−2** (Amendment 16c, 2026-10-14) | `prereg-2` | §5 step 1 |
 | Exact Conab 2027 survey dates, and whether crop 2026's final survey comes in December or January | Before the December note | §1, §6 |
 | Planet monthly area quota, from the dashboard | Before any Planet task | §4d |
 | ICE redistribution terms | Before any ICE data file is committed | §4 |
@@ -813,8 +822,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 
 ### Closed
 
-- **Coffee mask** (original open question 1) — MapBiomas Collection 10, class 46 (SPEC_CHANGELOG,
-  2026-10-12).
+- **Coffee mask** (original open question 1) — MapBiomas class 46 (SPEC_CHANGELOG, 2026-10-12),
+  now from Collection 11 (Amendment 16c).
 - **Planet access** — Education & Research access confirmed (§4d). The quota is in the checklist.
 - **Conab vintage** (still-open item 1) — the backtest target, and the biennial term, use Conab's
   final figure for each safra in the current historical series, with its download date recorded
