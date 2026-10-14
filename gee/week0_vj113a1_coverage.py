@@ -24,6 +24,7 @@ import ee
 import pandas as pd
 
 from common import WEEK0, init
+from vj113a1_ingest import COLLECTION
 from week0_hls_test import eecu_seconds
 
 MAPBIOMAS = ("projects/mapbiomas-public/assets/brazil/lulc/collection10/"
@@ -44,7 +45,7 @@ def main():
     a.add_argument("--month", default="2024-01")
     args = a.parse_args()
     project = init()
-    col = ee.ImageCollection(f"projects/{project}/assets/vj113a1_mgsp")
+    col = ee.ImageCollection(f"projects/{project}/assets/{COLLECTION}")
     states = (ee.FeatureCollection("FAO/GAUL/2025/level1").filter(ee.Filter.eq("GAUL0_NAME", "Brazil"))
               .filter(ee.Filter.inList("GAUL1_NAME", STATES)))
     proj = col.first().select("pixel_reliability").projection()

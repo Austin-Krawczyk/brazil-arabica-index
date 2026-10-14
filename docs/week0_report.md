@@ -408,6 +408,27 @@ product API.
 - **Storage:** about 10 GB in the bucket (US multi-region), roughly $0.26 a month. Deleting the
   bucket copies once the Earth Engine assets are verified is the owner's call.
 
+### VJ113A1 gate 1, first attempt (2026-10-14): **failed — fixed by declaring the CRS**
+
+- **Download complete:** 1,613 files, 10.62 GB, a SHA-256 for each in the manifest, 401 complete
+  composites (2018 day 001 to 2026 day 257). Provenance in `data/raw/vj113a1/SOURCE.md`.
+- **5 composites ingested** into `vj113a1_mgsp`: 5 of 5 tasks succeeded, and the collection loads
+  (2018-01-01 to 2018-02-02; bands EVI, NDVI, pixel_reliability). **Value check: 3 of 15 match**;
+  fill cells masked 14 of 15. Gate failed; the other 396 composites were not ingested.
+- **Cause:** AppEEARS writes the sinusoidal grid with an "unknown" datum on the 6,371,007.181 m
+  sphere. Earth Engine kept the file's projection and transform exactly, but **cannot transform
+  that CRS to geographic coordinates** ("Unable to transform geometry to EPSG:4326"). So any
+  overlay with other data (sample points, the coffee mask) lands on the wrong pixels; the
+  mismatched values were plausible values from other pixels. This is an ingestion problem, not
+  only a checking one.
+- **Fix:** the grid is the standard MODIS/VIIRS sinusoidal grid, which Earth Engine knows as
+  `SR-ORG:6974` (used by `MOD13Q1`). Its transformation was checked: the point (−4,400,000,
+  −2,400,000) maps to (−42.5539, −21.5837), matching the sphere sinusoidal formula with no datum
+  shift. The CRS is now declared as `SR-ORG:6974` in the ingestion manifest, and the data go into a
+  new collection, `vj113a1_mgsp_v2`. Pixel values and grid are unchanged.
+- **Left in place:** the 5 mis-georeferenced images in `vj113a1_mgsp`. Deleting them is for the
+  owner (the agent does not delete data).
+
 ### Compute used on 2026-10-13, measured (Amendment 32)
 
 | Run | EECU-hours |

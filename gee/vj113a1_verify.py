@@ -17,7 +17,7 @@ import rasterio
 from rasterio.warp import transform
 
 from common import WEEK0, init
-from vj113a1_ingest import composites
+from vj113a1_ingest import COLLECTION, composites
 
 SEED = 20261014
 
@@ -26,7 +26,7 @@ def wait_for_tasks():
     while True:
         ops = [o for o in ee.data.listOperations()
                if o.get("metadata", {}).get("type") == "INGEST_IMAGE"
-               and "vj113a1_mgsp" in o.get("metadata", {}).get("description", "")]
+               and COLLECTION in o.get("metadata", {}).get("description", "")]
         states = {}
         for o in ops:
             s = o["metadata"].get("state", "?")
@@ -56,7 +56,7 @@ def main():
         say(f"tasks: {len(ops)} found, {len(failed)} failed")
         for o in failed[:5]:
             say(f"  FAILED {o['metadata'].get('description')}: {o.get('error', {}).get('message', '')[:150]}")
-    col = ee.ImageCollection(f"projects/{project}/assets/vj113a1_mgsp")
+    col = ee.ImageCollection(f"projects/{project}/assets/{COLLECTION}")
     info = ee.Dictionary({"n": col.size(), "first": col.aggregate_min("system:time_start"),
                           "last": col.aggregate_max("system:time_start"),
                           "bands": col.first().bandNames()}).getInfo()
@@ -67,11 +67,11 @@ def main():
     random.seed(SEED)
     comps = composites()
     ingested = {a["id"].split("/")[-1][2:] for a in ee.data.listAssets(
-        {"parent": f"projects/{project}/assets/vj113a1_mgsp", "pageSize": 1000}).get("assets", [])}
+        {"parent": f"projects/{project}/assets/{COLLECTION}", "pageSize": 1000}).get("assets", [])}
     picks = random.sample(sorted(d for d in comps if d in ingested), min(5, len(ingested)))
     ok = bad = masked_ok = masked_bad = 0
     for doy in picks:
-        img = ee.Image(f"projects/{project}/assets/vj113a1_mgsp/c_{doy}")
+        img = ee.Image(f"projects/{project}/assets/{COLLECTION}/c_{doy}")
         for band, path in comps[doy].items():
             with rasterio.open(path) as src:
                 arr = src.read(1)

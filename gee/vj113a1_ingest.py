@@ -6,7 +6,7 @@ GeoTIFF (int16/int8 as delivered; EVI and NDVI scale 0.0001, fill -15000; pixel_
 requested and is not ingested; it stays in data/raw/vj113a1/. Files are uploaded unchanged to the
 bucket, then ingested into:
 
-    projects/<EE_PROJECT>/assets/vj113a1_mgsp
+    projects/<EE_PROJECT>/assets/vj113a1_mgsp_v2   (CRS declared as SR-ORG:6974; see CRS below)
 
 Rerunnable: a bucket object with the same SHA-256 is not uploaded again, and a composite already in
 the collection is not ingested again. No deletion option: removing assets is left to the owner.
@@ -25,6 +25,12 @@ from google.cloud import storage
 from common import ROOT, init, setting
 
 SOURCE = ROOT / "data" / "raw" / "vj113a1"
+COLLECTION = "vj113a1_mgsp_v2"
+# AppEEARS writes the sinusoidal grid with an "unknown" datum on the 6,371,007.181 m sphere. Earth
+# Engine cannot transform that CRS to geographic coordinates, so overlays with anything else land on
+# the wrong pixels (gate 1, 2026-10-14). The grid is the MODIS/VIIRS sinusoidal grid, which Earth
+# Engine knows as SR-ORG:6974, so the CRS is declared explicitly at ingestion. Pixels are unchanged.
+CRS = "SR-ORG:6974"
 LAYERS = {"EVI": "500_m_16_days_EVI", "NDVI": "500_m_16_days_NDVI",
           "pixel_reliability": "500_m_16_days_pixel_reliability"}
 
@@ -63,7 +69,7 @@ def main():
     project = init()
     client = storage.Client(project=project, credentials=ee.data.get_persistent_credentials())
     bucket = client.bucket(setting("GCS_BUCKET"))
-    collection = f"projects/{project}/assets/vj113a1_mgsp"
+    collection = f"projects/{project}/assets/{COLLECTION}"
     try:
         ee.data.getAsset(collection)
     except ee.EEException:
@@ -93,7 +99,8 @@ def main():
                     blob.upload_from_filename(str(path), content_type="image/tiff")
             with rasterio.open(path) as src:
                 fill = src.nodata
-            tilesets.append({"id": band, "sources": [{"uris": [f"gs://{bucket.name}/{blob.name}"]}]})
+            tilesets.append({"id": band, "crs": CRS,
+                             "sources": [{"uris": [f"gs://{bucket.name}/{blob.name}"]}]})
             bands.append({"id": band, "tilesetId": band, "tilesetBandIndex": 0,
                           "missingData": {"values": [fill]}})
         manifest = {
