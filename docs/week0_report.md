@@ -609,8 +609,14 @@ computed on the page.
   before June 2008, as needed for a complete 2008 June–August record, MG 49 (43 operating now)
   and SP 26 (24). Neighbouring states, whose stations may fall within 25 km of the mask: GO 21,
   DF 1, ES 5, RJ 14, PR 21, MS 17, BA 27. The catalogue lists only stations currently registered.
-- **Next:** the owner downloads the catalogue CSV and the 19 archives into `data/raw/inmet/`,
-  with provenance and checksums. The station set, its completeness, coffee-area weights and the
+- **Catalogue, saved 2026-10-14: scraped from the page, not downloaded.** The page's "Download
+  CSV" button returned nothing for the owner, so the station table was read from the rendered page
+  in the in-app browser (read-only, original Portuguese, untranslated) and saved as
+  `data/raw/inmet/catalogo_estacoes_automaticas.csv`: 636 stations, 43,473 bytes. Its SHA-256
+  (`34d60b08…b739db`) matches the hash computed in the browser on the scraped text, so it is an
+  exact copy of what the page displayed. Provenance is in `data/raw/inmet/SOURCE.md`.
+- **Next:** the owner downloads the 19 archives into `data/raw/inmet/`, with retrieval dates and
+  checksums. The station set, its completeness, coffee-area weights and the
   elevation cut are then computed as a proposal.
 
 ## 9. Other Week 0 checklist items, not yet started
