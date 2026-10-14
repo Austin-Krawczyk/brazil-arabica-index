@@ -1,0 +1,361 @@
+safra,region,product,area_ha,yield_sc_ha,production_kbags,vintage,vintage_date,column,source
+2001,Minas Gerais (state total),arabica,,,14650.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2002,Minas Gerais (state total),arabica,,,25100.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2003,Minas Gerais (state total),arabica,,,12020.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2004,Minas Gerais (state total),arabica,,,18747.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2005,Minas Gerais (state total),arabica,,,15189.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2006,Minas Gerais (state total),arabica,,,21957.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2007,Minas Gerais (state total),arabica,,,16436.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2008,Minas Gerais (state total),arabica,1046416.0,22.50061161144325,23545.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2009,Minas Gerais (state total),arabica,983284.0,19.93116942816114,19598.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2010,Minas Gerais (state total),arabica,992027.0,25.10314739417375,24903.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2011,Minas Gerais (state total),arabica,985668.0,22.161741446682832,21882.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2012,Minas Gerais (state total),arabica,1013134.0,22.161741446682832,26644.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2013,Minas Gerais (state total),arabica,1024811.0,26.7171214985007,27380.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2014,Minas Gerais (state total),arabica,981610.0,22.765354876172818,22346.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2015,Minas Gerais (state total),arabica,955497.0,22.98876919550768,21965.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2016,Minas Gerais (state total),arabica,996749.0,30.527143744312763,30427.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2017,Minas Gerais (state total),arabica,967751.0,24.90475339214323,24101.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2018,Minas Gerais (state total),arabica,995584.0,33.116341765235276,32970.1,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2019,Minas Gerais (state total),arabica,974269.0000000001,24.875481001653544,24235.41,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2020,Minas Gerais (state total),arabica,1032280.3627905673,33.26354511504356,34337.30441905757,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2021,Minas Gerais (state total),arabica,970934.0,22.513270726949514,21858.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2022,Minas Gerais (state total),arabica,1008048.0,21.39788978302621,21570.100000000002,survey 1 of safra 2023,2023-01,previous safra as revised,conab_cafe_safra2023_lev1.xls
+2022,Minas Gerais (state total),arabica,1008048.0,21.39788978302621,21570.100000000002,survey 3 of safra 2023,2023-09,previous safra as revised,conab_cafe_safra2023_lev3.xls
+2022,Minas Gerais (state total),arabica,1008048.0,21.39788978302621,21570.100000000002,survey 4 of safra 2023,2023-12,previous safra as revised,conab_cafe_safra2023_lev4.xls
+2022,Minas Gerais (state total),arabica,1008048.0,21.39788978302621,21570.100000000002,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2023,Minas Gerais (state total),arabica,1098099.0,24.68074372164987,27101.9,survey 1 of safra 2023,2023-01,current,conab_cafe_safra2023_lev1.xls
+2023,Minas Gerais (state total),arabica,1074497.0,25.99709445442845,27933.800000000003,survey 3 of safra 2023,2023-09,current,conab_cafe_safra2023_lev3.xls
+2023,Minas Gerais (state total),arabica,1073368.0,26.692057150949157,28650.399999999998,survey 4 of safra 2023,2023-12,current,conab_cafe_safra2023_lev4.xls
+2023,Minas Gerais (state total),arabica,1073368.0,26.692057150949157,28650.399999999998,survey 1 of safra 2024,2024-01,previous safra as revised,conab_cafe_safra2024_lev1.xls
+2023,Minas Gerais (state total),arabica,1073368.0,26.692057150949157,28650.399999999998,survey 3 of safra 2024,2024-09,previous safra as revised,conab_cafe_safra2024_lev3.xls
+2023,Minas Gerais (state total),arabica,1073368.0,26.692057150949157,28650.399999999998,survey 4 of safra 2024,2025-01,previous safra as revised,conab_cafe_safra2024_lev4.xls
+2023,Minas Gerais (state total),arabica,1073368.0,26.692057150949157,28650.399999999998,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2024,Minas Gerais (state total),arabica,1108211.0,26.011111602393406,28825.8,survey 1 of safra 2024,2024-01,current,conab_cafe_safra2024_lev1.xls
+2024,Minas Gerais (state total),arabica,1104572.0,25.065455217043347,27686.600000000002,survey 3 of safra 2024,2024-09,current,conab_cafe_safra2024_lev3.xls
+2024,Minas Gerais (state total),arabica,1091647.0,25.38210612038507,27708.3,survey 1 of safra 2025,2025-01,previous safra as revised,conab_cafe_safra2025_lev1.xls
+2024,Minas Gerais (state total),arabica,1091647.0,25.38210612038507,27708.3,survey 4 of safra 2024,2025-01,current,conab_cafe_safra2024_lev4.xls
+2024,Minas Gerais (state total),arabica,1091647.0,25.38210612038507,27708.3,survey 3 of safra 2025,2025-09,previous safra as revised,conab_cafe_safra2025_lev3.xls
+2024,Minas Gerais (state total),arabica,1091647.0,25.38210612038507,27708.3,survey 4 of safra 2025,2025-12,previous safra as revised,conab_cafe_safra2025_lev4.xls
+2024,Minas Gerais (state total),arabica,1091647.0,25.4,27708.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,Minas Gerais (state total),arabica,1064812.0,22.861688260462877,24343.399999999998,survey 1 of safra 2025,2025-01,current,conab_cafe_safra2025_lev1.xls
+2025,Minas Gerais (state total),arabica,1066549.0,23.162461359018668,24703.9,survey 3 of safra 2025,2025-09,current,conab_cafe_safra2025_lev3.xls
+2025,Minas Gerais (state total),arabica,1066783.0,23.59514540445433,25170.9,survey 4 of safra 2025,2025-12,current,conab_cafe_safra2025_lev4.xls
+2025,Minas Gerais (state total),arabica,1066783.0,23.59514540445433,25170.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,Minas Gerais (state total),arabica,1066783.0,23.59514540445433,25170.9,survey 3 of safra 2026,2026-09,previous safra as revised,site_previsao-de-safra-cafe-set-2026.xls
+2026,Minas Gerais (state total),arabica,1135926.0,30.77902961988721,34962.7,historical series (Sept 2026 release),2026-09,estimate,cafearabicaseriehist.xls
+2026,Minas Gerais (state total),arabica,1135926.0,30.77902961988721,34962.7,survey 3 of safra 2026,2026-09,current,site_previsao-de-safra-cafe-set-2026.xls
+2001,Sul e Centro-Oeste,arabica,,,7600.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2002,Sul e Centro-Oeste,arabica,,,13200.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2003,Sul e Centro-Oeste,arabica,,,5360.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2004,Sul e Centro-Oeste,arabica,,,0.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2005,Sul e Centro-Oeste,arabica,,,6750.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2006,Sul e Centro-Oeste,arabica,,,12043.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2007,Sul e Centro-Oeste,arabica,,,7265.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2008,Sul e Centro-Oeste,arabica,551471.0,21.973956926112162,12118.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2009,Sul e Centro-Oeste,arabica,506468.0,19.250969459077375,9750.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2010,Sul e Centro-Oeste,arabica,509687.0,24.752446109082634,12616.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2011,Sul e Centro-Oeste,arabica,505201.0,20.669001051066804,10442.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2012,Sul e Centro-Oeste,arabica,518082.0,26.621268447851882,13792.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2013,Sul e Centro-Oeste,arabica,521187.0,25.624200143134807,13355.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2014,Sul e Centro-Oeste,arabica,501214.0,21.555064303870203,10803.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2015,Sul e Centro-Oeste,arabica,478056.0,22.608857539702463,10808.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2016,Sul e Centro-Oeste,arabica,524220.0,31.718934798367098,16627.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2017,Sul e Centro-Oeste,arabica,496493.0,27.56171788927538,13684.2,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2018,Sul e Centro-Oeste,arabica,514193.0,34.80424665446632,17896.1,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2019,Sul e Centro-Oeste,arabica,496613.4,28.1482336159274,13978.79,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2020,Sul e Centro-Oeste,arabica,538393.775662528,35.57281281053447,19152.181,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2021,Sul e Centro-Oeste,arabica,491785.0,23.896418150207918,11751.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2022,Sul e Centro-Oeste,arabica,496684.0,19.327379178713226,9599.6,survey 1 of safra 2023,2023-01,previous safra as revised,conab_cafe_safra2023_lev1.xls
+2022,Sul e Centro-Oeste,arabica,496684.0,19.327379178713226,9599.6,survey 3 of safra 2023,2023-09,previous safra as revised,conab_cafe_safra2023_lev3.xls
+2022,Sul e Centro-Oeste,arabica,496684.0,19.327379178713226,9599.6,survey 4 of safra 2023,2023-12,previous safra as revised,conab_cafe_safra2023_lev4.xls
+2022,Sul e Centro-Oeste,arabica,496684.0,19.327379178713226,9599.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2023,Sul e Centro-Oeste,arabica,548960.0,24.006667152433693,13178.7,survey 1 of safra 2023,2023-01,current,conab_cafe_safra2023_lev1.xls
+2023,Sul e Centro-Oeste,arabica,533311.0,24.900480207608695,13279.7,survey 3 of safra 2023,2023-09,current,conab_cafe_safra2023_lev3.xls
+2023,Sul e Centro-Oeste,arabica,533271.0,25.339836593401852,13513.0,survey 4 of safra 2023,2023-12,current,conab_cafe_safra2023_lev4.xls
+2023,Sul e Centro-Oeste,arabica,533271.0,25.339836593401852,13513.0,survey 1 of safra 2024,2024-01,previous safra as revised,conab_cafe_safra2024_lev1.xls
+2023,Sul e Centro-Oeste,arabica,533271.0,25.339836593401852,13513.0,survey 3 of safra 2024,2024-09,previous safra as revised,conab_cafe_safra2024_lev3.xls
+2023,Sul e Centro-Oeste,arabica,533271.0,25.339836593401852,13513.0,survey 4 of safra 2024,2025-01,previous safra as revised,conab_cafe_safra2024_lev4.xls
+2023,Sul e Centro-Oeste,arabica,533271.0,25.339836593401852,13513.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2024,Sul e Centro-Oeste,arabica,560148.0,26.659739925876732,14933.4,survey 1 of safra 2024,2024-01,current,conab_cafe_safra2024_lev1.xls
+2024,Sul e Centro-Oeste,arabica,556353.0,24.466480813440388,13612.0,survey 3 of safra 2024,2024-09,current,conab_cafe_safra2024_lev3.xls
+2024,Sul e Centro-Oeste,arabica,547083.0,24.657501695355183,13489.7,survey 1 of safra 2025,2025-01,previous safra as revised,conab_cafe_safra2025_lev1.xls
+2024,Sul e Centro-Oeste,arabica,547083.0,24.657501695355183,13489.7,survey 4 of safra 2024,2025-01,current,conab_cafe_safra2024_lev4.xls
+2024,Sul e Centro-Oeste,arabica,547083.0,24.657501695355183,13489.7,survey 3 of safra 2025,2025-09,previous safra as revised,conab_cafe_safra2025_lev3.xls
+2024,Sul e Centro-Oeste,arabica,547083.0,24.657501695355183,13489.7,survey 4 of safra 2025,2025-12,previous safra as revised,conab_cafe_safra2025_lev4.xls
+2024,Sul e Centro-Oeste,arabica,547083.0,24.7,13489.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,Sul e Centro-Oeste,arabica,521778.0,22.325970048564717,11649.2,survey 1 of safra 2025,2025-01,current,conab_cafe_safra2025_lev1.xls
+2025,Sul e Centro-Oeste,arabica,521815.0,22.928432490442013,11964.4,survey 3 of safra 2025,2025-09,current,conab_cafe_safra2025_lev3.xls
+2025,Sul e Centro-Oeste,arabica,521815.0,23.114130486858368,12061.3,survey 4 of safra 2025,2025-12,current,conab_cafe_safra2025_lev4.xls
+2025,Sul e Centro-Oeste,arabica,521815.0,23.114130486858368,12061.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,Sul e Centro-Oeste,arabica,521815.0,23.114130486858368,12061.3,survey 3 of safra 2026,2026-09,previous safra as revised,site_previsao-de-safra-cafe-set-2026.xls
+2026,Sul e Centro-Oeste,arabica,555472.0,28.682993922285913,15932.6,historical series (Sept 2026 release),2026-09,estimate,cafearabicaseriehist.xls
+2026,Sul e Centro-Oeste,arabica,555472.0,28.682993922285913,15932.6,survey 3 of safra 2026,2026-09,current,site_previsao-de-safra-cafe-set-2026.xls
+2001,São Paulo (state total),arabica,,,3520.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2002,São Paulo (state total),arabica,,,5800.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2003,São Paulo (state total),arabica,,,2810.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2004,São Paulo (state total),arabica,,,5870.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2005,São Paulo (state total),arabica,,,3223.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2006,São Paulo (state total),arabica,,,4470.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2007,São Paulo (state total),arabica,,,2632.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2008,São Paulo (state total),arabica,188495.0,23.448897848749304,4420.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2009,São Paulo (state total),arabica,182020.0,18.805625755411494,3423.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2010,São Paulo (state total),arabica,166195.0,28.051385420740697,4662.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2011,São Paulo (state total),arabica,169538.0,18.35281765739834,3111.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2012,São Paulo (state total),arabica,175137.0,30.585199015627765,5356.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2013,São Paulo (state total),arabica,162328.5,24.703610271763736,4010.1,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2014,São Paulo (state total),arabica,199686.0,22.980078723596044,4588.8,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2015,São Paulo (state total),arabica,198971.3,20.42455369191436,4063.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2016,São Paulo (state total),arabica,201235.0,29.969935647377444,6031.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2017,São Paulo (state total),arabica,200629.0,21.989841947076446,4411.8,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2018,São Paulo (state total),arabica,202581.0,31.11002512575217,6302.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2019,São Paulo (state total),arabica,201369.0,21.54999031628503,4339.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2020,São Paulo (state total),arabica,201523.0,30.669948343365274,6180.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2021,São Paulo (state total),arabica,198181.0,20.219899990412806,4007.2,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2022,São Paulo (state total),arabica,199790.0,21.958055958756695,4387.0,survey 1 of safra 2023,2023-01,previous safra as revised,conab_cafe_safra2023_lev1.xls
+2022,São Paulo (state total),arabica,199790.0,21.958055958756695,4387.0,survey 3 of safra 2023,2023-09,previous safra as revised,conab_cafe_safra2023_lev3.xls
+2022,São Paulo (state total),arabica,199790.0,21.958055958756695,4387.0,survey 4 of safra 2023,2023-12,previous safra as revised,conab_cafe_safra2023_lev4.xls
+2022,São Paulo (state total),arabica,199790.0,21.958055958756695,4387.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2023,São Paulo (state total),arabica,175829.0,26.861325492381802,4723.0,survey 1 of safra 2023,2023-01,current,conab_cafe_safra2023_lev1.xls
+2023,São Paulo (state total),arabica,181548.0,27.710027100271002,5030.7,survey 3 of safra 2023,2023-09,current,conab_cafe_safra2023_lev3.xls
+2023,São Paulo (state total),arabica,181548.0,27.710027100271002,5030.7,survey 4 of safra 2023,2023-12,current,conab_cafe_safra2023_lev4.xls
+2023,São Paulo (state total),arabica,181548.0,27.710027100271002,5030.7,survey 1 of safra 2024,2024-01,previous safra as revised,conab_cafe_safra2024_lev1.xls
+2023,São Paulo (state total),arabica,181548.0,27.710027100271002,5030.7,survey 3 of safra 2024,2024-09,previous safra as revised,conab_cafe_safra2024_lev3.xls
+2023,São Paulo (state total),arabica,181548.0,27.710027100271002,5030.7,survey 4 of safra 2024,2025-01,previous safra as revised,conab_cafe_safra2024_lev4.xls
+2023,São Paulo (state total),arabica,181548.0,27.710027100271002,5030.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2024,São Paulo (state total),arabica,186141.0,29.01993649975019,5401.8,survey 1 of safra 2024,2024-01,current,conab_cafe_safra2024_lev1.xls
+2024,São Paulo (state total),arabica,186141.0,29.24986972241473,5444.6,survey 3 of safra 2024,2024-09,current,conab_cafe_safra2024_lev3.xls
+2024,São Paulo (state total),arabica,186141.0,29.24986972241473,5444.6,survey 1 of safra 2025,2025-01,previous safra as revised,conab_cafe_safra2025_lev1.xls
+2024,São Paulo (state total),arabica,186141.0,29.24986972241473,5444.6,survey 4 of safra 2024,2025-01,current,conab_cafe_safra2024_lev4.xls
+2024,São Paulo (state total),arabica,186141.0,29.24986972241473,5444.6,survey 3 of safra 2025,2025-09,previous safra as revised,conab_cafe_safra2025_lev3.xls
+2024,São Paulo (state total),arabica,186141.0,29.24986972241473,5444.6,survey 4 of safra 2025,2025-12,previous safra as revised,conab_cafe_safra2025_lev4.xls
+2024,São Paulo (state total),arabica,186141.0,29.2,5444.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,São Paulo (state total),arabica,196025.0,23.51995918887897,4610.5,survey 1 of safra 2025,2025-01,current,conab_cafe_safra2025_lev1.xls
+2025,São Paulo (state total),arabica,196025.0,24.180079071546995,4739.9,survey 3 of safra 2025,2025-09,current,conab_cafe_safra2025_lev3.xls
+2025,São Paulo (state total),arabica,196025.0,24.180079071546995,4739.9,survey 4 of safra 2025,2025-12,current,conab_cafe_safra2025_lev4.xls
+2025,São Paulo (state total),arabica,196025.0,24.180079071546995,4739.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,São Paulo (state total),arabica,196025.0,24.180079071546995,4739.9,survey 3 of safra 2026,2026-09,previous safra as revised,site_previsao-de-safra-cafe-set-2026.xls
+2026,São Paulo (state total),arabica,200586.0,30.869552212018785,6192.0,historical series (Sept 2026 release),2026-09,estimate,cafearabicaseriehist.xls
+2026,São Paulo (state total),arabica,200586.0,30.869552212018785,6192.0,survey 3 of safra 2026,2026-09,current,site_previsao-de-safra-cafe-set-2026.xls
+2001,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,3100.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2002,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,5100.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2003,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,2810.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2004,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,0.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2005,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,2886.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2006,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,4313.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2007,"Triângulo, Alto Paranaíba e Noroeste",arabica,,,3255.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2008,"Triângulo, Alto Paranaíba e Noroeste",arabica,158753.0,28.560090203019787,4534.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2009,"Triângulo, Alto Paranaíba e Noroeste",arabica,159042.0,24.264030884923482,3859.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2010,"Triângulo, Alto Paranaíba e Noroeste",arabica,162217.0,34.84221752344082,5652.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2011,"Triângulo, Alto Paranaíba e Noroeste",arabica,161105.0,24.83473511064213,4001.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2012,"Triângulo, Alto Paranaíba e Noroeste",arabica,168463.0,36.98735033805642,6231.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2013,"Triângulo, Alto Paranaíba e Noroeste",arabica,169415.0,30.7705929227046,5213.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2014,"Triângulo, Alto Paranaíba e Noroeste",arabica,174369.0,33.06493700141654,5765.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2015,"Triângulo, Alto Paranaíba e Noroeste",arabica,170634.0,24.806896632558576,4232.9,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2016,"Triângulo, Alto Paranaíba e Noroeste",arabica,183076.0,40.42911140728441,7401.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2017,"Triângulo, Alto Paranaíba e Noroeste",arabica,169867.0,21.53626072162339,3658.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2018,"Triângulo, Alto Paranaíba e Noroeste",arabica,189183.0,37.730662903114975,7138.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2019,"Triângulo, Alto Paranaíba e Noroeste",arabica,185688.2,24.729142724201104,4591.91,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2020,"Triângulo, Alto Paranaíba e Noroeste",arabica,193826.5871280393,30.959609349637486,6000.79541905757,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2021,"Triângulo, Alto Paranaíba e Noroeste",arabica,189604.0,25.197253222505854,4777.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2022,"Triângulo, Alto Paranaíba e Noroeste",arabica,181703.0,23.10638789673258,4198.5,survey 1 of safra 2023,2023-01,previous safra as revised,conab_cafe_safra2023_lev1.xls
+2022,"Triângulo, Alto Paranaíba e Noroeste",arabica,181703.0,23.10638789673258,4198.5,survey 3 of safra 2023,2023-09,previous safra as revised,conab_cafe_safra2023_lev3.xls
+2022,"Triângulo, Alto Paranaíba e Noroeste",arabica,181703.0,23.10638789673258,4198.5,survey 4 of safra 2023,2023-12,previous safra as revised,conab_cafe_safra2023_lev4.xls
+2022,"Triângulo, Alto Paranaíba e Noroeste",arabica,181703.0,23.10638789673258,4198.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,200843.0,31.275673038144223,6281.5,survey 1 of safra 2023,2023-01,current,conab_cafe_safra2023_lev1.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,199471.0,35.08630327215485,6998.7,survey 3 of safra 2023,2023-09,current,conab_cafe_safra2023_lev3.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,199471.0,38.043625389154315,7588.6,survey 4 of safra 2023,2023-12,current,conab_cafe_safra2023_lev4.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,199471.0,38.043625389154315,7588.6,survey 1 of safra 2024,2024-01,previous safra as revised,conab_cafe_safra2024_lev1.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,199471.0,38.043625389154315,7588.6,survey 3 of safra 2024,2024-09,previous safra as revised,conab_cafe_safra2024_lev3.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,199471.0,38.043625389154315,7588.6,survey 4 of safra 2024,2025-01,previous safra as revised,conab_cafe_safra2024_lev4.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",arabica,199471.0,38.043625389154315,7588.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,196398.0,27.184594547805986,5339.0,survey 1 of safra 2024,2024-01,current,conab_cafe_safra2024_lev1.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,195258.0,27.268537012567986,5324.4,survey 3 of safra 2024,2024-09,current,conab_cafe_safra2024_lev3.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,195258.0,27.434471314875704,5356.8,survey 1 of safra 2025,2025-01,previous safra as revised,conab_cafe_safra2025_lev1.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,195258.0,27.434471314875704,5356.8,survey 4 of safra 2024,2025-01,current,conab_cafe_safra2024_lev4.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,195258.0,27.434471314875704,5356.8,survey 3 of safra 2025,2025-09,previous safra as revised,conab_cafe_safra2025_lev3.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,195258.0,27.434471314875704,5356.8,survey 4 of safra 2025,2025-12,previous safra as revised,conab_cafe_safra2025_lev4.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",arabica,195258.0,27.4,5356.8,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,"Triângulo, Alto Paranaíba e Noroeste",arabica,195520.0,24.600552373158756,4809.9,survey 1 of safra 2025,2025-01,current,conab_cafe_safra2025_lev1.xls
+2025,"Triângulo, Alto Paranaíba e Noroeste",arabica,195941.0,23.568829392521216,4618.1,survey 3 of safra 2025,2025-09,current,conab_cafe_safra2025_lev3.xls
+2025,"Triângulo, Alto Paranaíba e Noroeste",arabica,195941.0,24.352228476939487,4771.6,survey 4 of safra 2025,2025-12,current,conab_cafe_safra2025_lev4.xls
+2025,"Triângulo, Alto Paranaíba e Noroeste",arabica,195941.0,24.352228476939487,4771.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,"Triângulo, Alto Paranaíba e Noroeste",arabica,195941.0,24.352228476939487,4771.6,survey 3 of safra 2026,2026-09,previous safra as revised,site_previsao-de-safra-cafe-set-2026.xls
+2026,"Triângulo, Alto Paranaíba e Noroeste",arabica,219501.0,40.54469000141229,8899.6,historical series (Sept 2026 release),2026-09,estimate,cafearabicaseriehist.xls
+2026,"Triângulo, Alto Paranaíba e Noroeste",arabica,219501.0,40.54469000141229,8899.6,survey 3 of safra 2026,2026-09,current,site_previsao-de-safra-cafe-set-2026.xls
+2001,"Zona da Mata, Rio Doce e Central",arabica,,,3950.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2002,"Zona da Mata, Rio Doce e Central",arabica,,,6800.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2003,"Zona da Mata, Rio Doce e Central",arabica,,,3850.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2004,"Zona da Mata, Rio Doce e Central",arabica,,,0.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2005,"Zona da Mata, Rio Doce e Central",arabica,,,5553.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2006,"Zona da Mata, Rio Doce e Central",arabica,,,5601.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2007,"Zona da Mata, Rio Doce e Central",arabica,,,5916.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2008,"Zona da Mata, Rio Doce e Central",arabica,336192.0,20.50316485817628,6893.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2009,"Zona da Mata, Rio Doce e Central",arabica,317774.0,18.846727548509318,5989.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2010,"Zona da Mata, Rio Doce e Central",arabica,320123.0,20.726408286814753,6635.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2011,"Zona da Mata, Rio Doce e Central",arabica,319362.0,23.293316048872438,7439.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2012,"Zona da Mata, Rio Doce e Central",arabica,326589.0,20.273187400677916,6621.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2013,"Zona da Mata, Rio Doce e Central",arabica,301152.0,27.006295824035703,8133.0,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2014,"Zona da Mata, Rio Doce e Central",arabica,275827.0,18.531543322444865,5111.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2015,"Zona da Mata, Rio Doce e Central",arabica,278646.0,22.933399366938698,6390.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2016,"Zona da Mata, Rio Doce e Central",arabica,261317.0,22.53737797387847,5889.4,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2017,"Zona da Mata, Rio Doce e Central",arabica,273448.0,22.8844240952576,6257.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2018,"Zona da Mata, Rio Doce e Central",arabica,270354.0,27.036774007412504,7309.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2019,"Zona da Mata, Rio Doce e Central",arabica,270373.0,19.038032643792096,5147.37,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2020,"Zona da Mata, Rio Doce e Central",arabica,278170.0,30.879048783118236,8589.625,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2021,"Zona da Mata, Rio Doce e Central",arabica,266368.0,17.778036400768862,4735.5,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2022,"Zona da Mata, Rio Doce e Central",arabica,306351.0,23.191045565380886,7104.6,survey 1 of safra 2023,2023-01,previous safra as revised,conab_cafe_safra2023_lev1.xls
+2022,"Zona da Mata, Rio Doce e Central",arabica,306351.0,23.191045565380886,7104.6,survey 3 of safra 2023,2023-09,previous safra as revised,conab_cafe_safra2023_lev3.xls
+2022,"Zona da Mata, Rio Doce e Central",arabica,306351.0,23.191045565380886,7104.6,survey 4 of safra 2023,2023-12,previous safra as revised,conab_cafe_safra2023_lev4.xls
+2022,"Zona da Mata, Rio Doce e Central",arabica,306351.0,23.191045565380886,7104.6,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,323605.0,21.405726116716366,6927.0,survey 1 of safra 2023,2023-01,current,conab_cafe_safra2023_lev1.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,316710.0,21.82596065801522,6912.5,survey 3 of safra 2023,2023-09,current,conab_cafe_safra2023_lev3.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,315548.0,21.50449376956913,6785.7,survey 4 of safra 2023,2023-12,current,conab_cafe_safra2023_lev4.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,315548.0,21.50449376956913,6785.7,survey 1 of safra 2024,2024-01,previous safra as revised,conab_cafe_safra2024_lev1.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,315548.0,21.50449376956913,6785.7,survey 3 of safra 2024,2024-09,previous safra as revised,conab_cafe_safra2024_lev3.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,315548.0,21.50449376956913,6785.7,survey 4 of safra 2024,2025-01,previous safra as revised,conab_cafe_safra2024_lev4.xls
+2023,"Zona da Mata, Rio Doce e Central",arabica,315548.0,21.50449376956913,6785.7,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,325250.0,23.54988470407379,7659.6,survey 1 of safra 2024,2024-01,current,conab_cafe_safra2024_lev1.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,327674.0,24.344928190823808,7977.2,survey 3 of safra 2024,2024-09,current,conab_cafe_safra2024_lev3.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,324934.0,24.93490985861744,8102.2,survey 1 of safra 2025,2025-01,previous safra as revised,conab_cafe_safra2025_lev1.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,324934.0,24.93490985861744,8102.2,survey 4 of safra 2024,2025-01,current,conab_cafe_safra2024_lev4.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,324934.0,24.93490985861744,8102.2,survey 3 of safra 2025,2025-09,previous safra as revised,conab_cafe_safra2025_lev3.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,324934.0,24.93490985861744,8102.2,survey 4 of safra 2025,2025-12,previous safra as revised,conab_cafe_safra2025_lev4.xls
+2024,"Zona da Mata, Rio Doce e Central",arabica,324934.0,24.9,8102.2,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,"Zona da Mata, Rio Doce e Central",arabica,322694.0,21.8969054274328,7066.0,survey 1 of safra 2025,2025-01,current,conab_cafe_safra2025_lev1.xls
+2025,"Zona da Mata, Rio Doce e Central",arabica,319500.0,22.697026604068856,7251.7,survey 3 of safra 2025,2025-09,current,conab_cafe_safra2025_lev3.xls
+2025,"Zona da Mata, Rio Doce e Central",arabica,319734.0,23.357853715901342,7468.3,survey 4 of safra 2025,2025-12,current,conab_cafe_safra2025_lev4.xls
+2025,"Zona da Mata, Rio Doce e Central",arabica,319734.0,23.357853715901342,7468.3,historical series (Sept 2026 release),2026-09,historical series,cafearabicaseriehist.xls
+2025,"Zona da Mata, Rio Doce e Central",arabica,319734.0,23.357853715901342,7468.3,survey 3 of safra 2026,2026-09,previous safra as revised,site_previsao-de-safra-cafe-set-2026.xls
+2026,"Zona da Mata, Rio Doce e Central",arabica,330105.0,27.439451083746082,9057.9,historical series (Sept 2026 release),2026-09,estimate,cafearabicaseriehist.xls
+2026,"Zona da Mata, Rio Doce e Central",arabica,330105.0,27.439451083746082,9057.9,survey 3 of safra 2026,2026-09,current,site_previsao-de-safra-cafe-set-2026.xls
+2001,Minas Gerais (state total),total,891100.0,16.485242958141622,14690.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2002,Minas Gerais (state total),total,1070000.0,23.49532710280374,25140.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2003,Minas Gerais (state total),total,977000.0,12.333674513817808,12050.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2004,Minas Gerais (state total),total,1001577.0,18.74743529454051,18777.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2005,Minas Gerais (state total),total,1033533.0,14.725219223769344,15219.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2006,Minas Gerais (state total),total,1011865.0,21.729183240847345,21987.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2007,Minas Gerais (state total),total,1016414.0,16.206978652399513,16473.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2008,Minas Gerais (state total),total,1048172.0,22.497261899764542,23581.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2009,Minas Gerais (state total),total,1000731.0,19.865478335336867,19880.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2010,Minas Gerais (state total),total,1006719.0,24.987111597178554,25155.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2011,Minas Gerais (state total),total,1000869.0,22.161741446682832,22181.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2012,Minas Gerais (state total),total,1028425.0,26.199285314923305,26944.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2013,Minas Gerais (state total),total,1037797.0,26.65261125248965,27660.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2014,Minas Gerais (state total),total,995079.0,22.756082682882468,22644.1,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2015,Minas Gerais (state total),total,968872.0,23.01944942159542,22302.9,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2016,Minas Gerais (state total),total,1009481.0,30.435540639199754,30724.1,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2017,Minas Gerais (state total),total,980762.0,24.92480336717777,24445.3,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2018,Minas Gerais (state total),total,1008595.0,33.07611082743817,33360.4,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2019,Minas Gerais (state total),total,983726.0000000001,24.959805880905858,24553.61,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2020,Minas Gerais (state total),total,1041392.3627905673,33.26998896574911,34647.112419057565,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2021,Minas Gerais (state total),total,979449.0,22.60689428443952,22142.300000000003,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2022,Minas Gerais (state total),total,1017984.0,21.5721465170376,21960.100000000002,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2023,Minas Gerais (state total),total,1082447.0,26.796600664974818,29005.899999999998,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2024,Minas Gerais (state total),total,1103544.0,25.5,28097.2,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2025,Minas Gerais (state total),total,1077804.0,23.895903151222303,25755.100000000002,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2026,Minas Gerais (state total),total,1147529.0,31.018475350078297,35594.6,historical series (Sept 2026 release),2026-09,estimate,cafetotalseriehist.xls
+2001,Sul e Centro-Oeste,total,473400.0,16.05407689057879,7600.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2002,Sul e Centro-Oeste,total,545000.0,21.344954128440364,11633.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2003,Sul e Centro-Oeste,total,477000.0,11.236897274633124,5360.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2004,Sul e Centro-Oeste,total,507577.0,18.420850432545212,9350.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2005,Sul e Centro-Oeste,total,496613.0,13.592072700473004,6750.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2006,Sul e Centro-Oeste,total,507093.0,22.940565142883063,11633.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2007,Sul e Centro-Oeste,total,506618.0,14.34216707657446,7266.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2008,Sul e Centro-Oeste,total,551471.0,21.973956926112162,12118.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2009,Sul e Centro-Oeste,total,506468.0,19.250969459077375,9750.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2010,Sul e Centro-Oeste,total,509687.0,24.752446109082634,12616.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2011,Sul e Centro-Oeste,total,505201.0,20.669001051066804,10442.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2012,Sul e Centro-Oeste,total,518082.0,26.621268447851882,13792.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2013,Sul e Centro-Oeste,total,521187.0,25.624200143134807,13355.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2014,Sul e Centro-Oeste,total,501214.0,21.555064303870203,10803.7,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2015,Sul e Centro-Oeste,total,478056.0,22.608857539702463,10808.3,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2016,Sul e Centro-Oeste,total,524220.0,31.718934798367098,16627.7,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2017,Sul e Centro-Oeste,total,496493.0,27.56171788927538,13684.2,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2018,Sul e Centro-Oeste,total,514193.0,34.80424665446632,17896.1,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2019,Sul e Centro-Oeste,total,496613.4,28.1482336159274,13978.79,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2020,Sul e Centro-Oeste,total,538393.775662528,35.57281281053447,19152.181,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2021,Sul e Centro-Oeste,total,491785.0,23.896418150207918,11751.9,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2022,Sul e Centro-Oeste,total,496684.0,19.327379178713226,9599.6,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2023,Sul e Centro-Oeste,total,533271.0,25.339836593401852,13513.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2024,Sul e Centro-Oeste,total,547083.0,24.7,13489.7,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2025,Sul e Centro-Oeste,total,521815.0,23.114130486858368,12061.3,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2026,Sul e Centro-Oeste,total,555472.0,28.682993922285913,15932.6,historical series (Sept 2026 release),2026-09,estimate,cafetotalseriehist.xls
+2001,São Paulo (state total),total,223470.0,15.751555018570725,3520.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2002,São Paulo (state total),total,225000.0,25.77777777777778,5800.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2003,São Paulo (state total),total,210000.0,13.380952380952381,2810.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2004,São Paulo (state total),total,204700.0,28.676111382510992,5870.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2005,São Paulo (state total),total,221040.0,14.581071299312342,3223.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2006,São Paulo (state total),total,212100.0,21.074964639321074,4470.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2007,São Paulo (state total),total,168700.0,15.601659751037344,2632.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2008,São Paulo (state total),total,188495.0,23.448897848749304,4420.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2009,São Paulo (state total),total,182020.0,18.805625755411494,3423.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2010,São Paulo (state total),total,166195.0,28.05,4662.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2011,São Paulo (state total),total,169538.0,18.35281765739834,3111.5,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2012,São Paulo (state total),total,175137.0,30.585199015627765,5356.6,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2013,São Paulo (state total),total,162328.5,24.703610271763736,4010.1,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2014,São Paulo (state total),total,199686.0,22.980078723596044,4588.8,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2015,São Paulo (state total),total,198971.3,20.42455369191436,4063.9,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2016,São Paulo (state total),total,201235.0,29.969935647377444,6031.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2017,São Paulo (state total),total,200629.0,21.989841947076446,4411.8,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2018,São Paulo (state total),total,202581.0,31.11002512575217,6302.3,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2019,São Paulo (state total),total,201369.0,21.54999031628503,4339.5,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2020,São Paulo (state total),total,201523.0,30.669948343365274,6180.7,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2021,São Paulo (state total),total,198181.0,20.219899990412806,4007.2,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2022,São Paulo (state total),total,199790.0,21.958055958756695,4387.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2023,São Paulo (state total),total,181548.0,27.710027100271002,5030.7,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2024,São Paulo (state total),total,186141.0,29.2,5444.6,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2025,São Paulo (state total),total,196025.0,24.180079071546995,4739.9,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2026,São Paulo (state total),total,200586.0,30.869552212018785,6192.0,historical series (Sept 2026 release),2026-09,estimate,cafetotalseriehist.xls
+2001,"Triângulo, Alto Paranaíba e Noroeste",total,140700.0,22.03269367448472,3100.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2002,"Triângulo, Alto Paranaíba e Noroeste",total,177000.0,28.8135593220339,5100.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2003,"Triângulo, Alto Paranaíba e Noroeste",total,154000.0,18.246753246753247,2810.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2004,"Triângulo, Alto Paranaíba e Noroeste",total,147000.0,26.170068027210885,3847.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2005,"Triângulo, Alto Paranaíba e Noroeste",total,160714.0,17.957365257538235,2886.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2006,"Triângulo, Alto Paranaíba e Noroeste",total,154999.0,27.82598597410306,4313.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2007,"Triângulo, Alto Paranaíba e Noroeste",total,155310.0,20.958083832335326,3255.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2008,"Triângulo, Alto Paranaíba e Noroeste",total,158753.0,28.560090203019787,4534.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2009,"Triângulo, Alto Paranaíba e Noroeste",total,159042.0,24.264030884923482,3859.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2010,"Triângulo, Alto Paranaíba e Noroeste",total,162217.0,34.84221752344082,5652.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2011,"Triângulo, Alto Paranaíba e Noroeste",total,161105.0,24.83473511064213,4001.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2012,"Triângulo, Alto Paranaíba e Noroeste",total,168463.0,36.98735033805642,6231.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2013,"Triângulo, Alto Paranaíba e Noroeste",total,169415.0,30.7705929227046,5213.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2014,"Triângulo, Alto Paranaíba e Noroeste",total,174369.0,33.06493700141654,5765.5,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2015,"Triângulo, Alto Paranaíba e Noroeste",total,170634.0,24.806896632558576,4232.9,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2016,"Triângulo, Alto Paranaíba e Noroeste",total,183076.0,40.42911140728441,7401.6,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2017,"Triângulo, Alto Paranaíba e Noroeste",total,169867.0,21.53626072162339,3658.3,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2018,"Triângulo, Alto Paranaíba e Noroeste",total,189183.0,37.730662903114975,7138.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2019,"Triângulo, Alto Paranaíba e Noroeste",total,185688.2,24.729142724201104,4591.91,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2020,"Triângulo, Alto Paranaíba e Noroeste",total,193826.5871280393,30.959609349637486,6000.79541905757,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2021,"Triângulo, Alto Paranaíba e Noroeste",total,189604.0,25.197253222505854,4777.5,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2022,"Triângulo, Alto Paranaíba e Noroeste",total,181703.0,23.10638789673258,4198.5,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2023,"Triângulo, Alto Paranaíba e Noroeste",total,199471.0,38.043625389154315,7588.6,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2024,"Triângulo, Alto Paranaíba e Noroeste",total,195258.0,27.4,5356.8,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2025,"Triângulo, Alto Paranaíba e Noroeste",total,195941.0,24.352228476939487,4771.6,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2026,"Triângulo, Alto Paranaíba e Noroeste",total,219501.0,40.54469000141229,8899.6,historical series (Sept 2026 release),2026-09,estimate,cafetotalseriehist.xls
+2001,"Zona da Mata, Rio Doce e Central",total,277000.0,14.4043321299639,3990.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2002,"Zona da Mata, Rio Doce e Central",total,348000.0,19.655172413793103,6840.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2003,"Zona da Mata, Rio Doce e Central",total,346000.0,11.213872832369942,3880.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2004,"Zona da Mata, Rio Doce e Central",total,347000.0,16.0806916426513,5580.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2005,"Zona da Mata, Rio Doce e Central",total,376206.0,14.840273679845616,5583.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2006,"Zona da Mata, Rio Doce e Central",total,349773.0,16.099012788294125,5631.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2007,"Zona da Mata, Rio Doce e Central",total,354486.0,16.790507946717216,5952.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2008,"Zona da Mata, Rio Doce e Central",total,337948.0,20.503154331435603,6929.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2009,"Zona da Mata, Rio Doce e Central",total,335221.0,18.70706190841266,6271.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2010,"Zona da Mata, Rio Doce e Central",total,334815.0,20.5695682690441,6887.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2011,"Zona da Mata, Rio Doce e Central",total,334563.0,23.128678305730162,7738.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2012,"Zona da Mata, Rio Doce e Central",total,341880.0,20.243945243945245,6921.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2013,"Zona da Mata, Rio Doce e Central",total,309593.0,26.857842393077362,8315.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2014,"Zona da Mata, Rio Doce e Central",total,284582.0,18.64067298704767,5304.8,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2015,"Zona da Mata, Rio Doce e Central",total,287340.0,23.002366534419156,6609.5,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2016,"Zona da Mata, Rio Doce e Central",total,269593.0,22.559562006431918,6081.9,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2017,"Zona da Mata, Rio Doce e Central",total,281905.0,22.990369095972046,6481.1,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2018,"Zona da Mata, Rio Doce e Central",total,278811.0,27.126619824899304,7563.2,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2019,"Zona da Mata, Rio Doce e Central",total,276520.0,19.362686243309707,5354.17,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2020,"Zona da Mata, Rio Doce e Central",total,284093.0,30.944092251481027,8791.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2021,"Zona da Mata, Rio Doce e Central",total,271903.0,18.093584844595316,4919.7,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2022,"Zona da Mata, Rio Doce e Central",total,312809.0,23.522660793007873,7358.1,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2023,"Zona da Mata, Rio Doce e Central",total,321449.0,21.828657112014657,7016.8,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2024,"Zona da Mata, Rio Doce e Central",total,332667.0,25.1,8355.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2025,"Zona da Mata, Rio Doce e Central",total,330450.0,24.33045846572855,8040.0,historical series (Sept 2026 release),2026-09,historical series,cafetotalseriehist.xls
+2026,"Zona da Mata, Rio Doce e Central",total,341403.0,28.335720541412933,9673.9,historical series (Sept 2026 release),2026-09,estimate,cafetotalseriehist.xls

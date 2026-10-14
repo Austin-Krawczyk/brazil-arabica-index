@@ -1091,3 +1091,55 @@ circularity; MapBiomas 2025 collection; Conab 2027 dates; Planet quota; ICE term
 INMET items settled 2026-10-14 (§8): the route is a manual download by the owner; automatic
 stations carry an hourly minimum, "TEMPERATURA MÍNIMA NA HORA ANT. (AUT) (°C)", from which
 nightly minima follow; the 2026 archive runs to 30 September, so June–August 2026 is present.
+
+## 10. Conab regional series: §4c extraction (2026-10-14)
+
+Sources and retrieval status are in `data/raw/conab/SOURCE.md`. Extraction is by
+`gee/conab_extract.py`, written to `data/derived/conab_regional.csv`: 360 rows, one per safra,
+region, product and vintage, with `vintage`, `vintage_date`, `column` and `source`.
+
+**What exists, by safra:**
+
+| Data | Sul, Triângulo, Zona da Mata, São Paulo | Vintage |
+|---|---|---|
+| Arabica production | **2001–2025** (and a 2026 estimate) | Historical series, September 2026 release (latest revision) |
+| Arabica area and yield | **2008–2025 only**; the 2001–2007 cells are empty | Same |
+| Arabica + conilon area, yield, production | 2001–2025 | Same |
+| Arabica, by survey (1st, 3rd, final) | **2023, 2024, 2025 only**, each also giving the previous safra as revised | Each survey |
+
+**Findings:**
+
+1. **Regional splits exist for every safra 2001–2025, but arabica yield only from 2008.** Conab's
+   arabica series gives regional production back to 2001, but area and yield start in 2008. With
+   no arabica area for 2001–2007, the yield anomaly that §5 step 6 regresses on cannot be built
+   for those seven safras from the arabica series. Nothing has been filled.
+2. **For three of the four regions the total series equals arabica wherever both exist.** In all
+   18 safras 2008–2025:
+   - Sul e Centro-Oeste, Triângulo and São Paulo: arabica and arabica-plus-conilon are identical
+     in both production and area.
+   - Zona da Mata: they differ; conilon is up to 7.1% of its production.
+   - Using the total series as arabica for 2001–2007 in the first three is an owner decision. It
+     rests on an assumption, no conilon there before 2008, that the data cannot check.
+3. **Survey vintages (first, third, final) exist only for safras 2023–2025** on Conab's site.
+   - Safras 2001–2022: not located. The old portal redirects to the gov.br home page; the
+     Internet Archive refused the one index query sent (rate limit).
+   - Consequence: the surprise test (§5 step 8) and the third-survey biennial term (§5 step 7)
+     currently have their survey inputs for 3 safras, not 25.
+4. **The vintages chain exactly.** For safras 2023–2025, the final survey's area and production
+   equal the historical series; yield differs in 5 of 15 rows by at most 0.05 bags/ha (rounding).
+   Each survey's "previous safra" column equals the earlier final.
+5. **One internal inconsistency in Conab's series, outside the index regions:**
+   - Minas Gerais state total, arabica, 2012: the yield cell is 22.16 bags/ha, but production over
+     area gives 26.30.
+   - MG's area and production equal the sums of its regions, so the yield cell is the odd one.
+   - All 324 other rows agree to within 0.5%.
+   - Recorded, not corrected.
+
+**Queued for the owner:**
+
+1. Whether to look for safras 2001–2022 survey bulletins elsewhere: Conab directly, or archived
+   copies, which would raise a provenance question.
+2. Whether arabica yield for 2001–2007 may come from the arabica-plus-conilon series in Sul,
+   Triângulo and São Paulo. Otherwise the yield target starts at safra 2008: 18 seasons, not 25.
+3. Which vintage scores the backtest (§10 open item 1). The historical series is the latest
+   revision; per-survey finals exist only for 2023–2025.
