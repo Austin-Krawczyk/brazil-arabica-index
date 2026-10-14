@@ -1,0 +1,10 @@
+pentad	p_2016_09_3	data/raw/chc_prelim/pentad/chirps-v2.0.2016.09.3.tif
+pentad	p_2016_09_4	data/raw/chc_prelim/pentad/chirps-v2.0.2016.09.4.tif
+pentad	p_2016_09_5	data/raw/chc_prelim/pentad/chirps-v2.0.2016.09.5.tif
+pentad	p_2016_09_6	data/raw/chc_prelim/pentad/chirps-v2.0.2016.09.6.tif
+pentad	p_2016_10_1	data/raw/chc_prelim/pentad/chirps-v2.0.2016.10.1.tif
+daily	d_2015_09_01	data/raw/chc_prelim/daily/chirps-v2.0.2015.09.01.tif
+daily	d_2015_09_02	data/raw/chc_prelim/daily/chirps-v2.0.2015.09.02.tif
+daily	d_2015_09_03	data/raw/chc_prelim/daily/chirps-v2.0.2015.09.03.tif
+daily	d_2015_09_04	data/raw/chc_prelim/daily/chirps-v2.0.2015.09.04.tif
+daily	d_2015_09_05	data/raw/chc_prelim/daily/chirps-v2.0.2015.09.05.tif

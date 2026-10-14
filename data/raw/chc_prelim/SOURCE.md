@@ -25,3 +25,21 @@ refetched, which would show in the manifest.
 **Licence:** CHIRPS is placed in the public domain by CHC (copyright waived by Pete Peterson).
 
 **Reproduce:** `.venv/Scripts/python gee/chc_prelim_fetch.py`
+
+## Download completed 2026-10-14
+
+- **The throttled retry** sent one test request at 13:07:10 UTC; CHC answered 200. The
+  sequential fetch (3 s between files) then ran to the end without a 403 or 429.
+- **2,007 files in scope:**
+  - 848 pentads, 2015-01-01 to 2026-10-06, with none missing from the sequence;
+  - 1,159 days: September–November 2015–2025, plus 2026-05-01 to 2026-10-10.
+- **122 pentads** were already on disk from 2026-10-13 and were skipped. **1,885 files** were
+  fetched on 2026-10-14.
+- **Checksums:** the SHA-256 of every file, recomputed after the run, matches `manifest.csv`
+  (2,007 of 2,007). The 122 earlier files are byte-identical to the manifest committed on
+  2026-10-13.
+- **Every file opens:** 230 × 280 cells, EPSG:4326, float32, fill −9999, and its `kind` and
+  `start_date` tags match its file name.
+- **Five days are missing at the source:** 2026-05-11 to 2026-05-15, one whole pentad's days. CHC's
+  `global_daily/fixed/tifs/2026/` listing, rechecked on 2026-10-14, jumps from 2026-05-10 to
+  2026-05-16. They are not filled; the pentad file 2026.05.3 covering those days is present.
