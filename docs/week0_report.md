@@ -1321,3 +1321,97 @@ now 10,290 EECU-seconds (2.86 EECU-hours).
 
 **Compute 2026-10-14, added:** W1 weight export 149 and W1 re-probe 195 EECU-seconds. The day's
 measured total is now 10,634 EECU-seconds (2.95 EECU-hours).
+
+## 12. W1 coffee mask: Collection 11, lag S−2, and the 30% filter (2026-10-14) — **STOPPED: the filter as specified removes most coffee**
+
+**Done:**
+
+- **Amendment 16c:** Collection 11, lag S−2. Crops 2001–2027 use mask years 1999–2025; mask year
+  1998 serves the baseline's crop-2000 composites.
+- **Municipalities:** the 1,335 index municipalities were uploaded to Earth Engine from IBGE's
+  municipal mesh, at no compute cost.
+- **Coffee areas,** for every municipality, from Collection 11 class 46 at 30 m
+  (`gee/w1_mask.py areas`, `data/derived/w1_mask_areas.csv`):
+  - **"full"**, class 46 in the year: 1995–2025, for the three-year change;
+  - **"persistent"**, class 46 in M, M−1 and M−2 (Amendment 16b): mask years 1998–2025.
+  - **Cost:**
+    - the one-year probe, 3,204 EECU-seconds;
+    - a probe of all 59 bands on a 5% area sample (57 municipalities), 2,522;
+    - the full run, **45,202 EECU-seconds (12.6 EECU-hours)**, against an estimate of 50,000.
+  - **Checks:** the full run matches both probes, to within 0.0001 ha and 0.000001 ha.
+- **The 30% filter,** run per season exactly as specified (`gee/w1_filter.py`):
+  - **comparator:** IBGE PAM total coffee, area intended for harvest, for the mask year;
+  - **measure:** MapBiomas persistent-pixel area;
+  - **no minimum area.**
+  - **PAM's arabica split exists only from 2012,** so total coffee is the only comparator
+    available for every mask year. Class 46 does not separate species either.
+  - **Where PAM is missing** (`...`, 54–134 index municipalities a year, plus 8 absent from PAM)
+    and MapBiomas shows coffee, the municipality is removed as not comparable (agent's handling,
+    flagged).
+
+**Finding 1: MapBiomas Collection 11 detects much less coffee than PAM records,** especially in São
+Paulo, in Zona da Mata and in early years. Region totals, full MapBiomas area over PAM area:
+
+| Mask year | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|
+| 1998 | 0.50 | 0.19 | 0.44 | 0.37 |
+| 2004 | 0.61 | 0.32 | 0.60 | 0.40 |
+| 2010 | 0.78 | 0.43 | 0.74 | 0.48 |
+| 2016 | 0.92 | 0.55 | 1.03 | 0.57 |
+| 2022 | 0.96 | 0.54 | 0.92 | 0.59 |
+| 2025 | 0.89 | 0.55 | 0.87 | 0.58 |
+
+Spot checks show the matching is right and the gap is real. Varginha agrees with PAM to within
+7–21% in 2005, 2015 and 2024; Patrocínio to within 1–5% from 2015. But Três Pontas has 5,100 ha in
+MapBiomas against PAM's 8,700 (2024), and Franca 4,700 against 9,480. **Only 18% of compared
+municipality-years agree within 30%; 67% differ by more than 50%.** So no small change of tolerance
+would alter the picture.
+
+**Finding 2: the filter as specified removes most coffee** (`docs/week0/w1_removal_report.csv`).
+Share of MapBiomas coffee area kept:
+
+| Mask year | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|
+| 1998 | 0.17 | 0.04 | 0.22 | 0.19 |
+| 2004 | 0.22 | 0.07 | 0.19 | 0.24 |
+| 2010 | 0.43 | 0.11 | 0.67 | 0.27 |
+| 2016 | 0.67 | 0.19 | 0.85 | 0.44 |
+| 2022 | 0.67 | 0.11 | 0.88 | 0.30 |
+| 2025 | 0.59 | 0.07 | 0.82 | 0.34 |
+
+**Removed and kept differ** (§9; Amendment 16's split; averages over mask years):
+
+- **Direction:** most removals are MapBiomas *below* PAM. MapBiomas exceeds PAM in only 25–42% of
+  removed municipalities.
+- **Size:** removed municipalities are small. Median MapBiomas coffee, removed against kept:
+  - Sul 664 against 2,373 ha;
+  - São Paulo 13 against 130;
+  - Triângulo 81 against 3,909;
+  - Zona da Mata 9 against 251.
+- **Three-year area change:** in Sul, 25% of removed municipalities were contracting (below −10%),
+  against 7% of kept. In Triângulo, 48% of removed were expanding, against 46% of kept. In São
+  Paulo and Zona da Mata, many removed municipalities have no MapBiomas coffee in either year
+  compared, while PAM records some.
+- **Expected bias, confirmed:** Amendment 16's reasoning expected the filter to remove expanding
+  or recovering municipalities, where MapBiomas exceeds PAM. The larger effect here is the
+  opposite: removing municipalities where MapBiomas under-detects coffee. That is concentrated in
+  São Paulo, Zona da Mata and the early years. The region most affected is the frost region.
+
+**Options, for the owner** (none applied; computed from the same tables at no compute cost). Share
+of MapBiomas coffee area kept, over mask years 1998–2025:
+
+| Option | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|
+| A. As specified (two-sided, 30%) | 0.17–0.67 | 0.04–0.19 | 0.19–0.88 | 0.19–0.44 |
+| B. Two-sided on shares of the region-year total (allows for region-wide under-detection) | 0.24–0.68 | 0.14–0.60 | 0.46–0.87 | 0.08–0.47 |
+| C. No filter: the full class-46 mask, with MapBiomas/PAM ratios reported as a caveat | 1 | 1 | 1 | 1 |
+| E. One-sided: remove only where MapBiomas exceeds PAM by more than 30% (the commission risk Amendments 16 and 16b were written for) | 0.77–0.92 | 0.78–0.86 | 0.95–1.00 | 0.84–0.96 |
+
+Any option chosen now is chosen after seeing what the filter removes. That is mask information, not
+yield or frost outcomes, but the registration must say so.
+
+**Not started, pending the owner's choice:** the per-season weights, the W1 series, and the
+prereg-2 registration of the masks.
+
+**Compute 2026-10-14, added:** collection checks 14, areas probes 3,204 and 2,522, areas run
+45,202 EECU-seconds. The day's measured total is now 61,576 EECU-seconds (17.1 EECU-hours).

@@ -1,0 +1,1 @@
+w1_mask_areas_probe_2024: 3,204 EECU-seconds (batch_eecu_usage_seconds), 1335 municipalities, 2 bands

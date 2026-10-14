@@ -1,0 +1,1 @@
+w1_mask_areas_sample_probe: 2,522 EECU-seconds (batch_eecu_usage_seconds), 57 municipalities, 59 bands

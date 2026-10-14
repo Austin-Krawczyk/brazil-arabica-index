@@ -29,6 +29,14 @@ EECU-seconds by rebuilding the weight per composite): --export-weight writes the
 as an asset in the MOD13Q1 grid, w1_coffee_weight_<region>_mask<year>, by one batch export. The
 probe then reads it. Same reducers, same weights.
 
+Full run (--full, owner decision 2026-10-14, after the mask was frozen): each composite is
+assigned to its crop season S (composites starting May of S−1 to April of S), and reduced with
+that season's weights from gee/w1_mask.py (mask year S−2, Collection 11, after the 30% filter):
+"f" the full class-46 mask, "p" the persistent-pixel mask (Amendment 16b). The cloud/QA rule is an
+OPEN prereg-1 item, so both candidates are stored: q0 = SummaryQA 0 (good), q1 = SummaryQA 0-1
+(good, marginal). One aggregation per composite; one batch table export per region; cost
+recorded per region. --full --probe does one calendar year of one region first.
+
 Run:    .venv/Scripts/python gee/w1_modis_evi.py --export-weight --region "Sul e Centro-Oeste"
         .venv/Scripts/python gee/w1_modis_evi.py --probe --region "Sul e Centro-Oeste" --year 2021
 Writes: docs/week0/w1_probe_<region>_<year>.csv, docs/week0/profiles/w1_probe_<utc>.txt
@@ -125,10 +133,53 @@ def run(project, region, start, end):
     return ee.FeatureCollection(col.map(per_image)), col.size()
 
 
+FULL_START, FULL_END = "2000-01-01", "2026-01-01"
+
+
+def run_full(project, region, start=FULL_START, end=FULL_END):
+    col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(start, end)
+    proj = col.first().select("EVI").projection()
+    weights = ee.Image(f"projects/{project}/assets/w1_weights_{slug_of(region)}")
+    reducer = (ee.Reducer.median().combine(ee.Reducer.mean(), sharedInputs=True)
+               .combine(ee.Reducer.sum(), sharedInputs=True))
+
+    def per_image(img):
+        d = img.date()
+        season = d.get("year").add(ee.Number(ee.Algorithms.If(d.get("month").gte(5), 1, 0)))
+        m = season.subtract(2).toInt().format("%d")
+        qa = img.select("SummaryQA")
+        vi = img.select(["EVI", "NDVI"]).multiply(SCALE)
+        bands = []
+        for v, wname in (("f", "w_"), ("p", "wp_")):
+            w = weights.select(ee.String(wname).cat(m))
+            w = w.updateMask(w.gt(0))
+            bands.append(w.rename(f"{v}_w_total"))
+            for q, qmax in (("q0", 0), ("q1", 1)):
+                ok = qa.gte(0).And(qa.lte(qmax))
+                bands += [vi.updateMask(ok).updateMask(w).rename([f"{v}_{q}_EVI", f"{v}_{q}_NDVI"]),
+                          w.updateMask(ok).rename(f"{v}_{q}_w_valid")]
+        stats = ee.Image.cat(bands).reduceRegion(reducer, crs=proj, scale=231.656, maxPixels=1e10, tileScale=4)
+        return ee.Feature(None, stats).set("composite_start", d.format("YYYY-MM-dd"), "season", season,
+                                           "mask_year", season.subtract(2))
+
+    return ee.FeatureCollection(col.map(per_image))
+
+
+def full_selectors():
+    out = ["composite_start", "season", "mask_year"]
+    for v in ("f", "p"):
+        out.append(f"{v}_w_total_sum")
+        for q in ("q0", "q1"):
+            out += [f"{v}_{q}_{b}_{r}" for b in ("EVI", "NDVI") for r in ("median", "mean")]
+            out.append(f"{v}_{q}_w_valid_sum")
+    return out
+
+
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--probe", action="store_true", help="only the probe is run")
     a.add_argument("--export-weight", action="store_true", help="save the region's coffee weight once")
+    a.add_argument("--full", action="store_true", help="the full W1 series for one region")
     a.add_argument("--region", default="Sul e Centro-Oeste", choices=list(REGIONS))
     a.add_argument("--year", type=int, default=2021)
     args = a.parse_args()
@@ -136,6 +187,25 @@ def main():
     (WEEK0 / "profiles").mkdir(parents=True, exist_ok=True)
     if args.export_weight:
         return export_weight(project, args.region)
+    if args.full:
+        t0 = time.time()
+        slug = slug_of(args.region)
+        if args.probe:
+            fc, name = run_full(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01"), \
+                f"w1_full_probe_{slug}_{args.year}"
+        else:
+            fc, name = run_full(project, args.region), f"w1_series_{slug}"
+        df = export_and_fetch(fc, name, full_selectors())
+        cost = BATCH_COSTS[-1][1]
+        stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        (WEEK0 / "profiles" / f"{name}_{stamp}.txt").write_text(
+            f"batch export {name}: {cost:,.0f} EECU-seconds (batch_eecu_usage_seconds), "
+            f"{len(df)} composites, {time.time() - t0:.0f} s wall\n", encoding="utf-8")
+        out = (WEEK0 if args.probe else ROOT / "data" / "derived") / f"{name}.csv"
+        df.to_csv(out, index=False)
+        print(f"{name}: {len(df)} composites, {cost:,.0f} EECU-seconds"
+              + (f" (limit {PROBE_LIMIT}) -> {'PASS' if cost <= PROBE_LIMIT else 'FAIL'}" if args.probe else ""))
+        return df, cost
     if not args.probe:
         raise SystemExit("Only --export-weight or --probe; the full run is not started from here.")
     t0 = time.time()
