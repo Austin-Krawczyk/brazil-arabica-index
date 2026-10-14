@@ -78,7 +78,13 @@ calendar, different exchange, and it would double the mask work for a market not
 boundaries such as the Cerrado Mineiro designation.
 - In Week 0, confirm from Conab's methodology which IBGE units each grouping is built from (the
   older mesoregions or the 2017 intermediate regions). Record the municipality list per region
-  with its source.
+  with its source. **Done 2026-10-13 (Amendment 34):** Conab's September 2026 bulletin describes
+  the Minas regions by IBGE 1989 mesoregions. The proposed membership
+  (`docs/week0/proposed_region_membership.csv`) is registered at `prereg-2` as provisional:
+  Campo das Vertentes and Metropolitana de Belo Horizonte are placed in Zona da Mata, Rio Doce e
+  Central on an area fit (PAM 2025 against Conab 2025: +3.1% Sul e Centro-Oeste, −8.5% Zona da
+  Mata, Rio Doce e Central, against +7.8% and −16.1% the other way) and on geography. If Conab's
+  Minas Gerais office answers before `prereg-2`, its answer supersedes the test.
 - **Outside the index:** Conab's fourth Minas unit (Norte, Jequitinhonha e Mucuri), and arabica
   outside MG and SP, such as Espírito Santo, Bahia and Paraná.
 - The four units' share of Brazil's arabica is computed from Conab and stated in every note.
@@ -275,7 +281,7 @@ with station data. If Brazilian stations feed CHIRPS, validating CHIRPS against 
 the same trap as PRISM ingesting CIMIS in the almond study, which reframed that study's headline
 result. Establish this before the validation is run, not after.
 
-### 4c Conab granularity — RESOLVE FIRST (open, blocking)
+### 4c Conab granularity — São Paulo resolved; historical extraction open
 
 Step 6 regresses on Conab's **regional** yield anomaly. Conab reports by state, and the Minas
 regional split does appear in the bulletins — the 2020 first survey quotes Sul de Minas 17.03–17.79M
@@ -288,6 +294,13 @@ Conab reporting unit.**
 2. If there is none, **use São Paulo state total as the Mogiana target** — São Paulo arabica is
    dominated by Mogiana, so the state total is usable.
 3. **Only if that proves too noisy in the backtest**, cut to three regions.
+
+**Resolved for São Paulo, 2026-10-13 (Amendment 34):** Conab's 3rd survey of safra 2026 (bulletin
+and data table, stored in `data/raw/conab/`) reports São Paulo only as a state total; the bulletin
+names Alta Mogiana, Média Mogiana, Alta Paulista and Circuito das Águas in its text but gives no
+figures for them. **The São Paulo state total is the Mogiana target.** The same table splits Minas
+Gerais into its four regions with area, yield and production; whether earlier surveys carry the
+split back to 2001 in usable form is the extraction work still open.
 
 **Do not cut Mogiana pre-emptively.** It is the frost region, and losing it weakens the component
 with the most distinctive story.
@@ -669,7 +682,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 
 | Item | Needed by | Where |
 |---|---|---|
-| **§4c Conab granularity (blocking):** a São Paulo regional split, and whether the Minas regional split (first, third and final surveys) is published in a usable form | Week 0 | §4c, §5 step 7 |
+| **§4c Conab granularity:** São Paulo resolved (state total, Amendment 34). Still open: whether surveys back to 2001 carry the Minas regional split (first, third and final surveys) in usable form | Week 0 | §4c, §5 step 7 |
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |

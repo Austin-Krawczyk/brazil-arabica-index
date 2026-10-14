@@ -562,3 +562,16 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   business day of February without the Conab line, and a scorecard addendum follows the survey, so
   the first-week-of-February success date still holds. The original entry above records the
   2026-10-12 wording unchanged. Approved by owner.
+
+- 2026-10-14 — **AMENDMENT 34: São Paulo state total is the Mogiana target, and the regional
+  membership is registered as provisional.** Conab's 3rd survey of safra 2026 (bulletin and data
+  table, stored with checksums in `data/raw/conab/`) reports São Paulo only as a state total, so
+  under §4c's resolution order the state total is the Mogiana target; cutting to three regions
+  stays available only if the backtest shows it too noisy. The bulletin describes the Minas
+  regions by IBGE 1989 mesoregions without publishing a membership list. The proposed membership
+  (`docs/week0/proposed_region_membership.csv`) is registered at `prereg-2` as provisional:
+  Campo das Vertentes and Metropolitana de Belo Horizonte go to Zona da Mata, Rio Doce e Central on
+  an area fit (PAM 2025 against Conab 2025, +3.1% and −8.5%, against +7.8% and −16.1% the other
+  way) and on geography. The owner is asking Conab's Minas Gerais office; an answer before
+  `prereg-2` supersedes the test. The §4c checklist row now tracks only the historical extraction.
+  Approved by owner.
