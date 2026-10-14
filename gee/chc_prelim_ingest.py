@@ -14,7 +14,10 @@ Rerunnable: an object already in the bucket with the same SHA-256 is not uploade
 image already in a collection is not ingested again. --from-scratch deletes every image in both
 collections first and needs --yes as well; it never runs by default.
 
-Run:    .venv/Scripts/python gee/chc_prelim_ingest.py [--dry-run] [--from-scratch --yes]
+--limit N ingests at most N new images per collection (a value-check gate, as for VJ113A1); the
+names started are written to docs/week0/chc_ingest_started_<utc>.txt for gee/chc_prelim_verify.py.
+
+Run:    .venv/Scripts/python gee/chc_prelim_ingest.py [--dry-run] [--limit N] [--from-scratch --yes]
 """
 import argparse
 import datetime as dt
@@ -25,7 +28,7 @@ import ee
 import rasterio
 from google.cloud import storage
 
-from common import ROOT, init, setting
+from common import ROOT, WEEK0, init, setting
 
 SOURCE = ROOT / "data" / "raw" / "chc_prelim"
 BUCKET_LOCATION = "US-CENTRAL1"
@@ -86,6 +89,7 @@ def main():
     args.add_argument("--dry-run", action="store_true", help="report what would happen; change nothing")
     args.add_argument("--from-scratch", action="store_true", help="delete every image in both collections first")
     args.add_argument("--yes", action="store_true", help="required with --from-scratch")
+    args.add_argument("--limit", type=int, default=None, help="ingest at most N new images per collection")
     args = args.parse_args()
     if args.from_scratch and not args.yes:
         raise SystemExit("--from-scratch deletes ingested images; add --yes to confirm.")
@@ -95,6 +99,7 @@ def main():
     bucket = ensure_bucket(client, setting("GCS_BUCKET"), args.dry_run)
 
     files = sorted(SOURCE.glob("*/*.tif"))
+    started = []
     if not files:
         raise SystemExit(f"No files in {SOURCE}; run gee/chc_prelim_fetch.py first.")
     for kind in ("pentad", "daily"):
@@ -119,6 +124,8 @@ def main():
             if name in done:
                 counts["already ingested"] += 1
                 continue
+            if args.limit is not None and counts["ingest started"] >= args.limit:
+                break
             sha = hashlib.sha256(path.read_bytes()).hexdigest()
             blob = bucket.blob(f"chc_prelim/{kind}/{path.name}")
             current = bucket.get_blob(blob.name) if not args.dry_run else None
@@ -143,8 +150,12 @@ def main():
             }
             if not args.dry_run:
                 ee.data.startIngestion(ee.data.newTaskId()[0], manifest)
+                started.append(f"{kind}\t{name}\t{path.relative_to(ROOT).as_posix()}")
             counts["ingest started"] += 1
         print(f"{kind}: {counts}")
+    if started:
+        stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        (WEEK0 / f"chc_ingest_started_{stamp}.txt").write_text("\n".join(started) + "\n", encoding="utf-8")
     print(("DRY RUN, nothing changed. " if args.dry_run else "") +
           "Ingestion tasks run in Earth Engine; check them in the Code Editor Tasks tab or with "
           "`earthengine task list`.")

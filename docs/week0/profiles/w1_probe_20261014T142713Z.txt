@@ -1,0 +1,1 @@
+batch export w1_probe_sul_e_centro_oeste_2021: 3,635 EECU-seconds (batch_eecu_usage_seconds), 32 s wall

@@ -1143,3 +1143,53 @@ region, product and vintage, with `vintage`, `vintage_date`, `column` and `sourc
    Triângulo and São Paulo. Otherwise the yield target starts at safra 2008: 18 seasons, not 25.
 3. Which vintage scores the backtest (§10 open item 1). The historical series is the latest
    revision; per-survey finals exist only for 2023–2025.
+
+## 11. W1 regional MOD13Q1 EVI series: cost probe (2026-10-14) — **fails its gate**
+
+Owner request: write the W1 script for the regional MODIS EVI series 2000–2025 over the mask, one
+region at a time, and run only its probe, gated at 0.5 EECU-hours.
+
+**Script** (`gee/w1_modis_evi.py`):
+
+- For each region and each `MOD13Q1` composite, it computes the coffee-weighted median and mean
+  of EVI and NDVI over the mask, plus the valid and total coffee weight.
+- **Regions** are unions of IBGE 1989 mesoregions, following the provisional membership; São
+  Paulo is the whole state.
+- **Provisional for the probe, not prereg-1 values:**
+  - the mask year is 2024 for every composite (the lag by season is set at `prereg-2`);
+  - QA is `SummaryQA` 0–1, the drift-check rule (the QA rule is an OPEN prereg-1 item).
+
+**First attempt:** an interactive request over one year of composites. Earth Engine refused it
+("Too many concurrent aggregations") before returning results, and its cost was not captured. The
+script now makes one reduction per composite and runs as a batch table export.
+
+**Probe, Sul e Centro-Oeste, calendar year 2021, 23 composites: 3,635 EECU-seconds (1.01
+EECU-hours) against 1,800. FAILS.** No further W1 run was made.
+
+- **Output looks right:** a clear seasonal EVI cycle. The share of coffee weight with a valid
+  value is at least 0.97 in 19 of 23 composites, and 0.42–0.61 in three cloudy ones (2021-01-01,
+  2021-10-16, 2021-12-03). The 2021 probe year shows raw 16-day values for one region; no
+  anomaly or season-level input was computed.
+- **Likely cause**, by analogy with the VJ113A1 probe; a batch task gives no per-operation
+  profile, so this is not established. The 30 m coffee weight is rebuilt inside every
+  composite's reduction.
+
+**Cost estimates for the full run**, crops 2001–2025, about 600 composites × 4 regions:
+
+- **As written:** cost scales with region area (four regions 637,882 km², 8.64× Sul's 73,816) and
+  with composite count. That gives about 3,635 × 8.64 × 26 years ≈ **816,000 EECU-seconds, about
+  227 EECU-hours.** Not started.
+- **With the coffee weight saved as an asset first,** as for VJ113A1, where it cut a month's cost
+  from 2,549 to 43 EECU-seconds:
+  - the composites would cost on the order of a few EECU-hours;
+  - plus one weight export per mask year (1,610 EECU-seconds for VJ113A1 at 463 m; more at
+    250 m);
+  - one mask for all seasons means one export; the mask year by season (Amendment 16) means up to
+    about 24.
+  - These are extrapolations, not measurements. That route needs its own probe.
+
+**Queued for the owner:** whether to re-probe W1 with a saved weight asset. Which mask years it
+needs depends on the mask-lag decision at `prereg-2`.
+
+**Compute 2026-10-14, added:** W1 probe 3,635 EECU-seconds (batch). The day's measured total is
+now 10,290 EECU-seconds (2.86 EECU-hours).
