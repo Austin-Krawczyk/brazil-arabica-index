@@ -429,6 +429,45 @@ product API.
 - **Left in place:** the 5 mis-georeferenced images in `vj113a1_mgsp`. Deleting them is for the
   owner (the agent does not delete data).
 
+### VJ113A1 gate 1 repeated, full ingestion, gate 2 (2026-10-14): **ingestion passes; the gate 2 probe fails its cost limit**
+
+- **Gate 1, repeated on `vj113a1_mgsp_v2`** with the CRS declared: 5 composites, 5 of 5 tasks
+  succeeded, **15 of 15 values match the source files, 15 of 15 fill cells masked.** Passed, so
+  the other 396 composites were ingested.
+- **Full ingestion: 401 of 401 tasks succeeded, 0 failed.** The collection loads 401 images,
+  2018-01-01 to 2026-09-14, bands EVI, NDVI and pixel_reliability. The value check on 5 random
+  composites across the whole range (2019 day 345, 2024 day 025, 2025 day 193, 2026 days 033 and
+  201; seed 20261014): **15 of 15 values match, 15 of 15 fill cells masked**
+  (`docs/week0/vj113a1_verify.txt`).
+- **Bucket copies:** the value check has passed, so under the owner's instruction the copies in
+  `gs://<GCS_BUCKET>/vj113a1/` can now be deleted. The agent does not delete data; the owner was
+  given the commands. The local files in `data/raw/vj113a1/` stay.
+- **Gate 2 probe, January 2024: FAILS its cost limit — 2,549 EECU-seconds (0.71 EECU-hours)
+  against 900 (0.25).** The 40-month acceptance test was not started. For information only, not
+  the test: January 2024 has 4 composites, and good-reliability coverage is 84.9% of the
+  coffee-weighted area.
+- **Where the cost went** (`docs/week0/profiles/vj113a1_probe_20261014T094342Z.txt`): three
+  operations account for 97% of it — `reduceResolution` 1,156 EECU-s, `unmask` 889, and the
+  reprojection precalculation between SR-ORG:6974 and EPSG:4326, 418. `reduceResolution` is used
+  only to bring the 30 m MapBiomas coffee mask to the 463 m grid. The VJ113A1 reliability tests
+  and the composite maximum together cost under 25 EECU-s. So most of the cost is building the
+  coffee weight, which is the same for every month but is rebuilt in each month's request. How
+  much of the `unmask` cost belongs to the weight is not established.
+- **The full run as written** would cost about 40 × 0.71 ≈ 28 EECU-hours, if cost scales by
+  month. Not started; owner decision. A cheaper route, not taken: export the 463 m coffee weight
+  once as an asset (about one probe's cost), then re-probe January 2024 against the same 0.25
+  EECU-hour limit. That changes the computation, not the method or the weights.
+
+### Compute used on 2026-10-14, measured (Amendment 32)
+
+| Run | EECU-seconds |
+|---|---|
+| SRTM elevation at the 19,598 index-region sample points (station elevation cut, §8) | 817 |
+| VJ113A1 gate 2 probe, January 2024 | 2,549 |
+| **Total measured** | **3,366 (0.94 EECU-hours)** |
+
+Not measured: the VJ113A1 ingestion tasks and value checks.
+
 ### Compute used on 2026-10-13, measured (Amendment 32)
 
 | Run | EECU-hours |
@@ -580,11 +619,11 @@ January, Amendment 22's fallback applies: note 3 goes out on 1 February without 
 and a scorecard addendum follows the survey. The 2027 dates are still to confirm from Conab's
 calendar.
 
-## 8. INMET station set (§5 step 4) — blocked
+## 8. INMET station set (§5 step 4) — PROPOSAL, not registered: the 25% coverage rule cannot be met
 
-Both INMET hosts (`portal.inmet.gov.br`, `apitempo.inmet.gov.br`) resolve to 201.57.198.188 and
-accept the connection, then reset it as the secure session starts ("Recv failure: Connection was
-reset"). This is the server refusing this machine, the same failure the spec recorded in an
+Earlier (2026-10-13): both INMET hosts (`portal.inmet.gov.br`, `apitempo.inmet.gov.br`) resolve
+to 201.57.198.188 and accept the connection, then reset it as the secure session starts ("Recv
+failure: Connection was reset"). This is the server refusing this machine, the same failure the spec recorded in an
 earlier sandbox. The station set needs (1) INMET's catalogue of automatic stations (code,
 coordinates, altitude, start date) and (2) the annual hourly archives for 2008–2026 for the
 completeness rule. Once the catalogue exists, the coffee-area weights within 25 km and the
@@ -636,12 +675,179 @@ computed on the page.
   `data/raw/inmet/catalogo_estacoes_automaticas.csv`: 636 stations, 43,473 bytes. Its SHA-256
   (`34d60b08…b739db`) matches the hash computed in the browser on the scraped text, so it is an
   exact copy of what the page displayed. Provenance is in `data/raw/inmet/SOURCE.md`.
-- **Next:** the owner downloads the 19 archives into `data/raw/inmet/`, with retrieval dates and
-  checksums. The station set, its completeness, coffee-area weights and the
-  elevation cut are then computed as a proposal.
+- **Archives downloaded by the owner, 2026-10-14, and checked:** all 19 files match the sizes in
+  the table above, every archive passes a full zip integrity test, and each SHA-256 is recorded in
+  `data/raw/inmet/SOURCE.md`. The 2026 archive holds two cumulative snapshots per station (to 31
+  August and to 30 September); the later one is used.
+
+### Station set, computed 2026-10-14 — proposal; nothing registered
+
+Table: `docs/week0/proposed_station_set.csv`, one row per candidate. Per-window completeness:
+`docs/week0/inmet_completeness.csv` (69 stations × 19 windows = 1,311 rows), from
+`gee/inmet_completeness.py`. **No frost night has been counted at any station.** Nothing below
+uses temperatures, only whether they are present.
+
+**Implementation choices for this proposal, for owner review:**
+
+- **Coffee area** is estimated from the 20,000-point random sample of the provisional MG/SP coffee
+  mask used for the HLS test (MapBiomas Collection 10, `classification_2024` = 46; seed
+  20261012). Points are assigned to regions with the provisional membership (§6): Sul 9,725, São
+  Paulo 2,365, Triângulo 3,796, Zona da Mata 3,712, Norte 386 (excluded), outside 16 (excluded).
+  A coverage share is the share of a region's points inside the circles. Its sampling error at
+  25% is about 0.4–0.9 points, depending on region size. **The registered figures would be
+  recomputed on the frozen W1 mask.**
+- **Zona da Mata note:** the sample holds about as many Zona da Mata points as Triângulo points,
+  although PAM 2025 gives Zona da Mata about 35% more arabica area. That fits MapBiomas
+  under-detecting steep smallholder coffee (§4a). Zona da Mata shares are shares of the coffee
+  MapBiomas detects.
+- **Candidates:** stations in the scraped catalogue with at least one sample point within 25 km
+  (haversine). A station near only a few coffee pixels and no sample point could be missed; it
+  would add almost no coverage.
+- **Elevation cut:** SRTM (`USGS/SRTMGL1_003`, which resolved and ran) at the 19,598 index-region
+  points, 95th percentile per region. Station altitude from the catalogue. A station near a border
+  is tested against the cut of each region it covers. Testing only against the region where most
+  of its circle's coffee lies gives identical coverage figures here.
+- **Code:** the completeness check is a committed script. The candidate pull, the SRTM sampling and
+  the coverage tables were one-off code for this proposal. The coverage tables were recomputed
+  separately from the saved tables, and every figure matched. **The registered set will be built
+  by a committed script.**
+
+**Candidates: 69 stations.** By state: MG 39, SP 24, RJ 3, PR 2, ES 1. By the region holding most
+of the coffee in their circle: Sul 14, São Paulo 26, Triângulo 9, Zona da Mata 20. 48 were
+installed before June 2008. The catalogue lists only stations registered now, so stations closed
+before 2026 cannot be candidates.
+
+**Completeness as specified** (at least 95% of hourly minimum temperature present in every
+June–August window, 2008–2026, and no gap longer than 48 hours): **1 of 69 passes.** That station
+is A521 Belo Horizonte – Pampulha, which covers 0.05% of Zona da Mata coffee.
+
+- **Failed windows per station:**
+
+  | Failed windows | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 14 | 18 |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | Stations | 1 | 7 | 8 | 11 | 9 | 2 | 7 | 5 | 3 | 3 | 3 | 3 | 5 | 1 | 1 |
+
+- **What the filter removed, and why (§9):** 385 of the 1,311 station-windows fail. The reasons:
+  - **No file in that year's archive, 149.** Of these, 147 fall before the station's
+    installation. The other 2 are A716 Ourinhos and A764 Bebedouro in 2022.
+  - **File present, below 95% and a gap over 48 h, 157.**
+  - **Below 95% only, 71.**
+  - **Gap over 48 h only, 8.**
+
+  The filter removes all 21 stations installed after June 2008, by construction. It also removes
+  47 of the 48 older ones. Their 180 failed windows all but one have a file, so the losses are
+  outages inside the record, not late installation. Between 12 and 27 of the 69 stations fail in
+  each year. With one station kept, a kept-versus-removed comparison is not meaningful, beyond
+  this: the kept station is in Zona da Mata, and the strict set has nothing in Sul, São Paulo or
+  Triângulo.
+- **Zero results checked (§9):** 190 windows have zero valid hours. Of these, 149 have no file;
+  41 have a file whose June–August rows are empty. Three of the 41 were recounted with a separate
+  parser (Python's `csv` module, columns found by header name), and all three confirm the result:
+  A505 Araxá 2025, A530 Caldas 2025 and A716 Ourinhos 2021 each have 2,208 June–August rows with
+  no minimum or air temperature in any of them. Two non-zero windows were recounted earlier and
+  matched: A515 2016 at 1,001 hours, and A521 2009 at 2,207 hours.
+
+**Elevation cut** (95th percentile of coffee-point elevation): Sul 1,216 m, São Paulo 1,126 m,
+Triângulo 1,192 m, Zona da Mata 1,136 m. **Five stations stand above the cut:**
+
+- A706 Campos do Jordão, 1,663 m;
+- A509 Monte Verde, 1,545 m;
+- A531 Maria da Fé, 1,281 m;
+- F501 Belo Horizonte – Cercadinho, 1,200 m;
+- A502 Barbacena, 1,169 m.
+
+**Within 50 m of the cut: A502 Barbacena,** 33 m above Zona da Mata's cut. These are, by design,
+the coldest sites; leaving them out lowers frost counts relative to keeping them. Leaving them
+out lowers the coverage ceiling in Sul from 28.4% to 25.8%, in São Paulo from 30.7% to 29.6% and
+in Zona da Mata from 30.3% to 29.9%. Triângulo is unchanged at 25.1%.
+
+**Coverage share** (union of 25 km circles, stations below the cut):
+
+| Station set | Stations | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|---|
+| **As specified: complete in all 19 windows** | 1 | 0.0% | 0.0% | 0.0% | 0.1% |
+| At most 1 failed window | 7 | 7.7% | 0.5% | 21.3% | 0.1% |
+| At most 2 failed windows | 13 | 7.7% | 0.6% | 21.3% | 2.0% |
+| At most 3 failed windows | 23 | 9.7% | 0.8% | 21.6% | 11.2% |
+| **Ceiling: every candidate, any record** | 64 | 25.8% | 29.6% | 25.1% | 29.9% |
+| Ceiling, without the elevation cut | 69 | 28.4% | 30.7% | 25.1% | 30.3% |
+
+A708 Franca alone covers 11.5% of São Paulo coffee but fails 4 windows (2009, 2019, 2024 and
+2025).
+
+**Per-year station sets, for information:** in this view, a station counts in every season whose
+window it passes. The rule as written does not do this.
+
+| Window (crop) | Stations complete | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|---|
+| 2008 (2009) | 43 | 11.3 | 19.7 | 21.3 | 12.0 |
+| 2009 (2010) | 42 | 11.0 | 6.1 | 21.7 | 12.1 |
+| 2010 (2011) | 42 | 10.6 | 22.2 | 21.7 | 10.3 |
+| 2011 (2012) | 44 | 11.3 | 19.7 | 21.7 | 11.7 |
+| 2012 (2013) | 47 | 11.0 | 17.4 | 21.7 | 29.6 |
+| 2013 (2014) | 49 | 11.3 | 22.3 | 21.7 | 29.8 |
+| 2014 (2015) | 51 | 11.2 | 20.5 | 21.7 | 29.4 |
+| 2015 (2016) | 45 | 10.9 | 19.1 | 21.4 | 29.9 |
+| 2016 (2017) | 49 | 5.1 | 25.2 | 21.7 | 29.6 |
+| 2017 (2018) | 50 | 15.6 | 27.9 | 7.5 | 11.6 |
+| 2018 (2019) | 53 | 25.5 | 25.6 | 25.1 | 20.9 |
+| 2019 (2020) | 57 | 24.6 | 13.6 | 25.1 | 12.1 |
+| 2020 (2021) | 49 | 24.8 | 22.8 | 21.4 | 20.4 |
+| **2021 (2022)** | 42 | **20.7** | **16.8** | **24.6** | 29.5 |
+| 2022 (2023) | 48 | 19.7 | 23.9 | 25.0 | 27.2 |
+| 2023 (2024) | 57 | 25.5 | 27.0 | 24.8 | 29.7 |
+| 2024 (2025) | 55 | 24.4 | 16.4 | 25.1 | 29.4 |
+| 2025 (2026) | 51 | 19.4 | 12.4 | 22.1 | 29.1 |
+| **2026 (2027)** | 52 | **18.5** | **22.8** | **21.7** | **20.4** |
+
+Station counts include those above the cut, which do not count toward coverage. 25% is reached
+in 2 of 19 windows in Sul, 4 in São Paulo, 4 in Triângulo (each at 25.0–25.1%) and 10 in Zona
+da Mata.
+
+**Findings:**
+
+1. **Under the rule as written, no region can be frost-flagged in any season.** Attainable
+   coverage is 0.0–0.1% against a 25% minimum, so the frost component would be empty throughout.
+   This is a result about the design, not about frost.
+2. **The binding constraint is network density at 25 km, not only completeness.** Even with every
+   candidate station, whatever its record, coverage reaches only 25.1–29.9%. Triângulo's ceiling
+   (25.1%) sits on the threshold. No relaxation of completeness alone brings Sul, São Paulo or
+   Zona da Mata to 25% across the series.
+3. **The two frost windows the spec singles out are both unflaggable.** Even with per-year sets,
+   the July 2021 frost window (crop 2022, success criterion 2) could be flagged only in Zona da
+   Mata, not in São Paulo, the spec's frost region (Mogiana: 1975, 1994, 2021), nor in Sul. The Jun–Aug 2026 window (crop 2027, note
+   1's frost review, §3a) could be flagged nowhere: 48 stations below the cut, 18.5–22.8%.
+4. **A property of step 6 that this exposes:** the frost penalty is multiplied by the coverage
+   share of stations meeting a tier. With network coverage at about 25–30%, a frost that hit
+   every station in a region would still carry at most about 25–30% of the per-area loss. Here
+   coverage measures how much of the region is observed, not how much was frosted.
+
+**Options for the owner (none applied):**
+
+- **A. Per-year station sets.** A station counts in each season whose window passes the 95% / 48 h
+  test. Amendment 17b already handles missing nights one at a time. On its own this reaches 25%
+  in only 2–10 of 19 windows, and in neither 2021 (outside Zona da Mata) nor 2026.
+- **B. Express the flag as a share of observed coffee.** The share would be coffee under stations
+  meeting a tier, divided by coffee under all observing stations. The minimum-coverage rule then
+  becomes a floor on observed coverage, set below today's ceiling. This also fixes finding 4.
+  Any floor chosen now is chosen knowing which windows it admits. That is coverage information,
+  not outcome information, but the registration should say so.
+- **C. A larger radius** (for example 40 or 50 km): more coverage, at the cost of how well a
+  station represents hilly coffee land. It needs a new candidate pull and completeness run, which
+  are local and cost no Earth Engine compute.
+- **D. More stations.** Possible sources:
+  - INMET conventional stations, which have daily minima (BDMEP, on the same host);
+  - state or cooperative networks, for example IAC's CIIAGRO in São Paulo or Fundação Procafé in
+    Minas Gerais.
+  None has been checked for access, record length or cost. A new source is a spec change, and
+  §3 excludes paid data.
+- **E. Drop the regional flag:** report frost per station only, with no index penalty.
 
 ## 9. Other Week 0 checklist items, not yet started
 
-Conab granularity (§4c, blocking); Conab's IBGE unit system and municipality lists; INMET route,
-daily minima and Jun–Aug 2026 availability; CHIRPS circularity; MapBiomas 2025 collection; Conab
-2027 dates; Planet quota; ICE terms.
+Conab granularity (§4c, blocking); Conab's IBGE unit system and municipality lists; CHIRPS
+circularity; MapBiomas 2025 collection; Conab 2027 dates; Planet quota; ICE terms.
+
+INMET items settled 2026-10-14 (§8): the route is a manual download by the owner; automatic
+stations carry an hourly minimum, "TEMPERATURA MÍNIMA NA HORA ANT. (AUT) (°C)", from which
+nightly minima follow; the 2026 archive runs to 30 September, so June–August 2026 is present.

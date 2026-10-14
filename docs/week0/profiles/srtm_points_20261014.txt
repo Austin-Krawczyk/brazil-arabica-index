@@ -1,0 +1,24 @@
+ EECU·s PeakMem Count  Description
+636.404     38M 12260584  (plumbing)
+ 75.728    2.8M  2468  Algorithm Image.load computing pixels
+ 68.757     16M  1246  Algorithm Image.reduceRegions
+ 20.026    1.9M 20275  Loading assets: USGS/(...)
+ 12.545    4.1M 25828  no description available
+  3.234     84k  2476  Listing collection
+  0.155      88  2468  Reprojecting pixels from EPSG:4326 to EPSG:4326
+  0.127    3.0k  3722  Algorithm ReduceRegions.AggregationContainer
+  0.040     76k     4  Algorithm Collection.reduceColumns with reducer Reducer.toList
+  0.032    2.0M  1234  Computing image mask from geometry
+  0.000    3.2k    12  Algorithm Image.select
+   -       7.0M  3726  Algorithm Collection
+   -       6.0M  1242  Algorithm List.(construct from elements)
+   -        28k 18251316  Algorithm Feature
+   -       9.7k  4968  Algorithm Image.load
+   -       9.3k  1238  Algorithm Projection
+   -       8.9k     8  Algorithm Collection.reduceColumns
+   -       7.2k  1238  Algorithm ReduceRegions.ReduceRegionsEnumerator
+   -       3.2k    12  Algorithm AggregateFeatureCollection.array
+   -       3.2k  3066  Loading assets: USGS
+   -       1.8k 6064174  Algorithm Dictionary.(construct from elements)
+   -       1.8k 19598  Algorithm GeometryConstructors.Point
+   -        608  1242  Algorithm Reducer.first
