@@ -526,7 +526,7 @@ office.
 83.1% of production (Conab). 120 of the 1,498 MG and SP municipalities have no PAM 2025 arabica
 figure (suppressed, or no coffee).
 
-## 7. Conab survey timing (Amendment 8): the 2026 first survey came on 5 February
+## 7. Conab survey timing (Amendment 8, revised 2026-10-14): the 2026 first survey came on 5 February
 
 Conab's page lists the 1st survey of safra 2026 on **5 February 2026** and the 4th survey of
 safra 2025 on 4 December 2025. Amendment 8 says first surveys came "between the 18th and 28th
@@ -545,6 +545,49 @@ coordinates, altitude, start date) and (2) the annual hourly archives for 2008�
 completeness rule. Once the catalogue exists, the coffee-area weights within 25 km and the
 per-region elevation cut can be computed. The region polygons for the elevation cut can come from
 IBGE's mesh API, which is reachable from here, without a file download.
+
+### INMET through the in-app browser (2026-10-14): reachable, read-only check
+
+The desktop app's built-in browser reaches INMET where scripts from this machine are reset.
+Nothing was downloaded: the archive sizes come from HEAD requests, and the catalogue counts were
+computed on the page.
+
+- **Annual archives** (`https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip`), 2000
+  to 2026; the 2026 file runs "até 30/09/2026", so it includes June–August 2026. Needed:
+  **2008–2026, 19 files, about 1.90 GB**:
+
+  | Year | Bytes | Last-Modified |
+  |---|---|---|
+  | 2008 | 75,952,778 | 2020-09-02 |
+  | 2009 | 88,288,168 | 2020-09-02 |
+  | 2010 | 90,166,397 | 2020-09-02 |
+  | 2011 | 92,552,099 | 2020-09-02 |
+  | 2012 | 97,765,892 | 2020-09-02 |
+  | 2013 | 99,630,718 | 2020-09-02 |
+  | 2014 | 98,909,484 | 2020-09-02 |
+  | 2015 | 97,967,689 | 2020-09-02 |
+  | 2016 | 102,439,056 | 2020-09-02 |
+  | 2017 | 109,677,898 | 2020-09-02 |
+  | 2018 | 117,898,042 | 2020-09-02 |
+  | 2019 | 117,560,201 | 2020-09-02 |
+  | 2020 | 103,653,055 | 2021-01-04 |
+  | 2021 | 80,571,564 | 2022-02-03 |
+  | 2022 | 90,362,801 | 2023-01-05 |
+  | 2023 | 107,069,252 | 2024-01-02 |
+  | 2024 | 102,772,199 | 2025-01-02 |
+  | 2025 | 90,898,634 | 2026-03-20 |
+  | 2026 | 136,911,232 | 2026-10-05 |
+
+- **Station catalogue**: `https://portal.inmet.gov.br/paginas/catalogoaut`, an HTML table of
+  **636 automatic stations** (name, state, status, latitude, longitude, altitude, installation
+  date, code) with a "Download CSV" button.
+- **Candidate pool, as information** (catalogue only, before the completeness rule): installed
+  before June 2008, as needed for a complete 2008 June–August record, MG 49 (43 operating now)
+  and SP 26 (24). Neighbouring states, whose stations may fall within 25 km of the mask: GO 21,
+  DF 1, ES 5, RJ 14, PR 21, MS 17, BA 27. The catalogue lists only stations currently registered.
+- **Next:** the owner downloads the catalogue CSV and the 19 archives into `data/raw/inmet/`,
+  with provenance and checksums. The station set, its completeness, coffee-area weights and the
+  elevation cut are then computed as a proposal.
 
 ## 9. Other Week 0 checklist items, not yet started
 
