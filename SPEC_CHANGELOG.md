@@ -637,3 +637,15 @@ Every change to scope, dated, with the reason. Newest at the bottom.
 
   Approved by owner with one change: the daily rule also caps gaps at 3 consecutive missing days
   within a window (the draft had no gap limit).
+
+- 2026-10-14 — **Fact update, not an amendment: VJ113A1 accepted; the elevation IDs resolve.**
+  No rule changes. §4 and §4a recorded VJ113A1 as "Not started". It is now ingested
+  (`vj113a1_mgsp_v2`, 401 composites, CRS declared as SR-ORG:6974) and passed the Amendment 30
+  (second revision) acceptance check: 0 of 40 November–March months below 60%, lowest 69.4%
+  (December 2021), confirmed by an independent recount. So the live vegetation fallback is (b),
+  VJ113A1. The first probe exceeded the 0.25 EECU-hour gate (0.71) because it rebuilt the coffee
+  weight in each request. Saving the weight once as an asset, on the owner's decision, brought
+  the re-probe to 0.01 EECU-hours, within the gate. §4 also marked `USGS/SRTMGL1_003` as "Not yet
+  verified to resolve". It and its declared fallback, `COPERNICUS/DEM/GLO30_2024_1`, resolved in
+  the Week 0 ID check (2026-10-13), and SRTM was used for the provisional station elevation cut.
+  The §10 checklist row records both. Requested by owner.

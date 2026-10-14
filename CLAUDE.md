@@ -138,11 +138,11 @@ where a row says otherwise.
 | Drift check only | `MODIS/061/MYD13Q1` (Aqua) | 250 m, 16-day, 2002– | Week 0 Terra drift check (§4a). **Not yet verified to resolve.** |
 | Drift-check reference only | `NASA/VIIRS/002/VNP13A1` | 500 m, 16-day composites, 2012– | Second reference in the Week 0 drift check, 2018 to October 2026 only. **Not a fallback:** NASA ends Suomi NPP VIIRS delivery on 2 November 2026 (§4a). **Not yet verified to resolve.** |
 | Vegetation fallback, candidate (a) | `NASA/HLS/HLSS30/v002` (HLS, Sentinel-2 only) | 30 m; baseline July 2017 to 2025 | Live fallback as monthly EVI over the mask, if it passes the rainy-season coverage test (§4a). `NASA/HLS/HLSL30/v002` coverage reported as information only. Both resolve (Week 0 report) |
-| Vegetation fallback, candidate (b) | VJ113A1 (NOAA-20 VIIRS). **Not in Earth Engine**; ingested from NASA as a private asset over the MG/SP window, only if HLS fails the coverage test | 500 m, 16-day composites | §4a. Not started |
+| Vegetation fallback, candidate (b) | VJ113A1 (NOAA-20 VIIRS). **Not in Earth Engine**; ingested from NASA as a private asset over the MG/SP window, only if HLS fails the coverage test | 500 m, 16-day composites | §4a. **Ingested** as `vj113a1_mgsp_v2`: 401 composites, 2018-01-01 to 2026-09-14, CRS declared as SR-ORG:6974. **Passed the acceptance check on 2026-10-14**, 0 of 40 months below 60% (Week 0 report) |
 | Rainfall — final | `UCSB-CHG/CHIRPS/DAILY` | 5 km, daily | Baseline and the whole backtest; current season once a month is final (§9). Flowering deficit, bean-fill cumulative |
 | Rainfall — current season | CHC's own CHIRPS-prelim files (chc.ucsb.edu), **pentad and daily**, ingested as private Earth Engine assets over the MG/SP window | 5 km; pentad and daily; archive from 2015 | Current-season months not yet published as final, and the sensitivity rerun (§9). **Ingestion not yet built.** The community-catalog asset `projects/climate-engine-pro/assets/ce-chirps-prelim-pentad` (archive from 2025 only) is no longer a source; it is kept as a weekly cross-check that the ingestion matches |
 | Heat days | `ECMWF/ERA5_LAND/HOURLY` | 9 km, hourly | Heat days above 34 °C. **No frost role** (§4b) |
-| Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). **Not yet verified to resolve.** Declared fallback: `COPERNICUS/DEM/GLO30_2024_1` (the earlier `COPERNICUS/DEM/GLO30` is deprecated). Both are surface models that include canopy, which does not matter for a station altitude cut at the 95th percentile |
+| Elevation | `USGS/SRTMGL1_003` | 30 m, static | 95th percentile of coffee-mask elevation per region, for the frost station cut (§5 step 4). Resolves (Week 0 report §1, 2026-10-13) and was used for the provisional station cut on 2026-10-14. Declared fallback: `COPERNICUS/DEM/GLO30_2024_1`, which also resolves (the earlier `COPERNICUS/DEM/GLO30` is deprecated). Both are surface models that include canopy, which does not matter for a station altitude cut at the 95th percentile |
 | Soil moisture | `ECMWF/ERA5_LAND/HOURLY`, `volumetric_soil_water_layer_1`–`_3` (0–7, 7–28, 28–100 cm; volume fraction), weighted 0.07 / 0.21 / 0.72 by layer thickness | 9 km, hourly | Root-zone moisture through the pre-flowering dry season, May–Aug of S−1 (§5 step 5). Band names and depths confirmed from the Earth Engine catalog; weights registered at `prereg-1` |
 | Short-range forecast | `NOAA/GFS0P25` | 0.25°, 6-hourly, 16 days | **Not used before June 2027.** Forward frost-risk flag for the Jun–Aug 2027 window, the first 2028 signal (§3a) |
 | Coffee mask | MapBiomas Collection 10, **class 46 = Coffee** | 30 m, annual **1985–2024** | Where to compute the indices |
@@ -250,7 +250,12 @@ most drift-affected, and it is the season every note reports.
     check) in at least one composite starting in that month. If it falls below 60% in more than two
     of the 40 November–March months in 2018–2025, record that VJ113A1 cannot carry the rainy
     season, and the fallback moves to (c). The check is probe-gated: one month first, at most 0.25
-    EECU-hours, which keeps the 40 months under about 10 EECU-hours.
+    EECU-hours, which keeps the 40 months under about 10 EECU-hours. **Result (2026-10-14):
+    VJ113A1 passed, 0 of 40 months below 60%**; the lowest was 69.4%, in December 2021, and an
+    independent recount from the local files agreed within 0.4 points (Week 0 report). The first
+    probe cost 0.71 EECU-hours, over the gate, because it rebuilt the coffee weight in every
+    request. With the weight saved once as an asset, the re-probe cost 0.01 EECU-hours and the 40
+    months 0.45. **The live vegetation fallback is therefore (b), VJ113A1.**
   - If triggered, the current-season anomaly is computed against the fallback's own baseline,
     never against MODIS's.
   - The headline backtest stays on MODIS. The vegetation component is rerun on the fallback for
@@ -729,7 +734,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
 | INMET conventional network (BDMEP daily minima): completeness per season, observed-coverage lift, and which night a daily minimum belongs to | `prereg-2` | §4, §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
-| Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` | Week 0 | §4 |
+| Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1`. **Done:** VJ113A1 ingested and accepted (2026-10-14); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` resolve (Week 0 report §1) | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
 | Terra drift check; current `MOD13Q1` end date in Earth Engine | Week 0 | §4a |
 | Whether a MapBiomas collection covering 2025 is published (sets the mask lag) | `prereg-2` | §5 step 1 |
