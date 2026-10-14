@@ -1,0 +1,1 @@
+batch export w1 weight Sul e Centro-Oeste, mask 2024: COMPLETED, 149 EECU-seconds (batch_eecu_usage_seconds), 151 s wall

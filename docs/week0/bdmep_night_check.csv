@@ -1,0 +1,19 @@
+town,conventional,automatic,alignment,n,mean_abs_diff,median_diff,share_within_0_5,share_within_1_0
+Franca,83630,A708,rule,5742,0.378,0.2,0.828,0.947
+Franca,83630,A708,following,5742,1.3,0.1,0.299,0.524
+Franca,83630,A708,calendar,5752,0.355,0.2,0.831,0.955
+Juiz de Fora,83692,A518,rule,6252,0.413,0.0,0.806,0.924
+Juiz de Fora,83692,A518,following,6253,1.11,-0.1,0.317,0.572
+Juiz de Fora,83692,A518,calendar,6252,0.379,0.1,0.822,0.94
+Araxá,83579,A505,rule,6188,0.402,0.2,0.853,0.923
+Araxá,83579,A505,following,6189,1.101,0.2,0.346,0.599
+Araxá,83579,A505,calendar,6187,0.38,0.2,0.867,0.935
+Caratinga,83592,A554,rule,5346,1.89,-1.9,0.108,0.148
+Caratinga,83592,A554,following,5347,2.262,-1.8,0.127,0.251
+Caratinga,83592,A554,calendar,5352,1.833,-1.9,0.115,0.155
+Viçosa,83642,A510,rule,3482,0.821,0.6,0.362,0.738
+Viçosa,83642,A510,following,3482,1.521,0.7,0.236,0.428
+Viçosa,83642,A510,calendar,3486,0.838,0.7,0.343,0.725
+São Carlos,83726,A711,rule,4493,0.496,0.2,0.84,0.905
+São Carlos,83726,A711,following,4495,1.462,0.3,0.264,0.478
+São Carlos,83726,A711,calendar,4502,0.47,0.2,0.855,0.922

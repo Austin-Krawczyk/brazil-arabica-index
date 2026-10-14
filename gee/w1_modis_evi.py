@@ -24,7 +24,13 @@ The per-composite statistics run as one batch table export to the bucket: an int
 over a year of composites hit Earth Engine's limit on concurrent aggregations (2026-10-14). The
 batch task reports its own EECU cost.
 
-Run:    .venv/Scripts/python gee/w1_modis_evi.py --probe --region "Sul e Centro-Oeste" --year 2021
+Coffee weight saved once (owner decision 2026-10-14, after the first probe failed at 3,635
+EECU-seconds by rebuilding the weight per composite): --export-weight writes the region's weight
+as an asset in the MOD13Q1 grid, w1_coffee_weight_<region>_mask<year>, by one batch export. The
+probe then reads it. Same reducers, same weights.
+
+Run:    .venv/Scripts/python gee/w1_modis_evi.py --export-weight --region "Sul e Centro-Oeste"
+        .venv/Scripts/python gee/w1_modis_evi.py --probe --region "Sul e Centro-Oeste" --year 2021
 Writes: docs/week0/w1_probe_<region>_<year>.csv, docs/week0/profiles/w1_probe_<utc>.txt
 """
 import argparse
@@ -61,14 +67,47 @@ def region_geometry(name):
     return ee.FeatureCollection([ee.Feature(ee.Geometry(f["geometry"])) for f in feats]).geometry()
 
 
-def run(region, start, end):
-    col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(start, end)
-    proj = col.first().select("EVI").projection()
+def slug_of(region):
+    return re.sub(r"[^a-z]+", "_", region.lower()).strip("_")[:20]
+
+
+def weight_asset(project, region):
+    return f"projects/{project}/assets/w1_coffee_weight_{slug_of(region)}_mask{MASK_YEAR}"
+
+
+def export_weight(project, region):
+    """Coffee fraction of each MOD13Q1 pixel inside the region, saved once as an asset."""
+    proj = ee.ImageCollection("MODIS/061/MOD13Q1").first().select("EVI").projection()
     geom = region_geometry(region)
     coffee = ee.Image(MAPBIOMAS).select(f"classification_{MASK_YEAR}").eq(46).unmask(0)
     w = (coffee.reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
          .clip(geom).rename("w"))
-    w = w.updateMask(w.gt(0))
+    w = w.updateMask(w.gt(0)).toFloat()
+    p = proj.getInfo()
+    task = ee.batch.Export.image.toAsset(
+        image=w, description=f"w1_weight_{slug_of(region)}", assetId=weight_asset(project, region),
+        crs=p["crs"], crsTransform=p["transform"], region=geom.bounds(), maxPixels=1e10,
+        pyramidingPolicy={"w": "mean"})
+    task.start()
+    t0 = time.time()
+    while True:
+        status = task.status()
+        if status["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
+            break
+        time.sleep(30)
+    cost = float(status.get("batch_eecu_usage_seconds", 0) or 0)
+    stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    (WEEK0 / "profiles" / f"w1_weight_export_{stamp}.txt").write_text(
+        f"batch export w1 weight {region}, mask {MASK_YEAR}: {status['state']}, {cost:,.0f} "
+        f"EECU-seconds (batch_eecu_usage_seconds), {time.time() - t0:.0f} s wall\n", encoding="utf-8")
+    print(f"weight export {status['state']}: {cost:,.0f} EECU-seconds, {time.time() - t0:.0f} s wall"
+          + (f" | {status.get('error_message', '')}" if status["state"] != "COMPLETED" else ""))
+
+
+def run(project, region, start, end):
+    col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(start, end)
+    proj = col.first().select("EVI").projection()
+    w = ee.Image(weight_asset(project, region)).select("w")
     # one aggregation per composite: median, mean and sum of every band (the sum of a weight band
     # is the weight; the median and mean of a weight band are not used)
     reducer = (ee.Reducer.median().combine(ee.Reducer.mean(), sharedInputs=True)
@@ -79,7 +118,8 @@ def run(region, start, end):
         ok = qa.gte(0).And(qa.lte(QA_MAX))
         vi = img.select(["EVI", "NDVI"]).multiply(SCALE).updateMask(ok).updateMask(w)
         stack = ee.Image.cat([vi, w.updateMask(ok).rename("w_valid"), w.rename("w_total")])
-        stats = stack.reduceRegion(reducer, geom, crs=proj, scale=231.656, maxPixels=1e10, tileScale=4)
+        stats = stack.reduceRegion(reducer, crs=proj, scale=231.656, maxPixels=1e10,
+                                   tileScale=4)  # over the weight asset's footprint
         return ee.Feature(None, stats).set("composite_start", img.date().format("YYYY-MM-dd"))
 
     return ee.FeatureCollection(col.map(per_image)), col.size()
@@ -87,14 +127,20 @@ def run(region, start, end):
 
 def main():
     a = argparse.ArgumentParser()
-    a.add_argument("--probe", action="store_true", required=True, help="only the probe is run")
+    a.add_argument("--probe", action="store_true", help="only the probe is run")
+    a.add_argument("--export-weight", action="store_true", help="save the region's coffee weight once")
     a.add_argument("--region", default="Sul e Centro-Oeste", choices=list(REGIONS))
     a.add_argument("--year", type=int, default=2021)
     args = a.parse_args()
-    init()
+    project = init()
+    (WEEK0 / "profiles").mkdir(parents=True, exist_ok=True)
+    if args.export_weight:
+        return export_weight(project, args.region)
+    if not args.probe:
+        raise SystemExit("Only --export-weight or --probe; the full run is not started from here.")
     t0 = time.time()
-    slug = re.sub(r"[^a-z]+", "_", args.region.lower()).strip("_")[:20]
-    fc, n = run(args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01")
+    slug = slug_of(args.region)
+    fc, n = run(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01")
     selectors = ["composite_start"] + [f"{b}_{r}" for b in ("EVI", "NDVI") for r in ("median", "mean")] + [
         "w_valid_sum", "w_total_sum"]
     df = export_and_fetch(fc, f"w1_probe_{slug}_{args.year}", selectors)

@@ -1041,8 +1041,8 @@ Nothing in the evaluation reads a temperature value.
 **The file** (provenance and closed stations in `data/raw/inmet/SOURCE.md`):
 
 - One zip from BDMEP holding 105 Sudeste station CSVs; it passes its zip test, and its SHA-256 is
-  recorded. It sits in `data/raw/inmet/bdemp/`, a transposed spelling of `bdmep/`, left as
-  saved.
+  recorded. It sits in `data/raw/inmet/bdmep/` (saved first as `bdemp/`, renamed by the owner;
+  the checksum is unchanged).
 - All 37 candidates have a file, and none is on BDMEP's no-data list (174 codes).
 - Every header's code, latitude, longitude and altitude match BDMEP's station list.
 - No date repeats, and every value is a number or `null`; none falls outside −60 to 60 °C.
@@ -1118,9 +1118,48 @@ Nothing in the evaluation reads a temperature value.
 
 1. Re-request the 2026 conventional data before note 1, to see whether the short 2026 windows fill
    in.
-2. Rename `bdemp/` to `bdmep/` to match the spec.
+2. ~~Rename `bdemp/` to `bdmep/`~~ — done by the owner, 2026-10-14.
 3. Settle which night BDMEP's daily minimum belongs to, from INMET documentation, before any frost
    count.
+
+### Night rule for conventional minima: co-located check (2026-10-14)
+
+**Owner's rule, provisional until INMET's documentation is cited:** the conventional minimum is
+read at 12 UTC and covers the preceding 24 hours, so a minimum dated D belongs to the night ending
+the morning of D. Drafted as Amendment 17d, awaiting approval.
+
+**Check** (`gee/bdmep_night_check.py`, `docs/week0/bdmep_night_check.csv`). Six pairs in which a
+conventional and an automatic station share a site (0–0.03 km apart in INMET's catalogues):
+Franca, Juiz de Fora, Araxá, Caratinga, Viçosa and São Carlos. All dates 2008–2026 where both
+report, 3,482–6,253 per pair. The conventional minimum dated D is compared with the automatic
+station's minimum over three windows, each counted only with all 24 hours present:
+
+- the 24 hours ending 12 UTC on D (the rule);
+- the 24 hours ending 12 UTC on D+1;
+- the UTC calendar day D.
+
+Only agreement statistics were computed; no temperature or frost night was reported.
+
+| Pair | Rule window: mean abs. diff., share within 1 °C | Day after | UTC calendar day | Median diff. (conventional − automatic) |
+|---|---|---|---|---|
+| Franca | 0.38 °C, 95% | 1.30, 52% | 0.36, 96% | +0.2 |
+| Juiz de Fora | 0.41, 92% | 1.11, 57% | 0.38, 94% | 0.0 |
+| Araxá | 0.40, 92% | 1.10, 60% | 0.38, 94% | +0.2 |
+| São Carlos | 0.50, 91% | 1.46, 48% | 0.47, 92% | +0.2 |
+| Viçosa | 0.82, 74% | 1.52, 43% | 0.84, 73% | +0.6 |
+| Caratinga | 1.89, 15% | 2.26, 25% | 1.83, 16% | −1.9 |
+
+**Findings:**
+
+1. **The night ending the morning of D is supported against the night ending the morning of D+1,**
+   in all six pairs.
+2. **The exact 24-hour boundary is not resolved.** The UTC calendar day agrees as well as, or
+   slightly better than, the 12 UTC window. Both contain the dawn of D, when minima occur.
+3. **Two same-site pairs differ systematically** whichever window is used: Caratinga's
+   conventional station reads about 1.9 °C colder, and Viçosa's about 0.6–0.7 °C warmer. A
+   1.9 °C offset is close to the whole gap between the 2 °C and 0 °C tiers, so a combined network
+   could put the same site in different tiers depending on which instrument is used. Not acted
+   on; queued for the owner.
 
 ## 9. Other Week 0 checklist items, not yet started
 
@@ -1183,6 +1222,32 @@ region, product and vintage, with `vintage`, `vintage_date`, `column` and `sourc
 3. Which vintage scores the backtest (§10 open item 1). The historical series is the latest
    revision; per-survey finals exist only for 2023–2025.
 
+### Owner decisions 2026-10-14, and what checking them found
+
+- **The Internet Archive was retried once, at 16:52 UTC, with a single request (well under one per
+  10 seconds). It refused again (HTTP 429), so it was not tried further.** Safras 2001–2022 survey
+  bulletins remain unlocated. The surprise test is therefore reported for 2023–2025 and not scored
+  (drafted in Amendment 19b).
+- **Target and early years** (drafted as Amendment 19b, awaiting approval): Conab's final figure in
+  the current historical series is the target. For 2001–2007, Sul, Triângulo and São Paulo use the
+  arabica-plus-conilon series; Zona da Mata starts in 2008.
+- **Conab's arabica series is defective in 2001–2007:**
+  - it records the 2004 regional production as 0 for Sul, Triângulo and Zona da Mata, a missing
+    value written as zero (MG and SP totals are non-zero);
+  - in 2002 and 2006 its Sul production exceeds the arabica-plus-conilon total: 13,200 against
+    11,633, and 12,043 against 11,633 thousand bags. That is impossible if the total contains the
+    arabica figure.
+  - Elsewhere in 2001–2007 the two series agree: São Paulo in all 7 safras, Triângulo in 6 (all
+    but the 2004 zero), and Sul 2007 to within 0.5 thousand bags.
+  - The draft therefore takes area, yield and production for 2001–2007 all from the
+    arabica-plus-conilon series, and the owner is asked to confirm. Which series is right for Sul
+    in 2002 and 2006 is not established.
+- **Third-to-final revisions** (relevant to the biennial term, §5 step 7): for safras 2023–2025,
+  regional yields moved by 1.9% on average in absolute size from Conab's third survey to its
+  final, with a largest of 8.4% (Triângulo 2023). First-to-final: 4.9% on average. This sizes the
+  information the backtest would gain if the biennial term used the final instead of the third
+  survey (Amendment 19b, conflict flagged).
+
 ## 11. W1 regional MOD13Q1 EVI series: cost probe (2026-10-14) — **fails its gate**
 
 Owner request: write the W1 script for the regional MODIS EVI series 2000–2025 over the mask, one
@@ -1232,3 +1297,27 @@ needs depends on the mask-lag decision at `prereg-2`.
 
 **Compute 2026-10-14, added:** W1 probe 3,635 EECU-seconds (batch). The day's measured total is
 now 10,290 EECU-seconds (2.86 EECU-hours).
+
+### W1 re-probe with the coffee weight saved once (owner decision 2026-10-14): **passes**
+
+- **Weight asset** `w1_coffee_weight_sul_e_centro_oeste_mask2024`: Sul e Centro-Oeste only,
+  MOD13Q1 grid, mask year 2024 (provisional). One batch export: **149 EECU-seconds.**
+- **Re-probe, Sul e Centro-Oeste, 2021, 23 composites: 195 EECU-seconds against 1,800. PASSES.**
+  The first probe cost 3,635.
+- **Same results as the first probe:**
+  - EVI and NDVI medians agree within 0.000003;
+  - EVI means within 0.00005;
+  - coffee-weight totals within 0.3%, from float storage of the weight and the region edge.
+  So the saved weight changes the cost, not the method.
+- **Full-run estimate** (extrapolated, not measured): cost scales with region area, 8.64× Sul for
+  all four regions, and with composite count, about 600 for 2000–2025.
+  - **Composites:** 195 / 23 ≈ 8.5 EECU-seconds per composite for Sul, so about 8.5 × 8.64 ×
+    600 ≈ 44,000 EECU-seconds, **about 12 EECU-hours.**
+  - **Weights:** about 149 × 8.64 ≈ 1,300 EECU-seconds per mask year for all four regions. That
+    is about 0.4 EECU-hours with one mask, or about 9 EECU-hours with up to 24 mask years (mask
+    year by season, Amendment 16; lag set at `prereg-2`).
+  - **Total: about 12–21 EECU-hours,** against about 227 as first written.
+  - Not started. The full run waits for the mask-lag decision and the W1 frozen mask.
+
+**Compute 2026-10-14, added:** W1 weight export 149 and W1 re-probe 195 EECU-seconds. The day's
+measured total is now 10,634 EECU-seconds (2.95 EECU-hours).

@@ -76,10 +76,10 @@ Files here are gitignored except this note; nothing in this folder is modified a
 - **SHA-256:** `75ef7f9e3d98f74bb4279d9ced771b753e7fe3599922719344d75c19a0a1fe71`, computed in the
   browser on the text and on the saved file; they match.
 
-## BDMEP daily minima, conventional stations: `bdemp/$2a$10$QIJ0DKap6uhzbQ8U5hAhLOU767oX6DbAVn0ZYLgtgk8QMjswG3oK.zip`
+## BDMEP daily minima, conventional stations: `bdmep/$2a$10$QIJ0DKap6uhzbQ8U5hAhLOU767oX6DbAVn0ZYLgtgk8QMjswG3oK.zip`
 
-- **Folder name:** `bdemp/`, a transposition of `bdmep/` made when the file was saved. It is left
-  as saved, since nothing in `data/raw/` is renamed by the agent.
+- **Folder name:** saved first as `bdemp/` (a transposition); renamed to `bdmep/` by the owner on
+  2026-10-14. The file is unchanged: its SHA-256 after the rename matches the one below.
 - **Request, by the owner through BDMEP's e-mail form, 2026-10-14:** daily data, conventional
   stations, region Sudeste, 01/06/2008 to 31/08/2026, the single variable "TEMPERATURA MINIMA,
   DIARIA". The zip's members are dated 2026-10-14 11:05–11:06 UTC; the file was saved at 14:08
