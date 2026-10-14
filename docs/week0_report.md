@@ -1167,8 +1167,8 @@ script now makes one reduction per composite and runs as a batch table export.
 EECU-hours) against 1,800. FAILS.** No further W1 run was made.
 
 - **Output looks right:** a clear seasonal EVI cycle. The share of coffee weight with a valid
-  value is at least 0.97 in 19 of 23 composites, and 0.42–0.61 in three cloudy ones (2021-01-01,
-  2021-10-16, 2021-12-03). The 2021 probe year shows raw 16-day values for one region; no
+  value is at least 0.97 in 19 of 23 composites; it is 0.86 on 2021-02-02 and 0.42–0.61 in three
+  cloudy ones (2021-01-01, 2021-10-16, 2021-12-03). The 2021 probe year shows raw 16-day values for one region; no
   anomaly or season-level input was computed.
 - **Likely cause**, by analogy with the VJ113A1 probe; a batch task gives no per-operation
   profile, so this is not established. The 30 m coffee weight is rebuilt inside every
