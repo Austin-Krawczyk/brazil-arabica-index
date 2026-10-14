@@ -1,0 +1,40 @@
+code,name,uf,status,lat,lon,altitude,start,end,end_missing_but_not_operating,main_region,pts_25km,windows_operating,first_window,last_window,coffee_share_25km_Sul e Cent,above_cut_Sul e Cent,coffee_share_25km_São Paulo ,above_cut_São Paulo ,"coffee_share_25km_Triângulo,","above_cut_Triângulo,",coffee_share_25km_Zona da Ma,above_cut_Zona da Ma,can_count
+83015,MARIA DA FE,MG,Desativada,-22.31444444,-45.37305554,1281.36,1975-11-11,2016-08-30,False,Sul e Centro-Oeste,212,8,2008,2015,0.0218,True,0.0,True,0.0,True,0.0,True,False
+83032,LAMBARI,MG,Desativada,-21.944146,-45.317739,884.56,1976-05-31,2012-07-19,False,Sul e Centro-Oeste,474,4,2008,2011,0.0487,False,0.0,False,0.0,False,0.0,False,True
+83582,BAMBUI,MG,Desativada,-20.0311111,-46.00888888,684.43,1926-08-25,2018-04-04,False,Sul e Centro-Oeste,78,10,2008,2017,0.008,False,0.0,False,0.0,False,0.0,False,True
+83631,SAO S.DO PARAISO,MG,Desativada,-20.91,-47.11416666,820.0,1945-04-28,2014-03-11,False,Sul e Centro-Oeste,448,6,2008,2013,0.0402,False,0.0241,False,0.0,False,0.0,False,True
+83635,DIVINOPOLIS,MG,Fechada,-20.17333332,-44.87472221,787.42,1995-10-10,2021-09-02,False,Sul e Centro-Oeste,3,14,2008,2021,0.0003,False,0.0,False,0.0,False,0.0,False,True
+83637,OLIVEIRA,MG,Desativada,-20.699773,-44.819903,991.23,1913-07-04,2017-10-18,False,Sul e Centro-Oeste,181,10,2008,2017,0.0186,False,0.0,False,0.0,False,0.0,False,True
+83681,CALDAS(P. DE CALDAS),MG,Desativada,-21.918139,-46.382977,1077.08,1988-11-09,2015-09-16,False,Sul e Centro-Oeste,176,8,2008,2015,0.0181,False,0.0,False,0.0,False,0.0,False,True
+83683,MACHADO,MG,Fechada,-21.68138888,-45.94083333,892.44,1961-08-31,2022-05-31,False,Sul e Centro-Oeste,721,14,2008,2021,0.0741,False,0.0,False,0.0,False,0.0,False,True
+83714,CAMPOS DO JORDAO,SP,Desativada,-22.75027777,-45.60388888,1662.56,1938-12-31,2019-03-19,False,Sul e Centro-Oeste,51,11,2008,2018,0.0034,True,0.0076,True,0.0,True,0.0,True,False
+83736,SAO LOURENCO,MG,Desativada,-22.12638888,-45.04333333,930.65,1922-02-03,2026-03-01,False,Sul e Centro-Oeste,116,18,2008,2025,0.0119,False,0.0,False,0.0,False,0.0,False,True
+83737,PASSA QUATRO,MG,Operante,-22.38277777,-44.96694443,919.55,1912-07-28,,False,Sul e Centro-Oeste,41,19,2008,2026,0.0037,False,0.0021,False,0.0,False,0.0,False,True
+83738,RESENDE,RJ,Fechada,-22.45111111,-44.44472221,439.9,1944-05-21,2025-07-02,False,Sul e Centro-Oeste,6,17,2008,2024,0.0006,False,0.0,False,0.0,False,0.0,False,True
+83623,VOTUPORANGA,SP,Fechada,-20.43972221,-49.9836111,510.41,1976-07-04,2021-07-24,False,São Paulo (state total),6,13,2008,2020,0.0,False,0.0025,False,0.0,False,0.0,False,True
+83630,FRANCA,SP,Operante,-20.58444444,-47.38249999,1003.55,1910-12-31,,False,São Paulo (state total),297,19,2008,2026,0.0026,False,0.115,False,0.0,False,0.0,False,True
+83669,SAO SIMAO,SP,Desativada,-21.46111111,-47.57944443,620.02,1919-12-31,2024-11-30,False,São Paulo (state total),5,17,2008,2024,0.0,False,0.0021,False,0.0,False,0.0,False,True
+83674,LINS,SP,Desativada,-21.669223,-49.732678,469.08,1939-12-31,2009-08-31,False,São Paulo (state total),7,2,2008,2009,0.0,False,0.003,False,0.0,False,0.0,False,True
+83676,CATANDUVA,SP,Fechada,-21.12222221,-48.94694444,570.0,1936-07-31,2021-07-24,False,São Paulo (state total),10,13,2008,2020,0.0,False,0.0042,False,0.0,False,0.0,False,True
+83713,SAO JOSE DO BARREIRO,SP,Desativada,-22.62999999,-44.65,509.0,1919-12-31,,True,São Paulo (state total),2,19,2008,2026,0.0,False,0.0008,False,0.0,False,0.0,False,True
+83726,SAO CARLOS,SP,Fechada,-21.98027777,-47.88388888,859.77,1939-09-23,2024-06-30,False,São Paulo (state total),7,16,2008,2023,0.0,False,0.003,False,0.0,False,0.0,False,True
+83773,AVARE,SP,Desativada,-23.083579,-48.911718,831.96,1904-12-31,2014-01-31,False,São Paulo (state total),52,6,2008,2013,0.0,False,0.022,False,0.0,False,0.0,False,True
+83784,TAUBATE,SP,Desativada,-23.0388889,-45.5158333,581.0,1942-12-31,2014-08-10,False,São Paulo (state total),2,6,2008,2013,0.0,False,0.0008,False,0.0,False,0.0,False,True
+83786,UBATUBA,SP,Desativada,-23.416697,-45.114373,19.55,1919-12-31,2009-03-05,False,São Paulo (state total),1,1,2008,2008,0.0,False,0.0004,False,0.0,False,0.0,False,True
+83824,ITU,SP,Desativada,-23.264627,-47.299742,616.0,1912-12-31,2009-08-31,False,São Paulo (state total),2,2,2008,2009,0.0,False,0.0008,False,0.0,False,0.0,False,True
+83481,JOAO PINHEIRO,MG,Desativada,-17.74027777,-46.17694443,759.62,1925-12-08,2018-01-31,False,"Triângulo, Alto Paranaíba e Noroeste",2,10,2008,2017,0.0,False,0.0,False,0.0005,False,0.0,False,True
+83531,PATOS DE MINAS,MG,Fechada,-18.51972221,-46.43916666,947.68,1947-10-22,2018-05-30,False,"Triângulo, Alto Paranaíba e Noroeste",129,10,2008,2017,0.0,False,0.0,False,0.034,False,0.0,False,True
+83574,FRUTAL,MG,Desativada,-20.034803,-48.930435,547.09,1913-11-26,2013-09-08,False,"Triângulo, Alto Paranaíba e Noroeste",2,6,2008,2013,0.0,False,0.0,False,0.0005,False,0.0,False,True
+83579,ARAXA,MG,Operante,-19.60555555,-46.94972221,1018.28,1916-09-06,,False,"Triângulo, Alto Paranaíba e Noroeste",111,19,2008,2026,0.0,False,0.0,False,0.0292,False,0.0,False,True
+83037,CORONEL PACHECO,MG,Desativada,-21.54666666,-43.26111111,411.03,1954-12-31,2009-04-30,False,"Zona da Mata, Rio Doce e Central",2,1,2008,2008,0.0,False,0.0,False,0.0,False,0.0005,False,True
+83581,FLORESTAL,MG,Desativada,-19.885422,-44.416889,753.51,1960-04-08,2018-07-04,False,"Zona da Mata, Rio Doce e Central",2,10,2008,2017,0.0,False,0.0,False,0.0,False,0.0005,False,True
+83587,BELO HORIZONTE,MG,Operante,-19.93444444,-43.95222222,915.47,1910-03-02,,False,"Zona da Mata, Rio Doce e Central",2,19,2008,2026,0.0,False,0.0,False,0.0,False,0.0005,False,True
+83589,C. DO MATO DENTRO,MG,Fechada,-19.02027777,-43.43388888,663.02,1925-06-29,2026-02-28,False,"Zona da Mata, Rio Doce e Central",1,18,2008,2025,0.0,False,0.0,False,0.0,False,0.0003,False,True
+83591,JOAO MONLEVADE,MG,Fechada,-19.82388888,-43.14416666,859.84,1960-05-10,2019-05-31,False,"Zona da Mata, Rio Doce e Central",2,11,2008,2018,0.0,False,0.0,False,0.0,False,0.0005,False,True
+83592,CARATINGA,MG,Fechada,-19.73583333,-42.13722221,609.56,1924-03-14,2024-11-29,False,"Zona da Mata, Rio Doce e Central",327,17,2008,2024,0.0,False,0.0,False,0.0,False,0.0881,False,True
+83595,AIMORES,MG,Desativada,-19.494872,-41.077647,79.93,1972-05-31,2014-07-15,False,"Zona da Mata, Rio Doce e Central",8,6,2008,2013,0.0,False,0.0,False,0.0,False,0.0022,False,True
+83639,CAPARAO,MG,Operante,-20.5261111,-41.90916666,836.25,1972-11-16,,False,"Zona da Mata, Rio Doce e Central",649,19,2008,2026,0.0,False,0.0,False,0.0,False,0.1748,False,True
+83642,VICOSA,MG,Fechada,-20.7625,-42.86388888,697.53,1919-09-30,2018-03-07,False,"Zona da Mata, Rio Doce e Central",48,10,2008,2017,0.0,False,0.0,False,0.0,False,0.0129,False,True
+83687,LAVRAS,MG,Operante,-21.2261111,-44.97972221,916.19,1911-02-17,,False,"Zona da Mata, Rio Doce e Central",158,19,2008,2026,0.0068,False,0.0,False,0.0,False,0.0248,False,True
+83689,BARBACENA,MG,Desativada,-21.23972221,-43.78138888,1128.08,1941-06-08,2018-05-30,False,"Zona da Mata, Rio Doce e Central",11,10,2008,2017,0.0,False,0.0,True,0.0,False,0.003,False,True
+83692,JUIZ DE FORA,MG,Operante,-21.76999999,-43.36444444,936.9,1909-12-31,,False,"Zona da Mata, Rio Doce e Central",5,19,2008,2026,0.0,False,0.0,False,0.0,False,0.0013,False,True

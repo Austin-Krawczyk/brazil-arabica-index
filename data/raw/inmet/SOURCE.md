@@ -54,3 +54,24 @@ Files here are gitignored except this note; nothing in this folder is modified a
 | `2024.zip` | 102,772,199 | `0a7f89de57427f79b6f82943b2f7f2e932202d9253e34bf25629ed088d108ae7` | 565 | OK | 2026-10-14 09:37 UTC |
 | `2025.zip` | 90,898,634 | `14988d0b736ba969b48881589f602f3a6d7e97b95bd1de934456851fdac2cb89` | 594 | OK | 2026-10-14 09:37 UTC |
 | `2026.zip` | 136,911,232 | `62c3301ddbaa815bd523a34528ab3ded4f1b2ad26189abd6a7ee82d98ded60d4` | 1276 | OK | 2026-10-14 09:38 UTC |
+
+## Conventional-station list from BDMEP: `bdmep_estacoes_convencionais.csv` — API response, reduced
+
+- **Source:** BDMEP's own station API, the list its request form loads
+  (`https://apibdmep.inmet.gov.br/M/R/{SU,S,CO}`: conventional stations, Southeast, South and
+  Centre-West). Unlike the portal's conventional catalogue (`/paginas/catalogoman`, 87 stations,
+  all "Operante"), it includes closed stations ("Desativada", "Fechada") with operating dates.
+- **Retrieved:** 2026-10-14 10:00:09 UTC, through the Claude desktop app's built-in browser (the
+  API host resets connections from scripts on this machine). Read-only GET requests, as the page
+  itself makes.
+- **Reduced, not altered:** the three responses held 454 stations. Kept: the stations whose
+  operating period overlaps 1 June 2008 – 31 August 2026 (start before the end of that range, and
+  end date empty or after its start), plus any station with no dates: **190 stations**. Kept
+  fields, values unchanged as text: `CD_ESTACAO; DC_NOME; SG_ESTADO; CD_SITUACAO; VL_LATITUDE;
+  VL_LONGITUDE; VL_ALTITUDE; DT_INICIO_OPERACAO; DT_FIM_OPERACAO`. Dropped fields: `SG_REGIAO`,
+  `CD_OSCAR`, `FL_CAPITAL`, `CD_WSI`, `CD_DISTRITO`, `SG_ENTIDADE`, `TP_ESTACAO` (all
+  "Convencional"). Joined with `;` (no value contains `;`, `"` or a line break, checked in the
+  browser), LF line endings, trailing newline.
+- **Size:** 191 lines (header plus 190 stations), 20,960 bytes.
+- **SHA-256:** `75ef7f9e3d98f74bb4279d9ced771b753e7fe3599922719344d75c19a0a1fe71`, computed in the
+  browser on the text and on the saved file; they match.

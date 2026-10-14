@@ -457,14 +457,61 @@ product API.
   month. Not started; owner decision. A cheaper route, not taken: export the 463 m coffee weight
   once as an asset (about one probe's cost), then re-probe January 2024 against the same 0.25
   EECU-hour limit. That changes the computation, not the method or the weights.
+- **Owner, 2026-10-14:** deleted the five mis-georeferenced images in `vj113a1_mgsp` and the
+  bucket copies under `vj113a1/`. Ingested assets do not depend on the bucket files, and the
+  collection `vj113a1_mgsp_v2` loaded and ran afterwards (below).
+
+### VJ113A1 acceptance check with a saved coffee weight (2026-10-14): **passes — 0 of 40 months below 60%**
+
+Owner decision 2026-10-14: save the coffee weight as an asset once, re-probe January 2024 against
+the same 0.25 EECU-hour limit, and run the 40 months if the probe passes.
+
+- **Weight asset** `vj113a1_coffee_weight_mgsp`: the same weight as before (MapBiomas 2024 class 46
+  coffee fraction per VJ113A1 pixel, inside GAUL 2025 Minas Gerais and São Paulo), built by one
+  batch export in the VJ113A1 grid (SR-ORG:6974, the collection's own transform). **1,610
+  EECU-seconds**, 515 s wall.
+- **Re-probe, January 2024: 43 EECU-seconds against 900. Passes.** Coverage 84.9%, identical to
+  the first probe, so the saved weight reproduces the weight built inside the request.
+- **The 40 November–March months of 2018–2025: 0 below 60%, against 2 allowed. VJ113A1 passes
+  the Amendment 30 (second revision) test.** 1,636 EECU-seconds, 67 s wall. The lowest month is
+  December 2021 at 69.4%; then November 2018 at 75.2%, February 2023 at 77.1% and February
+  2018 at 77.3%; the median is 88.1%. Every month has 3 or 4 composites. "Any" coverage, meaning a
+  reliability value of any kind, is 100% in every month, and the weight total is the same in all
+  40, so every month is measured on the same pixels (`docs/week0/vj113a1_coverage.csv`).
+- **A result HLS failed, so it was checked (§9):**
+  - **The reliability codes** come from AppEEARS's lookup table delivered with the data
+    (`data/raw/vj113a1/VJ113A1-002-500-m-16-days-pixel-reliability-lookup.csv`): 0 Excellent,
+    1 Good, 2 Acceptable, 3 Marginal; 5 Questionable, 6 Poor, 7 Cloud Shadow, 8 Snow/Ice,
+    9 Cloud.
+  - **Independent recount:** four months were recounted from the local GeoTIFFs at the 20,000
+    sample points, with rasterio rather than Earth Engine and a point sample rather than an area
+    weight:
+
+    | Month | Local files, point sample | Earth Engine, area-weighted |
+    |---|---|---|
+    | December 2021 | 69.7% | 69.4% |
+    | January 2024 | 84.5% | 84.9% |
+    | February 2018 | 77.3% | 77.3% |
+    | February 2023 | 77.1% | 77.1% |
+
+    They agree within 0.4 points.
+  - **A plausible reason for the difference from HLS,** not tested: each 16-day VIIRS composite
+    draws on daily overpasses, and the rule accepts "marginal", whereas HLS needed a clear 30 m
+    observation.
+- **What this settles:** the live vegetation fallback is (b), VJ113A1, with a 2018–2025 baseline,
+  should trigger (a) or (b) fire. At 500 m it blurs smallholder terrain more than MODIS does, so
+  the Zona da Mata caveat would get stronger under it (§4a).
 
 ### Compute used on 2026-10-14, measured (Amendment 32)
 
 | Run | EECU-seconds |
 |---|---|
 | SRTM elevation at the 19,598 index-region sample points (station elevation cut, §8) | 817 |
-| VJ113A1 gate 2 probe, January 2024 | 2,549 |
-| **Total measured** | **3,366 (0.94 EECU-hours)** |
+| VJ113A1 gate 2 probe, January 2024 (weight built inside the request) | 2,549 |
+| VJ113A1 coffee-weight asset, batch export | 1,610 |
+| VJ113A1 re-probe, January 2024 (saved weight) | 43 |
+| VJ113A1 acceptance check, 40 months | 1,636 |
+| **Total measured** | **6,655 (1.85 EECU-hours)** |
 
 Not measured: the VJ113A1 ingestion tasks and value checks.
 
@@ -842,6 +889,113 @@ da Mata.
   None has been checked for access, record length or cost. A new source is a spec change, and
   §3 excludes paid data.
 - **E. Drop the regional flag:** report frost per station only, with no index penalty.
+
+### Owner decisions, 2026-10-14, and the conventional network
+
+**Decided:**
+
+1. **A, per-season membership.** It is a declared exception to §9's identical-observations rule.
+2. **B, the flag and penalty on observed coffee**, with a 15% floor on observed coverage. The
+   floor was chosen from coverage information only, before any frost night was counted.
+3. **Evaluate INMET's conventional network before registering.**
+
+Note 1 uses the stations with complete 2026 records, beside the public record. The decisions are
+drafted as **Amendment 17c**, which awaits approval of its wording. Under it, with automatic
+stations alone, **19 of 76 region-seasons fall under the 15% floor**:
+
+- Sul: the 2008–2016 windows;
+- São Paulo: 2009, 2019 and 2025;
+- Triângulo: 2017;
+- Zona da Mata: 2008–2011, 2017 and 2019.
+
+The 2021 and 2026 windows are above the floor in every region.
+
+**Conventional stations: the candidate list.**
+
+- **Source:** BDMEP's own station API, which includes closed stations. The portal's conventional
+  catalogue lists only the 87 stations operating now, 13 of them in MG and 2 in SP. The reduced
+  list is in `data/raw/inmet/bdmep_estacoes_convencionais.csv`, with provenance in `SOURCE.md`.
+- **Candidates:** of 190 conventional stations operating at some point between June 2008 and
+  August 2026, **39 lie within 25 km of index coffee** (`docs/week0/bdmep_candidates.csv`, from
+  `gee/bdmep_candidates.py`).
+- **Two can never count,** because they stand above the elevation cut in every region they cover:
+  83015 Maria da Fé (1,281 m) and 83714 Campos do Jordão (1,663 m).
+- **That leaves 37 stations to request:** 25 in MG, 11 in SP and 1 in RJ.
+  - **Overlap with the automatic network:** several sit at the same towns as automatic stations,
+    such as Araxá, Belo Horizonte, Franca and Passa Quatro. Under 17c their circles join the
+    union like any overlap.
+  - **Barbacena (83689, 1,128 m)** is 8 m below Zona da Mata's cut, so it is within 50 m of the
+    cut.
+- **Stations that ended inside a June–August window:** 11 candidates. The two São Paulo stations
+  at Votuporanga and Catanduva both ended on **24 July 2021**, inside the July 2021 frost window,
+  so neither can meet the 95% rule for that season.
+- **The dates are BDMEP's metadata, not tested yet.** São José do Barreiro (83713) is listed as
+  "Desativada" with no end date.
+
+**Upper bound on the lift** (`docs/week0/bdmep_coverage_upper_bound.csv`): this assumes every
+conventional candidate is complete in every window it operated through. Completeness can only be
+tested on the downloaded data. Observed coverage, automatic alone → with conventional:
+
+| Window | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|
+| 2008 | 11.3 → 31.3 | 19.7 → 23.3 | 21.3 → 24.8 | 12.0 → 32.5 |
+| 2009 | 11.0 → 31.3 | 6.1 → 23.0 | 21.7 → 25.2 | 12.1 → 32.4 |
+| 2012 | 11.0 → 27.0 | 17.4 → 22.9 | 21.7 → 25.2 | 29.6 → 46.9 |
+| 2016 | 5.1 → 17.0 | 25.2 → 25.9 | 21.7 → 25.1 | 29.6 → 46.6 |
+| 2017 | 15.6 → 27.1 | 27.9 → 29.0 | 7.5 → 7.5 | 11.6 → 31.9 |
+| 2019 | 24.6 → 26.7 | 13.6 → 25.4 | 25.1 → 25.1 | 12.1 → 32.1 |
+| **2021** | 20.7 → 22.6 | 16.8 → 16.8 | 24.6 → 24.6 | 29.5 → 46.2 |
+| 2025 | 19.4 → 21.5 | 12.4 → 23.5 | 22.1 → 25.1 | 29.1 → 45.8 |
+| **2026** | 18.5 → 19.5 | 22.8 → 22.9 | 21.7 → 21.7 | 20.4 → 37.1 |
+
+(All 19 windows are in the CSV.) The most the conventional network could do:
+
+- Region-seasons under the 15% floor fall from 19 to 1. Triângulo 2017 remains, at 7.5%.
+- The largest gains are in Zona da Mata (+16.7 to +25.5 points in every window) and in Sul up to
+  2013 (+16 to +20 points).
+- Triângulo barely moves.
+- 2021 and 2026 gain little outside Zona da Mata.
+
+The actual lift depends on completeness.
+
+**BDMEP request** (for the owner; nothing has been downloaded):
+
+| Field | Value |
+|---|---|
+| Tipo de dados | Dados Diários |
+| Tipo de estação | Convencionais |
+| Abrangência | Região → Sudeste (all 37 are in MG, SP or RJ) |
+| Período | 01/06/2008 to 31/08/2026 (BDMEP starts and ends each station within its own record) |
+| Variável | TEMPERATURA MINIMA, DIARIA (°C), only |
+| Separador decimal | Ponto |
+
+Stations, by the region holding most of their coffee, with the June–August windows their BDMEP
+dates cover:
+
+- **Sul e Centro-Oeste:** 83032 Lambari (2008–2011), 83582 Bambuí (2008–2017), 83631 São
+  Sebastião do Paraíso (2008–2013), 83635 Divinópolis (2008–2021), 83637 Oliveira (2008–2017),
+  83681 Caldas (2008–2015), 83683 Machado (2008–2021), 83736 São Lourenço (2008–2025), 83737 Passa
+  Quatro (2008–2026), 83738 Resende, RJ (2008–2024).
+- **São Paulo:** 83623 Votuporanga (2008–2020), 83630 Franca (2008–2026), 83669 São Simão
+  (2008–2024), 83674 Lins (2008–2009), 83676 Catanduva (2008–2020), 83713 São José do Barreiro
+  (2008–2026?), 83726 São Carlos (2008–2023), 83773 Avaré (2008–2013), 83784 Taubaté (2008–2013),
+  83786 Ubatuba (2008), 83824 Itu (2008–2009).
+- **Triângulo, Alto Paranaíba e Noroeste:** 83481 João Pinheiro (2008–2017), 83531 Patos de Minas
+  (2008–2017), 83574 Frutal (2008–2013), 83579 Araxá (2008–2026).
+- **Zona da Mata, Rio Doce e Central:** 83037 Coronel Pacheco (2008), 83581 Florestal
+  (2008–2017), 83587 Belo Horizonte (2008–2026), 83589 Conceição do Mato Dentro (2008–2025), 83591
+  João Monlevade (2008–2018), 83592 Caratinga (2008–2024), 83595 Aimorés (2008–2013), 83639
+  Caparaó (2008–2026), 83642 Viçosa (2008–2017), 83687 Lavras (2008–2026), 83689 Barbacena
+  (2008–2017), 83692 Juiz de Fora (2008–2026).
+
+**Still to verify on the downloaded data:**
+
+- That the files contain the daily minimum for these stations and years.
+- Which night each daily minimum belongs to. This comes from INMET's documentation or the file
+  header, not assumed.
+- Each station-window's completeness at 95% of days.
+
+Nothing in the evaluation reads a temperature value.
 
 ## 9. Other Week 0 checklist items, not yet started
 
