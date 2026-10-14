@@ -1,0 +1,72 @@
+ EECU·s PeakMem Count  Description
+1155.647    4.8M   564  Algorithm Image.reduceResolution computing pixels
+888.681     46M  1128  Algorithm Image.unmask computing pixels
+417.539    364M   141  Reprojection precalculation between SR-ORG:6974 and EPSG:4326
+ 32.168     24M 58481  Loading assets: (...)/(...)
+ 21.722     26k  2550  Algorithm reduce.max
+ 12.233     21M 68431  (plumbing)
+ 10.919    716k   660  no description available
+  5.270     88k   437  Algorithm Image.reduceRegion
+  1.822    576k   564  Algorithm Image.updateMask computing pixels
+  0.507    8.1k  4166  Algorithm Image.select
+  0.289     11k  1710  Algorithm Image.unmask
+  0.188    7.4k  2156  Algorithm Image.gt
+  0.179    8.6k  1727  Algorithm Image.gte
+  0.169    8.6k  1727  Algorithm Image.lte
+  0.159    9.4k  1727  Algorithm Image.mask
+  0.159     352  1848  Algorithm Image.constant computing pixels
+  0.148      88  2202  Reprojecting pixels from SR-ORG:6974 to SR-ORG:6974
+  0.135    6.7k  1287  Algorithm Image.rename
+  0.109    4.4k   852  Algorithm Image.reduceResolution
+  0.107    4.3k   852  Algorithm Image.eq
+  0.095    5.5k   858  Algorithm Image.updateMask
+  0.091    3.7k   858  Algorithm Image.multiply
+  0.090    6.1k   858  Algorithm Image.addBands
+  0.069    4.4k  3831  Algorithm Image.constant
+  0.061    3.0k     3  Algorithm Geometry.bounds
+  0.055    4.3k   429  Algorithm Image.reproject
+  0.046    605k     4  Algorithm Collection.geometry
+  0.034    7.4k  1727  Algorithm Image.and
+  0.026    1.7k   564  Algorithm Image.clipToCollection computing pixels
+  0.025     688  1242  Algorithm Image.gt computing pixels
+  0.021    1.0k   960  Algorithm Image.gte computing pixels
+  0.020    3.8k   429  Algorithm Image.clipToCollection
+  0.019     992   960  Algorithm Image.lte computing pixels
+  0.018     712   960  Algorithm Image.mask computing pixels
+  0.017    1.5k   960  Algorithm Image.and computing pixels
+  0.016    1.8k   564  Algorithm Image.multiply computing pixels
+  0.014    5.8k   428  Algorithm ReduceRegion.AggregationContainer
+  0.008     46M   282  Computing image mask from geometry
+  0.007     520   282  Algorithm Image.eq computing pixels
+  0.007    2.9k   145  Listing collection
+  0.005     136   423  Algorithm Image.reproject computing pixels
+  0.000     208     1  Algorithm Collection.reduceColumns with reducer Reducer.count
+   -       257k   846  Algorithm reduce.max computing pixels
+   -        86k  1275  Algorithm ImageCollection.load
+   -        23k   568  Algorithm (user-defined function)
+   -        18k  1136  Algorithm Image.load
+   -        15k  2979  Algorithm Collection.map
+   -        10k   429  Algorithm Collection.loadTable
+   -        10k     2  Algorithm Collection.reduceColumns
+   -       8.8k     4  Algorithm Collection.first
+   -       8.3k   284  Algorithm Projection
+   -       4.3k  1698  Algorithm TypedImageCollection.Constructor
+   -       4.0k     6  Algorithm Element.set
+   -       4.0k  2133  Algorithm Collection.filter
+   -       3.4k     3  Algorithm Collection.size
+   -       3.3k  1272  Algorithm PixelType
+   -       3.2k  1275  Algorithm Filter.dateRangeContains
+   -       3.2k   425  Algorithm DateRange
+   -       3.1k     1  Algorithm Date.format
+   -       3.1k   429  Algorithm Filter.eq
+   -       3.1k   429  Algorithm Filter.inList
+   -       3.1k   424  Algorithm List.(construct from elements)
+   -       3.0k     3  Algorithm Image.projection
+   -       3.0k     3  Algorithm Feature
+   -       2.9k     2  Algorithm AggregateFeatureCollection.count
+   -       2.2k     1  Algorithm Date.advance
+   -       1.8k     1  Algorithm Date
+   -        608   284  Algorithm Reducer.mean
+   -        608   143  Algorithm Reducer.sum
+   -        224   993  Expression evaluation
+   -         64  2061  Algorithm Image.load computing pixels

@@ -1,0 +1,18 @@
+tasks: 401 found, 0 failed
+collection loads: 401 images, 2018-01-01 to 2026-09-14, bands ['EVI', 'NDVI', 'pixel_reliability']
+  2026033 EVI (-44.296,-16.590): file 5364 | EE 5364
+  2026033 NDVI (-42.490,-20.648): file 8629 | EE 8629
+  2026033 pixel_reliability (-43.407,-18.565): file 0 | EE 0
+  2024025 EVI (-41.159,-18.794): file 3623 | EE 3623
+  2024025 NDVI (-50.463,-20.127): file 6701 | EE 6701
+  2024025 pixel_reliability (-46.035,-22.348): file 1 | EE 1
+  2019345 EVI (-47.633,-24.777): file 5084 | EE 5084
+  2019345 NDVI (-48.993,-19.419): file 8430 | EE 8430
+  2019345 pixel_reliability (-47.216,-23.619): file 1 | EE 1
+  2025193 EVI (-47.620,-19.390): file 3595 | EE 3595
+  2025193 NDVI (-43.445,-17.548): file 6683 | EE 6683
+  2025193 pixel_reliability (-50.749,-21.523): file 1 | EE 1
+  2026201 EVI (-51.500,-21.569): file 2421 | EE 2421
+  2026201 NDVI (-47.646,-21.210): file 5757 | EE 5757
+  2026201 pixel_reliability (-46.241,-22.277): file 1 | EE 1
+value check: 15 of 15 match; fill cells masked: 15 of 15
