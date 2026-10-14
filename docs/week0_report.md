@@ -384,6 +384,30 @@ product API.
 - Downloading the results needs a valid AppEEARS token; the owner's tokens expire about 48 hours
   after issue.
 
+### VJ113A1: download, ingestion and acceptance check — plan and gates, set before they run (2026-10-14)
+
+- **AppEEARS output:** task done 2026-10-13 22:25 UTC; **1,613 files, 10.62 GB**. That is 1,604
+  GeoTIFFs (401 composites from 2018-01-01 to 2026-09-14, × 4 layers) and 9 small files (lookup
+  tables, QA statistics, granule list). AppEEARS added `VI_Quality` (401 files, 0.43 GB) without
+  it being requested; it is downloaded for the record but not ingested.
+- **Files:** int16 as published (EVI and NDVI × 0.0001, fill −15000), LZW-compressed, native
+  sinusoidal grid at 463.3 m, 2,595 × 2,664 pixels covering the MG/SP box. Uploaded unchanged; no
+  re-encoding.
+- **Download** (`gee/vj113a1_download.py`): one file at a time, resumable, SHA-256 per file in
+  `data/raw/vj113a1/manifest.csv`.
+- **Ingestion** (`gee/vj113a1_ingest.py`): one image per composite in
+  `projects/<EE_PROJECT>/assets/vj113a1_mgsp`, bands EVI, NDVI and pixel_reliability.
+  **Gate 1:** ingest 5 composites, verify them, then the remaining 396.
+- **Verification** (`gee/vj113a1_verify.py`): the collection loads with the expected count, dates
+  and bands; 15 valid pixels (5 random composites × 3 bands) match the source files, and 15 fill
+  pixels are masked.
+- **Acceptance check** (`gee/week0_vj113a1_coverage.py`, Amendment 30, second revision): the same
+  provisional MG/SP mask as the HLS test, coffee-fraction weighted. **Gate 2:** probe January 2024
+  first, at most 0.25 EECU-hours (900 EECU-seconds); then the 40 November–March months of
+  2018–2025.
+- **Storage:** about 10 GB in the bucket (US multi-region), roughly $0.26 a month. Deleting the
+  bucket copies once the Earth Engine assets are verified is the owner's call.
+
 ### Compute used on 2026-10-13, measured (Amendment 32)
 
 | Run | EECU-hours |
