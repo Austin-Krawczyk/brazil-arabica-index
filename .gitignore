@@ -17,6 +17,9 @@ data/raw/ibge/*
 data/raw/chc_prelim/*
 !data/raw/chc_prelim/SOURCE.md
 !data/raw/chc_prelim/manifest.csv
+data/raw/vj113a1/*
+!data/raw/vj113a1/SOURCE.md
+!data/raw/vj113a1/manifest.csv
 
 # Regenerable derived caches; the small CSV tables ARE committed
 data/derived/*.tif
