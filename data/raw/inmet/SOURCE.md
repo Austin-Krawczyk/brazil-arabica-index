@@ -75,3 +75,70 @@ Files here are gitignored except this note; nothing in this folder is modified a
 - **Size:** 191 lines (header plus 190 stations), 20,960 bytes.
 - **SHA-256:** `75ef7f9e3d98f74bb4279d9ced771b753e7fe3599922719344d75c19a0a1fe71`, computed in the
   browser on the text and on the saved file; they match.
+
+## BDMEP daily minima, conventional stations: `bdemp/$2a$10$QIJ0DKap6uhzbQ8U5hAhLOU767oX6DbAVn0ZYLgtgk8QMjswG3oK.zip`
+
+- **Folder name:** `bdemp/`, a transposition of `bdmep/` made when the file was saved. It is left
+  as saved, since nothing in `data/raw/` is renamed by the agent.
+- **Request, by the owner through BDMEP's e-mail form, 2026-10-14:** daily data, conventional
+  stations, region Sudeste, 01/06/2008 to 31/08/2026, the single variable "TEMPERATURA MINIMA,
+  DIARIA". The zip's members are dated 2026-10-14 11:05–11:06 UTC; the file was saved at 14:08
+  UTC.
+- **File:** 1,633,801 bytes, SHA-256
+  `8ac5a02479023214420b0820b0464f414c34f1c477de4e8ecf1d7c7ab005a970`. The zip test passes (every
+  member's CRC checked). It holds 105 station CSVs named `dados_<code>_D_<start>_<end>.csv`, in
+  one folder named like the zip.
+- **Format:** Latin-1. 9 metadata lines (Nome, Codigo Estacao, Latitude, Longitude, Altitude,
+  Situacao, Data Inicial, Data Final, Periodicidade da Medicao), a blank line, then the header
+  `Data Medicao;TEMPERATURA MINIMA, DIARIA(°C);`, then one row per day with `null` for a
+  missing value.
+- **BDMEP's no-data list:** BDMEP reported 174 station codes as returning no data (list passed
+  on by the owner, 2026-10-14). None of the 37 candidates is on it, and every candidate has a
+  file. A file can still hold only `null` values: 4 candidates do (below).
+- **Checked for the 37 candidates** (`docs/week0/bdmep_station_check.csv`):
+  - Code, latitude, longitude and altitude in each header match BDMEP's station list for all 37.
+  - No date repeats.
+  - Every value is a number or `null`; none falls outside −60 to 60 °C.
+
+**Candidates closed or without data.** For each one: the file header's status and end date,
+BDMEP's station-list entry, and the span of dates holding a value.
+
+- **No values at all**, every row `null`, confirmed with a second parser:
+  - 83032 Lambari (Desativada, 2012-07-19);
+  - 83674 Lins (Desativada, 2009-08-31);
+  - 83713 São José do Barreiro (Desativada; the station list gives no end date);
+  - 83824 Itu (Desativada, 2009-08-31).
+- **Closed before 31 August 2026,** with the last value in brackets:
+  - 83582 Bambuí, 2018-04-04 (2018-04-04);
+  - 83631 São Sebastião do Paraíso, 2014-03-11 (2012-01-31);
+  - 83635 Divinópolis, 2021-09-02 (2021-09-02);
+  - 83637 Oliveira, 2017-10-18 (2017-02-14);
+  - 83681 Caldas, 2015-09-16 (2015-06-30);
+  - 83683 Machado, 2022-05-31 (2022-03-29);
+  - 83738 Resende, 2025-07-02 (2025-07-02);
+  - 83623 Votuporanga, 2021-07-24 (2021-07-23);
+  - 83669 São Simão, 2024-11-30 (2024-11-29);
+  - 83676 Catanduva, 2021-07-24 (2021-07-23);
+  - 83726 São Carlos, 2024-06-30 (2024-06-29);
+  - 83773 Avaré, 2014-01-31 (2014-01-31);
+  - 83784 Taubaté, 2014-08-10 (2014-08-10);
+  - 83786 Ubatuba, 2009-03-05 (2009-03-05);
+  - 83481 João Pinheiro, 2018-01-31 (2017-10-03);
+  - 83531 Patos de Minas, 2018-05-30 (2018-05-30);
+  - 83574 Frutal, 2013-09-08 (2013-02-06);
+  - 83037 Coronel Pacheco, 2009-04-30 (2009-04-30);
+  - 83581 Florestal, 2018-07-04 (2018-05-31; first value 2012-06-01);
+  - 83589 Conceição do Mato Dentro, 2026-02-28 (2026-02-27);
+  - 83591 João Monlevade, 2019-05-31 (2019-05-31; first value 2014-05-01);
+  - 83592 Caratinga, 2024-11-29 (2024-11-29);
+  - 83595 Aimorés, 2014-07-15 (2014-07-09);
+  - 83642 Viçosa, 2018-03-07 (2018-03-07);
+  - 83689 Barbacena, 2018-05-30 (2018-05-30).
+- **Status disagreements:**
+  - 83736 São Lourenço: the file header says "Operante" to 2026-08-31, but the station list says
+    "Desativada" from 2026-03-01. The last value is 2026-03-02.
+  - 83737 Passa Quatro: "Operante" in both, but the last value is 2025-01-29.
+- **Operating with values to August 2026:**
+  - 83630 Franca, 83579 Araxá, 83587 Belo Horizonte, 83639 Caparaó and 83692 Juiz de Fora, to
+    2026-08-31;
+  - 83687 Lavras, to 2026-08-29.

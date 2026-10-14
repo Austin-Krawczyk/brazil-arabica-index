@@ -997,6 +997,92 @@ dates cover:
 
 Nothing in the evaluation reads a temperature value.
 
+### BDMEP data received and checked; station-set coverage under Amendment 17c (2026-10-14)
+
+**The file** (provenance and closed stations in `data/raw/inmet/SOURCE.md`):
+
+- One zip from BDMEP holding 105 Sudeste station CSVs; it passes its zip test, and its SHA-256 is
+  recorded. It sits in `data/raw/inmet/bdemp/`, a transposed spelling of `bdmep/`, left as
+  saved.
+- All 37 candidates have a file, and none is on BDMEP's no-data list (174 codes).
+- Every header's code, latitude, longitude and altitude match BDMEP's station list.
+- No date repeats, and every value is a number or `null`; none falls outside −60 to 60 °C.
+- **Four candidates hold no values at all,** confirmed by a second parser: Lambari, Lins, São
+  José do Barreiro and Itu.
+- **Two status disagreements:**
+  - São Lourenço's header says "Operante" but the station list says "Desativada" from
+    2026-03-01. Its last value is 2026-03-02.
+  - Passa Quatro is "Operante" in both, but has no value after 2025-01-29.
+- **Which night a daily minimum belongs to: not established.** The file header does not say,
+  and INMET's documentation has not yet been found. Completeness counts the calendar dates 1
+  June to 31 August as recorded, so the question can move a window's edge by at most one day. It
+  must be settled before any frost night is counted.
+
+**Completeness** (Amendment 17c: at least 88 of 92 days, no gap over 3 days;
+`gee/bdmep_completeness.py`, `docs/week0/bdmep_completeness.csv`):
+
+- **307 of 703 station-windows pass** (37 stations × 19 windows).
+- **33 of 37 stations pass at least one window.**
+- Failures:
+  - 317 windows have no data;
+  - 78 have fewer than 88 days;
+  - 1 fails on the gap cap alone (João Pinheiro 2009: 88 days, a 4-day gap).
+- Stations passing per window fall from 25–29 in 2008–2011 to 3 in 2026, as the network closes.
+
+**Coverage, automatic alone → automatic and conventional combined**
+(`docs/week0/station_coverage_17c.csv`):
+
+| Window (crop) | Sul | São Paulo | Triângulo | Zona da Mata |
+|---|---|---|---|---|
+| 2008 (2009) | 11.3 → 19.8 | 19.7 → 22.7 | 21.3 → 24.8 | 12.0 → 32.4 |
+| 2009 (2010) | 11.0 → 19.8 | 6.1 → 23.0 | 21.7 → 25.1 | 12.1 → 32.4 |
+| 2010 (2011) | 10.6 → 26.5 | 22.2 → 25.6 | 21.7 → 25.2 | 10.3 → 32.1 |
+| 2011 (2012) | 11.3 → 25.4 | 19.7 → 22.7 | 21.7 → 25.2 | 11.7 → 32.4 |
+| 2012 (2013) | 11.0 → 21.1 | 17.4 → 17.4 | 21.7 → 25.2 | 29.6 → 46.9 |
+| 2013 (2014) | 11.3 → 23.2 | 22.3 → 22.3 | 21.7 → 25.2 | 29.8 → 46.9 |
+| 2014 (2015) | 11.2 → 23.2 | 20.5 → 20.5 | 21.7 → 25.2 | 29.4 → 46.5 |
+| 2015 (2016) | 10.9 → 22.8 | 19.1 → 19.6 | 21.4 → 24.9 | 29.9 → 47.0 |
+| 2016 (2017) | 5.1 → 17.0 | 25.2 → 25.4 | 21.7 → 21.7 | 29.6 → 46.6 |
+| 2017 (2018) | 15.6 → 25.2 | 27.9 → 28.3 | **7.5 → 7.5** | 11.6 → 31.9 |
+| 2018 (2019) | 25.5 → 27.6 | 25.6 → 26.2 | 25.1 → 25.1 | 20.9 → 46.4 |
+| 2019 (2020) | 24.6 → 26.7 | 13.6 → 24.7 | 25.1 → 25.1 | 12.1 → 32.1 |
+| 2020 (2021) | 24.8 → 26.6 | 22.8 → 22.8 | 21.4 → 21.4 | 20.4 → 45.9 |
+| **2021 (2022)** | 20.7 → 22.6 | 16.8 → 16.8 | 24.6 → 24.6 | 29.5 → 46.2 |
+| 2022 (2023) | 19.7 → 20.9 | 23.9 → 23.9 | 25.0 → 25.0 | 27.2 → 41.5 |
+| 2023 (2024) | 25.5 → 27.3 | 27.0 → 27.0 | 24.8 → 24.8 | 29.7 → 46.4 |
+| 2024 (2025) | 24.4 → 26.6 | 16.4 → 27.4 | 25.1 → 25.1 | 29.4 → 46.1 |
+| 2025 (2026) | 19.4 → 20.4 | 12.4 → 23.5 | 22.1 → 25.1 | 29.1 → 45.8 |
+| **2026 (2027)** | 18.5 → 18.5 | 22.8 → 22.8 | 21.7 → 21.7 | 20.4 → 20.4 |
+
+**Findings:**
+
+1. **The conventional network lifts observed coverage,** so under Amendment 17c the two networks
+   are combined, with the network recorded per station.
+2. **Region-seasons under the 15% floor fall from 19 to 1.** The one left is Triângulo 2017, at
+   7.5%, which is unflaggable either way. That matches the upper bound computed before the data
+   arrived.
+3. **The largest gains:**
+   - Zona da Mata, +14 to +26 points in every window to 2025;
+   - Sul to 2015, +8 to +16 points;
+   - São Paulo in 2009, 2019, 2024 and 2025.
+4. **The 2021 window gains only in Sul (+1.9) and Zona da Mata (+16.7).**
+5. **The 2026 window gains nothing.** Only Franca, Araxá and Belo Horizonte pass, and their
+   circles are already covered by automatic stations. The operating stations near Zona da Mata
+   coffee fall short: Caparaó 86 days with a 4-day gap, Lavras 85, Juiz de Fora 67. Whether
+   that is a BDMEP data-entry lag in recent months is not established. So note 1's frost review
+   rests on the automatic network: 18.5 / 22.8 / 21.7 / 20.4%, all above the floor.
+6. **Station counts per region and season,** by network, are in the CSV:
+   - automatic: 6–12 in Sul, 10–24 in São Paulo, 5–9 in Triângulo, 10–16 in Zona da Mata;
+   - conventional: up to 11, 9, 4 and 10.
+
+**Queued for the owner:**
+
+1. Re-request the 2026 conventional data before note 1, to see whether the short 2026 windows fill
+   in.
+2. Rename `bdemp/` to `bdmep/` to match the spec.
+3. Settle which night BDMEP's daily minimum belongs to, from INMET documentation, before any frost
+   count.
+
 ## 9. Other Week 0 checklist items, not yet started
 
 Conab granularity (§4c, blocking); Conab's IBGE unit system and municipality lists; CHIRPS
