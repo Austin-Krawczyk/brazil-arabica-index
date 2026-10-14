@@ -66,7 +66,9 @@ def main():
 
     random.seed(SEED)
     comps = composites()
-    picks = random.sample(sorted(comps), 5)
+    ingested = {a["id"].split("/")[-1][2:] for a in ee.data.listAssets(
+        {"parent": f"projects/{project}/assets/vj113a1_mgsp", "pageSize": 1000}).get("assets", [])}
+    picks = random.sample(sorted(d for d in comps if d in ingested), min(5, len(ingested)))
     ok = bad = masked_ok = masked_bad = 0
     for doy in picks:
         img = ee.Image(f"projects/{project}/assets/vj113a1_mgsp/c_{doy}")
