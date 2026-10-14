@@ -690,3 +690,47 @@ Every change to scope, dated, with the reason. Newest at the bottom.
      recorded.
 
   Approved by owner.
+
+- 2026-10-14 — **AMENDMENT 17d: night rule for conventional minima, provisional; stations sharing a
+  site; 2026 re-request scheduled.** Amends Amendment 17c, which left the night a BDMEP daily
+  minimum belongs to to be taken from INMET documentation that had not been found.
+  1. **Night rule (owner):** INMET reads the conventional minimum at 12 UTC, covering the
+     preceding 24 hours, so a minimum dated D belongs to the night ending the morning of D.
+     Provisional until INMET's documentation is cited.
+     - **Checked before `prereg-2`, on 2026-10-14** (`gee/bdmep_night_check.py`): six same-site
+       pairs (Franca, Juiz de Fora, Araxá, Caratinga, Viçosa, São Carlos), all months 2008–2026,
+       3,482–6,253 dates per pair. Only agreement statistics were computed; no frost night was
+       counted.
+     - The night ending the morning of D beats the night ending the morning of D+1 in all six.
+       For the four without an offset: mean absolute difference 0.38–0.50 °C against
+       1.10–1.46 °C, and 91–95% within 1 °C against 48–60%.
+     - The UTC calendar day agrees as well as the 12 UTC window, so the exact boundary is not
+       resolved.
+  2. **Stations sharing a site (owner):**
+     - Where a conventional and an automatic station share a site and both have complete records
+       for a season, the automatic station governs the tier and the conventional station is left
+       out of the union. The conventional station fills only seasons where the automatic record
+       is incomplete.
+     - Each pair's offset is recorded in the station table, `docs/week0/colocated_pairs.csv`. No
+       correction is applied.
+     - Any season in which a conventional station alone would change a region's tier is flagged.
+     - Same-site circles are the same circle, so the rule changes which station's tier counts,
+       not the observed coverage.
+  3. **Scheduled (owner):** re-request BDMEP's 2026 conventional data in mid-November 2026,
+     before note 1, and record whether the short 2026 windows (Caparaó, Lavras, Juiz de Fora)
+     filled in. It is in the §10 checklist, and a reminder is set for 16 November 2026.
+
+  **Where the text goes beyond the owner's wording:**
+  - **"Share a site" is defined as within 1 km in INMET's catalogues.** That gives 19 pairs; 16
+    have overlapping data. Passa Quatro (1.5 km) and Barbacena (1.9 km) fall outside.
+  - **The station table records more offsets than the two the owner named:**
+    - Caratinga −1.9 °C;
+    - São Simão −0.9 °C (only 49% of dates within 1 °C);
+    - Machado −0.6 °C (mean absolute difference 1.6 °C);
+    - Viçosa +0.6 °C;
+    - Caldas +0.6 °C;
+    - the other 11 pairs within ±0.3 °C.
+    Viçosa's offset is +0.6 °C on the rule window and +0.7 °C on the other two windows; the table
+    records the rule-window value.
+
+  Approved by owner.

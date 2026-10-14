@@ -13,8 +13,13 @@ An automatic window counts only if all 24 hourly values are present. All months 
 only June-August. Only agreement statistics are written (count, mean absolute difference, median
 difference, share within 0.5 and 1.0 degrees); no temperature or frost night is reported.
 
-Run:    .venv/Scripts/python gee/bdmep_night_check.py <path to BDMEP zip>
-Writes: docs/week0/bdmep_night_check.csv
+--pairs-table (Amendment 17d) lists every conventional candidate with an automatic station within
+1 km in INMET's catalogues ("sharing a site"), with each pair's offset: the median and mean
+absolute difference, conventional minus automatic, over the rule window, on dates where both
+report. Offsets are recorded, never applied.
+
+Run:    .venv/Scripts/python gee/bdmep_night_check.py <path to BDMEP zip> [--pairs-table]
+Writes: docs/week0/bdmep_night_check.csv, or docs/week0/colocated_pairs.csv with --pairs-table
 """
 import re
 import sys
@@ -67,6 +72,38 @@ def stats(diff):
                 share_within_1_0=round(float(np.mean(np.abs(d) <= 1.0)), 3) if len(d) else None)
 
 
+SITE_KM = 1.0
+
+
+def colocated(zpath):
+    cat = pd.read_csv(ROOT / "data" / "raw" / "inmet" / "catalogo_estacoes_automaticas.csv", sep=";", dtype=str)
+    for c in ("Latitude", "Longitude"):
+        cat[c] = cat[c].str.replace(",", ".").astype(float)
+    cand = pd.read_csv(WEEK0 / "bdmep_candidates.csv", dtype={"code": str})
+    cand = cand[cand.can_count]
+    z = zipfile.ZipFile(zpath)
+    names = {re.search(r"dados_(\d+)_D_", n).group(1): n for n in z.namelist() if n.endswith(".csv")}
+    rows = []
+    for r in cand.itertuples():
+        p1, p2 = np.radians(r.lat), np.radians(cat.Latitude.values)
+        km = 2 * 6371.0088 * np.arcsin(np.sqrt(np.sin((p2 - p1) / 2) ** 2 + np.cos(p1) * np.cos(p2)
+                                                * np.sin(np.radians(cat.Longitude.values - r.lon) / 2) ** 2))
+        for i in np.nonzero(km <= SITE_KM)[0]:
+            auto_code = cat["Código"].iloc[i]
+            _, conv, _, _ = read_station(z.read(names[r.code]))
+            conv = conv.dropna()
+            row = dict(conventional=r.code, conventional_name=r.name, automatic=auto_code,
+                       automatic_name=cat.Nome.iloc[i], km=round(float(km[i]), 2))
+            if len(conv):
+                hourly = automatic_hourly(auto_code)
+                if len(hourly):
+                    row.update(stats(conv.values - window_min(hourly, conv.index + pd.Timedelta(hours=12))))
+            rows.append(row)
+    df = pd.DataFrame(rows).rename(columns={"median_diff": "offset_median_c", "mean_abs_diff": "mean_abs_diff_c"})
+    df.to_csv(WEEK0 / "colocated_pairs.csv", index=False)
+    return df
+
+
 def main(zpath):
     z = zipfile.ZipFile(zpath)
     names = {re.search(r"dados_(\d+)_D_", n).group(1): n for n in z.namelist() if n.endswith(".csv")}
@@ -91,4 +128,7 @@ def main(zpath):
 
 
 if __name__ == "__main__":
-    print(main(sys.argv[1]).to_string(index=False))
+    if "--pairs-table" in sys.argv:
+        print(colocated(sys.argv[1]).to_string(index=False))
+    else:
+        print(main(sys.argv[1]).to_string(index=False))

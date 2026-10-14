@@ -441,8 +441,27 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      missing days. If they lift observed coverage, the two
      networks are combined, with the network recorded per station; if they don't, the automatic
      network is used alone. For a conventional station a night is observed when its daily minimum
-     is present; which night each daily minimum belongs to is taken from INMET's documentation,
-     not assumed.
+     is present.
+   - **Night rule for conventional stations (Amendment 17d), provisional until INMET's
+     documentation is cited.** INMET reads the conventional minimum at 12 UTC, covering the
+     preceding 24 hours, so a minimum dated D belongs to the night ending the morning of D.
+     - **Checked 2026-10-14 against six same-site automatic stations,** all months 2008–2026: the
+       night ending the morning of D agrees far better than the night ending the morning of D+1
+       in all six. For the four pairs without an offset, the mean absolute difference is
+       0.38–0.50 °C against 1.10–1.46 °C.
+     - **The check does not resolve the exact 24-hour boundary** (12 UTC or the UTC calendar
+       day). Both place the minimum on the morning of D.
+   - **Stations sharing a site (Amendment 17d).** A conventional and an automatic station share a
+     site when they lie within 1 km of each other in INMET's catalogues.
+     - **Which station counts:** where both have complete records for a season, the automatic
+       station governs the tier for that season, and the conventional station is left out of the
+       union. The conventional station fills only seasons where the automatic record is
+       incomplete.
+     - **Offsets:** each pair's offset (median, conventional minus automatic, over the
+       rule-window minimum) is recorded in the station table, `docs/week0/colocated_pairs.csv`.
+       No correction is applied.
+     - **Flag:** any season in which a conventional station alone would change a region's tier is
+       flagged.
    - **Observed coverage (Amendment 17c).** A region's observed coffee in a season is the coffee
      area inside the union of the 25 km circles of that season's qualifying stations, with
      overlaps counted once, including overlaps between networks. Observed coverage is observed
@@ -771,7 +790,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | **§4c Conab granularity:** São Paulo resolved (state total, Amendment 34). Still open: whether surveys back to 2001 carry the Minas regional split (first, third and final surveys) in usable form | Week 0 | §4c, §5 step 7 |
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
-| INMET conventional network (BDMEP daily minima): completeness per season, observed-coverage lift, and which night a daily minimum belongs to | `prereg-2` | §4, §5 step 4 |
+| INMET conventional network (BDMEP daily minima): completeness per season and observed-coverage lift (done 2026-10-14); the night rule's INMET citation (rule set provisionally, Amendment 17d) | `prereg-2` | §4, §5 step 4 |
+| Re-request BDMEP's 2026 conventional daily minima, and record whether the short 2026 windows filled in (Caparaó, Lavras, Juiz de Fora) | Mid-November 2026, before note 1 | §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
 | Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1`. **Done:** VJ113A1 ingested and accepted (2026-10-14); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` resolve (Week 0 report §1) | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |
