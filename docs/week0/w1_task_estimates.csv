@@ -1,0 +1,30 @@
+region,meso,bbox_km2,task,estimate_eecu_s,cancel_at_eecu_s
+"Triângulo, Alto Paranaíba e Noroeste",3105,159653.37138755762,w1_weights_meso_3105,5250.0,10500.0
+"Zona da Mata, Rio Doce e Central",3106,71067.63847776118,w1_weights_meso_3106,2340.0,4680.0
+"Zona da Mata, Rio Doce e Central",3112,77862.63006019332,w1_weights_meso_3112,2560.0,5120.0
+"Zona da Mata, Rio Doce e Central",3108,68082.251214939,w1_weights_meso_3108,2240.0,4480.0
+Sul e Centro-Oeste,3109,49438.81791581292,w1_weights_meso_3109,1630.0,3260.0
+Sul e Centro-Oeste,3110,105120.5533134682,w1_weights_meso_3110,3460.0,6920.0
+"Zona da Mata, Rio Doce e Central",3111,23264.045030707726,w1_weights_meso_3111,770.0,1540.0
+"Zona da Mata, Rio Doce e Central",3107,84555.25099486113,w1_weights_meso_3107,2780.0,5560.0
+"Triângulo, Alto Paranaíba e Noroeste",3101,108814.0290445238,w1_weights_meso_3101,3580.0,7160.0
+São Paulo (state total),3508,47235.544931518256,w1_weights_meso_3508,1550.0,3100.0
+São Paulo (state total),3501,52927.79986008415,w1_weights_meso_3501,1740.0,3480.0
+São Paulo (state total),3507,29050.96573944744,w1_weights_meso_3507,960.0,1920.0
+São Paulo (state total),3504,65489.12229830394,w1_weights_meso_3504,2150.0,4300.0
+São Paulo (state total),3506,16538.788051384407,w1_weights_meso_3506,540.0,1080.0
+São Paulo (state total),3511,43388.34115172571,w1_weights_meso_3511,1430.0,2860.0
+São Paulo (state total),3502,39479.4808163567,w1_weights_meso_3502,1300.0,2600.0
+São Paulo (state total),3503,32577.35746058428,w1_weights_meso_3503,1070.0,2140.0
+São Paulo (state total),3512,33574.85125909663,w1_weights_meso_3512,1100.0,2200.0
+São Paulo (state total),3509,15453.281289613618,w1_weights_meso_3509,510.0,1020.0
+São Paulo (state total),3505,17273.976329470694,w1_weights_meso_3505,570.0,1140.0
+São Paulo (state total),3513,37342.61263550514,w1_weights_meso_3513,1230.0,2460.0
+São Paulo (state total),3515,15489.396369030808,w1_weights_meso_3515,510.0,1020.0
+São Paulo (state total),3510,36372.07729490246,w1_weights_meso_3510,1200.0,2400.0
+São Paulo (state total),3514,30991.29559158828,w1_weights_meso_3514,1020.0,2040.0
+Sul e Centro-Oeste,,,w1_full_probe_sul_e_centro_oeste_2021,445.0,890.0
+Sul e Centro-Oeste,,,w1_series_muni_sul_e_centro_oeste,11600.0,23200.0
+"Triângulo, Alto Paranaíba e Noroeste",,,w1_series_muni_tri_ngulo_alto_paran,24000.0,48000.0
+"Zona da Mata, Rio Doce e Central",,,w1_series_muni_zona_da_mata_rio_doc,25400.0,50800.0
+São Paulo (state total),,,w1_series_muni_s_o_paulo_state_tota,39000.0,78000.0

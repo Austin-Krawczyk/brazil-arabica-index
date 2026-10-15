@@ -30,3 +30,6 @@ data/derived/_tmp_*
 # OS
 Thumbs.db
 .DS_Store
+
+# Regenerable per-municipality-year filter table (5 MB): gee/w1_filter.py
+docs/week0/w1_filter_kept.csv

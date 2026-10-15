@@ -1493,3 +1493,90 @@ prereg-2 registration of the masks.
 
 **Compute 2026-10-14, added:** cancelled weights probe 64,779 and per-municipality probe 445
 EECU-seconds. The day's measured total is now 126,800 EECU-seconds (35.2 EECU-hours).
+
+### Owner decisions, second round (2026-10-14): stable membership, W1 option (iii), safeguards
+
+**Filter: stable membership** (`gee/w1_filter_stable.py`). Draft 1 of 16d (one-sided, season by
+season) was not approved.
+
+- **The test:** each municipality is tested once, on the median across mask years 1998–2025 of its
+  persistent-pixel MapBiomas area over PAM total coffee.
+  - PAM zero where MapBiomas maps coffee counts as an infinite ratio.
+  - Years with no coffee on either side, and years PAM marks missing, are not counted.
+  - The municipality is dropped for every season when the median exceeds 1.3.
+- **Removed:**
+  - Sul 55, São Paulo 144 (3 of them untestable), Triângulo 18, Zona da Mata 84 (2 untestable).
+  - Lists: `docs/week0/w1_filter_stable_removed.csv`; every municipality and its decision:
+    `docs/week0/w1_filter_stable_membership.csv`.
+- **Largest removals by mean mapped area:**
+  - **Sul:** Jacuí 4,700 ha (median ratio 1.88, above 1.3 in 28 of 28 years), Natércia 2,800
+    (1.43), Bocaina de Minas 2,300 (PAM about zero), Brazópolis 2,100 (2.58), Alagoa 2,000 (PAM
+    about zero), Aiuruoca, Piranguçu, Caldas, Santa Rita de Caldas, Virgínia.
+  - **São Paulo:** Avaré 850 ha (1.65), Echaporã 770 (2.03), Monte Aprazível 640 (1.81), Assis 630
+    (107), São Bento do Sapucaí 610 (PAM about zero), Tanabi, Reginópolis, Bernardino de Campos,
+    Mirassol, Tabapuã.
+  - **Triângulo:** all small (under 100 ha mapped), mostly where PAM records zero: Prata, Comendador
+    Gomes, Frutal and others.
+  - **Zona da Mata:** Lima Duarte 1,100 ha (PAM about zero), Santa Rita de Jacutinga 730, Bias
+    Fortes 660, Santa Rita de Ibitipoca 550 (untestable), Olaria, Ressaquinha, Senhora dos Remédios,
+    Ouro Preto, Rio Preto, Rio Vermelho.
+- **Kept:** Campos Gerais (median 0.88), Três Pontas (0.98) and Boa Esperança (0.72), each above
+  1.3 in only 4–7 of 28 years.
+- **Retention,** share of mapped coffee kept: Sul 0.79–0.95, São Paulo 0.79–0.84, Triângulo
+  0.997–0.999, Zona da Mata 0.89–0.97.
+- **Untestable:** 5 municipalities with mapped coffee but no comparable year, about 553 ha in all.
+  Small, so dropped.
+- **Amendment 16d draft 2** is in the working tree, not committed.
+
+**W1 option (iii), registered:**
+- QA `SummaryQA` 0–1, closing that `prereg-1` item (commit 0b94c20);
+- the full class-46 mask only; the persistent-pixel sensitivity deferred;
+- weights exported per IBGE 1989 mesoregion, 24 exports of 28 bands each.
+
+**Code:** `gee/w1_mask.py weights --meso`, and `gee/w1_modis_evi.py --full --estimate`, now one QA
+variant and one mask.
+
+**Safeguards:**
+
+- **Watchdog** (`gee/ee_watchdog.py`).
+  - Every batch task is started through `run_watched()`, which refuses a task with no cost
+    estimate, polls every 300 s and cancels at 2 × the estimate.
+  - A standalone sweep (`--watch`) applies the same rule to every running or pending task in the
+    project. A task with no recorded estimate is cancelled past 1,800 EECU-seconds.
+  - Cancellations are logged to `docs/week0/ee_watchdog_log.txt`.
+  - **Limit of five-minute polling:** the runaway probe burned about 97 EECU-seconds per second of
+    wall time (64,650 in 664 s). At that rate a five-minute poll can overshoot its cancel point
+    by up to about 29,000 EECU-seconds. A 60-second poll (`--poll 60`) would cap the overshoot
+    near 6,000.
+- **Monthly cap:** the Contributor tier's quota is **1,000 EECU-hours a month** (3,600,000
+  EECU-seconds). Source: Google, "Noncommercial tiers", read 2026-10-14. It is not a hard cut-off:
+  past it, work continues in a slower restricted mode, and the quota renews at the start of the
+  next month.
+- **Spend to date, October 2026:** the actual figure could not be read. The Cloud Monitoring API is
+  not enabled on the project (HTTP 403), and enabling it is the owner's call
+  (`gee/ee_usage.py` is ready for when it is). **Measured: about 91.4 EECU-hours, 9.1% of the
+  cap:**
+  - 56.2 on 2026-10-13;
+  - 35.2 on 2026-10-14, including the cancelled probe's 18.0.
+  Not measured: the 2026-10-12 ID checks, the provisional drift check, and a few failed attempts.
+- **Municipality names** (`gee/check_municipality_names.py`, `docs/week0/municipality_name_check.csv`):
+  - **All 1,335 index codes** are in IBGE's municipal mesh and in IBGE's localities list (fetched
+    2026-10-15 with `curl`, certificate verified; Python's certificate check failed on that host
+    this time). Every name matches the membership file exactly.
+  - **1,327 match PAM's names exactly.**
+  - **8 are absent from PAM's responses altogether:** Santa Cruz de Minas, Ilha Comprida,
+    Carapicuíba, Diadema, Osasco, Rio Grande da Serra, Santo André and São Caetano do Sul. These
+    are not name mismatches.
+
+**Updated W1 estimate, option (iii)** (`docs/week0/w1_task_estimates.csv`, with each task's cancel
+limit):
+- **Weights:** 24 mesoregion exports, 41,490 EECU-seconds (11.5 EECU-hours) if cost follows the
+  export box, the largest 5,250. If it follows only the land inside each box, about half that.
+  Mesoregion boxes total 1.26 million km², only 8% less than region boxes, because they overlap.
+- **Composites:** at most 100,000 EECU-seconds (27.8 EECU-hours), scaled from the 445-second Sul
+  probe. That probe carried 14 bands; option (iii) carries 4, so this is an upper bound.
+- **Total: about 20–40 EECU-hours.**
+- **Order:**
+  - Sul's two mesoregion weights first;
+  - then the Sul 2021 probe (estimate 445, cancelled at 890), which measures the four-band cost;
+  - each region's estimate is reset from that probe before it runs.

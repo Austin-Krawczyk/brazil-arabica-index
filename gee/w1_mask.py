@@ -9,10 +9,10 @@ Steps (run in order; each is a separate batch job whose cost is recorded):
   areas            per municipality and year: class-46 area in that year ("full"), and for each
                    mask year M the area classified 46 in M, M−1 and M−2 ("persistent",
                    Amendment 16b), in hectares, at 30 m. --probe does one mask year only.
-  weights          per region: coffee fraction of each MOD13Q1 pixel for each mask year, full and
-                   persistent, unfiltered (Amendment 16d: the filter is applied at aggregation).
-                   Saved once as a multi-band asset; W1 reads it. --sample: a municipality sample,
-                   for the cost probe.
+  weights          per IBGE 1989 mesoregion: full-mask coffee fraction of each MOD13Q1 pixel for each
+                   mask year, unfiltered (Amendment 16d: the filter is applied at aggregation).
+                   Saved once as a multi-band asset; W1 mosaics a region's mesoregions. Started
+                   through gee/ee_watchdog.py with a required cost estimate.
 
 The 30% filter itself and its removal report are computed locally by gee/w1_filter.py from the
 areas table and IBGE PAM.
@@ -20,7 +20,7 @@ areas table and IBGE PAM.
 Run:    .venv/Scripts/python gee/w1_mask.py municipalities
         .venv/Scripts/python gee/w1_mask.py areas --probe --year 2024
         .venv/Scripts/python gee/w1_mask.py areas
-        .venv/Scripts/python gee/w1_mask.py weights --region "Sul e Centro-Oeste"
+        .venv/Scripts/python gee/w1_mask.py weights --meso 3110 --estimate 2600
 """
 import argparse
 import datetime as dt
@@ -110,36 +110,36 @@ def areas(project, probe_year=None, sample_codes=None):
     return df, cost
 
 
-def weights(project, region=None, sample_codes=None):
-    """Coffee fraction of each MOD13Q1 pixel for every mask year, full ("w_M") and persistent
-    ("wp_M"), with NO municipality filter: the 30% filter is applied when municipal values are
-    aggregated to regions (Amendment 16d). One asset per region, clipped to its municipalities."""
-    munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}")
-    if sample_codes:
-        munis, slug = munis.filter(ee.Filter.inList("code", sample_codes)), "sample"
-    else:
-        munis = munis.filter(ee.Filter.eq("region", region))
-        slug = re.sub(r"[^a-z]+", "_", region.lower()).strip("_")[:20]
+RATE_PER_KM2_BAND = 149 / 126827   # EECU-s per km² of export box per band (Sul single-band export)
+
+
+def meso_table():
+    member = pd.read_csv(WEEK0 / "proposed_region_membership.csv", dtype={"code": str, "meso_code": str})
+    return member[member.in_index][["code", "conab_region", "meso_code"]]
+
+
+def weights(project, meso_code, estimate_eecu_s):
+    """Full-mask coffee fraction of each MOD13Q1 pixel for every mask year 1998-2025 ("w_M"), for one
+    IBGE 1989 mesoregion (owner, 2026-10-14: option iii; mesoregion-bounded exports; persistent
+    mask deferred). Unfiltered: the 30% filter is applied at aggregation (Amendment 16d).
+    Started through the watchdog, cancelled at 2 × the estimate."""
+    from ee_watchdog import run_watched
+
+    codes = meso_table().query("meso_code == @meso_code").code.tolist()
+    munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}").filter(ee.Filter.inList("code", codes))
     proj = ee.ImageCollection("MODIS/061/MOD13Q1").first().select("EVI").projection()
-    bands = []
-    for m in MASK_YEARS:
-        full = coffee(m).unmask(0)
-        pers = coffee(m).And(coffee(m - 1)).And(coffee(m - 2)).unmask(0)
-        for kind, img in (("w", full), ("wp", pers)):
-            bands.append(img.reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
-                         .rename(f"{kind}_{m}").toFloat())
+    bands = [coffee(m).unmask(0).reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
+             .rename(f"w_{m}").toFloat() for m in MASK_YEARS]
     img = ee.Image.cat(bands).clipToCollection(munis)
     p = proj.getInfo()
     task = ee.batch.Export.image.toAsset(
-        image=img, description=f"w1_weights_{slug}", assetId=f"projects/{project}/assets/w1_weights_{slug}",
+        image=img, description=f"w1_weights_meso_{meso_code}",
+        assetId=f"projects/{project}/assets/w1_weights_meso_{meso_code}",
         crs=p["crs"], crsTransform=p["transform"], region=munis.geometry().bounds(), maxPixels=1e11,
         pyramidingPolicy={".default": "mean"})
-    task.start()
-    st, wall = wait(task)
-    cost = float(st.get("batch_eecu_usage_seconds", 0) or 0)
-    log_cost(f"weights_{slug}", cost, f", {st['state']}, {wall:.0f} s wall, {len(bands)} bands"
-             + (f" | {st.get('error_message', '')}" if st["state"] != "COMPLETED" else ""))
-    return cost
+    state, used, wall = run_watched(task, estimate_eecu_s)
+    log_cost(f"weights_meso_{meso_code}", used, f", {state}, {wall:.0f} s wall, {len(bands)} bands")
+    return state, used
 
 
 def main():
@@ -149,6 +149,8 @@ def main():
     a.add_argument("--year", type=int, default=2024)
     a.add_argument("--region")
     a.add_argument("--sample", help="file of municipality codes: all bands, those municipalities only")
+    a.add_argument("--meso", help="IBGE 1989 mesoregion code (weights step)")
+    a.add_argument("--estimate", type=float, help="cost estimate in EECU-seconds (weights step; required)")
     args = a.parse_args()
     project = init()
     if args.step == "municipalities":
@@ -157,8 +159,7 @@ def main():
         codes = open(args.sample).read().split() if args.sample else None
         areas(project, args.year if args.probe and not codes else None, codes)
     else:
-        codes = open(args.sample).read().split() if args.sample else None
-        weights(project, args.region, codes)
+        weights(project, args.meso, args.estimate)
 
 
 if __name__ == "__main__":

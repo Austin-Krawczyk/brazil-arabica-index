@@ -1,0 +1,302 @@
+code,region,years_counted,median_ratio,years_over_1_3,mean_mapped_ha,mapped_ha_2025,mean_pam_ha,name,decision,kept
+3134806,Sul e Centro-Oeste,28,1.884595611776949,28,4698.562235235869,4792.197885909968,2448.5714285714284,Jacuí,dropped: median ratio > 1.3,False
+3144409,Sul e Centro-Oeste,28,1.4340744020970941,17,2771.6149034142627,2235.173057338128,2069.0714285714284,Natércia,dropped: median ratio > 1.3,False
+3107208,Sul e Centro-Oeste,28,inf,28,2270.403686285269,1318.9992011617503,0.2857142857142857,Bocaina de Minas,dropped: median ratio > 1.3,False
+3108909,Sul e Centro-Oeste,28,2.5816198269835056,27,2085.352954689302,1409.5236665107457,892.3214285714286,Brazópolis,dropped: median ratio > 1.3,False
+3101300,Sul e Centro-Oeste,26,2696.859215764395,26,1988.594895042747,1429.6931469612557,0.5384615384615384,Alagoa,dropped: median ratio > 1.3,False
+3101201,Sul e Centro-Oeste,28,50.50219328342178,28,1337.4551708555387,820.7070800697395,26.642857142857142,Aiuruoca,dropped: median ratio > 1.3,False
+3150901,Sul e Centro-Oeste,28,37.834363743283284,28,1287.0938221045883,741.3919654792433,34.035714285714285,Piranguçu,dropped: median ratio > 1.3,False
+3110301,Sul e Centro-Oeste,28,1.664334118916997,19,1205.3153374361264,1167.9353997419862,767.5,Caldas,dropped: median ratio > 1.3,False
+3159209,Sul e Centro-Oeste,28,5.308556476416385,28,1131.0943248826761,558.478210056354,159.64285714285714,Santa Rita de Caldas,dropped: median ratio > 1.3,False
+3171709,Sul e Centro-Oeste,28,8.730674169207514,26,1105.5981891036033,677.7815775037103,177.5,Virgínia,dropped: median ratio > 1.3,False
+3162302,Sul e Centro-Oeste,28,1.3407902067024808,15,1088.40967606669,1174.8205355324874,758.3928571428571,São João da Mata,dropped: median ratio > 1.3,False
+3133006,Sul e Centro-Oeste,28,342.9024129175417,28,930.8952704009024,643.8190384075338,5.107142857142857,Itamonte,dropped: median ratio > 1.3,False
+3114808,Sul e Centro-Oeste,18,inf,18,818.972381512158,376.9150270017923,2.7222222222222223,Carvalhos,dropped: median ratio > 1.3,False
+3107505,Sul e Centro-Oeste,28,372.18596801091644,28,691.2737287215231,315.73898026221525,2.0,Bom Jardim de Minas,dropped: median ratio > 1.3,False
+3127404,Sul e Centro-Oeste,28,inf,28,653.5185566743684,424.4017603027469,1.2857142857142858,Gonçalves,dropped: median ratio > 1.3,False
+3122801,Sul e Centro-Oeste,28,2.2782386835647745,26,642.394221513611,483.701532495168,295.82142857142856,Dom Viçoso,dropped: median ratio > 1.3,False
+3165404,Sul e Centro-Oeste,28,310.64131879690126,28,621.754953034244,380.64366192806006,2.4642857142857144,Sapucaí-Mirim,dropped: median ratio > 1.3,False
+3147600,Sul e Centro-Oeste,28,inf,28,576.648143127426,456.6021927414279,0.0,Passa Quatro,dropped: median ratio > 1.3,False
+3147303,Sul e Centro-Oeste,28,3.670944074749282,28,576.1836039645624,331.3245875875155,125.0,Paraisópolis,dropped: median ratio > 1.3,False
+3147808,Sul e Centro-Oeste,28,inf,28,566.196821778445,271.37063149760166,0.8571428571428571,Passa Vinte,dropped: median ratio > 1.3,False
+3131505,Sul e Centro-Oeste,27,inf,27,539.8880887524546,258.5366453177204,1.2222222222222223,Ipuiúna,dropped: median ratio > 1.3,False
+3107901,Sul e Centro-Oeste,23,153.23343866484274,23,502.5666821035121,146.25910282395049,9.869565217391305,Bom Repouso,dropped: median ratio > 1.3,False
+3138500,Sul e Centro-Oeste,20,inf,20,498.8622175468732,267.56803649713595,1.6,Liberdade,dropped: median ratio > 1.3,False
+3169059,Sul e Centro-Oeste,28,1.6964003375063257,19,481.3444452954983,352.94717504922664,292.67857142857144,Tocos do Moji,dropped: median ratio > 1.3,False
+3117801,Sul e Centro-Oeste,28,1.530484002489032,18,468.855065771738,294.9115919008559,320.32142857142856,Conceição dos Ouros,dropped: median ratio > 1.3,False
+3124500,Sul e Centro-Oeste,28,91.16611921482665,28,463.5868857559234,187.86095006921715,16.642857142857142,Estiva,dropped: median ratio > 1.3,False
+3139904,Sul e Centro-Oeste,28,5.379937308967485,28,457.0086734092452,262.4507121037619,74.07142857142857,Maria da Fé,dropped: median ratio > 1.3,False
+3163201,Sul e Centro-Oeste,28,1.4458051126415756,18,287.74751564989737,246.7987498069803,186.25,São José do Alegre,dropped: median ratio > 1.3,False
+3132404,Sul e Centro-Oeste,28,4.402528354632514,28,226.2172407927988,115.4421845149176,41.25,Itajubá,dropped: median ratio > 1.3,False
+3110509,Sul e Centro-Oeste,18,inf,18,189.22750956266597,101.56173806099916,0.0,Camanducaia,dropped: median ratio > 1.3,False
+3110608,Sul e Centro-Oeste,28,10.406065699964323,28,148.81789973062837,77.44703412783497,17.071428571428573,Cambuí,dropped: median ratio > 1.3,False
+3121100,Sul e Centro-Oeste,28,inf,28,145.9769826045651,109.22305438255565,0.8571428571428571,Delfim Moreira,dropped: median ratio > 1.3,False
+3152501,Sul e Centro-Oeste,28,1.4998514734534338,18,141.5805364052966,95.1178265323826,87.0,Pouso Alegre,dropped: median ratio > 1.3,False
+3125101,Sul e Centro-Oeste,28,45.197279015599804,28,121.78937472001198,96.502459026055,7.821428571428571,Extrema,dropped: median ratio > 1.3,False
+3133600,Sul e Centro-Oeste,28,inf,28,120.32419031425498,65.1591731150945,1.7142857142857142,Itapeva,dropped: median ratio > 1.3,False
+3146503,Sul e Centro-Oeste,18,inf,18,105.16344277986458,138.4279715144751,1.8888888888888888,Pains,dropped: median ratio > 1.3,False
+3140407,Sul e Centro-Oeste,28,inf,28,77.2925613289652,77.14657383412123,0.0,Marmelópolis,dropped: median ratio > 1.3,False
+3122306,Sul e Centro-Oeste,28,inf,18,72.28334222481344,26.23888022452593,108.03571428571429,Divinópolis,dropped: median ratio > 1.3,False
+3119906,Sul e Centro-Oeste,23,69.82149954051071,23,68.35968737271966,26.32738237562133,1.0434782608695652,Córrego do Bom Jesus,dropped: median ratio > 1.3,False
+3118502,Sul e Centro-Oeste,27,5.830500643720813,27,64.19620714757998,20.216203454984168,17.25925925925926,Consolação,dropped: median ratio > 1.3,False
+3141900,Sul e Centro-Oeste,16,18.709481170400977,16,55.61493978431704,39.37522776424885,9.0625,Minduri,dropped: median ratio > 1.3,False
+3166402,Sul e Centro-Oeste,23,inf,23,55.10987216238799,32.65093392878771,0.34782608695652173,Seritinga,dropped: median ratio > 1.3,False
+3172202,Sul e Centro-Oeste,28,inf,28,49.162896670184054,18.96788384955304,0.0,Wenceslau Braz,dropped: median ratio > 1.3,False
+3133105,Sul e Centro-Oeste,28,inf,26,42.75334678208899,29.140654194442664,14.285714285714286,Itanhandu,dropped: median ratio > 1.3,False
+3165578,Sul e Centro-Oeste,18,inf,18,41.257837616822336,12.110622885618724,0.0,Senador Amaral,dropped: median ratio > 1.3,False
+3103603,Sul e Centro-Oeste,21,inf,21,37.77823940388212,20.21794983718325,0.3333333333333333,Arantina,dropped: median ratio > 1.3,False
+3167004,Sul e Centro-Oeste,27,37.99958447244238,27,34.40079596018111,14.796523466706276,5.814814814814815,Serranos,dropped: median ratio > 1.3,False
+3133758,Sul e Centro-Oeste,27,1.48910102321911,18,30.81457373281779,31.70166732256904,19.11111111111111,Itaú de Minas,dropped: median ratio > 1.3,False
+3165305,Sul e Centro-Oeste,28,inf,28,29.165319907345943,11.988451912999151,1.8214285714285714,São Vicente de Minas,dropped: median ratio > 1.3,False
+3143807,Sul e Centro-Oeste,19,21.74599831551313,11,24.569351035041386,17.528679355978966,6.894736842105263,Munhoz,dropped: median ratio > 1.3,False
+3148905,Sul e Centro-Oeste,28,11.597590651363134,23,22.343445883833226,4.617812633514404,5.535714285714286,Pedra do Indaiá,dropped: median ratio > 1.3,False
+3169109,Sul e Centro-Oeste,15,5.721455791938344,15,16.888598477477284,7.271810196340084,4.0,Toledo,dropped: median ratio > 1.3,False
+3149705,Sul e Centro-Oeste,18,28.044616190351398,18,12.567996152535247,1.4304918199777603,0.7142857142857143,Perdigão,dropped: median ratio > 1.3,False
+3145208,Sul e Centro-Oeste,4,inf,3,2.2947904332011353,0.0,10.0,Nova Serrana,dropped: median ratio > 1.3,False
+3117603,Sul e Centro-Oeste,6,inf,6,2.211971377953887,0.0,0.0,Conceição do Pará,dropped: median ratio > 1.3,False
+3504503,São Paulo (state total),28,1.6481681712608829,20,849.9614586099345,1074.1515952309849,421.67857142857144,Avaré,dropped: median ratio > 1.3,False
+3514700,São Paulo (state total),28,2.028035166597496,27,767.2948765231332,581.1957121105754,318.7857142857143,Echaporã,dropped: median ratio > 1.3,False
+3531407,São Paulo (state total),28,1.8083407621683556,14,638.8401737842918,894.0375031787099,229.64285714285714,Monte Aprazível,dropped: median ratio > 1.3,False
+3504008,São Paulo (state total),28,106.59396825197572,28,626.7679551678294,429.5279578304174,6.428571428571429,Assis,dropped: median ratio > 1.3,False
+3548609,São Paulo (state total),28,inf,28,605.0044236300133,453.6052072210054,11.607142857142858,São Bento do Sapucaí,dropped: median ratio > 1.3,False
+3553401,São Paulo (state total),28,1.9941228205565145,16,559.2512021980814,839.997393439155,410.60714285714283,Tanabi,dropped: median ratio > 1.3,False
+3542503,São Paulo (state total),28,3.4973338380393213,15,470.0273849262201,647.6216156139969,152.96428571428572,Reginópolis,dropped: median ratio > 1.3,False
+3506300,São Paulo (state total),28,1.7431096440861427,25,419.6167541677795,256.4322933153779,213.64285714285714,Bernardino de Campos,dropped: median ratio > 1.3,False
+3530300,São Paulo (state total),28,6.1552693048708775,20,406.6848834592474,542.7628866411308,96.67857142857143,Mirassol,dropped: median ratio > 1.3,False
+3552601,São Paulo (state total),28,16.075786778075354,24,395.1009154529976,536.3421026393771,56.892857142857146,Tabapuã,dropped: median ratio > 1.3,False
+3525706,São Paulo (state total),28,2.789562843317787,18,357.9320603837924,495.63834741711617,111.60714285714286,José Bonifácio,dropped: median ratio > 1.3,False
+3513603,São Paulo (state total),15,inf,15,355.2438552326171,247.08326329010373,1.0,Cunha,dropped: median ratio > 1.3,False
+3532504,São Paulo (state total),28,7.120539804730515,18,343.7135062492821,467.1925852235334,127.46428571428571,Neves Paulista,dropped: median ratio > 1.3,False
+3504800,São Paulo (state total),28,2.4011781649049597,17,335.9219673690363,510.65578778339375,162.10714285714286,Bálsamo,dropped: median ratio > 1.3,False
+3539707,São Paulo (state total),26,inf,26,312.68371553294236,271.8529247221117,6.0,Platina,dropped: median ratio > 1.3,False
+3512902,São Paulo (state total),28,1.3984971016749024,14,295.75103212260444,458.5579291569544,274.67857142857144,Cosmorama,dropped: median ratio > 1.3,False
+3524501,São Paulo (state total),28,5.728662599428466,19,295.02117453490484,455.438867746352,83.78571428571429,Jaci,dropped: median ratio > 1.3,False
+3542206,São Paulo (state total),28,5.428740662165549,25,280.99167453264636,291.1089977909829,64.32142857142857,Rancharia,dropped: median ratio > 1.3,False
+3535002,São Paulo (state total),28,inf,24,276.13631461826816,404.03848124295473,8.785714285714286,Palestina,dropped: median ratio > 1.3,False
+3549904,São Paulo (state total),20,inf,20,271.5614914331637,245.17166654339024,2.0,São José dos Campos,dropped: median ratio > 1.3,False
+3531704,São Paulo (state total),14,inf,14,262.8540276059949,229.57108496597,0.21428571428571427,Monteiro Lobato,dropped: median ratio > 1.3,False
+3528106,São Paulo (state total),28,11.421247247606516,21,251.86225468482644,328.90140264548506,79.42857142857143,Macaubal,dropped: median ratio > 1.3,False
+3535507,São Paulo (state total),28,7.04003671417205,28,249.04099230525978,184.49978668242693,48.25,Paraguaçu Paulista,dropped: median ratio > 1.3,False
+3539608,São Paulo (state total),28,inf,28,231.2804194391087,304.01511333742565,10.0,Planalto,dropped: median ratio > 1.3,False
+3534104,São Paulo (state total),28,1.651137758565608,24,224.57750056365333,244.64929614026173,116.42857142857143,Oriente,dropped: median ratio > 1.3,False
+3533007,São Paulo (state total),28,inf,19,224.10498310811818,381.4773673713207,13.535714285714286,Nova Granada,dropped: median ratio > 1.3,False
+3519253,São Paulo (state total),28,inf,28,209.0303047766142,346.77376150334,3.857142857142857,Iaras,dropped: median ratio > 1.3,False
+3510807,São Paulo (state total),28,1.9662728960091451,18,206.46888385090443,303.005326516751,112.75,Casa Branca,dropped: median ratio > 1.3,False
+3548203,São Paulo (state total),28,inf,28,192.4278999449388,143.6011005685902,0.0,Santo Antônio do Pinhal,dropped: median ratio > 1.3,False
+3533908,São Paulo (state total),28,45.74813913270832,25,191.94999836714265,224.1082341309272,19.107142857142858,Olímpia,dropped: median ratio > 1.3,False
+3500550,São Paulo (state total),28,10.478426958138451,27,183.59624580451046,305.84528922616846,58.285714285714285,Águas de Santa Bárbara,dropped: median ratio > 1.3,False
+3529302,São Paulo (state total),28,2.333223820049316,15,167.9345504327544,193.7396145015955,566.8571428571429,Matão,dropped: median ratio > 1.3,False
+3531308,São Paulo (state total),28,9.589324198976842,28,163.52801028902144,233.32789010087063,23.178571428571427,Monte Alto,dropped: median ratio > 1.3,False
+3530409,São Paulo (state total),28,2.3489393533732184,17,159.56285867080697,227.1382563430889,47.67857142857143,Mirassolândia,dropped: median ratio > 1.3,False
+3533502,São Paulo (state total),28,2.4757814165225405,14,156.58434924927934,211.52916150326823,134.35714285714286,Novo Horizonte,dropped: median ratio > 1.3,False
+3503406,São Paulo (state total),28,3.1652541159435232,15,154.610097916058,222.15294492972248,79.75,Arealva,dropped: median ratio > 1.3,False
+3504602,São Paulo (state total),28,2.500483662698011,26,153.9666240980833,182.66869943626955,30.785714285714285,Bady Bassitt,dropped: median ratio > 1.3,False
+3532801,São Paulo (state total),28,1.4496561105825445,15,152.65193182657308,209.6674301288,150.82142857142858,Nova Aliança,dropped: median ratio > 1.3,False
+3507456,São Paulo (state total),28,4.286924692991265,28,146.4273427487213,206.0023179019784,19.392857142857142,Borebi,dropped: median ratio > 1.3,False
+3525508,São Paulo (state total),28,2.800388436497682,16,144.6471906688325,116.54571196878074,99.78571428571429,Joanópolis,dropped: median ratio > 1.3,False
+3532702,São Paulo (state total),28,1.6946638996650778,20,140.2025159410694,152.96396945358492,63.92857142857143,Nipoã,dropped: median ratio > 1.3,False
+3523602,São Paulo (state total),28,1.480577856446374,16,139.5854022447364,192.4116663178977,93.32142857142857,Itirapina,dropped: median ratio > 1.3,False
+3504305,São Paulo (state total),28,1.7315696330744181,15,132.62320280579397,165.2060488441119,97.78571428571429,Avaí,dropped: median ratio > 1.3,False
+3555604,São Paulo (state total),28,1.657004581356202,15,126.06270617895684,193.17273361677047,74.39285714285714,Uchoa,dropped: median ratio > 1.3,False
+3535804,São Paulo (state total),28,inf,28,123.79364841378161,135.46947377175093,0.0,Paranapanema,dropped: median ratio > 1.3,False
+3521903,São Paulo (state total),28,11.473592147901288,18,116.40146517655512,147.56273427336822,37.357142857142854,Itajobi,dropped: median ratio > 1.3,False
+3555703,São Paulo (state total),28,6.820488791350696,22,112.66535210357117,137.93617130307587,20.107142857142858,União Paulista,dropped: median ratio > 1.3,False
+3517505,São Paulo (state total),28,2.2646326150896643,17,107.48575957285381,131.2045373867832,59.464285714285715,Guapiaçu,dropped: median ratio > 1.3,False
+3539905,São Paulo (state total),28,4.949791126382701,17,105.4254345635907,145.92686988492224,51.214285714285715,Poloni,dropped: median ratio > 1.3,False
+3521150,São Paulo (state total),28,4.99876595026839,19,104.14477420626964,133.64017463639087,19.642857142857142,Ipiguá,dropped: median ratio > 1.3,False
+3505500,São Paulo (state total),28,inf,27,102.54493048699985,140.6219896018213,5.464285714285714,Barretos,dropped: median ratio > 1.3,False
+3530201,São Paulo (state total),28,1.4945639948445288,14,96.24046652311725,153.04361092299223,62.5,Mirante do Paranapanema,dropped: median ratio > 1.3,False
+3554300,São Paulo (state total),28,1.5420409640504253,22,90.95392071133695,103.96629713355912,46.75,Teodoro Sampaio,dropped: median ratio > 1.3,False
+3535309,São Paulo (state total),28,8.708012024313213,28,84.32729762686151,65.23813623934984,7.464285714285714,Palmital,dropped: median ratio > 1.3,False
+3521507,São Paulo (state total),28,11.25183128879497,23,80.78800619875581,103.36739527796416,17.928571428571427,Irapuã,dropped: median ratio > 1.3,False
+3519907,São Paulo (state total),21,inf,19,73.59243368043744,54.830331217132354,8.285714285714286,Iepê,dropped: median ratio > 1.3,False
+3515194,São Paulo (state total),28,2.8182167438549155,16,69.98282818069228,138.92702057642094,7.785714285714286,Espírito Santo do Turvo,dropped: median ratio > 1.3,False
+3534500,São Paulo (state total),28,2.1215713052587084,27,69.59936669628534,96.03832970559596,31.428571428571427,Oscar Bressane,dropped: median ratio > 1.3,False
+3515350,São Paulo (state total),19,inf,19,65.77374402934512,78.2655866184071,0.0,Euclides da Cunha Paulista,dropped: median ratio > 1.3,False
+3518404,São Paulo (state total),28,inf,28,62.374944401824585,68.26062171161175,0.0,Guaratinguetá,dropped: median ratio > 1.3,False
+3519600,São Paulo (state total),28,3.4100395251686377,18,59.20667720798935,82.42350504547358,34.892857142857146,Ibitinga,dropped: median ratio > 1.3,False
+3535606,São Paulo (state total),22,inf,20,55.07001612317078,72.85755515639104,7.363636363636363,Paraibuna,dropped: median ratio > 1.3,False
+3534005,São Paulo (state total),28,inf,28,55.005259798307506,75.58974848687649,0.35714285714285715,Onda Verde,dropped: median ratio > 1.3,False
+3500204,São Paulo (state total),28,inf,17,54.50077170982894,86.50384549831642,35.714285714285715,Adolfo,dropped: median ratio > 1.3,False
+3556008,São Paulo (state total),28,5.015014295804807,18,52.27267821127397,68.05149649615382,25.0,Urupês,dropped: median ratio > 1.3,False
+3552007,São Paulo (state total),28,inf,28,52.0271657910198,39.156405970454216,0.0,Silveiras,dropped: median ratio > 1.3,False
+3544202,São Paulo (state total),18,inf,15,51.73861575818488,107.82875730097294,0.25,Riolândia,dropped: median ratio > 1.3,False
+3549607,São Paulo (state total),28,inf,28,48.91160228286951,33.640137157574586,3.0714285714285716,São José do Barreiro,dropped: median ratio > 1.3,False
+3553708,São Paulo (state total),28,7.449109400732844,18,47.949092640783064,72.47667979396442,15.035714285714286,Taquaritinga,dropped: median ratio > 1.3,False
+3541901,São Paulo (state total),28,inf,28,44.9999152704009,15.1506609916687,2.7857142857142856,Queluz,dropped: median ratio > 1.3,False
+3525607,São Paulo (state total),27,inf,15,44.70644866896256,62.68294329941273,57.77777777777778,João Ramalho,dropped: median ratio > 1.3,False
+3509700,São Paulo (state total),23,inf,23,42.620146623780784,27.09261873373213,0.0,Campos do Jordão,dropped: median ratio > 1.3,False
+3535101,São Paulo (state total),28,inf,28,42.11973157977419,59.90381407737732,0.7142857142857143,Palmares Paulista,dropped: median ratio > 1.3,False
+3519402,São Paulo (state total),28,4.039273936959239,18,38.88242182254228,58.33482500741295,19.0,Ibirá,dropped: median ratio > 1.3,False
+3536604,São Paulo (state total),28,inf,28,38.11414547688549,72.31081850297895,0.0,Paulo de Faria,dropped: median ratio > 1.3,False
+3538501,São Paulo (state total),28,inf,28,37.95568484227572,40.948330134153366,0.5,Piquete,dropped: median ratio > 1.3,False
+3545506,São Paulo (state total),28,4.054468389600515,17,35.12307539147948,51.58299744146712,31.035714285714285,Sandovalina,dropped: median ratio > 1.3,False
+3522406,São Paulo (state total),28,inf,28,31.742490010868227,47.67120557278395,0.0,Itapeva,dropped: median ratio > 1.3,False
+3545001,São Paulo (state total),28,inf,28,31.06681135253725,41.55940838903189,0.03571428571428571,Salesópolis,dropped: median ratio > 1.3,False
+3538600,São Paulo (state total),28,1.6518798256709295,16,30.128239395475685,42.28682407377397,38.25,Piracaia,dropped: median ratio > 1.3,False
+3528809,São Paulo (state total),21,inf,21,27.618826861225635,22.9049226269126,0.0,Maracaí,dropped: median ratio > 1.3,False
+3521101,São Paulo (state total),28,5.5701324288488605,27,27.495427508173243,39.91492168958865,4.392857142857143,Ipeúna,dropped: median ratio > 1.3,False
+3541208,São Paulo (state total),28,2.1547643390794597,16,26.816763550575292,36.38233838230372,11.178571428571429,Presidente Bernardes,dropped: median ratio > 1.3,False
+3504909,São Paulo (state total),28,inf,24,26.794469399443443,34.86386398226023,4.785714285714286,Bananal,dropped: median ratio > 1.3,False
+3551306,São Paulo (state total),28,1.6549785302992839,14,26.774133553230712,31.444011282745528,36.464285714285715,Sebastianópolis do Sul,dropped: median ratio > 1.3,False
+3550001,São Paulo (state total),22,inf,20,26.406941901736946,26.09095460176468,6.454545454545454,São Luiz do Paraitinga,dropped: median ratio > 1.3,False
+3533254,São Paulo (state total),28,33.23942353948951,28,25.980048573176777,33.1977578997612,1.2142857142857142,Novais,dropped: median ratio > 1.3,False
+3513405,São Paulo (state total),28,inf,25,23.087951401030484,19.67310252934694,2.5,Cruzeiro,dropped: median ratio > 1.3,False
+3534203,São Paulo (state total),15,inf,15,22.328674718732383,40.53533582488696,0.0,Orindiúva,dropped: median ratio > 1.3,False
+3516853,São Paulo (state total),28,3.9116633732797084,23,21.482732634503055,36.45201584457183,5.464285714285714,Gavião Peixoto,dropped: median ratio > 1.3,False
+3521705,São Paulo (state total),28,inf,28,20.8494167899979,16.960345439612865,2.1785714285714284,Itaberá,dropped: median ratio > 1.3,False
+3557154,São Paulo (state total),28,inf,17,20.798231699151778,33.54170563457643,19.214285714285715,Zacarias,dropped: median ratio > 1.3,False
+3535705,São Paulo (state total),28,2.067642282850842,17,20.496262940451377,27.840864427387714,6.035714285714286,Paraíso,dropped: median ratio > 1.3,False
+3526605,São Paulo (state total),18,inf,18,19.527065488821318,12.662694789469242,0.5555555555555556,Lavrinhas,dropped: median ratio > 1.3,False
+3510104,São Paulo (state total),28,inf,28,17.055088290421903,21.123009384438102,0.0,Cândido Rodrigues,dropped: median ratio > 1.3,False
+3554805,São Paulo (state total),24,inf,24,16.224851045481007,7.528456756034319,0.0,Tremembé,dropped: median ratio > 1.3,False
+3500907,São Paulo (state total),28,inf,22,15.81642287330968,15.010354153811932,3.5714285714285716,Altair,dropped: median ratio > 1.3,False
+3517901,São Paulo (state total),26,inf,22,15.646613032956209,20.55442948639393,0.8571428571428571,Guaraci,dropped: median ratio > 1.3,False
+3537800,São Paulo (state total),28,inf,28,15.385109441620964,18.689963430166245,1.25,Piedade,dropped: median ratio > 1.3,False
+3544806,São Paulo (state total),28,inf,16,15.371123061648436,26.952289134263992,31.821428571428573,Sales,dropped: median ratio > 1.3,False
+3515301,São Paulo (state total),28,inf,25,14.460799835628572,8.954238894698667,2.2857142857142856,Estrela do Norte,dropped: median ratio > 1.3,False
+3519808,São Paulo (state total),23,inf,16,13.987150802143983,19.976858869194984,15.178571428571429,Icém,dropped: median ratio > 1.3,False
+3520202,São Paulo (state total),20,inf,20,11.048140842678333,14.272577325006326,1.95,Igaratá,dropped: median ratio > 1.3,False
+3524907,São Paulo (state total),17,inf,13,10.812050733183112,11.68609730899334,5.352941176470588,Jambeiro,dropped: median ratio > 1.3,False
+3553955,São Paulo (state total),28,inf,27,9.55221917932587,7.437214098870754,0.10714285714285714,Tarumã,dropped: median ratio > 1.3,False
+3503505,São Paulo (state total),28,inf,28,9.028554268713508,5.698946110904217,0.7142857142857143,Areias,dropped: median ratio > 1.3,False
+3508504,São Paulo (state total),20,inf,11,7.655458476702248,4.9987187236255295,27.6,Caçapava,dropped: median ratio > 1.3,False
+3508603,São Paulo (state total),28,inf,19,7.046093571004497,9.332548715174198,4.357142857142857,Cachoeira Paulista,dropped: median ratio > 1.3,False
+3542305,São Paulo (state total),22,inf,13,5.643468009582421,9.246596493908005,8.434782608695652,Redenção da Serra,dropped: median ratio > 1.3,False
+3526308,São Paulo (state total),11,inf,11,5.632135413054909,4.534392349421978,0.0,Lagoinha,dropped: median ratio > 1.3,False
+3527207,São Paulo (state total),10,inf,10,5.4443487169706275,6.688738130033016,0.0,Lorena,dropped: median ratio > 1.3,False
+3553906,São Paulo (state total),4,inf,4,5.3818022425153424,4.722107045352459,0.0,Tarabai,dropped: median ratio > 1.3,False
+3555406,São Paulo (state total),20,inf,20,5.31561436860376,6.188312554067256,0.0,Ubatuba,dropped: median ratio > 1.3,False
+3511706,São Paulo (state total),24,inf,12,5.076723261931989,9.34156028429667,3.4166666666666665,Charqueada,dropped: median ratio > 1.3,False
+3528858,São Paulo (state total),28,inf,18,5.064751051632421,6.3433152213692665,8.035714285714286,Marapoama,dropped: median ratio > 1.3,False
+3553500,São Paulo (state total),28,inf,28,5.057338633441499,3.685373336076737,0.0,Tapiraí,dropped: median ratio > 1.3,False
+3553658,São Paulo (state total),28,inf,28,5.008230020159057,1.2534845545887947,0.0,Taquaral,dropped: median ratio > 1.3,False
+3539301,São Paulo (state total),28,inf,14,4.892986483073661,5.064775310456753,166.82142857142858,Pirassununga,dropped: median ratio > 1.3,False
+3509304,São Paulo (state total),28,inf,16,4.54567619890538,7.281779897300636,4.321428571428571,Cajobi,dropped: median ratio > 1.3,False
+3551900,São Paulo (state total),24,inf,15,4.281588314633284,5.86017007380724,9.392857142857142,Severínia,dropped: median ratio > 1.3,False
+3545605,São Paulo (state total),25,inf,18,4.252988464864237,7.844287298619747,0.8928571428571429,Santa Adélia,dropped: median ratio > 1.3,False
+3546009,São Paulo (state total),28,inf,26,3.7481516474591836,4.43766513466835,0.5,Santa Branca,dropped: median ratio > 1.3,False
+3532207,São Paulo (state total),27,1.736207254230976,18,3.030201745884759,1.1587576419115069,13.178571428571429,Narandiba,dropped: median ratio > 1.3,False
+3515608,São Paulo (state total),28,inf,15,2.961753831644143,2.8366993740201,7.785714285714286,Fernando Prestes,dropped: median ratio > 1.3,False
+3516101,São Paulo (state total),28,inf,14,2.876644829022033,3.3837544694542885,4.464285714285714,Florínea,dropped: median ratio > 1.3,False
+3507100,São Paulo (state total),27,inf,25,2.8352990405900136,3.294152453541756,0.35714285714285715,Bom Jesus dos Perdões,dropped: median ratio > 1.3,False
+3537156,São Paulo (state total),11,inf,11,2.6232417320775214,1.4860806092619896,0.0,Pedrinhas Paulista,dropped: median ratio > 1.3,False
+3513306,São Paulo (state total),15,inf,15,2.429321465081945,0.9915743991732596,0.0,Cruzália,dropped: median ratio > 1.3,False
+3553203,São Paulo (state total),28,inf,22,2.2553832778441056,2.7570223957300186,1.8571428571428572,Taiúva,dropped: median ratio > 1.3,False
+3550209,São Paulo (state total),13,inf,13,1.8604678083211184,3.603924848139286,0.0,São Miguel Arcanjo,dropped: median ratio > 1.3,False
+3502507,São Paulo (state total),0,,0,1.7911632769415025,1.6497600302100182,,Aparecida,dropped: untestable (no comparable year),False
+3515152,São Paulo (state total),12,inf,8,1.1083772515079806,0.0,1.0,Engenheiro Coelho,dropped: median ratio > 1.3,False
+3503158,São Paulo (state total),14,inf,12,1.041649597563914,0.0,2.4285714285714284,Arapeí,dropped: median ratio > 1.3,False
+3529708,São Paulo (state total),15,inf,13,0.9546925776771137,1.4287650734186172,0.125,Miguelópolis,dropped: median ratio > 1.3,False
+3556909,São Paulo (state total),20,inf,19,0.8767383098602296,1.1689844131469729,0.17857142857142858,Vista Alegre do Alto,dropped: median ratio > 1.3,False
+3524204,São Paulo (state total),10,inf,10,0.6792912507163626,0.0,0.0,Jaborandi,dropped: median ratio > 1.3,False
+3524402,São Paulo (state total),18,inf,13,0.6053201433803354,1.0695948526263237,1.0,Jacareí,dropped: median ratio > 1.3,False
+3517406,São Paulo (state total),8,inf,8,0.5764007940888405,1.5971106067299845,0.0,Guaíra,dropped: median ratio > 1.3,False
+3541802,São Paulo (state total),7,inf,7,0.4007999473916633,1.2469331696629524,0.0,Queiroz,dropped: median ratio > 1.3,False
+3540507,São Paulo (state total),6,inf,6,0.29980960115790367,1.069908730685711,0.0,Porangaba,dropped: median ratio > 1.3,False
+3503802,São Paulo (state total),4,inf,4,0.2689424425895725,1.3240242451429367,0.0,Artur Nogueira,dropped: median ratio > 1.3,False
+3512209,São Paulo (state total),4,inf,4,0.22192534245550632,0.0,0.0,Conchal,dropped: median ratio > 1.3,False
+3544301,São Paulo (state total),0,,0,0.14134193850415092,0.0,0.0,Roseira,dropped: untestable (no comparable year),False
+3528502,São Paulo (state total),0,,0,0.07053018999951226,0.0,0.0,Mairiporã,dropped: untestable (no comparable year),False
+3152808,"Triângulo, Alto Paranaíba e Noroeste",28,inf,22,92.44252922918115,166.8467719629407,7.535714285714286,Prata,dropped: median ratio > 1.3,False
+3116902,"Triângulo, Alto Paranaíba e Noroeste",28,inf,28,51.4582792249109,102.59945669025184,0.0,Comendador Gomes,dropped: median ratio > 1.3,False
+3127107,"Triângulo, Alto Paranaíba e Noroeste",28,inf,28,50.83556803635189,86.38935918360949,0.0,Frutal,dropped: median ratio > 1.3,False
+3144375,"Triângulo, Alto Paranaíba e Noroeste",9,inf,9,37.085787951147985,103.34999910742044,0.0,Natalândia,dropped: median ratio > 1.3,False
+3133402,"Triângulo, Alto Paranaíba e Noroeste",19,inf,12,21.270673847624234,44.82197181135416,12.5,Itapagipe,dropped: median ratio > 1.3,False
+3111101,"Triângulo, Alto Paranaíba e Noroeste",28,inf,28,17.36252447856324,23.63916916400194,0.0,Campina Verde,dropped: median ratio > 1.3,False
+3171105,"Triângulo, Alto Paranaíba e Noroeste",28,inf,22,16.997367092807377,17.630838222801685,10.714285714285714,Veríssimo,dropped: median ratio > 1.3,False
+3108552,"Triângulo, Alto Paranaíba e Noroeste",28,inf,21,16.80782369424691,13.872686221114565,17.0,Brasilândia de Minas,dropped: median ratio > 1.3,False
+3100708,"Triângulo, Alto Paranaíba e Noroeste",28,inf,18,9.356787975079246,10.437648221850395,15.928571428571429,Água Comprida,dropped: median ratio > 1.3,False
+3171006,"Triângulo, Alto Paranaíba e Noroeste",18,inf,15,6.976372623569866,5.371721170842648,1.25,Vazante,dropped: median ratio > 1.3,False
+3127008,"Triângulo, Alto Paranaíba e Noroeste",13,inf,13,6.865393954462239,13.947047553956509,0.0,Fronteira,dropped: median ratio > 1.3,False
+3111408,"Triângulo, Alto Paranaíba e Noroeste",28,inf,20,6.296707621110337,8.175096288323402,24.821428571428573,Campo Florido,dropped: median ratio > 1.3,False
+3104502,"Triângulo, Alto Paranaíba e Noroeste",11,inf,11,5.0371317105101685,8.96459686011076,0.0,Arinos,dropped: median ratio > 1.3,False
+3122470,"Triângulo, Alto Paranaíba e Noroeste",23,inf,14,4.97213088854083,11.315568670630457,0.6521739130434783,Dom Bosco,dropped: median ratio > 1.3,False
+3151602,"Triângulo, Alto Paranaíba e Noroeste",14,inf,14,3.677651078307203,6.220481283962727,0.0,Planura,dropped: median ratio > 1.3,False
+3161304,"Triângulo, Alto Paranaíba e Noroeste",13,inf,13,1.2034824772604875,2.106280155479908,0.0,São Francisco de Sales,dropped: median ratio > 1.3,False
+3117306,"Triângulo, Alto Paranaíba e Noroeste",20,inf,11,1.1003818304411002,1.2627321034669876,4.5,Conceição das Alagoas,dropped: median ratio > 1.3,False
+3170479,"Triângulo, Alto Paranaíba e Noroeste",8,inf,8,0.5371939297765493,1.031714104115963,0.0,Uruana de Minas,dropped: median ratio > 1.3,False
+3138609,"Zona da Mata, Rio Doce e Central",25,inf,25,1103.0663346269687,689.0753529564131,17.6,Lima Duarte,dropped: median ratio > 1.3,False
+3159308,"Zona da Mata, Rio Doce e Central",28,inf,28,725.5300738748945,383.8006961767581,12.5,Santa Rita de Jacutinga,dropped: median ratio > 1.3,False
+3106804,"Zona da Mata, Rio Doce e Central",17,inf,17,663.7662374432514,410.6524694292861,5.176470588235294,Bias Fortes,dropped: median ratio > 1.3,False
+3159407,"Zona da Mata, Rio Doce e Central",0,,0,549.7687684682477,364.6806160681972,,Santa Rita de Ibitipoca,dropped: untestable (no comparable year),False
+3145406,"Zona da Mata, Rio Doce e Central",20,inf,20,546.7396139777508,332.0922118564155,0.0,Olaria,dropped: median ratio > 1.3,False
+3154408,"Zona da Mata, Rio Doce e Central",28,inf,28,354.1894899039668,202.5701986314912,1.0,Ressaquinha,dropped: median ratio > 1.3,False
+3166204,"Zona da Mata, Rio Doce e Central",28,3.892586160337954,28,297.14882207080325,268.7187680371836,80.07142857142857,Senhora dos Remédios,dropped: median ratio > 1.3,False
+3146107,"Zona da Mata, Rio Doce e Central",28,5.014486440478587,28,274.91481346178705,247.7990030440045,51.0,Ouro Preto,dropped: median ratio > 1.3,False
+3155900,"Zona da Mata, Rio Doce e Central",28,16.305022329696595,28,252.02620704708733,129.92033183031222,18.357142857142858,Rio Preto,dropped: median ratio > 1.3,False
+3156007,"Zona da Mata, Rio Doce e Central",28,7.335484202842113,28,236.70250087049516,226.90051245420588,26.821428571428573,Rio Vermelho,dropped: median ratio > 1.3,False
+3168408,"Zona da Mata, Rio Doce e Central",28,1.3293471160968513,15,228.0686663320596,157.69175052075994,191.92857142857142,Tarumirim,dropped: median ratio > 1.3,False
+3128006,"Zona da Mata, Rio Doce e Central",28,4.644627393334086,28,191.75404362147805,201.7837046964788,44.5,Guanhães,dropped: median ratio > 1.3,False
+3102902,"Zona da Mata, Rio Doce e Central",28,inf,28,182.8252353422156,169.38316010517232,0.14285714285714285,Antônio Carlos,dropped: median ratio > 1.3,False
+3107000,"Zona da Mata, Rio Doce e Central",15,2.1184528232167965,11,166.2237626408892,242.0340727280752,89.4,Biquinhas,dropped: median ratio > 1.3,False
+3113107,"Zona da Mata, Rio Doce e Central",28,5.601514789658829,28,151.01420993200745,119.91021895005424,26.678571428571427,Caranaíba,dropped: median ratio > 1.3,False
+3159100,"Zona da Mata, Rio Doce e Central",25,11.25656184101806,25,139.06917454881975,74.33822054415941,11.04,Santana dos Montes,dropped: median ratio > 1.3,False
+3105608,"Zona da Mata, Rio Doce e Central",28,inf,28,120.79399448667733,152.8707618306665,0.17857142857142858,Barbacena,dropped: median ratio > 1.3,False
+3113206,"Zona da Mata, Rio Doce e Central",28,23.932107231061835,28,119.33870446732898,99.59379202253092,7.25,Carandaí,dropped: median ratio > 1.3,False
+3101631,"Zona da Mata, Rio Doce e Central",26,inf,26,108.92858025613934,59.52596795927074,0.0,Alfredo Vasconcelos,dropped: median ratio > 1.3,False
+3133907,"Zona da Mata, Rio Doce e Central",28,3.216509587689504,25,92.31198175621195,54.96565949352933,31.642857142857142,Itaverava,dropped: median ratio > 1.3,False
+3142304,"Zona da Mata, Rio Doce e Central",28,2.696799688459935,27,88.69862183483228,46.09557696431875,30.571428571428573,Moeda,dropped: median ratio > 1.3,False
+3114600,"Zona da Mata, Rio Doce e Central",28,2.388166962781561,19,88.62836290277144,68.71345482944858,70.0,Carrancas,dropped: median ratio > 1.3,False
+3154200,"Zona da Mata, Rio Doce e Central",27,1.687798754001657,15,79.89358728302314,51.2592507452357,65.48148148148148,Resende Costa,dropped: median ratio > 1.3,False
+3115409,"Zona da Mata, Rio Doce e Central",28,7.711187709778475,28,78.45836308859498,63.23848843635881,12.142857142857142,Catas Altas da Noruega,dropped: median ratio > 1.3,False
+3168309,"Zona da Mata, Rio Doce e Central",28,11.847796480597232,28,77.60088979444605,85.37794296577864,12.0,Taquaraçu de Minas,dropped: median ratio > 1.3,False
+3136603,"Zona da Mata, Rio Doce e Central",28,2.3314674947969616,25,68.71498850248442,88.33241545639785,21.714285714285715,Nova União,dropped: median ratio > 1.3,False
+3134608,"Zona da Mata, Rio Doce e Central",28,inf,16,65.1280426569283,4.640597365796566,74.17857142857143,Jaboticatubas,dropped: median ratio > 1.3,False
+3120409,"Zona da Mata, Rio Doce e Central",28,inf,28,64.63464946461012,27.611234025511088,0.0,Cristiano Otoni,dropped: median ratio > 1.3,False
+3158706,"Zona da Mata, Rio Doce e Central",18,7.878282671543687,18,61.9397016641097,39.71751033409553,7.333333333333333,Santana do Garambéu,dropped: median ratio > 1.3,False
+3105400,"Zona da Mata, Rio Doce e Central",28,31.98252784646317,27,60.47016207144103,71.92336996714857,13.25,Barão de Cocais,dropped: median ratio > 1.3,False
+3108800,"Zona da Mata, Rio Doce e Central",28,6.11656931308033,23,56.20057851905812,57.48883298547829,30.571428571428573,Braúnas,dropped: median ratio > 1.3,False
+3155306,"Zona da Mata, Rio Doce e Central",28,inf,20,46.71144292588536,36.6246864721179,24.75,Rio Manso,dropped: median ratio > 1.3,False
+3131703,"Zona da Mata, Rio Doce e Central",28,2.810324923474999,15,46.03664038148539,73.45262831493336,27.035714285714285,Itabira,dropped: median ratio > 1.3,False
+3145901,"Zona da Mata, Rio Doce e Central",28,1.6153647334401318,23,45.08124987106426,30.55455553046629,22.5,Ouro Branco,dropped: median ratio > 1.3,False
+3129400,"Zona da Mata, Rio Doce e Central",21,inf,21,40.99404752821106,22.716536412694875,2.857142857142857,Ibertioga,dropped: median ratio > 1.3,False
+3149408,"Zona da Mata, Rio Doce e Central",21,inf,21,36.08984720814629,37.85548574930313,0.09523809523809523,Pedro Teixeira,dropped: median ratio > 1.3,False
+3152709,"Zona da Mata, Rio Doce e Central",25,1.5634415366339918,14,30.346988038073818,8.022341102361679,25.64,Prados,dropped: median ratio > 1.3,False
+3120607,"Zona da Mata, Rio Doce e Central",28,3.4769506738831604,16,26.426887378062144,15.02024082094431,20.464285714285715,Crucilândia,dropped: median ratio > 1.3,False
+3163003,"Zona da Mata, Rio Doce e Central",28,inf,21,24.02079574855185,32.50855208208748,4.285714285714286,São José da Safira,dropped: median ratio > 1.3,False
+3157807,"Zona da Mata, Rio Doce e Central",28,inf,28,23.524645942958795,44.09264317823976,0.5714285714285714,Santa Luzia,dropped: median ratio > 1.3,False
+3132206,"Zona da Mata, Rio Doce e Central",28,inf,20,21.912674409470387,5.790616519749165,14.857142857142858,Itaguara,dropped: median ratio > 1.3,False
+3150307,"Zona da Mata, Rio Doce e Central",28,inf,28,20.21415624471397,6.946795869779352,4.464285714285714,Piedade do Rio Grande,dropped: median ratio > 1.3,False
+3107406,"Zona da Mata, Rio Doce e Central",26,inf,18,18.27835252641567,24.5343816652894,55.73076923076923,Bom Despacho,dropped: median ratio > 1.3,False
+3137601,"Zona da Mata, Rio Doce e Central",28,inf,28,17.732184529570596,18.891919419169422,1.75,Lagoa Santa,dropped: median ratio > 1.3,False
+3155207,"Zona da Mata, Rio Doce e Central",28,1.8201511227324896,18,16.237113800555132,16.276498641658062,19.107142857142858,Rio Espera,dropped: median ratio > 1.3,False
+3119104,"Zona da Mata, Rio Doce e Central",15,inf,15,15.099910772804703,21.510262429714203,0.0,Corinto,dropped: median ratio > 1.3,False
+3153806,"Zona da Mata, Rio Doce e Central",27,7.53771310672164,27,14.0841085767003,11.304477505385876,1.8518518518518519,Queluzito,dropped: median ratio > 1.3,False
+3151404,"Zona da Mata, Rio Doce e Central",28,1.4530297969467938,15,12.120670148038439,17.376050263643265,7.642857142857143,Pitangui,dropped: median ratio > 1.3,False
+3109006,"Zona da Mata, Rio Doce e Central",25,2.2580107878966658,16,9.7717994989509,7.310522988438606,6.071428571428571,Brumadinho,dropped: median ratio > 1.3,False
+3160702,"Zona da Mata, Rio Doce e Central",28,inf,24,9.278798031715118,15.280470281810151,2.9642857142857144,Santos Dumont,dropped: median ratio > 1.3,False
+3149606,"Zona da Mata, Rio Doce e Central",28,3.2672728281468153,20,9.130679870024323,7.674177661538124,5.892857142857143,Pequi,dropped: median ratio > 1.3,False
+3123007,"Zona da Mata, Rio Doce e Central",5,inf,5,9.035047629649858,4.929922312498093,0.0,Dores de Campos,dropped: median ratio > 1.3,False
+3106101,"Zona da Mata, Rio Doce e Central",27,1.3567489112416904,14,8.27572378010622,25.081126675009727,11.777777777777779,Belmiro Braga,dropped: median ratio > 1.3,False
+3143609,"Zona da Mata, Rio Doce e Central",9,inf,8,7.751506536400744,19.26864471286536,0.11764705882352941,Morro da Garça,dropped: median ratio > 1.3,False
+3138302,"Zona da Mata, Rio Doce e Central",11,inf,11,7.724587350997146,1.6852061301469805,0.0,Leandro Ferreira,dropped: median ratio > 1.3,False
+3126000,"Zona da Mata, Rio Doce e Central",28,inf,15,7.20616663933969,5.135235920548439,8.214285714285714,Florestal,dropped: median ratio > 1.3,False
+3119401,"Zona da Mata, Rio Doce e Central",26,inf,17,6.859918077302581,1.5195764377713203,21.653846153846153,Coronel Fabriciano,dropped: median ratio > 1.3,False
+3135308,"Zona da Mata, Rio Doce e Central",16,inf,9,6.759529594864164,16.732143692672253,22.625,Japaraíba,dropped: median ratio > 1.3,False
+3118304,"Zona da Mata, Rio Doce e Central",28,inf,28,6.622258531213516,1.0046149119734764,0.9285714285714286,Conselheiro Lafaiete,dropped: median ratio > 1.3,False
+3105509,"Zona da Mata, Rio Doce e Central",24,inf,24,5.2239551812942535,6.508012875914574,0.75,Barão do Monte Alto,dropped: median ratio > 1.3,False
+3150406,"Zona da Mata, Rio Doce e Central",24,inf,12,5.055486885875631,1.4253922700881958,13.5,Piedade dos Gerais,dropped: median ratio > 1.3,False
+3127701,"Zona da Mata, Rio Doce e Central",22,inf,17,4.036084018189575,10.563016390070027,1.8928571428571428,Governador Valadares,dropped: median ratio > 1.3,False
+3132800,"Zona da Mata, Rio Doce e Central",15,inf,9,3.9249033282461374,2.0558999273414704,9.6,Itambé do Mato Dentro,dropped: median ratio > 1.3,False
+3145703,"Zona da Mata, Rio Doce e Central",15,inf,15,3.038004331590206,9.070399489326803,0.0,Oliveira Fortes,dropped: median ratio > 1.3,False
+3144201,"Zona da Mata, Rio Doce e Central",28,1.7850443940098377,16,2.943323313090063,5.862436751670697,20.035714285714285,Nacip Raydan,dropped: median ratio > 1.3,False
+3139102,"Zona da Mata, Rio Doce e Central",28,inf,23,2.8692144217799194,1.2491365894675257,2.4642857142857144,Madre de Deus de Minas,dropped: median ratio > 1.3,False
+3135076,"Zona da Mata, Rio Doce e Central",21,inf,21,2.670009497099188,5.450787510503741,0.0,Jampruca,dropped: median ratio > 1.3,False
+3156700,"Zona da Mata, Rio Doce e Central",21,inf,11,2.5114619580230544,3.705168224871159,2.9130434782608696,Sabará,dropped: median ratio > 1.3,False
+3108107,"Zona da Mata, Rio Doce e Central",12,inf,6,2.4969714689498943,0.0,4.285714285714286,Bonfim,dropped: median ratio > 1.3,False
+3105905,"Zona da Mata, Rio Doce e Central",28,inf,28,2.3826851083764007,2.170956403017044,0.07142857142857142,Barroso,dropped: median ratio > 1.3,False
+3169505,"Zona da Mata, Rio Doce e Central",18,inf,18,1.6233971297208751,1.1850590705871582,0.0,Tumiritinga,dropped: median ratio > 1.3,False
+3125002,"Zona da Mata, Rio Doce e Central",0,,0,1.3280361054011252,7.7368015252492,0.0,Ewbank da Câmara,dropped: untestable (no comparable year),False
+3143500,"Zona da Mata, Rio Doce e Central",6,inf,5,1.3019098376056977,0.0,0.35714285714285715,Morada Nova de Minas,dropped: median ratio > 1.3,False
+3147501,"Zona da Mata, Rio Doce e Central",25,inf,16,1.2214915954640937,1.0978343412280085,4.24,Passabém,dropped: median ratio > 1.3,False
+3125705,"Zona da Mata, Rio Doce e Central",3,inf,3,1.1868672599749905,0.0,0.0,Felixlândia,dropped: median ratio > 1.3,False
+3152006,"Zona da Mata, Rio Doce e Central",6,inf,3,0.7123120086533683,0.0,3.857142857142857,Pompéu,dropped: median ratio > 1.3,False
+3149309,"Zona da Mata, Rio Doce e Central",9,inf,7,0.6327677834215535,1.5175689682364464,1.3571428571428572,Pedro Leopoldo,dropped: median ratio > 1.3,False
+3120904,"Zona da Mata, Rio Doce e Central",4,inf,2,0.5991289455975805,0.0,5.035714285714286,Curvelo,dropped: median ratio > 1.3,False
+3140506,"Zona da Mata, Rio Doce e Central",12,inf,9,0.5757302466247763,0.0,0.42857142857142855,Martinho Campos,dropped: median ratio > 1.3,False
+3150109,"Zona da Mata, Rio Doce e Central",6,inf,6,0.5447363409080676,2.4170798510313034,0.0,Piau,dropped: median ratio > 1.3,False
+3112505,"Zona da Mata, Rio Doce e Central",4,1.6869346462190151,3,0.3072684848947184,0.0,0.1875,Capim Branco,dropped: median ratio > 1.3,False
+3171204,"Zona da Mata, Rio Doce e Central",5,inf,5,0.19866359420120716,0.0,0.0,Vespasiano,dropped: median ratio > 1.3,False
+3146909,"Zona da Mata, Rio Doce e Central",3,inf,2,0.1808645682675498,0.0,0.14285714285714285,Papagaios,dropped: median ratio > 1.3,False
+3109204,"Zona da Mata, Rio Doce e Central",3,inf,3,0.17121063612651927,0.0,0.0,Buenópolis,dropped: median ratio > 1.3,False

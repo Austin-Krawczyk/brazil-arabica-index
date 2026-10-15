@@ -1,0 +1,113 @@
+mask_year,season,region,kept_share
+1998,2000,Sul e Centro-Oeste,0.7876
+1998,2000,São Paulo (state total),0.7897
+1998,2000,"Triângulo, Alto Paranaíba e Noroeste",0.9985
+1998,2000,"Zona da Mata, Rio Doce e Central",0.8892
+1999,2001,Sul e Centro-Oeste,0.8197
+1999,2001,São Paulo (state total),0.8001
+1999,2001,"Triângulo, Alto Paranaíba e Noroeste",0.9984
+1999,2001,"Zona da Mata, Rio Doce e Central",0.894
+2000,2002,Sul e Centro-Oeste,0.8332
+2000,2002,São Paulo (state total),0.8082
+2000,2002,"Triângulo, Alto Paranaíba e Noroeste",0.998
+2000,2002,"Zona da Mata, Rio Doce e Central",0.9008
+2001,2003,Sul e Centro-Oeste,0.8439
+2001,2003,São Paulo (state total),0.8245
+2001,2003,"Triângulo, Alto Paranaíba e Noroeste",0.9981
+2001,2003,"Zona da Mata, Rio Doce e Central",0.9048
+2002,2004,Sul e Centro-Oeste,0.8546
+2002,2004,São Paulo (state total),0.831
+2002,2004,"Triângulo, Alto Paranaíba e Noroeste",0.9981
+2002,2004,"Zona da Mata, Rio Doce e Central",0.9109
+2003,2005,Sul e Centro-Oeste,0.8674
+2003,2005,São Paulo (state total),0.8399
+2003,2005,"Triângulo, Alto Paranaíba e Noroeste",0.9983
+2003,2005,"Zona da Mata, Rio Doce e Central",0.9234
+2004,2006,Sul e Centro-Oeste,0.8754
+2004,2006,São Paulo (state total),0.836
+2004,2006,"Triângulo, Alto Paranaíba e Noroeste",0.9986
+2004,2006,"Zona da Mata, Rio Doce e Central",0.9269
+2005,2007,Sul e Centro-Oeste,0.8839
+2005,2007,São Paulo (state total),0.8353
+2005,2007,"Triângulo, Alto Paranaíba e Noroeste",0.9987
+2005,2007,"Zona da Mata, Rio Doce e Central",0.9287
+2006,2008,Sul e Centro-Oeste,0.8956
+2006,2008,São Paulo (state total),0.8354
+2006,2008,"Triângulo, Alto Paranaíba e Noroeste",0.9987
+2006,2008,"Zona da Mata, Rio Doce e Central",0.9328
+2007,2009,Sul e Centro-Oeste,0.9016
+2007,2009,São Paulo (state total),0.833
+2007,2009,"Triângulo, Alto Paranaíba e Noroeste",0.9987
+2007,2009,"Zona da Mata, Rio Doce e Central",0.9373
+2008,2010,Sul e Centro-Oeste,0.9079
+2008,2010,São Paulo (state total),0.8303
+2008,2010,"Triângulo, Alto Paranaíba e Noroeste",0.9988
+2008,2010,"Zona da Mata, Rio Doce e Central",0.9412
+2009,2011,Sul e Centro-Oeste,0.913
+2009,2011,São Paulo (state total),0.826
+2009,2011,"Triângulo, Alto Paranaíba e Noroeste",0.9988
+2009,2011,"Zona da Mata, Rio Doce e Central",0.9434
+2010,2012,Sul e Centro-Oeste,0.9195
+2010,2012,São Paulo (state total),0.8231
+2010,2012,"Triângulo, Alto Paranaíba e Noroeste",0.9986
+2010,2012,"Zona da Mata, Rio Doce e Central",0.9466
+2011,2013,Sul e Centro-Oeste,0.9269
+2011,2013,São Paulo (state total),0.8208
+2011,2013,"Triângulo, Alto Paranaíba e Noroeste",0.9984
+2011,2013,"Zona da Mata, Rio Doce e Central",0.9522
+2012,2014,Sul e Centro-Oeste,0.9333
+2012,2014,São Paulo (state total),0.8141
+2012,2014,"Triângulo, Alto Paranaíba e Noroeste",0.998
+2012,2014,"Zona da Mata, Rio Doce e Central",0.9555
+2013,2015,Sul e Centro-Oeste,0.9401
+2013,2015,São Paulo (state total),0.8126
+2013,2015,"Triângulo, Alto Paranaíba e Noroeste",0.9978
+2013,2015,"Zona da Mata, Rio Doce e Central",0.958
+2014,2016,Sul e Centro-Oeste,0.9436
+2014,2016,São Paulo (state total),0.8094
+2014,2016,"Triângulo, Alto Paranaíba e Noroeste",0.9976
+2014,2016,"Zona da Mata, Rio Doce e Central",0.9599
+2015,2017,Sul e Centro-Oeste,0.9474
+2015,2017,São Paulo (state total),0.8074
+2015,2017,"Triângulo, Alto Paranaíba e Noroeste",0.9974
+2015,2017,"Zona da Mata, Rio Doce e Central",0.9633
+2016,2018,Sul e Centro-Oeste,0.949
+2016,2018,São Paulo (state total),0.8062
+2016,2018,"Triângulo, Alto Paranaíba e Noroeste",0.9971
+2016,2018,"Zona da Mata, Rio Doce e Central",0.9646
+2017,2019,Sul e Centro-Oeste,0.9496
+2017,2019,São Paulo (state total),0.807
+2017,2019,"Triângulo, Alto Paranaíba e Noroeste",0.9967
+2017,2019,"Zona da Mata, Rio Doce e Central",0.9656
+2018,2020,Sul e Centro-Oeste,0.9514
+2018,2020,São Paulo (state total),0.8173
+2018,2020,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2018,2020,"Zona da Mata, Rio Doce e Central",0.9672
+2019,2021,Sul e Centro-Oeste,0.9515
+2019,2021,São Paulo (state total),0.8184
+2019,2021,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2019,2021,"Zona da Mata, Rio Doce e Central",0.9675
+2020,2022,Sul e Centro-Oeste,0.9515
+2020,2022,São Paulo (state total),0.8186
+2020,2022,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2020,2022,"Zona da Mata, Rio Doce e Central",0.9678
+2021,2023,Sul e Centro-Oeste,0.9517
+2021,2023,São Paulo (state total),0.8201
+2021,2023,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2021,2023,"Zona da Mata, Rio Doce e Central",0.9675
+2022,2024,Sul e Centro-Oeste,0.9517
+2022,2024,São Paulo (state total),0.8194
+2022,2024,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2022,2024,"Zona da Mata, Rio Doce e Central",0.9669
+2023,2025,Sul e Centro-Oeste,0.9514
+2023,2025,São Paulo (state total),0.8196
+2023,2025,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2023,2025,"Zona da Mata, Rio Doce e Central",0.9672
+2024,2026,Sul e Centro-Oeste,0.9513
+2024,2026,São Paulo (state total),0.8198
+2024,2026,"Triângulo, Alto Paranaíba e Noroeste",0.9966
+2024,2026,"Zona da Mata, Rio Doce e Central",0.9672
+2025,2027,Sul e Centro-Oeste,0.9513
+2025,2027,São Paulo (state total),0.8202
+2025,2027,"Triângulo, Alto Paranaíba e Noroeste",0.9967
+2025,2027,"Zona da Mata, Rio Doce e Central",0.9672

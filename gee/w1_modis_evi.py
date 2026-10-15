@@ -136,17 +136,16 @@ def run(project, region, start, end):
 FULL_START, FULL_END = "2000-01-01", "2026-01-01"
 
 
-def run_full(project, region, start=FULL_START, end=FULL_END, sample_codes=None):
+def run_full(project, region, start=FULL_START, end=FULL_END):
     """Per municipality and composite (Amendment 16d): the filter is applied at aggregation."""
+    from w1_mask import meso_table
+
     col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(start, end)
     proj = col.first().select("EVI").projection()
-    munis = ee.FeatureCollection(f"projects/{project}/assets/w1_municipios_index")
-    if sample_codes:
-        munis, wslug = munis.filter(ee.Filter.inList("code", sample_codes)), "sample"
-    else:
-        munis, wslug = munis.filter(ee.Filter.eq("region", region)), slug_of(region)
-    munis = munis.select(["code", "region"])
-    weights = ee.Image(f"projects/{project}/assets/w1_weights_{wslug}")
+    munis = (ee.FeatureCollection(f"projects/{project}/assets/w1_municipios_index")
+             .filter(ee.Filter.eq("region", region)).select(["code", "region"]))
+    mesos = sorted(meso_table().query("conab_region == @region").meso_code.unique())
+    weights = ee.ImageCollection([ee.Image(f"projects/{project}/assets/w1_weights_meso_{m}") for m in mesos]).mosaic()
     reducer = (ee.Reducer.median().combine(ee.Reducer.mean(), sharedInputs=True)
                .combine(ee.Reducer.sum(), sharedInputs=True))
 
@@ -156,15 +155,13 @@ def run_full(project, region, start=FULL_START, end=FULL_END, sample_codes=None)
         m = season.subtract(2).toInt().format("%d")
         qa = img.select("SummaryQA")
         vi = img.select(["EVI", "NDVI"]).multiply(SCALE)
-        bands = []
-        for v, wname in (("f", "w_"), ("p", "wp_")):
-            w = weights.select(ee.String(wname).cat(m))
-            w = w.updateMask(w.gt(0))
-            bands.append(w.rename(f"{v}_w_total"))
-            for q, qmax in (("q0", 0), ("q1", 1)):
-                ok = qa.gte(0).And(qa.lte(qmax))
-                bands += [vi.updateMask(ok).updateMask(w).rename([f"{v}_{q}_EVI", f"{v}_{q}_NDVI"]),
-                          w.updateMask(ok).rename(f"{v}_{q}_w_valid")]
+        # option iii (owner, 2026-10-14): full mask only; QA = SummaryQA 0-1 (good or marginal)
+        w = weights.select(ee.String("w_").cat(m))
+        w = w.updateMask(w.gt(0))
+        ok = qa.gte(0).And(qa.lte(1))
+        bands = [w.rename("f_w_total"),
+                 vi.updateMask(ok).updateMask(w).rename(["f_q1_EVI", "f_q1_NDVI"]),
+                 w.updateMask(ok).rename("f_q1_w_valid")]
         per_muni = ee.Image.cat(bands).reduceRegions(collection=munis, reducer=reducer, crs=proj,
                                                      scale=231.656, tileScale=4)
         return (per_muni.filter(ee.Filter.gt("f_w_total_sum", 0))
@@ -176,11 +173,9 @@ def run_full(project, region, start=FULL_START, end=FULL_END, sample_codes=None)
 
 def full_selectors():
     out = ["code", "region", "composite_start", "season", "mask_year"]
-    for v in ("f", "p"):
-        out.append(f"{v}_w_total_sum")
-        for q in ("q0", "q1"):
-            out += [f"{v}_{q}_{b}_{r}" for b in ("EVI", "NDVI") for r in ("median", "mean")]
-            out.append(f"{v}_{q}_w_valid_sum")
+    out.append("f_w_total_sum")
+    out += [f"f_q1_{b}_{r}" for b in ("EVI", "NDVI") for r in ("median", "mean")]
+    out.append("f_q1_w_valid_sum")
     return out
 
 
@@ -189,7 +184,7 @@ def main():
     a.add_argument("--probe", action="store_true", help="only the probe is run")
     a.add_argument("--export-weight", action="store_true", help="save the region's coffee weight once")
     a.add_argument("--full", action="store_true", help="the full W1 series for one region")
-    a.add_argument("--sample", help="file of municipality codes (with --full --probe)")
+    a.add_argument("--estimate", type=float, help="cost estimate in EECU-seconds (with --full; required)")
     a.add_argument("--region", default="Sul e Centro-Oeste", choices=list(REGIONS))
     a.add_argument("--year", type=int, default=2021)
     args = a.parse_args()
@@ -198,24 +193,27 @@ def main():
     if args.export_weight:
         return export_weight(project, args.region)
     if args.full:
+        from ee_watchdog import export_table_watched
+
+        if not args.estimate:
+            raise SystemExit("--full needs --estimate (EECU-seconds); the watchdog cancels at 2 x it")
         t0 = time.time()
         slug = slug_of(args.region)
-        codes = open(args.sample).read().split() if args.sample else None
         if args.probe:
-            fc = run_full(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01", codes)
-            name = f"w1_full_probe_{'sample' if codes else slug}_{args.year}"
+            fc = run_full(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01")
+            name = f"w1_full_probe_{slug}_{args.year}"
         else:
             fc, name = run_full(project, args.region), f"w1_series_muni_{slug}"
-        df = export_and_fetch(fc, name, full_selectors())
-        cost = BATCH_COSTS[-1][1]
+        df, cost = export_table_watched(fc, name, full_selectors(), args.estimate)
         stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        rows = len(df) if df is not None else 0
         (WEEK0 / "profiles" / f"{name}_{stamp}.txt").write_text(
             f"batch export {name}: {cost:,.0f} EECU-seconds (batch_eecu_usage_seconds), "
-            f"{len(df)} composites, {time.time() - t0:.0f} s wall\n", encoding="utf-8")
-        out = (WEEK0 if args.probe else ROOT / "data" / "derived") / f"{name}.csv"
-        df.to_csv(out, index=False)
-        print(f"{name}: {len(df)} composites, {cost:,.0f} EECU-seconds"
-              + (f" (limit {PROBE_LIMIT}) -> {'PASS' if cost <= PROBE_LIMIT else 'FAIL'}" if args.probe else ""))
+            f"{rows} municipality-composites, {time.time() - t0:.0f} s wall\n", encoding="utf-8")
+        if df is not None:
+            out = (WEEK0 if args.probe else ROOT / "data" / "derived") / f"{name}.csv"
+            df.to_csv(out, index=False)
+        print(f"{name}: {rows} municipality-composites, {cost:,.0f} EECU-seconds")
         return df, cost
     if not args.probe:
         raise SystemExit("Only --export-weight or --probe; the full run is not started from here.")

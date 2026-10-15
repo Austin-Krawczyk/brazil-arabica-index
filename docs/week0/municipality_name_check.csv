@@ -1,0 +1,1336 @@
+code,membership,ibge,pam,in_mesh,in_ibge,in_pam,ibge_exact,ibge_normalised,pam_exact,pam_normalised,pam_names_over_years
+3100807,Aguanil,Aguanil,Aguanil,True,True,True,True,True,True,True,1
+3104205,Arcos,Arcos,Arcos,True,True,True,True,True,True,True,1
+3105103,Bambuí,Bambuí,Bambuí,True,True,True,True,True,True,True,1
+3108008,Bom Sucesso,Bom Sucesso,Bom Sucesso,True,True,True,True,True,True,True,1
+3110400,Camacho,Camacho,Camacho,True,True,True,True,True,True,True,1
+3111200,Campo Belo,Campo Belo,Campo Belo,True,True,True,True,True,True,True,1
+3111903,Cana Verde,Cana Verde,Cana Verde,True,True,True,True,True,True,True,1
+3112000,Candeias,Candeias,Candeias,True,True,True,True,True,True,True,1
+3114006,Carmo da Mata,Carmo da Mata,Carmo da Mata,True,True,True,True,True,True,True,1
+3114204,Carmo do Cajuru,Carmo do Cajuru,Carmo do Cajuru,True,True,True,True,True,True,True,1
+3114501,Carmópolis de Minas,Carmópolis de Minas,Carmópolis de Minas,True,True,True,True,True,True,True,1
+3116605,Cláudio,Cláudio,Cláudio,True,True,True,True,True,True,True,1
+3117603,Conceição do Pará,Conceição do Pará,Conceição do Pará,True,True,True,True,True,True,True,1
+3120201,Cristais,Cristais,Cristais,True,True,True,True,True,True,True,1
+3119807,Córrego Danta,Córrego Danta,Córrego Danta,True,True,True,True,True,True,True,1
+3119955,Córrego Fundo,Córrego Fundo,Córrego Fundo,True,True,True,True,True,True,True,1
+3122306,Divinópolis,Divinópolis,Divinópolis,True,True,True,True,True,True,True,1
+3123403,Doresópolis,Doresópolis,Doresópolis,True,True,True,True,True,True,True,1
+3126109,Formiga,Formiga,Formiga,True,True,True,True,True,True,True,1
+3130002,Ibituruna,Ibituruna,Ibituruna,True,True,True,True,True,True,True,1
+3130200,Igaratinga,Igaratinga,Igaratinga,True,True,True,True,True,True,True,1
+3130309,Iguatama,Iguatama,Iguatama,True,True,True,True,True,True,True,1
+3133501,Itapecerica,Itapecerica,Itapecerica,True,True,True,True,True,True,True,1
+3133808,Itaúna,Itaúna,Itaúna,True,True,True,True,True,True,True,1
+3141306,Medeiros,Medeiros,Medeiros,True,True,True,True,True,True,True,1
+3145208,Nova Serrana,Nova Serrana,Nova Serrana,True,True,True,True,True,True,True,1
+3145604,Oliveira,Oliveira,Oliveira,True,True,True,True,True,True,True,1
+3146503,Pains,Pains,Pains,True,True,True,True,True,True,True,1
+3147709,Passa Tempo,Passa Tempo,Passa Tempo,True,True,True,True,True,True,True,1
+3148905,Pedra do Indaiá,Pedra do Indaiá,Pedra do Indaiá,True,True,True,True,True,True,True,1
+3149705,Perdigão,Perdigão,Perdigão,True,True,True,True,True,True,True,1
+3149903,Perdões,Perdões,Perdões,True,True,True,True,True,True,True,1
+3150505,Pimenta,Pimenta,Pimenta,True,True,True,True,True,True,True,1
+3150604,Piracema,Piracema,Piracema,True,True,True,True,True,True,True,1
+3151503,Piumhi,Piumhi,Piumhi,True,True,True,True,True,True,True,1
+3158805,Santana do Jacaré,Santana do Jacaré,Santana do Jacaré,True,True,True,True,True,True,True,1
+3159902,Santo Antônio do Amparo,Santo Antônio do Amparo,Santo Antônio do Amparo,True,True,True,True,True,True,True,1
+3160405,Santo Antônio do Monte,Santo Antônio do Monte,Santo Antônio do Monte,True,True,True,True,True,True,True,1
+3161205,São Francisco de Paula,São Francisco de Paula,São Francisco de Paula,True,True,True,True,True,True,True,1
+3161809,São Gonçalo do Pará,São Gonçalo do Pará,São Gonçalo do Pará,True,True,True,True,True,True,True,1
+3164308,São Roque de Minas,São Roque de Minas,São Roque de Minas,True,True,True,True,True,True,True,1
+3164605,São Sebastião do Oeste,São Sebastião do Oeste,São Sebastião do Oeste,True,True,True,True,True,True,True,1
+3168200,Tapiraí,Tapiraí,Tapiraí,True,True,True,True,True,True,True,1
+3170602,Vargem Bonita,Vargem Bonita,Vargem Bonita,True,True,True,True,True,True,True,1
+3101201,Aiuruoca,Aiuruoca,Aiuruoca,True,True,True,True,True,True,True,1
+3101300,Alagoa,Alagoa,Alagoa,True,True,True,True,True,True,True,1
+3101409,Albertina,Albertina,Albertina,True,True,True,True,True,True,True,1
+3101607,Alfenas,Alfenas,Alfenas,True,True,True,True,True,True,True,1
+3101904,Alpinópolis,Alpinópolis,Alpinópolis,True,True,True,True,True,True,True,1
+3102001,Alterosa,Alterosa,Alterosa,True,True,True,True,True,True,True,1
+3102605,Andradas,Andradas,Andradas,True,True,True,True,True,True,True,1
+3102803,Andrelândia,Andrelândia,Andrelândia,True,True,True,True,True,True,True,1
+3103603,Arantina,Arantina,Arantina,True,True,True,True,True,True,True,1
+3104106,Arceburgo,Arceburgo,Arceburgo,True,True,True,True,True,True,True,1
+3104304,Areado,Areado,Areado,True,True,True,True,True,True,True,1
+3104908,Baependi,Baependi,Baependi,True,True,True,True,True,True,True,1
+3105301,Bandeira do Sul,Bandeira do Sul,Bandeira do Sul,True,True,True,True,True,True,True,1
+3107109,Boa Esperança,Boa Esperança,Boa Esperança,True,True,True,True,True,True,True,1
+3107208,Bocaina de Minas,Bocaina de Minas,Bocaina de Minas,True,True,True,True,True,True,True,1
+3107505,Bom Jardim de Minas,Bom Jardim de Minas,Bom Jardim de Minas,True,True,True,True,True,True,True,1
+3107604,Bom Jesus da Penha,Bom Jesus da Penha,Bom Jesus da Penha,True,True,True,True,True,True,True,1
+3107901,Bom Repouso,Bom Repouso,Bom Repouso,True,True,True,True,True,True,True,1
+3108305,Borda da Mata,Borda da Mata,Borda da Mata,True,True,True,True,True,True,True,1
+3108404,Botelhos,Botelhos,Botelhos,True,True,True,True,True,True,True,1
+3108909,Brazópolis,Brazópolis,Brazópolis,True,True,True,True,True,True,True,1
+3109105,Bueno Brandão,Bueno Brandão,Bueno Brandão,True,True,True,True,True,True,True,1
+3109501,Cabo Verde,Cabo Verde,Cabo Verde,True,True,True,True,True,True,True,1
+3109709,Cachoeira de Minas,Cachoeira de Minas,Cachoeira de Minas,True,True,True,True,True,True,True,1
+3110301,Caldas,Caldas,Caldas,True,True,True,True,True,True,True,1
+3110509,Camanducaia,Camanducaia,Camanducaia,True,True,True,True,True,True,True,1
+3110707,Cambuquira,Cambuquira,Cambuquira,True,True,True,True,True,True,True,1
+3110608,Cambuí,Cambuí,Cambuí,True,True,True,True,True,True,True,1
+3110905,Campanha,Campanha,Campanha,True,True,True,True,True,True,True,1
+3111002,Campestre,Campestre,Campestre,True,True,True,True,True,True,True,1
+3111309,Campo do Meio,Campo do Meio,Campo do Meio,True,True,True,True,True,True,True,1
+3111606,Campos Gerais,Campos Gerais,Campos Gerais,True,True,True,True,True,True,True,1
+3112406,Capetinga,Capetinga,Capetinga,True,True,True,True,True,True,True,1
+3112802,Capitólio,Capitólio,Capitólio,True,True,True,True,True,True,True,1
+3113602,Careaçu,Careaçu,Careaçu,True,True,True,True,True,True,True,1
+3113909,Carmo da Cachoeira,Carmo da Cachoeira,Carmo da Cachoeira,True,True,True,True,True,True,True,1
+3114105,Carmo de Minas,Carmo de Minas,Carmo de Minas,True,True,True,True,True,True,True,1
+3114402,Carmo do Rio Claro,Carmo do Rio Claro,Carmo do Rio Claro,True,True,True,True,True,True,True,1
+3114808,Carvalhos,Carvalhos,Carvalhos,True,True,True,True,True,True,True,1
+3114709,Carvalhópolis,Carvalhópolis,Carvalhópolis,True,True,True,True,True,True,True,1
+3115508,Caxambu,Caxambu,Caxambu,True,True,True,True,True,True,True,1
+3116407,Claraval,Claraval,Claraval,True,True,True,True,True,True,True,1
+3117108,Conceição da Aparecida,Conceição da Aparecida,Conceição da Aparecida,True,True,True,True,True,True,True,1
+3117207,Conceição das Pedras,Conceição das Pedras,Conceição das Pedras,True,True,True,True,True,True,True,1
+3117702,Conceição do Rio Verde,Conceição do Rio Verde,Conceição do Rio Verde,True,True,True,True,True,True,True,1
+3117801,Conceição dos Ouros,Conceição dos Ouros,Conceição dos Ouros,True,True,True,True,True,True,True,1
+3117900,Congonhal,Congonhal,Congonhal,True,True,True,True,True,True,True,1
+3118502,Consolação,Consolação,Consolação,True,True,True,True,True,True,True,1
+3118700,Coqueiral,Coqueiral,Coqueiral,True,True,True,True,True,True,True,1
+3119005,Cordislândia,Cordislândia,Cordislândia,True,True,True,True,True,True,True,1
+3120508,Cristina,Cristina,Cristina,True,True,True,True,True,True,True,1
+3120805,Cruzília,Cruzília,Cruzília,True,True,True,True,True,True,True,1
+3115102,Cássia,Cássia,Cássia,True,True,True,True,True,True,True,1
+3119906,Córrego do Bom Jesus,Córrego do Bom Jesus,Córrego do Bom Jesus,True,True,True,True,True,True,True,1
+3121100,Delfim Moreira,Delfim Moreira,Delfim Moreira,True,True,True,True,True,True,True,1
+3121209,Delfinópolis,Delfinópolis,Delfinópolis,True,True,True,True,True,True,True,1
+3122405,Divisa Nova,Divisa Nova,Divisa Nova,True,True,True,True,True,True,True,1
+3122801,Dom Viçoso,Dom Viçoso,Dom Viçoso,True,True,True,True,True,True,True,1
+3123601,Elói Mendes,Elói Mendes,Elói Mendes,True,True,True,True,True,True,True,1
+3124401,Espírito Santo do Dourado,Espírito Santo do Dourado,Espírito Santo do Dourado,True,True,True,True,True,True,True,1
+3124500,Estiva,Estiva,Estiva,True,True,True,True,True,True,True,1
+3125101,Extrema,Extrema,Extrema,True,True,True,True,True,True,True,1
+3125200,Fama,Fama,Fama,True,True,True,True,True,True,True,1
+3126307,Fortaleza de Minas,Fortaleza de Minas,Fortaleza de Minas,True,True,True,True,True,True,True,1
+3127404,Gonçalves,Gonçalves,Gonçalves,True,True,True,True,True,True,True,1
+3128105,Guapé,Guapé,Guapé,True,True,True,True,True,True,True,1
+3128303,Guaranésia,Guaranésia,Guaranésia,True,True,True,True,True,True,True,1
+3128709,Guaxupé,Guaxupé,Guaxupé,True,True,True,True,True,True,True,1
+3129202,Heliodora,Heliodora,Heliodora,True,True,True,True,True,True,True,1
+3129707,Ibiraci,Ibiraci,Ibiraci,True,True,True,True,True,True,True,1
+3129905,Ibitiúra de Minas,Ibitiúra de Minas,Ibitiúra de Minas,True,True,True,True,True,True,True,1
+3130507,Ilicínea,Ilicínea,Ilicínea,True,True,True,True,True,True,True,1
+3130606,Inconfidentes,Inconfidentes,Inconfidentes,True,True,True,True,True,True,True,1
+3131505,Ipuiúna,Ipuiúna,Ipuiúna,True,True,True,True,True,True,True,1
+3132404,Itajubá,Itajubá,Itajubá,True,True,True,True,True,True,True,1
+3132909,Itamogi,Itamogi,Itamogi,True,True,True,True,True,True,True,1
+3133006,Itamonte,Itamonte,Itamonte,True,True,True,True,True,True,True,1
+3133105,Itanhandu,Itanhandu,Itanhandu,True,True,True,True,True,True,True,1
+3133600,Itapeva,Itapeva,Itapeva,True,True,True,True,True,True,True,1
+3133758,Itaú de Minas,Itaú de Minas,Itaú de Minas,True,True,True,True,True,True,True,1
+3134905,Jacutinga,Jacutinga,Jacutinga,True,True,True,True,True,True,True,1
+3134806,Jacuí,Jacuí,Jacuí,True,True,True,True,True,True,True,1
+3135902,Jesuânia,Jesuânia,Jesuânia,True,True,True,True,True,True,True,1
+3136900,Juruaia,Juruaia,Juruaia,True,True,True,True,True,True,True,1
+3137809,Lambari,Lambari,Lambari,True,True,True,True,True,True,True,1
+3138500,Liberdade,Liberdade,Liberdade,True,True,True,True,True,True,True,1
+3139003,Machado,Machado,Machado,True,True,True,True,True,True,True,1
+3139904,Maria da Fé,Maria da Fé,Maria da Fé,True,True,True,True,True,True,True,1
+3140407,Marmelópolis,Marmelópolis,Marmelópolis,True,True,True,True,True,True,True,1
+3141900,Minduri,Minduri,Minduri,True,True,True,True,True,True,True,1
+3142601,Monsenhor Paulo,Monsenhor Paulo,Monsenhor Paulo,True,True,True,True,True,True,True,1
+3143005,Monte Belo,Monte Belo,Monte Belo,True,True,True,True,True,True,True,1
+3143203,Monte Santo de Minas,Monte Santo de Minas,Monte Santo de Minas,True,True,True,True,True,True,True,1
+3143401,Monte Sião,Monte Sião,Monte Sião,True,True,True,True,True,True,True,1
+3143807,Munhoz,Munhoz,Munhoz,True,True,True,True,True,True,True,1
+3144102,Muzambinho,Muzambinho,Muzambinho,True,True,True,True,True,True,True,1
+3144409,Natércia,Natércia,Natércia,True,True,True,True,True,True,True,1
+3145109,Nova Resende,Nova Resende,Nova Resende,True,True,True,True,True,True,True,1
+3145505,Olímpio Noronha,Olímpio Noronha,Olímpio Noronha,True,True,True,True,True,True,True,1
+3146008,Ouro Fino,Ouro Fino,Ouro Fino,True,True,True,True,True,True,True,1
+3147204,Paraguaçu,Paraguaçu,Paraguaçu,True,True,True,True,True,True,True,1
+3147303,Paraisópolis,Paraisópolis,Paraisópolis,True,True,True,True,True,True,True,1
+3147600,Passa Quatro,Passa Quatro,Passa Quatro,True,True,True,True,True,True,True,1
+3147808,Passa Vinte,Passa Vinte,Passa Vinte,True,True,True,True,True,True,True,1
+3147907,Passos,Passos,Passos,True,True,True,True,True,True,True,1
+3149101,Pedralva,Pedralva,Pedralva,True,True,True,True,True,True,True,1
+3151008,Piranguinho,Piranguinho,Piranguinho,True,True,True,True,True,True,True,1
+3150901,Piranguçu,Piranguçu,Piranguçu,True,True,True,True,True,True,True,1
+3152501,Pouso Alegre,Pouso Alegre,Pouso Alegre,True,True,True,True,True,True,True,1
+3152600,Pouso Alto,Pouso Alto,Pouso Alto,True,True,True,True,True,True,True,1
+3151701,Poço Fundo,Poço Fundo,Poço Fundo,True,True,True,True,True,True,True,1
+3151800,Poços de Caldas,Poços de Caldas,Poços de Caldas,True,True,True,True,True,True,True,1
+3152907,Pratápolis,Pratápolis,Pratápolis,True,True,True,True,True,True,True,1
+3159209,Santa Rita de Caldas,Santa Rita de Caldas,Santa Rita de Caldas,True,True,True,True,True,True,True,1
+3159605,Santa Rita do Sapucaí,Santa Rita do Sapucaí,Santa Rita do Sapucaí,True,True,True,True,True,True,True,1
+3158300,Santana da Vargem,Santana da Vargem,Santana da Vargem,True,True,True,True,True,True,True,1
+3165404,Sapucaí-Mirim,Sapucaí-Mirim,Sapucaí-Mirim,True,True,True,True,True,True,True,1
+3165578,Senador Amaral,Senador Amaral,Senador Amaral,True,True,True,True,True,True,True,1
+3165800,Senador José Bento,Senador José Bento,Senador José Bento,True,True,True,True,True,True,True,1
+3166402,Seritinga,Seritinga,Seritinga,True,True,True,True,True,True,True,1
+3166907,Serrania,Serrania,Serrania,True,True,True,True,True,True,True,1
+3167004,Serranos,Serranos,Serranos,True,True,True,True,True,True,True,1
+3167400,Silvianópolis,Silvianópolis,Silvianópolis,True,True,True,True,True,True,True,1
+3167806,Soledade de Minas,Soledade de Minas,Soledade de Minas,True,True,True,True,True,True,True,1
+3160801,São Bento Abade,São Bento Abade,São Bento Abade,True,True,True,True,True,True,True,1
+3162005,São Gonçalo do Sapucaí,São Gonçalo do Sapucaí,São Gonçalo do Sapucaí,True,True,True,True,True,True,True,1
+3162948,São José da Barra,São José da Barra,São José da Barra,True,True,True,True,True,True,True,1
+3163201,São José do Alegre,São José do Alegre,São José do Alegre,True,True,True,True,True,True,True,1
+3162203,São João Batista do Glória,São João Batista do Glória,São João Batista do Glória,True,True,True,True,True,True,True,1
+3162302,São João da Mata,São João da Mata,São João da Mata,True,True,True,True,True,True,True,1
+3163706,São Lourenço,São Lourenço,São Lourenço,True,True,True,True,True,True,True,1
+3163904,São Pedro da União,São Pedro da União,São Pedro da União,True,True,True,True,True,True,True,1
+3164407,São Sebastião da Bela Vista,São Sebastião da Bela Vista,São Sebastião da Bela Vista,True,True,True,True,True,True,True,1
+3164704,São Sebastião do Paraíso,São Sebastião do Paraíso,São Sebastião do Paraíso,True,True,True,True,True,True,True,1
+3164902,São Sebastião do Rio Verde,São Sebastião do Rio Verde,São Sebastião do Rio Verde,True,True,True,True,True,True,True,1
+3165107,São Tomás de Aquino,São Tomás de Aquino,São Tomás de Aquino,True,True,True,True,True,True,True,1
+3165206,São Tomé das Letras,São Tomé das Letras,São Tomé das Letras,True,True,True,True,True,True,True,1
+3165305,São Vicente de Minas,São Vicente de Minas,São Vicente de Minas,True,True,True,True,True,True,True,1
+3169059,Tocos do Moji,Tocos do Moji,Tocos do Moji,True,True,True,True,True,True,True,1
+3169109,Toledo,Toledo,Toledo,True,True,True,True,True,True,True,1
+3169307,Três Corações,Três Corações,Três Corações,True,True,True,True,True,True,True,1
+3169406,Três Pontas,Três Pontas,Três Pontas,True,True,True,True,True,True,True,1
+3169802,Turvolândia,Turvolândia,Turvolândia,True,True,True,True,True,True,True,1
+3170701,Varginha,Varginha,Varginha,True,True,True,True,True,True,True,1
+3171709,Virgínia,Virgínia,Virgínia,True,True,True,True,True,True,True,1
+3172202,Wenceslau Braz,Wenceslau Braz,Wenceslau Braz,True,True,True,True,True,True,True,1
+3104502,Arinos,Arinos,Arinos,True,True,True,True,True,True,True,1
+3108206,Bonfinópolis de Minas,Bonfinópolis de Minas,Bonfinópolis de Minas,True,True,True,True,True,True,True,1
+3108552,Brasilândia de Minas,Brasilândia de Minas,Brasilândia de Minas,True,True,True,True,True,True,True,1
+3109303,Buritis,Buritis,Buritis,True,True,True,True,True,True,True,1
+3109451,Cabeceira Grande,Cabeceira Grande,Cabeceira Grande,True,True,True,True,True,True,True,1
+3122470,Dom Bosco,Dom Bosco,Dom Bosco,True,True,True,True,True,True,True,1
+3126208,Formoso,Formoso,Formoso,True,True,True,True,True,True,True,1
+3128600,Guarda-Mor,Guarda-Mor,Guarda-Mor,True,True,True,True,True,True,True,1
+3136306,João Pinheiro,João Pinheiro,João Pinheiro,True,True,True,True,True,True,True,1
+3137106,Lagamar,Lagamar,Lagamar,True,True,True,True,True,True,True,1
+3137536,Lagoa Grande,Lagoa Grande,Lagoa Grande,True,True,True,True,True,True,True,1
+3144375,Natalândia,Natalândia,Natalândia,True,True,True,True,True,True,True,1
+3147006,Paracatu,Paracatu,Paracatu,True,True,True,True,True,True,True,1
+3153400,Presidente Olegário,Presidente Olegário,Presidente Olegário,True,True,True,True,True,True,True,1
+3161700,São Gonçalo do Abaeté,São Gonçalo do Abaeté,São Gonçalo do Abaeté,True,True,True,True,True,True,True,1
+3170404,Unaí,Unaí,Unaí,True,True,True,True,True,True,True,1
+3170479,Uruana de Minas,Uruana de Minas,Uruana de Minas,True,True,True,True,True,True,True,1
+3170750,Varjão de Minas,Varjão de Minas,Varjão de Minas,True,True,True,True,True,True,True,1
+3171006,Vazante,Vazante,Vazante,True,True,True,True,True,True,True,1
+3100104,Abadia dos Dourados,Abadia dos Dourados,Abadia dos Dourados,True,True,True,True,True,True,True,1
+3103504,Araguari,Araguari,Araguari,True,True,True,True,True,True,True,1
+3103751,Araporã,Araporã,Araporã,True,True,True,True,True,True,True,1
+3103801,Arapuá,Arapuá,Arapuá,True,True,True,True,True,True,True,1
+3104007,Araxá,Araxá,Araxá,True,True,True,True,True,True,True,1
+3109808,Cachoeira Dourada,Cachoeira Dourada,Cachoeira Dourada,True,True,True,True,True,True,True,1
+3111101,Campina Verde,Campina Verde,Campina Verde,True,True,True,True,True,True,True,1
+3111408,Campo Florido,Campo Florido,Campo Florido,True,True,True,True,True,True,True,1
+3111507,Campos Altos,Campos Altos,Campos Altos,True,True,True,True,True,True,True,1
+3111804,Canápolis,Canápolis,Canápolis,True,True,True,True,True,True,True,1
+3112604,Capinópolis,Capinópolis,Capinópolis,True,True,True,True,True,True,True,1
+3114303,Carmo do Paranaíba,Carmo do Paranaíba,Carmo do Paranaíba,True,True,True,True,True,True,True,1
+3114550,Carneirinho,Carneirinho,Carneirinho,True,True,True,True,True,True,True,1
+3115003,Cascalho Rico,Cascalho Rico,Cascalho Rico,True,True,True,True,True,True,True,1
+3115805,Centralina,Centralina,Centralina,True,True,True,True,True,True,True,1
+3116902,Comendador Gomes,Comendador Gomes,Comendador Gomes,True,True,True,True,True,True,True,1
+3117306,Conceição das Alagoas,Conceição das Alagoas,Conceição das Alagoas,True,True,True,True,True,True,True,1
+3118205,Conquista,Conquista,Conquista,True,True,True,True,True,True,True,1
+3119302,Coromandel,Coromandel,Coromandel,True,True,True,True,True,True,True,1
+3120706,Cruzeiro da Fortaleza,Cruzeiro da Fortaleza,Cruzeiro da Fortaleza,True,True,True,True,True,True,True,1
+3121258,Delta,Delta,Delta,True,True,True,True,True,True,True,1
+3123502,Douradoquara,Douradoquara,Douradoquara,True,True,True,True,True,True,True,1
+3124807,Estrela do Sul,Estrela do Sul,Estrela do Sul,True,True,True,True,True,True,True,1
+3127008,Fronteira,Fronteira,Fronteira,True,True,True,True,True,True,True,1
+3127107,Frutal,Frutal,Frutal,True,True,True,True,True,True,True,1
+3127909,Grupiara,Grupiara,Grupiara,True,True,True,True,True,True,True,1
+3128907,Guimarânia,Guimarânia,Guimarânia,True,True,True,True,True,True,True,1
+3129103,Gurinhatã,Gurinhatã,Gurinhatã,True,True,True,True,True,True,True,1
+3129509,Ibiá,Ibiá,Ibiá,True,True,True,True,True,True,True,1
+3130705,Indianópolis,Indianópolis,Indianópolis,True,True,True,True,True,True,True,1
+3131406,Ipiaçu,Ipiaçu,Ipiaçu,True,True,True,True,True,True,True,1
+3131604,Iraí de Minas,Iraí de Minas,Iraí de Minas,True,True,True,True,True,True,True,1
+3133402,Itapagipe,Itapagipe,Itapagipe,True,True,True,True,True,True,True,1
+3134202,Ituiutaba,Ituiutaba,Ituiutaba,True,True,True,True,True,True,True,1
+3134400,Iturama,Iturama,Iturama,True,True,True,True,True,True,True,1
+3137502,Lagoa Formosa,Lagoa Formosa,Lagoa Formosa,True,True,True,True,True,True,True,1
+3138625,Limeira do Oeste,Limeira do Oeste,Limeira do Oeste,True,True,True,True,True,True,True,1
+3141207,Matutina,Matutina,Matutina,True,True,True,True,True,True,True,1
+3142809,Monte Alegre de Minas,Monte Alegre de Minas,Monte Alegre de Minas,True,True,True,True,True,True,True,1
+3143104,Monte Carmelo,Monte Carmelo,Monte Carmelo,True,True,True,True,True,True,True,1
+3145000,Nova Ponte,Nova Ponte,Nova Ponte,True,True,True,True,True,True,True,1
+3148004,Patos de Minas,Patos de Minas,Patos de Minas,True,True,True,True,True,True,True,1
+3148103,Patrocínio,Patrocínio,Patrocínio,True,True,True,True,True,True,True,1
+3149200,Pedrinópolis,Pedrinópolis,Pedrinópolis,True,True,True,True,True,True,True,1
+3149804,Perdizes,Perdizes,Perdizes,True,True,True,True,True,True,True,1
+3150703,Pirajuba,Pirajuba,Pirajuba,True,True,True,True,True,True,True,1
+3151602,Planura,Planura,Planura,True,True,True,True,True,True,True,1
+3152808,Prata,Prata,Prata,True,True,True,True,True,True,True,1
+3153004,Pratinha,Pratinha,Pratinha,True,True,True,True,True,True,True,1
+3155504,Rio Paranaíba,Rio Paranaíba,Rio Paranaíba,True,True,True,True,True,True,True,1
+3156403,Romaria,Romaria,Romaria,True,True,True,True,True,True,True,1
+3156908,Sacramento,Sacramento,Sacramento,True,True,True,True,True,True,True,1
+3157708,Santa Juliana,Santa Juliana,Santa Juliana,True,True,True,True,True,True,True,1
+3159704,Santa Rosa da Serra,Santa Rosa da Serra,Santa Rosa da Serra,True,True,True,True,True,True,True,1
+3159803,Santa Vitória,Santa Vitória,Santa Vitória,True,True,True,True,True,True,True,1
+3166808,Serra do Salitre,Serra do Salitre,Serra do Salitre,True,True,True,True,True,True,True,1
+3161304,São Francisco de Sales,São Francisco de Sales,São Francisco de Sales,True,True,True,True,True,True,True,1
+3162104,São Gotardo,São Gotardo,São Gotardo,True,True,True,True,True,True,True,1
+3168101,Tapira,Tapira,Tapira,True,True,True,True,True,True,True,1
+3168903,Tiros,Tiros,Tiros,True,True,True,True,True,True,True,1
+3169604,Tupaciguara,Tupaciguara,Tupaciguara,True,True,True,True,True,True,True,1
+3170107,Uberaba,Uberaba,Uberaba,True,True,True,True,True,True,True,1
+3170206,Uberlândia,Uberlândia,Uberlândia,True,True,True,True,True,True,True,1
+3170438,União de Minas,União de Minas,União de Minas,True,True,True,True,True,True,True,1
+3171105,Veríssimo,Veríssimo,Veríssimo,True,True,True,True,True,True,True,1
+3100708,Água Comprida,Água Comprida,Água Comprida,True,True,True,True,True,True,True,1
+3101631,Alfredo Vasconcelos,Alfredo Vasconcelos,Alfredo Vasconcelos,True,True,True,True,True,True,True,1
+3102902,Antônio Carlos,Antônio Carlos,Antônio Carlos,True,True,True,True,True,True,True,1
+3105608,Barbacena,Barbacena,Barbacena,True,True,True,True,True,True,True,1
+3105905,Barroso,Barroso,Barroso,True,True,True,True,True,True,True,1
+3112208,Capela Nova,Capela Nova,Capela Nova,True,True,True,True,True,True,True,1
+3113107,Caranaíba,Caranaíba,Caranaíba,True,True,True,True,True,True,True,1
+3113206,Carandaí,Carandaí,Carandaí,True,True,True,True,True,True,True,1
+3114600,Carrancas,Carrancas,Carrancas,True,True,True,True,True,True,True,1
+3115201,Conceição da Barra de Minas,Conceição da Barra de Minas,Conceição da Barra de Minas,True,True,True,True,True,True,True,1
+3119708,Coronel Xavier Chaves,Coronel Xavier Chaves,Coronel Xavier Chaves,True,True,True,True,True,True,True,1
+3121506,Desterro do Melo,Desterro do Melo,Desterro do Melo,True,True,True,True,True,True,True,1
+3123007,Dores de Campos,Dores de Campos,Dores de Campos,True,True,True,True,True,True,True,1
+3129400,Ibertioga,Ibertioga,Ibertioga,True,True,True,True,True,True,True,1
+3130408,Ijaci,Ijaci,Ijaci,True,True,True,True,True,True,True,1
+3130804,Ingaí,Ingaí,Ingaí,True,True,True,True,True,True,True,1
+3134301,Itumirim,Itumirim,Itumirim,True,True,True,True,True,True,True,1
+3134509,Itutinga,Itutinga,Itutinga,True,True,True,True,True,True,True,1
+3137403,Lagoa Dourada,Lagoa Dourada,Lagoa Dourada,True,True,True,True,True,True,True,1
+3138203,Lavras,Lavras,Lavras,True,True,True,True,True,True,True,1
+3138708,Luminárias,Luminárias,Luminárias,True,True,True,True,True,True,True,1
+3139102,Madre de Deus de Minas,Madre de Deus de Minas,Madre de Deus de Minas,True,True,True,True,True,True,True,1
+3144508,Nazareno,Nazareno,Nazareno,True,True,True,True,True,True,True,1
+3144607,Nepomuceno,Nepomuceno,Nepomuceno,True,True,True,True,True,True,True,1
+3150307,Piedade do Rio Grande,Piedade do Rio Grande,Piedade do Rio Grande,True,True,True,True,True,True,True,1
+3152709,Prados,Prados,Prados,True,True,True,True,True,True,True,1
+3154200,Resende Costa,Resende Costa,Resende Costa,True,True,True,True,True,True,True,1
+3154408,Ressaquinha,Ressaquinha,Ressaquinha,True,True,True,True,True,True,True,1
+3154705,Ribeirão Vermelho,Ribeirão Vermelho,Ribeirão Vermelho,True,True,True,True,True,True,True,1
+3156106,Ritápolis,Ritápolis,Ritápolis,True,True,True,True,True,True,True,1
+3157302,Santa Bárbara do Tugúrio,Santa Bárbara do Tugúrio,Santa Bárbara do Tugúrio,True,True,True,True,True,True,True,1
+3157336,Santa Cruz de Minas,Santa Cruz de Minas,,True,True,False,True,True,False,False,0
+3158706,Santana do Garambéu,Santana do Garambéu,Santana do Garambéu,True,True,True,True,True,True,True,1
+3166204,Senhora dos Remédios,Senhora dos Remédios,Senhora dos Remédios,True,True,True,True,True,True,True,1
+3162500,São João del Rei,São João del Rei,São João del Rei,True,True,True,True,True,True,True,1
+3165008,São Tiago,São Tiago,São Tiago,True,True,True,True,True,True,True,1
+3168804,Tiradentes,Tiradentes,Tiradentes,True,True,True,True,True,True,True,1
+3100203,Abaeté,Abaeté,Abaeté,True,True,True,True,True,True,True,1
+3103900,Araújos,Araújos,Araújos,True,True,True,True,True,True,True,1
+3104809,Augusto de Lima,Augusto de Lima,Augusto de Lima,True,True,True,True,True,True,True,1
+3107000,Biquinhas,Biquinhas,Biquinhas,True,True,True,True,True,True,True,1
+3107406,Bom Despacho,Bom Despacho,Bom Despacho,True,True,True,True,True,True,True,1
+3109204,Buenópolis,Buenópolis,Buenópolis,True,True,True,True,True,True,True,1
+3115607,Cedro do Abaeté,Cedro do Abaeté,Cedro do Abaeté,True,True,True,True,True,True,True,1
+3119104,Corinto,Corinto,Corinto,True,True,True,True,True,True,True,1
+3120904,Curvelo,Curvelo,Curvelo,True,True,True,True,True,True,True,1
+3123205,Dores do Indaiá,Dores do Indaiá,Dores do Indaiá,True,True,True,True,True,True,True,1
+3124708,Estrela do Indaiá,Estrela do Indaiá,Estrela do Indaiá,True,True,True,True,True,True,True,1
+3125705,Felixlândia,Felixlândia,Felixlândia,True,True,True,True,True,True,True,1
+3131109,Inimutaba,Inimutaba,Inimutaba,True,True,True,True,True,True,True,1
+3135308,Japaraíba,Japaraíba,Japaraíba,True,True,True,True,True,True,True,1
+3136405,Joaquim Felício,Joaquim Felício,Joaquim Felício,True,True,True,True,True,True,True,1
+3137205,Lagoa da Prata,Lagoa da Prata,Lagoa da Prata,True,True,True,True,True,True,True,1
+3138302,Leandro Ferreira,Leandro Ferreira,Leandro Ferreira,True,True,True,True,True,True,True,1
+3138807,Luz,Luz,Luz,True,True,True,True,True,True,True,1
+3140506,Martinho Campos,Martinho Campos,Martinho Campos,True,True,True,True,True,True,True,1
+3142403,Moema,Moema,Moema,True,True,True,True,True,True,True,1
+3142502,Monjolos,Monjolos,Monjolos,True,True,True,True,True,True,True,1
+3143500,Morada Nova de Minas,Morada Nova de Minas,Morada Nova de Minas,True,True,True,True,True,True,True,1
+3143609,Morro da Garça,Morro da Garça,Morro da Garça,True,True,True,True,True,True,True,1
+3146404,Paineiras,Paineiras,Paineiras,True,True,True,True,True,True,True,1
+3152006,Pompéu,Pompéu,Pompéu,True,True,True,True,True,True,True,1
+3153202,Presidente Juscelino,Presidente Juscelino,Presidente Juscelino,True,True,True,True,True,True,True,1
+3153707,Quartel Geral,Quartel Geral,Quartel Geral,True,True,True,True,True,True,True,1
+3160603,Santo Hipólito,Santo Hipólito,Santo Hipólito,True,True,True,True,True,True,True,1
+3166600,Serra da Saudade,Serra da Saudade,Serra da Saudade,True,True,True,True,True,True,True,1
+3169356,Três Marias,Três Marias,Três Marias,True,True,True,True,True,True,True,1
+3102308,Alvinópolis,Alvinópolis,Alvinópolis,True,True,True,True,True,True,True,1
+3102407,Alvorada de Minas,Alvorada de Minas,Alvorada de Minas,True,True,True,True,True,True,True,1
+3103207,Araçaí,Araçaí,Araçaí,True,True,True,True,True,True,True,1
+3105004,Baldim,Baldim,Baldim,True,True,True,True,True,True,True,1
+3105400,Barão de Cocais,Barão de Cocais,Barão de Cocais,True,True,True,True,True,True,True,1
+3106002,Bela Vista de Minas,Bela Vista de Minas,Bela Vista de Minas,True,True,True,True,True,True,True,1
+3106200,Belo Horizonte,Belo Horizonte,Belo Horizonte,True,True,True,True,True,True,True,1
+3106408,Belo Vale,Belo Vale,Belo Vale,True,True,True,True,True,True,True,1
+3106705,Betim,Betim,Betim,True,True,True,True,True,True,True,1
+3107703,Bom Jesus do Amparo,Bom Jesus do Amparo,Bom Jesus do Amparo,True,True,True,True,True,True,True,1
+3108107,Bonfim,Bonfim,Bonfim,True,True,True,True,True,True,True,1
+3109006,Brumadinho,Brumadinho,Brumadinho,True,True,True,True,True,True,True,1
+3109600,Cachoeira da Prata,Cachoeira da Prata,Cachoeira da Prata,True,True,True,True,True,True,True,1
+3109907,Caetanópolis,Caetanópolis,Caetanópolis,True,True,True,True,True,True,True,1
+3110004,Caeté,Caeté,Caeté,True,True,True,True,True,True,True,1
+3112505,Capim Branco,Capim Branco,Capim Branco,True,True,True,True,True,True,True,1
+3114907,Casa Grande,Casa Grande,Casa Grande,True,True,True,True,True,True,True,1
+3115359,Catas Altas,Catas Altas,Catas Altas,True,True,True,True,True,True,True,1
+3115409,Catas Altas da Noruega,Catas Altas da Noruega,Catas Altas da Noruega,True,True,True,True,True,True,True,1
+3117504,Conceição do Mato Dentro,Conceição do Mato Dentro,Conceição do Mato Dentro,True,True,True,True,True,True,True,1
+3117876,Confins,Confins,Confins,True,True,True,True,True,True,True,1
+3118007,Congonhas,Congonhas,Congonhas,True,True,True,True,True,True,True,1
+3118106,Congonhas do Norte,Congonhas do Norte,Congonhas do Norte,True,True,True,True,True,True,True,1
+3118304,Conselheiro Lafaiete,Conselheiro Lafaiete,Conselheiro Lafaiete,True,True,True,True,True,True,True,1
+3118601,Contagem,Contagem,Contagem,True,True,True,True,True,True,True,1
+3118908,Cordisburgo,Cordisburgo,Cordisburgo,True,True,True,True,True,True,True,1
+3120409,Cristiano Otoni,Cristiano Otoni,Cristiano Otoni,True,True,True,True,True,True,True,1
+3120607,Crucilândia,Crucilândia,Crucilândia,True,True,True,True,True,True,True,1
+3121407,Desterro de Entre Rios,Desterro de Entre Rios,Desterro de Entre Rios,True,True,True,True,True,True,True,1
+3121704,Diogo de Vasconcelos,Diogo de Vasconcelos,Diogo de Vasconcelos,True,True,True,True,True,True,True,1
+3121803,Dionísio,Dionísio,Dionísio,True,True,True,True,True,True,True,1
+3122603,Dom Joaquim,Dom Joaquim,Dom Joaquim,True,True,True,True,True,True,True,1
+3123908,Entre Rios de Minas,Entre Rios de Minas,Entre Rios de Minas,True,True,True,True,True,True,True,1
+3124104,Esmeraldas,Esmeraldas,Esmeraldas,True,True,True,True,True,True,True,1
+3125903,Ferros,Ferros,Ferros,True,True,True,True,True,True,True,1
+3126000,Florestal,Florestal,Florestal,True,True,True,True,True,True,True,1
+3126406,Fortuna de Minas,Fortuna de Minas,Fortuna de Minas,True,True,True,True,True,True,True,1
+3127206,Funilândia,Funilândia,Funilândia,True,True,True,True,True,True,True,1
+3129806,Ibirité,Ibirité,Ibirité,True,True,True,True,True,True,True,1
+3130101,Igarapé,Igarapé,Igarapé,True,True,True,True,True,True,True,1
+3131000,Inhaúma,Inhaúma,Inhaúma,True,True,True,True,True,True,True,1
+3131703,Itabira,Itabira,Itabira,True,True,True,True,True,True,True,1
+3131901,Itabirito,Itabirito,Itabirito,True,True,True,True,True,True,True,1
+3132206,Itaguara,Itaguara,Itaguara,True,True,True,True,True,True,True,1
+3132800,Itambé do Mato Dentro,Itambé do Mato Dentro,Itambé do Mato Dentro,True,True,True,True,True,True,True,1
+3133709,Itatiaiuçu,Itatiaiuçu,Itatiaiuçu,True,True,True,True,True,True,True,1
+3133907,Itaverava,Itaverava,Itaverava,True,True,True,True,True,True,True,1
+3134608,Jaboticatubas,Jaboticatubas,Jaboticatubas,True,True,True,True,True,True,True,1
+3135407,Jeceaba,Jeceaba,Jeceaba,True,True,True,True,True,True,True,1
+3135704,Jequitibá,Jequitibá,Jequitibá,True,True,True,True,True,True,True,1
+3136207,João Monlevade,João Monlevade,João Monlevade,True,True,True,True,True,True,True,1
+3136652,Juatuba,Juatuba,Juatuba,True,True,True,True,True,True,True,1
+3137601,Lagoa Santa,Lagoa Santa,Lagoa Santa,True,True,True,True,True,True,True,1
+3139706,Maravilhas,Maravilhas,Maravilhas,True,True,True,True,True,True,True,1
+3140001,Mariana,Mariana,Mariana,True,True,True,True,True,True,True,1
+3140704,Mateus Leme,Mateus Leme,Mateus Leme,True,True,True,True,True,True,True,1
+3141108,Matozinhos,Matozinhos,Matozinhos,True,True,True,True,True,True,True,1
+3142304,Moeda,Moeda,Moeda,True,True,True,True,True,True,True,1
+3143708,Morro do Pilar,Morro do Pilar,Morro do Pilar,True,True,True,True,True,True,True,1
+3140159,Mário Campos,Mário Campos,Mário Campos,True,True,True,True,True,True,True,1
+3144706,Nova Era,Nova Era,Nova Era,True,True,True,True,True,True,True,1
+3144805,Nova Lima,Nova Lima,Nova Lima,True,True,True,True,True,True,True,1
+3136603,Nova União,Nova União,Nova União,True,True,True,True,True,True,True,1
+3145802,Onça de Pitangui,Onça de Pitangui,Onça de Pitangui,True,True,True,True,True,True,True,1
+3145901,Ouro Branco,Ouro Branco,Ouro Branco,True,True,True,True,True,True,True,1
+3146107,Ouro Preto,Ouro Preto,Ouro Preto,True,True,True,True,True,True,True,1
+3146909,Papagaios,Papagaios,Papagaios,True,True,True,True,True,True,True,1
+3147402,Paraopeba,Paraopeba,Paraopeba,True,True,True,True,True,True,True,1
+3147105,Pará de Minas,Pará de Minas,Pará de Minas,True,True,True,True,True,True,True,1
+3147501,Passabém,Passabém,Passabém,True,True,True,True,True,True,True,1
+3149309,Pedro Leopoldo,Pedro Leopoldo,Pedro Leopoldo,True,True,True,True,True,True,True,1
+3149606,Pequi,Pequi,Pequi,True,True,True,True,True,True,True,1
+3150406,Piedade dos Gerais,Piedade dos Gerais,Piedade dos Gerais,True,True,True,True,True,True,True,1
+3151404,Pitangui,Pitangui,Pitangui,True,True,True,True,True,True,True,1
+3153608,Prudente de Morais,Prudente de Morais,Prudente de Morais,True,True,True,True,True,True,True,1
+3153806,Queluzito,Queluzito,Queluzito,True,True,True,True,True,True,True,1
+3153905,Raposos,Raposos,Raposos,True,True,True,True,True,True,True,1
+3154606,Ribeirão das Neves,Ribeirão das Neves,Ribeirão das Neves,True,True,True,True,True,True,True,1
+3154804,Rio Acima,Rio Acima,Rio Acima,True,True,True,True,True,True,True,1
+3155306,Rio Manso,Rio Manso,Rio Manso,True,True,True,True,True,True,True,1
+3155702,Rio Piracicaba,Rio Piracicaba,Rio Piracicaba,True,True,True,True,True,True,True,1
+3156007,Rio Vermelho,Rio Vermelho,Rio Vermelho,True,True,True,True,True,True,True,1
+3156700,Sabará,Sabará,Sabará,True,True,True,True,True,True,True,1
+3157203,Santa Bárbara,Santa Bárbara,Santa Bárbara,True,True,True,True,True,True,True,1
+3157807,Santa Luzia,Santa Luzia,Santa Luzia,True,True,True,True,True,True,True,1
+3158003,Santa Maria de Itabira,Santa Maria de Itabira,Santa Maria de Itabira,True,True,True,True,True,True,True,1
+3158508,Santana de Pirapama,Santana de Pirapama,Santana de Pirapama,True,True,True,True,True,True,True,1
+3159001,Santana do Riacho,Santana do Riacho,Santana do Riacho,True,True,True,True,True,True,True,1
+3159100,Santana dos Montes,Santana dos Montes,Santana dos Montes,True,True,True,True,True,True,True,1
+3160207,Santo Antônio do Itambé,Santo Antônio do Itambé,Santo Antônio do Itambé,True,True,True,True,True,True,True,1
+3160504,Santo Antônio do Rio Abaixo,Santo Antônio do Rio Abaixo,Santo Antônio do Rio Abaixo,True,True,True,True,True,True,True,1
+3165537,Sarzedo,Sarzedo,Sarzedo,True,True,True,True,True,True,True,1
+3166501,Serra Azul de Minas,Serra Azul de Minas,Serra Azul de Minas,True,True,True,True,True,True,True,1
+3167103,Serro,Serro,Serro,True,True,True,True,True,True,True,1
+3167202,Sete Lagoas,Sete Lagoas,Sete Lagoas,True,True,True,True,True,True,True,1
+3160900,São Brás do Suaçuí,São Brás do Suaçuí,São Brás do Suaçuí,True,True,True,True,True,True,True,1
+3161007,São Domingos do Prata,São Domingos do Prata,São Domingos do Prata,True,True,True,True,True,True,True,1
+3161908,São Gonçalo do Rio Abaixo,São Gonçalo do Rio Abaixo,São Gonçalo do Rio Abaixo,True,True,True,True,True,True,True,1
+3162922,São Joaquim de Bicas,São Joaquim de Bicas,São Joaquim de Bicas,True,True,True,True,True,True,True,1
+3162955,São José da Lapa,São José da Lapa,São José da Lapa,True,True,True,True,True,True,True,1
+3163102,São José da Varginha,São José da Varginha,São José da Varginha,True,True,True,True,True,True,True,1
+3163409,São José do Goiabal,São José do Goiabal,São José do Goiabal,True,True,True,True,True,True,True,1
+3164803,São Sebastião do Rio Preto,São Sebastião do Rio Preto,São Sebastião do Rio Preto,True,True,True,True,True,True,True,1
+3168309,Taquaraçu de Minas,Taquaraçu de Minas,Taquaraçu de Minas,True,True,True,True,True,True,True,1
+3171204,Vespasiano,Vespasiano,Vespasiano,True,True,True,True,True,True,True,1
+3101102,Aimorés,Aimorés,Aimorés,True,True,True,True,True,True,True,1
+3101805,Alpercata,Alpercata,Alpercata,True,True,True,True,True,True,True,1
+3102209,Alvarenga,Alvarenga,Alvarenga,True,True,True,True,True,True,True,1
+3103009,Antônio Dias,Antônio Dias,Antônio Dias,True,True,True,True,True,True,True,1
+3100500,Açucena,Açucena,Açucena,True,True,True,True,True,True,True,1
+3106309,Belo Oriente,Belo Oriente,Belo Oriente,True,True,True,True,True,True,True,1
+3107802,Bom Jesus do Galho,Bom Jesus do Galho,Bom Jesus do Galho,True,True,True,True,True,True,True,1
+3108800,Braúnas,Braúnas,Braúnas,True,True,True,True,True,True,True,1
+3109253,Bugre,Bugre,Bugre,True,True,True,True,True,True,True,1
+3110806,Campanário,Campanário,Campanário,True,True,True,True,True,True,True,1
+3112059,Cantagalo,Cantagalo,Cantagalo,True,True,True,True,True,True,True,1
+3112653,Capitão Andrade,Capitão Andrade,Capitão Andrade,True,True,True,True,True,True,True,1
+3113404,Caratinga,Caratinga,Caratinga,True,True,True,True,True,True,True,1
+3113800,Carmésia,Carmésia,Carmésia,True,True,True,True,True,True,True,1
+3115706,Central de Minas,Central de Minas,Central de Minas,True,True,True,True,True,True,True,1
+3116803,Coluna,Coluna,Coluna,True,True,True,True,True,True,True,1
+3117405,Conceição de Ipanema,Conceição de Ipanema,Conceição de Ipanema,True,True,True,True,True,True,True,1
+3118403,Conselheiro Pena,Conselheiro Pena,Conselheiro Pena,True,True,True,True,True,True,True,1
+3119203,Coroaci,Coroaci,Coroaci,True,True,True,True,True,True,True,1
+3119401,Coronel Fabriciano,Coronel Fabriciano,Coronel Fabriciano,True,True,True,True,True,True,True,1
+3120839,Cuparaque,Cuparaque,Cuparaque,True,True,True,True,True,True,True,1
+3120003,Córrego Novo,Córrego Novo,Córrego Novo,True,True,True,True,True,True,True,1
+3122108,Divino das Laranjeiras,Divino das Laranjeiras,Divino das Laranjeiras,True,True,True,True,True,True,True,1
+3122207,Divinolândia de Minas,Divinolândia de Minas,Divinolândia de Minas,True,True,True,True,True,True,True,1
+3122504,Dom Cavati,Dom Cavati,Dom Cavati,True,True,True,True,True,True,True,1
+3123106,Dores de Guanhães,Dores de Guanhães,Dores de Guanhães,True,True,True,True,True,True,True,1
+3123700,Engenheiro Caldas,Engenheiro Caldas,Engenheiro Caldas,True,True,True,True,True,True,True,1
+3123858,Entre Folhas,Entre Folhas,Entre Folhas,True,True,True,True,True,True,True,1
+3125804,Fernandes Tourinho,Fernandes Tourinho,Fernandes Tourinho,True,True,True,True,True,True,True,1
+3126901,Frei Inocêncio,Frei Inocêncio,Frei Inocêncio,True,True,True,True,True,True,True,1
+3126950,Frei Lagonegro,Frei Lagonegro,Frei Lagonegro,True,True,True,True,True,True,True,1
+3127305,Galiléia,Galiléia,Galiléia,True,True,True,True,True,True,True,1
+3127370,Goiabeira,Goiabeira,Goiabeira,True,True,True,True,True,True,True,1
+3127503,Gonzaga,Gonzaga,Gonzaga,True,True,True,True,True,True,True,1
+3127701,Governador Valadares,Governador Valadares,Governador Valadares,True,True,True,True,True,True,True,1
+3128006,Guanhães,Guanhães,Guanhães,True,True,True,True,True,True,True,1
+3129301,Iapu,Iapu,Iapu,True,True,True,True,True,True,True,1
+3130556,Imbé de Minas,Imbé de Minas,Imbé de Minas,True,True,True,True,True,True,True,1
+3130903,Inhapim,Inhapim,Inhapim,True,True,True,True,True,True,True,1
+3131158,Ipaba,Ipaba,Ipaba,True,True,True,True,True,True,True,1
+3131208,Ipanema,Ipanema,Ipanema,True,True,True,True,True,True,True,1
+3131307,Ipatinga,Ipatinga,Ipatinga,True,True,True,True,True,True,True,1
+3131802,Itabirinha,Itabirinha,Itabirinha,True,True,True,True,True,True,True,1
+3132701,Itambacuri,Itambacuri,Itambacuri,True,True,True,True,True,True,True,1
+3133204,Itanhomi,Itanhomi,Itanhomi,True,True,True,True,True,True,True,1
+3134103,Itueta,Itueta,Itueta,True,True,True,True,True,True,True,1
+3135001,Jaguaraçu,Jaguaraçu,Jaguaraçu,True,True,True,True,True,True,True,1
+3135076,Jampruca,Jampruca,Jampruca,True,True,True,True,True,True,True,1
+3136108,Joanésia,Joanésia,Joanésia,True,True,True,True,True,True,True,1
+3136553,José Raydan,José Raydan,José Raydan,True,True,True,True,True,True,True,1
+3139607,Mantena,Mantena,Mantena,True,True,True,True,True,True,True,1
+3140100,Marilac,Marilac,Marilac,True,True,True,True,True,True,True,1
+3140308,Marliéria,Marliéria,Marliéria,True,True,True,True,True,True,True,1
+3140605,Materlândia,Materlândia,Materlândia,True,True,True,True,True,True,True,1
+3171501,Mathias Lobato,Mathias Lobato,Mathias Lobato,True,True,True,True,True,True,True,1
+3141504,Mendes Pimentel,Mendes Pimentel,Mendes Pimentel,True,True,True,True,True,True,True,1
+3141702,Mesquita,Mesquita,Mesquita,True,True,True,True,True,True,True,1
+3144003,Mutum,Mutum,Mutum,True,True,True,True,True,True,True,1
+3144201,Nacip Raydan,Nacip Raydan,Nacip Raydan,True,True,True,True,True,True,True,1
+3144359,Naque,Naque,Naque,True,True,True,True,True,True,True,1
+3144672,Nova Belém,Nova Belém,Nova Belém,True,True,True,True,True,True,True,1
+3144904,Nova Módica,Nova Módica,Nova Módica,True,True,True,True,True,True,True,1
+3148400,Paulistas,Paulistas,Paulistas,True,True,True,True,True,True,True,1
+3149952,Periquito,Periquito,Periquito,True,True,True,True,True,True,True,1
+3150000,Pescador,Pescador,Pescador,True,True,True,True,True,True,True,1
+3148608,Peçanha,Peçanha,Peçanha,True,True,True,True,True,True,True,1
+3150158,Piedade de Caratinga,Piedade de Caratinga,Piedade de Caratinga,True,True,True,True,True,True,True,1
+3150539,Pingo-d'Água,Pingo-d'Água,Pingo-d'Água,True,True,True,True,True,True,True,1
+3151909,Pocrane,Pocrane,Pocrane,True,True,True,True,True,True,True,1
+3154309,Resplendor,Resplendor,Resplendor,True,True,True,True,True,True,True,1
+3156809,Sabinópolis,Sabinópolis,Sabinópolis,True,True,True,True,True,True,True,1
+3157252,Santa Bárbara do Leste,Santa Bárbara do Leste,Santa Bárbara do Leste,True,True,True,True,True,True,True,1
+3157500,Santa Efigênia de Minas,Santa Efigênia de Minas,Santa Efigênia de Minas,True,True,True,True,True,True,True,1
+3158201,Santa Maria do Suaçuí,Santa Maria do Suaçuí,Santa Maria do Suaçuí,True,True,True,True,True,True,True,1
+3159357,Santa Rita de Minas,Santa Rita de Minas,Santa Rita de Minas,True,True,True,True,True,True,True,1
+3159506,Santa Rita do Itueto,Santa Rita do Itueto,Santa Rita do Itueto,True,True,True,True,True,True,True,1
+3158953,Santana do Paraíso,Santana do Paraíso,Santana do Paraíso,True,True,True,True,True,True,True,1
+3165503,Sardoá,Sardoá,Sardoá,True,True,True,True,True,True,True,1
+3166105,Senhora do Porto,Senhora do Porto,Senhora do Porto,True,True,True,True,True,True,True,1
+3167707,Sobrália,Sobrália,Sobrália,True,True,True,True,True,True,True,1
+3160959,São Domingos das Dores,São Domingos das Dores,São Domingos das Dores,True,True,True,True,True,True,True,1
+3161056,São Félix de Minas,São Félix de Minas,São Félix de Minas,True,True,True,True,True,True,True,1
+3161601,São Geraldo da Piedade,São Geraldo da Piedade,São Geraldo da Piedade,True,True,True,True,True,True,True,1
+3161650,São Geraldo do Baixio,São Geraldo do Baixio,São Geraldo do Baixio,True,True,True,True,True,True,True,1
+3163003,São José da Safira,São José da Safira,São José da Safira,True,True,True,True,True,True,True,1
+3163300,São José do Divino,São José do Divino,São José do Divino,True,True,True,True,True,True,True,1
+3163508,São José do Jacuri,São José do Jacuri,São José do Jacuri,True,True,True,True,True,True,True,1
+3162807,São João Evangelista,São João Evangelista,São João Evangelista,True,True,True,True,True,True,True,1
+3162575,São João do Manteninha,São João do Manteninha,São João do Manteninha,True,True,True,True,True,True,True,1
+3162609,São João do Oriente,São João do Oriente,São João do Oriente,True,True,True,True,True,True,True,1
+3164100,São Pedro do Suaçuí,São Pedro do Suaçuí,São Pedro do Suaçuí,True,True,True,True,True,True,True,1
+3164472,São Sebastião do Anta,São Sebastião do Anta,São Sebastião do Anta,True,True,True,True,True,True,True,1
+3164506,São Sebastião do Maranhão,São Sebastião do Maranhão,São Sebastião do Maranhão,True,True,True,True,True,True,True,1
+3168051,Taparuba,Taparuba,Taparuba,True,True,True,True,True,True,True,1
+3168408,Tarumirim,Tarumirim,Tarumirim,True,True,True,True,True,True,True,1
+3168705,Timóteo,Timóteo,Timóteo,True,True,True,True,True,True,True,1
+3169505,Tumiritinga,Tumiritinga,Tumiritinga,True,True,True,True,True,True,True,1
+3170057,Ubaporanga,Ubaporanga,Ubaporanga,True,True,True,True,True,True,True,1
+3170578,Vargem Alegre,Vargem Alegre,Vargem Alegre,True,True,True,True,True,True,True,1
+3171808,Virginópolis,Virginópolis,Virginópolis,True,True,True,True,True,True,True,1
+3171907,Virgolândia,Virgolândia,Virgolândia,True,True,True,True,True,True,True,1
+3100609,Água Boa,Água Boa,Água Boa,True,True,True,True,True,True,True,1
+3100302,Abre Campo,Abre Campo,Abre Campo,True,True,True,True,True,True,True,1
+3100401,Acaiaca,Acaiaca,Acaiaca,True,True,True,True,True,True,True,1
+3102050,Alto Caparaó,Alto Caparaó,Alto Caparaó,True,True,True,True,True,True,True,1
+3153509,Alto Jequitibá,Alto Jequitibá,Alto Jequitibá,True,True,True,True,True,True,True,1
+3102100,Alto Rio Doce,Alto Rio Doce,Alto Rio Doce,True,True,True,True,True,True,True,1
+3101508,Além Paraíba,Além Paraíba,Além Paraíba,True,True,True,True,True,True,True,1
+3102506,Amparo do Serra,Amparo do Serra,Amparo do Serra,True,True,True,True,True,True,True,1
+3103108,Antônio Prado de Minas,Antônio Prado de Minas,Antônio Prado de Minas,True,True,True,True,True,True,True,1
+3103306,Aracitaba,Aracitaba,Aracitaba,True,True,True,True,True,True,True,1
+3103702,Araponga,Araponga,Araponga,True,True,True,True,True,True,True,1
+3104403,Argirita,Argirita,Argirita,True,True,True,True,True,True,True,1
+3104601,Astolfo Dutra,Astolfo Dutra,Astolfo Dutra,True,True,True,True,True,True,True,1
+3105707,Barra Longa,Barra Longa,Barra Longa,True,True,True,True,True,True,True,1
+3105509,Barão do Monte Alto,Barão do Monte Alto,Barão do Monte Alto,True,True,True,True,True,True,True,1
+3106101,Belmiro Braga,Belmiro Braga,Belmiro Braga,True,True,True,True,True,True,True,1
+3106804,Bias Fortes,Bias Fortes,Bias Fortes,True,True,True,True,True,True,True,1
+3106903,Bicas,Bicas,Bicas,True,True,True,True,True,True,True,1
+3108701,Brás Pires,Brás Pires,Brás Pires,True,True,True,True,True,True,True,1
+3110103,Caiana,Caiana,Caiana,True,True,True,True,True,True,True,1
+3110202,Cajuri,Cajuri,Cajuri,True,True,True,True,True,True,True,1
+3111705,Canaã,Canaã,Canaã,True,True,True,True,True,True,True,1
+3112109,Caparaó,Caparaó,Caparaó,True,True,True,True,True,True,True,1
+3112901,Caputira,Caputira,Caputira,True,True,True,True,True,True,True,1
+3113305,Carangola,Carangola,Carangola,True,True,True,True,True,True,True,1
+3115300,Cataguases,Cataguases,Cataguases,True,True,True,True,True,True,True,1
+3116001,Chalé,Chalé,Chalé,True,True,True,True,True,True,True,1
+3116209,Chiador,Chiador,Chiador,True,True,True,True,True,True,True,1
+3115904,Chácara,Chácara,Chácara,True,True,True,True,True,True,True,1
+3116308,Cipotânea,Cipotânea,Cipotânea,True,True,True,True,True,True,True,1
+3116704,Coimbra,Coimbra,Coimbra,True,True,True,True,True,True,True,1
+3119609,Coronel Pacheco,Coronel Pacheco,Coronel Pacheco,True,True,True,True,True,True,True,1
+3121308,Descoberto,Descoberto,Descoberto,True,True,True,True,True,True,True,1
+3122009,Divino,Divino,Divino,True,True,True,True,True,True,True,1
+3121902,Divinésia,Divinésia,Divinésia,True,True,True,True,True,True,True,1
+3122702,Dom Silvério,Dom Silvério,Dom Silvério,True,True,True,True,True,True,True,1
+3122900,Dona Euzébia,Dona Euzébia,Dona Euzébia,True,True,True,True,True,True,True,1
+3123304,Dores do Turvo,Dores do Turvo,Dores do Turvo,True,True,True,True,True,True,True,1
+3123528,Durandé,Durandé,Durandé,True,True,True,True,True,True,True,1
+3124005,Ervália,Ervália,Ervália,True,True,True,True,True,True,True,1
+3124203,Espera Feliz,Espera Feliz,Espera Feliz,True,True,True,True,True,True,True,1
+3124609,Estrela Dalva,Estrela Dalva,Estrela Dalva,True,True,True,True,True,True,True,1
+3124906,Eugenópolis,Eugenópolis,Eugenópolis,True,True,True,True,True,True,True,1
+3125002,Ewbank da Câmara,Ewbank da Câmara,Ewbank da Câmara,True,True,True,True,True,True,True,1
+3125309,Faria Lemos,Faria Lemos,Faria Lemos,True,True,True,True,True,True,True,1
+3125952,Fervedouro,Fervedouro,Fervedouro,True,True,True,True,True,True,True,1
+3127388,Goianá,Goianá,Goianá,True,True,True,True,True,True,True,1
+3128204,Guaraciaba,Guaraciaba,Guaraciaba,True,True,True,True,True,True,True,1
+3128402,Guarani,Guarani,Guarani,True,True,True,True,True,True,True,1
+3128501,Guarará,Guarará,Guarará,True,True,True,True,True,True,True,1
+3128808,Guidoval,Guidoval,Guidoval,True,True,True,True,True,True,True,1
+3129004,Guiricema,Guiricema,Guiricema,True,True,True,True,True,True,True,1
+3132602,Itamarati de Minas,Itamarati de Minas,Itamarati de Minas,True,True,True,True,True,True,True,1
+3135506,Jequeri,Jequeri,Jequeri,True,True,True,True,True,True,True,1
+3136702,Juiz de Fora,Juiz de Fora,Juiz de Fora,True,True,True,True,True,True,True,1
+3137700,Lajinha,Lajinha,Lajinha,True,True,True,True,True,True,True,1
+3137908,Lamim,Lamim,Lamim,True,True,True,True,True,True,True,1
+3138005,Laranjal,Laranjal,Laranjal,True,True,True,True,True,True,True,1
+3138401,Leopoldina,Leopoldina,Leopoldina,True,True,True,True,True,True,True,1
+3138609,Lima Duarte,Lima Duarte,Lima Duarte,True,True,True,True,True,True,True,1
+3138674,Luisburgo,Luisburgo,Luisburgo,True,True,True,True,True,True,True,1
+3139409,Manhuaçu,Manhuaçu,Manhuaçu,True,True,True,True,True,True,True,1
+3139508,Manhumirim,Manhumirim,Manhumirim,True,True,True,True,True,True,True,1
+3139805,Mar de Espanha,Mar de Espanha,Mar de Espanha,True,True,True,True,True,True,True,1
+3140209,Maripá de Minas,Maripá de Minas,Maripá de Minas,True,True,True,True,True,True,True,1
+3140530,Martins Soares,Martins Soares,Martins Soares,True,True,True,True,True,True,True,1
+3140803,Matias Barbosa,Matias Barbosa,Matias Barbosa,True,True,True,True,True,True,True,1
+3140902,Matipó,Matipó,Matipó,True,True,True,True,True,True,True,1
+3141603,Mercês,Mercês,Mercês,True,True,True,True,True,True,True,1
+3142106,Miradouro,Miradouro,Miradouro,True,True,True,True,True,True,True,1
+3142205,Miraí,Miraí,Miraí,True,True,True,True,True,True,True,1
+3143906,Muriaé,Muriaé,Muriaé,True,True,True,True,True,True,True,1
+3145406,Olaria,Olaria,Olaria,True,True,True,True,True,True,True,1
+3145703,Oliveira Fortes,Oliveira Fortes,Oliveira Fortes,True,True,True,True,True,True,True,1
+3145851,Oratórios,Oratórios,Oratórios,True,True,True,True,True,True,True,1
+3145877,Orizânia,Orizânia,Orizânia,True,True,True,True,True,True,True,1
+3146602,Paiva,Paiva,Paiva,True,True,True,True,True,True,True,1
+3146701,Palma,Palma,Palma,True,True,True,True,True,True,True,1
+3148202,Patrocínio do Muriaé,Patrocínio do Muriaé,Patrocínio do Muriaé,True,True,True,True,True,True,True,1
+3148301,Paula Cândido,Paula Cândido,Paula Cândido,True,True,True,True,True,True,True,1
+3148756,Pedra Bonita,Pedra Bonita,Pedra Bonita,True,True,True,True,True,True,True,1
+3149002,Pedra Dourada,Pedra Dourada,Pedra Dourada,True,True,True,True,True,True,True,1
+3148806,Pedra do Anta,Pedra do Anta,Pedra do Anta,True,True,True,True,True,True,True,1
+3149408,Pedro Teixeira,Pedro Teixeira,Pedro Teixeira,True,True,True,True,True,True,True,1
+3149507,Pequeri,Pequeri,Pequeri,True,True,True,True,True,True,True,1
+3150109,Piau,Piau,Piau,True,True,True,True,True,True,True,1
+3150208,Piedade de Ponte Nova,Piedade de Ponte Nova,Piedade de Ponte Nova,True,True,True,True,True,True,True,1
+3150802,Piranga,Piranga,Piranga,True,True,True,True,True,True,True,1
+3151107,Pirapetinga,Pirapetinga,Pirapetinga,True,True,True,True,True,True,True,1
+3151305,Piraúba,Piraúba,Piraúba,True,True,True,True,True,True,True,1
+3152105,Ponte Nova,Ponte Nova,Ponte Nova,True,True,True,True,True,True,True,1
+3152303,Porto Firme,Porto Firme,Porto Firme,True,True,True,True,True,True,True,1
+3153103,Presidente Bernardes,Presidente Bernardes,Presidente Bernardes,True,True,True,True,True,True,True,1
+3154002,Raul Soares,Raul Soares,Raul Soares,True,True,True,True,True,True,True,1
+3154101,Recreio,Recreio,Recreio,True,True,True,True,True,True,True,1
+3154150,Reduto,Reduto,Reduto,True,True,True,True,True,True,True,1
+3154903,Rio Casca,Rio Casca,Rio Casca,True,True,True,True,True,True,True,1
+3155009,Rio Doce,Rio Doce,Rio Doce,True,True,True,True,True,True,True,1
+3155207,Rio Espera,Rio Espera,Rio Espera,True,True,True,True,True,True,True,1
+3155405,Rio Novo,Rio Novo,Rio Novo,True,True,True,True,True,True,True,1
+3155801,Rio Pomba,Rio Pomba,Rio Pomba,True,True,True,True,True,True,True,1
+3155900,Rio Preto,Rio Preto,Rio Preto,True,True,True,True,True,True,True,1
+3156205,Rochedo de Minas,Rochedo de Minas,Rochedo de Minas,True,True,True,True,True,True,True,1
+3156304,Rodeiro,Rodeiro,Rodeiro,True,True,True,True,True,True,True,1
+3156452,Rosário da Limeira,Rosário da Limeira,Rosário da Limeira,True,True,True,True,True,True,True,1
+3157278,Santa Bárbara do Monte Verde,Santa Bárbara do Monte Verde,Santa Bárbara do Monte Verde,True,True,True,True,True,True,True,1
+3157401,Santa Cruz do Escalvado,Santa Cruz do Escalvado,Santa Cruz do Escalvado,True,True,True,True,True,True,True,1
+3157906,Santa Margarida,Santa Margarida,Santa Margarida,True,True,True,True,True,True,True,1
+3159407,Santa Rita de Ibitipoca,Santa Rita de Ibitipoca,Santa Rita de Ibitipoca,True,True,True,True,True,True,True,1
+3159308,Santa Rita de Jacutinga,Santa Rita de Jacutinga,Santa Rita de Jacutinga,True,True,True,True,True,True,True,1
+3158409,Santana de Cataguases,Santana de Cataguases,Santana de Cataguases,True,True,True,True,True,True,True,1
+3158607,Santana do Deserto,Santana do Deserto,Santana do Deserto,True,True,True,True,True,True,True,1
+3158904,Santana do Manhuaçu,Santana do Manhuaçu,Santana do Manhuaçu,True,True,True,True,True,True,True,1
+3160009,Santo Antônio do Aventureiro,Santo Antônio do Aventureiro,Santo Antônio do Aventureiro,True,True,True,True,True,True,True,1
+3160108,Santo Antônio do Grama,Santo Antônio do Grama,Santo Antônio do Grama,True,True,True,True,True,True,True,1
+3160702,Santos Dumont,Santos Dumont,Santos Dumont,True,True,True,True,True,True,True,1
+3165560,Sem-Peixe,Sem-Peixe,Sem-Peixe,True,True,True,True,True,True,True,1
+3165602,Senador Cortes,Senador Cortes,Senador Cortes,True,True,True,True,True,True,True,1
+3165701,Senador Firmino,Senador Firmino,Senador Firmino,True,True,True,True,True,True,True,1
+3166006,Senhora de Oliveira,Senhora de Oliveira,Senhora de Oliveira,True,True,True,True,True,True,True,1
+3166303,Sericita,Sericita,Sericita,True,True,True,True,True,True,True,1
+3167301,Silveirânia,Silveirânia,Silveirânia,True,True,True,True,True,True,True,1
+3167608,Simonésia,Simonésia,Simonésia,True,True,True,True,True,True,True,1
+3167509,Simão Pereira,Simão Pereira,Simão Pereira,True,True,True,True,True,True,True,1
+3161403,São Francisco do Glória,São Francisco do Glória,São Francisco do Glória,True,True,True,True,True,True,True,1
+3161502,São Geraldo,São Geraldo,São Geraldo,True,True,True,True,True,True,True,1
+3163607,São José do Mantimento,São José do Mantimento,São José do Mantimento,True,True,True,True,True,True,True,1
+3162906,São João Nepomuceno,São João Nepomuceno,São João Nepomuceno,True,True,True,True,True,True,True,1
+3162559,São João do Manhuaçu,São João do Manhuaçu,São João do Manhuaçu,True,True,True,True,True,True,True,1
+3163805,São Miguel do Anta,São Miguel do Anta,São Miguel do Anta,True,True,True,True,True,True,True,1
+3164001,São Pedro dos Ferros,São Pedro dos Ferros,São Pedro dos Ferros,True,True,True,True,True,True,True,1
+3164431,São Sebastião da Vargem Alegre,São Sebastião da Vargem Alegre,São Sebastião da Vargem Alegre,True,True,True,True,True,True,True,1
+3167905,Tabuleiro,Tabuleiro,Tabuleiro,True,True,True,True,True,True,True,1
+3168507,Teixeiras,Teixeiras,Teixeiras,True,True,True,True,True,True,True,1
+3169000,Tocantins,Tocantins,Tocantins,True,True,True,True,True,True,True,1
+3169208,Tombos,Tombos,Tombos,True,True,True,True,True,True,True,1
+3169901,Ubá,Ubá,Ubá,True,True,True,True,True,True,True,1
+3170503,Urucânia,Urucânia,Urucânia,True,True,True,True,True,True,True,1
+3171154,Vermelho Novo,Vermelho Novo,Vermelho Novo,True,True,True,True,True,True,True,1
+3171402,Vieiras,Vieiras,Vieiras,True,True,True,True,True,True,True,1
+3172004,Visconde do Rio Branco,Visconde do Rio Branco,Visconde do Rio Branco,True,True,True,True,True,True,True,1
+3171303,Viçosa,Viçosa,Viçosa,True,True,True,True,True,True,True,1
+3172103,Volta Grande,Volta Grande,Volta Grande,True,True,True,True,True,True,True,1
+3501707,Américo Brasiliense,Américo Brasiliense,Américo Brasiliense,True,True,True,True,True,True,True,1
+3502002,Analândia,Analândia,Analândia,True,True,True,True,True,True,True,1
+3503208,Araraquara,Araraquara,Araraquara,True,True,True,True,True,True,True,1
+3506706,Boa Esperança do Sul,Boa Esperança do Sul,Boa Esperança do Sul,True,True,True,True,True,True,True,1
+3507407,Borborema,Borborema,Borborema,True,True,True,True,True,True,True,1
+3513702,Descalvado,Descalvado,Descalvado,True,True,True,True,True,True,True,1
+3514007,Dobrada,Dobrada,Dobrada,True,True,True,True,True,True,True,1
+3514304,Dourado,Dourado,Dourado,True,True,True,True,True,True,True,1
+3516853,Gavião Peixoto,Gavião Peixoto,Gavião Peixoto,True,True,True,True,True,True,True,1
+3519303,Ibaté,Ibaté,Ibaté,True,True,True,True,True,True,True,1
+3519600,Ibitinga,Ibitinga,Ibitinga,True,True,True,True,True,True,True,1
+3522703,Itápolis,Itápolis,Itápolis,True,True,True,True,True,True,True,1
+3529302,Matão,Matão,Matão,True,True,True,True,True,True,True,1
+3532058,Motuca,Motuca,Motuca,True,True,True,True,True,True,True,1
+3532900,Nova Europa,Nova Europa,Nova Europa,True,True,True,True,True,True,True,1
+3542909,Ribeirão Bonito,Ribeirão Bonito,Ribeirão Bonito,True,True,True,True,True,True,True,1
+3543709,Rincão,Rincão,Rincão,True,True,True,True,True,True,True,1
+3546900,Santa Lúcia,Santa Lúcia,Santa Lúcia,True,True,True,True,True,True,True,1
+3548906,São Carlos,São Carlos,São Carlos,True,True,True,True,True,True,True,1
+3552700,Tabatinga,Tabatinga,Tabatinga,True,True,True,True,True,True,True,1
+3554755,Trabiju,Trabiju,Trabiju,True,True,True,True,True,True,True,1
+3501103,Alto Alegre,Alto Alegre,Alto Alegre,True,True,True,True,True,True,True,1
+3502101,Andradina,Andradina,Andradina,True,True,True,True,True,True,True,1
+3502804,Araçatuba,Araçatuba,Araçatuba,True,True,True,True,True,True,True,1
+3504404,Avanhandava,Avanhandava,Avanhandava,True,True,True,True,True,True,True,1
+3505104,Barbosa,Barbosa,Barbosa,True,True,True,True,True,True,True,1
+3506201,Bento de Abreu,Bento de Abreu,Bento de Abreu,True,True,True,True,True,True,True,1
+3506409,Bilac,Bilac,Bilac,True,True,True,True,True,True,True,1
+3506508,Birigui,Birigui,Birigui,True,True,True,True,True,True,True,1
+3507704,Braúna,Braúna,Braúna,True,True,True,True,True,True,True,1
+3507753,Brejo Alegre,Brejo Alegre,Brejo Alegre,True,True,True,True,True,True,True,1
+3508108,Buritama,Buritama,Buritama,True,True,True,True,True,True,True,1
+3511003,Castilho,Castilho,Castilho,True,True,True,True,True,True,True,1
+3511904,Clementina,Clementina,Clementina,True,True,True,True,True,True,True,1
+3512506,Coroados,Coroados,Coroados,True,True,True,True,True,True,True,1
+3516507,Gabriel Monteiro,Gabriel Monteiro,Gabriel Monteiro,True,True,True,True,True,True,True,1
+3517109,Glicério,Glicério,Glicério,True,True,True,True,True,True,True,1
+3518206,Guararapes,Guararapes,Guararapes,True,True,True,True,True,True,True,1
+3517802,Guaraçaí,Guaraçaí,Guaraçaí,True,True,True,True,True,True,True,1
+3520442,Ilha Solteira,Ilha Solteira,Ilha Solteira,True,True,True,True,True,True,True,1
+3523008,Itapura,Itapura,Itapura,True,True,True,True,True,True,True,1
+3526506,Lavínia,Lavínia,Lavínia,True,True,True,True,True,True,True,1
+3527256,Lourdes,Lourdes,Lourdes,True,True,True,True,True,True,True,1
+3527702,Luiziânia,Luiziânia,Luiziânia,True,True,True,True,True,True,True,1
+3530102,Mirandópolis,Mirandópolis,Mirandópolis,True,True,True,True,True,True,True,1
+3532108,Murutinga do Sul,Murutinga do Sul,Murutinga do Sul,True,True,True,True,True,True,True,1
+3533205,Nova Independência,Nova Independência,Nova Independência,True,True,True,True,True,True,True,1
+3537305,Penápolis,Penápolis,Penápolis,True,True,True,True,True,True,True,1
+3537404,Pereira Barreto,Pereira Barreto,Pereira Barreto,True,True,True,True,True,True,True,1
+3537701,Piacatu,Piacatu,Piacatu,True,True,True,True,True,True,True,1
+3544400,Rubiácea,Rubiácea,Rubiácea,True,True,True,True,True,True,True,1
+3548054,Santo Antônio do Aracanguá,Santo Antônio do Aracanguá,Santo Antônio do Aracanguá,True,True,True,True,True,True,True,1
+3548401,Santópolis do Aguapeí,Santópolis do Aguapeí,Santópolis do Aguapeí,True,True,True,True,True,True,True,1
+3552304,Sud Mennucci,Sud Mennucci,Sud Mennucci,True,True,True,True,True,True,True,1
+3552551,Suzanápolis,Suzanápolis,Suzanápolis,True,True,True,True,True,True,True,1
+3555208,Turiúba,Turiúba,Turiúba,True,True,True,True,True,True,True,1
+3556305,Valparaíso,Valparaíso,Valparaíso,True,True,True,True,True,True,True,1
+3504008,Assis,Assis,Assis,True,True,True,True,True,True,True,1
+3506300,Bernardino de Campos,Bernardino de Campos,Bernardino de Campos,True,True,True,True,True,True,True,1
+3507209,Borá,Borá,Borá,True,True,True,True,True,True,True,1
+3509809,Campos Novos Paulista,Campos Novos Paulista,Campos Novos Paulista,True,True,True,True,True,True,True,1
+3510153,Canitar,Canitar,Canitar,True,True,True,True,True,True,True,1
+3557204,Chavantes,Chavantes,Chavantes,True,True,True,True,True,True,True,1
+3513306,Cruzália,Cruzália,Cruzália,True,True,True,True,True,True,True,1
+3510005,Cândido Mota,Cândido Mota,Cândido Mota,True,True,True,True,True,True,True,1
+3515194,Espírito Santo do Turvo,Espírito Santo do Turvo,Espírito Santo do Turvo,True,True,True,True,True,True,True,1
+3515400,Fartura,Fartura,Fartura,True,True,True,True,True,True,True,1
+3516101,Florínea,Florínea,Florínea,True,True,True,True,True,True,True,1
+3519501,Ibirarema,Ibirarema,Ibirarema,True,True,True,True,True,True,True,1
+3519907,Iepê,Iepê,Iepê,True,True,True,True,True,True,True,1
+3520905,Ipaussu,Ipaussu,Ipaussu,True,True,True,True,True,True,True,1
+3527900,Lutécia,Lutécia,Lutécia,True,True,True,True,True,True,True,1
+3528601,Manduri,Manduri,Manduri,True,True,True,True,True,True,True,1
+3528809,Maracaí,Maracaí,Maracaí,True,True,True,True,True,True,True,1
+3532157,Nantes,Nantes,Nantes,True,True,True,True,True,True,True,1
+3534708,Ourinhos,Ourinhos,Ourinhos,True,True,True,True,True,True,True,1
+3535309,Palmital,Palmital,Palmital,True,True,True,True,True,True,True,1
+3535507,Paraguaçu Paulista,Paraguaçu Paulista,Paraguaçu Paulista,True,True,True,True,True,True,True,1
+3537156,Pedrinhas Paulista,Pedrinhas Paulista,Pedrinhas Paulista,True,True,True,True,True,True,True,1
+3538808,Piraju,Piraju,Piraju,True,True,True,True,True,True,True,1
+3539707,Platina,Platina,Platina,True,True,True,True,True,True,True,1
+3541703,Quatá,Quatá,Quatá,True,True,True,True,True,True,True,1
+3543204,Ribeirão do Sul,Ribeirão do Sul,Ribeirão do Sul,True,True,True,True,True,True,True,1
+3545407,Salto Grande,Salto Grande,Salto Grande,True,True,True,True,True,True,True,1
+3546405,Santa Cruz do Rio Pardo,Santa Cruz do Rio Pardo,Santa Cruz do Rio Pardo,True,True,True,True,True,True,True,1
+3551207,Sarutaiá,Sarutaiá,Sarutaiá,True,True,True,True,True,True,True,1
+3550506,São Pedro do Turvo,São Pedro do Turvo,São Pedro do Turvo,True,True,True,True,True,True,True,1
+3553005,Taguaí,Taguaí,Taguaí,True,True,True,True,True,True,True,1
+3553955,Tarumã,Tarumã,Tarumã,True,True,True,True,True,True,True,1
+3554201,Tejupá,Tejupá,Tejupá,True,True,True,True,True,True,True,1
+3554607,Timburi,Timburi,Timburi,True,True,True,True,True,True,True,1
+3533809,Óleo,Óleo,Óleo,True,True,True,True,True,True,True,1
+3500709,Agudos,Agudos,Agudos,True,True,True,True,True,True,True,1
+3502309,Anhembi,Anhembi,Anhembi,True,True,True,True,True,True,True,1
+3503109,Arandu,Arandu,Arandu,True,True,True,True,True,True,True,1
+3503406,Arealva,Arealva,Arealva,True,True,True,True,True,True,True,1
+3503604,Areiópolis,Areiópolis,Areiópolis,True,True,True,True,True,True,True,1
+3504503,Avaré,Avaré,Avaré,True,True,True,True,True,True,True,1
+3504305,Avaí,Avaí,Avaí,True,True,True,True,True,True,True,1
+3504701,Balbinos,Balbinos,Balbinos,True,True,True,True,True,True,True,1
+3505203,Bariri,Bariri,Bariri,True,True,True,True,True,True,True,1
+3505302,Barra Bonita,Barra Bonita,Barra Bonita,True,True,True,True,True,True,True,1
+3506003,Bauru,Bauru,Bauru,True,True,True,True,True,True,True,1
+3506805,Bocaina,Bocaina,Bocaina,True,True,True,True,True,True,True,1
+3506904,Bofete,Bofete,Bofete,True,True,True,True,True,True,True,1
+3507308,Boracéia,Boracéia,Boracéia,True,True,True,True,True,True,True,1
+3507456,Borebi,Borebi,Borebi,True,True,True,True,True,True,True,1
+3507506,Botucatu,Botucatu,Botucatu,True,True,True,True,True,True,True,1
+3508306,Cabrália Paulista,Cabrália Paulista,Cabrália Paulista,True,True,True,True,True,True,True,1
+3508801,Cafelândia,Cafelândia,Cafelândia,True,True,True,True,True,True,True,1
+3511409,Cerqueira César,Cerqueira César,Cerqueira César,True,True,True,True,True,True,True,1
+3512308,Conchas,Conchas,Conchas,True,True,True,True,True,True,True,1
+3514106,Dois Córregos,Dois Córregos,Dois Córregos,True,True,True,True,True,True,True,1
+3514502,Duartina,Duartina,Duartina,True,True,True,True,True,True,True,1
+3517000,Getulina,Getulina,Getulina,True,True,True,True,True,True,True,1
+3517307,Guaimbê,Guaimbê,Guaimbê,True,True,True,True,True,True,True,1
+3517208,Guaiçara,Guaiçara,Guaiçara,True,True,True,True,True,True,True,1
+3518107,Guarantã,Guarantã,Guarantã,True,True,True,True,True,True,True,1
+3519105,Iacanga,Iacanga,Iacanga,True,True,True,True,True,True,True,1
+3519253,Iaras,Iaras,Iaras,True,True,True,True,True,True,True,1
+3520004,Igaraçu do Tietê,Igaraçu do Tietê,Igaraçu do Tietê,True,True,True,True,True,True,True,1
+3522000,Itaju,Itaju,Itaju,True,True,True,True,True,True,True,1
+3522901,Itapuí,Itapuí,Itapuí,True,True,True,True,True,True,True,1
+3523503,Itatinga,Itatinga,Itatinga,True,True,True,True,True,True,True,1
+3521804,Itaí,Itaí,Itaí,True,True,True,True,True,True,True,1
+3525300,Jaú,Jaú,Jaú,True,True,True,True,True,True,True,1
+3525805,Júlio Mesquita,Júlio Mesquita,Júlio Mesquita,True,True,True,True,True,True,True,1
+3526803,Lençóis Paulista,Lençóis Paulista,Lençóis Paulista,True,True,True,True,True,True,True,1
+3527108,Lins,Lins,Lins,True,True,True,True,True,True,True,1
+3527504,Lucianópolis,Lucianópolis,Lucianópolis,True,True,True,True,True,True,True,1
+3528007,Macatuba,Macatuba,Macatuba,True,True,True,True,True,True,True,1
+3529807,Mineiros do Tietê,Mineiros do Tietê,Mineiros do Tietê,True,True,True,True,True,True,True,1
+3535804,Paranapanema,Paranapanema,Paranapanema,True,True,True,True,True,True,True,1
+3536109,Pardinho,Pardinho,Pardinho,True,True,True,True,True,True,True,1
+3536570,Paulistânia,Paulistânia,Paulistânia,True,True,True,True,True,True,True,1
+3536703,Pederneiras,Pederneiras,Pederneiras,True,True,True,True,True,True,True,1
+3538907,Pirajuí,Pirajuí,Pirajuí,True,True,True,True,True,True,True,1
+3539400,Piratininga,Piratininga,Piratininga,True,True,True,True,True,True,True,1
+3540101,Pongaí,Pongaí,Pongaí,True,True,True,True,True,True,True,1
+3541059,Pratânia,Pratânia,Pratânia,True,True,True,True,True,True,True,1
+3541109,Presidente Alves,Presidente Alves,Presidente Alves,True,True,True,True,True,True,True,1
+3541604,Promissão,Promissão,Promissão,True,True,True,True,True,True,True,1
+3542503,Reginópolis,Reginópolis,Reginópolis,True,True,True,True,True,True,True,1
+3544608,Sabino,Sabino,Sabino,True,True,True,True,True,True,True,1
+3550100,São Manuel,São Manuel,São Manuel,True,True,True,True,True,True,True,1
+3555505,Ubirajara,Ubirajara,Ubirajara,True,True,True,True,True,True,True,1
+3555901,Uru,Uru,Uru,True,True,True,True,True,True,True,1
+3500550,Águas de Santa Bárbara,Águas de Santa Bárbara,Águas de Santa Bárbara,True,True,True,True,True,True,True,1
+3500303,Aguaí,Aguaí,Aguaí,True,True,True,True,True,True,True,1
+3501608,Americana,Americana,Americana,True,True,True,True,True,True,True,1
+3501905,Amparo,Amparo,Amparo,True,True,True,True,True,True,True,1
+3503802,Artur Nogueira,Artur Nogueira,Artur Nogueira,True,True,True,True,True,True,True,1
+3508702,Caconde,Caconde,Caconde,True,True,True,True,True,True,True,1
+3509502,Campinas,Campinas,Campinas,True,True,True,True,True,True,True,1
+3510807,Casa Branca,Casa Branca,Casa Branca,True,True,True,True,True,True,True,1
+3512803,Cosmópolis,Cosmópolis,Cosmópolis,True,True,True,True,True,True,True,1
+3513900,Divinolândia,Divinolândia,Divinolândia,True,True,True,True,True,True,True,1
+3514908,Elias Fausto,Elias Fausto,Elias Fausto,True,True,True,True,True,True,True,1
+3515152,Engenheiro Coelho,Engenheiro Coelho,Engenheiro Coelho,True,True,True,True,True,True,True,1
+3515186,Espírito Santo do Pinhal,Espírito Santo do Pinhal,Espírito Santo do Pinhal,True,True,True,True,True,True,True,1
+3557303,Estiva Gerbi,Estiva Gerbi,Estiva Gerbi,True,True,True,True,True,True,True,1
+3519055,Holambra,Holambra,Holambra,True,True,True,True,True,True,True,1
+3519071,Hortolândia,Hortolândia,Hortolândia,True,True,True,True,True,True,True,1
+3520509,Indaiatuba,Indaiatuba,Indaiatuba,True,True,True,True,True,True,True,1
+3522604,Itapira,Itapira,Itapira,True,True,True,True,True,True,True,1
+3523800,Itobi,Itobi,Itobi,True,True,True,True,True,True,True,1
+3524709,Jaguariúna,Jaguariúna,Jaguariúna,True,True,True,True,True,True,True,1
+3527009,Lindóia,Lindóia,Lindóia,True,True,True,True,True,True,True,1
+3530508,Mococa,Mococa,Mococa,True,True,True,True,True,True,True,1
+3530706,Mogi Guaçu,Mogi Guaçu,Mogi Guaçu,True,True,True,True,True,True,True,1
+3530805,Mogi Mirim,Mogi Mirim,Mogi Mirim,True,True,True,True,True,True,True,1
+3531209,Monte Alegre do Sul,Monte Alegre do Sul,Monte Alegre do Sul,True,True,True,True,True,True,True,1
+3531803,Monte Mor,Monte Mor,Monte Mor,True,True,True,True,True,True,True,1
+3533403,Nova Odessa,Nova Odessa,Nova Odessa,True,True,True,True,True,True,True,1
+3536505,Paulínia,Paulínia,Paulínia,True,True,True,True,True,True,True,1
+3536802,Pedra Bela,Pedra Bela,Pedra Bela,True,True,True,True,True,True,True,1
+3537107,Pedreira,Pedreira,Pedreira,True,True,True,True,True,True,True,1
+3538204,Pinhalzinho,Pinhalzinho,Pinhalzinho,True,True,True,True,True,True,True,1
+3539301,Pirassununga,Pirassununga,Pirassununga,True,True,True,True,True,True,True,1
+3540705,Porto Ferreira,Porto Ferreira,Porto Ferreira,True,True,True,True,True,True,True,1
+3545803,Santa Bárbara d'Oeste,Santa Bárbara d'Oeste,Santa Bárbara d'Oeste,True,True,True,True,True,True,True,1
+3546306,Santa Cruz das Palmeiras,Santa Cruz das Palmeiras,Santa Cruz das Palmeiras,True,True,True,True,True,True,True,1
+3548005,Santo Antônio de Posse,Santo Antônio de Posse,Santo Antônio de Posse,True,True,True,True,True,True,True,1
+3548104,Santo Antônio do Jardim,Santo Antônio do Jardim,Santo Antônio do Jardim,True,True,True,True,True,True,True,1
+3551603,Serra Negra,Serra Negra,Serra Negra,True,True,True,True,True,True,True,1
+3552106,Socorro,Socorro,Socorro,True,True,True,True,True,True,True,1
+3552403,Sumaré,Sumaré,Sumaré,True,True,True,True,True,True,True,1
+3549706,São José do Rio Pardo,São José do Rio Pardo,São José do Rio Pardo,True,True,True,True,True,True,True,1
+3549102,São João da Boa Vista,São João da Boa Vista,São João da Boa Vista,True,True,True,True,True,True,True,1
+3550803,São Sebastião da Grama,São Sebastião da Grama,São Sebastião da Grama,True,True,True,True,True,True,True,1
+3553302,Tambaú,Tambaú,Tambaú,True,True,True,True,True,True,True,1
+3553609,Tapiratiba,Tapiratiba,Tapiratiba,True,True,True,True,True,True,True,1
+3556206,Valinhos,Valinhos,Valinhos,True,True,True,True,True,True,True,1
+3556404,Vargem Grande do Sul,Vargem Grande do Sul,Vargem Grande do Sul,True,True,True,True,True,True,True,1
+3556701,Vinhedo,Vinhedo,Vinhedo,True,True,True,True,True,True,True,1
+3500402,Águas da Prata,Águas da Prata,Águas da Prata,True,True,True,True,True,True,True,1
+3500501,Águas de Lindóia,Águas de Lindóia,Águas de Lindóia,True,True,True,True,True,True,True,1
+3500758,Alambari,Alambari,Alambari,True,True,True,True,True,True,True,1
+3502200,Angatuba,Angatuba,Angatuba,True,True,True,True,True,True,True,1
+3502705,Apiaí,Apiaí,Apiaí,True,True,True,True,True,True,True,1
+3505351,Barra do Chapéu,Barra do Chapéu,Barra do Chapéu,True,True,True,True,True,True,True,1
+3505005,Barão de Antonina,Barão de Antonina,Barão de Antonina,True,True,True,True,True,True,True,1
+3507001,Boituva,Boituva,Boituva,True,True,True,True,True,True,True,1
+3507159,Bom Sucesso de Itararé,Bom Sucesso de Itararé,Bom Sucesso de Itararé,True,True,True,True,True,True,True,1
+3508009,Buri,Buri,Buri,True,True,True,True,True,True,True,1
+3509452,Campina do Monte Alegre,Campina do Monte Alegre,Campina do Monte Alegre,True,True,True,True,True,True,True,1
+3510203,Capão Bonito,Capão Bonito,Capão Bonito,True,True,True,True,True,True,True,1
+3511508,Cerquilho,Cerquilho,Cerquilho,True,True,True,True,True,True,True,1
+3511607,Cesário Lange,Cesário Lange,Cesário Lange,True,True,True,True,True,True,True,1
+3512605,Coronel Macedo,Coronel Macedo,Coronel Macedo,True,True,True,True,True,True,True,1
+3517604,Guapiara,Guapiara,Guapiara,True,True,True,True,True,True,True,1
+3518503,Guareí,Guareí,Guareí,True,True,True,True,True,True,True,1
+3521200,Iporanga,Iporanga,Iporanga,True,True,True,True,True,True,True,1
+3521705,Itaberá,Itaberá,Itaberá,True,True,True,True,True,True,True,1
+3522158,Itaoca,Itaoca,Itaoca,True,True,True,True,True,True,True,1
+3522307,Itapetininga,Itapetininga,Itapetininga,True,True,True,True,True,True,True,1
+3522406,Itapeva,Itapeva,Itapeva,True,True,True,True,True,True,True,1
+3522653,Itapirapuã Paulista,Itapirapuã Paulista,Itapirapuã Paulista,True,True,True,True,True,True,True,1
+3522802,Itaporanga,Itaporanga,Itaporanga,True,True,True,True,True,True,True,1
+3523206,Itararé,Itararé,Itararé,True,True,True,True,True,True,True,1
+3526407,Laranjal Paulista,Laranjal Paulista,Laranjal Paulista,True,True,True,True,True,True,True,1
+3532827,Nova Campina,Nova Campina,Nova Campina,True,True,True,True,True,True,True,1
+3537503,Pereiras,Pereiras,Pereiras,True,True,True,True,True,True,True,1
+3540507,Porangaba,Porangaba,Porangaba,True,True,True,True,True,True,True,1
+3541653,Quadra,Quadra,Quadra,True,True,True,True,True,True,True,1
+3542800,Ribeira,Ribeira,Ribeira,True,True,True,True,True,True,True,1
+3543006,Ribeirão Branco,Ribeirão Branco,Ribeirão Branco,True,True,True,True,True,True,True,1
+3543253,Ribeirão Grande,Ribeirão Grande,Ribeirão Grande,True,True,True,True,True,True,True,1
+3543501,Riversul,Riversul,Riversul,True,True,True,True,True,True,True,1
+3553807,Taquarituba,Taquarituba,Taquarituba,True,True,True,True,True,True,True,1
+3553856,Taquarivaí,Taquarivaí,Taquarivaí,True,True,True,True,True,True,True,1
+3554003,Tatuí,Tatuí,Tatuí,True,True,True,True,True,True,True,1
+3554656,Torre de Pedra,Torre de Pedra,Torre de Pedra,True,True,True,True,True,True,True,1
+3505401,Barra do Turvo,Barra do Turvo,Barra do Turvo,True,True,True,True,True,True,True,1
+3509254,Cajati,Cajati,Cajati,True,True,True,True,True,True,True,1
+3509908,Cananéia,Cananéia,Cananéia,True,True,True,True,True,True,True,1
+3514809,Eldorado,Eldorado,Eldorado,True,True,True,True,True,True,True,1
+3520301,Iguape,Iguape,Iguape,True,True,True,True,True,True,True,1
+3520426,Ilha Comprida,Ilha Comprida,,True,True,False,True,True,False,False,0
+3522109,Itanhaém,Itanhaém,Itanhaém,True,True,True,True,True,True,True,1
+3523305,Itariri,Itariri,Itariri,True,True,True,True,True,True,True,1
+3524600,Jacupiranga,Jacupiranga,Jacupiranga,True,True,True,True,True,True,True,1
+3526100,Juquiá,Juquiá,Juquiá,True,True,True,True,True,True,True,1
+3529906,Miracatu,Miracatu,Miracatu,True,True,True,True,True,True,True,1
+3531100,Mongaguá,Mongaguá,Mongaguá,True,True,True,True,True,True,True,1
+3536208,Pariquera-Açu,Pariquera-Açu,Pariquera-Açu,True,True,True,True,True,True,True,1
+3537206,Pedro de Toledo,Pedro de Toledo,Pedro de Toledo,True,True,True,True,True,True,True,1
+3537602,Peruíbe,Peruíbe,Peruíbe,True,True,True,True,True,True,True,1
+3542602,Registro,Registro,Registro,True,True,True,True,True,True,True,1
+3551801,Sete Barras,Sete Barras,Sete Barras,True,True,True,True,True,True,True,1
+3501152,Alumínio,Alumínio,Alumínio,True,True,True,True,True,True,True,1
+3502754,Araçariguama,Araçariguama,Araçariguama,True,True,True,True,True,True,True,1
+3502903,Araçoiaba da Serra,Araçoiaba da Serra,Araçoiaba da Serra,True,True,True,True,True,True,True,1
+3504107,Atibaia,Atibaia,Atibaia,True,True,True,True,True,True,True,1
+3507100,Bom Jesus dos Perdões,Bom Jesus dos Perdões,Bom Jesus dos Perdões,True,True,True,True,True,True,True,1
+3507605,Bragança Paulista,Bragança Paulista,Bragança Paulista,True,True,True,True,True,True,True,1
+3508405,Cabreúva,Cabreúva,Cabreúva,True,True,True,True,True,True,True,1
+3509601,Campo Limpo Paulista,Campo Limpo Paulista,Campo Limpo Paulista,True,True,True,True,True,True,True,1
+3510302,Capela do Alto,Capela do Alto,Capela do Alto,True,True,True,True,True,True,True,1
+3519709,Ibiúna,Ibiúna,Ibiúna,True,True,True,True,True,True,True,1
+3521002,Iperó,Iperó,Iperó,True,True,True,True,True,True,True,1
+3523404,Itatiba,Itatiba,Itatiba,True,True,True,True,True,True,True,1
+3523909,Itu,Itu,Itu,True,True,True,True,True,True,True,1
+3524006,Itupeva,Itupeva,Itupeva,True,True,True,True,True,True,True,1
+3525201,Jarinu,Jarinu,Jarinu,True,True,True,True,True,True,True,1
+3525508,Joanópolis,Joanópolis,Joanópolis,True,True,True,True,True,True,True,1
+3525904,Jundiaí,Jundiaí,Jundiaí,True,True,True,True,True,True,True,1
+3527306,Louveira,Louveira,Louveira,True,True,True,True,True,True,True,1
+3528403,Mairinque,Mairinque,Mairinque,True,True,True,True,True,True,True,1
+3532009,Morungaba,Morungaba,Morungaba,True,True,True,True,True,True,True,1
+3532405,Nazaré Paulista,Nazaré Paulista,Nazaré Paulista,True,True,True,True,True,True,True,1
+3537800,Piedade,Piedade,Piedade,True,True,True,True,True,True,True,1
+3537909,Pilar do Sul,Pilar do Sul,Pilar do Sul,True,True,True,True,True,True,True,1
+3538600,Piracaia,Piracaia,Piracaia,True,True,True,True,True,True,True,1
+3540606,Porto Feliz,Porto Feliz,Porto Feliz,True,True,True,True,True,True,True,1
+3545209,Salto,Salto,Salto,True,True,True,True,True,True,True,1
+3545308,Salto de Pirapora,Salto de Pirapora,Salto de Pirapora,True,True,True,True,True,True,True,1
+3551108,Sarapuí,Sarapuí,Sarapuí,True,True,True,True,True,True,True,1
+3552205,Sorocaba,Sorocaba,Sorocaba,True,True,True,True,True,True,True,1
+3550209,São Miguel Arcanjo,São Miguel Arcanjo,São Miguel Arcanjo,True,True,True,True,True,True,True,1
+3550605,São Roque,São Roque,São Roque,True,True,True,True,True,True,True,1
+3553500,Tapiraí,Tapiraí,Tapiraí,True,True,True,True,True,True,True,1
+3554953,Tuiuti,Tuiuti,Tuiuti,True,True,True,True,True,True,True,1
+3556354,Vargem,Vargem,Vargem,True,True,True,True,True,True,True,1
+3557006,Votorantim,Votorantim,Votorantim,True,True,True,True,True,True,True,1
+3556503,Várzea Paulista,Várzea Paulista,Várzea Paulista,True,True,True,True,True,True,True,1
+3501509,Alvinlândia,Alvinlândia,Alvinlândia,True,True,True,True,True,True,True,1
+3503356,Arco-Íris,Arco-Íris,Arco-Íris,True,True,True,True,True,True,True,1
+3505807,Bastos,Bastos,Bastos,True,True,True,True,True,True,True,1
+3514700,Echaporã,Echaporã,Echaporã,True,True,True,True,True,True,True,1
+3515657,Fernão,Fernão,Fernão,True,True,True,True,True,True,True,1
+3516705,Garça,Garça,Garça,True,True,True,True,True,True,True,1
+3516606,Gália,Gália,Gália,True,True,True,True,True,True,True,1
+3519006,Herculândia,Herculândia,Herculândia,True,True,True,True,True,True,True,1
+3519204,Iacri,Iacri,Iacri,True,True,True,True,True,True,True,1
+3527801,Lupércio,Lupércio,Lupércio,True,True,True,True,True,True,True,1
+3529005,Marília,Marília,Marília,True,True,True,True,True,True,True,1
+3533700,Ocauçu,Ocauçu,Ocauçu,True,True,True,True,True,True,True,1
+3534104,Oriente,Oriente,Oriente,True,True,True,True,True,True,True,1
+3534500,Oscar Bressane,Oscar Bressane,Oscar Bressane,True,True,True,True,True,True,True,1
+3540002,Pompéia,Pompéia,Pompéia,True,True,True,True,True,True,True,1
+3541802,Queiroz,Queiroz,Queiroz,True,True,True,True,True,True,True,1
+3542008,Quintana,Quintana,Quintana,True,True,True,True,True,True,True,1
+3555000,Tupã,Tupã,Tupã,True,True,True,True,True,True,True,1
+3556602,Vera Cruz,Vera Cruz,Vera Cruz,True,True,True,True,True,True,True,1
+3501400,Álvaro de Carvalho,Álvaro de Carvalho,Álvaro de Carvalho,True,True,True,True,True,True,True,1
+3503901,Arujá,Arujá,Arujá,True,True,True,True,True,True,True,1
+3505708,Barueri,Barueri,Barueri,True,True,True,True,True,True,True,1
+3506359,Bertioga,Bertioga,Bertioga,True,True,True,True,True,True,True,1
+3506607,Biritiba Mirim,Biritiba Mirim,Biritiba Mirim,True,True,True,True,True,True,True,1
+3509007,Caieiras,Caieiras,Caieiras,True,True,True,True,True,True,True,1
+3509205,Cajamar,Cajamar,Cajamar,True,True,True,True,True,True,True,1
+3510609,Carapicuíba,Carapicuíba,,True,True,False,True,True,False,False,0
+3513009,Cotia,Cotia,Cotia,True,True,True,True,True,True,True,1
+3513504,Cubatão,Cubatão,Cubatão,True,True,True,True,True,True,True,1
+3513801,Diadema,Diadema,,True,True,False,True,True,False,False,0
+3515004,Embu das Artes,Embu das Artes,Embu das Artes,True,True,True,True,True,True,True,1
+3515103,Embu-Guaçu,Embu-Guaçu,Embu-Guaçu,True,True,True,True,True,True,True,1
+3515707,Ferraz de Vasconcelos,Ferraz de Vasconcelos,Ferraz de Vasconcelos,True,True,True,True,True,True,True,1
+3516309,Francisco Morato,Francisco Morato,Francisco Morato,True,True,True,True,True,True,True,1
+3516408,Franco da Rocha,Franco da Rocha,Franco da Rocha,True,True,True,True,True,True,True,1
+3518305,Guararema,Guararema,Guararema,True,True,True,True,True,True,True,1
+3518701,Guarujá,Guarujá,Guarujá,True,True,True,True,True,True,True,1
+3518800,Guarulhos,Guarulhos,Guarulhos,True,True,True,True,True,True,True,1
+3522208,Itapecerica da Serra,Itapecerica da Serra,Itapecerica da Serra,True,True,True,True,True,True,True,1
+3522505,Itapevi,Itapevi,Itapevi,True,True,True,True,True,True,True,1
+3523107,Itaquaquecetuba,Itaquaquecetuba,Itaquaquecetuba,True,True,True,True,True,True,True,1
+3525003,Jandira,Jandira,Jandira,True,True,True,True,True,True,True,1
+3526209,Juquitiba,Juquitiba,Juquitiba,True,True,True,True,True,True,True,1
+3528502,Mairiporã,Mairiporã,Mairiporã,True,True,True,True,True,True,True,1
+3529401,Mauá,Mauá,Mauá,True,True,True,True,True,True,True,1
+3530607,Mogi das Cruzes,Mogi das Cruzes,Mogi das Cruzes,True,True,True,True,True,True,True,1
+3534401,Osasco,Osasco,,True,True,False,True,True,False,False,0
+3539103,Pirapora do Bom Jesus,Pirapora do Bom Jesus,Pirapora do Bom Jesus,True,True,True,True,True,True,True,1
+3539806,Poá,Poá,Poá,True,True,True,True,True,True,True,1
+3541000,Praia Grande,Praia Grande,Praia Grande,True,True,True,True,True,True,True,1
+3543303,Ribeirão Pires,Ribeirão Pires,Ribeirão Pires,True,True,True,True,True,True,True,1
+3544103,Rio Grande da Serra,Rio Grande da Serra,,True,True,False,True,True,False,False,0
+3545001,Salesópolis,Salesópolis,Salesópolis,True,True,True,True,True,True,True,1
+3546801,Santa Isabel,Santa Isabel,Santa Isabel,True,True,True,True,True,True,True,1
+3547304,Santana de Parnaíba,Santana de Parnaíba,Santana de Parnaíba,True,True,True,True,True,True,True,1
+3547809,Santo André,Santo André,,True,True,False,True,True,False,False,0
+3548500,Santos,Santos,Santos,True,True,True,True,True,True,True,1
+3552502,Suzano,Suzano,Suzano,True,True,True,True,True,True,True,1
+3548708,São Bernardo do Campo,São Bernardo do Campo,São Bernardo do Campo,True,True,True,True,True,True,True,1
+3548807,São Caetano do Sul,São Caetano do Sul,,True,True,False,True,True,False,False,0
+3549953,São Lourenço da Serra,São Lourenço da Serra,São Lourenço da Serra,True,True,True,True,True,True,True,1
+3550308,São Paulo,São Paulo,São Paulo,True,True,True,True,True,True,True,1
+3551009,São Vicente,São Vicente,São Vicente,True,True,True,True,True,True,True,1
+3552809,Taboão da Serra,Taboão da Serra,Taboão da Serra,True,True,True,True,True,True,True,1
+3556453,Vargem Grande Paulista,Vargem Grande Paulista,Vargem Grande Paulista,True,True,True,True,True,True,True,1
+3503307,Araras,Araras,Araras,True,True,True,True,True,True,True,1
+3507902,Brotas,Brotas,Brotas,True,True,True,True,True,True,True,1
+3510401,Capivari,Capivari,Capivari,True,True,True,True,True,True,True,1
+3511706,Charqueada,Charqueada,Charqueada,True,True,True,True,True,True,True,1
+3512209,Conchal,Conchal,Conchal,True,True,True,True,True,True,True,1
+3512407,Cordeirópolis,Cordeirópolis,Cordeirópolis,True,True,True,True,True,True,True,1
+3512704,Corumbataí,Corumbataí,Corumbataí,True,True,True,True,True,True,True,1
+3521101,Ipeúna,Ipeúna,Ipeúna,True,True,True,True,True,True,True,1
+3521408,Iracemápolis,Iracemápolis,Iracemápolis,True,True,True,True,True,True,True,1
+3523602,Itirapina,Itirapina,Itirapina,True,True,True,True,True,True,True,1
+3525854,Jumirim,Jumirim,Jumirim,True,True,True,True,True,True,True,1
+3526704,Leme,Leme,Leme,True,True,True,True,True,True,True,1
+3526902,Limeira,Limeira,Limeira,True,True,True,True,True,True,True,1
+3530904,Mombuca,Mombuca,Mombuca,True,True,True,True,True,True,True,1
+3538709,Piracicaba,Piracicaba,Piracicaba,True,True,True,True,True,True,True,1
+3542107,Rafard,Rafard,Rafard,True,True,True,True,True,True,True,1
+3543907,Rio Claro,Rio Claro,Rio Claro,True,True,True,True,True,True,True,1
+3544004,Rio das Pedras,Rio das Pedras,Rio das Pedras,True,True,True,True,True,True,True,1
+3545159,Saltinho,Saltinho,Saltinho,True,True,True,True,True,True,True,1
+3546207,Santa Cruz da Conceição,Santa Cruz da Conceição,Santa Cruz da Conceição,True,True,True,True,True,True,True,1
+3546702,Santa Gertrudes,Santa Gertrudes,Santa Gertrudes,True,True,True,True,True,True,True,1
+3547007,Santa Maria da Serra,Santa Maria da Serra,Santa Maria da Serra,True,True,True,True,True,True,True,1
+3550407,São Pedro,São Pedro,São Pedro,True,True,True,True,True,True,True,1
+3554508,Tietê,Tietê,Tietê,True,True,True,True,True,True,True,1
+3554706,Torrinha,Torrinha,Torrinha,True,True,True,True,True,True,True,1
+3500600,Águas de São Pedro,Águas de São Pedro,Águas de São Pedro,True,True,True,True,True,True,True,1
+3500105,Adamantina,Adamantina,Adamantina,True,True,True,True,True,True,True,1
+3500808,Alfredo Marcondes,Alfredo Marcondes,Alfredo Marcondes,True,True,True,True,True,True,True,1
+3502408,Anhumas,Anhumas,Anhumas,True,True,True,True,True,True,True,1
+3508900,Caiabu,Caiabu,Caiabu,True,True,True,True,True,True,True,1
+3509106,Caiuá,Caiuá,Caiuá,True,True,True,True,True,True,True,1
+3514403,Dracena,Dracena,Dracena,True,True,True,True,True,True,True,1
+3515129,Emilianópolis,Emilianópolis,Emilianópolis,True,True,True,True,True,True,True,1
+3515301,Estrela do Norte,Estrela do Norte,Estrela do Norte,True,True,True,True,True,True,True,1
+3515350,Euclides da Cunha Paulista,Euclides da Cunha Paulista,Euclides da Cunha Paulista,True,True,True,True,True,True,True,1
+3515806,Flora Rica,Flora Rica,Flora Rica,True,True,True,True,True,True,True,1
+3516002,Flórida Paulista,Flórida Paulista,Flórida Paulista,True,True,True,True,True,True,True,1
+3520608,Indiana,Indiana,Indiana,True,True,True,True,True,True,True,1
+3520806,Inúbia Paulista,Inúbia Paulista,Inúbia Paulista,True,True,True,True,True,True,True,1
+3521606,Irapuru,Irapuru,Irapuru,True,True,True,True,True,True,True,1
+3525607,João Ramalho,João Ramalho,João Ramalho,True,True,True,True,True,True,True,1
+3526001,Junqueirópolis,Junqueirópolis,Junqueirópolis,True,True,True,True,True,True,True,1
+3527405,Lucélia,Lucélia,Lucélia,True,True,True,True,True,True,True,1
+3528700,Marabá Paulista,Marabá Paulista,Marabá Paulista,True,True,True,True,True,True,True,1
+3528908,Mariápolis,Mariápolis,Mariápolis,True,True,True,True,True,True,True,1
+3529203,Martinópolis,Martinópolis,Martinópolis,True,True,True,True,True,True,True,1
+3530201,Mirante do Paranapanema,Mirante do Paranapanema,Mirante do Paranapanema,True,True,True,True,True,True,True,1
+3531605,Monte Castelo,Monte Castelo,Monte Castelo,True,True,True,True,True,True,True,1
+3532207,Narandiba,Narandiba,Narandiba,True,True,True,True,True,True,True,1
+3533106,Nova Guataporanga,Nova Guataporanga,Nova Guataporanga,True,True,True,True,True,True,True,1
+3534609,Osvaldo Cruz,Osvaldo Cruz,Osvaldo Cruz,True,True,True,True,True,True,True,1
+3534807,Ouro Verde,Ouro Verde,Ouro Verde,True,True,True,True,True,True,True,1
+3534906,Pacaembu,Pacaembu,Pacaembu,True,True,True,True,True,True,True,1
+3535408,Panorama,Panorama,Panorama,True,True,True,True,True,True,True,1
+3536000,Parapuã,Parapuã,Parapuã,True,True,True,True,True,True,True,1
+3536406,Paulicéia,Paulicéia,Paulicéia,True,True,True,True,True,True,True,1
+3538303,Piquerobi,Piquerobi,Piquerobi,True,True,True,True,True,True,True,1
+3539202,Pirapozinho,Pirapozinho,Pirapozinho,True,True,True,True,True,True,True,1
+3540853,Pracinha,Pracinha,Pracinha,True,True,True,True,True,True,True,1
+3541208,Presidente Bernardes,Presidente Bernardes,Presidente Bernardes,True,True,True,True,True,True,True,1
+3541307,Presidente Epitácio,Presidente Epitácio,Presidente Epitácio,True,True,True,True,True,True,True,1
+3541406,Presidente Prudente,Presidente Prudente,Presidente Prudente,True,True,True,True,True,True,True,1
+3541505,Presidente Venceslau,Presidente Venceslau,Presidente Venceslau,True,True,True,True,True,True,True,1
+3542206,Rancharia,Rancharia,Rancharia,True,True,True,True,True,True,True,1
+3542404,Regente Feijó,Regente Feijó,Regente Feijó,True,True,True,True,True,True,True,1
+3543238,Ribeirão dos Índios,Ribeirão dos Índios,Ribeirão dos Índios,True,True,True,True,True,True,True,1
+3543808,Rinópolis,Rinópolis,Rinópolis,True,True,True,True,True,True,True,1
+3544251,Rosana,Rosana,Rosana,True,True,True,True,True,True,True,1
+3544707,Sagres,Sagres,Sagres,True,True,True,True,True,True,True,1
+3545100,Salmourão,Salmourão,Salmourão,True,True,True,True,True,True,True,1
+3545506,Sandovalina,Sandovalina,Sandovalina,True,True,True,True,True,True,True,1
+3547106,Santa Mercedes,Santa Mercedes,Santa Mercedes,True,True,True,True,True,True,True,1
+3547700,Santo Anastácio,Santo Anastácio,Santo Anastácio,True,True,True,True,True,True,True,1
+3548302,Santo Expedito,Santo Expedito,Santo Expedito,True,True,True,True,True,True,True,1
+3549300,São João do Pau d'Alho,São João do Pau d'Alho,São João do Pau d'Alho,True,True,True,True,True,True,True,1
+3552908,Taciba,Taciba,Taciba,True,True,True,True,True,True,True,1
+3553906,Tarabai,Tarabai,Tarabai,True,True,True,True,True,True,True,1
+3554300,Teodoro Sampaio,Teodoro Sampaio,Teodoro Sampaio,True,True,True,True,True,True,True,1
+3555109,Tupi Paulista,Tupi Paulista,Tupi Paulista,True,True,True,True,True,True,True,1
+3501301,Álvares Machado,Álvares Machado,Álvares Machado,True,True,True,True,True,True,True,1
+3501004,Altinópolis,Altinópolis,Altinópolis,True,True,True,True,True,True,True,1
+3503000,Aramina,Aramina,Aramina,True,True,True,True,True,True,True,1
+3505500,Barretos,Barretos,Barretos,True,True,True,True,True,True,True,1
+3505609,Barrinha,Barrinha,Barrinha,True,True,True,True,True,True,True,1
+3505906,Batatais,Batatais,Batatais,True,True,True,True,True,True,True,1
+3506102,Bebedouro,Bebedouro,Bebedouro,True,True,True,True,True,True,True,1
+3507803,Brodowski,Brodowski,Brodowski,True,True,True,True,True,True,True,1
+3508207,Buritizal,Buritizal,Buritizal,True,True,True,True,True,True,True,1
+3509403,Cajuru,Cajuru,Cajuru,True,True,True,True,True,True,True,1
+3512001,Colina,Colina,Colina,True,True,True,True,True,True,True,1
+3512100,Colômbia,Colômbia,Colômbia,True,True,True,True,True,True,True,1
+3513108,Cravinhos,Cravinhos,Cravinhos,True,True,True,True,True,True,True,1
+3513207,Cristais Paulista,Cristais Paulista,Cristais Paulista,True,True,True,True,True,True,True,1
+3510906,Cássia dos Coqueiros,Cássia dos Coqueiros,Cássia dos Coqueiros,True,True,True,True,True,True,True,1
+3510104,Cândido Rodrigues,Cândido Rodrigues,Cândido Rodrigues,True,True,True,True,True,True,True,1
+3514601,Dumont,Dumont,Dumont,True,True,True,True,True,True,True,1
+3515608,Fernando Prestes,Fernando Prestes,Fernando Prestes,True,True,True,True,True,True,True,1
+3516200,Franca,Franca,Franca,True,True,True,True,True,True,True,1
+3518602,Guariba,Guariba,Guariba,True,True,True,True,True,True,True,1
+3517703,Guará,Guará,Guará,True,True,True,True,True,True,True,1
+3518859,Guatapará,Guatapará,Guatapará,True,True,True,True,True,True,True,1
+3517406,Guaíra,Guaíra,Guaíra,True,True,True,True,True,True,True,1
+3520103,Igarapava,Igarapava,Igarapava,True,True,True,True,True,True,True,1
+3521309,Ipuã,Ipuã,Ipuã,True,True,True,True,True,True,True,1
+3523701,Itirapuã,Itirapuã,Itirapuã,True,True,True,True,True,True,True,1
+3524105,Ituverava,Ituverava,Ituverava,True,True,True,True,True,True,True,1
+3524204,Jaborandi,Jaborandi,Jaborandi,True,True,True,True,True,True,True,1
+3524303,Jaboticabal,Jaboticabal,Jaboticabal,True,True,True,True,True,True,True,1
+3525102,Jardinópolis,Jardinópolis,Jardinópolis,True,True,True,True,True,True,True,1
+3525409,Jeriquara,Jeriquara,Jeriquara,True,True,True,True,True,True,True,1
+3527603,Luís Antônio,Luís Antônio,Luís Antônio,True,True,True,True,True,True,True,1
+3529708,Miguelópolis,Miguelópolis,Miguelópolis,True,True,True,True,True,True,True,1
+3531308,Monte Alto,Monte Alto,Monte Alto,True,True,True,True,True,True,True,1
+3531506,Monte Azul Paulista,Monte Azul Paulista,Monte Azul Paulista,True,True,True,True,True,True,True,1
+3531902,Morro Agudo,Morro Agudo,Morro Agudo,True,True,True,True,True,True,True,1
+3533601,Nuporanga,Nuporanga,Nuporanga,True,True,True,True,True,True,True,1
+3534302,Orlândia,Orlândia,Orlândia,True,True,True,True,True,True,True,1
+3536307,Patrocínio Paulista,Patrocínio Paulista,Patrocínio Paulista,True,True,True,True,True,True,True,1
+3537008,Pedregulho,Pedregulho,Pedregulho,True,True,True,True,True,True,True,1
+3539004,Pirangi,Pirangi,Pirangi,True,True,True,True,True,True,True,1
+3539509,Pitangueiras,Pitangueiras,Pitangueiras,True,True,True,True,True,True,True,1
+3540200,Pontal,Pontal,Pontal,True,True,True,True,True,True,True,1
+3540903,Pradópolis,Pradópolis,Pradópolis,True,True,True,True,True,True,True,1
+3542701,Restinga,Restinga,Restinga,True,True,True,True,True,True,True,1
+3543105,Ribeirão Corrente,Ribeirão Corrente,Ribeirão Corrente,True,True,True,True,True,True,True,1
+3543402,Ribeirão Preto,Ribeirão Preto,Ribeirão Preto,True,True,True,True,True,True,True,1
+3543600,Rifaina,Rifaina,Rifaina,True,True,True,True,True,True,True,1
+3544905,Sales Oliveira,Sales Oliveira,Sales Oliveira,True,True,True,True,True,True,True,1
+3546256,Santa Cruz da Esperança,Santa Cruz da Esperança,Santa Cruz da Esperança,True,True,True,True,True,True,True,1
+3546504,Santa Ernestina,Santa Ernestina,Santa Ernestina,True,True,True,True,True,True,True,1
+3547502,Santa Rita do Passa Quatro,Santa Rita do Passa Quatro,Santa Rita do Passa Quatro,True,True,True,True,True,True,True,1
+3547601,Santa Rosa de Viterbo,Santa Rosa de Viterbo,Santa Rosa de Viterbo,True,True,True,True,True,True,True,1
+3547908,Santo Antônio da Alegria,Santo Antônio da Alegria,Santo Antônio da Alegria,True,True,True,True,True,True,True,1
+3551405,Serra Azul,Serra Azul,Serra Azul,True,True,True,True,True,True,True,1
+3551504,Serrana,Serrana,Serrana,True,True,True,True,True,True,True,1
+3551702,Sertãozinho,Sertãozinho,Sertãozinho,True,True,True,True,True,True,True,1
+3549409,São Joaquim da Barra,São Joaquim da Barra,São Joaquim da Barra,True,True,True,True,True,True,True,1
+3549508,São José da Bela Vista,São José da Bela Vista,São José da Bela Vista,True,True,True,True,True,True,True,1
+3550902,São Simão,São Simão,São Simão,True,True,True,True,True,True,True,1
+3553104,Taiaçu,Taiaçu,Taiaçu,True,True,True,True,True,True,True,1
+3553203,Taiúva,Taiúva,Taiúva,True,True,True,True,True,True,True,1
+3553658,Taquaral,Taquaral,Taquaral,True,True,True,True,True,True,True,1
+3553708,Taquaritinga,Taquaritinga,Taquaritinga,True,True,True,True,True,True,True,1
+3554409,Terra Roxa,Terra Roxa,Terra Roxa,True,True,True,True,True,True,True,1
+3556800,Viradouro,Viradouro,Viradouro,True,True,True,True,True,True,True,1
+3556909,Vista Alegre do Alto,Vista Alegre do Alto,Vista Alegre do Alto,True,True,True,True,True,True,True,1
+3500204,Adolfo,Adolfo,Adolfo,True,True,True,True,True,True,True,1
+3500907,Altair,Altair,Altair,True,True,True,True,True,True,True,1
+3501806,Américo de Campos,Américo de Campos,Américo de Campos,True,True,True,True,True,True,True,1
+3502606,Aparecida d'Oeste,Aparecida d'Oeste,Aparecida d'Oeste,True,True,True,True,True,True,True,1
+3503703,Ariranha,Ariranha,Ariranha,True,True,True,True,True,True,True,1
+3503950,Aspásia,Aspásia,Aspásia,True,True,True,True,True,True,True,1
+3504206,Auriflama,Auriflama,Auriflama,True,True,True,True,True,True,True,1
+3504602,Bady Bassitt,Bady Bassitt,Bady Bassitt,True,True,True,True,True,True,True,1
+3504800,Bálsamo,Bálsamo,Bálsamo,True,True,True,True,True,True,True,1
+3509304,Cajobi,Cajobi,Cajobi,True,True,True,True,True,True,True,1
+3510708,Cardoso,Cardoso,Cardoso,True,True,True,True,True,True,True,1
+3511102,Catanduva,Catanduva,Catanduva,True,True,True,True,True,True,True,1
+3511201,Catiguá,Catiguá,Catiguá,True,True,True,True,True,True,True,1
+3511300,Cedral,Cedral,Cedral,True,True,True,True,True,True,True,1
+3512902,Cosmorama,Cosmorama,Cosmorama,True,True,True,True,True,True,True,1
+3513850,Dirce Reis,Dirce Reis,Dirce Reis,True,True,True,True,True,True,True,1
+3514205,Dolcinópolis,Dolcinópolis,Dolcinópolis,True,True,True,True,True,True,True,1
+3514924,Elisiário,Elisiário,Elisiário,True,True,True,True,True,True,True,1
+3514957,Embaúba,Embaúba,Embaúba,True,True,True,True,True,True,True,1
+3515202,Estrela d'Oeste,Estrela d'Oeste,Estrela d'Oeste,True,True,True,True,True,True,True,1
+3515509,Fernandópolis,Fernandópolis,Fernandópolis,True,True,True,True,True,True,True,1
+3515905,Floreal,Floreal,Floreal,True,True,True,True,True,True,True,1
+3516804,Gastão Vidigal,Gastão Vidigal,Gastão Vidigal,True,True,True,True,True,True,True,1
+3516903,General Salgado,General Salgado,General Salgado,True,True,True,True,True,True,True,1
+3517505,Guapiaçu,Guapiaçu,Guapiaçu,True,True,True,True,True,True,True,1
+3517901,Guaraci,Guaraci,Guaraci,True,True,True,True,True,True,True,1
+3518008,Guarani d'Oeste,Guarani d'Oeste,Guarani d'Oeste,True,True,True,True,True,True,True,1
+3518909,Guzolândia,Guzolândia,Guzolândia,True,True,True,True,True,True,True,1
+3519402,Ibirá,Ibirá,Ibirá,True,True,True,True,True,True,True,1
+3519808,Icém,Icém,Icém,True,True,True,True,True,True,True,1
+3520707,Indiaporã,Indiaporã,Indiaporã,True,True,True,True,True,True,True,1
+3521150,Ipiguá,Ipiguá,Ipiguá,True,True,True,True,True,True,True,1
+3521507,Irapuã,Irapuã,Irapuã,True,True,True,True,True,True,True,1
+3521903,Itajobi,Itajobi,Itajobi,True,True,True,True,True,True,True,1
+3524501,Jaci,Jaci,Jaci,True,True,True,True,True,True,True,1
+3524808,Jales,Jales,Jales,True,True,True,True,True,True,True,1
+3525706,José Bonifácio,José Bonifácio,José Bonifácio,True,True,True,True,True,True,True,1
+3528106,Macaubal,Macaubal,Macaubal,True,True,True,True,True,True,True,1
+3528205,Macedônia,Macedônia,Macedônia,True,True,True,True,True,True,True,1
+3528304,Magda,Magda,Magda,True,True,True,True,True,True,True,1
+3528858,Marapoama,Marapoama,Marapoama,True,True,True,True,True,True,True,1
+3529104,Marinópolis,Marinópolis,Marinópolis,True,True,True,True,True,True,True,1
+3529500,Mendonça,Mendonça,Mendonça,True,True,True,True,True,True,True,1
+3529609,Meridiano,Meridiano,Meridiano,True,True,True,True,True,True,True,1
+3529658,Mesópolis,Mesópolis,Mesópolis,True,True,True,True,True,True,True,1
+3530003,Mira Estrela,Mira Estrela,Mira Estrela,True,True,True,True,True,True,True,1
+3530300,Mirassol,Mirassol,Mirassol,True,True,True,True,True,True,True,1
+3530409,Mirassolândia,Mirassolândia,Mirassolândia,True,True,True,True,True,True,True,1
+3531407,Monte Aprazível,Monte Aprazível,Monte Aprazível,True,True,True,True,True,True,True,1
+3531001,Monções,Monções,Monções,True,True,True,True,True,True,True,1
+3532504,Neves Paulista,Neves Paulista,Neves Paulista,True,True,True,True,True,True,True,1
+3532603,Nhandeara,Nhandeara,Nhandeara,True,True,True,True,True,True,True,1
+3532702,Nipoã,Nipoã,Nipoã,True,True,True,True,True,True,True,1
+3532801,Nova Aliança,Nova Aliança,Nova Aliança,True,True,True,True,True,True,True,1
+3532843,Nova Canaã Paulista,Nova Canaã Paulista,Nova Canaã Paulista,True,True,True,True,True,True,True,1
+3532868,Nova Castilho,Nova Castilho,Nova Castilho,True,True,True,True,True,True,True,1
+3533007,Nova Granada,Nova Granada,Nova Granada,True,True,True,True,True,True,True,1
+3533304,Nova Luzitânia,Nova Luzitânia,Nova Luzitânia,True,True,True,True,True,True,True,1
+3533254,Novais,Novais,Novais,True,True,True,True,True,True,True,1
+3533502,Novo Horizonte,Novo Horizonte,Novo Horizonte,True,True,True,True,True,True,True,1
+3533908,Olímpia,Olímpia,Olímpia,True,True,True,True,True,True,True,1
+3534005,Onda Verde,Onda Verde,Onda Verde,True,True,True,True,True,True,True,1
+3534203,Orindiúva,Orindiúva,Orindiúva,True,True,True,True,True,True,True,1
+3534757,Ouroeste,Ouroeste,Ouroeste,True,True,True,True,True,True,True,1
+3535002,Palestina,Palestina,Palestina,True,True,True,True,True,True,True,1
+3535101,Palmares Paulista,Palmares Paulista,Palmares Paulista,True,True,True,True,True,True,True,1
+3535200,Palmeira d'Oeste,Palmeira d'Oeste,Palmeira d'Oeste,True,True,True,True,True,True,True,1
+3535903,Paranapuã,Paranapuã,Paranapuã,True,True,True,True,True,True,True,1
+3535705,Paraíso,Paraíso,Paraíso,True,True,True,True,True,True,True,1
+3536257,Parisi,Parisi,Parisi,True,True,True,True,True,True,True,1
+3536604,Paulo de Faria,Paulo de Faria,Paulo de Faria,True,True,True,True,True,True,True,1
+3536901,Pedranópolis,Pedranópolis,Pedranópolis,True,True,True,True,True,True,True,1
+3538105,Pindorama,Pindorama,Pindorama,True,True,True,True,True,True,True,1
+3539608,Planalto,Planalto,Planalto,True,True,True,True,True,True,True,1
+3539905,Poloni,Poloni,Poloni,True,True,True,True,True,True,True,1
+3540259,Pontalinda,Pontalinda,Pontalinda,True,True,True,True,True,True,True,1
+3540309,Pontes Gestal,Pontes Gestal,Pontes Gestal,True,True,True,True,True,True,True,1
+3540408,Populina,Populina,Populina,True,True,True,True,True,True,True,1
+3540804,Potirendaba,Potirendaba,Potirendaba,True,True,True,True,True,True,True,1
+3544202,Riolândia,Riolândia,Riolândia,True,True,True,True,True,True,True,1
+3544509,Rubinéia,Rubinéia,Rubinéia,True,True,True,True,True,True,True,1
+3544806,Sales,Sales,Sales,True,True,True,True,True,True,True,1
+3545605,Santa Adélia,Santa Adélia,Santa Adélia,True,True,True,True,True,True,True,1
+3545704,Santa Albertina,Santa Albertina,Santa Albertina,True,True,True,True,True,True,True,1
+3546108,Santa Clara d'Oeste,Santa Clara d'Oeste,Santa Clara d'Oeste,True,True,True,True,True,True,True,1
+3546603,Santa Fé do Sul,Santa Fé do Sul,Santa Fé do Sul,True,True,True,True,True,True,True,1
+3547403,Santa Rita d'Oeste,Santa Rita d'Oeste,Santa Rita d'Oeste,True,True,True,True,True,True,True,1
+3547650,Santa Salete,Santa Salete,Santa Salete,True,True,True,True,True,True,True,1
+3547205,Santana da Ponte Pensa,Santana da Ponte Pensa,Santana da Ponte Pensa,True,True,True,True,True,True,True,1
+3551306,Sebastianópolis do Sul,Sebastianópolis do Sul,Sebastianópolis do Sul,True,True,True,True,True,True,True,1
+3551900,Severínia,Severínia,Severínia,True,True,True,True,True,True,True,1
+3549003,São Francisco,São Francisco,São Francisco,True,True,True,True,True,True,True,1
+3549805,São José do Rio Preto,São José do Rio Preto,São José do Rio Preto,True,True,True,True,True,True,True,1
+3549201,São João das Duas Pontes,São João das Duas Pontes,São João das Duas Pontes,True,True,True,True,True,True,True,1
+3549250,São João de Iracema,São João de Iracema,São João de Iracema,True,True,True,True,True,True,True,1
+3552601,Tabapuã,Tabapuã,Tabapuã,True,True,True,True,True,True,True,1
+3553401,Tanabi,Tanabi,Tanabi,True,True,True,True,True,True,True,1
+3554904,Três Fronteiras,Três Fronteiras,Três Fronteiras,True,True,True,True,True,True,True,1
+3555307,Turmalina,Turmalina,Turmalina,True,True,True,True,True,True,True,1
+3555356,Ubarana,Ubarana,Ubarana,True,True,True,True,True,True,True,1
+3555604,Uchoa,Uchoa,Uchoa,True,True,True,True,True,True,True,1
+3555703,União Paulista,União Paulista,União Paulista,True,True,True,True,True,True,True,1
+3556008,Urupês,Urupês,Urupês,True,True,True,True,True,True,True,1
+3555802,Urânia,Urânia,Urânia,True,True,True,True,True,True,True,1
+3556107,Valentim Gentil,Valentim Gentil,Valentim Gentil,True,True,True,True,True,True,True,1
+3556958,Vitória Brasil,Vitória Brasil,Vitória Brasil,True,True,True,True,True,True,True,1
+3557105,Votuporanga,Votuporanga,Votuporanga,True,True,True,True,True,True,True,1
+3557154,Zacarias,Zacarias,Zacarias,True,True,True,True,True,True,True,1
+3501202,Álvares Florence,Álvares Florence,Álvares Florence,True,True,True,True,True,True,True,1
+3502507,Aparecida,Aparecida,Aparecida,True,True,True,True,True,True,True,1
+3503158,Arapeí,Arapeí,Arapeí,True,True,True,True,True,True,True,1
+3503505,Areias,Areias,Areias,True,True,True,True,True,True,True,1
+3504909,Bananal,Bananal,Bananal,True,True,True,True,True,True,True,1
+3508603,Cachoeira Paulista,Cachoeira Paulista,Cachoeira Paulista,True,True,True,True,True,True,True,1
+3509700,Campos do Jordão,Campos do Jordão,Campos do Jordão,True,True,True,True,True,True,True,1
+3509957,Canas,Canas,Canas,True,True,True,True,True,True,True,1
+3510500,Caraguatatuba,Caraguatatuba,Caraguatatuba,True,True,True,True,True,True,True,1
+3508504,Caçapava,Caçapava,Caçapava,True,True,True,True,True,True,True,1
+3513405,Cruzeiro,Cruzeiro,Cruzeiro,True,True,True,True,True,True,True,1
+3513603,Cunha,Cunha,Cunha,True,True,True,True,True,True,True,1
+3518404,Guaratinguetá,Guaratinguetá,Guaratinguetá,True,True,True,True,True,True,True,1
+3520202,Igaratá,Igaratá,Igaratá,True,True,True,True,True,True,True,1
+3520400,Ilhabela,Ilhabela,Ilhabela,True,True,True,True,True,True,True,1
+3524402,Jacareí,Jacareí,Jacareí,True,True,True,True,True,True,True,1
+3524907,Jambeiro,Jambeiro,Jambeiro,True,True,True,True,True,True,True,1
+3526308,Lagoinha,Lagoinha,Lagoinha,True,True,True,True,True,True,True,1
+3526605,Lavrinhas,Lavrinhas,Lavrinhas,True,True,True,True,True,True,True,1
+3527207,Lorena,Lorena,Lorena,True,True,True,True,True,True,True,1
+3531704,Monteiro Lobato,Monteiro Lobato,Monteiro Lobato,True,True,True,True,True,True,True,1
+3532306,Natividade da Serra,Natividade da Serra,Natividade da Serra,True,True,True,True,True,True,True,1
+3535606,Paraibuna,Paraibuna,Paraibuna,True,True,True,True,True,True,True,1
+3538006,Pindamonhangaba,Pindamonhangaba,Pindamonhangaba,True,True,True,True,True,True,True,1
+3538501,Piquete,Piquete,Piquete,True,True,True,True,True,True,True,1
+3540754,Potim,Potim,Potim,True,True,True,True,True,True,True,1
+3541901,Queluz,Queluz,Queluz,True,True,True,True,True,True,True,1
+3542305,Redenção da Serra,Redenção da Serra,Redenção da Serra,True,True,True,True,True,True,True,1
+3544301,Roseira,Roseira,Roseira,True,True,True,True,True,True,True,1
+3546009,Santa Branca,Santa Branca,Santa Branca,True,True,True,True,True,True,True,1
+3548203,Santo Antônio do Pinhal,Santo Antônio do Pinhal,Santo Antônio do Pinhal,True,True,True,True,True,True,True,1
+3552007,Silveiras,Silveiras,Silveiras,True,True,True,True,True,True,True,1
+3548609,São Bento do Sapucaí,São Bento do Sapucaí,São Bento do Sapucaí,True,True,True,True,True,True,True,1
+3549607,São José do Barreiro,São José do Barreiro,São José do Barreiro,True,True,True,True,True,True,True,1
+3549904,São José dos Campos,São José dos Campos,São José dos Campos,True,True,True,True,True,True,True,1
+3550001,São Luiz do Paraitinga,São Luiz do Paraitinga,São Luiz do Paraitinga,True,True,True,True,True,True,True,1
+3550704,São Sebastião,São Sebastião,São Sebastião,True,True,True,True,True,True,True,1
+3554102,Taubaté,Taubaté,Taubaté,True,True,True,True,True,True,True,1
+3554805,Tremembé,Tremembé,Tremembé,True,True,True,True,True,True,True,1
+3555406,Ubatuba,Ubatuba,Ubatuba,True,True,True,True,True,True,True,1
