@@ -1051,3 +1051,27 @@ Every change to scope, dated, with the reason. Newest at the bottom.
 
   **Spec text:** the §10 checklist row now says the three stations already have data, and the
   re-request refreshes their 2026 windows with the others'.
+
+- 2026-10-15 — **AMENDMENT 40: frost night-rule sensitivity; note 1 reports readings outside the
+  rule; the Planet frost case study first; MODIS night LST for v2.** Amends §4d, §5 step 4, §5's
+  v2 list and §6. Owner decisions after the W2 frost input (Week 0 report §19).
+
+  **Changes:**
+  1. **Night rule kept for scoring** (17b).
+     - A pre-dawn variant is registered as a `prereg-2` addendum sensitivity, reported and not
+       scored: a night is also observed when its 00:00–09:00 local hours are complete.
+     - Across 2008–2026 it resolves 65 of 311 unresolved automatic station-windows and changes one
+       tier: Caldas, Jun–Aug 2026, from none to severe. It changes no regional flag.
+     - Revisit at v2.
+  2. **Note 1 reports station readings outside the rule as such, not scored.** Example: Caldas
+     (A530), −0.5 °C on the morning of 14 July 2026, hidden under 17b by missing 19:00–20:00 local
+     readings.
+  3. **§4d: the one-time 2021 frost case study moves to first of the Planet tasks,** ahead of mask
+     validation. The station-based frost component did not flag the July 2021 frost in Sul de
+     Minas or São Paulo.
+  4. **v2 list:** MODIS night land-surface temperature as a frost input beside the stations, and a
+     review of the frost night rule.
+
+  The frost rules for the backtest are unchanged.
+
+  Approved by owner (2026-10-15).

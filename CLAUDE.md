@@ -353,9 +353,11 @@ extraction work. Budget for it, and record which survey vintage each value came 
 Planet Education & Research access is confirmed. **Planet stays out of the index and the
 backtest.**
 
-Three bounded v1.5 tasks, in this order:
-1. **Mask validation** of the municipalities that fail the 30% filter (§5 step 1).
-2. **A one-time 2021 frost case study** over Mogiana and Sul de Minas.
+Three bounded v1.5 tasks, in this order (AMENDED 2026-10-15, Amendment 40: the frost case study
+is now the priority, because the station-based frost component did not flag the July 2021 frost
+in Sul de Minas or São Paulo):
+1. **A one-time 2021 frost case study** over Mogiana and Sul de Minas.
+2. **Mask validation** of the municipalities that fail the 30% filter (§5 step 1).
 3. **One illustrative 3 m figure per public note**, labelled as not an input.
 
 **Start rule.** The tasks begin once the backtest is complete, in the order above, so they never take
@@ -597,6 +599,12 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      counted as a non-frost night. If a station's missing nights could change its tier for a
      season, its tier for that season is reported as unresolved, and the region's tier shares
      are reported with and without it.
+     - **Pre-dawn sensitivity (Amendment 40), not scored:** a night also counts as observed
+       when its 00:00–09:00 local hours are complete.
+     - Registered as a `prereg-2` addendum and reported beside the frost results.
+     - **Why:** systematic early-evening gaps can hide a frost night under the registered rule.
+       In Jun–Aug 2026 that happened at Caldas (A530): −0.5 °C on the morning of 14 July 2026.
+     - **Scoring uses the registered rule;** revisit at v2.
    - **Regional flag (Amendment 17c).** A region is flagged for a tier in a season when stations
      meeting that tier cover at least 25% of its observed coffee. Reaching the flag triggers an
      out-of-cycle note at that point, not at the end of the window.
@@ -788,7 +796,9 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
 
 **Leave out until v2:** machine-learning yield models, Planet imagery as an index input (v1.5
 tasks only, §4d), Sentinel-2 imagery,
-field-level analysis, any translation of the index into a price forecast.
+field-level analysis, any translation of the index into a price forecast. **For v2 (Amendment
+40):** MODIS night land-surface temperature as a frost input beside the stations, for cold-pool
+frost the screen-height network misses; and a review of the frost night rule (§5 step 4).
 
 ## 6. Outputs
 
@@ -798,7 +808,10 @@ field-level analysis, any translation of the index into a price forecast.
      coverage share, and the regional flags they produce for crop 2027 (§5 step 4). Beside them
      goes the public record — Cooxupé, Conab's September bulletin, Somar and press reports — with
      every statement attributed to its source and kept distinct from the station data (Amendment
-     17c). It carries no index reading, so it does not use the fixed layout below. The November-vintage index reading is computed as of
+     17c). Station readings outside the registered night rule are reported as outside the rule
+     and not scored: for example Caldas (A530), −0.5 °C on the morning of 14 July 2026, whose
+     early-evening hours are missing (Amendment 40). It carries no index reading, so it does not
+     use the fixed layout below. The November-vintage index reading is computed as of
      the November note date and published in the repo no later than note 1, so the post-survey
      scorecard can cite it as made before Conab's survey.
    - **Index notes** publish in the first week of each month from December 2026, except the note
