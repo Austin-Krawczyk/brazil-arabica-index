@@ -930,3 +930,22 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   **In-sample check:** no value derives from the July 2021 frost.
 
   Approved by owner as written, with choice (b).
+
+- 2026-10-15 — **AMENDMENT 37: §10 still-open items 2 and 4 closed, as decided at `prereg-1`.**
+  Amends §5 step 6, §10 and §11.
+
+  **Reason:** the owner's `prereg-1` decisions of 2026-10-15 (items 10 and 11) settled both, and
+  the spec still listed them as open.
+
+  **Changes:**
+  1. **Item 2, region weights:** closed.
+     - The four-region total is weighted by IBGE PAM coffee area for PAM year S−2, the same
+       weights as within regions, not by production.
+     - Its yield target is Conab's four-unit production over four-unit area.
+  2. **Item 4, irrigation:** closed. No irrigation adjustment in v1; Triângulo's rain-only skill
+     is reported separately.
+  3. **§5 step 6:** the conditional sentence on the irrigation multiplier now states that it is
+     not adopted. It had also pointed to "§10 item 5"; the item was 4.
+  4. **§11 risk table:** the irrigation row now gives the v1 treatment.
+
+  Drafted and committed on the owner's instruction (2026-10-15).

@@ -618,8 +618,8 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      series carries a 2024–26 drift of unresolved cause (Week 0 drift check) and that any
      NDVI-based result is unreliable for those years** (Amendment 33).
    - **Computed and reported, but not fitted:** NDVI, consecutive dry days, and bean-fill rain
-     to date. Frost enters as a fixed offset (below) and does not count. If the Cerrado
-     irrigation adjustment (§10 item 5) is adopted, it is a fixed multiplier, not a parameter.
+     to date. Frost enters as a fixed offset (below) and does not count. The Cerrado irrigation
+     adjustment is not adopted in v1 (§10, Amendment 37).
    - **The ridge penalty** is chosen by an inner leave-one-year-out loop inside each training
      set, from a grid fixed at `prereg-1`.
    **Frost is not fitted (AMENDED 2026-10-12).** The backtest window holds one major frost (July
@@ -929,11 +929,9 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 ### Still open
 
 1. **Conab vintage** — closed 2026-10-14; see Closed.
-2. **Region weights** for the four-region total — IBGE PAM harvested area or production?
-   Production weights favour the Cerrado.
+2. **Region weights** for the four-region total — closed 2026-10-15; see Closed.
 3. **Does USDA FAS GAIN give regional splits** usable as a second benchmark?
-4. **Irrigation share in the Cerrado** from IBGE Censo Agro, to down-weight rainfall deficit there.
-   If adopted, it is a fixed multiplier, not a parameter (§5 step 6).
+4. **Irrigation share in the Cerrado** — closed 2026-10-15; see Closed.
 5. **First five names on the outreach list**, and which note goes to them first.
 
 ### Closed
@@ -944,6 +942,13 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 - **Conab vintage** (still-open item 1) — the backtest target, and the biennial term, use Conab's
   final figure for each safra in the current historical series, with its download date recorded
   (§4c, §5 step 7, Amendment 19b).
+- **Region weights** (still-open item 2) — the four-region total is weighted by IBGE PAM coffee
+  area for PAM year S−2, the same weights as within regions, not by production (`prereg-1`,
+  Amendment 37). Its yield target is Conab's four-unit production over four-unit area.
+- **Irrigation share in the Cerrado** (still-open item 4) — no irrigation adjustment in v1. It
+  would be the only region-specific term and needs a Censo Agro value not yet obtained.
+  Triângulo, Alto Paranaíba e Noroeste's rain-only skill is reported separately instead
+  (`prereg-1`, Amendment 37).
 
 ## 11. Risks
 
@@ -951,7 +956,7 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 |---|---|
 | Overclaiming | Condition index framing in every note; range not point; §1a |
 | Biennial bearing | Coefficient on crop S−1's anomaly, so shocks reset the phase (§5 step 7); final figure used, a declared and sized leak with a third-survey sensitivity; report relative to the expectation |
-| Irrigation in the Cerrado | Separate weighting; flag irrigation share from Censo Agro |
+| Irrigation in the Cerrado | No adjustment in v1 (Amendment 37); Triângulo's rain-only skill reported separately |
 | Short fitting sample | MODIS era, ~25 seasons (§4a); four pooled ridge weights, frost fixed (§5 step 6); leave-one-season-out by note date |
 | ERA5-Land misses valley frost | INMET stations only; ERA5-Land has no frost role (§4b) |
 | MODIS blurs smallholder terrain | Expect weakest skill in Zona da Mata; report regional skill separately |
