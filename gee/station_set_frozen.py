@@ -14,8 +14,11 @@ Inputs:
   data/raw/inmet/catalogo_estacoes_automaticas.csv, bdmep_estacoes_convencionais.csv
                                         every automatic and conventional station, any state
   data/raw/inmet/{2008..2026}.zip       automatic completeness (gee/inmet_completeness.py rule)
-  docs/week0/bdmep_completeness.csv     conventional completeness, for the stations whose BDMEP
-                                        data were requested
+  the BDMEP zip (argument)              conventional completeness for every candidate whose file
+                                        is in the zip (gee/bdmep_completeness.py rule). Corrected
+                                        2026-10-15: the first version read completeness only for
+                                        the 37 requested candidates, although the zip holds 105
+                                        stations; see SPEC_CHANGELOG (correction after prereg-2)
 
 Rules, per frost window Jun–Aug of year y (crop y+1, mask year y−1):
   coffee area      pixel coffee fraction for the window's mask year; every share below is
@@ -33,11 +36,14 @@ Rules, per frost window Jun–Aug of year y (crop y+1, mask year y−1):
   coverage         share of the region's coffee area inside the union of qualifying circles,
                    overlaps counted once; unflaggable when the combined coverage is under 15% (17c)
 
-Run:    .venv/Scripts/python gee/station_set_frozen.py
+Run:    .venv/Scripts/python gee/station_set_frozen.py <path to BDMEP zip>
 Writes: docs/week0/station_candidates_frozen.csv, docs/week0/inmet_completeness_frozen.csv,
+        docs/week0/bdmep_completeness_frozen.csv,
         docs/week0/station_set_frozen.csv (station × region × window),
         docs/week0/station_coverage_frozen.csv (region × window), docs/week0/elevation_cut_frozen.csv
 """
+import re
+import sys
 import zipfile
 
 import numpy as np
@@ -45,6 +51,7 @@ import pandas as pd
 
 import inmet_completeness as ic
 from bdmep_candidates import within
+from bdmep_completeness import MAX_GAP_DAYS, MIN_DAYS, read_station, window
 from common import ROOT, WEEK0
 
 RAW = ROOT / "data" / "raw" / "inmet"
@@ -106,7 +113,30 @@ def wquantile(x, w, q):
     return float(x[o][np.searchsorted(c, q * c[-1])])
 
 
-def main():
+def conventional_windows(codes, bdmep_zip):
+    z = zipfile.ZipFile(bdmep_zip)
+    files = {re.search(r"dados_(\d+)_D_", n).group(1): n for n in z.namelist() if n.endswith(".csv")}
+    rows, status = [], {}
+    for code in codes:
+        if code not in files:
+            status[code] = "not in the BDMEP zip"
+            continue
+        try:
+            _, s, _, _ = read_station(z.read(files[code]))
+        except AssertionError:  # a file with no minimum-temperature column
+            status[code] = "in the zip, no minimum-temperature column"
+            continue
+        status[code] = "BDMEP zip" if s.notna().any() else "in the zip, no values"
+        for y in WINDOWS:
+            valid, gap = window(s, y)
+            rows.append(dict(code=code, year=y, valid_days=valid, max_gap_days=gap,
+                             window_ok=(valid >= MIN_DAYS) and (gap <= MAX_GAP_DAYS)))
+    out = pd.DataFrame(rows, columns=["code", "year", "valid_days", "max_gap_days", "window_ok"])
+    out.to_csv(WEEK0 / "bdmep_completeness_frozen.csv", index=False)
+    return out, status
+
+
+def main(bdmep_zip):
     pts = (pd.read_csv(ROOT / "data" / "derived" / "frozen_mask_pixels.csv", dtype={"code": str})
            .rename(columns={"latitude": "lat", "longitude": "lon"}))
     pts["region"] = pts.region_id.map(REGIONS)
@@ -123,10 +153,10 @@ def main():
     st["frozen_pixels_25km"] = [int(within(fro, r.lat, r.lon).sum()) for r in st.itertuples()]
     cand = st[st.frozen_pixels_25km > 0].copy()
     auto_win, computed = automatic_windows(cand.loc[cand.network == "automatic", "code"].tolist())
-    conv_win = pd.read_csv(WEEK0 / "bdmep_completeness.csv", dtype={"code": str})
+    conv_win, conv_status = conventional_windows(cand.loc[cand.network == "conventional", "code"].tolist(), bdmep_zip)
     cand["windows_source"] = np.where(
         cand.network == "automatic", np.where(cand.code.isin(computed), "computed now", "inmet_completeness.csv"),
-        np.where(cand.code.isin(set(conv_win.code)), "bdmep_completeness.csv", "no BDMEP data requested"))
+        cand.code.map(conv_status))
     cand.to_csv(WEEK0 / "station_candidates_frozen.csv", index=False)
     ok = {("automatic", r.code, r.year): bool(r.window_ok) for r in auto_win.itertuples()}
     ok.update({("conventional", r.code, r.year): bool(r.window_ok) for r in conv_win.itertuples()})
@@ -205,7 +235,7 @@ def main():
 
 if __name__ == "__main__":
     pd.set_option("display.width", 250)
-    cand, cuts, rows, cov, pairs = main()
+    cand, cuts, rows, cov, pairs = main(sys.argv[1])
     print(cand.groupby(["network", "windows_source"]).size().to_string())
     print(cuts.pivot(index="crop", columns="region", values="p95_elev_m").to_string())
     print("fixed cut:", cuts.groupby("region").elev_cut_m.first().to_dict())

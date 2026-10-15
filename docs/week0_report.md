@@ -2198,3 +2198,32 @@ boundary, which the check could not resolve either, remains undocumented.
 **BDMEP re-request:** the three operating conventional stations without BDMEP data were added to
 the mid-November reminder: Formoso 83334, Santo Antônio de Pádua 83805 and Mirante de Santana
 83781. Their 2026 windows, with the others', are a `prereg-2` addendum.
+
+### §17 correction after `prereg-2` (Amendment 39b, 2026-10-15)
+
+**The error:**
+- The station set took conventional completeness only for the 37 candidates requested on
+  2026-10-14.
+- The BDMEP zip of that date holds 105 stations. So 15 of the 19 candidates labelled "no BDMEP
+  data requested" had data in hand and were never tested.
+- That includes Formoso, Santo Antônio de Pádua and Mirante de Santana, which Amendment 39 had
+  wrongly called stations without data.
+- Found while computing the W2 frost input, which reads the zip directly.
+
+**The fix:**
+- Completeness is now read from the zip for every candidate (`bdmep_completeness_frozen.csv`). It
+  reproduces all 665 windows of the 37 originals.
+- 47 of the 54 conventional candidates have data. Of the other 7, six files have no values and one
+  has no minimum-temperature column.
+
+**Effect:**
+- 12 stations newly qualify in 94 station-region-seasons, each holding at most 0.02% of its
+  region's coffee.
+- Coverage changes by at most 0.1 point. Triângulo crop 2018 is 7.6% and still the only
+  unflaggable region-season.
+- Elevation cuts are unchanged.
+- 69 automatic and 43 conventional stations now qualify in at least one region-season. Barbacena
+  A502 qualifies nowhere under the fixed cut.
+
+**Crop 2027 (Jun–Aug 2026):** one conventional station qualifies (Triângulo). The rest await the
+mid-November re-request.

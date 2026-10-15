@@ -74,57 +74,57 @@ A507,UBERLANDIA,MG,Operante,-18.916944,-48.255556,874.77,automatic,359,inmet_com
 A542,UNAI,MG,Operante,-16.554167,-46.881944,640.85,automatic,127,inmet_completeness.csv
 A515,VARGINHA,MG,Operante,-21.566389,-45.404167,949.78,automatic,18990,inmet_completeness.csv
 A510,VICOSA,MG,Operante,-20.7625,-42.863889,697.64,automatic,2810,inmet_completeness.csv
-83546,ECOPORANGA,ES,Desativada,-18.365694,-40.840656,253.95,conventional,45,no BDMEP data requested
-83595,AIMORES,MG,Desativada,-19.494872,-41.077647,79.93,conventional,373,bdmep_completeness.csv
-83579,ARAXA,MG,Operante,-19.60555555,-46.94972221,1018.28,conventional,2915,bdmep_completeness.csv
-83582,BAMBUI,MG,Desativada,-20.0311111,-46.00888888,684.43,conventional,2282,bdmep_completeness.csv
-83689,BARBACENA,MG,Desativada,-21.23972221,-43.78138888,1128.08,conventional,32,bdmep_completeness.csv
-83587,BELO HORIZONTE,MG,Operante,-19.93444444,-43.95222222,915.47,conventional,2,bdmep_completeness.csv
-83533,BOM DESPACHO,MG,Fechada,-19.71944443,-45.36749999,695.0,conventional,40,no BDMEP data requested
-83589,C. DO MATO DENTRO,MG,Fechada,-19.02027777,-43.43388888,663.02,conventional,8,bdmep_completeness.csv
-83681,CALDAS(P. DE CALDAS),MG,Desativada,-21.918139,-46.382977,1077.08,conventional,4933,bdmep_completeness.csv
-83639,CAPARAO,MG,Operante,-20.5261111,-41.90916666,836.25,conventional,17939,bdmep_completeness.csv
-83592,CARATINGA,MG,Fechada,-19.73583333,-42.13722221,609.56,conventional,11731,bdmep_completeness.csv
-83037,CORONEL PACHECO,MG,Desativada,-21.54666666,-43.26111111,411.03,conventional,9,bdmep_completeness.csv
-83635,DIVINOPOLIS,MG,Fechada,-20.17333332,-44.87472221,787.42,conventional,14,bdmep_completeness.csv
-83581,FLORESTAL,MG,Desativada,-19.885422,-44.416889,753.51,conventional,112,bdmep_completeness.csv
-83334,FORMOSO,MG,Operante,-14.949727,-46.235795,854.6,conventional,43,no BDMEP data requested
-83574,FRUTAL,MG,Desativada,-20.034803,-48.930435,547.09,conventional,9,bdmep_completeness.csv
-83591,JOAO MONLEVADE,MG,Fechada,-19.82388888,-43.14416666,859.84,conventional,7,bdmep_completeness.csv
-83481,JOAO PINHEIRO,MG,Desativada,-17.74027777,-46.17694443,759.62,conventional,94,bdmep_completeness.csv
-83692,JUIZ DE FORA,MG,Operante,-21.76999999,-43.36444444,936.9,conventional,36,bdmep_completeness.csv
-83032,LAMBARI,MG,Desativada,-21.944146,-45.317739,884.56,conventional,15509,bdmep_completeness.csv
-83687,LAVRAS,MG,Operante,-21.2261111,-44.97972221,916.19,conventional,6557,bdmep_completeness.csv
-83683,MACHADO,MG,Fechada,-21.68138888,-45.94083333,892.44,conventional,19382,bdmep_completeness.csv
-83015,MARIA DA FE,MG,Desativada,-22.31444444,-45.37305554,1281.36,conventional,6372,no BDMEP data requested
-83578,MATEUS LEME,MG,Desativada,-20.02,-44.35,768.0,conventional,98,no BDMEP data requested
-83637,OLIVEIRA,MG,Desativada,-20.699773,-44.819903,991.23,conventional,6803,bdmep_completeness.csv
-83479,PARACATU,MG,Fechada,-17.24416666,-46.88166666,711.41,conventional,21,no BDMEP data requested
-83737,PASSA QUATRO,MG,Operante,-22.38277777,-44.96694443,919.55,conventional,83,bdmep_completeness.csv
-83531,PATOS DE MINAS,MG,Fechada,-18.51972221,-46.43916666,947.68,conventional,2782,bdmep_completeness.csv
-83736,SAO LOURENCO,MG,Desativada,-22.12638888,-45.04333333,930.65,conventional,4904,bdmep_completeness.csv
-83631,SAO S.DO PARAISO,MG,Desativada,-20.91,-47.11416666,820.0,conventional,11729,bdmep_completeness.csv
-83586,SETE LAGOAS,MG,Desativada,-19.48454,-44.173798,753.68,conventional,7,no BDMEP data requested
-83492,TEOFILO OTONI,MG,Desativada,-17.86027777,-41.5075,349.11,conventional,8,no BDMEP data requested
-83577,UBERABA,MG,Fechada,-19.73722221,-47.94972221,753.41,conventional,18,no BDMEP data requested
-83642,VICOSA,MG,Fechada,-20.7625,-42.86388888,697.53,conventional,2810,bdmep_completeness.csv
-83807,CARMO,RJ,Desativada,-21.93583333,-42.60611111,342.19,conventional,4,no BDMEP data requested
-83805,SANTO ANTONIO DE PADUA,RJ,Operante,-21.53694444,-42.16083333,95.0,conventional,10,no BDMEP data requested
-83773,AVARE,SP,Desativada,-23.083579,-48.911718,831.96,conventional,977,bdmep_completeness.csv
-83714,CAMPOS DO JORDAO,SP,Desativada,-22.75027777,-45.60388888,1662.56,conventional,113,no BDMEP data requested
-83676,CATANDUVA,SP,Fechada,-21.12222221,-48.94694444,570.0,conventional,88,bdmep_completeness.csv
-83630,FRANCA,SP,Operante,-20.58444444,-47.38249999,1003.55,conventional,7802,bdmep_completeness.csv
-83075,GUARULHOS,SP,Desativada,-23.470981,-46.533559,746.51,conventional,9,no BDMEP data requested
-83824,ITU,SP,Desativada,-23.264627,-47.299742,616.0,conventional,8,bdmep_completeness.csv
-83674,LINS,SP,Desativada,-21.669223,-49.732678,469.08,conventional,261,bdmep_completeness.csv
-83716,PRESIDENTE PRUDENTE,SP,Desativada,-22.119874,-51.408624,431.97,conventional,2,no BDMEP data requested
-83084,PUC-SP,SP,Desativada,-23.53,-46.63,742.0,conventional,3,no BDMEP data requested
-83726,SAO CARLOS,SP,Fechada,-21.98027777,-47.88388888,859.77,conventional,231,bdmep_completeness.csv
-83781,SAO PAULO(MIR.de SANTANA),SP,Operante,-23.49638888,-46.61999999,785.16,conventional,3,no BDMEP data requested
-83669,SAO SIMAO,SP,Desativada,-21.46111111,-47.57944443,620.02,conventional,171,bdmep_completeness.csv
-83851,SOROCABA,SP,Desativada,-23.47999999,-47.42666666,597.58,conventional,8,no BDMEP data requested
-83651,SOROCABA,SP,Desativada,-23.47999999,-47.45,583.0,conventional,8,no BDMEP data requested
-83784,TAUBATE,SP,Desativada,-23.0388889,-45.5158333,581.0,conventional,108,bdmep_completeness.csv
-83786,UBATUBA,SP,Desativada,-23.416697,-45.114373,19.55,conventional,35,bdmep_completeness.csv
-83035,VILA DEODORO,SP,Desativada,-23.58,-46.6,789.0,conventional,3,no BDMEP data requested
-83623,VOTUPORANGA,SP,Fechada,-20.43972221,-49.9836111,510.41,conventional,68,bdmep_completeness.csv
+83546,ECOPORANGA,ES,Desativada,-18.365694,-40.840656,253.95,conventional,45,BDMEP zip
+83595,AIMORES,MG,Desativada,-19.494872,-41.077647,79.93,conventional,373,BDMEP zip
+83579,ARAXA,MG,Operante,-19.60555555,-46.94972221,1018.28,conventional,2915,BDMEP zip
+83582,BAMBUI,MG,Desativada,-20.0311111,-46.00888888,684.43,conventional,2282,BDMEP zip
+83689,BARBACENA,MG,Desativada,-21.23972221,-43.78138888,1128.08,conventional,32,BDMEP zip
+83587,BELO HORIZONTE,MG,Operante,-19.93444444,-43.95222222,915.47,conventional,2,BDMEP zip
+83533,BOM DESPACHO,MG,Fechada,-19.71944443,-45.36749999,695.0,conventional,40,BDMEP zip
+83589,C. DO MATO DENTRO,MG,Fechada,-19.02027777,-43.43388888,663.02,conventional,8,BDMEP zip
+83681,CALDAS(P. DE CALDAS),MG,Desativada,-21.918139,-46.382977,1077.08,conventional,4933,BDMEP zip
+83639,CAPARAO,MG,Operante,-20.5261111,-41.90916666,836.25,conventional,17939,BDMEP zip
+83592,CARATINGA,MG,Fechada,-19.73583333,-42.13722221,609.56,conventional,11731,BDMEP zip
+83037,CORONEL PACHECO,MG,Desativada,-21.54666666,-43.26111111,411.03,conventional,9,BDMEP zip
+83635,DIVINOPOLIS,MG,Fechada,-20.17333332,-44.87472221,787.42,conventional,14,BDMEP zip
+83581,FLORESTAL,MG,Desativada,-19.885422,-44.416889,753.51,conventional,112,BDMEP zip
+83334,FORMOSO,MG,Operante,-14.949727,-46.235795,854.6,conventional,43,BDMEP zip
+83574,FRUTAL,MG,Desativada,-20.034803,-48.930435,547.09,conventional,9,BDMEP zip
+83591,JOAO MONLEVADE,MG,Fechada,-19.82388888,-43.14416666,859.84,conventional,7,BDMEP zip
+83481,JOAO PINHEIRO,MG,Desativada,-17.74027777,-46.17694443,759.62,conventional,94,BDMEP zip
+83692,JUIZ DE FORA,MG,Operante,-21.76999999,-43.36444444,936.9,conventional,36,BDMEP zip
+83032,LAMBARI,MG,Desativada,-21.944146,-45.317739,884.56,conventional,15509,"in the zip, no values"
+83687,LAVRAS,MG,Operante,-21.2261111,-44.97972221,916.19,conventional,6557,BDMEP zip
+83683,MACHADO,MG,Fechada,-21.68138888,-45.94083333,892.44,conventional,19382,BDMEP zip
+83015,MARIA DA FE,MG,Desativada,-22.31444444,-45.37305554,1281.36,conventional,6372,BDMEP zip
+83578,MATEUS LEME,MG,Desativada,-20.02,-44.35,768.0,conventional,98,"in the zip, no values"
+83637,OLIVEIRA,MG,Desativada,-20.699773,-44.819903,991.23,conventional,6803,BDMEP zip
+83479,PARACATU,MG,Fechada,-17.24416666,-46.88166666,711.41,conventional,21,BDMEP zip
+83737,PASSA QUATRO,MG,Operante,-22.38277777,-44.96694443,919.55,conventional,83,BDMEP zip
+83531,PATOS DE MINAS,MG,Fechada,-18.51972221,-46.43916666,947.68,conventional,2782,BDMEP zip
+83736,SAO LOURENCO,MG,Desativada,-22.12638888,-45.04333333,930.65,conventional,4904,BDMEP zip
+83631,SAO S.DO PARAISO,MG,Desativada,-20.91,-47.11416666,820.0,conventional,11729,BDMEP zip
+83586,SETE LAGOAS,MG,Desativada,-19.48454,-44.173798,753.68,conventional,7,BDMEP zip
+83492,TEOFILO OTONI,MG,Desativada,-17.86027777,-41.5075,349.11,conventional,8,BDMEP zip
+83577,UBERABA,MG,Fechada,-19.73722221,-47.94972221,753.41,conventional,18,BDMEP zip
+83642,VICOSA,MG,Fechada,-20.7625,-42.86388888,697.53,conventional,2810,BDMEP zip
+83807,CARMO,RJ,Desativada,-21.93583333,-42.60611111,342.19,conventional,4,BDMEP zip
+83805,SANTO ANTONIO DE PADUA,RJ,Operante,-21.53694444,-42.16083333,95.0,conventional,10,BDMEP zip
+83773,AVARE,SP,Desativada,-23.083579,-48.911718,831.96,conventional,977,BDMEP zip
+83714,CAMPOS DO JORDAO,SP,Desativada,-22.75027777,-45.60388888,1662.56,conventional,113,BDMEP zip
+83676,CATANDUVA,SP,Fechada,-21.12222221,-48.94694444,570.0,conventional,88,BDMEP zip
+83630,FRANCA,SP,Operante,-20.58444444,-47.38249999,1003.55,conventional,7802,BDMEP zip
+83075,GUARULHOS,SP,Desativada,-23.470981,-46.533559,746.51,conventional,9,BDMEP zip
+83824,ITU,SP,Desativada,-23.264627,-47.299742,616.0,conventional,8,"in the zip, no values"
+83674,LINS,SP,Desativada,-21.669223,-49.732678,469.08,conventional,261,"in the zip, no values"
+83716,PRESIDENTE PRUDENTE,SP,Desativada,-22.119874,-51.408624,431.97,conventional,2,BDMEP zip
+83084,PUC-SP,SP,Desativada,-23.53,-46.63,742.0,conventional,3,"in the zip, no minimum-temperature column"
+83726,SAO CARLOS,SP,Fechada,-21.98027777,-47.88388888,859.77,conventional,231,BDMEP zip
+83781,SAO PAULO(MIR.de SANTANA),SP,Operante,-23.49638888,-46.61999999,785.16,conventional,3,BDMEP zip
+83669,SAO SIMAO,SP,Desativada,-21.46111111,-47.57944443,620.02,conventional,171,BDMEP zip
+83851,SOROCABA,SP,Desativada,-23.47999999,-47.42666666,597.58,conventional,8,BDMEP zip
+83651,SOROCABA,SP,Desativada,-23.47999999,-47.45,583.0,conventional,8,"in the zip, no values"
+83784,TAUBATE,SP,Desativada,-23.0388889,-45.5158333,581.0,conventional,108,BDMEP zip
+83786,UBATUBA,SP,Desativada,-23.416697,-45.114373,19.55,conventional,35,BDMEP zip
+83035,VILA DEODORO,SP,Desativada,-23.58,-46.6,789.0,conventional,3,"in the zip, no values"
+83623,VOTUPORANGA,SP,Fechada,-20.43972221,-49.9836111,510.41,conventional,68,BDMEP zip
