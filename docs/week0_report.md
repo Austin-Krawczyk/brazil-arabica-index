@@ -2227,3 +2227,82 @@ the mid-November reminder: Formoso 83334, Santo Antônio de Pádua 83805 and Mir
 
 **Crop 2027 (Jun–Aug 2026):** one conventional station qualifies (Triângulo). The rest await the
 mid-November re-request.
+
+## 19. W2 frost input (2026-10-15) — computed; one owner decision before it is frozen
+
+`gee/w2_frost.py` was run locally after `prereg-2`: INMET hourly archives 2008–2026, the BDMEP zip
+of 2026-10-14, the registered station set (Amendments 39, 39b) and the frozen-mask pixel table.
+No Earth Engine call. Rules as registered (Amendments 17, 17b, 17c, 17d, 36); the script's
+docstring states each.
+
+**Outputs:**
+- `data/derived/w2_frost_station_season.csv`: 2,432 station-windows (75 automatic and 53
+  conventional stations × 19 windows). Station counts, tiers, coldest night and unresolved flag.
+- `data/derived/w2_frost_region_season.csv`: per region and crop 2009–2027, with and without
+  unresolved stations. Coverage, tier shares, flags, penalties, the 17d flag, and the four-region
+  total.
+
+### Results, with unresolved stations at their observed tiers
+
+| Crop (Jun–Aug window) | Region | Flag | Share of observed coffee | Penalty (yield fraction) |
+|---|---|---|---|---|
+| 2012 (2011) | Sul e Centro-Oeste | severe | 27.8% | 0.128 |
+| 2022 (2021) | Triângulo, Alto Paranaíba e Noroeste | severe | 70.7% | 0.295 |
+| 2026 (2025) | Triângulo, Alto Paranaíba e Noroeste | 2 °C | 69.7% | 0.180 |
+
+Every other region-season has no flag and no penalty. The four-region totals (PAM-weighted) are
+0.056 (crop 2012), 0.051 (2022) and 0.031 (2026).
+
+**Findings:**
+1. **The July 2021 frost (crop 2022) flags Triângulo only.**
+   - In Sul e Centro-Oeste, severe-tier stations cover 9.9% of observed coffee and 2 °C-tier
+     stations 14.4%, both under the 25% flag.
+   - Screen minima stayed above the thresholds at most stations: for example Varginha 0.8 °C and
+     Machado 5.5 °C on 20 July. The cold-pool stations were the exception: Caldas −3.5 °C and
+     Passos −1.4 °C.
+   - In São Paulo, severe-tier stations cover 0.6% of observed coffee.
+   - Under §8's W2 check this is a finding: crop 2022 is not the worst frost season in Sul or São
+     Paulo by this input. Nothing is changed to make it so.
+2. **Crop 2012 (Jun–Aug 2011)** flags Sul severe. Its 17d flag is set: the region's flags differ on
+   automatic stations alone.
+3. **Crop 2026 (Jun–Aug 2025)** flags Triângulo at the 2 °C tier. That agrees with the August 2025
+   Cerrado frost reported in the press (Week 0 report §15).
+4. **Unresolved stations.**
+   - 353 of 1,208 qualifying station-windows are unresolved, with a median of 2 missing nights.
+   - Leaving them out changes one flag: Sul crop 2020 becomes severe-flagged (31.3% of a smaller
+     observed area; penalty 0.186), because the observed area shrinks.
+
+### Crop 2027 (Jun–Aug 2026, note 1) — the zero is not established
+
+- **On the registered rules,** no station meets a tier and no region is flagged. Coverage is
+  19.2–25.8%, with one conventional station.
+- **But most crop-2027 stations are unresolved,** and an independent check contradicts the zero
+  at one of them. Unresolved: 7 of 9 in Sul, 10 of 11 in Triângulo, 7 of 14 in Zona da Mata and
+  15 of 22 in São Paulo.
+  - **Caldas (A530, Sul):** the 22 and 23 UTC readings (19:00–20:00 local) are missing on every
+    night from 1 June to 22 July 2026. Its window passes completeness (95.2% of hours), but under
+    17b every one of those nights is unobserved.
+  - Its pre-dawn readings on those nights are complete. They show seven nights at or below 2 °C,
+    the coldest **−0.5 °C on the morning of 14 July 2026**: a severe-tier night that the rule
+    hides.
+- **Elsewhere:**
+  - On 3 June 2026, 23 stations miss the night together, an archive outage. The coldest of the 28
+    stations reporting that night was 8.1 °C.
+  - The coldest observed night across all 51 qualifying automatic stations was 2.9 °C.
+- **Effect on flags:** with Caldas as severe, Sul's severe share would be about 8% (Caldas holds
+  about 1.5% of Sul's coffee). That is under the 25% flag, so no region's flag changes.
+- **For note 1:** the station record does not support "no frost in Jun–Aug 2026". It shows
+  isolated frost at a cold-pool station, with no region reaching the flag on the data in hand.
+  The conventional network's 2026 windows (the mid-November addendum) are the independent check.
+
+### For the owner: the night rule's evening hours
+
+- **The registered rule (17b)** requires every hour 18:00–09:00 local.
+- **A pre-dawn alternative was computed for information only, not applied:** a night counts when
+  its 00:00–09:00 local hours are complete (`docs/week0/w2_frost_night_rule_alternative.csv`).
+- **Across all 19 windows it:**
+  - resolves 65 of the 311 unresolved automatic station-windows;
+  - changes one tier: Caldas 2026, from none to severe;
+  - changes no regional flag in any season.
+- **It would be a change after `prereg-2`.** The frost input for the backtest seasons (crops
+  2009–2026) is unchanged either way. The owner's choice decides only how note 1 reports Caldas.
