@@ -768,3 +768,40 @@ Every change to scope, dated, with the reason. Newest at the bottom.
     persistent-pixel sensitivity is deferred, not dropped (still registered, §5 step 1); weights
     are exported per IBGE 1989 mesoregion.
   - **Recorded in** `docs/preregistration.md`. Owner decision.
+
+- 2026-10-14 — **AMENDMENT 16d: one-sided 30% filter with stable membership, applied at
+  aggregation; registered sensitivities; representativeness caveat.** Amends §5 step 1 and
+  Amendments 16 and 16b.
+
+  **Reason** (Week 0 report §12):
+  - The original two-sided rule assumed that MapBiomas and PAM roughly agree. Inspection
+    disproved it.
+  - Collection 11 maps 0.19–0.63 of PAM's coffee area in São Paulo and Zona da Mata, and about
+    half in every region in the early years. Only 18% of municipality-years agree within 30%.
+  - The two-sided rule kept 4–19% of São Paulo's mapped coffee.
+  - **Draft 1** (a one-sided test season by season) was not approved. Season-varying membership
+    puts composition changes into the anomaly series, and single-season crossings of the
+    threshold are noise, not over-mapping: Campos Gerais exceeded 1.3 in only 7 of 28 years
+    (median ratio 0.88), and Três Pontas in 6 (median 0.98).
+
+  **Changes:**
+  1. **Stable, one-sided rule.** Each municipality is dropped for every season or for none: when
+     the median, across mask years 1998–2025, of its persistent-pixel MapBiomas area over PAM
+     total coffee exceeds 1.3. PAM zero with mapped coffee counts as an infinite ratio. Years with
+     no coffee on either side, and years PAM marks missing, are not counted.
+  2. **Untestable municipalities dropped:** 5 have mapped coffee but no comparable year, holding
+     about 553 ha in total.
+  3. **What it removes:** Sul 55, São Paulo 144, Triângulo 18 and Zona da Mata 84 municipalities.
+     Share of mapped coffee kept: Sul 0.79–0.95, São Paulo 0.79–0.84, Triângulo 0.997–0.999, Zona
+     da Mata 0.89–0.97.
+  4. **Applied at aggregation.** Regions are aggregated by IBGE PAM coffee area, as registered in
+     §3, which is unchanged. The PAM year for season S is S−2, the same lag as the mask and the
+     latest available at the note date. A municipality with no PAM value gets zero weight.
+     Registered sensitivities: no filter, and aggregation by mapped coffee area.
+  5. **Representativeness caveat added to §5 step 1 and §11.**
+  6. **Chosen after inspecting what the original rule removed.** That is mask information, not
+     yield or frost outcomes; it is registered at `prereg-2` with that statement.
+
+  Approved by owner with one change. Draft 2 proposed making mapped-area aggregation primary and
+  changing §3; that was refused. PAM-area aggregation stays primary as registered, and
+  mapped-area aggregation is the sensitivity.

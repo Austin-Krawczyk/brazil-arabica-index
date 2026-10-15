@@ -375,10 +375,69 @@ A set of regional anomalies against the MODIS-era baseline, combined into one co
 region and scored against Conab. **Keep it simple enough to explain in a 15-minute call.**
 
 1. **Mask.** Clip MapBiomas class 46 to the four regions; drop municipalities whose MapBiomas area
-   differs from IBGE PAM coffee area by more than 30%. **Freeze the mask for the season.**
+   typically **exceeds** IBGE PAM coffee area by more than 30% (one-sided, stable membership,
+   Amendment 16d; below). **Freeze the mask for the season.**
    **Report what the filter removed and whether the removed municipalities differ from the kept**
    (§9) — the 30% trigger very likely correlates with steep smallholder terrain, so it may
    preferentially delete Zona da Mata, the region the mask is least reliable in.
+
+   **The filter rule (AMENDED 2026-10-14, Amendment 16d).**
+   - **Why it changed:** the original two-sided rule assumed that MapBiomas and PAM roughly
+     agree. Inspection disproved that (Week 0 report §12).
+     - Collection 11 maps 0.19–0.63 of PAM's coffee area in São Paulo and Zona da Mata, and about
+       half in every region in the early years.
+     - Only 18% of municipality-years agree within 30%.
+     - The two-sided rule kept 4–19% of São Paulo's mapped coffee in every season.
+   - **One-sided:** MapBiomas below PAM is omission, and the pixels MapBiomas does map are kept.
+     MapBiomas above PAM is the over-mapping risk the filter was written for (bearing-area
+     mismatch, below).
+   - **Stable membership:** each municipality is tested once and kept or dropped for every
+     season. Season-by-season membership would put composition changes into the anomaly series,
+     and single-season crossings of the threshold are noise, not over-mapping. Under a
+     season-by-season test, Campos Gerais exceeded 1.3 in only 7 of 28 years (median ratio 0.88),
+     and Três Pontas in 6 (median 0.98).
+   - **The test:** a municipality's ratio in each mask year M (1998–2025) is its persistent-pixel
+     MapBiomas area (Amendment 16b) over PAM's coffee area for M.
+     - PAM recording zero where MapBiomas maps coffee counts as an infinite ratio.
+     - Years with no coffee on either side, and years PAM marks missing (`...`), are not counted.
+     - **The municipality is dropped when the median of its ratios exceeds 1.3.**
+   - **Comparator:** PAM table 1613, variable 2313 (area intended for harvest), "Café (em grão)
+     Total". MapBiomas class 46 does not separate species, and PAM's arabica split exists only
+     from 2012.
+   - **Municipalities with mapped coffee but no comparable year** are dropped as untestable. There
+     are 5, holding about 553 ha of mapped coffee, 550 of it in Santa Rita de Ibitipoca.
+   - **What it removes** (`docs/week0/w1_filter_stable_removed.csv`): 55 municipalities in Sul, 144
+     in São Paulo, 18 in Triângulo and 84 in Zona da Mata. Most are municipalities where PAM
+     records little or no coffee but MapBiomas maps some. The largest is Jacuí (Sul, mean 4,700
+     ha mapped), above 1.3 in all 28 years with a median of 1.88. Campos Gerais, Três Pontas and
+     Boa Esperança are kept.
+   - **Retention:** share of mapped coffee kept, over mask years 1998–2025
+     (`docs/week0/w1_retention_stable.csv`):
+
+     | Region | Two-sided rule, per season (replaced) | One-sided rule, stable membership (registered) |
+     |---|---|---|
+     | Sul e Centro-Oeste | 0.15–0.83 | 0.79–0.95 |
+     | São Paulo | 0.04–0.19 | 0.79–0.84 |
+     | Triângulo, Alto Paranaíba e Noroeste | 0.07–0.96 | 0.997–0.999 |
+     | Zona da Mata, Rio Doce e Central | 0.15–0.48 | 0.89–0.97 |
+
+   - **Applied at aggregation.** W1 reduces every composite per municipality, and the filter is
+     applied when municipal values are combined into regions.
+   - **Aggregation weights.** Regions are aggregated by IBGE PAM coffee area, as registered in §3.
+     - **PAM year:** for season S it is S−2, the same lag as the mask. That is the latest PAM
+       available at the note date: PAM 2025 was available on 2026-10-14, for crop 2027.
+     - **No PAM value:** a municipality with no PAM value for that year gets zero weight.
+   - **Registered sensitivities,** reported beside the headline like the persistent-pixel mask:
+     - no filter (the full class-46 mask);
+     - regions aggregated by mapped coffee area (MapBiomas) instead of PAM coffee area.
+   - **Chosen after inspection.** The rule was chosen after seeing what the original filter
+     removed. That is mask information, not yield or frost outcomes; it is registered at
+     `prereg-2` with this statement.
+
+   **Representativeness caveat (Amendment 16d).** The index's vegetation signal comes from the
+   coffee MapBiomas detects. That coffee is biased toward large, sun-grown fields, and the bias is
+   worst in Zona da Mata and São Paulo, where MapBiomas maps barely half of PAM's coffee area. The
+   smallholder and shaded coffee it misses is under-represented in the index.
 
    **Week 0 finding (2026-10-14, Amendment 17c).** In a 20,000-point random sample of MapBiomas
    class 46 (2024), each region's share of the index's points divided by its share of IBGE PAM
@@ -419,7 +478,8 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    - The index itself stays on the full class-46 mask in v1. The backtest is reported once more
      on the persistent-pixel mask, as a sensitivity beside the headline, like CHIRPS-prelim and
      VIIRS.
-   - Both masks are registered at `prereg-2`.
+   - Both masks are registered at `prereg-2`, with the filter rule and its sensitivities
+     (Amendment 16d).
 2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and EVI from `MOD13Q1`
    over the mask, cloud-masked. Express as a z-score against the same window across the baseline
    years. `MOD13Q1` has no 1.6 µm band, so the standard NDMI cannot be computed from it and is not
@@ -702,8 +762,8 @@ assembled by hand from the notebook's charts and tables.
 including §4c Conab granularity, the INMET checks, the CHIRPS circularity check, the unverified IDs
 and the Terra drift check.
 
-Then: **W1** frozen mask and first regional EVI and NDVI series (check: mask area within 30% of
-IBGE per municipality, with the removal report). **W2** anomalies and rainfall windows for every
+Then: **W1** frozen mask and first regional EVI and NDVI series (check: the one-sided, stable 30%
+filter against IBGE per municipality, with the removal report; Amendment 16d). **W2** anomalies and rainfall windows for every
 MODIS-era season (check: report each season's rank on every input, per region and for the
 four-region total; if crops 2022 and 2025 are not the worst, that is a finding, and nothing is
 changed to make them so). **W3–W4** backtest by note date (check: against the pass marks fixed in
@@ -772,7 +832,10 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
     - the frost tier constants
   - **Tag `prereg-2`, before the first backtest run.** It records the values that need data but
     not results:
-    - the mask lag and both masks: full class 46 and persistent-pixel (§5 step 1)
+    - the mask lag and both masks: full class 46 and persistent-pixel; the one-sided,
+      stable-membership filter rule and the list of municipalities it drops, with the statement
+      that the rule was chosen after inspecting what the original rule removed; and the registered
+      sensitivities, no filter and mapped-area aggregation (§5 step 1, Amendment 16d)
     - the station list per region and season with counts and network, the altitude cut, the
       observed coverage per region and season, and the 15% coverage floor with the statement
       that it was chosen from coverage information only, before any frost night was counted
@@ -839,7 +902,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | Short fitting sample | MODIS era, ~25 seasons (§4a); four pooled ridge weights, frost fixed (§5 step 6); leave-one-season-out by note date |
 | ERA5-Land misses valley frost | INMET stations only; ERA5-Land has no frost role (§4b) |
 | MODIS blurs smallholder terrain | Expect weakest skill in Zona da Mata; report regional skill separately |
-| Mask errors | IBGE cross-check with a removal report (§5 step 1) |
+| Mask errors | IBGE cross-check with a removal report (§5 step 1); one-sided, stable-membership filter, with no-filter and mapped-area-weighted sensitivities (Amendment 16d) |
+| Mask representativeness | The signal comes from coffee MapBiomas detects, biased toward large sun-grown fields, worst in Zona da Mata and São Paulo (§5 step 1); stated beside regional results |
 | Cloud in Nov–Mar | 16-day composites; CHIRPS and ERA5 carry the signal when optical is thin |
 | Flowering is sub-pixel and brief | Use flowering-window rainfall and temperature as the proxy, not NDVI |
 | Conab revisions | Use a stated vintage; record it |
