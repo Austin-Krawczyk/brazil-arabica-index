@@ -1,0 +1,276 @@
+region,crop,window,final_mm,prelim_mm,diff_mm,diff_share,muni_mean_abs_diff_mm
+Four-region total,2016,flowering_full,408.6637,406.5714,-2.0923,-0.0051,18.0552
+Four-region total,2016,flowering_nov,257.4033,252.7028,-4.7005,-0.0183,10.9742
+Four-region total,2016,flowering_dec,382.5043,380.0858,-2.4185,-0.0063,16.4336
+Four-region total,2016,beanfill_full,1000.2393,994.0592,-6.1801,-0.0062,27.2482
+Four-region total,2016,beanfill_jan,212.7913,210.4202,-2.3711,-0.0111,9.5274
+Four-region total,2017,flowering_full,359.0755,361.0651,1.9896,0.0055,12.0173
+Four-region total,2017,flowering_nov,266.7978,270.1393,3.3416,0.0125,13.5308
+Four-region total,2017,flowering_dec,309.8113,318.3664,8.5550,0.0276,14.2023
+Four-region total,2017,beanfill_full,767.9649,787.6793,19.7144,0.0257,18.7980
+Four-region total,2017,beanfill_jan,210.8029,214.0449,3.2420,0.0154,8.1997
+Four-region total,2018,flowering_full,338.1496,352.1175,13.9679,0.0413,18.5386
+Four-region total,2018,flowering_nov,226.2326,236.9984,10.7658,0.0476,15.3499
+Four-region total,2018,flowering_dec,302.5797,313.6157,11.0359,0.0365,15.3779
+Four-region total,2018,beanfill_full,928.9713,939.0391,10.0678,0.0108,32.9783
+Four-region total,2018,beanfill_jan,191.0192,195.0067,3.9875,0.0209,10.4250
+Four-region total,2019,flowering_full,413.8415,434.1950,20.3535,0.0492,19.9022
+Four-region total,2019,flowering_nov,311.3472,329.3491,18.0019,0.0578,18.1694
+Four-region total,2019,flowering_dec,410.0203,423.0838,13.0635,0.0319,20.4508
+Four-region total,2019,beanfill_full,899.5519,879.1352,-20.4167,-0.0227,27.1116
+Four-region total,2019,beanfill_jan,167.7395,166.1568,-1.5827,-0.0094,9.5510
+Four-region total,2020,flowering_full,345.4426,343.6988,-1.7437,-0.0050,19.6799
+Four-region total,2020,flowering_nov,221.5015,221.9646,0.4631,0.0021,17.0401
+Four-region total,2020,flowering_dec,294.9936,294.1676,-0.8261,-0.0028,19.5356
+Four-region total,2020,beanfill_full,920.3572,974.4026,54.0453,0.0587,69.2389
+Four-region total,2020,beanfill_jan,202.9550,202.2153,-0.7397,-0.0036,15.3431
+Four-region total,2021,flowering_full,249.7183,250.4836,0.7654,0.0031,26.9053
+Four-region total,2021,flowering_nov,194.7940,183.0092,-11.7848,-0.0605,26.1208
+Four-region total,2021,flowering_dec,247.2826,242.4997,-4.7829,-0.0193,25.7375
+Four-region total,2021,beanfill_full,796.9264,980.6199,183.6936,0.2305,163.9501
+Four-region total,2021,beanfill_jan,229.3005,259.8920,30.5915,0.1334,44.0320
+Four-region total,2022,flowering_full,467.4208,412.6983,-54.7225,-0.1171,59.3459
+Four-region total,2022,flowering_nov,364.3794,316.1972,-48.1823,-0.1322,49.9477
+Four-region total,2022,flowering_dec,418.0049,374.1486,-43.8563,-0.1049,49.4170
+Four-region total,2022,beanfill_full,844.0807,828.3851,-15.6955,-0.0186,73.5598
+Four-region total,2022,beanfill_jan,146.3498,149.0508,2.7009,0.0185,19.9579
+Four-region total,2023,flowering_full,379.0123,384.5621,5.5499,0.0146,46.4862
+Four-region total,2023,flowering_nov,277.7553,281.2204,3.4651,0.0125,35.9683
+Four-region total,2023,flowering_dec,346.7287,352.0607,5.3320,0.0154,41.3411
+Four-region total,2023,beanfill_full,1094.2386,1132.2266,37.9880,0.0347,96.6567
+Four-region total,2023,beanfill_jan,219.0856,206.5802,-12.5053,-0.0571,34.6643
+Four-region total,2024,flowering_full,349.0836,424.1842,75.1006,0.2151,74.6698
+Four-region total,2024,flowering_nov,260.6048,324.8360,64.2312,0.2465,64.3010
+Four-region total,2024,flowering_dec,318.7055,385.7490,67.0434,0.2104,68.1108
+Four-region total,2024,beanfill_full,790.8752,882.5030,91.6279,0.1159,90.9797
+Four-region total,2024,beanfill_jan,135.3727,160.7428,25.3700,0.1874,30.4104
+Four-region total,2025,flowering_full,369.4893,376.0456,6.5563,0.0177,47.3925
+Four-region total,2025,flowering_nov,292.2815,304.7744,12.4929,0.0427,35.6240
+Four-region total,2025,flowering_dec,352.2804,359.6141,7.3337,0.0208,41.0051
+Four-region total,2025,beanfill_full,740.9025,811.9739,71.0714,0.0959,83.7826
+Four-region total,2025,beanfill_jan,237.3813,230.5108,-6.8704,-0.0289,27.9742
+Four-region total,2026,flowering_full,281.6651,323.7134,42.0483,0.1493,50.3835
+Four-region total,2026,flowering_nov,225.8480,257.9641,32.1161,0.1422,39.9168
+Four-region total,2026,flowering_dec,272.4694,311.7158,39.2464,0.1440,47.4573
+Four-region total,2026,beanfill_full,937.8413,1013.3162,75.4749,0.0805,89.6951
+Four-region total,2026,beanfill_jan,194.4739,226.9014,32.4276,0.1667,33.6987
+Sul e Centro-Oeste,2016,flowering_full,459.2118,441.6634,-17.5484,-0.0382,22.5207
+Sul e Centro-Oeste,2016,flowering_nov,288.0885,274.2620,-13.8265,-0.0480,13.8934
+Sul e Centro-Oeste,2016,flowering_dec,428.0832,411.3824,-16.7007,-0.0390,20.2828
+Sul e Centro-Oeste,2016,beanfill_full,1141.6898,1113.0771,-28.6127,-0.0251,23.3642
+Sul e Centro-Oeste,2016,beanfill_jan,242.9891,233.6081,-9.3810,-0.0386,9.2955
+Sul e Centro-Oeste,2017,flowering_full,366.2021,357.3569,-8.8452,-0.0242,10.7998
+Sul e Centro-Oeste,2017,flowering_nov,296.6713,288.4443,-8.2271,-0.0277,11.6581
+Sul e Centro-Oeste,2017,flowering_dec,323.9270,319.4017,-4.5253,-0.0140,8.5167
+Sul e Centro-Oeste,2017,beanfill_full,832.7940,850.2505,17.4565,0.0210,20.0423
+Sul e Centro-Oeste,2017,beanfill_jan,202.8247,205.1351,2.3104,0.0114,10.4719
+Sul e Centro-Oeste,2018,flowering_full,335.6919,353.9175,18.2257,0.0543,16.8920
+Sul e Centro-Oeste,2018,flowering_nov,242.7715,255.5859,12.8144,0.0528,12.4784
+Sul e Centro-Oeste,2018,flowering_dec,299.9817,317.1189,17.1372,0.0571,15.8401
+Sul e Centro-Oeste,2018,beanfill_full,955.7103,951.2405,-4.4699,-0.0047,24.1572
+Sul e Centro-Oeste,2018,beanfill_jan,175.8275,183.7642,7.9367,0.0451,9.7244
+Sul e Centro-Oeste,2019,flowering_full,417.8443,432.8676,15.0232,0.0360,16.7067
+Sul e Centro-Oeste,2019,flowering_nov,311.4680,325.3976,13.9296,0.0447,16.5386
+Sul e Centro-Oeste,2019,flowering_dec,415.7444,420.4668,4.7224,0.0114,17.2519
+Sul e Centro-Oeste,2019,beanfill_full,1005.6693,1005.6750,0.0057,0.0000,13.5207
+Sul e Centro-Oeste,2019,beanfill_jan,196.4895,196.4410,-0.0485,-0.0002,6.0001
+Sul e Centro-Oeste,2020,flowering_full,357.2883,351.5026,-5.7856,-0.0162,12.0814
+Sul e Centro-Oeste,2020,flowering_nov,248.8938,247.2458,-1.6479,-0.0066,12.1102
+Sul e Centro-Oeste,2020,flowering_dec,313.4851,309.0770,-4.4082,-0.0141,12.4588
+Sul e Centro-Oeste,2020,beanfill_full,832.2421,928.9359,96.6937,0.1162,105.3105
+Sul e Centro-Oeste,2020,beanfill_jan,184.2661,173.3163,-10.9498,-0.0594,14.8602
+Sul e Centro-Oeste,2021,flowering_full,208.5567,226.0824,17.5257,0.0840,27.7068
+Sul e Centro-Oeste,2021,flowering_nov,159.1032,165.7677,6.6645,0.0419,18.5037
+Sul e Centro-Oeste,2021,flowering_dec,205.8395,215.7078,9.8683,0.0479,21.6870
+Sul e Centro-Oeste,2021,beanfill_full,789.8303,1139.8961,350.0657,0.4432,334.8409
+Sul e Centro-Oeste,2021,beanfill_jan,240.1614,318.1657,78.0043,0.3248,69.8359
+Sul e Centro-Oeste,2022,flowering_full,449.3229,409.9452,-39.3776,-0.0876,44.9950
+Sul e Centro-Oeste,2022,flowering_nov,348.8976,316.2029,-32.6947,-0.0937,38.2677
+Sul e Centro-Oeste,2022,flowering_dec,409.2095,378.2309,-30.9787,-0.0757,38.0251
+Sul e Centro-Oeste,2022,beanfill_full,802.4138,826.4776,24.0638,0.0300,54.8670
+Sul e Centro-Oeste,2022,beanfill_jan,142.0216,148.9848,6.9632,0.0490,14.1243
+Sul e Centro-Oeste,2023,flowering_full,377.0985,383.2009,6.1024,0.0162,53.1058
+Sul e Centro-Oeste,2023,flowering_nov,293.9324,296.2068,2.2744,0.0077,42.9409
+Sul e Centro-Oeste,2023,flowering_dec,350.2234,356.0857,5.8623,0.0167,49.8395
+Sul e Centro-Oeste,2023,beanfill_full,1249.0341,1278.0477,29.0136,0.0232,100.4595
+Sul e Centro-Oeste,2023,beanfill_jan,207.5463,200.0478,-7.4986,-0.0361,33.3311
+Sul e Centro-Oeste,2024,flowering_full,418.0361,500.0225,81.9864,0.1961,91.4618
+Sul e Centro-Oeste,2024,flowering_nov,310.4194,381.4454,71.0260,0.2288,77.8414
+Sul e Centro-Oeste,2024,flowering_dec,377.9492,455.2429,77.2937,0.2045,85.2306
+Sul e Centro-Oeste,2024,beanfill_full,777.4893,903.4388,125.9495,0.1620,129.9512
+Sul e Centro-Oeste,2024,beanfill_jan,149.9354,173.9341,23.9987,0.1601,37.7217
+Sul e Centro-Oeste,2025,flowering_full,382.2288,369.4865,-12.7424,-0.0333,35.1089
+Sul e Centro-Oeste,2025,flowering_nov,308.7454,307.3263,-1.4191,-0.0046,26.2321
+Sul e Centro-Oeste,2025,flowering_dec,369.8289,357.5868,-12.2421,-0.0331,33.4826
+Sul e Centro-Oeste,2025,beanfill_full,752.7507,858.8453,106.0945,0.1409,107.6105
+Sul e Centro-Oeste,2025,beanfill_jan,228.7337,223.1960,-5.5376,-0.0242,17.9365
+Sul e Centro-Oeste,2026,flowering_full,315.5536,343.7402,28.1866,0.0893,40.3743
+Sul e Centro-Oeste,2026,flowering_nov,249.6793,271.7575,22.0782,0.0884,29.3592
+Sul e Centro-Oeste,2026,flowering_dec,305.8232,332.8922,27.0690,0.0885,38.7804
+Sul e Centro-Oeste,2026,beanfill_full,882.1525,998.0603,115.9078,0.1314,102.5756
+Sul e Centro-Oeste,2026,beanfill_jan,172.3920,207.3995,35.0075,0.2031,37.4837
+São Paulo (state total),2016,flowering_full,506.7256,489.5027,-17.2228,-0.0340,11.5473
+São Paulo (state total),2016,flowering_nov,340.6788,330.4858,-10.1930,-0.0299,8.3901
+São Paulo (state total),2016,flowering_dec,477.7042,461.9435,-15.7608,-0.0330,10.9082
+São Paulo (state total),2016,beanfill_full,1042.4722,1028.7961,-13.6761,-0.0131,14.8802
+São Paulo (state total),2016,beanfill_jan,207.2121,199.3154,-7.8967,-0.0381,6.0307
+São Paulo (state total),2017,flowering_full,355.8806,359.4626,3.5820,0.0101,4.7408
+São Paulo (state total),2017,flowering_nov,298.1168,300.7069,2.5901,0.0087,8.1600
+São Paulo (state total),2017,flowering_dec,316.4413,323.6400,7.1987,0.0227,7.4156
+São Paulo (state total),2017,beanfill_full,887.2254,894.5474,7.3220,0.0083,9.0185
+São Paulo (state total),2017,beanfill_jan,186.1787,189.0921,2.9134,0.0156,2.6037
+São Paulo (state total),2018,flowering_full,356.0179,359.4607,3.4428,0.0097,10.8108
+São Paulo (state total),2018,flowering_nov,270.1434,274.5722,4.4288,0.0164,10.8163
+São Paulo (state total),2018,flowering_dec,322.2574,326.4360,4.1786,0.0130,10.9942
+São Paulo (state total),2018,beanfill_full,929.7334,967.2353,37.5019,0.0403,18.2595
+São Paulo (state total),2018,beanfill_jan,153.7054,154.7535,1.0481,0.0068,3.5835
+São Paulo (state total),2019,flowering_full,403.1581,413.2064,10.0483,0.0249,8.4320
+São Paulo (state total),2019,flowering_nov,321.6647,336.1249,14.4602,0.0450,12.7917
+São Paulo (state total),2019,flowering_dec,399.6543,404.8350,5.1808,0.0130,12.9526
+São Paulo (state total),2019,beanfill_full,891.5827,900.4719,8.8892,0.0100,8.8236
+São Paulo (state total),2019,beanfill_jan,150.6014,151.6638,1.0624,0.0071,10.6705
+São Paulo (state total),2020,flowering_full,332.6098,317.2613,-15.3486,-0.0461,9.1259
+São Paulo (state total),2020,flowering_nov,250.0817,233.8366,-16.2451,-0.0650,10.1481
+São Paulo (state total),2020,flowering_dec,276.9840,263.0272,-13.9567,-0.0504,10.0140
+São Paulo (state total),2020,beanfill_full,768.8568,778.9346,10.0778,0.0131,13.2839
+São Paulo (state total),2020,beanfill_jan,187.9310,182.2827,-5.6483,-0.0301,13.1200
+São Paulo (state total),2021,flowering_full,212.0337,199.2673,-12.7664,-0.0602,21.9004
+São Paulo (state total),2021,flowering_nov,178.8030,159.5341,-19.2690,-0.1078,26.1896
+São Paulo (state total),2021,flowering_dec,205.5856,189.1705,-16.4152,-0.0798,23.5716
+São Paulo (state total),2021,beanfill_full,791.9708,875.3246,83.3539,0.1052,82.4074
+São Paulo (state total),2021,beanfill_jan,222.4039,211.6998,-10.7040,-0.0481,35.8586
+São Paulo (state total),2022,flowering_full,432.4645,362.7841,-69.6804,-0.1611,52.6030
+São Paulo (state total),2022,flowering_nov,312.6828,264.9676,-47.7151,-0.1526,38.1974
+São Paulo (state total),2022,flowering_dec,365.9862,315.6585,-50.3277,-0.1375,36.6727
+São Paulo (state total),2022,beanfill_full,743.5448,803.0466,59.5018,0.0800,51.4117
+São Paulo (state total),2022,beanfill_jan,93.1076,105.6567,12.5490,0.1348,17.7044
+São Paulo (state total),2023,flowering_full,373.4065,329.4933,-43.9133,-0.1176,39.0372
+São Paulo (state total),2023,flowering_nov,277.5416,244.5795,-32.9621,-0.1188,31.2498
+São Paulo (state total),2023,flowering_dec,339.9514,300.0165,-39.9349,-0.1175,33.9989
+São Paulo (state total),2023,beanfill_full,1148.7480,1152.9032,4.1551,0.0036,84.6482
+São Paulo (state total),2023,beanfill_jan,207.9572,187.3376,-20.6197,-0.0992,30.4421
+São Paulo (state total),2024,flowering_full,412.5217,434.0657,21.5440,0.0522,43.4141
+São Paulo (state total),2024,flowering_nov,313.1784,335.5937,22.4152,0.0716,40.9618
+São Paulo (state total),2024,flowering_dec,381.6243,402.3567,20.7324,0.0543,41.2022
+São Paulo (state total),2024,beanfill_full,671.7507,754.7078,82.9571,0.1235,74.5534
+São Paulo (state total),2024,beanfill_jan,122.1984,124.6945,2.4960,0.0204,16.1480
+São Paulo (state total),2025,flowering_full,385.6932,359.7974,-25.8958,-0.0671,57.8103
+São Paulo (state total),2025,flowering_nov,296.6501,290.1650,-6.4850,-0.0219,39.9285
+São Paulo (state total),2025,flowering_dec,350.6251,337.8178,-12.8073,-0.0365,41.7004
+São Paulo (state total),2025,beanfill_full,744.4538,837.0971,92.6433,0.1244,92.5578
+São Paulo (state total),2025,beanfill_jan,214.6095,219.7878,5.1783,0.0241,25.6556
+São Paulo (state total),2026,flowering_full,309.0588,316.8454,7.7866,0.0252,20.3276
+São Paulo (state total),2026,flowering_nov,243.8106,263.4020,19.5913,0.0804,21.8470
+São Paulo (state total),2026,flowering_dec,301.5964,309.0679,7.4715,0.0248,20.1021
+São Paulo (state total),2026,beanfill_full,911.1106,980.3343,69.2236,0.0760,86.7933
+São Paulo (state total),2026,beanfill_jan,189.4509,246.5742,57.1233,0.3015,42.3529
+"Triângulo, Alto Paranaíba e Noroeste",2016,flowering_full,322.0977,373.4944,51.3968,0.1596,42.7115
+"Triângulo, Alto Paranaíba e Noroeste",2016,flowering_nov,196.2076,214.7474,18.5398,0.0945,18.8392
+"Triângulo, Alto Paranaíba e Noroeste",2016,flowering_dec,308.1160,355.5633,47.4473,0.1540,39.5010
+"Triângulo, Alto Paranaíba e Noroeste",2016,beanfill_full,986.5617,983.2426,-3.3191,-0.0034,27.2032
+"Triângulo, Alto Paranaíba e Noroeste",2016,beanfill_jan,174.7116,170.8804,-3.8312,-0.0219,7.0582
+"Triângulo, Alto Paranaíba e Noroeste",2017,flowering_full,377.9027,386.3245,8.4218,0.0223,11.5697
+"Triângulo, Alto Paranaíba e Noroeste",2017,flowering_nov,291.5426,296.6317,5.0891,0.0175,11.8404
+"Triângulo, Alto Paranaíba e Noroeste",2017,flowering_dec,338.2933,353.2188,14.9255,0.0441,14.7272
+"Triângulo, Alto Paranaíba e Noroeste",2017,beanfill_full,789.9068,813.1434,23.2366,0.0294,24.4872
+"Triângulo, Alto Paranaíba e Noroeste",2017,beanfill_jan,252.4323,273.2786,20.8463,0.0826,19.6804
+"Triângulo, Alto Paranaíba e Noroeste",2018,flowering_full,416.7525,393.7388,-23.0137,-0.0552,21.4721
+"Triângulo, Alto Paranaíba e Noroeste",2018,flowering_nov,225.6181,212.0390,-13.5791,-0.0602,15.6218
+"Triângulo, Alto Paranaíba e Noroeste",2018,flowering_dec,354.3759,338.5956,-15.7803,-0.0445,17.3950
+"Triângulo, Alto Paranaíba e Noroeste",2018,beanfill_full,782.0329,837.6481,55.6152,0.0711,48.7423
+"Triângulo, Alto Paranaíba e Noroeste",2018,beanfill_jan,225.3869,230.2704,4.8835,0.0217,16.4682
+"Triângulo, Alto Paranaíba e Noroeste",2019,flowering_full,616.1040,631.4758,15.3718,0.0250,30.7054
+"Triângulo, Alto Paranaíba e Noroeste",2019,flowering_nov,432.6614,452.6904,20.0290,0.0463,26.0207
+"Triângulo, Alto Paranaíba e Noroeste",2019,flowering_dec,605.6142,618.8703,13.2561,0.0219,32.0283
+"Triângulo, Alto Paranaíba e Noroeste",2019,beanfill_full,876.0502,878.7382,2.6880,0.0031,33.1043
+"Triângulo, Alto Paranaíba e Noroeste",2019,beanfill_jan,173.7630,166.0291,-7.7339,-0.0445,13.2315
+"Triângulo, Alto Paranaíba e Noroeste",2020,flowering_full,361.2310,325.0074,-36.2236,-0.1003,45.8761
+"Triângulo, Alto Paranaíba e Noroeste",2020,flowering_nov,202.1608,175.9813,-26.1795,-0.1295,26.7998
+"Triângulo, Alto Paranaíba e Noroeste",2020,flowering_dec,289.9262,255.5140,-34.4122,-0.1187,37.7239
+"Triângulo, Alto Paranaíba e Noroeste",2020,beanfill_full,1111.9743,1135.2612,23.2869,0.0209,30.7175
+"Triângulo, Alto Paranaíba e Noroeste",2020,beanfill_jan,224.6616,255.9751,31.3135,0.1394,26.0817
+"Triângulo, Alto Paranaíba e Noroeste",2021,flowering_full,249.1720,237.0530,-12.1190,-0.0486,18.1335
+"Triângulo, Alto Paranaíba e Noroeste",2021,flowering_nov,180.4813,160.3160,-20.1653,-0.1117,21.3071
+"Triângulo, Alto Paranaíba e Noroeste",2021,flowering_dec,249.1720,232.4050,-16.7670,-0.0673,20.6740
+"Triângulo, Alto Paranaíba e Noroeste",2021,beanfill_full,840.0067,796.5548,-43.4518,-0.0517,52.0035
+"Triângulo, Alto Paranaíba e Noroeste",2021,beanfill_jan,236.5024,195.9177,-40.5848,-0.1716,32.5307
+"Triângulo, Alto Paranaíba e Noroeste",2022,flowering_full,468.8239,457.2362,-11.5876,-0.0247,24.4885
+"Triângulo, Alto Paranaíba e Noroeste",2022,flowering_nov,351.6759,337.5378,-14.1381,-0.0402,26.4318
+"Triângulo, Alto Paranaíba e Noroeste",2022,flowering_dec,420.2294,417.6806,-2.5487,-0.0061,22.2377
+"Triângulo, Alto Paranaíba e Noroeste",2022,beanfill_full,1035.2702,895.2978,-139.9724,-0.1352,136.2084
+"Triângulo, Alto Paranaíba e Noroeste",2022,beanfill_jan,192.6564,166.0914,-26.5650,-0.1379,23.5908
+"Triângulo, Alto Paranaíba e Noroeste",2023,flowering_full,332.5048,319.9614,-12.5434,-0.0377,18.0484
+"Triângulo, Alto Paranaíba e Noroeste",2023,flowering_nov,244.3481,236.5461,-7.8021,-0.0319,12.5548
+"Triângulo, Alto Paranaíba e Noroeste",2023,flowering_dec,314.7153,306.4951,-8.2202,-0.0261,12.3923
+"Triângulo, Alto Paranaíba e Noroeste",2023,beanfill_full,1079.6866,1144.8080,65.1214,0.0603,55.1613
+"Triângulo, Alto Paranaíba e Noroeste",2023,beanfill_jan,219.8320,198.9111,-20.9209,-0.0952,23.8915
+"Triângulo, Alto Paranaíba e Noroeste",2024,flowering_full,280.3765,409.5716,129.1951,0.4608,110.9245
+"Triângulo, Alto Paranaíba e Noroeste",2024,flowering_nov,193.7500,301.3082,107.5582,0.5551,92.9852
+"Triângulo, Alto Paranaíba e Noroeste",2024,flowering_dec,250.7553,355.4998,104.7445,0.4177,91.0410
+"Triângulo, Alto Paranaíba e Noroeste",2024,beanfill_full,851.5779,949.8755,98.2975,0.1154,81.4812
+"Triângulo, Alto Paranaíba e Noroeste",2024,beanfill_jan,152.1689,168.1981,16.0292,0.1053,26.9003
+"Triângulo, Alto Paranaíba e Noroeste",2025,flowering_full,450.1624,468.8001,18.6377,0.0414,51.9702
+"Triângulo, Alto Paranaíba e Noroeste",2025,flowering_nov,338.0113,362.8592,24.8479,0.0735,46.5147
+"Triângulo, Alto Paranaíba e Noroeste",2025,flowering_dec,434.0675,452.7214,18.6539,0.0430,51.8305
+"Triângulo, Alto Paranaíba e Noroeste",2025,beanfill_full,828.7060,939.7050,110.9991,0.1339,96.2394
+"Triângulo, Alto Paranaíba e Noroeste",2025,beanfill_jan,233.8220,261.7592,27.9372,0.1195,28.7455
+"Triângulo, Alto Paranaíba e Noroeste",2026,flowering_full,239.8915,257.2608,17.3692,0.0724,27.6691
+"Triângulo, Alto Paranaíba e Noroeste",2026,flowering_nov,194.4793,189.0866,-5.3927,-0.0277,19.3984
+"Triângulo, Alto Paranaíba e Noroeste",2026,flowering_dec,230.9307,242.2859,11.3552,0.0492,22.7577
+"Triângulo, Alto Paranaíba e Noroeste",2026,beanfill_full,1160.6502,1198.2838,37.6336,0.0324,64.7406
+"Triângulo, Alto Paranaíba e Noroeste",2026,beanfill_jan,261.1307,305.3016,44.1709,0.1692,38.2467
+"Zona da Mata, Rio Doce e Central",2016,flowering_full,312.7927,314.5776,1.7849,0.0057,13.3252
+"Zona da Mata, Rio Doce e Central",2016,flowering_nov,189.2819,189.6369,0.3550,0.0019,8.7083
+"Zona da Mata, Rio Doce e Central",2016,flowering_dec,289.5873,290.0863,0.4990,0.0017,11.6596
+"Zona da Mata, Rio Doce e Central",2016,beanfill_full,743.5618,778.1839,34.6221,0.0466,44.8468
+"Zona da Mata, Rio Doce e Central",2016,beanfill_jan,188.0945,201.8871,13.7926,0.0733,14.5414
+"Zona da Mata, Rio Doce e Central",2017,flowering_full,338.6963,353.3118,14.6154,0.0432,22.1887
+"Zona da Mata, Rio Doce e Central",2017,flowering_nov,185.0997,206.4229,21.3232,0.1152,22.4314
+"Zona da Mata, Rio Doce e Central",2017,flowering_dec,266.5189,293.1646,26.6457,0.1000,27.6736
+"Zona da Mata, Rio Doce e Central",2017,beanfill_full,577.2722,606.2539,28.9817,0.0502,27.5632
+"Zona da Mata, Rio Doce e Central",2017,beanfill_jan,214.6717,209.3730,-5.2986,-0.0247,8.8924
+"Zona da Mata, Rio Doce e Central",2018,flowering_full,282.8191,318.6519,35.8328,0.1267,28.3491
+"Zona da Mata, Rio Doce e Central",2018,flowering_nov,169.4323,195.5565,26.1243,0.1542,23.3778
+"Zona da Mata, Rio Doce e Central",2018,flowering_dec,262.8533,283.9003,21.0470,0.0801,19.5195
+"Zona da Mata, Rio Doce e Central",2018,beanfill_full,971.4403,961.9233,-9.5169,-0.0098,53.5024
+"Zona da Mata, Rio Doce e Central",2018,beanfill_jan,220.4739,218.7567,-1.7173,-0.0078,17.2294
+"Zona da Mata, Rio Doce e Central",2019,flowering_full,289.0043,327.8158,38.8115,0.1343,31.7856
+"Zona da Mata, Rio Doce e Central",2019,flowering_nov,229.1456,254.7837,25.6381,0.1119,22.9371
+"Zona da Mata, Rio Doce e Central",2019,flowering_dec,286.3350,317.9078,31.5728,0.1103,27.7171
+"Zona da Mata, Rio Doce e Central",2019,beanfill_full,748.3290,661.3943,-86.9347,-0.1162,57.3744
+"Zona da Mata, Rio Doce e Central",2019,beanfill_jan,128.9388,126.9575,-1.9813,-0.0154,10.2788
+"Zona da Mata, Rio Doce e Central",2020,flowering_full,322.4250,359.7271,37.3021,0.1157,28.7573
+"Zona da Mata, Rio Doce e Central",2020,flowering_nov,167.1515,200.0697,32.9181,0.1969,25.3231
+"Zona da Mata, Rio Doce e Central",2020,flowering_dec,277.5133,314.0132,36.4999,0.1315,29.6814
+"Zona da Mata, Rio Doce e Central",2020,beanfill_full,1048.2084,1076.2314,28.0230,0.0267,109.3805
+"Zona da Mata, Rio Doce e Central",2020,beanfill_jan,231.4274,230.6298,-0.7976,-0.0034,14.6028
+"Zona da Mata, Rio Doce e Central",2021,flowering_full,347.3964,337.6161,-9.7803,-0.0282,34.1902
+"Zona da Mata, Rio Doce e Central",2021,flowering_nov,278.1749,245.5070,-32.6679,-0.1174,33.9864
+"Zona da Mata, Rio Doce e Central",2021,flowering_dec,346.4154,332.8041,-13.6113,-0.0393,32.9912
+"Zona da Mata, Rio Doce e Central",2021,beanfill_full,781.3139,909.3302,128.0164,0.1638,140.0491
+"Zona da Mata, Rio Doce e Central",2021,beanfill_jan,209.8797,237.9537,28.0739,0.1338,34.4296
+"Zona da Mata, Rio Doce e Central",2022,flowering_full,520.7953,417.9908,-102.8045,-0.1974,89.3087
+"Zona da Mata, Rio Doce e Central",2022,flowering_nov,434.1667,334.1546,-100.0121,-0.2304,79.2695
+"Zona da Mata, Rio Doce e Central",2022,flowering_dec,465.5907,373.7693,-91.8214,-0.1972,80.6817
+"Zona da Mata, Rio Doce e Central",2022,beanfill_full,845.1707,800.1862,-44.9845,-0.0532,92.2709
+"Zona da Mata, Rio Doce e Central",2022,beanfill_jan,155.2922,165.1286,9.8364,0.0633,26.0125
+"Zona da Mata, Rio Doce e Central",2023,flowering_full,421.7153,474.3529,52.6376,0.1248,57.4826
+"Zona da Mata, Rio Doce e Central",2023,flowering_nov,274.8438,314.2353,39.3916,0.1433,42.3169
+"Zona da Mata, Rio Doce e Central",2023,flowering_dec,369.6620,415.7527,46.0907,0.1247,50.8209
+"Zona da Mata, Rio Doce e Central",2023,beanfill_full,794.6538,851.2271,56.5732,0.0712,118.7497
+"Zona da Mata, Rio Doce e Central",2023,beanfill_jan,246.5711,237.2751,-9.2961,-0.0377,43.4579
+"Zona da Mata, Rio Doce e Central",2024,flowering_full,240.9277,301.2931,60.3654,0.2506,80.8577
+"Zona da Mata, Rio Doce e Central",2024,flowering_nov,190.1627,239.7545,49.5918,0.2608,67.5758
+"Zona da Mata, Rio Doce e Central",2024,flowering_dec,226.5796,280.0582,53.4786,0.2360,73.8284
+"Zona da Mata, Rio Doce e Central",2024,beanfill_full,847.8158,883.0298,35.2141,0.0415,78.0600
+"Zona da Mata, Rio Doce e Central",2024,beanfill_jan,107.7996,156.8045,49.0049,0.4546,39.8601
+"Zona da Mata, Rio Doce e Central",2025,flowering_full,277.3609,329.2878,51.9268,0.1872,45.6437
+"Zona da Mata, Rio Doce e Central",2025,flowering_nov,226.7736,266.5237,39.7501,0.1753,35.6712
+"Zona da Mata, Rio Doce e Central",2025,flowering_dec,262.0066,308.0721,46.0655,0.1758,43.1816
+"Zona da Mata, Rio Doce e Central",2025,beanfill_full,652.9844,619.3694,-33.6150,-0.0515,50.8327
+"Zona da Mata, Rio Doce e Central",2025,beanfill_jan,269.4753,227.0362,-42.4390,-0.1575,38.5361
+"Zona da Mata, Rio Doce e Central",2026,flowering_full,233.1660,338.7168,105.5508,0.4527,95.4811
+"Zona da Mata, Rio Doce e Central",2026,flowering_nov,193.9474,278.5433,84.5958,0.4362,73.0295
+"Zona da Mata, Rio Doce e Central",2026,flowering_dec,223.7227,324.1851,100.4624,0.4490,89.4185
+"Zona da Mata, Rio Doce e Central",2026,beanfill_full,896.9227,929.6382,32.7155,0.0365,89.6385
+"Zona da Mata, Rio Doce e Central",2026,beanfill_jan,190.2746,194.6857,4.4110,0.0232,20.5875

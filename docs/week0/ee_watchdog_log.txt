@@ -258,3 +258,43 @@
 2026-10-15 17:28:19 UTC  session cap 518 EECU-s
 2026-10-15 17:28:20 UTC  started frozen_mask_pixels: estimate 332, cancel above 664 EECU-s, poll 60 s
 2026-10-15 17:29:20 UTC  completed frozen_mask_pixels: 491 EECU-s, 61 s wall
+2026-10-15 18:26:23 UTC  session w2_inputs: cap 2,850 EECU-s
+2026-10-15 18:26:25 UTC  started w2_rain_muni_probe: estimate 150, cancel above 300 EECU-s, poll 60 s
+2026-10-15 18:27:25 UTC  completed w2_rain_muni_probe: 13 EECU-s, 60 s wall
+2026-10-15 18:27:29 UTC  started w2_soil_muni_probe: estimate 400, cancel above 800 EECU-s, poll 60 s
+2026-10-15 18:28:29 UTC  running w2_soil_muni_probe: 77 of 800 EECU-s
+2026-10-15 18:29:30 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:30:30 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:31:31 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:32:31 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:33:32 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:34:32 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:35:33 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:36:33 UTC  running w2_soil_muni_probe: 0 of 800 EECU-s
+2026-10-15 18:37:34 UTC  completed w2_soil_muni_probe: 1 EECU-s, 605 s wall
+2026-10-15 18:37:38 UTC  started w2_heat_muni_probe: estimate 400, cancel above 800 EECU-s, poll 60 s
+2026-10-15 18:38:39 UTC  completed w2_heat_muni_probe: 40 EECU-s, 60 s wall
+2026-10-15 18:39:16 UTC  session cap 19,200 EECU-s
+2026-10-15 18:39:22 UTC  started w2_rain_muni: estimate 2,920, cancel above 5,840 EECU-s, poll 60 s
+2026-10-15 18:40:23 UTC  running w2_rain_muni: 2,071 of 5,840 EECU-s
+2026-10-15 18:41:23 UTC  completed w2_rain_muni: 2,177 EECU-s, 121 s wall
+2026-10-15 18:41:42 UTC  started w2_prelim_muni_probe: estimate 30, cancel above 60 EECU-s, poll 60 s
+2026-10-15 18:42:43 UTC  completed w2_prelim_muni_probe: 10 EECU-s, 60 s wall
+2026-10-15 18:42:52 UTC  started w2_prelim_muni: estimate 950, cancel above 1,900 EECU-s, poll 60 s
+2026-10-15 18:43:53 UTC  completed w2_prelim_muni: 938 EECU-s, 61 s wall
+2026-10-15 18:44:19 UTC  started w2_soil_muni: estimate 400, cancel above 800 EECU-s, poll 60 s
+2026-10-15 18:45:20 UTC  CANCELLED w2_soil_muni: 1,102 EECU-s passed 800 (2 × estimate)
+2026-10-15 18:45:58 UTC  session cap 30,000 EECU-s
+2026-10-15 18:45:59 UTC  started w2_soil_muni_probe_all: estimate 300, cancel above 600 EECU-s, poll 60 s
+2026-10-15 18:46:59 UTC  completed w2_soil_muni_probe_all: 212 EECU-s, 60 s wall
+2026-10-15 18:47:04 UTC  started w2_heat_muni_probe_all: estimate 300, cancel above 600 EECU-s, poll 60 s
+2026-10-15 18:48:04 UTC  completed w2_heat_muni_probe_all: 118 EECU-s, 61 s wall
+2026-10-15 18:48:17 UTC  session cap 20,100 EECU-s
+2026-10-15 18:48:19 UTC  started w2_soil_muni: estimate 5,724, cancel above 11,448 EECU-s, poll 60 s
+2026-10-15 18:49:19 UTC  running w2_soil_muni: 2,903 of 11,448 EECU-s
+2026-10-15 18:50:20 UTC  running w2_soil_muni: 34 of 11,448 EECU-s
+2026-10-15 18:51:20 UTC  running w2_soil_muni: 5,092 of 11,448 EECU-s
+2026-10-15 18:52:21 UTC  completed w2_soil_muni: 6,279 EECU-s, 242 s wall
+2026-10-15 18:52:34 UTC  started w2_heat_muni: estimate 3,068, cancel above 6,136 EECU-s, poll 60 s
+2026-10-15 18:53:35 UTC  running w2_heat_muni: 397 of 6,136 EECU-s
+2026-10-15 18:54:35 UTC  completed w2_heat_muni: 2,732 EECU-s, 121 s wall

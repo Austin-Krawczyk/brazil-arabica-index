@@ -1,0 +1,26 @@
+region,window,seasons,mean_diff_mm,mean_abs_diff_mm,max_abs_diff_mm,mean_diff_share,mean_abs_diff_share
+Four-region total,beanfill_full,11,45.5810,53.2705,183.6936,0.0550,0.0637
+Four-region total,beanfill_jan,11,6.7500,11.1263,32.4276,0.0393,0.0593
+Four-region total,flowering_dec,11,9.0660,18.4994,67.0434,0.0321,0.0564
+Four-region total,flowering_full,11,9.7975,20.4445,75.1006,0.0335,0.0566
+Four-region total,flowering_nov,11,7.2918,19.0496,64.2312,0.0321,0.0704
+Sul e Centro-Oeste,beanfill_full,11,75.6517,81.6667,350.0657,0.0944,0.0998
+Sul e Centro-Oeste,beanfill_jan,11,10.9823,17.0579,78.0043,0.0577,0.0866
+Sul e Centro-Oeste,flowering_dec,11,6.6453,19.1644,77.2937,0.0228,0.0547
+Sul e Centro-Oeste,flowering_full,11,7.5228,22.8499,81.9864,0.0251,0.0614
+Sul e Centro-Oeste,flowering_nov,11,6.4520,16.9639,71.0260,0.0258,0.0586
+São Paulo (state total),beanfill_full,11,40.1772,42.6638,92.6433,0.0519,0.0543
+São Paulo (state total),beanfill_jan,11,3.4093,11.5672,57.1233,0.0268,0.0660
+São Paulo (state total),flowering_dec,11,-9.4946,17.6331,50.3277,-0.0297,0.0530
+São Paulo (state total),flowering_full,11,-12.5840,21.0210,69.6804,-0.0331,0.0553
+São Paulo (state total),flowering_nov,11,-6.3076,17.8505,47.7151,-0.0249,0.0653
+"Triângulo, Alto Paranaíba e Noroeste",beanfill_full,11,20.9214,54.8747,139.9724,0.0251,0.0597
+"Triângulo, Alto Paranaíba e Noroeste",beanfill_jan,11,4.1404,22.2560,44.1709,0.0151,0.1008
+"Triângulo, Alto Paranaíba e Noroeste",flowering_dec,11,12.0595,26.1919,104.7445,0.0425,0.0902
+"Triângulo, Alto Paranaíba e Noroeste",flowering_full,11,13.1732,30.5345,129.1951,0.0468,0.0953
+"Triângulo, Alto Paranaíba e Noroeste",flowering_nov,11,8.0734,23.9383,107.5582,0.0351,0.1080
+"Zona da Mata, Rio Doce e Central",beanfill_full,11,15.3723,47.1997,128.0164,0.0187,0.0607
+"Zona da Mata, Rio Doce e Central",beanfill_jan,11,3.9626,15.1499,49.0049,0.0456,0.0904
+"Zona da Mata, Rio Doce e Central",flowering_dec,11,23.3572,42.5268,100.4624,0.1066,0.1496
+"Zona da Mata, Rio Doce e Central",flowering_full,11,26.0221,46.4920,105.5508,0.1105,0.1515
+"Zona da Mata, Rio Doce e Central",flowering_nov,11,17.0007,41.1244,100.0121,0.1134,0.1767

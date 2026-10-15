@@ -1,0 +1,1 @@
+batch export w2_soil_muni_probe: 1 EECU-seconds (batch), 189 rows, 1 season(s), 606 s wall

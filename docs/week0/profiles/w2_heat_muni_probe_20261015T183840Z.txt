@@ -1,0 +1,1 @@
+batch export w2_heat_muni_probe: 40 EECU-seconds (batch), 189 rows, 1 season(s), 62 s wall

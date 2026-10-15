@@ -1,17 +1,62 @@
 {
- "session": "prereg2_frozen_pixels",
- "cap": 517.868353843689,
- "spent": 503.9182376861572,
+ "session": "w2_inputs",
+ "cap": 20100.0,
+ "spent": 13621.536510705511,
  "tasks": [
   {
-   "task": "frozen_mask_pixels_probe_3109",
+   "task": "w2_rain_muni_probe",
    "state": "COMPLETED",
-   "eecu_s": 13.2
+   "eecu_s": 12.8
   },
   {
-   "task": "frozen_mask_pixels",
+   "task": "w2_soil_muni_probe",
    "state": "COMPLETED",
-   "eecu_s": 490.7
+   "eecu_s": 0.9
+  },
+  {
+   "task": "w2_heat_muni_probe",
+   "state": "COMPLETED",
+   "eecu_s": 39.8
+  },
+  {
+   "task": "w2_rain_muni",
+   "state": "COMPLETED",
+   "eecu_s": 2177.0
+  },
+  {
+   "task": "w2_prelim_muni_probe",
+   "state": "COMPLETED",
+   "eecu_s": 10.0
+  },
+  {
+   "task": "w2_prelim_muni",
+   "state": "COMPLETED",
+   "eecu_s": 938.3
+  },
+  {
+   "task": "w2_soil_muni",
+   "state": "CANCELLED",
+   "eecu_s": 1101.6
+  },
+  {
+   "task": "w2_soil_muni_probe_all",
+   "state": "COMPLETED",
+   "eecu_s": 211.6
+  },
+  {
+   "task": "w2_heat_muni_probe_all",
+   "state": "COMPLETED",
+   "eecu_s": 117.8
+  },
+  {
+   "task": "w2_soil_muni",
+   "state": "COMPLETED",
+   "eecu_s": 6279.4
+  },
+  {
+   "task": "w2_heat_muni",
+   "state": "COMPLETED",
+   "eecu_s": 2732.3
   }
  ]
 }

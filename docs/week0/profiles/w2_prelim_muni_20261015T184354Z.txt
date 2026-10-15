@@ -1,0 +1,1 @@
+batch export w2_prelim_muni: 938 EECU-seconds (batch), 10374 rows, 11 season(s), 63 s wall

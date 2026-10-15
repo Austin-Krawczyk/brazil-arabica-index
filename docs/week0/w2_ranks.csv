@@ -1,0 +1,2631 @@
+region,crop,vintage,input,value,anom,n_composites,rank_worst,seasons
+Four-region total,2001,Jan,beanfill_rain,0.03830,0.50145,,10,25
+Four-region total,2002,Jan,beanfill_rain,-0.14425,-4.98779,,9,25
+Four-region total,2003,Jan,beanfill_rain,1.13330,33.42719,,23,25
+Four-region total,2004,Jan,beanfill_rain,-0.53090,-16.61384,,7,25
+Four-region total,2005,Jan,beanfill_rain,1.58248,46.93383,,25,25
+Four-region total,2006,Jan,beanfill_rain,0.59310,17.18395,,17,25
+Four-region total,2007,Jan,beanfill_rain,0.63721,18.51015,,19,25
+Four-region total,2008,Jan,beanfill_rain,0.36308,10.26743,,15,25
+Four-region total,2009,Jan,beanfill_rain,0.42337,12.08016,,16,25
+Four-region total,2010,Jan,beanfill_rain,0.95443,28.04886,,22,25
+Four-region total,2011,Jan,beanfill_rain,0.31358,8.77878,,14,25
+Four-region total,2012,Jan,beanfill_rain,0.85669,25.10977,,20,25
+Four-region total,2013,Jan,beanfill_rain,-1.10936,-34.00769,,4,25
+Four-region total,2014,Jan,beanfill_rain,1.15987,34.22627,,24,25
+Four-region total,2015,Jan,beanfill_rain,-0.92478,-28.45770,,5,25
+Four-region total,2016,Jan,beanfill_rain,0.13737,3.48047,,12,25
+Four-region total,2017,Jan,beanfill_rain,0.05752,1.07940,,11,25
+Four-region total,2018,Jan,beanfill_rain,-0.60222,-18.75861,,6,25
+Four-region total,2019,Jan,beanfill_rain,-1.39722,-42.66360,,3,25
+Four-region total,2020,Jan,beanfill_rain,-0.22943,-7.54910,,8,25
+Four-region total,2021,Jan,beanfill_rain,0.63394,18.41188,,18,25
+Four-region total,2022,Jan,beanfill_rain,-2.11712,-64.31029,,2,25
+Four-region total,2023,Jan,beanfill_rain,0.29254,8.14619,,13,25
+Four-region total,2024,Jan,beanfill_rain,-2.49287,-75.60903,,1,25
+Four-region total,2025,Jan,beanfill_rain,0.90026,26.42000,,21,25
+Sul e Centro-Oeste,2001,Jan,beanfill_rain,-0.60112,-18.74196,,7,25
+Sul e Centro-Oeste,2002,Jan,beanfill_rain,0.15088,4.10756,,14,25
+Sul e Centro-Oeste,2003,Jan,beanfill_rain,1.46351,43.99128,,24,25
+Sul e Centro-Oeste,2004,Jan,beanfill_rain,-0.19436,-6.38248,,9,25
+Sul e Centro-Oeste,2005,Jan,beanfill_rain,1.58247,47.60578,,25,25
+Sul e Centro-Oeste,2006,Jan,beanfill_rain,0.51887,15.28874,,17,25
+Sul e Centro-Oeste,2007,Jan,beanfill_rain,0.16393,4.50390,,15,25
+Sul e Centro-Oeste,2008,Jan,beanfill_rain,0.36587,10.63996,,16,25
+Sul e Centro-Oeste,2009,Jan,beanfill_rain,-0.73317,-22.75408,,5,25
+Sul e Centro-Oeste,2010,Jan,beanfill_rain,1.36459,40.98555,,23,25
+Sul e Centro-Oeste,2011,Jan,beanfill_rain,0.88496,26.41238,,20,25
+Sul e Centro-Oeste,2012,Jan,beanfill_rain,0.60183,17.80952,,18,25
+Sul e Centro-Oeste,2013,Jan,beanfill_rain,0.03949,0.72297,,12,25
+Sul e Centro-Oeste,2014,Jan,beanfill_rain,-1.38145,-42.45211,,3,25
+Sul e Centro-Oeste,2015,Jan,beanfill_rain,-0.10251,-3.59186,,11,25
+Sul e Centro-Oeste,2016,Jan,beanfill_rain,1.21576,36.46353,,22,25
+Sul e Centro-Oeste,2017,Jan,beanfill_rain,-0.12462,-4.26351,,10,25
+Sul e Centro-Oeste,2018,Jan,beanfill_rain,-1.00053,-30.87777,,4,25
+Sul e Centro-Oeste,2019,Jan,beanfill_rain,-0.33228,-10.57317,,8,25
+Sul e Centro-Oeste,2020,Jan,beanfill_rain,-0.70728,-21.96758,,6,25
+Sul e Centro-Oeste,2021,Jan,beanfill_rain,1.11332,33.35078,,21,25
+Sul e Centro-Oeste,2022,Jan,beanfill_rain,-2.10652,-64.48310,,1,25
+Sul e Centro-Oeste,2023,Jan,beanfill_rain,0.04299,0.82927,,13,25
+Sul e Centro-Oeste,2024,Jan,beanfill_rain,-1.85832,-56.94169,,2,25
+Sul e Centro-Oeste,2025,Jan,beanfill_rain,0.74746,22.23437,,19,25
+São Paulo (state total),2001,Jan,beanfill_rain,-0.15945,-7.20171,,8,25
+São Paulo (state total),2002,Jan,beanfill_rain,1.57292,53.12314,,25,25
+São Paulo (state total),2003,Jan,beanfill_rain,0.99624,33.04179,,23,25
+São Paulo (state total),2004,Jan,beanfill_rain,0.26729,7.65839,,12,25
+São Paulo (state total),2005,Jan,beanfill_rain,0.33384,9.97562,,13,25
+São Paulo (state total),2006,Jan,beanfill_rain,0.08468,1.29942,,11,25
+São Paulo (state total),2007,Jan,beanfill_rain,0.60450,19.40055,,19,25
+São Paulo (state total),2008,Jan,beanfill_rain,0.60020,19.25080,,18,25
+São Paulo (state total),2009,Jan,beanfill_rain,-0.72074,-26.74685,,7,25
+São Paulo (state total),2010,Jan,beanfill_rain,1.24475,41.69548,,24,25
+São Paulo (state total),2011,Jan,beanfill_rain,0.58629,18.76647,,17,25
+São Paulo (state total),2012,Jan,beanfill_rain,-0.87590,-32.14988,,6,25
+São Paulo (state total),2013,Jan,beanfill_rain,0.62793,20.21664,,21,25
+São Paulo (state total),2014,Jan,beanfill_rain,-0.90602,-33.19869,,5,25
+São Paulo (state total),2015,Jan,beanfill_rain,0.43781,13.59607,,14,25
+São Paulo (state total),2016,Jan,beanfill_rain,0.55483,17.67118,,16,25
+São Paulo (state total),2017,Jan,beanfill_rain,-0.06508,-3.91556,,10,25
+São Paulo (state total),2018,Jan,beanfill_rain,-1.01010,-36.82302,,4,25
+São Paulo (state total),2019,Jan,beanfill_rain,-1.10660,-40.18332,,3,25
+São Paulo (state total),2020,Jan,beanfill_rain,-0.07688,-4.32636,,9,25
+São Paulo (state total),2021,Jan,beanfill_rain,0.90345,29.81056,,22,25
+São Paulo (state total),2022,Jan,beanfill_rain,-2.81816,-99.78358,,1,25
+São Paulo (state total),2023,Jan,beanfill_rain,0.45063,14.04238,,15,25
+São Paulo (state total),2024,Jan,beanfill_rain,-2.02421,-72.13651,,2,25
+São Paulo (state total),2025,Jan,beanfill_rain,0.60959,19.57782,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,beanfill_rain,-0.28308,-13.08752,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,beanfill_rain,-0.20649,-9.60319,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,beanfill_rain,-0.09939,-4.73065,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,beanfill_rain,-1.14068,-52.10206,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,beanfill_rain,0.98996,44.82694,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,beanfill_rain,1.19064,53.95681,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,beanfill_rain,2.62962,119.42030,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,beanfill_rain,0.69548,31.43045,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,beanfill_rain,1.19658,54.22693,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,beanfill_rain,-0.07248,-3.50663,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,beanfill_rain,-0.74593,-34.14384,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,beanfill_rain,1.23353,55.90791,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,beanfill_rain,-1.69842,-77.47533,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,beanfill_rain,0.16984,7.51742,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,beanfill_rain,-0.67571,-30.94930,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,beanfill_rain,-1.13984,-52.06382,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,beanfill_rain,0.57038,25.73931,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,beanfill_rain,-0.02605,-1.39447,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,beanfill_rain,-1.16418,-53.17140,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,beanfill_rain,-0.04709,-2.35153,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,beanfill_rain,0.20515,9.12382,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,beanfill_rain,-0.75245,-34.44034,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,beanfill_rain,-0.14592,-6.84733,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,beanfill_rain,-1.62724,-74.23725,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,beanfill_rain,0.17252,7.63912,,17,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,beanfill_rain,0.69908,46.70284,,20,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,beanfill_rain,-0.78127,-52.77463,,6,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,beanfill_rain,0.56282,37.54629,,19,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,beanfill_rain,-0.41000,-27.82583,,8,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,beanfill_rain,1.01929,68.22024,,23,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,beanfill_rain,0.16789,11.00727,,15,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,beanfill_rain,-0.14455,-9.98799,,9,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,beanfill_rain,-0.09046,-6.35317,,11,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,beanfill_rain,1.07141,71.72282,,24,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,beanfill_rain,0.23226,15.33330,,17,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,beanfill_rain,-0.02095,-1.68204,,12,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,beanfill_rain,0.79960,53.45761,,22,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,beanfill_rain,-1.48047,-99.75988,,2,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,beanfill_rain,3.15095,211.46461,,25,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,beanfill_rain,-1.37547,-92.70407,,3,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,beanfill_rain,-0.41377,-28.07934,,7,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,beanfill_rain,-0.01971,-1.59935,,13,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,beanfill_rain,0.05687,3.54681,,14,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,beanfill_rain,-1.32801,-89.51475,,4,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,beanfill_rain,0.18841,12.38654,,16,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,beanfill_rain,-0.12427,-8.62515,,10,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,beanfill_rain,-0.92500,-62.43343,,5,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,beanfill_rain,0.42727,28.43732,,18,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,beanfill_rain,-1.63395,-110.07370,,1,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,beanfill_rain,0.77735,51.96210,,21,25
+Four-region total,2001,Dec,dry_days,-0.37633,-1.23995,,16,25
+Four-region total,2002,Dec,dry_days,-1.14521,-3.82797,,23,25
+Four-region total,2003,Dec,dry_days,0.32052,1.10562,,10,25
+Four-region total,2004,Dec,dry_days,-0.41095,-1.35648,,17,25
+Four-region total,2005,Dec,dry_days,0.14757,0.52350,,11,25
+Four-region total,2006,Dec,dry_days,-0.36005,-1.18516,,15,25
+Four-region total,2007,Dec,dry_days,-1.03457,-3.45556,,21,25
+Four-region total,2008,Dec,dry_days,1.61520,5.46348,,2,25
+Four-region total,2009,Dec,dry_days,-0.97029,-3.23921,,20,25
+Four-region total,2010,Dec,dry_days,-1.89246,-6.34318,,25,25
+Four-region total,2011,Dec,dry_days,1.57245,5.31958,,3,25
+Four-region total,2012,Dec,dry_days,-0.34906,-1.14815,,14,25
+Four-region total,2013,Dec,dry_days,0.54891,1.87438,,8,25
+Four-region total,2014,Dec,dry_days,-1.29595,-4.33535,,24,25
+Four-region total,2015,Dec,dry_days,0.34417,1.18523,,9,25
+Four-region total,2016,Dec,dry_days,1.09074,3.69817,,4,25
+Four-region total,2017,Dec,dry_days,-0.21735,-0.70481,,13,25
+Four-region total,2018,Dec,dry_days,2.19344,7.40982,,1,25
+Four-region total,2019,Dec,dry_days,-1.08190,-3.61487,,22,25
+Four-region total,2020,Dec,dry_days,0.85563,2.90681,,6,25
+Four-region total,2021,Dec,dry_days,-0.09873,-0.30555,,12,25
+Four-region total,2022,Dec,dry_days,-0.80554,-2.68465,,19,25
+Four-region total,2023,Dec,dry_days,0.56026,1.91258,,7,25
+Four-region total,2024,Dec,dry_days,0.91469,3.10560,,5,25
+Four-region total,2025,Dec,dry_days,-0.54237,-1.79884,,18,25
+Four-region total,2001,Jan,dry_days,-0.39013,-1.27539,,16,25
+Four-region total,2002,Jan,dry_days,-1.16530,-3.86048,,23,25
+Four-region total,2003,Jan,dry_days,0.31333,1.07057,,10,25
+Four-region total,2004,Jan,dry_days,-0.42513,-1.39209,,17,25
+Four-region total,2005,Jan,dry_days,0.13866,0.48805,,11,25
+Four-region total,2006,Jan,dry_days,-0.37341,-1.21962,,15,25
+Four-region total,2007,Jan,dry_days,-1.05431,-3.49031,,21,25
+Four-region total,2008,Jan,dry_days,1.62007,5.42835,,2,25
+Four-region total,2009,Jan,dry_days,-0.82387,-2.72185,,20,25
+Four-region total,2010,Jan,dry_days,-1.88056,-6.24574,,25,25
+Four-region total,2011,Jan,dry_days,1.57785,5.28757,,3,25
+Four-region total,2012,Jan,dry_days,-0.36239,-1.18288,,14,25
+Four-region total,2013,Jan,dry_days,0.54406,1.84003,,8,25
+Four-region total,2014,Jan,dry_days,-1.31790,-4.36937,,24,25
+Four-region total,2015,Jan,dry_days,0.33737,1.15072,,9,25
+Four-region total,2016,Jan,dry_days,1.09086,3.66351,,4,25
+Four-region total,2017,Jan,dry_days,-0.22881,-0.73741,,13,25
+Four-region total,2018,Jan,dry_days,2.20418,7.37628,,1,25
+Four-region total,2019,Jan,dry_days,-1.10104,-3.64617,,22,25
+Four-region total,2020,Jan,dry_days,0.85432,2.87470,,6,25
+Four-region total,2021,Jan,dry_days,-0.07435,-0.22231,,12,25
+Four-region total,2022,Jan,dry_days,-0.81988,-2.70853,,19,25
+Four-region total,2023,Jan,dry_days,0.55601,1.87987,,7,25
+Four-region total,2024,Jan,dry_days,0.91419,3.07434,,5,25
+Four-region total,2025,Jan,dry_days,-0.54584,-1.79464,,18,25
+Four-region total,2001,Nov,dry_days,-0.35633,-1.18982,,15,25
+Four-region total,2002,Nov,dry_days,-1.11625,-3.78224,,22,25
+Four-region total,2003,Nov,dry_days,0.33004,1.15168,,10,25
+Four-region total,2004,Nov,dry_days,-0.39145,-1.30962,,17,25
+Four-region total,2005,Nov,dry_days,0.15680,0.56068,,11,25
+Four-region total,2006,Nov,dry_days,-0.36425,-1.21682,,16,25
+Four-region total,2007,Nov,dry_days,-1.17420,-3.97991,,23,25
+Four-region total,2008,Nov,dry_days,1.60792,5.51106,,2,25
+Four-region total,2009,Nov,dry_days,-1.04495,-3.53898,,20,25
+Four-region total,2010,Nov,dry_days,-1.86036,-6.32071,,25,25
+Four-region total,2011,Nov,dry_days,1.56416,5.36178,,3,25
+Four-region total,2012,Nov,dry_days,-0.33064,-1.10218,,14,25
+Four-region total,2013,Nov,dry_days,0.55538,1.92041,,8,25
+Four-region total,2014,Nov,dry_days,-1.27936,-4.33866,,24,25
+Four-region total,2015,Nov,dry_days,0.35337,1.23128,,9,25
+Four-region total,2016,Nov,dry_days,1.09005,3.74439,,4,25
+Four-region total,2017,Nov,dry_days,-0.20104,-0.66004,,13,25
+Four-region total,2018,Nov,dry_days,2.17767,7.45472,,1,25
+Four-region total,2019,Nov,dry_days,-1.05456,-3.57178,,21,25
+Four-region total,2020,Nov,dry_days,0.85725,2.95020,,6,25
+Four-region total,2021,Nov,dry_days,-0.08459,-0.26279,,12,25
+Four-region total,2022,Nov,dry_days,-0.80184,-2.70963,,19,25
+Four-region total,2023,Nov,dry_days,0.56528,1.95418,,7,25
+Four-region total,2024,Nov,dry_days,0.90606,3.11672,,5,25
+Four-region total,2025,Nov,dry_days,-0.52681,-1.77139,,18,25
+Sul e Centro-Oeste,2001,Dec,dry_days,-0.73924,-2.92519,,17,25
+Sul e Centro-Oeste,2002,Dec,dry_days,-0.78245,-3.09729,,19,25
+Sul e Centro-Oeste,2003,Dec,dry_days,0.40732,1.64216,,9,25
+Sul e Centro-Oeste,2004,Dec,dry_days,-0.00454,0.00152,,11,25
+Sul e Centro-Oeste,2005,Dec,dry_days,0.08166,0.34489,,10,25
+Sul e Centro-Oeste,2006,Dec,dry_days,-0.93304,-3.69719,,22,25
+Sul e Centro-Oeste,2007,Dec,dry_days,-0.69566,-2.75156,,16,25
+Sul e Centro-Oeste,2008,Dec,dry_days,1.68338,6.72539,,2,25
+Sul e Centro-Oeste,2009,Dec,dry_days,-1.37642,-5.46340,,24,25
+Sul e Centro-Oeste,2010,Dec,dry_days,-1.59371,-6.32900,,25,25
+Sul e Centro-Oeste,2011,Dec,dry_days,0.97953,3.92161,,5,25
+Sul e Centro-Oeste,2012,Dec,dry_days,-0.45265,-1.78355,,15,25
+Sul e Centro-Oeste,2013,Dec,dry_days,0.95699,3.83181,,7,25
+Sul e Centro-Oeste,2014,Dec,dry_days,-0.96761,-3.83488,,23,25
+Sul e Centro-Oeste,2015,Dec,dry_days,-0.04306,-0.15193,,12,25
+Sul e Centro-Oeste,2016,Dec,dry_days,0.51153,2.05730,,8,25
+Sul e Centro-Oeste,2017,Dec,dry_days,-0.32032,-1.25639,,14,25
+Sul e Centro-Oeste,2018,Dec,dry_days,2.23949,8.94069,,1,25
+Sul e Centro-Oeste,2019,Dec,dry_days,-0.77199,-3.05563,,18,25
+Sul e Centro-Oeste,2020,Dec,dry_days,1.01440,4.06049,,4,25
+Sul e Centro-Oeste,2021,Dec,dry_days,-0.12933,-0.49557,,13,25
+Sul e Centro-Oeste,2022,Dec,dry_days,-0.88220,-3.49468,,20,25
+Sul e Centro-Oeste,2023,Dec,dry_days,0.95894,3.83957,,6,25
+Sul e Centro-Oeste,2024,Dec,dry_days,1.57942,6.31129,,3,25
+Sul e Centro-Oeste,2025,Dec,dry_days,-0.88674,-3.51275,,21,25
+Sul e Centro-Oeste,2001,Jan,dry_days,-0.75538,-2.96001,,17,25
+Sul e Centro-Oeste,2002,Jan,dry_days,-0.79883,-3.13131,,19,25
+Sul e Centro-Oeste,2003,Jan,dry_days,0.40232,1.60481,,9,25
+Sul e Centro-Oeste,2004,Jan,dry_days,-0.01361,-0.03519,,11,25
+Sul e Centro-Oeste,2005,Jan,dry_days,0.07357,0.30855,,10,25
+Sul e Centro-Oeste,2006,Jan,dry_days,-0.95131,-3.73257,,22,25
+Sul e Centro-Oeste,2007,Jan,dry_days,-0.71163,-2.78751,,16,25
+Sul e Centro-Oeste,2008,Jan,dry_days,1.69175,6.68903,,2,25
+Sul e Centro-Oeste,2009,Jan,dry_days,-1.22690,-4.81923,,24,25
+Sul e Centro-Oeste,2010,Jan,dry_days,-1.61432,-6.34683,,25,25
+Sul e Centro-Oeste,2011,Jan,dry_days,0.98057,3.88485,,5,25
+Sul e Centro-Oeste,2012,Jan,dry_days,-0.46680,-1.82213,,15,25
+Sul e Centro-Oeste,2013,Jan,dry_days,0.95732,3.79318,,7,25
+Sul e Centro-Oeste,2014,Jan,dry_days,-0.98665,-3.87192,,23,25
+Sul e Centro-Oeste,2015,Jan,dry_days,-0.05274,-0.18949,,12,25
+Sul e Centro-Oeste,2016,Jan,dry_days,0.50743,2.01926,,8,25
+Sul e Centro-Oeste,2017,Jan,dry_days,-0.33214,-1.29118,,14,25
+Sul e Centro-Oeste,2018,Jan,dry_days,2.25347,8.90390,,1,25
+Sul e Centro-Oeste,2019,Jan,dry_days,-0.78794,-3.08840,,18,25
+Sul e Centro-Oeste,2020,Jan,dry_days,1.01617,4.02522,,4,25
+Sul e Centro-Oeste,2021,Jan,dry_days,-0.10402,-0.39170,,13,25
+Sul e Centro-Oeste,2022,Jan,dry_days,-0.89558,-3.51281,,21,25
+Sul e Centro-Oeste,2023,Jan,dry_days,0.95946,3.80160,,6,25
+Sul e Centro-Oeste,2024,Jan,dry_days,1.58661,6.27447,,3,25
+Sul e Centro-Oeste,2025,Jan,dry_days,-0.88968,-3.48957,,20,25
+Sul e Centro-Oeste,2001,Nov,dry_days,-0.71567,-2.87252,,16,25
+Sul e Centro-Oeste,2002,Nov,dry_days,-0.75857,-3.04581,,18,25
+Sul e Centro-Oeste,2003,Nov,dry_days,0.41519,1.69532,,9,25
+Sul e Centro-Oeste,2004,Nov,dry_days,0.00894,0.05437,,11,25
+Sul e Centro-Oeste,2005,Nov,dry_days,0.09400,0.39796,,10,25
+Sul e Centro-Oeste,2006,Nov,dry_days,-0.92060,-3.70030,,22,25
+Sul e Centro-Oeste,2007,Nov,dry_days,-0.89343,-3.59058,,21,25
+Sul e Centro-Oeste,2008,Nov,dry_days,1.67370,6.77880,,2,25
+Sul e Centro-Oeste,2009,Nov,dry_days,-1.44728,-5.82774,,24,25
+Sul e Centro-Oeste,2010,Nov,dry_days,-1.56300,-6.29515,,25,25
+Sul e Centro-Oeste,2011,Nov,dry_days,0.97945,3.97453,,5,25
+Sul e Centro-Oeste,2012,Nov,dry_days,-0.43272,-1.72961,,15,25
+Sul e Centro-Oeste,2013,Nov,dry_days,0.95754,3.88605,,7,25
+Sul e Centro-Oeste,2014,Nov,dry_days,-0.94100,-3.78273,,23,25
+Sul e Centro-Oeste,2015,Nov,dry_days,-0.02889,-0.09844,,12,25
+Sul e Centro-Oeste,2016,Nov,dry_days,0.51805,2.11082,,8,25
+Sul e Centro-Oeste,2017,Nov,dry_days,-0.30253,-1.20373,,14,25
+Sul e Centro-Oeste,2018,Nov,dry_days,2.22205,8.99376,,1,25
+Sul e Centro-Oeste,2019,Nov,dry_days,-0.74859,-3.00551,,17,25
+Sul e Centro-Oeste,2020,Nov,dry_days,1.01352,4.11217,,4,25
+Sul e Centro-Oeste,2021,Nov,dry_days,-0.11447,-0.44413,,13,25
+Sul e Centro-Oeste,2022,Nov,dry_days,-0.85705,-3.44361,,19,25
+Sul e Centro-Oeste,2023,Nov,dry_days,0.95871,3.89077,,6,25
+Sul e Centro-Oeste,2024,Nov,dry_days,1.57030,6.36116,,3,25
+Sul e Centro-Oeste,2025,Nov,dry_days,-0.86474,-3.47469,,20,25
+São Paulo (state total),2001,Dec,dry_days,-0.32683,-1.21087,,15,25
+São Paulo (state total),2002,Dec,dry_days,-0.85525,-3.19595,,21,25
+São Paulo (state total),2003,Dec,dry_days,-0.79102,-2.95466,,18,25
+São Paulo (state total),2004,Dec,dry_days,0.17463,0.67295,,9,25
+São Paulo (state total),2005,Dec,dry_days,0.02491,0.11053,,11,25
+São Paulo (state total),2006,Dec,dry_days,-1.12302,-4.20187,,24,25
+São Paulo (state total),2007,Dec,dry_days,-1.01955,-3.81316,,22,25
+São Paulo (state total),2008,Dec,dry_days,1.68285,6.33881,,2,25
+São Paulo (state total),2009,Dec,dry_days,-0.67656,-2.52467,,17,25
+São Paulo (state total),2010,Dec,dry_days,-1.53851,-5.76271,,25,25
+São Paulo (state total),2011,Dec,dry_days,1.12380,4.23867,,4,25
+São Paulo (state total),2012,Dec,dry_days,-0.31076,-1.15050,,14,25
+São Paulo (state total),2013,Dec,dry_days,0.63345,2.39659,,5,25
+São Paulo (state total),2014,Dec,dry_days,-1.04597,-3.91239,,23,25
+São Paulo (state total),2015,Dec,dry_days,0.07780,0.30919,,10,25
+São Paulo (state total),2016,Dec,dry_days,-0.26145,-0.96525,,13,25
+São Paulo (state total),2017,Dec,dry_days,0.33115,1.26093,,8,25
+São Paulo (state total),2018,Dec,dry_days,2.89445,10.89035,,1,25
+São Paulo (state total),2019,Dec,dry_days,-0.79809,-2.98120,,19,25
+São Paulo (state total),2020,Dec,dry_days,0.57332,2.17071,,6,25
+São Paulo (state total),2021,Dec,dry_days,1.22331,4.61249,,3,25
+São Paulo (state total),2022,Dec,dry_days,-0.84481,-3.15671,,20,25
+São Paulo (state total),2023,Dec,dry_days,-0.35998,-1.33540,,16,25
+São Paulo (state total),2024,Dec,dry_days,0.39968,1.51837,,7,25
+São Paulo (state total),2025,Dec,dry_days,-0.00336,0.00432,,12,25
+São Paulo (state total),2001,Jan,dry_days,-0.34855,-1.28019,,16,25
+São Paulo (state total),2002,Jan,dry_days,-0.87941,-3.25933,,21,25
+São Paulo (state total),2003,Jan,dry_days,-0.81760,-3.02889,,18,25
+São Paulo (state total),2004,Jan,dry_days,0.15454,0.59540,,9,25
+São Paulo (state total),2005,Jan,dry_days,0.00388,0.03373,,11,25
+São Paulo (state total),2006,Jan,dry_days,-1.15213,-4.27608,,24,25
+São Paulo (state total),2007,Jan,dry_days,-1.04788,-3.88741,,22,25
+São Paulo (state total),2008,Jan,dry_days,1.67524,6.26482,,2,25
+São Paulo (state total),2009,Jan,dry_days,-0.25739,-0.94034,,13,25
+São Paulo (state total),2010,Jan,dry_days,-1.56944,-5.83189,,25,25
+São Paulo (state total),2011,Jan,dry_days,1.11715,4.18417,,4,25
+São Paulo (state total),2012,Jan,dry_days,-0.33119,-1.21550,,15,25
+São Paulo (state total),2013,Jan,dry_days,0.62066,2.33318,,5,25
+São Paulo (state total),2014,Jan,dry_days,-1.07247,-3.97909,,23,25
+São Paulo (state total),2015,Jan,dry_days,0.06009,0.24328,,10,25
+São Paulo (state total),2016,Jan,dry_days,-0.28127,-1.02937,,14,25
+São Paulo (state total),2017,Jan,dry_days,0.31624,1.19827,,8,25
+São Paulo (state total),2018,Jan,dry_days,2.89942,10.82879,,1,25
+São Paulo (state total),2019,Jan,dry_days,-0.82125,-3.04250,,19,25
+São Paulo (state total),2020,Jan,dry_days,0.56166,2.11323,,6,25
+São Paulo (state total),2021,Jan,dry_days,1.21693,4.55617,,3,25
+São Paulo (state total),2022,Jan,dry_days,-0.86675,-3.21212,,20,25
+São Paulo (state total),2023,Jan,dry_days,-0.37720,-1.38700,,17,25
+São Paulo (state total),2024,Jan,dry_days,0.38879,1.46872,,7,25
+São Paulo (state total),2025,Jan,dry_days,-0.00051,0.01735,,12,25
+São Paulo (state total),2001,Nov,dry_days,-0.28823,-1.09855,,15,25
+São Paulo (state total),2002,Nov,dry_days,-0.80282,-3.08592,,19,25
+São Paulo (state total),2003,Nov,dry_days,-0.73830,-2.83675,,17,25
+São Paulo (state total),2004,Nov,dry_days,0.20174,0.79376,,9,25
+São Paulo (state total),2005,Nov,dry_days,0.05635,0.23223,,11,25
+São Paulo (state total),2006,Nov,dry_days,-1.15663,-4.45237,,23,25
+São Paulo (state total),2007,Nov,dry_days,-1.21762,-4.68793,,24,25
+São Paulo (state total),2008,Nov,dry_days,1.66820,6.45731,,2,25
+São Paulo (state total),2009,Nov,dry_days,-0.87888,-3.37966,,20,25
+São Paulo (state total),2010,Nov,dry_days,-1.46897,-5.65865,,25,25
+São Paulo (state total),2011,Nov,dry_days,1.11786,4.33185,,4,25
+São Paulo (state total),2012,Nov,dry_days,-0.27398,-1.04350,,14,25
+São Paulo (state total),2013,Nov,dry_days,0.64416,2.50242,,5,25
+São Paulo (state total),2014,Nov,dry_days,-0.99658,-3.83423,,22,25
+São Paulo (state total),2015,Nov,dry_days,0.10461,0.41863,,10,25
+São Paulo (state total),2016,Nov,dry_days,-0.22564,-0.85683,,13,25
+São Paulo (state total),2017,Nov,dry_days,0.35021,1.36715,,8,25
+São Paulo (state total),2018,Nov,dry_days,2.84313,10.99496,,1,25
+São Paulo (state total),2019,Nov,dry_days,-0.74901,-2.87810,,18,25
+São Paulo (state total),2020,Nov,dry_days,0.58473,2.27289,,6,25
+São Paulo (state total),2021,Nov,dry_days,1.21646,4.71266,,3,25
+São Paulo (state total),2022,Nov,dry_days,-0.90585,-3.48386,,21,25
+São Paulo (state total),2023,Nov,dry_days,-0.32507,-1.24081,,16,25
+São Paulo (state total),2024,Nov,dry_days,0.41391,1.61315,,7,25
+São Paulo (state total),2025,Nov,dry_days,0.00835,0.04686,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Dec,dry_days,-0.14144,-0.54469,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Dec,dry_days,-1.35302,-5.17502,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Dec,dry_days,0.54945,2.09569,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Dec,dry_days,-1.28604,-4.91904,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Dec,dry_days,0.80559,3.07459,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Dec,dry_days,-0.64523,-2.47005,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Dec,dry_days,-0.11361,-0.43832,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Dec,dry_days,1.46864,5.60859,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,dry_days,0.08390,0.31650,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,dry_days,-2.23823,-8.55804,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,dry_days,2.09150,7.98901,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,dry_days,-0.17953,-0.69025,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,dry_days,-0.32789,-1.25727,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,dry_days,-1.54406,-5.90512,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,dry_days,0.76511,2.91991,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,dry_days,0.94654,3.61329,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,dry_days,-0.77468,-2.96475,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,dry_days,1.12079,4.27921,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,dry_days,-0.92242,-3.52939,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,dry_days,-0.59513,-2.27858,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,dry_days,-0.10299,-0.39776,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,dry_days,0.58498,2.23149,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,dry_days,0.69911,2.66765,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,dry_days,0.68054,2.59669,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,dry_days,-0.01449,-0.05953,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,dry_days,-0.15368,-0.57863,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,dry_days,-1.38991,-5.20811,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,dry_days,0.55155,2.06238,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,dry_days,-1.32165,-4.95249,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,dry_days,0.81320,3.04221,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,dry_days,-0.66774,-2.50368,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,dry_days,-0.12520,-0.47196,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,dry_days,1.48936,5.57432,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,dry_days,0.07632,0.28269,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,dry_days,-2.05496,-7.69863,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,dry_days,2.12481,7.95401,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,dry_days,-0.19267,-0.72463,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,dry_days,-0.34394,-1.29112,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,dry_days,-1.58499,-5.93866,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,dry_days,0.77153,2.88617,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,dry_days,0.95678,3.57989,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,dry_days,-0.79949,-2.99706,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,dry_days,1.13464,4.24595,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,dry_days,-0.95054,-3.56275,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,dry_days,-0.61651,-2.31184,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,dry_days,-0.11310,-0.42666,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,dry_days,0.58788,2.19840,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,dry_days,0.70432,2.63447,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,dry_days,0.68528,2.56315,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,dry_days,-0.02389,-0.09259,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Nov,dry_days,-0.13898,-0.53551,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Nov,dry_days,-1.34950,-5.16726,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Nov,dry_days,0.55090,2.10411,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Nov,dry_days,-1.28235,-4.91033,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Nov,dry_days,0.80710,3.08442,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Nov,dry_days,-0.64175,-2.45926,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Nov,dry_days,-0.11556,-0.44594,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Nov,dry_days,1.46976,5.61992,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,dry_days,0.08653,0.32733,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,dry_days,-2.25650,-8.63768,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,dry_days,2.09180,7.99998,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,dry_days,-0.17653,-0.67919,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,dry_days,-0.32464,-1.24592,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,dry_days,-1.53960,-5.89465,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,dry_days,0.76676,2.93007,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,dry_days,0.94798,3.62346,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,dry_days,-0.77113,-2.95430,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,dry_days,1.12205,4.28949,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,dry_days,-0.91882,-3.51938,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,dry_days,-0.59183,-2.26824,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,dry_days,-0.10013,-0.38688,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,dry_days,0.58694,2.24202,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,dry_days,0.70073,2.67743,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,dry_days,0.64416,2.46096,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,dry_days,-0.01199,-0.04964,,12,25
+"Zona da Mata, Rio Doce e Central",2001,Dec,dry_days,0.29980,1.25837,,9,25
+"Zona da Mata, Rio Doce e Central",2002,Dec,dry_days,-1.17296,-4.69936,,22,25
+"Zona da Mata, Rio Doce e Central",2003,Dec,dry_days,0.42421,1.76162,,8,25
+"Zona da Mata, Rio Doce e Central",2004,Dec,dry_days,-0.71232,-2.83593,,18,25
+"Zona da Mata, Rio Doce e Central",2005,Dec,dry_days,-0.07356,-0.25198,,13,25
+"Zona da Mata, Rio Doce e Central",2006,Dec,dry_days,1.37918,5.62476,,3,25
+"Zona da Mata, Rio Doce e Central",2007,Dec,dry_days,-1.48419,-5.95836,,25,25
+"Zona da Mata, Rio Doce e Central",2008,Dec,dry_days,0.65837,2.70887,,7,25
+"Zona da Mata, Rio Doce e Central",2009,Dec,dry_days,-0.40655,-1.59900,,17,25
+"Zona da Mata, Rio Doce e Central",2010,Dec,dry_days,-1.37896,-5.53267,,24,25
+"Zona da Mata, Rio Doce e Central",2011,Dec,dry_days,1.63996,6.67966,,2,25
+"Zona da Mata, Rio Doce e Central",2012,Dec,dry_days,-0.09714,-0.34738,,14,25
+"Zona da Mata, Rio Doce e Central",2013,Dec,dry_days,-0.00451,0.02734,,12,25
+"Zona da Mata, Rio Doce e Central",2014,Dec,dry_days,-1.13239,-4.53522,,21,25
+"Zona da Mata, Rio Doce e Central",2015,Dec,dry_days,0.71627,2.94312,,6,25
+"Zona da Mata, Rio Doce e Central",2016,Dec,dry_days,2.32857,9.46529,,1,25
+"Zona da Mata, Rio Doce e Central",2017,Dec,dry_days,0.05591,0.27176,,10,25
+"Zona da Mata, Rio Doce e Central",2018,Dec,dry_days,1.07889,4.40999,,5,25
+"Zona da Mata, Rio Doce e Central",2019,Dec,dry_days,-1.24391,-4.98636,,23,25
+"Zona da Mata, Rio Doce e Central",2020,Dec,dry_days,1.17649,4.80480,,4,25
+"Zona da Mata, Rio Doce e Central",2021,Dec,dry_days,-0.81758,-3.26174,,19,25
+"Zona da Mata, Rio Doce e Central",2022,Dec,dry_days,-1.12140,-4.49077,,20,25
+"Zona da Mata, Rio Doce e Central",2023,Dec,dry_days,0.03381,0.18238,,11,25
+"Zona da Mata, Rio Doce e Central",2024,Dec,dry_days,-0.22841,-0.87838,,15,25
+"Zona da Mata, Rio Doce e Central",2025,Dec,dry_days,-0.30415,-1.18478,,16,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,dry_days,0.29804,1.24767,,9,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,dry_days,-1.17765,-4.71036,,22,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,dry_days,0.42254,1.75033,,8,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,dry_days,-0.71623,-2.84742,,18,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,dry_days,-0.07625,-0.26351,,13,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,dry_days,1.37936,5.61347,,3,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,dry_days,-1.48946,-5.96930,,25,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,dry_days,0.65708,2.69727,,7,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,dry_days,-0.40957,-1.60929,,17,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,dry_days,-1.38393,-5.54321,,24,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,dry_days,1.64051,6.66783,,2,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,dry_days,-0.09973,-0.35830,,14,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,dry_days,-0.00681,0.01686,,12,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,dry_days,-1.13700,-4.54623,,21,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,dry_days,0.71519,2.93188,,6,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,dry_days,2.33064,9.45423,,1,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,dry_days,0.05371,0.26121,,10,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,dry_days,1.07877,4.39982,,5,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,dry_days,-1.24797,-4.99427,,23,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,dry_days,1.17683,4.79575,,4,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,dry_days,-0.76333,-3.03757,,19,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,dry_days,-1.12496,-4.49765,,20,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,dry_days,0.03171,0.17237,,11,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,dry_days,-0.23063,-0.88683,,15,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,dry_days,-0.30624,-1.19207,,16,25
+"Zona da Mata, Rio Doce e Central",2001,Nov,dry_days,0.30325,1.27698,,9,25
+"Zona da Mata, Rio Doce e Central",2002,Nov,dry_days,-1.16476,-4.68139,,21,25
+"Zona da Mata, Rio Doce e Central",2003,Nov,dry_days,0.42697,1.77912,,8,25
+"Zona da Mata, Rio Doce e Central",2004,Nov,dry_days,-0.70591,-2.81902,,18,25
+"Zona da Mata, Rio Doce e Central",2005,Nov,dry_days,-0.07980,-0.27775,,13,25
+"Zona da Mata, Rio Doce e Central",2006,Nov,dry_days,1.37860,5.64164,,3,25
+"Zona da Mata, Rio Doce e Central",2007,Nov,dry_days,-1.49537,-6.02330,,25,25
+"Zona da Mata, Rio Doce e Central",2008,Nov,dry_days,0.66006,2.72518,,7,25
+"Zona da Mata, Rio Doce e Central",2009,Nov,dry_days,-0.41500,-1.63826,,17,25
+"Zona da Mata, Rio Doce e Central",2010,Nov,dry_days,-1.37092,-5.51818,,24,25
+"Zona da Mata, Rio Doce e Central",2011,Nov,dry_days,1.63849,6.69647,,2,25
+"Zona da Mata, Rio Doce e Central",2012,Nov,dry_days,-0.09286,-0.33075,,14,25
+"Zona da Mata, Rio Doce e Central",2013,Nov,dry_days,-0.00067,0.04340,,12,25
+"Zona da Mata, Rio Doce e Central",2014,Nov,dry_days,-1.16493,-4.68207,,22,25
+"Zona da Mata, Rio Doce e Central",2015,Nov,dry_days,0.71759,2.95870,,6,25
+"Zona da Mata, Rio Doce e Central",2016,Nov,dry_days,2.32459,9.48121,,1,25
+"Zona da Mata, Rio Doce e Central",2017,Nov,dry_days,0.05902,0.28569,,10,25
+"Zona da Mata, Rio Doce e Central",2018,Nov,dry_days,1.07857,4.42387,,5,25
+"Zona da Mata, Rio Doce e Central",2019,Nov,dry_days,-1.23675,-4.97358,,23,25
+"Zona da Mata, Rio Doce e Central",2020,Nov,dry_days,1.17540,4.81689,,4,25
+"Zona da Mata, Rio Doce e Central",2021,Nov,dry_days,-0.81211,-3.25007,,19,25
+"Zona da Mata, Rio Doce e Central",2022,Nov,dry_days,-1.11474,-4.47838,,20,25
+"Zona da Mata, Rio Doce e Central",2023,Nov,dry_days,0.03657,0.19457,,11,25
+"Zona da Mata, Rio Doce e Central",2024,Nov,dry_days,-0.22897,-0.88321,,15,25
+"Zona da Mata, Rio Doce e Central",2025,Nov,dry_days,-0.30025,-1.17251,,16,25
+Four-region total,2001,Dec,evi,-1.31410,,12.00000,2,25
+Four-region total,2002,Dec,evi,-0.64548,,12.00000,4,25
+Four-region total,2003,Dec,evi,-1.69927,,12.00000,1,25
+Four-region total,2004,Dec,evi,-1.19342,,12.00000,3,25
+Four-region total,2005,Dec,evi,-0.33019,,12.00000,9,25
+Four-region total,2006,Dec,evi,0.19340,,12.00000,17,25
+Four-region total,2007,Dec,evi,-0.37782,,12.00000,7,25
+Four-region total,2008,Dec,evi,-0.26810,,12.00000,11,25
+Four-region total,2009,Dec,evi,0.19166,,12.00000,16,25
+Four-region total,2010,Dec,evi,1.45252,,12.00000,25,25
+Four-region total,2011,Dec,evi,0.23200,,12.00000,18,25
+Four-region total,2012,Dec,evi,0.10028,,12.00000,14,25
+Four-region total,2013,Dec,evi,0.90232,,12.00000,22,25
+Four-region total,2014,Dec,evi,1.05972,,12.00000,23,25
+Four-region total,2015,Dec,evi,-0.24283,,12.00000,12,25
+Four-region total,2016,Dec,evi,1.26552,,12.00000,24,25
+Four-region total,2017,Dec,evi,0.04344,,12.00000,13,25
+Four-region total,2018,Dec,evi,0.18629,,12.00000,15,25
+Four-region total,2019,Dec,evi,0.57427,,12.00000,19,25
+Four-region total,2020,Dec,evi,0.70817,,12.00000,21,25
+Four-region total,2021,Dec,evi,-0.36655,,12.00000,8,25
+Four-region total,2022,Dec,evi,-0.60195,,12.00000,5,25
+Four-region total,2023,Dec,evi,-0.27551,,12.00000,10,25
+Four-region total,2024,Dec,evi,0.58616,,12.00000,20,25
+Four-region total,2025,Dec,evi,-0.50772,,12.00000,6,25
+Four-region total,2001,Jan,evi,-1.26363,,14.00000,2,25
+Four-region total,2002,Jan,evi,-0.67849,,13.00000,4,25
+Four-region total,2003,Jan,evi,-1.67491,,13.00000,1,25
+Four-region total,2004,Jan,evi,-1.19713,,13.00000,3,25
+Four-region total,2005,Jan,evi,-0.47586,,14.00000,6,25
+Four-region total,2006,Jan,evi,0.08136,,13.00000,13,25
+Four-region total,2007,Jan,evi,-0.31885,,13.00000,10,25
+Four-region total,2008,Jan,evi,-0.25744,,13.00000,11,25
+Four-region total,2009,Jan,evi,0.15435,,14.00000,15,25
+Four-region total,2010,Jan,evi,1.47457,,13.00000,25,25
+Four-region total,2011,Jan,evi,0.27560,,13.00000,18,25
+Four-region total,2012,Jan,evi,0.16218,,13.00000,16,25
+Four-region total,2013,Jan,evi,0.80472,,14.00000,22,25
+Four-region total,2014,Jan,evi,1.03180,,13.00000,23,25
+Four-region total,2015,Jan,evi,-0.33262,,13.00000,9,25
+Four-region total,2016,Jan,evi,1.29109,,13.00000,24,25
+Four-region total,2017,Jan,evi,0.11521,,14.00000,14,25
+Four-region total,2018,Jan,evi,0.23273,,13.00000,17,25
+Four-region total,2019,Jan,evi,0.65324,,13.00000,20,25
+Four-region total,2020,Jan,evi,0.67119,,13.00000,21,25
+Four-region total,2021,Jan,evi,-0.36164,,14.00000,7,25
+Four-region total,2022,Jan,evi,-0.55520,,13.00000,5,25
+Four-region total,2023,Jan,evi,-0.19408,,13.00000,12,25
+Four-region total,2024,Jan,evi,0.54747,,13.00000,19,25
+Four-region total,2025,Jan,evi,-0.35911,,14.00000,8,25
+Four-region total,2001,Nov,evi,-1.40197,,11.00000,2,25
+Four-region total,2002,Nov,evi,-0.66255,,11.00000,5,25
+Four-region total,2003,Nov,evi,-1.75676,,11.00000,1,25
+Four-region total,2004,Nov,evi,-1.20044,,11.00000,3,25
+Four-region total,2005,Nov,evi,-0.32194,,11.00000,9,25
+Four-region total,2006,Nov,evi,0.18108,,11.00000,15,25
+Four-region total,2007,Nov,evi,-0.43984,,11.00000,7,25
+Four-region total,2008,Nov,evi,-0.13153,,11.00000,12,25
+Four-region total,2009,Nov,evi,0.20195,,11.00000,18,25
+Four-region total,2010,Nov,evi,1.46107,,11.00000,25,25
+Four-region total,2011,Nov,evi,0.18855,,11.00000,17,25
+Four-region total,2012,Nov,evi,0.18508,,11.00000,16,25
+Four-region total,2013,Nov,evi,1.11141,,11.00000,23,25
+Four-region total,2014,Nov,evi,1.10724,,11.00000,22,25
+Four-region total,2015,Nov,evi,-0.15749,,11.00000,11,25
+Four-region total,2016,Nov,evi,1.26577,,11.00000,24,25
+Four-region total,2017,Nov,evi,0.00514,,11.00000,13,25
+Four-region total,2018,Nov,evi,0.16819,,11.00000,14,25
+Four-region total,2019,Nov,evi,0.46163,,11.00000,19,25
+Four-region total,2020,Nov,evi,0.78844,,11.00000,21,25
+Four-region total,2021,Nov,evi,-0.23852,,11.00000,10,25
+Four-region total,2022,Nov,evi,-0.72192,,11.00000,4,25
+Four-region total,2023,Nov,evi,-0.40348,,11.00000,8,25
+Four-region total,2024,Nov,evi,0.51614,,11.00000,20,25
+Four-region total,2025,Nov,evi,-0.56655,,11.00000,6,25
+Sul e Centro-Oeste,2001,Dec,evi,-1.25518,,12.00000,2,25
+Sul e Centro-Oeste,2002,Dec,evi,-0.52602,,12.00000,6,25
+Sul e Centro-Oeste,2003,Dec,evi,-1.77686,,12.00000,1,25
+Sul e Centro-Oeste,2004,Dec,evi,-0.92005,,12.00000,3,25
+Sul e Centro-Oeste,2005,Dec,evi,-0.20988,,12.00000,10,25
+Sul e Centro-Oeste,2006,Dec,evi,0.17630,,12.00000,16,25
+Sul e Centro-Oeste,2007,Dec,evi,-0.48981,,12.00000,7,25
+Sul e Centro-Oeste,2008,Dec,evi,-0.13027,,12.00000,12,25
+Sul e Centro-Oeste,2009,Dec,evi,0.36196,,12.00000,18,25
+Sul e Centro-Oeste,2010,Dec,evi,1.42102,,12.00000,25,25
+Sul e Centro-Oeste,2011,Dec,evi,0.16651,,12.00000,15,25
+Sul e Centro-Oeste,2012,Dec,evi,-0.02900,,12.00000,13,25
+Sul e Centro-Oeste,2013,Dec,evi,0.93669,,12.00000,22,25
+Sul e Centro-Oeste,2014,Dec,evi,1.14157,,12.00000,23,25
+Sul e Centro-Oeste,2015,Dec,evi,-0.30150,,12.00000,9,25
+Sul e Centro-Oeste,2016,Dec,evi,1.14412,,12.00000,24,25
+Sul e Centro-Oeste,2017,Dec,evi,0.25051,,12.00000,17,25
+Sul e Centro-Oeste,2018,Dec,evi,0.09711,,12.00000,14,25
+Sul e Centro-Oeste,2019,Dec,evi,0.52385,,12.00000,20,25
+Sul e Centro-Oeste,2020,Dec,evi,0.65354,,12.00000,21,25
+Sul e Centro-Oeste,2021,Dec,evi,-0.61710,,12.00000,5,25
+Sul e Centro-Oeste,2022,Dec,evi,-0.75707,,12.00000,4,25
+Sul e Centro-Oeste,2023,Dec,evi,-0.17795,,12.00000,11,25
+Sul e Centro-Oeste,2024,Dec,evi,0.48772,,12.00000,19,25
+Sul e Centro-Oeste,2025,Dec,evi,-0.34233,,12.00000,8,25
+Sul e Centro-Oeste,2001,Jan,evi,-1.20372,,14.00000,2,25
+Sul e Centro-Oeste,2002,Jan,evi,-0.55958,,13.00000,6,25
+Sul e Centro-Oeste,2003,Jan,evi,-1.74673,,13.00000,1,25
+Sul e Centro-Oeste,2004,Jan,evi,-0.87117,,13.00000,3,25
+Sul e Centro-Oeste,2005,Jan,evi,-0.30905,,14.00000,9,25
+Sul e Centro-Oeste,2006,Jan,evi,0.04072,,13.00000,13,25
+Sul e Centro-Oeste,2007,Jan,evi,-0.40460,,13.00000,7,25
+Sul e Centro-Oeste,2008,Jan,evi,-0.11456,,13.00000,12,25
+Sul e Centro-Oeste,2009,Jan,evi,0.37058,,14.00000,18,25
+Sul e Centro-Oeste,2010,Jan,evi,1.43189,,13.00000,25,25
+Sul e Centro-Oeste,2011,Jan,evi,0.18574,,13.00000,16,25
+Sul e Centro-Oeste,2012,Jan,evi,0.07318,,13.00000,14,25
+Sul e Centro-Oeste,2013,Jan,evi,0.80762,,14.00000,22,25
+Sul e Centro-Oeste,2014,Jan,evi,1.10198,,13.00000,23,25
+Sul e Centro-Oeste,2015,Jan,evi,-0.39495,,13.00000,8,25
+Sul e Centro-Oeste,2016,Jan,evi,1.16884,,13.00000,24,25
+Sul e Centro-Oeste,2017,Jan,evi,0.30313,,14.00000,17,25
+Sul e Centro-Oeste,2018,Jan,evi,0.15909,,13.00000,15,25
+Sul e Centro-Oeste,2019,Jan,evi,0.60764,,13.00000,21,25
+Sul e Centro-Oeste,2020,Jan,evi,0.59962,,13.00000,20,25
+Sul e Centro-Oeste,2021,Jan,evi,-0.69458,,14.00000,5,25
+Sul e Centro-Oeste,2022,Jan,evi,-0.74034,,13.00000,4,25
+Sul e Centro-Oeste,2023,Jan,evi,-0.12190,,13.00000,11,25
+Sul e Centro-Oeste,2024,Jan,evi,0.48592,,13.00000,19,25
+Sul e Centro-Oeste,2025,Jan,evi,-0.22838,,14.00000,10,25
+Sul e Centro-Oeste,2001,Nov,evi,-1.34766,,11.00000,2,25
+Sul e Centro-Oeste,2002,Nov,evi,-0.51572,,11.00000,6,25
+Sul e Centro-Oeste,2003,Nov,evi,-1.83798,,11.00000,1,25
+Sul e Centro-Oeste,2004,Nov,evi,-0.92385,,11.00000,3,25
+Sul e Centro-Oeste,2005,Nov,evi,-0.25051,,11.00000,10,25
+Sul e Centro-Oeste,2006,Nov,evi,0.16996,,11.00000,16,25
+Sul e Centro-Oeste,2007,Nov,evi,-0.55052,,11.00000,5,25
+Sul e Centro-Oeste,2008,Nov,evi,0.02900,,11.00000,12,25
+Sul e Centro-Oeste,2009,Nov,evi,0.36101,,11.00000,18,25
+Sul e Centro-Oeste,2010,Nov,evi,1.45405,,11.00000,25,25
+Sul e Centro-Oeste,2011,Nov,evi,0.14946,,11.00000,15,25
+Sul e Centro-Oeste,2012,Nov,evi,0.04640,,11.00000,13,25
+Sul e Centro-Oeste,2013,Nov,evi,1.13885,,11.00000,23,25
+Sul e Centro-Oeste,2014,Nov,evi,1.18374,,11.00000,24,25
+Sul e Centro-Oeste,2015,Nov,evi,-0.21759,,11.00000,11,25
+Sul e Centro-Oeste,2016,Nov,evi,1.12138,,11.00000,22,25
+Sul e Centro-Oeste,2017,Nov,evi,0.20808,,11.00000,17,25
+Sul e Centro-Oeste,2018,Nov,evi,0.06549,,11.00000,14,25
+Sul e Centro-Oeste,2019,Nov,evi,0.43384,,11.00000,20,25
+Sul e Centro-Oeste,2020,Nov,evi,0.71632,,11.00000,21,25
+Sul e Centro-Oeste,2021,Nov,evi,-0.47406,,11.00000,7,25
+Sul e Centro-Oeste,2022,Nov,evi,-0.88532,,11.00000,4,25
+Sul e Centro-Oeste,2023,Nov,evi,-0.29665,,11.00000,9,25
+Sul e Centro-Oeste,2024,Nov,evi,0.42133,,11.00000,19,25
+Sul e Centro-Oeste,2025,Nov,evi,-0.40700,,11.00000,8,25
+São Paulo (state total),2001,Dec,evi,-1.34040,,12.00000,1,25
+São Paulo (state total),2002,Dec,evi,0.13510,,12.00000,15,25
+São Paulo (state total),2003,Dec,evi,-1.31050,,12.00000,2,25
+São Paulo (state total),2004,Dec,evi,-0.72267,,12.00000,7,25
+São Paulo (state total),2005,Dec,evi,-0.43866,,12.00000,8,25
+São Paulo (state total),2006,Dec,evi,0.22606,,12.00000,18,25
+São Paulo (state total),2007,Dec,evi,-0.86868,,12.00000,4,25
+São Paulo (state total),2008,Dec,evi,-0.08413,,12.00000,11,25
+São Paulo (state total),2009,Dec,evi,0.06202,,12.00000,13,25
+São Paulo (state total),2010,Dec,evi,1.45067,,12.00000,25,25
+São Paulo (state total),2011,Dec,evi,-0.17788,,12.00000,10,25
+São Paulo (state total),2012,Dec,evi,0.01696,,12.00000,12,25
+São Paulo (state total),2013,Dec,evi,0.64081,,12.00000,21,25
+São Paulo (state total),2014,Dec,evi,0.96046,,12.00000,23,25
+São Paulo (state total),2015,Dec,evi,-0.27938,,12.00000,9,25
+São Paulo (state total),2016,Dec,evi,1.41683,,12.00000,24,25
+São Paulo (state total),2017,Dec,evi,0.11819,,12.00000,14,25
+São Paulo (state total),2018,Dec,evi,0.47369,,12.00000,19,25
+São Paulo (state total),2019,Dec,evi,0.21028,,12.00000,17,25
+São Paulo (state total),2020,Dec,evi,0.85628,,12.00000,22,25
+São Paulo (state total),2021,Dec,evi,-0.87639,,12.00000,3,25
+São Paulo (state total),2022,Dec,evi,-0.75915,,12.00000,6,25
+São Paulo (state total),2023,Dec,evi,0.15016,,12.00000,16,25
+São Paulo (state total),2024,Dec,evi,0.56120,,12.00000,20,25
+São Paulo (state total),2025,Dec,evi,-0.86518,,12.00000,5,25
+São Paulo (state total),2001,Jan,evi,-1.30579,,14.00000,1,25
+São Paulo (state total),2002,Jan,evi,0.08849,,13.00000,13,25
+São Paulo (state total),2003,Jan,evi,-1.30029,,13.00000,2,25
+São Paulo (state total),2004,Jan,evi,-0.83652,,13.00000,4,25
+São Paulo (state total),2005,Jan,evi,-0.43347,,14.00000,8,25
+São Paulo (state total),2006,Jan,evi,0.11310,,13.00000,15,25
+São Paulo (state total),2007,Jan,evi,-0.83275,,13.00000,5,25
+São Paulo (state total),2008,Jan,evi,-0.03707,,13.00000,12,25
+São Paulo (state total),2009,Jan,evi,-0.07582,,14.00000,11,25
+São Paulo (state total),2010,Jan,evi,1.43085,,13.00000,24,25
+São Paulo (state total),2011,Jan,evi,-0.14242,,13.00000,10,25
+São Paulo (state total),2012,Jan,evi,0.08985,,13.00000,14,25
+São Paulo (state total),2013,Jan,evi,0.51583,,14.00000,19,25
+São Paulo (state total),2014,Jan,evi,0.94640,,13.00000,23,25
+São Paulo (state total),2015,Jan,evi,-0.33596,,13.00000,9,25
+São Paulo (state total),2016,Jan,evi,1.46112,,13.00000,25,25
+São Paulo (state total),2017,Jan,evi,0.23893,,14.00000,17,25
+São Paulo (state total),2018,Jan,evi,0.53234,,13.00000,20,25
+São Paulo (state total),2019,Jan,evi,0.27928,,13.00000,18,25
+São Paulo (state total),2020,Jan,evi,0.85721,,13.00000,22,25
+São Paulo (state total),2021,Jan,evi,-0.83919,,14.00000,3,25
+São Paulo (state total),2022,Jan,evi,-0.71865,,13.00000,6,25
+São Paulo (state total),2023,Jan,evi,0.16269,,13.00000,16,25
+São Paulo (state total),2024,Jan,evi,0.56001,,13.00000,21,25
+São Paulo (state total),2025,Jan,evi,-0.64489,,14.00000,7,25
+São Paulo (state total),2001,Nov,evi,-1.43844,,11.00000,1,25
+São Paulo (state total),2002,Nov,evi,0.18562,,11.00000,17,25
+São Paulo (state total),2003,Nov,evi,-1.27299,,11.00000,2,25
+São Paulo (state total),2004,Nov,evi,-0.67740,,11.00000,7,25
+São Paulo (state total),2005,Nov,evi,-0.45336,,11.00000,8,25
+São Paulo (state total),2006,Nov,evi,0.21101,,11.00000,18,25
+São Paulo (state total),2007,Nov,evi,-0.97564,,11.00000,3,25
+São Paulo (state total),2008,Nov,evi,0.03947,,11.00000,11,25
+São Paulo (state total),2009,Nov,evi,0.10265,,11.00000,14,25
+São Paulo (state total),2010,Nov,evi,1.48516,,11.00000,25,25
+São Paulo (state total),2011,Nov,evi,-0.23670,,11.00000,10,25
+São Paulo (state total),2012,Nov,evi,0.07806,,11.00000,13,25
+São Paulo (state total),2013,Nov,evi,0.72809,,11.00000,21,25
+São Paulo (state total),2014,Nov,evi,1.01412,,11.00000,23,25
+São Paulo (state total),2015,Nov,evi,-0.24208,,11.00000,9,25
+São Paulo (state total),2016,Nov,evi,1.39392,,11.00000,24,25
+São Paulo (state total),2017,Nov,evi,0.11131,,11.00000,16,25
+São Paulo (state total),2018,Nov,evi,0.46619,,11.00000,19,25
+São Paulo (state total),2019,Nov,evi,0.06329,,11.00000,12,25
+São Paulo (state total),2020,Nov,evi,0.91195,,11.00000,22,25
+São Paulo (state total),2021,Nov,evi,-0.76737,,11.00000,6,25
+São Paulo (state total),2022,Nov,evi,-0.82901,,11.00000,5,25
+São Paulo (state total),2023,Nov,evi,0.10466,,11.00000,15,25
+São Paulo (state total),2024,Nov,evi,0.47848,,11.00000,20,25
+São Paulo (state total),2025,Nov,evi,-0.86920,,11.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Dec,evi,-1.33625,,12.00000,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Dec,evi,-0.78259,,12.00000,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Dec,evi,-1.72128,,12.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Dec,evi,-0.91664,,12.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Dec,evi,-1.12871,,12.00000,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Dec,evi,-0.15064,,12.00000,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Dec,evi,-0.32118,,12.00000,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Dec,evi,-0.26110,,12.00000,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,evi,0.03902,,12.00000,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,evi,1.51931,,12.00000,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,evi,0.29175,,12.00000,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,evi,0.27918,,12.00000,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,evi,0.41926,,12.00000,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,evi,0.80657,,12.00000,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,evi,0.05204,,12.00000,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,evi,1.20203,,12.00000,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,evi,-0.32379,,12.00000,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,evi,0.14186,,12.00000,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,evi,0.32852,,12.00000,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,evi,0.43923,,12.00000,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,evi,0.30214,,12.00000,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,evi,-0.22220,,12.00000,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,evi,0.03610,,12.00000,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,evi,0.56538,,12.00000,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,evi,-0.22662,,12.00000,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,evi,-1.25153,,14.00000,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,evi,-0.82633,,13.00000,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,evi,-1.73778,,13.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,evi,-0.94895,,13.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,evi,-1.15171,,14.00000,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,evi,-0.20943,,13.00000,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,evi,-0.24547,,13.00000,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,evi,-0.28355,,13.00000,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,evi,-0.04400,,14.00000,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,evi,1.45396,,13.00000,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,evi,0.34962,,13.00000,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,evi,0.33869,,13.00000,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,evi,0.34167,,14.00000,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,evi,0.85882,,13.00000,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,evi,-0.04855,,13.00000,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,evi,1.20582,,13.00000,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,evi,-0.17176,,14.00000,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,evi,0.12579,,13.00000,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,evi,0.40219,,13.00000,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,evi,0.38528,,13.00000,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,evi,0.33323,,14.00000,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,evi,-0.16771,,13.00000,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,evi,0.10847,,13.00000,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,evi,0.52865,,13.00000,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,evi,-0.25318,,14.00000,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Nov,evi,-1.39947,,11.00000,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Nov,evi,-0.79733,,11.00000,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Nov,evi,-1.74637,,11.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Nov,evi,-0.93291,,11.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Nov,evi,-1.08846,,11.00000,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Nov,evi,-0.14603,,11.00000,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Nov,evi,-0.44923,,11.00000,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Nov,evi,-0.21501,,11.00000,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,evi,0.07722,,11.00000,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,evi,1.54613,,11.00000,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,evi,0.13679,,11.00000,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,evi,0.30856,,11.00000,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,evi,0.60179,,11.00000,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,evi,0.82403,,11.00000,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,evi,0.11543,,11.00000,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,evi,1.24185,,11.00000,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,evi,-0.30896,,11.00000,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,evi,0.10284,,11.00000,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,evi,0.21639,,11.00000,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,evi,0.50155,,11.00000,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,evi,0.37977,,11.00000,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,evi,-0.24792,,11.00000,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,evi,-0.04294,,11.00000,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,evi,0.47686,,11.00000,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,evi,-0.16125,,11.00000,10,25
+"Zona da Mata, Rio Doce e Central",2001,Dec,evi,-0.93228,,12.00000,5,25
+"Zona da Mata, Rio Doce e Central",2002,Dec,evi,-0.95729,,12.00000,3,25
+"Zona da Mata, Rio Doce e Central",2003,Dec,evi,-1.07370,,12.00000,2,25
+"Zona da Mata, Rio Doce e Central",2004,Dec,evi,-1.64382,,12.00000,1,25
+"Zona da Mata, Rio Doce e Central",2005,Dec,evi,0.06178,,12.00000,12,25
+"Zona da Mata, Rio Doce e Central",2006,Dec,evi,0.39021,,12.00000,17,25
+"Zona da Mata, Rio Doce e Central",2007,Dec,evi,0.19091,,12.00000,15,25
+"Zona da Mata, Rio Doce e Central",2008,Dec,evi,-0.49057,,12.00000,7,25
+"Zona da Mata, Rio Doce e Central",2009,Dec,evi,0.00621,,12.00000,11,25
+"Zona da Mata, Rio Doce e Central",2010,Dec,evi,1.00558,,12.00000,25,25
+"Zona da Mata, Rio Doce e Central",2011,Dec,evi,0.44426,,12.00000,18,25
+"Zona da Mata, Rio Doce e Central",2012,Dec,evi,0.20975,,12.00000,16,25
+"Zona da Mata, Rio Doce e Central",2013,Dec,evi,1.00501,,12.00000,24,25
+"Zona da Mata, Rio Doce e Central",2014,Dec,evi,0.75811,,12.00000,21,25
+"Zona da Mata, Rio Doce e Central",2015,Dec,evi,-0.17007,,12.00000,9,25
+"Zona da Mata, Rio Doce e Central",2016,Dec,evi,0.98663,,12.00000,23,25
+"Zona da Mata, Rio Doce e Central",2017,Dec,evi,-0.15136,,12.00000,10,25
+"Zona da Mata, Rio Doce e Central",2018,Dec,evi,0.14901,,12.00000,14,25
+"Zona da Mata, Rio Doce e Central",2019,Dec,evi,0.80059,,12.00000,22,25
+"Zona da Mata, Rio Doce e Central",2020,Dec,evi,0.58554,,12.00000,20,25
+"Zona da Mata, Rio Doce e Central",2021,Dec,evi,0.14651,,12.00000,13,25
+"Zona da Mata, Rio Doce e Central",2022,Dec,evi,-0.24657,,12.00000,8,25
+"Zona da Mata, Rio Doce e Central",2023,Dec,evi,-0.94392,,12.00000,4,25
+"Zona da Mata, Rio Doce e Central",2024,Dec,evi,0.55213,,12.00000,19,25
+"Zona da Mata, Rio Doce e Central",2025,Dec,evi,-0.65396,,12.00000,6,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,evi,-0.86797,,14.00000,4,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,evi,-0.94745,,13.00000,3,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,evi,-1.00894,,13.00000,2,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,evi,-1.62508,,13.00000,1,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,evi,-0.21996,,14.00000,8,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,evi,0.35917,,13.00000,17,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,evi,0.18486,,13.00000,15,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,evi,-0.49595,,13.00000,6,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,evi,0.00028,,14.00000,12,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,evi,1.08788,,13.00000,25,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,evi,0.49991,,13.00000,19,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,evi,0.13067,,13.00000,13,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,evi,0.98471,,14.00000,24,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,evi,0.68487,,13.00000,21,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,evi,-0.21266,,13.00000,9,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,evi,0.97336,,13.00000,23,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,evi,-0.18748,,14.00000,10,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,evi,0.17061,,13.00000,14,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,evi,0.83324,,13.00000,22,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,evi,0.58505,,13.00000,20,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,evi,0.22136,,14.00000,16,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,evi,-0.16437,,13.00000,11,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,evi,-0.80151,,13.00000,5,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,evi,0.43532,,13.00000,18,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,evi,-0.38675,,14.00000,7,25
+"Zona da Mata, Rio Doce e Central",2001,Nov,evi,-0.99248,,11.00000,5,25
+"Zona da Mata, Rio Doce e Central",2002,Nov,evi,-1.08185,,11.00000,4,25
+"Zona da Mata, Rio Doce e Central",2003,Nov,evi,-1.21385,,11.00000,2,25
+"Zona da Mata, Rio Doce e Central",2004,Nov,evi,-1.67490,,11.00000,1,25
+"Zona da Mata, Rio Doce e Central",2005,Nov,evi,0.18254,,11.00000,12,25
+"Zona da Mata, Rio Doce e Central",2006,Nov,evi,0.36174,,11.00000,17,25
+"Zona da Mata, Rio Doce e Central",2007,Nov,evi,0.22012,,11.00000,15,25
+"Zona da Mata, Rio Doce e Central",2008,Nov,evi,-0.41205,,11.00000,8,25
+"Zona da Mata, Rio Doce e Central",2009,Nov,evi,0.01667,,11.00000,11,25
+"Zona da Mata, Rio Doce e Central",2010,Nov,evi,0.94682,,11.00000,23,25
+"Zona da Mata, Rio Doce e Central",2011,Nov,evi,0.45995,,11.00000,18,25
+"Zona da Mata, Rio Doce e Central",2012,Nov,evi,0.32186,,11.00000,16,25
+"Zona da Mata, Rio Doce e Central",2013,Nov,evi,1.23665,,11.00000,25,25
+"Zona da Mata, Rio Doce e Central",2014,Nov,evi,0.83337,,11.00000,22,25
+"Zona da Mata, Rio Doce e Central",2015,Nov,evi,-0.07881,,11.00000,10,25
+"Zona da Mata, Rio Doce e Central",2016,Nov,evi,1.05505,,11.00000,24,25
+"Zona da Mata, Rio Doce e Central",2017,Nov,evi,-0.21632,,11.00000,9,25
+"Zona da Mata, Rio Doce e Central",2018,Nov,evi,0.19573,,11.00000,14,25
+"Zona da Mata, Rio Doce e Central",2019,Nov,evi,0.71843,,11.00000,21,25
+"Zona da Mata, Rio Doce e Central",2020,Nov,evi,0.70535,,11.00000,20,25
+"Zona da Mata, Rio Doce e Central",2021,Nov,evi,0.19424,,11.00000,13,25
+"Zona da Mata, Rio Doce e Central",2022,Nov,evi,-0.42643,,11.00000,7,25
+"Zona da Mata, Rio Doce e Central",2023,Nov,evi,-1.12556,,11.00000,3,25
+"Zona da Mata, Rio Doce e Central",2024,Nov,evi,0.54876,,11.00000,19,25
+"Zona da Mata, Rio Doce e Central",2025,Nov,evi,-0.83346,,11.00000,6,25
+Four-region total,2001,Dec,evi_from_sep,0.13927,,4.00000,15,25
+Four-region total,2002,Dec,evi_from_sep,0.06571,,4.00000,12,25
+Four-region total,2003,Dec,evi_from_sep,-1.24449,,4.00000,2,25
+Four-region total,2004,Dec,evi_from_sep,-1.26403,,4.00000,1,25
+Four-region total,2005,Dec,evi_from_sep,-0.74944,,4.00000,6,25
+Four-region total,2006,Dec,evi_from_sep,0.39820,,4.00000,20,25
+Four-region total,2007,Dec,evi_from_sep,0.24620,,4.00000,18,25
+Four-region total,2008,Dec,evi_from_sep,-0.90331,,4.00000,5,25
+Four-region total,2009,Dec,evi_from_sep,0.06742,,4.00000,13,25
+Four-region total,2010,Dec,evi_from_sep,2.15739,,4.00000,25,25
+Four-region total,2011,Dec,evi_from_sep,0.22700,,4.00000,17,25
+Four-region total,2012,Dec,evi_from_sep,-0.52333,,4.00000,8,25
+Four-region total,2013,Dec,evi_from_sep,-0.26749,,4.00000,11,25
+Four-region total,2014,Dec,evi_from_sep,0.82807,,4.00000,21,25
+Four-region total,2015,Dec,evi_from_sep,-0.62486,,4.00000,7,25
+Four-region total,2016,Dec,evi_from_sep,0.98237,,4.00000,22,25
+Four-region total,2017,Dec,evi_from_sep,0.11288,,4.00000,14,25
+Four-region total,2018,Dec,evi_from_sep,-0.36441,,4.00000,9,25
+Four-region total,2019,Dec,evi_from_sep,1.41893,,4.00000,24,25
+Four-region total,2020,Dec,evi_from_sep,0.17345,,4.00000,16,25
+Four-region total,2021,Dec,evi_from_sep,-1.13694,,4.00000,3,25
+Four-region total,2022,Dec,evi_from_sep,-0.33598,,4.00000,10,25
+Four-region total,2023,Dec,evi_from_sep,0.36246,,4.00000,19,25
+Four-region total,2024,Dec,evi_from_sep,1.27532,,4.00000,23,25
+Four-region total,2025,Dec,evi_from_sep,-1.05017,,4.00000,4,25
+Four-region total,2001,Jan,evi_from_sep,-0.22742,,6.00000,10,25
+Four-region total,2002,Jan,evi_from_sep,-0.16234,,5.00000,11,25
+Four-region total,2003,Jan,evi_from_sep,-1.27210,,5.00000,1,25
+Four-region total,2004,Jan,evi_from_sep,-1.25954,,5.00000,2,25
+Four-region total,2005,Jan,evi_from_sep,-0.94958,,6.00000,3,25
+Four-region total,2006,Jan,evi_from_sep,0.06594,,5.00000,15,25
+Four-region total,2007,Jan,evi_from_sep,0.27471,,5.00000,18,25
+Four-region total,2008,Jan,evi_from_sep,-0.74856,,5.00000,6,25
+Four-region total,2009,Jan,evi_from_sep,0.02178,,6.00000,14,25
+Four-region total,2010,Jan,evi_from_sep,2.07375,,5.00000,25,25
+Four-region total,2011,Jan,evi_from_sep,0.34135,,5.00000,19,25
+Four-region total,2012,Jan,evi_from_sep,-0.23767,,5.00000,9,25
+Four-region total,2013,Jan,evi_from_sep,-0.10529,,6.00000,13,25
+Four-region total,2014,Jan,evi_from_sep,0.80181,,5.00000,21,25
+Four-region total,2015,Jan,evi_from_sep,-0.78189,,5.00000,5,25
+Four-region total,2016,Jan,evi_from_sep,1.10548,,5.00000,23,25
+Four-region total,2017,Jan,evi_from_sep,0.25719,,6.00000,17,25
+Four-region total,2018,Jan,evi_from_sep,-0.13352,,5.00000,12,25
+Four-region total,2019,Jan,evi_from_sep,1.45532,,5.00000,24,25
+Four-region total,2020,Jan,evi_from_sep,0.18425,,5.00000,16,25
+Four-region total,2021,Jan,evi_from_sep,-0.86868,,6.00000,4,25
+Four-region total,2022,Jan,evi_from_sep,-0.26761,,5.00000,8,25
+Four-region total,2023,Jan,evi_from_sep,0.44658,,5.00000,20,25
+Four-region total,2024,Jan,evi_from_sep,1.03688,,5.00000,22,25
+Four-region total,2025,Jan,evi_from_sep,-0.52259,,6.00000,7,25
+Four-region total,2001,Nov,evi_from_sep,0.30155,,3.00000,19,25
+Four-region total,2002,Nov,evi_from_sep,0.24020,,3.00000,17,25
+Four-region total,2003,Nov,evi_from_sep,-1.30370,,3.00000,3,25
+Four-region total,2004,Nov,evi_from_sep,-1.31330,,3.00000,2,25
+Four-region total,2005,Nov,evi_from_sep,-0.85895,,3.00000,5,25
+Four-region total,2006,Nov,evi_from_sep,0.42129,,3.00000,20,25
+Four-region total,2007,Nov,evi_from_sep,0.22680,,3.00000,16,25
+Four-region total,2008,Nov,evi_from_sep,-0.61429,,3.00000,8,25
+Four-region total,2009,Nov,evi_from_sep,0.06371,,3.00000,12,25
+Four-region total,2010,Nov,evi_from_sep,2.42370,,3.00000,25,25
+Four-region total,2011,Nov,evi_from_sep,0.06602,,3.00000,13,25
+Four-region total,2012,Nov,evi_from_sep,-0.42028,,3.00000,10,25
+Four-region total,2013,Nov,evi_from_sep,0.10925,,3.00000,15,25
+Four-region total,2014,Nov,evi_from_sep,0.92510,,3.00000,22,25
+Four-region total,2015,Nov,evi_from_sep,-0.43926,,3.00000,9,25
+Four-region total,2016,Nov,evi_from_sep,0.88891,,3.00000,21,25
+Four-region total,2017,Nov,evi_from_sep,-0.00441,,3.00000,11,25
+Four-region total,2018,Nov,evi_from_sep,-0.61436,,3.00000,7,25
+Four-region total,2019,Nov,evi_from_sep,1.28750,,3.00000,24,25
+Four-region total,2020,Nov,evi_from_sep,0.28956,,3.00000,18,25
+Four-region total,2021,Nov,evi_from_sep,-0.92427,,3.00000,4,25
+Four-region total,2022,Nov,evi_from_sep,-0.68722,,3.00000,6,25
+Four-region total,2023,Nov,evi_from_sep,0.10588,,3.00000,14,25
+Four-region total,2024,Nov,evi_from_sep,1.24829,,3.00000,23,25
+Four-region total,2025,Nov,evi_from_sep,-1.44670,,3.00000,1,25
+Sul e Centro-Oeste,2001,Dec,evi_from_sep,0.18860,,4.00000,16,25
+Sul e Centro-Oeste,2002,Dec,evi_from_sep,-0.03744,,4.00000,12,25
+Sul e Centro-Oeste,2003,Dec,evi_from_sep,-1.32052,,4.00000,2,25
+Sul e Centro-Oeste,2004,Dec,evi_from_sep,-1.12992,,4.00000,3,25
+Sul e Centro-Oeste,2005,Dec,evi_from_sep,-0.47938,,4.00000,9,25
+Sul e Centro-Oeste,2006,Dec,evi_from_sep,0.32492,,4.00000,19,25
+Sul e Centro-Oeste,2007,Dec,evi_from_sep,0.13872,,4.00000,14,25
+Sul e Centro-Oeste,2008,Dec,evi_from_sep,-0.83270,,4.00000,5,25
+Sul e Centro-Oeste,2009,Dec,evi_from_sep,0.17816,,4.00000,15,25
+Sul e Centro-Oeste,2010,Dec,evi_from_sep,2.00736,,4.00000,25,25
+Sul e Centro-Oeste,2011,Dec,evi_from_sep,0.08914,,4.00000,13,25
+Sul e Centro-Oeste,2012,Dec,evi_from_sep,-0.54578,,4.00000,7,25
+Sul e Centro-Oeste,2013,Dec,evi_from_sep,-0.36079,,4.00000,11,25
+Sul e Centro-Oeste,2014,Dec,evi_from_sep,0.96247,,4.00000,22,25
+Sul e Centro-Oeste,2015,Dec,evi_from_sep,-0.64109,,4.00000,6,25
+Sul e Centro-Oeste,2016,Dec,evi_from_sep,0.93203,,4.00000,21,25
+Sul e Centro-Oeste,2017,Dec,evi_from_sep,0.26173,,4.00000,17,25
+Sul e Centro-Oeste,2018,Dec,evi_from_sep,-0.42325,,4.00000,10,25
+Sul e Centro-Oeste,2019,Dec,evi_from_sep,1.39169,,4.00000,24,25
+Sul e Centro-Oeste,2020,Dec,evi_from_sep,0.29742,,4.00000,18,25
+Sul e Centro-Oeste,2021,Dec,evi_from_sep,-1.35198,,4.00000,1,25
+Sul e Centro-Oeste,2022,Dec,evi_from_sep,-0.49073,,4.00000,8,25
+Sul e Centro-Oeste,2023,Dec,evi_from_sep,0.58287,,4.00000,20,25
+Sul e Centro-Oeste,2024,Dec,evi_from_sep,1.17896,,4.00000,23,25
+Sul e Centro-Oeste,2025,Dec,evi_from_sep,-0.84355,,4.00000,4,25
+Sul e Centro-Oeste,2001,Jan,evi_from_sep,-0.17258,,6.00000,12,25
+Sul e Centro-Oeste,2002,Jan,evi_from_sep,-0.22242,,5.00000,10,25
+Sul e Centro-Oeste,2003,Jan,evi_from_sep,-1.33343,,5.00000,1,25
+Sul e Centro-Oeste,2004,Jan,evi_from_sep,-0.96084,,5.00000,3,25
+Sul e Centro-Oeste,2005,Jan,evi_from_sep,-0.62094,,6.00000,6,25
+Sul e Centro-Oeste,2006,Jan,evi_from_sep,-0.05732,,5.00000,14,25
+Sul e Centro-Oeste,2007,Jan,evi_from_sep,0.23457,,5.00000,17,25
+Sul e Centro-Oeste,2008,Jan,evi_from_sep,-0.65136,,5.00000,5,25
+Sul e Centro-Oeste,2009,Jan,evi_from_sep,0.25953,,6.00000,18,25
+Sul e Centro-Oeste,2010,Jan,evi_from_sep,1.91836,,5.00000,25,25
+Sul e Centro-Oeste,2011,Jan,evi_from_sep,0.15460,,5.00000,15,25
+Sul e Centro-Oeste,2012,Jan,evi_from_sep,-0.17675,,5.00000,11,25
+Sul e Centro-Oeste,2013,Jan,evi_from_sep,-0.22947,,6.00000,9,25
+Sul e Centro-Oeste,2014,Jan,evi_from_sep,0.89535,,5.00000,21,25
+Sul e Centro-Oeste,2015,Jan,evi_from_sep,-0.81613,,5.00000,4,25
+Sul e Centro-Oeste,2016,Jan,evi_from_sep,1.03871,,5.00000,23,25
+Sul e Centro-Oeste,2017,Jan,evi_from_sep,0.38077,,6.00000,19,25
+Sul e Centro-Oeste,2018,Jan,evi_from_sep,-0.15803,,5.00000,13,25
+Sul e Centro-Oeste,2019,Jan,evi_from_sep,1.43596,,5.00000,24,25
+Sul e Centro-Oeste,2020,Jan,evi_from_sep,0.22844,,5.00000,16,25
+Sul e Centro-Oeste,2021,Jan,evi_from_sep,-1.28781,,6.00000,2,25
+Sul e Centro-Oeste,2022,Jan,evi_from_sep,-0.50051,,5.00000,7,25
+Sul e Centro-Oeste,2023,Jan,evi_from_sep,0.57645,,5.00000,20,25
+Sul e Centro-Oeste,2024,Jan,evi_from_sep,1.03603,,5.00000,22,25
+Sul e Centro-Oeste,2025,Jan,evi_from_sep,-0.41058,,6.00000,8,25
+Sul e Centro-Oeste,2001,Nov,evi_from_sep,0.33075,,3.00000,17,25
+Sul e Centro-Oeste,2002,Nov,evi_from_sep,0.16317,,3.00000,16,25
+Sul e Centro-Oeste,2003,Nov,evi_from_sep,-1.39249,,3.00000,1,25
+Sul e Centro-Oeste,2004,Nov,evi_from_sep,-1.21381,,3.00000,3,25
+Sul e Centro-Oeste,2005,Nov,evi_from_sep,-0.71819,,3.00000,6,25
+Sul e Centro-Oeste,2006,Nov,evi_from_sep,0.35121,,3.00000,18,25
+Sul e Centro-Oeste,2007,Nov,evi_from_sep,0.12564,,3.00000,15,25
+Sul e Centro-Oeste,2008,Nov,evi_from_sep,-0.48283,,3.00000,8,25
+Sul e Centro-Oeste,2009,Nov,evi_from_sep,0.11341,,3.00000,14,25
+Sul e Centro-Oeste,2010,Nov,evi_from_sep,2.32391,,3.00000,25,25
+Sul e Centro-Oeste,2011,Nov,evi_from_sep,0.00081,,3.00000,12,25
+Sul e Centro-Oeste,2012,Nov,evi_from_sep,-0.44158,,3.00000,10,25
+Sul e Centro-Oeste,2013,Nov,evi_from_sep,-0.05206,,3.00000,11,25
+Sul e Centro-Oeste,2014,Nov,evi_from_sep,1.05737,,3.00000,22,25
+Sul e Centro-Oeste,2015,Nov,evi_from_sep,-0.44661,,3.00000,9,25
+Sul e Centro-Oeste,2016,Nov,evi_from_sep,0.77792,,3.00000,21,25
+Sul e Centro-Oeste,2017,Nov,evi_from_sep,0.10988,,3.00000,13,25
+Sul e Centro-Oeste,2018,Nov,evi_from_sep,-0.71264,,3.00000,7,25
+Sul e Centro-Oeste,2019,Nov,evi_from_sep,1.35093,,3.00000,24,25
+Sul e Centro-Oeste,2020,Nov,evi_from_sep,0.40888,,3.00000,20,25
+Sul e Centro-Oeste,2021,Nov,evi_from_sep,-1.07243,,3.00000,4,25
+Sul e Centro-Oeste,2022,Nov,evi_from_sep,-0.87220,,3.00000,5,25
+Sul e Centro-Oeste,2023,Nov,evi_from_sep,0.40127,,3.00000,19,25
+Sul e Centro-Oeste,2024,Nov,evi_from_sep,1.16597,,3.00000,23,25
+Sul e Centro-Oeste,2025,Nov,evi_from_sep,-1.24774,,3.00000,2,25
+São Paulo (state total),2001,Dec,evi_from_sep,0.22176,,4.00000,15,25
+São Paulo (state total),2002,Dec,evi_from_sep,0.63942,,4.00000,20,25
+São Paulo (state total),2003,Dec,evi_from_sep,-1.03866,,4.00000,4,25
+São Paulo (state total),2004,Dec,evi_from_sep,-1.22856,,4.00000,3,25
+São Paulo (state total),2005,Dec,evi_from_sep,-0.94299,,4.00000,5,25
+São Paulo (state total),2006,Dec,evi_from_sep,0.41854,,4.00000,17,25
+São Paulo (state total),2007,Dec,evi_from_sep,0.15454,,4.00000,14,25
+São Paulo (state total),2008,Dec,evi_from_sep,-0.68997,,4.00000,6,25
+São Paulo (state total),2009,Dec,evi_from_sep,-0.10034,,4.00000,13,25
+São Paulo (state total),2010,Dec,evi_from_sep,1.92431,,4.00000,25,25
+São Paulo (state total),2011,Dec,evi_from_sep,-0.29974,,4.00000,10,25
+São Paulo (state total),2012,Dec,evi_from_sep,-0.45152,,4.00000,9,25
+São Paulo (state total),2013,Dec,evi_from_sep,-0.13859,,4.00000,12,25
+São Paulo (state total),2014,Dec,evi_from_sep,0.92004,,4.00000,21,25
+São Paulo (state total),2015,Dec,evi_from_sep,-0.66144,,4.00000,7,25
+São Paulo (state total),2016,Dec,evi_from_sep,1.13426,,4.00000,23,25
+São Paulo (state total),2017,Dec,evi_from_sep,0.28366,,4.00000,16,25
+São Paulo (state total),2018,Dec,evi_from_sep,-0.17184,,4.00000,11,25
+São Paulo (state total),2019,Dec,evi_from_sep,1.46160,,4.00000,24,25
+São Paulo (state total),2020,Dec,evi_from_sep,0.47500,,4.00000,19,25
+São Paulo (state total),2021,Dec,evi_from_sep,-1.48077,,4.00000,1,25
+São Paulo (state total),2022,Dec,evi_from_sep,-0.60283,,4.00000,8,25
+São Paulo (state total),2023,Dec,evi_from_sep,0.43922,,4.00000,18,25
+São Paulo (state total),2024,Dec,evi_from_sep,0.99233,,4.00000,22,25
+São Paulo (state total),2025,Dec,evi_from_sep,-1.39802,,4.00000,2,25
+São Paulo (state total),2001,Jan,evi_from_sep,-0.21819,,6.00000,10,25
+São Paulo (state total),2002,Jan,evi_from_sep,0.41738,,5.00000,18,25
+São Paulo (state total),2003,Jan,evi_from_sep,-1.06650,,5.00000,3,25
+São Paulo (state total),2004,Jan,evi_from_sep,-1.42340,,5.00000,1,25
+São Paulo (state total),2005,Jan,evi_from_sep,-0.76276,,6.00000,4,25
+São Paulo (state total),2006,Jan,evi_from_sep,0.08636,,5.00000,15,25
+São Paulo (state total),2007,Jan,evi_from_sep,0.04332,,5.00000,14,25
+São Paulo (state total),2008,Jan,evi_from_sep,-0.44643,,5.00000,8,25
+São Paulo (state total),2009,Jan,evi_from_sep,-0.36783,,6.00000,9,25
+São Paulo (state total),2010,Jan,evi_from_sep,1.77804,,5.00000,25,25
+São Paulo (state total),2011,Jan,evi_from_sep,-0.18315,,5.00000,11,25
+São Paulo (state total),2012,Jan,evi_from_sep,-0.16832,,5.00000,13,25
+São Paulo (state total),2013,Jan,evi_from_sep,-0.17041,,6.00000,12,25
+São Paulo (state total),2014,Jan,evi_from_sep,0.89157,,5.00000,21,25
+São Paulo (state total),2015,Jan,evi_from_sep,-0.73213,,5.00000,5,25
+São Paulo (state total),2016,Jan,evi_from_sep,1.30595,,5.00000,23,25
+São Paulo (state total),2017,Jan,evi_from_sep,0.51023,,6.00000,19,25
+São Paulo (state total),2018,Jan,evi_from_sep,0.10976,,5.00000,16,25
+São Paulo (state total),2019,Jan,evi_from_sep,1.39072,,5.00000,24,25
+São Paulo (state total),2020,Jan,evi_from_sep,0.55368,,5.00000,20,25
+São Paulo (state total),2021,Jan,evi_from_sep,-1.19251,,6.00000,2,25
+São Paulo (state total),2022,Jan,evi_from_sep,-0.52880,,5.00000,7,25
+São Paulo (state total),2023,Jan,evi_from_sep,0.41399,,5.00000,17,25
+São Paulo (state total),2024,Jan,evi_from_sep,0.90302,,5.00000,22,25
+São Paulo (state total),2025,Jan,evi_from_sep,-0.70639,,6.00000,6,25
+São Paulo (state total),2001,Nov,evi_from_sep,0.38299,,3.00000,17,25
+São Paulo (state total),2002,Nov,evi_from_sep,0.99274,,3.00000,22,25
+São Paulo (state total),2003,Nov,evi_from_sep,-0.81052,,3.00000,5,25
+São Paulo (state total),2004,Nov,evi_from_sep,-1.23119,,3.00000,3,25
+São Paulo (state total),2005,Nov,evi_from_sep,-1.16497,,3.00000,4,25
+São Paulo (state total),2006,Nov,evi_from_sep,0.42753,,3.00000,18,25
+São Paulo (state total),2007,Nov,evi_from_sep,0.10344,,3.00000,14,25
+São Paulo (state total),2008,Nov,evi_from_sep,-0.43872,,3.00000,9,25
+São Paulo (state total),2009,Nov,evi_from_sep,-0.00547,,3.00000,13,25
+São Paulo (state total),2010,Nov,evi_from_sep,2.20862,,3.00000,25,25
+São Paulo (state total),2011,Nov,evi_from_sep,-0.55602,,3.00000,8,25
+São Paulo (state total),2012,Nov,evi_from_sep,-0.38365,,3.00000,11,25
+São Paulo (state total),2013,Nov,evi_from_sep,-0.07839,,3.00000,12,25
+São Paulo (state total),2014,Nov,evi_from_sep,1.10329,,3.00000,23,25
+São Paulo (state total),2015,Nov,evi_from_sep,-0.65200,,3.00000,7,25
+São Paulo (state total),2016,Nov,evi_from_sep,0.95609,,3.00000,21,25
+São Paulo (state total),2017,Nov,evi_from_sep,0.31359,,3.00000,15,25
+São Paulo (state total),2018,Nov,evi_from_sep,-0.41453,,3.00000,10,25
+São Paulo (state total),2019,Nov,evi_from_sep,1.33973,,3.00000,24,25
+São Paulo (state total),2020,Nov,evi_from_sep,0.55202,,3.00000,19,25
+São Paulo (state total),2021,Nov,evi_from_sep,-1.28248,,3.00000,2,25
+São Paulo (state total),2022,Nov,evi_from_sep,-0.80687,,3.00000,6,25
+São Paulo (state total),2023,Nov,evi_from_sep,0.36875,,3.00000,16,25
+São Paulo (state total),2024,Nov,evi_from_sep,0.83276,,3.00000,20,25
+São Paulo (state total),2025,Nov,evi_from_sep,-1.59036,,3.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Dec,evi_from_sep,-0.07805,,4.00000,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Dec,evi_from_sep,0.18987,,4.00000,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Dec,evi_from_sep,-1.62508,,4.00000,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Dec,evi_from_sep,-0.46246,,4.00000,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Dec,evi_from_sep,-1.63281,,4.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Dec,evi_from_sep,-0.22921,,4.00000,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Dec,evi_from_sep,0.51368,,4.00000,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Dec,evi_from_sep,-0.70659,,4.00000,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,evi_from_sep,-0.14180,,4.00000,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,evi_from_sep,2.37528,,4.00000,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,evi_from_sep,0.88738,,4.00000,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,evi_from_sep,0.03420,,4.00000,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,evi_from_sep,-0.71836,,4.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,evi_from_sep,0.75508,,4.00000,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,evi_from_sep,-0.47803,,4.00000,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,evi_from_sep,0.63405,,4.00000,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,evi_from_sep,-0.25866,,4.00000,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,evi_from_sep,-0.29764,,4.00000,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,evi_from_sep,0.84938,,4.00000,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,evi_from_sep,0.01038,,4.00000,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,evi_from_sep,-0.41317,,4.00000,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,evi_from_sep,-0.26178,,4.00000,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,evi_from_sep,0.26990,,4.00000,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,evi_from_sep,1.07479,,4.00000,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,evi_from_sep,-0.85076,,4.00000,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,evi_from_sep,-0.29977,,6.00000,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,evi_from_sep,-0.11835,,5.00000,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,evi_from_sep,-1.68722,,5.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,evi_from_sep,-0.63730,,5.00000,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,evi_from_sep,-1.51845,,6.00000,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,evi_from_sep,-0.36635,,5.00000,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,evi_from_sep,0.54356,,5.00000,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,evi_from_sep,-0.67586,,5.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,evi_from_sep,-0.27525,,6.00000,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,evi_from_sep,2.03417,,5.00000,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,evi_from_sep,0.91871,,5.00000,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,evi_from_sep,0.23791,,5.00000,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,evi_from_sep,-0.52020,,6.00000,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,evi_from_sep,0.90122,,5.00000,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,evi_from_sep,-0.63356,,5.00000,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,evi_from_sep,0.75748,,5.00000,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,evi_from_sep,0.07436,,6.00000,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,evi_from_sep,-0.25153,,5.00000,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,evi_from_sep,0.93674,,5.00000,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,evi_from_sep,-0.04411,,5.00000,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,evi_from_sep,-0.10219,,6.00000,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,evi_from_sep,-0.11219,,5.00000,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,evi_from_sep,0.41131,,5.00000,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,evi_from_sep,0.87741,,5.00000,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,evi_from_sep,-0.70467,,6.00000,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Nov,evi_from_sep,0.10954,,3.00000,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Nov,evi_from_sep,0.45996,,3.00000,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Nov,evi_from_sep,-1.68503,,3.00000,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Nov,evi_from_sep,-0.37071,,3.00000,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Nov,evi_from_sep,-1.65327,,3.00000,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Nov,evi_from_sep,-0.23850,,3.00000,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Nov,evi_from_sep,0.32246,,3.00000,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Nov,evi_from_sep,-0.68612,,3.00000,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,evi_from_sep,-0.06201,,3.00000,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,evi_from_sep,2.75896,,3.00000,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,evi_from_sep,0.51773,,3.00000,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,evi_from_sep,0.06026,,3.00000,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,evi_from_sep,-0.42830,,3.00000,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,evi_from_sep,0.80195,,3.00000,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,evi_from_sep,-0.42230,,3.00000,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,evi_from_sep,0.59072,,3.00000,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,evi_from_sep,-0.18259,,3.00000,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,evi_from_sep,-0.58722,,3.00000,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,evi_from_sep,0.61186,,3.00000,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,evi_from_sep,0.09593,,3.00000,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,evi_from_sep,-0.36696,,3.00000,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,evi_from_sep,-0.36928,,3.00000,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,evi_from_sep,0.05803,,3.00000,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,evi_from_sep,0.92000,,3.00000,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,evi_from_sep,-0.81910,,3.00000,3,25
+"Zona da Mata, Rio Doce e Central",2001,Dec,evi_from_sep,0.01992,,4.00000,14,25
+"Zona da Mata, Rio Doce e Central",2002,Dec,evi_from_sep,-0.14750,,4.00000,12,25
+"Zona da Mata, Rio Doce e Central",2003,Dec,evi_from_sep,-0.31804,,4.00000,10,25
+"Zona da Mata, Rio Doce e Central",2004,Dec,evi_from_sep,-1.57744,,4.00000,1,25
+"Zona da Mata, Rio Doce e Central",2005,Dec,evi_from_sep,-0.42705,,4.00000,5,25
+"Zona da Mata, Rio Doce e Central",2006,Dec,evi_from_sep,0.79743,,4.00000,22,25
+"Zona da Mata, Rio Doce e Central",2007,Dec,evi_from_sep,0.28009,,4.00000,18,25
+"Zona da Mata, Rio Doce e Central",2008,Dec,evi_from_sep,-0.92333,,4.00000,3,25
+"Zona da Mata, Rio Doce e Central",2009,Dec,evi_from_sep,0.06769,,4.00000,15,25
+"Zona da Mata, Rio Doce e Central",2010,Dec,evi_from_sep,1.65872,,4.00000,25,25
+"Zona da Mata, Rio Doce e Central",2011,Dec,evi_from_sep,0.32812,,4.00000,19,25
+"Zona da Mata, Rio Doce e Central",2012,Dec,evi_from_sep,-0.69290,,4.00000,4,25
+"Zona da Mata, Rio Doce e Central",2013,Dec,evi_from_sep,0.26011,,4.00000,17,25
+"Zona da Mata, Rio Doce e Central",2014,Dec,evi_from_sep,0.17772,,4.00000,16,25
+"Zona da Mata, Rio Doce e Central",2015,Dec,evi_from_sep,-0.37370,,4.00000,6,25
+"Zona da Mata, Rio Doce e Central",2016,Dec,evi_from_sep,0.75053,,4.00000,21,25
+"Zona da Mata, Rio Doce e Central",2017,Dec,evi_from_sep,-0.13273,,4.00000,13,25
+"Zona da Mata, Rio Doce e Central",2018,Dec,evi_from_sep,-0.35092,,4.00000,7,25
+"Zona da Mata, Rio Doce e Central",2019,Dec,evi_from_sep,1.23667,,4.00000,23,25
+"Zona da Mata, Rio Doce e Central",2020,Dec,evi_from_sep,-0.31688,,4.00000,11,25
+"Zona da Mata, Rio Doce e Central",2021,Dec,evi_from_sep,-0.34621,,4.00000,8,25
+"Zona da Mata, Rio Doce e Central",2022,Dec,evi_from_sep,0.38141,,4.00000,20,25
+"Zona da Mata, Rio Doce e Central",2023,Dec,evi_from_sep,-0.33125,,4.00000,9,25
+"Zona da Mata, Rio Doce e Central",2024,Dec,evi_from_sep,1.26899,,4.00000,24,25
+"Zona da Mata, Rio Doce e Central",2025,Dec,evi_from_sep,-0.96173,,4.00000,2,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,evi_from_sep,-0.14743,,6.00000,11,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,evi_from_sep,-0.28386,,5.00000,7,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,evi_from_sep,-0.30080,,5.00000,6,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,evi_from_sep,-1.54200,,5.00000,1,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,evi_from_sep,-0.92151,,6.00000,2,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,evi_from_sep,0.63526,,5.00000,21,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,evi_from_sep,0.24653,,5.00000,17,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,evi_from_sep,-0.85075,,5.00000,3,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,evi_from_sep,0.03337,,6.00000,15,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,evi_from_sep,1.74207,,5.00000,25,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,evi_from_sep,0.49604,,5.00000,20,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,evi_from_sep,-0.71796,,5.00000,4,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,evi_from_sep,0.46102,,6.00000,18,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,evi_from_sep,0.10338,,5.00000,16,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,evi_from_sep,-0.44371,,5.00000,5,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,evi_from_sep,0.76324,,5.00000,22,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,evi_from_sep,-0.22322,,6.00000,9,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,evi_from_sep,-0.19478,,5.00000,10,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,evi_from_sep,1.23436,,5.00000,24,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,evi_from_sep,-0.13767,,5.00000,12,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,evi_from_sep,-0.00731,,6.00000,14,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,evi_from_sep,0.46952,,5.00000,19,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,evi_from_sep,-0.08352,,5.00000,13,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,evi_from_sep,0.82193,,5.00000,23,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,evi_from_sep,-0.23566,,6.00000,8,25
+"Zona da Mata, Rio Doce e Central",2001,Nov,evi_from_sep,0.11655,,3.00000,15,25
+"Zona da Mata, Rio Doce e Central",2002,Nov,evi_from_sep,-0.33428,,3.00000,10,25
+"Zona da Mata, Rio Doce e Central",2003,Nov,evi_from_sep,-0.58004,,3.00000,6,25
+"Zona da Mata, Rio Doce e Central",2004,Nov,evi_from_sep,-1.66928,,3.00000,2,25
+"Zona da Mata, Rio Doce e Central",2005,Nov,evi_from_sep,-0.14719,,3.00000,12,25
+"Zona da Mata, Rio Doce e Central",2006,Nov,evi_from_sep,0.82876,,3.00000,20,25
+"Zona da Mata, Rio Doce e Central",2007,Nov,evi_from_sep,0.41695,,3.00000,19,25
+"Zona da Mata, Rio Doce e Central",2008,Nov,evi_from_sep,-0.77967,,3.00000,4,25
+"Zona da Mata, Rio Doce e Central",2009,Nov,evi_from_sep,0.12653,,3.00000,16,25
+"Zona da Mata, Rio Doce e Central",2010,Nov,evi_from_sep,1.66096,,3.00000,25,25
+"Zona da Mata, Rio Doce e Central",2011,Nov,evi_from_sep,0.34691,,3.00000,18,25
+"Zona da Mata, Rio Doce e Central",2012,Nov,evi_from_sep,-0.58271,,3.00000,5,25
+"Zona da Mata, Rio Doce e Central",2013,Nov,evi_from_sep,0.86112,,3.00000,21,25
+"Zona da Mata, Rio Doce e Central",2014,Nov,evi_from_sep,0.26021,,3.00000,17,25
+"Zona da Mata, Rio Doce e Central",2015,Nov,evi_from_sep,-0.10695,,3.00000,13,25
+"Zona da Mata, Rio Doce e Central",2016,Nov,evi_from_sep,0.92271,,3.00000,22,25
+"Zona da Mata, Rio Doce e Central",2017,Nov,evi_from_sep,-0.36472,,3.00000,7,25
+"Zona da Mata, Rio Doce e Central",2018,Nov,evi_from_sep,-0.34626,,3.00000,8,25
+"Zona da Mata, Rio Doce e Central",2019,Nov,evi_from_sep,1.08080,,3.00000,23,25
+"Zona da Mata, Rio Doce e Central",2020,Nov,evi_from_sep,-0.17840,,3.00000,11,25
+"Zona da Mata, Rio Doce e Central",2021,Nov,evi_from_sep,-0.33546,,3.00000,9,25
+"Zona da Mata, Rio Doce e Central",2022,Nov,evi_from_sep,-0.06878,,3.00000,14,25
+"Zona da Mata, Rio Doce e Central",2023,Nov,evi_from_sep,-0.79305,,3.00000,3,25
+"Zona da Mata, Rio Doce e Central",2024,Nov,evi_from_sep,1.49562,,3.00000,24,25
+"Zona da Mata, Rio Doce e Central",2025,Nov,evi_from_sep,-1.72252,,3.00000,1,25
+Four-region total,2009,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2010,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2011,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2012,Dec,frost_penalty,0.05594,,,1,17
+Four-region total,2013,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2014,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2015,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2016,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2017,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2018,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2019,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2020,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2021,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2022,Dec,frost_penalty,0.05137,,,2,17
+Four-region total,2023,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2024,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2025,Dec,frost_penalty,0.00000,,,3,17
+Four-region total,2009,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2010,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2011,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2012,Jan,frost_penalty,0.05594,,,1,17
+Four-region total,2013,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2014,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2015,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2016,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2017,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2018,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2019,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2020,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2021,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2022,Jan,frost_penalty,0.05137,,,2,17
+Four-region total,2023,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2024,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2025,Jan,frost_penalty,0.00000,,,3,17
+Four-region total,2009,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2010,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2011,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2012,Nov,frost_penalty,0.05594,,,1,17
+Four-region total,2013,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2014,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2015,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2016,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2017,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2018,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2019,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2020,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2021,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2022,Nov,frost_penalty,0.05137,,,2,17
+Four-region total,2023,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2024,Nov,frost_penalty,0.00000,,,3,17
+Four-region total,2025,Nov,frost_penalty,0.00000,,,3,17
+Sul e Centro-Oeste,2009,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2010,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2011,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2012,Dec,frost_penalty,0.12804,,,1,17
+Sul e Centro-Oeste,2013,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2014,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2015,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2016,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2017,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2018,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2019,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2020,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2021,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2022,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2023,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2024,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2025,Dec,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2009,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2010,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2011,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2012,Jan,frost_penalty,0.12804,,,1,17
+Sul e Centro-Oeste,2013,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2014,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2015,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2016,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2017,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2018,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2019,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2020,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2021,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2022,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2023,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2024,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2025,Jan,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2009,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2010,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2011,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2012,Nov,frost_penalty,0.12804,,,1,17
+Sul e Centro-Oeste,2013,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2014,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2015,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2016,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2017,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2018,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2019,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2020,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2021,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2022,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2023,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2024,Nov,frost_penalty,0.00000,,,2,17
+Sul e Centro-Oeste,2025,Nov,frost_penalty,0.00000,,,2,17
+São Paulo (state total),2009,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2010,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2011,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2012,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2013,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2014,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2015,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2016,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2017,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2018,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2019,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2020,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2021,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2022,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2023,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2024,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2025,Dec,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2009,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2010,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2011,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2012,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2013,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2014,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2015,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2016,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2017,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2018,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2019,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2020,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2021,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2022,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2023,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2024,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2025,Jan,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2009,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2010,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2011,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2012,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2013,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2014,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2015,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2016,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2017,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2018,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2019,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2020,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2021,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2022,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2023,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2024,Nov,frost_penalty,0.00000,,,1,17
+São Paulo (state total),2025,Nov,frost_penalty,0.00000,,,1,17
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,frost_penalty,0.29483,,,1,17
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,frost_penalty,0.29483,,,1,17
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,frost_penalty,0.29483,,,1,17
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,frost_penalty,0.00000,,,2,17
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,frost_penalty,0.00000,,,2,17
+"Zona da Mata, Rio Doce e Central",2009,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2010,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2011,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2012,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2013,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2014,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2015,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2016,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2017,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2018,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2019,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2020,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2021,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2022,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2023,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2024,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2025,Dec,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2009,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2010,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2011,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2012,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2013,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2014,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2015,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2016,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2017,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2018,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2019,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2020,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2021,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2022,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2023,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2024,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2025,Jan,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2009,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2010,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2011,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2012,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2013,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2014,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2015,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2016,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2017,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2018,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2019,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2020,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2021,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2022,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2023,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2024,Nov,frost_penalty,0.00000,,,1,17
+"Zona da Mata, Rio Doce e Central",2025,Nov,frost_penalty,0.00000,,,1,17
+Four-region total,2001,Dec,heat_days,-0.68106,-1.44653,,20,25
+Four-region total,2002,Dec,heat_days,-0.74383,-1.57997,,25,25
+Four-region total,2003,Dec,heat_days,-0.25375,-0.53815,,10,25
+Four-region total,2004,Dec,heat_days,-0.51717,-1.09813,,13,25
+Four-region total,2005,Dec,heat_days,-0.52585,-1.11660,,14,25
+Four-region total,2006,Dec,heat_days,-0.56240,-1.19429,,15,25
+Four-region total,2007,Dec,heat_days,-0.68122,-1.44688,,21,25
+Four-region total,2008,Dec,heat_days,-0.00051,0.00019,,9,25
+Four-region total,2009,Dec,heat_days,-0.46350,-0.98403,,12,25
+Four-region total,2010,Dec,heat_days,-0.69553,-1.47730,,24,25
+Four-region total,2011,Dec,heat_days,-0.61885,-1.31428,,17,25
+Four-region total,2012,Dec,heat_days,-0.65447,-1.39000,,19,25
+Four-region total,2013,Dec,heat_days,0.02807,0.06093,,8,25
+Four-region total,2014,Dec,heat_days,-0.68320,-1.45108,,22,25
+Four-region total,2015,Dec,heat_days,1.29826,2.76112,,4,25
+Four-region total,2016,Dec,heat_days,0.81222,1.72789,,5,25
+Four-region total,2017,Dec,heat_days,-0.58712,-1.24684,,16,25
+Four-region total,2018,Dec,heat_days,-0.43835,-0.93058,,11,25
+Four-region total,2019,Dec,heat_days,-0.69355,-1.47309,,23,25
+Four-region total,2020,Dec,heat_days,0.68333,1.45388,,6,25
+Four-region total,2021,Dec,heat_days,2.78904,5.93021,,1,25
+Four-region total,2022,Dec,heat_days,0.51541,1.09694,,7,25
+Four-region total,2023,Dec,heat_days,-0.65293,-1.38674,,18,25
+Four-region total,2024,Dec,heat_days,2.40971,5.12384,,2,25
+Four-region total,2025,Dec,heat_days,1.48054,3.14860,,3,25
+Four-region total,2001,Jan,heat_days,-0.68323,-1.46536,,22,25
+Four-region total,2002,Jan,heat_days,-0.74431,-1.59623,,25,25
+Four-region total,2003,Jan,heat_days,-0.25817,-0.55463,,10,25
+Four-region total,2004,Jan,heat_days,-0.51967,-1.11492,,13,25
+Four-region total,2005,Jan,heat_days,-0.52882,-1.13453,,14,25
+Four-region total,2006,Jan,heat_days,-0.56446,-1.21088,,15,25
+Four-region total,2007,Jan,heat_days,-0.68219,-1.46313,,20,25
+Four-region total,2008,Jan,heat_days,-0.00667,-0.01578,,9,25
+Four-region total,2009,Jan,heat_days,-0.46570,-0.99928,,12,25
+Four-region total,2010,Jan,heat_days,-0.69476,-1.49006,,24,25
+Four-region total,2011,Jan,heat_days,-0.61777,-1.32510,,17,25
+Four-region total,2012,Jan,heat_days,-0.65470,-1.40424,,19,25
+Four-region total,2013,Jan,heat_days,0.02570,0.05358,,8,25
+Four-region total,2014,Jan,heat_days,-0.68261,-1.46402,,21,25
+Four-region total,2015,Jan,heat_days,1.28326,2.74801,,4,25
+Four-region total,2016,Jan,heat_days,0.80157,1.71593,,5,25
+Four-region total,2017,Jan,heat_days,-0.57591,-1.23542,,16,25
+Four-region total,2018,Jan,heat_days,-0.43915,-0.94239,,11,25
+Four-region total,2019,Jan,heat_days,-0.69219,-1.48456,,23,25
+Four-region total,2020,Jan,heat_days,0.67619,1.44731,,6,25
+Four-region total,2021,Jan,heat_days,2.79598,5.98912,,1,25
+Four-region total,2022,Jan,heat_days,0.54042,1.15640,,7,25
+Four-region total,2023,Jan,heat_days,-0.65074,-1.39575,,18,25
+Four-region total,2024,Jan,heat_days,2.42188,5.18758,,2,25
+Four-region total,2025,Jan,heat_days,1.46650,3.14061,,3,25
+Four-region total,2001,Nov,heat_days,-0.68502,-1.28273,,20,25
+Four-region total,2002,Nov,heat_days,-0.75787,-1.41939,,25,25
+Four-region total,2003,Nov,heat_days,-0.20262,-0.37786,,10,25
+Four-region total,2004,Nov,heat_days,-0.51075,-0.95585,,13,25
+Four-region total,2005,Nov,heat_days,-0.53214,-0.99596,,14,25
+Four-region total,2006,Nov,heat_days,-0.55468,-1.03825,,15,25
+Four-region total,2007,Nov,heat_days,-0.73007,-1.36723,,24,25
+Four-region total,2008,Nov,heat_days,0.06382,0.12191,,9,25
+Four-region total,2009,Nov,heat_days,-0.44334,-0.82939,,12,25
+Four-region total,2010,Nov,heat_days,-0.70800,-1.32584,,23,25
+Four-region total,2011,Nov,heat_days,-0.62250,-1.16546,,17,25
+Four-region total,2012,Nov,heat_days,-0.65988,-1.23557,,18,25
+Four-region total,2013,Nov,heat_days,0.11250,0.21323,,8,25
+Four-region total,2014,Nov,heat_days,-0.69441,-1.30034,,21,25
+Four-region total,2015,Nov,heat_days,1.55188,2.91317,,3,25
+Four-region total,2016,Nov,heat_days,0.94002,1.76545,,4,25
+Four-region total,2017,Nov,heat_days,-0.58477,-1.09469,,16,25
+Four-region total,2018,Nov,heat_days,-0.41690,-0.77981,,11,25
+Four-region total,2019,Nov,heat_days,-0.70567,-1.32148,,22,25
+Four-region total,2020,Nov,heat_days,0.83069,1.56039,,6,25
+Four-region total,2021,Nov,heat_days,3.23391,6.06825,,1,25
+Four-region total,2022,Nov,heat_days,0.66415,1.24799,,7,25
+Four-region total,2023,Nov,heat_days,-0.66018,-1.23613,,19,25
+Four-region total,2024,Nov,heat_days,0.87882,1.65067,,5,25
+Four-region total,2025,Nov,heat_days,1.75756,3.29898,,2,25
+Sul e Centro-Oeste,2001,Dec,heat_days,-0.51841,-0.94259,,18,25
+Sul e Centro-Oeste,2002,Dec,heat_days,-0.52727,-0.95899,,23,25
+Sul e Centro-Oeste,2003,Dec,heat_days,-0.45677,-0.82851,,10,25
+Sul e Centro-Oeste,2004,Dec,heat_days,-0.48487,-0.88051,,11,25
+Sul e Centro-Oeste,2005,Dec,heat_days,-0.53368,-0.97085,,24,25
+Sul e Centro-Oeste,2006,Dec,heat_days,-0.51158,-0.92996,,15,25
+Sul e Centro-Oeste,2007,Dec,heat_days,-0.52575,-0.95617,,22,25
+Sul e Centro-Oeste,2008,Dec,heat_days,-0.30029,-0.53890,,9,25
+Sul e Centro-Oeste,2009,Dec,heat_days,-0.51637,-0.93881,,17,25
+Sul e Centro-Oeste,2010,Dec,heat_days,-0.51875,-0.94322,,19,25
+Sul e Centro-Oeste,2011,Dec,heat_days,-0.51979,-0.94514,,20,25
+Sul e Centro-Oeste,2012,Dec,heat_days,-0.51291,-0.93241,,16,25
+Sul e Centro-Oeste,2013,Dec,heat_days,-0.27179,-0.48615,,8,25
+Sul e Centro-Oeste,2014,Dec,heat_days,-0.52441,-0.95369,,21,25
+Sul e Centro-Oeste,2015,Dec,heat_days,1.79223,3.33378,,3,25
+Sul e Centro-Oeste,2016,Dec,heat_days,0.22237,0.42839,,7,25
+Sul e Centro-Oeste,2017,Dec,heat_days,-0.50011,-0.90872,,12,25
+Sul e Centro-Oeste,2018,Dec,heat_days,-0.50718,-0.92180,,13,25
+Sul e Centro-Oeste,2019,Dec,heat_days,-0.54717,-0.99582,,25,25
+Sul e Centro-Oeste,2020,Dec,heat_days,0.25876,0.49575,,6,25
+Sul e Centro-Oeste,2021,Dec,heat_days,3.04314,5.64887,,1,25
+Sul e Centro-Oeste,2022,Dec,heat_days,0.26957,0.51575,,5,25
+Sul e Centro-Oeste,2023,Dec,heat_days,-0.50852,-0.92428,,14,25
+Sul e Centro-Oeste,2024,Dec,heat_days,2.51364,4.66890,,2,25
+Sul e Centro-Oeste,2025,Dec,heat_days,1.17893,2.19872,,4,25
+Sul e Centro-Oeste,2001,Jan,heat_days,-0.51841,-0.94259,,18,25
+Sul e Centro-Oeste,2002,Jan,heat_days,-0.52727,-0.95899,,23,25
+Sul e Centro-Oeste,2003,Jan,heat_days,-0.45677,-0.82851,,10,25
+Sul e Centro-Oeste,2004,Jan,heat_days,-0.48487,-0.88051,,11,25
+Sul e Centro-Oeste,2005,Jan,heat_days,-0.53368,-0.97085,,24,25
+Sul e Centro-Oeste,2006,Jan,heat_days,-0.51158,-0.92996,,15,25
+Sul e Centro-Oeste,2007,Jan,heat_days,-0.52575,-0.95617,,22,25
+Sul e Centro-Oeste,2008,Jan,heat_days,-0.30029,-0.53890,,9,25
+Sul e Centro-Oeste,2009,Jan,heat_days,-0.51637,-0.93881,,17,25
+Sul e Centro-Oeste,2010,Jan,heat_days,-0.51875,-0.94322,,19,25
+Sul e Centro-Oeste,2011,Jan,heat_days,-0.51979,-0.94514,,20,25
+Sul e Centro-Oeste,2012,Jan,heat_days,-0.51291,-0.93241,,16,25
+Sul e Centro-Oeste,2013,Jan,heat_days,-0.27179,-0.48615,,8,25
+Sul e Centro-Oeste,2014,Jan,heat_days,-0.52441,-0.95369,,21,25
+Sul e Centro-Oeste,2015,Jan,heat_days,1.79223,3.33378,,3,25
+Sul e Centro-Oeste,2016,Jan,heat_days,0.22237,0.42839,,7,25
+Sul e Centro-Oeste,2017,Jan,heat_days,-0.50011,-0.90872,,12,25
+Sul e Centro-Oeste,2018,Jan,heat_days,-0.50718,-0.92180,,13,25
+Sul e Centro-Oeste,2019,Jan,heat_days,-0.54717,-0.99582,,25,25
+Sul e Centro-Oeste,2020,Jan,heat_days,0.25876,0.49575,,6,25
+Sul e Centro-Oeste,2021,Jan,heat_days,3.04314,5.64887,,1,25
+Sul e Centro-Oeste,2022,Jan,heat_days,0.26957,0.51575,,5,25
+Sul e Centro-Oeste,2023,Jan,heat_days,-0.50852,-0.92428,,14,25
+Sul e Centro-Oeste,2024,Jan,heat_days,2.51364,4.66890,,2,25
+Sul e Centro-Oeste,2025,Jan,heat_days,1.17893,2.19872,,4,25
+Sul e Centro-Oeste,2001,Nov,heat_days,-0.52185,-0.84334,,18,25
+Sul e Centro-Oeste,2002,Nov,heat_days,-0.53086,-0.85816,,23,25
+Sul e Centro-Oeste,2003,Nov,heat_days,-0.45051,-0.72605,,10,25
+Sul e Centro-Oeste,2004,Nov,heat_days,-0.48205,-0.77790,,11,25
+Sul e Centro-Oeste,2005,Nov,heat_days,-0.53684,-0.86798,,24,25
+Sul e Centro-Oeste,2006,Nov,heat_days,-0.51329,-0.82926,,15,25
+Sul e Centro-Oeste,2007,Nov,heat_days,-0.52991,-0.85659,,22,25
+Sul e Centro-Oeste,2008,Nov,heat_days,-0.27609,-0.43926,,9,25
+Sul e Centro-Oeste,2009,Nov,heat_days,-0.51982,-0.84001,,17,25
+Sul e Centro-Oeste,2010,Nov,heat_days,-0.52189,-0.84340,,19,25
+Sul e Centro-Oeste,2011,Nov,heat_days,-0.52303,-0.84529,,20,25
+Sul e Centro-Oeste,2012,Nov,heat_days,-0.51504,-0.83215,,16,25
+Sul e Centro-Oeste,2013,Nov,heat_days,-0.24419,-0.38680,,8,25
+Sul e Centro-Oeste,2014,Nov,heat_days,-0.52755,-0.85272,,21,25
+Sul e Centro-Oeste,2015,Nov,heat_days,2.07981,3.43441,,2,25
+Sul e Centro-Oeste,2016,Nov,heat_days,0.31306,0.52945,,7,25
+Sul e Centro-Oeste,2017,Nov,heat_days,-0.50058,-0.80837,,12,25
+Sul e Centro-Oeste,2018,Nov,heat_days,-0.50754,-0.81982,,13,25
+Sul e Centro-Oeste,2019,Nov,heat_days,-0.55251,-0.89376,,25,25
+Sul e Centro-Oeste,2020,Nov,heat_days,0.35578,0.59969,,6,25
+Sul e Centro-Oeste,2021,Nov,heat_days,3.48936,5.75203,,1,25
+Sul e Centro-Oeste,2022,Nov,heat_days,0.36859,0.62075,,5,25
+Sul e Centro-Oeste,2023,Nov,heat_days,-0.50767,-0.82002,,14,25
+Sul e Centro-Oeste,2024,Nov,heat_days,1.25375,2.07616,,4,25
+Sul e Centro-Oeste,2025,Nov,heat_days,1.39170,2.30299,,3,25
+São Paulo (state total),2001,Dec,heat_days,-0.60995,-2.57157,,15,25
+São Paulo (state total),2002,Dec,heat_days,-0.89300,-3.71676,,24,25
+São Paulo (state total),2003,Dec,heat_days,0.40750,1.54495,,8,25
+São Paulo (state total),2004,Dec,heat_days,-0.48275,-2.05693,,13,25
+São Paulo (state total),2005,Dec,heat_days,-0.28331,-1.24998,,11,25
+São Paulo (state total),2006,Dec,heat_days,-0.86262,-3.59384,,23,25
+São Paulo (state total),2007,Dec,heat_days,-0.73410,-3.07385,,20,25
+São Paulo (state total),2008,Dec,heat_days,-0.00156,-0.11005,,10,25
+São Paulo (state total),2009,Dec,heat_days,-0.56023,-2.37038,,14,25
+São Paulo (state total),2010,Dec,heat_days,-0.92164,-3.83263,,25,25
+São Paulo (state total),2011,Dec,heat_days,-0.69775,-2.92679,,18,25
+São Paulo (state total),2012,Dec,heat_days,-0.65791,-2.76559,,17,25
+São Paulo (state total),2013,Dec,heat_days,0.15800,0.53552,,9,25
+São Paulo (state total),2014,Dec,heat_days,-0.81057,-3.38324,,22,25
+São Paulo (state total),2015,Dec,heat_days,1.18526,4.69173,,5,25
+São Paulo (state total),2016,Dec,heat_days,0.41251,1.56526,,7,25
+São Paulo (state total),2017,Dec,heat_days,-0.62952,-2.65073,,16,25
+São Paulo (state total),2018,Dec,heat_days,-0.40302,-1.73434,,12,25
+São Paulo (state total),2019,Dec,heat_days,-0.78140,-3.26522,,21,25
+São Paulo (state total),2020,Dec,heat_days,1.46929,5.84088,,4,25
+São Paulo (state total),2021,Dec,heat_days,2.52381,10.10741,,1,25
+São Paulo (state total),2022,Dec,heat_days,0.78674,3.07936,,6,25
+São Paulo (state total),2023,Dec,heat_days,-0.72708,-3.04545,,19,25
+São Paulo (state total),2024,Dec,heat_days,1.69618,6.75888,,3,25
+São Paulo (state total),2025,Dec,heat_days,1.93365,7.71966,,2,25
+São Paulo (state total),2001,Jan,heat_days,-0.61368,-2.63610,,16,25
+São Paulo (state total),2002,Jan,heat_days,-0.89200,-3.77900,,24,25
+São Paulo (state total),2003,Jan,heat_days,0.38636,1.47053,,8,25
+São Paulo (state total),2004,Jan,heat_days,-0.49145,-2.13413,,13,25
+São Paulo (state total),2005,Jan,heat_days,-0.29566,-1.33014,,11,25
+São Paulo (state total),2006,Jan,heat_days,-0.86502,-3.66821,,23,25
+São Paulo (state total),2007,Jan,heat_days,-0.73674,-3.14140,,20,25
+São Paulo (state total),2008,Jan,heat_days,-0.01639,-0.18333,,10,25
+São Paulo (state total),2009,Jan,heat_days,-0.56528,-2.43732,,14,25
+São Paulo (state total),2010,Jan,heat_days,-0.92141,-3.89977,,25,25
+São Paulo (state total),2011,Jan,heat_days,-0.69447,-2.96785,,18,25
+São Paulo (state total),2012,Jan,heat_days,-0.65971,-2.82511,,17,25
+São Paulo (state total),2013,Jan,heat_days,0.15482,0.51974,,9,25
+São Paulo (state total),2014,Jan,heat_days,-0.80903,-3.43827,,22,25
+São Paulo (state total),2015,Jan,heat_days,1.15745,4.63698,,5,25
+São Paulo (state total),2016,Jan,heat_days,0.39676,1.51324,,7,25
+São Paulo (state total),2017,Jan,heat_days,-0.59340,-2.55281,,15,25
+São Paulo (state total),2018,Jan,heat_days,-0.40625,-1.78429,,12,25
+São Paulo (state total),2019,Jan,heat_days,-0.77860,-3.31330,,21,25
+São Paulo (state total),2020,Jan,heat_days,1.44512,5.81830,,4,25
+São Paulo (state total),2021,Jan,heat_days,2.58139,10.48435,,1,25
+São Paulo (state total),2022,Jan,heat_days,0.87539,3.47871,,6,25
+São Paulo (state total),2023,Jan,heat_days,-0.72169,-3.07961,,19,25
+São Paulo (state total),2024,Jan,heat_days,1.66508,6.72154,,3,25
+São Paulo (state total),2025,Jan,heat_days,1.90001,7.68629,,2,25
+São Paulo (state total),2001,Nov,heat_days,-0.58241,-2.31744,,15,25
+São Paulo (state total),2002,Nov,heat_days,-0.88280,-3.46445,,24,25
+São Paulo (state total),2003,Nov,heat_days,0.49881,1.81118,,6,25
+São Paulo (state total),2004,Nov,heat_days,-0.47824,-1.91965,,13,25
+São Paulo (state total),2005,Nov,heat_days,-0.23321,-0.98400,,11,25
+São Paulo (state total),2006,Nov,heat_days,-0.84820,-3.33235,,23,25
+São Paulo (state total),2007,Nov,heat_days,-0.84806,-3.33180,,22,25
+São Paulo (state total),2008,Nov,heat_days,0.06317,0.14771,,10,25
+São Paulo (state total),2009,Nov,heat_days,-0.52932,-2.11472,,14,25
+São Paulo (state total),2010,Nov,heat_days,-0.91280,-3.57902,,25,25
+São Paulo (state total),2011,Nov,heat_days,-0.68317,-2.70219,,18,25
+São Paulo (state total),2012,Nov,heat_days,-0.63521,-2.51903,,17,25
+São Paulo (state total),2013,Nov,heat_days,0.22767,0.77583,,9,25
+São Paulo (state total),2014,Nov,heat_days,-0.80019,-3.14902,,21,25
+São Paulo (state total),2015,Nov,heat_days,1.31575,4.93066,,4,25
+São Paulo (state total),2016,Nov,heat_days,0.49386,1.79229,,7,25
+São Paulo (state total),2017,Nov,heat_days,-0.60853,-2.41716,,16,25
+São Paulo (state total),2018,Nov,heat_days,-0.36791,-1.49835,,12,25
+São Paulo (state total),2019,Nov,heat_days,-0.76932,-3.03114,,20,25
+São Paulo (state total),2020,Nov,heat_days,1.61372,6.06844,,3,25
+São Paulo (state total),2021,Nov,heat_days,2.71310,10.26643,,1,25
+São Paulo (state total),2022,Nov,heat_days,0.89143,3.31038,,5,25
+São Paulo (state total),2023,Nov,heat_days,-0.71514,-2.82426,,19,25
+São Paulo (state total),2024,Nov,heat_days,0.46393,1.67801,,8,25
+São Paulo (state total),2025,Nov,heat_days,2.10485,7.94384,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Dec,heat_days,-0.74299,-2.35297,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Dec,heat_days,-0.79681,-2.52285,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Dec,heat_days,-0.29515,-0.93937,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Dec,heat_days,-0.55715,-1.76636,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Dec,heat_days,-0.67670,-2.14371,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Dec,heat_days,-0.30241,-0.96227,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Dec,heat_days,-0.71977,-2.27966,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Dec,heat_days,-0.01448,-0.05344,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,heat_days,-0.48169,-1.52818,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,heat_days,-0.75557,-2.39268,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,heat_days,-0.70094,-2.22022,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,heat_days,-0.73800,-2.33722,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,heat_days,0.01900,0.05225,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,heat_days,-0.74899,-2.37190,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,heat_days,1.01343,3.19112,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,heat_days,1.62032,5.10677,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,heat_days,-0.62259,-1.97293,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,heat_days,-0.32910,-1.04652,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,heat_days,-0.68587,-2.17267,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,heat_days,0.48226,1.51452,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,heat_days,2.42032,7.63194,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,heat_days,0.91721,2.88741,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,heat_days,-0.60764,-1.92574,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,heat_days,2.03783,6.42464,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,heat_days,1.87257,5.90299,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,heat_days,-0.74468,-2.35841,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,heat_days,-0.79869,-2.52887,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,heat_days,-0.29698,-0.94536,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,heat_days,-0.55834,-1.77026,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,heat_days,-0.67842,-2.14926,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,heat_days,-0.30383,-0.96698,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,heat_days,-0.72116,-2.28416,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,heat_days,-0.01579,-0.05784,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,heat_days,-0.48314,-1.53291,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,heat_days,-0.75703,-2.39737,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,heat_days,-0.70238,-2.22489,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,heat_days,-0.73945,-2.34191,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,heat_days,0.01767,0.04775,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,heat_days,-0.75013,-2.37560,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,heat_days,1.01210,3.18644,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,heat_days,1.61902,5.10201,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,heat_days,-0.62415,-1.97798,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,heat_days,-0.33051,-1.05117,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,heat_days,-0.68728,-2.17723,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,heat_days,0.48088,1.50977,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,heat_days,2.41916,7.62746,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,heat_days,0.91596,2.88301,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,heat_days,-0.60908,-1.93043,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,heat_days,2.04403,6.44347,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,heat_days,1.87123,5.89806,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Nov,heat_days,-0.74694,-2.16230,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Nov,heat_days,-0.80343,-2.32516,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Nov,heat_days,-0.25448,-0.74254,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Nov,heat_days,-0.54182,-1.57094,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Nov,heat_days,-0.67307,-1.94935,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Nov,heat_days,-0.26584,-0.77528,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Nov,heat_days,-0.72269,-2.09239,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Nov,heat_days,0.04826,0.13030,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,heat_days,-0.46017,-1.33553,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,heat_days,-0.76043,-2.20120,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,heat_days,-0.70026,-2.02773,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,heat_days,-0.74029,-2.14314,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,heat_days,0.08829,0.24570,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,heat_days,-0.75225,-2.17761,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,heat_days,1.17768,3.38647,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,heat_days,1.79765,5.17388,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,heat_days,-0.61215,-1.77371,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,heat_days,-0.29184,-0.85023,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,heat_days,-0.68265,-1.97697,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,heat_days,0.56405,1.61734,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,heat_days,2.71681,7.82385,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,heat_days,1.07141,3.08007,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,heat_days,-0.59662,-1.72894,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,heat_days,0.62243,1.78566,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,heat_days,2.11937,6.10141,,2,25
+"Zona da Mata, Rio Doce e Central",2001,Dec,heat_days,-0.77337,-0.94896,,25,25
+"Zona da Mata, Rio Doce e Central",2002,Dec,heat_days,-0.66106,-0.81644,,21,25
+"Zona da Mata, Rio Doce e Central",2003,Dec,heat_days,-0.74085,-0.91059,,23,25
+"Zona da Mata, Rio Doce e Central",2004,Dec,heat_days,-0.44612,-0.56281,,14,25
+"Zona da Mata, Rio Doce e Central",2005,Dec,heat_days,-0.61539,-0.76255,,20,25
+"Zona da Mata, Rio Doce e Central",2006,Dec,heat_days,-0.35745,-0.45818,,11,25
+"Zona da Mata, Rio Doce e Central",2007,Dec,heat_days,-0.74758,-0.91853,,24,25
+"Zona da Mata, Rio Doce e Central",2008,Dec,heat_days,0.89902,1.02442,,4,25
+"Zona da Mata, Rio Doce e Central",2009,Dec,heat_days,-0.00040,-0.03687,,8,25
+"Zona da Mata, Rio Doce e Central",2010,Dec,heat_days,-0.60686,-0.75248,,19,25
+"Zona da Mata, Rio Doce e Central",2011,Dec,heat_days,-0.51697,-0.64641,,17,25
+"Zona da Mata, Rio Doce e Central",2012,Dec,heat_days,-0.66613,-0.82242,,22,25
+"Zona da Mata, Rio Doce e Central",2013,Dec,heat_days,0.61576,0.69018,,5,25
+"Zona da Mata, Rio Doce e Central",2014,Dec,heat_days,-0.54178,-0.67569,,18,25
+"Zona da Mata, Rio Doce e Central",2015,Dec,heat_days,0.40573,0.44235,,6,25
+"Zona da Mata, Rio Doce e Central",2016,Dec,heat_days,1.73762,2.01395,,3,25
+"Zona da Mata, Rio Doce e Central",2017,Dec,heat_days,-0.38790,-0.49412,,13,25
+"Zona da Mata, Rio Doce e Central",2018,Dec,heat_days,-0.27861,-0.36516,,10,25
+"Zona da Mata, Rio Doce e Central",2019,Dec,heat_days,-0.50279,-0.62969,,15,25
+"Zona da Mata, Rio Doce e Central",2020,Dec,heat_days,0.21924,0.22229,,7,25
+"Zona da Mata, Rio Doce e Central",2021,Dec,heat_days,2.00637,2.33107,,2,25
+"Zona da Mata, Rio Doce e Central",2022,Dec,heat_days,-0.35761,-0.45837,,12,25
+"Zona da Mata, Rio Doce e Central",2023,Dec,heat_days,-0.51380,-0.64268,,16,25
+"Zona da Mata, Rio Doce e Central",2024,Dec,heat_days,3.34905,3.91540,,1,25
+"Zona da Mata, Rio Doce e Central",2025,Dec,heat_days,-0.02366,-0.06432,,9,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,heat_days,-0.76291,-0.97128,,25,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,heat_days,-0.65342,-0.83774,,21,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,heat_days,-0.72974,-0.93082,,23,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,heat_days,-0.44438,-0.58275,,14,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,heat_days,-0.60847,-0.78290,,20,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,heat_days,-0.35893,-0.47851,,12,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,heat_days,-0.73623,-0.93874,,24,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,heat_days,0.85893,1.00702,,4,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,heat_days,-0.01165,-0.05491,,8,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,heat_days,-0.59300,-0.76403,,19,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,heat_days,-0.51045,-0.66333,,17,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,heat_days,-0.65464,-0.83922,,22,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,heat_days,0.58601,0.67412,,5,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,heat_days,-0.53320,-0.69109,,18,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,heat_days,0.38435,0.42813,,6,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,heat_days,1.67543,2.00298,,3,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,heat_days,-0.38357,-0.50856,,13,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,heat_days,-0.27671,-0.37823,,10,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,heat_days,-0.49120,-0.63985,,15,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,heat_days,0.20831,0.21340,,7,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,heat_days,1.93687,2.32188,,2,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,heat_days,-0.35155,-0.46951,,11,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,heat_days,-0.50237,-0.65348,,16,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,heat_days,3.46243,4.18273,,1,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,heat_days,-0.02634,-0.07283,,9,25
+"Zona da Mata, Rio Doce e Central",2001,Nov,heat_days,-0.73367,-0.75959,,25,25
+"Zona da Mata, Rio Doce e Central",2002,Nov,heat_days,-0.60549,-0.63141,,20,25
+"Zona da Mata, Rio Doce e Central",2003,Nov,heat_days,-0.70210,-0.72802,,22,25
+"Zona da Mata, Rio Doce e Central",2004,Nov,heat_days,-0.35252,-0.37845,,14,25
+"Zona da Mata, Rio Doce e Central",2005,Nov,heat_days,-0.70693,-0.73286,,23,25
+"Zona da Mata, Rio Doce e Central",2006,Nov,heat_days,-0.25072,-0.27664,,11,25
+"Zona da Mata, Rio Doce e Central",2007,Nov,heat_days,-0.70965,-0.73557,,24,25
+"Zona da Mata, Rio Doce e Central",2008,Nov,heat_days,1.10187,1.07595,,3,25
+"Zona da Mata, Rio Doce e Central",2009,Nov,heat_days,0.16462,0.13870,,8,25
+"Zona da Mata, Rio Doce e Central",2010,Nov,heat_days,-0.55837,-0.58429,,19,25
+"Zona da Mata, Rio Doce e Central",2011,Nov,heat_days,-0.45257,-0.47849,,15,25
+"Zona da Mata, Rio Doce e Central",2012,Nov,heat_days,-0.62788,-0.65380,,21,25
+"Zona da Mata, Rio Doce e Central",2013,Nov,heat_days,0.88184,0.85592,,4,25
+"Zona da Mata, Rio Doce e Central",2014,Nov,heat_days,-0.48854,-0.51446,,18,25
+"Zona da Mata, Rio Doce e Central",2015,Nov,heat_days,0.62866,0.60274,,6,25
+"Zona da Mata, Rio Doce e Central",2016,Nov,heat_days,1.83297,1.80705,,2,25
+"Zona da Mata, Rio Doce e Central",2017,Nov,heat_days,-0.31101,-0.33693,,13,25
+"Zona da Mata, Rio Doce e Central",2018,Nov,heat_days,-0.18379,-0.20971,,10,25
+"Zona da Mata, Rio Doce e Central",2019,Nov,heat_days,-0.45388,-0.47980,,16,25
+"Zona da Mata, Rio Doce e Central",2020,Nov,heat_days,0.28204,0.25612,,7,25
+"Zona da Mata, Rio Doce e Central",2021,Nov,heat_days,2.50223,2.47631,,1,25
+"Zona da Mata, Rio Doce e Central",2022,Nov,heat_days,-0.28248,-0.30840,,12,25
+"Zona da Mata, Rio Doce e Central",2023,Nov,heat_days,-0.46847,-0.49439,,17,25
+"Zona da Mata, Rio Doce e Central",2024,Nov,heat_days,0.85173,0.82581,,5,25
+"Zona da Mata, Rio Doce e Central",2025,Nov,heat_days,0.11178,0.08586,,9,25
+Four-region total,2001,Dec,rain_flowering,0.28759,14.58182,,16,25
+Four-region total,2002,Dec,rain_flowering,1.22774,62.12955,,22,25
+Four-region total,2003,Dec,rain_flowering,0.03141,1.62594,,14,25
+Four-region total,2004,Dec,rain_flowering,-1.36803,-69.15057,,2,25
+Four-region total,2005,Dec,rain_flowering,-1.29028,-65.21817,,3,25
+Four-region total,2006,Dec,rain_flowering,-0.22039,-11.10884,,11,25
+Four-region total,2007,Dec,rain_flowering,0.75777,38.36127,,19,25
+Four-region total,2008,Dec,rain_flowering,-0.97559,-49.30275,,5,25
+Four-region total,2009,Dec,rain_flowering,-0.01622,-0.78332,,13,25
+Four-region total,2010,Dec,rain_flowering,1.65462,83.71870,,24,25
+Four-region total,2011,Dec,rain_flowering,1.01902,51.57343,,20,25
+Four-region total,2012,Dec,rain_flowering,-0.83404,-42.14385,,6,25
+Four-region total,2013,Dec,rain_flowering,-0.30274,-15.27381,,10,25
+Four-region total,2014,Dec,rain_flowering,0.03439,1.77656,,15,25
+Four-region total,2015,Dec,rain_flowering,-1.28671,-65.03756,,4,25
+Four-region total,2016,Dec,rain_flowering,1.13279,57.32767,,21,25
+Four-region total,2017,Dec,rain_flowering,-0.31146,-15.71460,,9,25
+Four-region total,2018,Dec,rain_flowering,-0.45883,-23.16806,,8,25
+Four-region total,2019,Dec,rain_flowering,1.65306,83.64020,,23,25
+Four-region total,2020,Dec,rain_flowering,-0.62813,-31.73016,,7,25
+Four-region total,2021,Dec,rain_flowering,-1.58013,-79.87739,,1,25
+Four-region total,2022,Dec,rain_flowering,1.80811,91.48162,,25,25
+Four-region total,2023,Dec,rain_flowering,0.39152,19.83836,,17,25
+Four-region total,2024,Dec,rain_flowering,-0.15928,-8.01832,,12,25
+Four-region total,2025,Dec,rain_flowering,0.50892,25.77573,,18,25
+Four-region total,2001,Jan,rain_flowering,0.46891,25.20613,,18,25
+Four-region total,2002,Jan,rain_flowering,1.07289,57.65740,,22,25
+Four-region total,2003,Jan,rain_flowering,-0.31936,-17.14607,,9,25
+Four-region total,2004,Jan,rain_flowering,-1.28697,-69.13460,,3,25
+Four-region total,2005,Jan,rain_flowering,-0.85831,-46.10303,,4,25
+Four-region total,2006,Jan,rain_flowering,0.16657,8.96220,,15,25
+Four-region total,2007,Jan,rain_flowering,1.52441,81.91684,,23,25
+Four-region total,2008,Jan,rain_flowering,-1.44073,-77.39536,,2,25
+Four-region total,2009,Jan,rain_flowering,-0.20925,-11.22999,,12,25
+Four-region total,2010,Jan,rain_flowering,1.59737,85.83675,,24,25
+Four-region total,2011,Jan,rain_flowering,0.91891,49.38421,,20,25
+Four-region total,2012,Jan,rain_flowering,-0.38282,-20.55569,,7,25
+Four-region total,2013,Jan,rain_flowering,-0.51231,-27.51330,,5,25
+Four-region total,2014,Jan,rain_flowering,0.21270,11.44074,,16,25
+Four-region total,2015,Jan,rain_flowering,-0.22656,-12.15991,,11,25
+Four-region total,2016,Jan,rain_flowering,0.86370,46.41778,,19,25
+Four-region total,2017,Jan,rain_flowering,-0.06752,-3.61530,,13,25
+Four-region total,2018,Jan,rain_flowering,-0.46045,-24.72689,,6,25
+Four-region total,2019,Jan,rain_flowering,0.93423,50.20710,,21,25
+Four-region total,2020,Jan,rain_flowering,-0.34482,-18.51430,,8,25
+Four-region total,2021,Jan,rain_flowering,-2.13736,-114.82453,,1,25
+Four-region total,2022,Jan,rain_flowering,1.92722,103.55894,,25,25
+Four-region total,2023,Jan,rain_flowering,0.27329,14.69604,,17,25
+Four-region total,2024,Jan,rain_flowering,-0.28068,-15.06778,,10,25
+Four-region total,2025,Jan,rain_flowering,0.10333,5.56452,,14,25
+Four-region total,2001,Nov,rain_flowering,-0.16333,-7.31477,,12,25
+Four-region total,2002,Nov,rain_flowering,1.20041,55.46261,,23,25
+Four-region total,2003,Nov,rain_flowering,-0.32956,-14.96706,,9,25
+Four-region total,2004,Nov,rain_flowering,-1.58456,-72.73863,,1,25
+Four-region total,2005,Nov,rain_flowering,-1.44370,-66.25422,,3,25
+Four-region total,2006,Nov,rain_flowering,-0.63836,-29.18176,,7,25
+Four-region total,2007,Nov,rain_flowering,0.87489,40.47800,,21,25
+Four-region total,2008,Nov,rain_flowering,-0.31267,-14.18924,,10,25
+Four-region total,2009,Nov,rain_flowering,0.80512,37.26627,,20,25
+Four-region total,2010,Nov,rain_flowering,2.25889,104.18769,,25,25
+Four-region total,2011,Nov,rain_flowering,0.30892,14.42447,,17,25
+Four-region total,2012,Nov,rain_flowering,-0.39515,-17.98602,,8,25
+Four-region total,2013,Nov,rain_flowering,0.07259,3.54530,,15,25
+Four-region total,2014,Nov,rain_flowering,-0.16657,-7.46374,,11,25
+Four-region total,2015,Nov,rain_flowering,-0.82859,-37.93865,,5,25
+Four-region total,2016,Nov,rain_flowering,-0.08498,-3.70790,,13,25
+Four-region total,2017,Nov,rain_flowering,0.11566,5.52799,,16,25
+Four-region total,2018,Nov,rain_flowering,-0.77145,-35.30845,,6,25
+Four-region total,2019,Nov,rain_flowering,1.06608,49.27891,,22,25
+Four-region total,2020,Nov,rain_flowering,-0.89145,-40.83265,,4,25
+Four-region total,2021,Nov,rain_flowering,-1.47701,-67.78776,,2,25
+Four-region total,2022,Nov,rain_flowering,2.22110,102.44811,,24,25
+Four-region total,2023,Nov,rain_flowering,0.33333,15.54791,,18,25
+Four-region total,2024,Nov,rain_flowering,-0.03503,-1.40870,,14,25
+Four-region total,2025,Nov,rain_flowering,0.65822,30.50385,,19,25
+Sul e Centro-Oeste,2001,Dec,rain_flowering,0.38855,20.61436,,18,25
+Sul e Centro-Oeste,2002,Dec,rain_flowering,0.75509,40.07508,,20,25
+Sul e Centro-Oeste,2003,Dec,rain_flowering,-0.24310,-12.92298,,11,25
+Sul e Centro-Oeste,2004,Dec,rain_flowering,-1.12644,-59.82286,,4,25
+Sul e Centro-Oeste,2005,Dec,rain_flowering,-0.68913,-36.60435,,6,25
+Sul e Centro-Oeste,2006,Dec,rain_flowering,-0.66163,-35.14446,,7,25
+Sul e Centro-Oeste,2007,Dec,rain_flowering,0.11518,6.09992,,14,25
+Sul e Centro-Oeste,2008,Dec,rain_flowering,-0.38779,-20.60468,,9,25
+Sul e Centro-Oeste,2009,Dec,rain_flowering,0.28435,15.08156,,16,25
+Sul e Centro-Oeste,2010,Dec,rain_flowering,1.49340,79.27504,,23,25
+Sul e Centro-Oeste,2011,Dec,rain_flowering,0.22067,11.70050,,15,25
+Sul e Centro-Oeste,2012,Dec,rain_flowering,-1.24702,-66.22513,,3,25
+Sul e Centro-Oeste,2013,Dec,rain_flowering,-0.71609,-38.03577,,5,25
+Sul e Centro-Oeste,2014,Dec,rain_flowering,-0.00734,-0.40518,,13,25
+Sul e Centro-Oeste,2015,Dec,rain_flowering,-1.25785,-66.79993,,2,25
+Sul e Centro-Oeste,2016,Dec,rain_flowering,1.85137,98.28147,,25,25
+Sul e Centro-Oeste,2017,Dec,rain_flowering,-0.12387,-6.59230,,12,25
+Sul e Centro-Oeste,2018,Dec,rain_flowering,-0.56614,-30.07416,,8,25
+Sul e Centro-Oeste,2019,Dec,rain_flowering,1.58581,84.18140,,24,25
+Sul e Centro-Oeste,2020,Dec,rain_flowering,-0.32069,-17.04216,,10,25
+Sul e Centro-Oeste,2021,Dec,rain_flowering,-2.36397,-125.52821,,1,25
+Sul e Centro-Oeste,2022,Dec,rain_flowering,1.47952,78.53809,,22,25
+Sul e Centro-Oeste,2023,Dec,rain_flowering,0.36931,19.59239,,17,25
+Sul e Centro-Oeste,2024,Dec,rain_flowering,0.89040,47.25928,,21,25
+Sul e Centro-Oeste,2025,Dec,rain_flowering,0.74645,39.61633,,19,25
+Sul e Centro-Oeste,2001,Jan,rain_flowering,0.50703,28.85528,,18,25
+Sul e Centro-Oeste,2002,Jan,rain_flowering,0.70483,40.05350,,19,25
+Sul e Centro-Oeste,2003,Jan,rain_flowering,-0.50653,-28.52798,,8,25
+Sul e Centro-Oeste,2004,Jan,rain_flowering,-0.85624,-48.32711,,5,25
+Sul e Centro-Oeste,2005,Jan,rain_flowering,-0.13119,-7.27794,,12,25
+Sul e Centro-Oeste,2006,Jan,rain_flowering,-0.57471,-32.38797,,6,25
+Sul e Centro-Oeste,2007,Jan,rain_flowering,1.27597,72.38909,,22,25
+Sul e Centro-Oeste,2008,Jan,rain_flowering,-0.94622,-53.42136,,4,25
+Sul e Centro-Oeste,2009,Jan,rain_flowering,-0.13299,-7.38007,,11,25
+Sul e Centro-Oeste,2010,Jan,rain_flowering,1.56797,88.92073,,24,25
+Sul e Centro-Oeste,2011,Jan,rain_flowering,0.17728,10.18629,,15,25
+Sul e Centro-Oeste,2012,Jan,rain_flowering,-0.98692,-55.72586,,3,25
+Sul e Centro-Oeste,2013,Jan,rain_flowering,-1.12624,-63.61319,,2,25
+Sul e Centro-Oeste,2014,Jan,rain_flowering,0.07903,4.62361,,14,25
+Sul e Centro-Oeste,2015,Jan,rain_flowering,-0.14444,-8.02845,,10,25
+Sul e Centro-Oeste,2016,Jan,rain_flowering,1.66364,94.33685,,25,25
+Sul e Centro-Oeste,2017,Jan,rain_flowering,0.00650,0.51721,,13,25
+Sul e Centro-Oeste,2018,Jan,rain_flowering,-0.52356,-29.49219,,7,25
+Sul e Centro-Oeste,2019,Jan,rain_flowering,0.89966,51.08391,,20,25
+Sul e Centro-Oeste,2020,Jan,rain_flowering,-0.14922,-8.29906,,9,25
+Sul e Centro-Oeste,2021,Jan,rain_flowering,-2.79381,-158.02378,,1,25
+Sul e Centro-Oeste,2022,Jan,rain_flowering,1.47122,83.44318,,23,25
+Sul e Centro-Oeste,2023,Jan,rain_flowering,0.19625,11.26013,,16,25
+Sul e Centro-Oeste,2024,Jan,rain_flowering,0.91876,52.16520,,21,25
+Sul e Centro-Oeste,2025,Jan,rain_flowering,0.29553,16.88105,,17,25
+Sul e Centro-Oeste,2001,Nov,rain_flowering,-0.41122,-19.59447,,10,25
+Sul e Centro-Oeste,2002,Nov,rain_flowering,1.02257,49.38832,,22,25
+Sul e Centro-Oeste,2003,Nov,rain_flowering,-0.59579,-28.47456,,6,25
+Sul e Centro-Oeste,2004,Nov,rain_flowering,-1.55968,-74.84929,,2,25
+Sul e Centro-Oeste,2005,Nov,rain_flowering,-0.91982,-44.06416,,4,25
+Sul e Centro-Oeste,2006,Nov,rain_flowering,-1.00698,-48.25798,,3,25
+Sul e Centro-Oeste,2007,Nov,rain_flowering,0.16891,8.31703,,14,25
+Sul e Centro-Oeste,2008,Nov,rain_flowering,0.19702,9.66938,,15,25
+Sul e Centro-Oeste,2009,Nov,rain_flowering,1.37053,66.12926,,23,25
+Sul e Centro-Oeste,2010,Nov,rain_flowering,2.09723,101.09234,,25,25
+Sul e Centro-Oeste,2011,Nov,rain_flowering,-0.39537,-18.83200,,11,25
+Sul e Centro-Oeste,2012,Nov,rain_flowering,-0.45612,-21.75453,,8,25
+Sul e Centro-Oeste,2013,Nov,rain_flowering,-0.28857,-13.69338,,13,25
+Sul e Centro-Oeste,2014,Nov,rain_flowering,-0.33489,-15.92209,,12,25
+Sul e Centro-Oeste,2015,Nov,rain_flowering,-0.81361,-38.95454,,5,25
+Sul e Centro-Oeste,2016,Nov,rain_flowering,0.40143,19.50373,,16,25
+Sul e Centro-Oeste,2017,Nov,rain_flowering,0.56620,27.43113,,18,25
+Sul e Centro-Oeste,2018,Nov,rain_flowering,-0.54487,-26.02469,,7,25
+Sul e Centro-Oeste,2019,Nov,rain_flowering,0.84915,41.04494,,21,25
+Sul e Centro-Oeste,2020,Nov,rain_flowering,-0.43325,-20.65450,,9,25
+Sul e Centro-Oeste,2021,Nov,rain_flowering,-2.31329,-111.10720,,1,25
+Sul e Centro-Oeste,2022,Nov,rain_flowering,1.64741,79.45057,,24,25
+Sul e Centro-Oeste,2023,Nov,rain_flowering,0.50562,24.51674,,17,25
+Sul e Centro-Oeste,2024,Nov,rain_flowering,0.84599,40.89282,,20,25
+Sul e Centro-Oeste,2025,Nov,rain_flowering,0.82008,39.64604,,19,25
+São Paulo (state total),2001,Dec,rain_flowering,0.51574,30.49329,,19,25
+São Paulo (state total),2002,Dec,rain_flowering,0.62950,37.01069,,21,25
+São Paulo (state total),2003,Dec,rain_flowering,-0.44119,-24.33039,,8,25
+São Paulo (state total),2004,Dec,rain_flowering,-1.17388,-66.30673,,2,25
+São Paulo (state total),2005,Dec,rain_flowering,-0.13051,-6.53098,,13,25
+São Paulo (state total),2006,Dec,rain_flowering,0.17750,11.11483,,16,25
+São Paulo (state total),2007,Dec,rain_flowering,0.19532,12.13589,,17,25
+São Paulo (state total),2008,Dec,rain_flowering,-0.80324,-45.07238,,5,25
+São Paulo (state total),2009,Dec,rain_flowering,-0.99096,-55.82686,,3,25
+São Paulo (state total),2010,Dec,rain_flowering,2.24661,129.65653,,24,25
+São Paulo (state total),2011,Dec,rain_flowering,-0.44425,-24.50539,,7,25
+São Paulo (state total),2012,Dec,rain_flowering,-0.13130,-6.57620,,12,25
+São Paulo (state total),2013,Dec,rain_flowering,-0.01488,0.09348,,14,25
+São Paulo (state total),2014,Dec,rain_flowering,-0.34848,-19.01870,,9,25
+São Paulo (state total),2015,Dec,rain_flowering,-0.47257,-26.12797,,6,25
+São Paulo (state total),2016,Dec,rain_flowering,2.57082,148.23055,,25,25
+São Paulo (state total),2017,Dec,rain_flowering,-0.25380,-13.59476,,10,25
+São Paulo (state total),2018,Dec,rain_flowering,-0.15762,-8.08451,,11,25
+São Paulo (state total),2019,Dec,rain_flowering,1.18485,68.82690,,23,25
+São Paulo (state total),2020,Dec,rain_flowering,-0.98722,-55.61275,,4,25
+São Paulo (state total),2021,Dec,rain_flowering,-2.23351,-127.01422,,1,25
+São Paulo (state total),2022,Dec,rain_flowering,0.56325,33.21530,,20,25
+São Paulo (state total),2023,Dec,rain_flowering,0.07693,5.35338,,15,25
+São Paulo (state total),2024,Dec,rain_flowering,0.78735,46.05385,,22,25
+São Paulo (state total),2025,Dec,rain_flowering,0.24757,15.12961,,18,25
+São Paulo (state total),2001,Jan,rain_flowering,0.57597,37.71104,,18,25
+São Paulo (state total),2002,Jan,rain_flowering,0.65962,43.12195,,21,25
+São Paulo (state total),2003,Jan,rain_flowering,-0.06560,-3.79166,,13,25
+São Paulo (state total),2004,Jan,rain_flowering,-1.02395,-65.78610,,4,25
+São Paulo (state total),2005,Jan,rain_flowering,-0.05913,-3.37305,,14,25
+São Paulo (state total),2006,Jan,rain_flowering,0.22752,15.17024,,16,25
+São Paulo (state total),2007,Jan,rain_flowering,0.71775,46.88241,,22,25
+São Paulo (state total),2008,Jan,rain_flowering,-1.19916,-77.11989,,2,25
+São Paulo (state total),2009,Jan,rain_flowering,-1.13946,-73.25792,,3,25
+São Paulo (state total),2010,Jan,rain_flowering,2.34773,152.32338,,25,25
+São Paulo (state total),2011,Jan,rain_flowering,-0.46248,-29.46485,,6,25
+São Paulo (state total),2012,Jan,rain_flowering,-0.15721,-9.71792,,10,25
+São Paulo (state total),2013,Jan,rain_flowering,-0.39461,-25.07484,,8,25
+São Paulo (state total),2014,Jan,rain_flowering,-0.45450,-28.94867,,7,25
+São Paulo (state total),2015,Jan,rain_flowering,-0.15917,-9.84418,,9,25
+São Paulo (state total),2016,Jan,rain_flowering,2.21491,143.73186,,24,25
+São Paulo (state total),2017,Jan,rain_flowering,-0.12783,-7.81733,,12,25
+São Paulo (state total),2018,Jan,rain_flowering,-0.13219,-8.09887,,11,25
+São Paulo (state total),2019,Jan,rain_flowering,0.58763,38.46477,,19,25
+São Paulo (state total),2020,Jan,rain_flowering,-0.53524,-34.17220,,5,25
+São Paulo (state total),2021,Jan,rain_flowering,-2.40039,-154.82596,,1,25
+São Paulo (state total),2022,Jan,rain_flowering,1.00503,65.46606,,23,25
+São Paulo (state total),2023,Jan,rain_flowering,0.05758,4.17664,,15,25
+São Paulo (state total),2024,Jan,rain_flowering,0.64575,42.22449,,20,25
+São Paulo (state total),2025,Jan,rain_flowering,0.23003,15.33230,,17,25
+São Paulo (state total),2001,Nov,rain_flowering,0.05929,3.29195,,14,25
+São Paulo (state total),2002,Nov,rain_flowering,1.02665,46.24524,,22,25
+São Paulo (state total),2003,Nov,rain_flowering,-0.85276,-37.20523,,3,25
+São Paulo (state total),2004,Nov,rain_flowering,-2.05848,-90.74192,,2,25
+São Paulo (state total),2005,Nov,rain_flowering,-0.32620,-13.82452,,9,25
+São Paulo (state total),2006,Nov,rain_flowering,-0.32146,-13.61403,,10,25
+São Paulo (state total),2007,Nov,rain_flowering,0.39171,18.05212,,16,25
+São Paulo (state total),2008,Nov,rain_flowering,-0.43276,-18.55614,,7,25
+São Paulo (state total),2009,Nov,rain_flowering,-0.18745,-7.66389,,11,25
+São Paulo (state total),2010,Nov,rain_flowering,2.42966,108.54234,,25,25
+São Paulo (state total),2011,Nov,rain_flowering,-0.85124,-37.13754,,4,25
+São Paulo (state total),2012,Nov,rain_flowering,0.52945,24.16836,,19,25
+São Paulo (state total),2013,Nov,rain_flowering,0.33886,15.70551,,15,25
+São Paulo (state total),2014,Nov,rain_flowering,-0.65434,-28.39493,,5,25
+São Paulo (state total),2015,Nov,rain_flowering,-0.39371,-16.82206,,8,25
+São Paulo (state total),2016,Nov,rain_flowering,1.47658,66.22300,,24,25
+São Paulo (state total),2017,Nov,rain_flowering,0.51177,23.38330,,18,25
+São Paulo (state total),2018,Nov,rain_flowering,-0.12038,-4.68556,,12,25
+São Paulo (state total),2019,Nov,rain_flowering,1.03276,46.51671,,23,25
+São Paulo (state total),2020,Nov,rain_flowering,-0.60324,-26.12596,,6,25
+São Paulo (state total),2021,Nov,rain_flowering,-2.20346,-97.17950,,1,25
+São Paulo (state total),2022,Nov,rain_flowering,0.81019,36.63405,,21,25
+São Paulo (state total),2023,Nov,rain_flowering,-0.00997,0.21694,,13,25
+São Paulo (state total),2024,Nov,rain_flowering,0.77835,35.22002,,20,25
+São Paulo (state total),2025,Nov,rain_flowering,0.41218,18.96107,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Dec,rain_flowering,0.09661,8.50751,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Dec,rain_flowering,0.51255,46.66305,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Dec,rain_flowering,-0.88526,-81.56195,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Dec,rain_flowering,-0.88652,-81.67789,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Dec,rain_flowering,-1.22042,-112.30679,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Dec,rain_flowering,0.09966,8.78774,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Dec,rain_flowering,1.10402,100.92034,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Dec,rain_flowering,-1.04758,-96.45166,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,rain_flowering,-0.95362,-87.83310,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,rain_flowering,0.74239,67.74714,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,rain_flowering,1.55081,141.90580,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,rain_flowering,-0.65618,-60.54737,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,rain_flowering,0.07597,6.61411,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,rain_flowering,0.08465,7.41089,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,rain_flowering,-0.76095,-70.15858,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,rain_flowering,-0.20852,-19.48266,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,rain_flowering,0.12121,10.76394,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,rain_flowering,0.29689,26.88035,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,rain_flowering,3.03557,278.10660,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,rain_flowering,-0.40902,-37.87507,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,rain_flowering,-0.86000,-79.24450,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,rain_flowering,1.00742,92.05891,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,rain_flowering,-0.13522,-12.75857,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,rain_flowering,-0.83056,-76.54385,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,rain_flowering,1.17114,107.07757,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,rain_flowering,0.08219,7.72358,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,rain_flowering,0.47603,45.87378,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,rain_flowering,-1.20722,-117.17988,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,rain_flowering,-0.78789,-76.55950,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,rain_flowering,-1.29698,-125.87434,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,rain_flowering,0.95843,92.60262,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,rain_flowering,1.44825,140.05081,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,rain_flowering,-1.22628,-119.02618,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,rain_flowering,-1.00459,-97.55068,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,rain_flowering,0.57695,55.65003,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,rain_flowering,1.29557,125.26119,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,rain_flowering,-0.46144,-44.93751,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,rain_flowering,0.07240,6.77528,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,rain_flowering,0.16171,15.42607,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,rain_flowering,0.41868,40.31894,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,rain_flowering,-0.49227,-47.92324,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,rain_flowering,0.08496,7.99172,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,rain_flowering,0.48609,46.84863,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,rain_flowering,2.54385,246.18006,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,rain_flowering,-0.09070,-9.02382,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,rain_flowering,-1.25478,-121.78638,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,rain_flowering,1.01560,98.14095,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,rain_flowering,-0.38303,-37.34181,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,rain_flowering,-0.91883,-89.24384,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,rain_flowering,0.83813,80.94968,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Nov,rain_flowering,0.03935,2.75809,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Nov,rain_flowering,0.50886,37.90557,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Nov,rain_flowering,-0.83857,-62.96242,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Nov,rain_flowering,-1.03295,-77.51383,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Nov,rain_flowering,-1.21585,-91.20581,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Nov,rain_flowering,-0.28853,-21.78654,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Nov,rain_flowering,1.83773,137.38460,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Nov,rain_flowering,-0.80530,-60.47232,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,rain_flowering,-0.63624,-47.81661,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,rain_flowering,1.49909,112.03365,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,rain_flowering,1.29742,96.93681,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,rain_flowering,-0.32075,-24.19885,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,rain_flowering,0.08148,5.91178,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,rain_flowering,-0.12106,-9.25014,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,rain_flowering,-0.72401,-54.38671,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,rain_flowering,-0.77556,-58.24536,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,rain_flowering,0.49954,37.20766,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,rain_flowering,-0.38098,-28.70777,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,rain_flowering,2.38497,178.35104,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,rain_flowering,-0.69792,-52.43354,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,rain_flowering,-0.99484,-74.66132,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,rain_flowering,1.29367,96.65634,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,rain_flowering,-0.13212,-10.07816,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,rain_flowering,-0.80622,-60.54065,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,rain_flowering,1.12413,83.96467,,20,25
+"Zona da Mata, Rio Doce e Central",2001,Dec,rain_flowering,-0.05535,-5.03035,,13,25
+"Zona da Mata, Rio Doce e Central",2002,Dec,rain_flowering,1.67559,122.62100,,24,25
+"Zona da Mata, Rio Doce e Central",2003,Dec,rain_flowering,1.21629,88.74870,,22,25
+"Zona da Mata, Rio Doce e Central",2004,Dec,rain_flowering,-1.07129,-79.95279,,4,25
+"Zona da Mata, Rio Doce e Central",2005,Dec,rain_flowering,-1.68968,-125.55755,,1,25
+"Zona da Mata, Rio Doce e Central",2006,Dec,rain_flowering,0.14526,9.76365,,15,25
+"Zona da Mata, Rio Doce e Central",2007,Dec,rain_flowering,1.03113,75.09431,,20,25
+"Zona da Mata, Rio Doce e Central",2008,Dec,rain_flowering,-1.03250,-77.09231,,5,25
+"Zona da Mata, Rio Doce e Central",2009,Dec,rain_flowering,0.62355,45.03648,,18,25
+"Zona da Mata, Rio Doce e Central",2010,Dec,rain_flowering,1.05140,76.58867,,21,25
+"Zona da Mata, Rio Doce e Central",2011,Dec,rain_flowering,1.43308,104.73698,,23,25
+"Zona da Mata, Rio Doce e Central",2012,Dec,rain_flowering,-0.15952,-12.71247,,12,25
+"Zona da Mata, Rio Doce e Central",2013,Dec,rain_flowering,0.03255,1.45164,,14,25
+"Zona da Mata, Rio Doce e Central",2014,Dec,rain_flowering,0.20200,13.94854,,16,25
+"Zona da Mata, Rio Doce e Central",2015,Dec,rain_flowering,-1.10731,-82.60904,,3,25
+"Zona da Mata, Rio Doce e Central",2016,Dec,rain_flowering,-0.30772,-23.64217,,11,25
+"Zona da Mata, Rio Doce e Central",2017,Dec,rain_flowering,-0.62502,-47.04149,,8,25
+"Zona da Mata, Rio Doce e Central",2018,Dec,rain_flowering,-0.68272,-51.29669,,7,25
+"Zona da Mata, Rio Doce e Central",2019,Dec,rain_flowering,-0.36816,-28.09915,,10,25
+"Zona da Mata, Rio Doce e Central",2020,Dec,rain_flowering,-0.50127,-37.91544,,9,25
+"Zona da Mata, Rio Doce e Central",2021,Dec,rain_flowering,0.43809,31.35942,,17,25
+"Zona da Mata, Rio Doce e Central",2022,Dec,rain_flowering,2.06874,151.61429,,25,25
+"Zona da Mata, Rio Doce e Central",2023,Dec,rain_flowering,0.76143,55.20486,,19,25
+"Zona da Mata, Rio Doce e Central",2024,Dec,rain_flowering,-1.17304,-87.45648,,2,25
+"Zona da Mata, Rio Doce e Central",2025,Dec,rain_flowering,-0.69367,-52.10429,,6,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,rain_flowering,0.24196,18.37664,,14,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,rain_flowering,1.30272,102.30752,,23,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,rain_flowering,0.68481,53.41648,,18,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,rain_flowering,-1.29586,-103.30102,,2,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,rain_flowering,-1.23304,-98.33099,,3,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,rain_flowering,0.48881,37.90793,,15,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,rain_flowering,1.12266,88.06038,,22,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,rain_flowering,-1.22407,-97.62082,,4,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,rain_flowering,0.74820,58.43152,,19,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,rain_flowering,0.80544,62.96050,,20,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,rain_flowering,1.40626,110.49958,,24,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,rain_flowering,0.57809,44.97235,,17,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,rain_flowering,0.16316,12.14138,,13,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,rain_flowering,0.55394,43.06162,,16,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,rain_flowering,-0.60698,-48.79496,,8,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,rain_flowering,-0.49506,-39.93937,,9,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,rain_flowering,-0.17196,-14.37421,,11,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,rain_flowering,-0.88651,-70.91183,,6,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,rain_flowering,-0.81214,-65.02793,,7,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,rain_flowering,-0.40249,-32.61508,,10,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,rain_flowering,-0.08118,-7.19171,,12,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,rain_flowering,2.12634,167.47507,,25,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,rain_flowering,0.86656,67.79710,,21,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,rain_flowering,-1.41390,-112.64117,,1,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,rain_flowering,-0.95373,-76.23104,,5,25
+"Zona da Mata, Rio Doce e Central",2001,Nov,rain_flowering,0.00519,0.09121,,14,25
+"Zona da Mata, Rio Doce e Central",2002,Nov,rain_flowering,1.20294,80.74731,,23,25
+"Zona da Mata, Rio Doce e Central",2003,Nov,rain_flowering,0.71623,47.97275,,19,25
+"Zona da Mata, Rio Doce e Central",2004,Nov,rain_flowering,-0.83147,-56.24991,,5,25
+"Zona da Mata, Rio Doce e Central",2005,Nov,rain_flowering,-1.82408,-123.09167,,1,25
+"Zona da Mata, Rio Doce e Central",2006,Nov,rain_flowering,-0.10431,-7.28279,,13,25
+"Zona da Mata, Rio Doce e Central",2007,Nov,rain_flowering,0.85668,57.43058,,22,25
+"Zona da Mata, Rio Doce e Central",2008,Nov,rain_flowering,-0.42984,-29.20354,,10,25
+"Zona da Mata, Rio Doce e Central",2009,Nov,rain_flowering,0.81384,54.54584,,21,25
+"Zona da Mata, Rio Doce e Central",2010,Nov,rain_flowering,1.53792,103.30516,,24,25
+"Zona da Mata, Rio Doce e Central",2011,Nov,rain_flowering,0.73421,49.18326,,20,25
+"Zona da Mata, Rio Doce e Central",2012,Nov,rain_flowering,-0.48368,-32.82936,,9,25
+"Zona da Mata, Rio Doce e Central",2013,Nov,rain_flowering,0.35413,23.58866,,16,25
+"Zona da Mata, Rio Doce e Central",2014,Nov,rain_flowering,0.28652,19.03596,,15,25
+"Zona da Mata, Rio Doce e Central",2015,Nov,rain_flowering,-0.58940,-39.94862,,8,25
+"Zona da Mata, Rio Doce e Central",2016,Nov,rain_flowering,-0.80902,-54.73796,,6,25
+"Zona da Mata, Rio Doce e Central",2017,Nov,rain_flowering,-0.87337,-59.07120,,4,25
+"Zona da Mata, Rio Doce e Central",2018,Nov,rain_flowering,-1.11443,-75.30430,,3,25
+"Zona da Mata, Rio Doce e Central",2019,Nov,rain_flowering,-0.22904,-15.68202,,12,25
+"Zona da Mata, Rio Doce e Central",2020,Nov,rain_flowering,-1.16181,-78.49474,,2,25
+"Zona da Mata, Rio Doce e Central",2021,Nov,rain_flowering,0.49023,32.75344,,18,25
+"Zona da Mata, Rio Doce e Central",2022,Nov,rain_flowering,2.82079,189.69348,,25,25
+"Zona da Mata, Rio Doce e Central",2023,Nov,rain_flowering,0.44782,29.89769,,17,25
+"Zona da Mata, Rio Doce e Central",2024,Nov,rain_flowering,-0.80446,-54.43094,,7,25
+"Zona da Mata, Rio Doce e Central",2025,Nov,rain_flowering,-0.26263,-17.94380,,11,25
+Four-region total,2001,Dec,soil_moisture,-0.76445,-0.01460,,7,25
+Four-region total,2002,Dec,soil_moisture,-0.19590,-0.00359,,12,25
+Four-region total,2003,Dec,soil_moisture,-1.12325,-0.02154,,4,25
+Four-region total,2004,Dec,soil_moisture,-0.70445,-0.01343,,8,25
+Four-region total,2005,Dec,soil_moisture,2.20637,0.04289,,25,25
+Four-region total,2006,Dec,soil_moisture,0.22023,0.00446,,17,25
+Four-region total,2007,Dec,soil_moisture,0.08917,0.00192,,14,25
+Four-region total,2008,Dec,soil_moisture,-0.83007,-0.01587,,5,25
+Four-region total,2009,Dec,soil_moisture,0.67420,0.01324,,20,25
+Four-region total,2010,Dec,soil_moisture,0.70648,0.01387,,21,25
+Four-region total,2011,Dec,soil_moisture,0.08957,0.00193,,15,25
+Four-region total,2012,Dec,soil_moisture,0.17737,0.00363,,16,25
+Four-region total,2013,Dec,soil_moisture,1.56549,0.03049,,22,25
+Four-region total,2014,Dec,soil_moisture,1.63688,0.03187,,23,25
+Four-region total,2015,Dec,soil_moisture,-0.49414,-0.00937,,9,25
+Four-region total,2016,Dec,soil_moisture,1.75119,0.03408,,24,25
+Four-region total,2017,Dec,soil_moisture,0.33014,0.00658,,18,25
+Four-region total,2018,Dec,soil_moisture,0.07514,0.00165,,13,25
+Four-region total,2019,Dec,soil_moisture,-0.26211,-0.00488,,11,25
+Four-region total,2020,Dec,soil_moisture,0.60116,0.01183,,19,25
+Four-region total,2021,Dec,soil_moisture,-0.77129,-0.01473,,6,25
+Four-region total,2022,Dec,soil_moisture,-1.42416,-0.02736,,2,25
+Four-region total,2023,Dec,soil_moisture,-1.57944,-0.03036,,1,25
+Four-region total,2024,Dec,soil_moisture,-0.45389,-0.00859,,10,25
+Four-region total,2025,Dec,soil_moisture,-1.28338,-0.02464,,3,25
+Four-region total,2001,Jan,soil_moisture,-0.76445,-0.01460,,7,25
+Four-region total,2002,Jan,soil_moisture,-0.19590,-0.00359,,12,25
+Four-region total,2003,Jan,soil_moisture,-1.12325,-0.02154,,4,25
+Four-region total,2004,Jan,soil_moisture,-0.70445,-0.01343,,8,25
+Four-region total,2005,Jan,soil_moisture,2.20637,0.04289,,25,25
+Four-region total,2006,Jan,soil_moisture,0.22023,0.00446,,17,25
+Four-region total,2007,Jan,soil_moisture,0.08917,0.00192,,14,25
+Four-region total,2008,Jan,soil_moisture,-0.83007,-0.01587,,5,25
+Four-region total,2009,Jan,soil_moisture,0.67420,0.01324,,20,25
+Four-region total,2010,Jan,soil_moisture,0.70648,0.01387,,21,25
+Four-region total,2011,Jan,soil_moisture,0.08957,0.00193,,15,25
+Four-region total,2012,Jan,soil_moisture,0.17737,0.00363,,16,25
+Four-region total,2013,Jan,soil_moisture,1.56549,0.03049,,22,25
+Four-region total,2014,Jan,soil_moisture,1.63688,0.03187,,23,25
+Four-region total,2015,Jan,soil_moisture,-0.49414,-0.00937,,9,25
+Four-region total,2016,Jan,soil_moisture,1.75119,0.03408,,24,25
+Four-region total,2017,Jan,soil_moisture,0.33014,0.00658,,18,25
+Four-region total,2018,Jan,soil_moisture,0.07514,0.00165,,13,25
+Four-region total,2019,Jan,soil_moisture,-0.26211,-0.00488,,11,25
+Four-region total,2020,Jan,soil_moisture,0.60116,0.01183,,19,25
+Four-region total,2021,Jan,soil_moisture,-0.77129,-0.01473,,6,25
+Four-region total,2022,Jan,soil_moisture,-1.42416,-0.02736,,2,25
+Four-region total,2023,Jan,soil_moisture,-1.57944,-0.03036,,1,25
+Four-region total,2024,Jan,soil_moisture,-0.45389,-0.00859,,10,25
+Four-region total,2025,Jan,soil_moisture,-1.28338,-0.02464,,3,25
+Four-region total,2001,Nov,soil_moisture,-0.76445,-0.01460,,7,25
+Four-region total,2002,Nov,soil_moisture,-0.19590,-0.00359,,12,25
+Four-region total,2003,Nov,soil_moisture,-1.12325,-0.02154,,4,25
+Four-region total,2004,Nov,soil_moisture,-0.70445,-0.01343,,8,25
+Four-region total,2005,Nov,soil_moisture,2.20637,0.04289,,25,25
+Four-region total,2006,Nov,soil_moisture,0.22023,0.00446,,17,25
+Four-region total,2007,Nov,soil_moisture,0.08917,0.00192,,14,25
+Four-region total,2008,Nov,soil_moisture,-0.83007,-0.01587,,5,25
+Four-region total,2009,Nov,soil_moisture,0.67420,0.01324,,20,25
+Four-region total,2010,Nov,soil_moisture,0.70648,0.01387,,21,25
+Four-region total,2011,Nov,soil_moisture,0.08957,0.00193,,15,25
+Four-region total,2012,Nov,soil_moisture,0.17737,0.00363,,16,25
+Four-region total,2013,Nov,soil_moisture,1.56549,0.03049,,22,25
+Four-region total,2014,Nov,soil_moisture,1.63688,0.03187,,23,25
+Four-region total,2015,Nov,soil_moisture,-0.49414,-0.00937,,9,25
+Four-region total,2016,Nov,soil_moisture,1.75119,0.03408,,24,25
+Four-region total,2017,Nov,soil_moisture,0.33014,0.00658,,18,25
+Four-region total,2018,Nov,soil_moisture,0.07514,0.00165,,13,25
+Four-region total,2019,Nov,soil_moisture,-0.26211,-0.00488,,11,25
+Four-region total,2020,Nov,soil_moisture,0.60116,0.01183,,19,25
+Four-region total,2021,Nov,soil_moisture,-0.77129,-0.01473,,6,25
+Four-region total,2022,Nov,soil_moisture,-1.42416,-0.02736,,2,25
+Four-region total,2023,Nov,soil_moisture,-1.57944,-0.03036,,1,25
+Four-region total,2024,Nov,soil_moisture,-0.45389,-0.00859,,10,25
+Four-region total,2025,Nov,soil_moisture,-1.28338,-0.02464,,3,25
+Sul e Centro-Oeste,2001,Dec,soil_moisture,-0.90271,-0.02006,,6,25
+Sul e Centro-Oeste,2002,Dec,soil_moisture,0.21722,0.00481,,16,25
+Sul e Centro-Oeste,2003,Dec,soil_moisture,-0.99761,-0.02216,,5,25
+Sul e Centro-Oeste,2004,Dec,soil_moisture,-0.52979,-0.01178,,10,25
+Sul e Centro-Oeste,2005,Dec,soil_moisture,2.23655,0.04965,,25,25
+Sul e Centro-Oeste,2006,Dec,soil_moisture,0.55044,0.01221,,19,25
+Sul e Centro-Oeste,2007,Dec,soil_moisture,-0.15971,-0.00356,,12,25
+Sul e Centro-Oeste,2008,Dec,soil_moisture,-0.66207,-0.01471,,8,25
+Sul e Centro-Oeste,2009,Dec,soil_moisture,0.38988,0.00864,,18,25
+Sul e Centro-Oeste,2010,Dec,soil_moisture,0.30768,0.00682,,17,25
+Sul e Centro-Oeste,2011,Dec,soil_moisture,-0.13234,-0.00295,,13,25
+Sul e Centro-Oeste,2012,Dec,soil_moisture,0.19996,0.00443,,15,25
+Sul e Centro-Oeste,2013,Dec,soil_moisture,1.85308,0.04113,,24,25
+Sul e Centro-Oeste,2014,Dec,soil_moisture,1.52088,0.03376,,23,25
+Sul e Centro-Oeste,2015,Dec,soil_moisture,-0.77718,-0.01727,,7,25
+Sul e Centro-Oeste,2016,Dec,soil_moisture,1.50049,0.03330,,22,25
+Sul e Centro-Oeste,2017,Dec,soil_moisture,0.84375,0.01872,,21,25
+Sul e Centro-Oeste,2018,Dec,soil_moisture,0.11775,0.00260,,14,25
+Sul e Centro-Oeste,2019,Dec,soil_moisture,-0.63306,-0.01407,,9,25
+Sul e Centro-Oeste,2020,Dec,soil_moisture,0.77838,0.01727,,20,25
+Sul e Centro-Oeste,2021,Dec,soil_moisture,-1.15060,-0.02556,,4,25
+Sul e Centro-Oeste,2022,Dec,soil_moisture,-1.35241,-0.03004,,1,25
+Sul e Centro-Oeste,2023,Dec,soil_moisture,-1.28255,-0.02849,,2,25
+Sul e Centro-Oeste,2024,Dec,soil_moisture,-0.49695,-0.01105,,11,25
+Sul e Centro-Oeste,2025,Dec,soil_moisture,-1.15183,-0.02559,,3,25
+Sul e Centro-Oeste,2001,Jan,soil_moisture,-0.90271,-0.02006,,6,25
+Sul e Centro-Oeste,2002,Jan,soil_moisture,0.21722,0.00481,,16,25
+Sul e Centro-Oeste,2003,Jan,soil_moisture,-0.99761,-0.02216,,5,25
+Sul e Centro-Oeste,2004,Jan,soil_moisture,-0.52979,-0.01178,,10,25
+Sul e Centro-Oeste,2005,Jan,soil_moisture,2.23655,0.04965,,25,25
+Sul e Centro-Oeste,2006,Jan,soil_moisture,0.55044,0.01221,,19,25
+Sul e Centro-Oeste,2007,Jan,soil_moisture,-0.15971,-0.00356,,12,25
+Sul e Centro-Oeste,2008,Jan,soil_moisture,-0.66207,-0.01471,,8,25
+Sul e Centro-Oeste,2009,Jan,soil_moisture,0.38988,0.00864,,18,25
+Sul e Centro-Oeste,2010,Jan,soil_moisture,0.30768,0.00682,,17,25
+Sul e Centro-Oeste,2011,Jan,soil_moisture,-0.13234,-0.00295,,13,25
+Sul e Centro-Oeste,2012,Jan,soil_moisture,0.19996,0.00443,,15,25
+Sul e Centro-Oeste,2013,Jan,soil_moisture,1.85308,0.04113,,24,25
+Sul e Centro-Oeste,2014,Jan,soil_moisture,1.52088,0.03376,,23,25
+Sul e Centro-Oeste,2015,Jan,soil_moisture,-0.77718,-0.01727,,7,25
+Sul e Centro-Oeste,2016,Jan,soil_moisture,1.50049,0.03330,,22,25
+Sul e Centro-Oeste,2017,Jan,soil_moisture,0.84375,0.01872,,21,25
+Sul e Centro-Oeste,2018,Jan,soil_moisture,0.11775,0.00260,,14,25
+Sul e Centro-Oeste,2019,Jan,soil_moisture,-0.63306,-0.01407,,9,25
+Sul e Centro-Oeste,2020,Jan,soil_moisture,0.77838,0.01727,,20,25
+Sul e Centro-Oeste,2021,Jan,soil_moisture,-1.15060,-0.02556,,4,25
+Sul e Centro-Oeste,2022,Jan,soil_moisture,-1.35241,-0.03004,,1,25
+Sul e Centro-Oeste,2023,Jan,soil_moisture,-1.28255,-0.02849,,2,25
+Sul e Centro-Oeste,2024,Jan,soil_moisture,-0.49695,-0.01105,,11,25
+Sul e Centro-Oeste,2025,Jan,soil_moisture,-1.15183,-0.02559,,3,25
+Sul e Centro-Oeste,2001,Nov,soil_moisture,-0.90271,-0.02006,,6,25
+Sul e Centro-Oeste,2002,Nov,soil_moisture,0.21722,0.00481,,16,25
+Sul e Centro-Oeste,2003,Nov,soil_moisture,-0.99761,-0.02216,,5,25
+Sul e Centro-Oeste,2004,Nov,soil_moisture,-0.52979,-0.01178,,10,25
+Sul e Centro-Oeste,2005,Nov,soil_moisture,2.23655,0.04965,,25,25
+Sul e Centro-Oeste,2006,Nov,soil_moisture,0.55044,0.01221,,19,25
+Sul e Centro-Oeste,2007,Nov,soil_moisture,-0.15971,-0.00356,,12,25
+Sul e Centro-Oeste,2008,Nov,soil_moisture,-0.66207,-0.01471,,8,25
+Sul e Centro-Oeste,2009,Nov,soil_moisture,0.38988,0.00864,,18,25
+Sul e Centro-Oeste,2010,Nov,soil_moisture,0.30768,0.00682,,17,25
+Sul e Centro-Oeste,2011,Nov,soil_moisture,-0.13234,-0.00295,,13,25
+Sul e Centro-Oeste,2012,Nov,soil_moisture,0.19996,0.00443,,15,25
+Sul e Centro-Oeste,2013,Nov,soil_moisture,1.85308,0.04113,,24,25
+Sul e Centro-Oeste,2014,Nov,soil_moisture,1.52088,0.03376,,23,25
+Sul e Centro-Oeste,2015,Nov,soil_moisture,-0.77718,-0.01727,,7,25
+Sul e Centro-Oeste,2016,Nov,soil_moisture,1.50049,0.03330,,22,25
+Sul e Centro-Oeste,2017,Nov,soil_moisture,0.84375,0.01872,,21,25
+Sul e Centro-Oeste,2018,Nov,soil_moisture,0.11775,0.00260,,14,25
+Sul e Centro-Oeste,2019,Nov,soil_moisture,-0.63306,-0.01407,,9,25
+Sul e Centro-Oeste,2020,Nov,soil_moisture,0.77838,0.01727,,20,25
+Sul e Centro-Oeste,2021,Nov,soil_moisture,-1.15060,-0.02556,,4,25
+Sul e Centro-Oeste,2022,Nov,soil_moisture,-1.35241,-0.03004,,1,25
+Sul e Centro-Oeste,2023,Nov,soil_moisture,-1.28255,-0.02849,,2,25
+Sul e Centro-Oeste,2024,Nov,soil_moisture,-0.49695,-0.01105,,11,25
+Sul e Centro-Oeste,2025,Nov,soil_moisture,-1.15183,-0.02559,,3,25
+São Paulo (state total),2001,Dec,soil_moisture,-0.67950,-0.01827,,8,25
+São Paulo (state total),2002,Dec,soil_moisture,0.39519,0.01111,,17,25
+São Paulo (state total),2003,Dec,soil_moisture,-1.06217,-0.02873,,4,25
+São Paulo (state total),2004,Dec,soil_moisture,-0.32334,-0.00853,,11,25
+São Paulo (state total),2005,Dec,soil_moisture,2.08872,0.05740,,25,25
+São Paulo (state total),2006,Dec,soil_moisture,-0.05220,-0.00112,,13,25
+São Paulo (state total),2007,Dec,soil_moisture,-0.56937,-0.01526,,9,25
+São Paulo (state total),2008,Dec,soil_moisture,-0.26833,-0.00703,,12,25
+São Paulo (state total),2009,Dec,soil_moisture,0.62980,0.01752,,19,25
+São Paulo (state total),2010,Dec,soil_moisture,0.69874,0.01940,,20,25
+São Paulo (state total),2011,Dec,soil_moisture,-0.42302,-0.01126,,10,25
+São Paulo (state total),2012,Dec,soil_moisture,-0.03069,-0.00053,,14,25
+São Paulo (state total),2013,Dec,soil_moisture,1.78980,0.04923,,24,25
+São Paulo (state total),2014,Dec,soil_moisture,1.41192,0.03890,,22,25
+São Paulo (state total),2015,Dec,soil_moisture,-0.76158,-0.02051,,7,25
+São Paulo (state total),2016,Dec,soil_moisture,1.57758,0.04343,,23,25
+São Paulo (state total),2017,Dec,soil_moisture,0.91065,0.02520,,21,25
+São Paulo (state total),2018,Dec,soil_moisture,0.55311,0.01542,,18,25
+São Paulo (state total),2019,Dec,soil_moisture,-0.91732,-0.02477,,5,25
+São Paulo (state total),2020,Dec,soil_moisture,0.20578,0.00593,,15,25
+São Paulo (state total),2021,Dec,soil_moisture,-1.28348,-0.03478,,3,25
+São Paulo (state total),2022,Dec,soil_moisture,-1.56958,-0.04260,,1,25
+São Paulo (state total),2023,Dec,soil_moisture,-0.87908,-0.02373,,6,25
+São Paulo (state total),2024,Dec,soil_moisture,0.29703,0.00842,,16,25
+São Paulo (state total),2025,Dec,soil_moisture,-1.39605,-0.03786,,2,25
+São Paulo (state total),2001,Jan,soil_moisture,-0.67950,-0.01827,,8,25
+São Paulo (state total),2002,Jan,soil_moisture,0.39519,0.01111,,17,25
+São Paulo (state total),2003,Jan,soil_moisture,-1.06217,-0.02873,,4,25
+São Paulo (state total),2004,Jan,soil_moisture,-0.32334,-0.00853,,11,25
+São Paulo (state total),2005,Jan,soil_moisture,2.08872,0.05740,,25,25
+São Paulo (state total),2006,Jan,soil_moisture,-0.05220,-0.00112,,13,25
+São Paulo (state total),2007,Jan,soil_moisture,-0.56937,-0.01526,,9,25
+São Paulo (state total),2008,Jan,soil_moisture,-0.26833,-0.00703,,12,25
+São Paulo (state total),2009,Jan,soil_moisture,0.62980,0.01752,,19,25
+São Paulo (state total),2010,Jan,soil_moisture,0.69874,0.01940,,20,25
+São Paulo (state total),2011,Jan,soil_moisture,-0.42302,-0.01126,,10,25
+São Paulo (state total),2012,Jan,soil_moisture,-0.03069,-0.00053,,14,25
+São Paulo (state total),2013,Jan,soil_moisture,1.78980,0.04923,,24,25
+São Paulo (state total),2014,Jan,soil_moisture,1.41192,0.03890,,22,25
+São Paulo (state total),2015,Jan,soil_moisture,-0.76158,-0.02051,,7,25
+São Paulo (state total),2016,Jan,soil_moisture,1.57758,0.04343,,23,25
+São Paulo (state total),2017,Jan,soil_moisture,0.91065,0.02520,,21,25
+São Paulo (state total),2018,Jan,soil_moisture,0.55311,0.01542,,18,25
+São Paulo (state total),2019,Jan,soil_moisture,-0.91732,-0.02477,,5,25
+São Paulo (state total),2020,Jan,soil_moisture,0.20578,0.00593,,15,25
+São Paulo (state total),2021,Jan,soil_moisture,-1.28348,-0.03478,,3,25
+São Paulo (state total),2022,Jan,soil_moisture,-1.56958,-0.04260,,1,25
+São Paulo (state total),2023,Jan,soil_moisture,-0.87908,-0.02373,,6,25
+São Paulo (state total),2024,Jan,soil_moisture,0.29703,0.00842,,16,25
+São Paulo (state total),2025,Jan,soil_moisture,-1.39605,-0.03786,,2,25
+São Paulo (state total),2001,Nov,soil_moisture,-0.67950,-0.01827,,8,25
+São Paulo (state total),2002,Nov,soil_moisture,0.39519,0.01111,,17,25
+São Paulo (state total),2003,Nov,soil_moisture,-1.06217,-0.02873,,4,25
+São Paulo (state total),2004,Nov,soil_moisture,-0.32334,-0.00853,,11,25
+São Paulo (state total),2005,Nov,soil_moisture,2.08872,0.05740,,25,25
+São Paulo (state total),2006,Nov,soil_moisture,-0.05220,-0.00112,,13,25
+São Paulo (state total),2007,Nov,soil_moisture,-0.56937,-0.01526,,9,25
+São Paulo (state total),2008,Nov,soil_moisture,-0.26833,-0.00703,,12,25
+São Paulo (state total),2009,Nov,soil_moisture,0.62980,0.01752,,19,25
+São Paulo (state total),2010,Nov,soil_moisture,0.69874,0.01940,,20,25
+São Paulo (state total),2011,Nov,soil_moisture,-0.42302,-0.01126,,10,25
+São Paulo (state total),2012,Nov,soil_moisture,-0.03069,-0.00053,,14,25
+São Paulo (state total),2013,Nov,soil_moisture,1.78980,0.04923,,24,25
+São Paulo (state total),2014,Nov,soil_moisture,1.41192,0.03890,,22,25
+São Paulo (state total),2015,Nov,soil_moisture,-0.76158,-0.02051,,7,25
+São Paulo (state total),2016,Nov,soil_moisture,1.57758,0.04343,,23,25
+São Paulo (state total),2017,Nov,soil_moisture,0.91065,0.02520,,21,25
+São Paulo (state total),2018,Nov,soil_moisture,0.55311,0.01542,,18,25
+São Paulo (state total),2019,Nov,soil_moisture,-0.91732,-0.02477,,5,25
+São Paulo (state total),2020,Nov,soil_moisture,0.20578,0.00593,,15,25
+São Paulo (state total),2021,Nov,soil_moisture,-1.28348,-0.03478,,3,25
+São Paulo (state total),2022,Nov,soil_moisture,-1.56958,-0.04260,,1,25
+São Paulo (state total),2023,Nov,soil_moisture,-0.87908,-0.02373,,6,25
+São Paulo (state total),2024,Nov,soil_moisture,0.29703,0.00842,,16,25
+São Paulo (state total),2025,Nov,soil_moisture,-1.39605,-0.03786,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Dec,soil_moisture,-0.83090,-0.01367,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Dec,soil_moisture,-0.06744,-0.00104,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Dec,soil_moisture,-0.95171,-0.01567,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Dec,soil_moisture,0.27778,0.00466,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Dec,soil_moisture,1.27555,0.02116,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Dec,soil_moisture,-0.42119,-0.00689,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Dec,soil_moisture,0.23374,0.00394,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Dec,soil_moisture,-1.35238,-0.02229,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Dec,soil_moisture,0.50282,0.00839,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Dec,soil_moisture,1.01310,0.01682,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Dec,soil_moisture,0.20148,0.00340,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Dec,soil_moisture,-0.64586,-0.01061,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Dec,soil_moisture,0.96204,0.01598,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Dec,soil_moisture,0.84420,0.01403,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Dec,soil_moisture,0.66521,0.01107,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Dec,soil_moisture,2.53175,0.04193,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Dec,soil_moisture,-0.72130,-0.01186,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Dec,soil_moisture,0.06437,0.00114,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Dec,soil_moisture,0.06918,0.00121,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Dec,soil_moisture,1.43646,0.02382,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Dec,soil_moisture,-0.68899,-0.01132,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Dec,soil_moisture,-1.54136,-0.02542,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Dec,soil_moisture,-1.83763,-0.03031,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Dec,soil_moisture,-0.16253,-0.00262,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Dec,soil_moisture,-0.73936,-0.01215,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Jan,soil_moisture,-0.83090,-0.01367,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Jan,soil_moisture,-0.06744,-0.00104,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Jan,soil_moisture,-0.95171,-0.01567,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Jan,soil_moisture,0.27778,0.00466,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Jan,soil_moisture,1.27555,0.02116,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Jan,soil_moisture,-0.42119,-0.00689,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Jan,soil_moisture,0.23374,0.00394,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Jan,soil_moisture,-1.35238,-0.02229,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Jan,soil_moisture,0.50282,0.00839,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Jan,soil_moisture,1.01310,0.01682,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Jan,soil_moisture,0.20148,0.00340,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Jan,soil_moisture,-0.64586,-0.01061,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Jan,soil_moisture,0.96204,0.01598,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Jan,soil_moisture,0.84420,0.01403,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Jan,soil_moisture,0.66521,0.01107,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Jan,soil_moisture,2.53175,0.04193,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Jan,soil_moisture,-0.72130,-0.01186,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Jan,soil_moisture,0.06437,0.00114,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Jan,soil_moisture,0.06918,0.00121,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Jan,soil_moisture,1.43646,0.02382,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Jan,soil_moisture,-0.68899,-0.01132,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Jan,soil_moisture,-1.54136,-0.02542,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Jan,soil_moisture,-1.83763,-0.03031,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Jan,soil_moisture,-0.16253,-0.00262,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Jan,soil_moisture,-0.73936,-0.01215,,6,25
+"Triângulo, Alto Paranaíba e Noroeste",2001,Nov,soil_moisture,-0.83090,-0.01367,,5,25
+"Triângulo, Alto Paranaíba e Noroeste",2002,Nov,soil_moisture,-0.06744,-0.00104,,12,25
+"Triângulo, Alto Paranaíba e Noroeste",2003,Nov,soil_moisture,-0.95171,-0.01567,,4,25
+"Triângulo, Alto Paranaíba e Noroeste",2004,Nov,soil_moisture,0.27778,0.00466,,17,25
+"Triângulo, Alto Paranaíba e Noroeste",2005,Nov,soil_moisture,1.27555,0.02116,,23,25
+"Triângulo, Alto Paranaíba e Noroeste",2006,Nov,soil_moisture,-0.42119,-0.00689,,10,25
+"Triângulo, Alto Paranaíba e Noroeste",2007,Nov,soil_moisture,0.23374,0.00394,,16,25
+"Triângulo, Alto Paranaíba e Noroeste",2008,Nov,soil_moisture,-1.35238,-0.02229,,3,25
+"Triângulo, Alto Paranaíba e Noroeste",2009,Nov,soil_moisture,0.50282,0.00839,,18,25
+"Triângulo, Alto Paranaíba e Noroeste",2010,Nov,soil_moisture,1.01310,0.01682,,22,25
+"Triângulo, Alto Paranaíba e Noroeste",2011,Nov,soil_moisture,0.20148,0.00340,,15,25
+"Triângulo, Alto Paranaíba e Noroeste",2012,Nov,soil_moisture,-0.64586,-0.01061,,9,25
+"Triângulo, Alto Paranaíba e Noroeste",2013,Nov,soil_moisture,0.96204,0.01598,,21,25
+"Triângulo, Alto Paranaíba e Noroeste",2014,Nov,soil_moisture,0.84420,0.01403,,20,25
+"Triângulo, Alto Paranaíba e Noroeste",2015,Nov,soil_moisture,0.66521,0.01107,,19,25
+"Triângulo, Alto Paranaíba e Noroeste",2016,Nov,soil_moisture,2.53175,0.04193,,25,25
+"Triângulo, Alto Paranaíba e Noroeste",2017,Nov,soil_moisture,-0.72130,-0.01186,,7,25
+"Triângulo, Alto Paranaíba e Noroeste",2018,Nov,soil_moisture,0.06437,0.00114,,13,25
+"Triângulo, Alto Paranaíba e Noroeste",2019,Nov,soil_moisture,0.06918,0.00121,,14,25
+"Triângulo, Alto Paranaíba e Noroeste",2020,Nov,soil_moisture,1.43646,0.02382,,24,25
+"Triângulo, Alto Paranaíba e Noroeste",2021,Nov,soil_moisture,-0.68899,-0.01132,,8,25
+"Triângulo, Alto Paranaíba e Noroeste",2022,Nov,soil_moisture,-1.54136,-0.02542,,2,25
+"Triângulo, Alto Paranaíba e Noroeste",2023,Nov,soil_moisture,-1.83763,-0.03031,,1,25
+"Triângulo, Alto Paranaíba e Noroeste",2024,Nov,soil_moisture,-0.16253,-0.00262,,11,25
+"Triângulo, Alto Paranaíba e Noroeste",2025,Nov,soil_moisture,-0.73936,-0.01215,,6,25
+"Zona da Mata, Rio Doce e Central",2001,Dec,soil_moisture,-0.14999,-0.00284,,11,25
+"Zona da Mata, Rio Doce e Central",2002,Dec,soil_moisture,-1.36378,-0.02792,,3,25
+"Zona da Mata, Rio Doce e Central",2003,Dec,soil_moisture,-0.98255,-0.02004,,5,25
+"Zona da Mata, Rio Doce e Central",2004,Dec,soil_moisture,-1.43706,-0.02944,,2,25
+"Zona da Mata, Rio Doce e Central",2005,Dec,soil_moisture,1.62298,0.03380,,24,25
+"Zona da Mata, Rio Doce e Central",2006,Dec,soil_moisture,-0.04584,-0.00069,,14,25
+"Zona da Mata, Rio Doce e Central",2007,Dec,soil_moisture,0.94324,0.01975,,20,25
+"Zona da Mata, Rio Doce e Central",2008,Dec,soil_moisture,-0.95664,-0.01951,,7,25
+"Zona da Mata, Rio Doce e Central",2009,Dec,soil_moisture,1.00794,0.02109,,21,25
+"Zona da Mata, Rio Doce e Central",2010,Dec,soil_moisture,1.03173,0.02158,,22,25
+"Zona da Mata, Rio Doce e Central",2011,Dec,soil_moisture,0.73378,0.01542,,18,25
+"Zona da Mata, Rio Doce e Central",2012,Dec,soil_moisture,0.59848,0.01263,,16,25
+"Zona da Mata, Rio Doce e Central",2013,Dec,soil_moisture,0.45813,0.00973,,15,25
+"Zona da Mata, Rio Doce e Central",2014,Dec,soil_moisture,1.65873,0.03453,,25,25
+"Zona da Mata, Rio Doce e Central",2015,Dec,soil_moisture,-0.05812,-0.00094,,13,25
+"Zona da Mata, Rio Doce e Central",2016,Dec,soil_moisture,1.18790,0.02481,,23,25
+"Zona da Mata, Rio Doce e Central",2017,Dec,soil_moisture,-0.67541,-0.01370,,9,25
+"Zona da Mata, Rio Doce e Central",2018,Dec,soil_moisture,-0.42176,-0.00846,,10,25
+"Zona da Mata, Rio Doce e Central",2019,Dec,soil_moisture,0.91955,0.01926,,19,25
+"Zona da Mata, Rio Doce e Central",2020,Dec,soil_moisture,-0.10522,-0.00192,,12,25
+"Zona da Mata, Rio Doce e Central",2021,Dec,soil_moisture,0.73012,0.01535,,17,25
+"Zona da Mata, Rio Doce e Central",2022,Dec,soil_moisture,-0.69746,-0.01415,,8,25
+"Zona da Mata, Rio Doce e Central",2023,Dec,soil_moisture,-1.86667,-0.03831,,1,25
+"Zona da Mata, Rio Doce e Central",2024,Dec,soil_moisture,-0.96367,-0.01965,,6,25
+"Zona da Mata, Rio Doce e Central",2025,Dec,soil_moisture,-1.17043,-0.02393,,4,25
+"Zona da Mata, Rio Doce e Central",2001,Jan,soil_moisture,-0.14999,-0.00284,,11,25
+"Zona da Mata, Rio Doce e Central",2002,Jan,soil_moisture,-1.36378,-0.02792,,3,25
+"Zona da Mata, Rio Doce e Central",2003,Jan,soil_moisture,-0.98255,-0.02004,,5,25
+"Zona da Mata, Rio Doce e Central",2004,Jan,soil_moisture,-1.43706,-0.02944,,2,25
+"Zona da Mata, Rio Doce e Central",2005,Jan,soil_moisture,1.62298,0.03380,,24,25
+"Zona da Mata, Rio Doce e Central",2006,Jan,soil_moisture,-0.04584,-0.00069,,14,25
+"Zona da Mata, Rio Doce e Central",2007,Jan,soil_moisture,0.94324,0.01975,,20,25
+"Zona da Mata, Rio Doce e Central",2008,Jan,soil_moisture,-0.95664,-0.01951,,7,25
+"Zona da Mata, Rio Doce e Central",2009,Jan,soil_moisture,1.00794,0.02109,,21,25
+"Zona da Mata, Rio Doce e Central",2010,Jan,soil_moisture,1.03173,0.02158,,22,25
+"Zona da Mata, Rio Doce e Central",2011,Jan,soil_moisture,0.73378,0.01542,,18,25
+"Zona da Mata, Rio Doce e Central",2012,Jan,soil_moisture,0.59848,0.01263,,16,25
+"Zona da Mata, Rio Doce e Central",2013,Jan,soil_moisture,0.45813,0.00973,,15,25
+"Zona da Mata, Rio Doce e Central",2014,Jan,soil_moisture,1.65873,0.03453,,25,25
+"Zona da Mata, Rio Doce e Central",2015,Jan,soil_moisture,-0.05812,-0.00094,,13,25
+"Zona da Mata, Rio Doce e Central",2016,Jan,soil_moisture,1.18790,0.02481,,23,25
+"Zona da Mata, Rio Doce e Central",2017,Jan,soil_moisture,-0.67541,-0.01370,,9,25
+"Zona da Mata, Rio Doce e Central",2018,Jan,soil_moisture,-0.42176,-0.00846,,10,25
+"Zona da Mata, Rio Doce e Central",2019,Jan,soil_moisture,0.91955,0.01926,,19,25
+"Zona da Mata, Rio Doce e Central",2020,Jan,soil_moisture,-0.10522,-0.00192,,12,25
+"Zona da Mata, Rio Doce e Central",2021,Jan,soil_moisture,0.73012,0.01535,,17,25
+"Zona da Mata, Rio Doce e Central",2022,Jan,soil_moisture,-0.69746,-0.01415,,8,25
+"Zona da Mata, Rio Doce e Central",2023,Jan,soil_moisture,-1.86667,-0.03831,,1,25
+"Zona da Mata, Rio Doce e Central",2024,Jan,soil_moisture,-0.96367,-0.01965,,6,25
+"Zona da Mata, Rio Doce e Central",2025,Jan,soil_moisture,-1.17043,-0.02393,,4,25
+"Zona da Mata, Rio Doce e Central",2001,Nov,soil_moisture,-0.14999,-0.00284,,11,25
+"Zona da Mata, Rio Doce e Central",2002,Nov,soil_moisture,-1.36378,-0.02792,,3,25
+"Zona da Mata, Rio Doce e Central",2003,Nov,soil_moisture,-0.98255,-0.02004,,5,25
+"Zona da Mata, Rio Doce e Central",2004,Nov,soil_moisture,-1.43706,-0.02944,,2,25
+"Zona da Mata, Rio Doce e Central",2005,Nov,soil_moisture,1.62298,0.03380,,24,25
+"Zona da Mata, Rio Doce e Central",2006,Nov,soil_moisture,-0.04584,-0.00069,,14,25
+"Zona da Mata, Rio Doce e Central",2007,Nov,soil_moisture,0.94324,0.01975,,20,25
+"Zona da Mata, Rio Doce e Central",2008,Nov,soil_moisture,-0.95664,-0.01951,,7,25
+"Zona da Mata, Rio Doce e Central",2009,Nov,soil_moisture,1.00794,0.02109,,21,25
+"Zona da Mata, Rio Doce e Central",2010,Nov,soil_moisture,1.03173,0.02158,,22,25
+"Zona da Mata, Rio Doce e Central",2011,Nov,soil_moisture,0.73378,0.01542,,18,25
+"Zona da Mata, Rio Doce e Central",2012,Nov,soil_moisture,0.59848,0.01263,,16,25
+"Zona da Mata, Rio Doce e Central",2013,Nov,soil_moisture,0.45813,0.00973,,15,25
+"Zona da Mata, Rio Doce e Central",2014,Nov,soil_moisture,1.65873,0.03453,,25,25
+"Zona da Mata, Rio Doce e Central",2015,Nov,soil_moisture,-0.05812,-0.00094,,13,25
+"Zona da Mata, Rio Doce e Central",2016,Nov,soil_moisture,1.18790,0.02481,,23,25
+"Zona da Mata, Rio Doce e Central",2017,Nov,soil_moisture,-0.67541,-0.01370,,9,25
+"Zona da Mata, Rio Doce e Central",2018,Nov,soil_moisture,-0.42176,-0.00846,,10,25
+"Zona da Mata, Rio Doce e Central",2019,Nov,soil_moisture,0.91955,0.01926,,19,25
+"Zona da Mata, Rio Doce e Central",2020,Nov,soil_moisture,-0.10522,-0.00192,,12,25
+"Zona da Mata, Rio Doce e Central",2021,Nov,soil_moisture,0.73012,0.01535,,17,25
+"Zona da Mata, Rio Doce e Central",2022,Nov,soil_moisture,-0.69746,-0.01415,,8,25
+"Zona da Mata, Rio Doce e Central",2023,Nov,soil_moisture,-1.86667,-0.03831,,1,25
+"Zona da Mata, Rio Doce e Central",2024,Nov,soil_moisture,-0.96367,-0.01965,,6,25
+"Zona da Mata, Rio Doce e Central",2025,Nov,soil_moisture,-1.17043,-0.02393,,4,25

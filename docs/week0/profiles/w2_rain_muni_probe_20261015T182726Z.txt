@@ -1,0 +1,1 @@
+batch export w2_rain_muni_probe: 13 EECU-seconds (batch), 187 rows, 1 season(s), 62 s wall

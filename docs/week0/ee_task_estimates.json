@@ -30,5 +30,15 @@
  "w1_weights_meso_3512": 1384.2296684543176,
  "w1_weights_meso_3513": 1539.5675742169792,
  "w1_weights_meso_3514": 1277.714396726958,
- "w1_weights_meso_3515": 638.5994634794375
+ "w1_weights_meso_3515": 638.5994634794375,
+ "w2_heat_muni": 3068.0,
+ "w2_heat_muni_probe": 400.0,
+ "w2_heat_muni_probe_all": 300.0,
+ "w2_prelim_muni": 950.0,
+ "w2_prelim_muni_probe": 30.0,
+ "w2_rain_muni": 2920.0,
+ "w2_rain_muni_probe": 150.0,
+ "w2_soil_muni": 5724.0,
+ "w2_soil_muni_probe": 400.0,
+ "w2_soil_muni_probe_all": 300.0
 }
