@@ -36,3 +36,4 @@ docs/week0/w1_filter_kept.csv
 
 # W1 per-municipality series (tens of MB; regenerable by gee/w1_run.py)
 data/derived/w1_series_muni_*.csv
+data/derived/frozen_mask_pixels*.csv
