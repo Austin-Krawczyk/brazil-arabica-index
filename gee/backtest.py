@@ -330,7 +330,6 @@ def run():
         raise SystemExit(f"{OUT.name} exists: one run writes one results file; a corrected run is a new label")
     meta = run_metadata(MANIFEST)
     guard_reads()
-    cov = pd.read_csv(ROOT / "docs" / "week0" / "station_coverage_frozen.csv").set_index(["region", "crop"])
     ys = yields()
     check_base_rates(ys)
     frost = pd.read_csv(D / "w2_frost_region_season.csv")
@@ -416,10 +415,18 @@ def run():
             res.at[i, "surprise_pred"] = np.sign(res.at[i, "a_pred"] - a_first)
             rev = ys[r][S] - y1[r]
             res.at[i, "surprise_actual"] = 0.0 if abs(rev) < 0.01 * y1[r] else np.sign(rev)
-    # frost station counts and observed coverage (§5 step 4), and the report flags
+    # frost station counts and observed coverage (§5 step 4), and the report flags. Coverage and the
+    # unflaggable status follow the headline frost variant (review, 2026-10-15); the other variant is
+    # reported beside. Station counts are the qualifying stations before unresolved ones are left out.
+    alt = "with" if HEADLINE_FROST == "without" else "without"
+    fr = frost.set_index(["region", "crop"])
     for col, src in (("automatic_stations", "automatic_stations"), ("conventional_stations", "conventional_stations"),
-                     ("observed_coverage_pct", "combined_coverage"), ("unflaggable", "unflaggable")):
-        res[col] = [cov[src].get((r, c), np.nan) for r, c in zip(res.region, res.crop)]
+                     ("unresolved_stations", "unresolved_stations"),
+                     ("observed_coverage", f"coverage_{HEADLINE_FROST}_unresolved"),
+                     ("unflaggable", f"unflaggable_{HEADLINE_FROST}_unresolved"),
+                     ("observed_coverage_alt", f"coverage_{alt}_unresolved"),
+                     ("unflaggable_alt", f"unflaggable_{alt}_unresolved")):
+        res[col] = [fr[src].get((r, c), np.nan) for r, c in zip(res.region, res.crop)]
     res["note_in_sample_2022"] = res.crop == 2022
     res["note_carryover_2023"] = res.crop == 2023
     res["hit_condition"] = np.sign(res.a_pred) == np.sign(res.a_actual)
