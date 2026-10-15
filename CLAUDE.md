@@ -677,6 +677,14 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      - **Sensitivity, reported beside the headline:** for the crops whose previous crop has a
        third survey on record (S−1 = 2023–2025), the biennial term is recomputed from the third
        survey. That measures the effect of the leak where it can be measured.
+   - **Stage-1 fit (AMENDED 2026-10-15, Amendment 38): two steps, each refitted without the
+     held-out season.**
+     - First, a linear trend of yield on season.
+     - Then the coefficient of detrended yield on the previous crop's detrended yield, with no
+       intercept, leaving out every pair that involves the held-out season.
+     - The expectation for crop S is the trend at S plus that coefficient times crop S−1's
+       detrended yield.
+     - The trend is the same trend the "yield versus trend" target uses.
    - Report the index **relative to this expectation**, or every off-year reads as a crop
      failure.
 8. **Backtest by note date (AMENDED 2026-10-12).** Leave-one-year-out, **using only inputs available
@@ -706,18 +714,29 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    - **Rain only** (the expectation plus flowering rain deficit alone): shows whether EVI, soil
      moisture and heat days add anything beyond rain.
 
-   **Pass marks, fixed in advance, on condition direction (AMENDED 2026-10-14, Amendment 19b).**
-   The rule is p < 0.05, one-sided against a coin flip, and **the exact p-value is reported beside
-   every pass mark:**
-   - Without frost, Sul e Centro-Oeste, Triângulo, Alto Paranaíba e Noroeste, and São Paulo,
-     crops 2001–2025: **18 of 25** (p = 0.0216).
-   - Without frost, Zona da Mata, Rio Doce e Central and the four-region total, crops
-     2008–2025: **13 of 18** (p = 0.0481).
-   - With frost, every region and the four-region total, crops 2009–2025: **13 of 17**
-     (p = 0.0245).
-   If the share of positive condition anomalies is away from 50%, each pass mark becomes the
-   larger of its own value and the count that beats the majority share at p<0.05. That is
-   computed at `prereg-2`.
+   **Pass marks, fixed in advance, on condition direction (AMENDED 2026-10-15, Amendment 38).**
+   - **The rule:** p < 0.05, one-sided, against both a coin flip and the majority share of positive
+     condition anomalies, whichever needs more hits.
+   - **Both exact p-values are reported beside every pass mark.**
+   - **Seasons.** The biennial term needs crop S−1, so each series' first season has no stage-1
+     expectation.
+     - Without frost, Sul e Centro-Oeste, Triângulo, Alto Paranaíba e Noroeste and São Paulo are
+       scored on crops 2002–2025 (24 seasons).
+     - Without frost, Zona da Mata, Rio Doce e Central and the four-region total are scored on
+       crops 2009–2025 (17).
+     - With frost, every region and the total are scored on crops 2009–2025 (17).
+   - **Registered marks.** Base rates come from the two-step stage-1 fit, computed on 2026-10-15
+     on Conab yields only, before any season-level input (Week 0 report §16). Each cell gives the
+     mark, then in brackets the share of positive anomalies, the p-value against a coin flip and
+     the p-value against the majority share:
+
+     | Region | Without frost | With frost, crops 2009–2025 |
+     |---|---|---|
+     | Sul e Centro-Oeste | **17 of 24** (0.500; 0.0320, 0.0320) | **13 of 17** (0.471; 0.0245, 0.0421) |
+     | Triângulo, Alto Paranaíba e Noroeste | **19 of 24** (0.417; 0.0033, 0.0279) | **13 of 17** (0.529; 0.0245, 0.0421) |
+     | São Paulo | **18 of 24** (0.458; 0.0113, 0.0304) | **13 of 17** (0.529; 0.0245, 0.0421) |
+     | Zona da Mata, Rio Doce e Central | **14 of 17** (0.412; 0.0064, 0.0378) | **14 of 17** (0.412; 0.0064, 0.0378) |
+     | Four-region total | **13 of 17** (0.471; 0.0245, 0.0421) | **13 of 17** (0.471; 0.0245, 0.0421) |
 
    **Crop 2026** is added when Conab publishes its final, as an addendum reported with and
    without it. The pass marks above don't change. It is not a clean out-of-sample test, because

@@ -949,3 +949,43 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   4. **§11 risk table:** the irrigation row now gives the v1 treatment.
 
   Drafted and committed on the owner's instruction (2026-10-15).
+
+- 2026-10-15 — **AMENDMENT 38: scorable season sets, the two-step stage-1 fit, and the registered
+  direction pass marks.** Amends §5 steps 7 and 8. **A change to items registered at `prereg-1`**,
+  listed in the backtest report as such.
+
+  **Reason** (Week 0 report §16, the base-rate check run on Conab yields only, before any
+  season-level input):
+  1. **The registered season sets cannot be scored.** The biennial term for crop S needs crop
+     S−1. Conab's series starts at crop 2001, and Zona da Mata and the four-region total at 2008,
+     so crops 2001 and 2008 respectively have no stage-1 expectation. The marks 18 of 25 and
+     13 of 18 counted one season too many. This is arithmetic, not a result.
+  2. **The marks depend on how stage 1 is fitted,** which `prereg-1` did not fix.
+
+  **Changes:**
+  1. **Season sets:**
+     - without frost, Sul, Triângulo and São Paulo, crops 2002–2025 (24 seasons);
+     - without frost, Zona da Mata and the total, crops 2009–2025 (17);
+     - with frost unchanged, 2009–2025 (17).
+  2. **Stage-1 fit (owner's choice):** two steps, each refitted without the held-out season.
+     - First a linear trend.
+     - Then the coefficient on the previous crop's detrended yield, with no intercept, leaving out
+       every pair involving the held-out season.
+     - The held-out yield enters no fit.
+     - It reads §5 step 7 literally: a coefficient on crop S−1's anomaly from trend.
+     - It defines the trend the yield-versus-trend target needs.
+  3. **The rule** is p < 0.05, one-sided, against both a coin flip and the majority share,
+     whichever needs more, with both exact p-values reported.
+  4. **The registered marks** are the table in §5 step 8, with the base rates computed on
+     2026-10-15. Two marks rise above the coin-flip mark: Triângulo without frost (19 of 24) and
+     Zona da Mata (14 of 17).
+
+  **Disclosure:** the fitting method was chosen on principle **with the base rates, and so the
+  marks, visible.** Under the alternatives, a mark moves by at most one season, in either direction
+  depending on region:
+  - one-step OLS of y_S on (1, S, y_{S−1}) without row S;
+  - the same without rows S and S+1.
+
+  All three variants are in `docs/week0/base_rate_check.csv`.
+
+  Approved by owner (2026-10-15).
