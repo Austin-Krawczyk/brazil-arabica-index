@@ -831,3 +831,51 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   The converted scripts stay unrun until each has a watched probe (owner, 2026-10-15).
 
   Approved by owner as written.
+
+- 2026-10-15 — **AMENDMENT 35: vegetation anomalies computed per municipality, then aggregated by
+  PAM area.** Amends §5 step 2. Owner decisions 1 and 2 on the W1 aggregation, taken after W1
+  (Week 0 report §13, §14).
+
+  **Reason:**
+  - W1 reduces every composite per municipality (Amendment 16d).
+  - Under PAM-area weighting a municipality can hold PAM area with no reading: fully cloud-masked,
+    or under one MODIS pixel of mapped coffee.
+  - The original step 2 (an area-weighted median over the mask, z-scored per window at region
+    level) did not say how municipal values combine, and `prereg-1` held that as OPEN.
+
+  **Changes:**
+  1. **Membership per season:** kept by the filter, with PAM area for year S−2, and at least one
+     MODIS pixel of mapped coffee under season S's mask. PAM weights are renormalised once per
+     season over the members.
+  2. **Municipal anomaly:** each counted reading minus the municipality's own mean for the same
+     16-day period, in EVI units (owner choice (a)).
+     - The mean comes from composites dated 2000–2025, in member seasons only (b).
+     - At least 10 years are needed, or there is no anomaly (c).
+     - A reading counts only with at least one pixel of cloud-free coffee (d).
+     - The mean is refitted without the held-out season in the backtest.
+  3. **Regional anomaly:** the PAM-weighted mean of members' anomalies (owner decision 2: a
+     PAM-weighted mean of municipal medians, applied to their anomalies). Anomalies are
+     aggregated, not raw EVI.
+  4. **Cloud floor:** the regional composite is missing when members with an anomaly hold under 50%
+     of the season's member PAM weight. The covered-weight fraction is reported for every
+     composite.
+  5. **The regional z-score stays** as the final standardisation, against the same 16-day period
+     across baseline years, refitted without the held-out season.
+
+  **What the W1 data show** (Week 0 report §14, read before the decision):
+  - Member share of PAM area: 0.74–1.00 by region and season.
+  - With rule (d), one composite falls under the floor: Zona da Mata, 2005-12-03, at 0.478.
+  - Municipality-periods with fewer than 10 years hold at most 0.18% of member PAM weight in any
+    region.
+  - Rule (d) removes 3,640 member readings (1.32%).
+
+  **Deviation from the owner's wording, recorded:** the owner's floor counts "municipalities with
+  readings". The text counts members **with an anomaly**, because rule (c) leaves a reading
+  without an anomaly where the climatology is under 10 years. Counting such a reading as covered
+  would raise the covered fraction by weight that cannot enter the regional mean.
+
+  **Consequence for `prereg-1`:** the regional-aggregation item is decided for EVI. Item 9 of the
+  same day's `prereg-1` decisions applies the same aggregation to rain, soil moisture and heat
+  days.
+
+  Approved by owner with choices (a) to (d) as listed.

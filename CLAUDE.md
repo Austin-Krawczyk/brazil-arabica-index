@@ -480,10 +480,35 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      VIIRS.
    - Both masks are registered at `prereg-2`, with the filter rule and its sensitivities
      (Amendment 16d).
-2. **Vegetation anomalies.** Per 16-day window, area-weighted median NDVI and EVI from `MOD13Q1`
-   over the mask, cloud-masked. Express as a z-score against the same window across the baseline
-   years. `MOD13Q1` has no 1.6 µm band, so the standard NDMI cannot be computed from it and is not
-   an input.
+2. **Vegetation anomalies (AMENDED 2026-10-15, Amendment 35).** From `MOD13Q1`, per 16-day
+   composite, with `SummaryQA` 0–1 (good or marginal) as the cloud mask. NDVI, for the
+   sensitivity report, is computed the same way as EVI.
+   - **Municipal reading:** the coffee-weighted median EVI over the municipality's mask pixels. A
+     reading counts only if at least one MODIS pixel's worth of cloud-free coffee remains in that
+     composite (summed coffee fraction of valid pixels ≥ 1).
+   - **Members:** in season S, the municipalities that meet all of the following:
+     - kept by the filter (step 1);
+     - have PAM coffee area for PAM year S−2;
+     - have at least one MODIS pixel of mapped coffee under season S's mask (summed coffee
+       fraction ≥ 1, about 5.4 ha).
+     PAM weights are renormalised once per season over the members.
+   - **Municipal anomaly:** the reading minus the municipality's own mean for the same 16-day
+     period, in EVI units.
+     - The mean is taken over composites dated 2000–2025, from the municipality's counted readings
+       in the seasons in which it is a member.
+     - A municipality-period with fewer than 10 years of readings has no anomaly.
+     - In the backtest the mean is refitted without the held-out season (step 8).
+   - **Regional anomaly:** the PAM-weighted mean of the members' anomalies (PAM year S−2), over
+     the members with an anomaly in that composite. Anomalies are aggregated, not raw EVI, so a
+     change in which municipalities have a reading does not move the regional value through their
+     EVI level.
+   - **Cloud floor:** a regional composite is missing when the members with an anomaly hold under
+     50% of the season's member PAM weight. The covered-weight fraction is reported for every
+     composite.
+   - **Standardisation:** the regional anomaly is expressed as a z-score against the same 16-day
+     period across the baseline years, refitted without the held-out season.
+   - `MOD13Q1` has no 1.6 µm band, so the standard NDMI cannot be computed from it and is not an
+     input.
 3. **Rainfall windows.** CHIRPS totals for flowering (Sep 1–Nov 30) and bean fill (Dec 1–Mar 31).
    Harvest-window rain (May–Sep of S) is not an index input: it falls after every note about the
    crop it affects. This removes the harvest window of year S only. May–Aug of S−1, the
