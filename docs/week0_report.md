@@ -1965,3 +1965,72 @@ unless Camargo (1985) is found and shows a measurement.
 - **The spec's offset is not directly measured.** These sources give shelter minus *grass*
   (4.1–5.6 °C). The spec's 3–4 °C shelter-minus-*leaf* figure is an interpolation and should be
   marked provisional unless a direct measurement is found.
+
+## 16. Base-rate check on the direction pass marks (2026-10-15) — **STOPPED for two owner decisions**
+
+**Scope:** run before any season-level index input exists, on Conab yields only (`gee/base_rate_check.py`;
+`docs/week0/base_rate_check.csv`, `docs/week0/stage1_seasons.csv`). No Earth Engine call.
+
+**The stage-1 model:** per region, the intercept, linear trend and coefficient on crop S−1's yield
+anomaly (prereg-1 D), fitted leave-one-season-out.
+- With a free linear trend, a coefficient on S−1's anomaly from a linear trend is the same model as
+  a coefficient on S−1's yield. So the main variant is OLS of y_S on (1, S, y_{S−1}).
+- `prereg-1` does not fix how it is estimated, so three variants were run:
+  - `joint_drop_S`: the joint fit, leaving out season S's row only;
+  - `joint_drop_S_S1`: the joint fit, also leaving out row S+1, where the held-out yield y_S
+    appears as the lagged regressor;
+  - `twostep_drop_S`: the linear trend first, without season S; then the residual on the lagged
+    residual (no intercept), without any pair involving S.
+
+### Finding 1: the without-frost season sets cannot be scored as registered
+
+- The biennial term for crop S needs crop S−1's yield.
+- **Conab's series starts at crop 2001.** For Sul e Centro-Oeste, Triângulo and São Paulo, crop
+  2001 has no stage-1 expectation.
+- **Zona da Mata starts at 2008 (Amendment 19b), and so does the four-region total.** Crop 2008 has
+  none either.
+
+| Pass mark | Registered | Seasons with an expectation | Coin-flip mark on those seasons |
+|---|---|---|---|
+| Without frost: Sul, Triângulo, São Paulo | 18 of 25, crops 2001–2025 | **24, crops 2002–2025** | 17 of 24 (p = 0.0320) |
+| Without frost: Zona da Mata, four-region total | 13 of 18, crops 2008–2025 | **17, crops 2009–2025** | 13 of 17 (p = 0.0245) |
+| With frost: every region and the total | 13 of 17, crops 2009–2025 | 17 (unaffected) | 13 of 17 (p = 0.0245) |
+
+The registered sets assumed one more season than the stage-1 model can score in each case. This
+is arithmetic, not a result.
+
+### Finding 2: base rates are away from 50%, and the marks depend on the unregistered estimation detail
+
+The share of positive condition anomalies runs from 0.375 to 0.588 by region and variant. Under
+the registered rule each mark becomes the larger of the coin-flip mark and the majority-share
+mark:
+
+| Region | Seasons | `joint_drop_S` | `joint_drop_S_S1` | `twostep_drop_S` |
+|---|---|---|---|---|
+| Sul e Centro-Oeste | 2002–2025 | 0.500 → 17/24 | 0.458 → 18/24 | 0.500 → 17/24 |
+| Triângulo | 2002–2025 | 0.417 → 19/24 | 0.375 → **20/24** | 0.417 → 19/24 |
+| São Paulo | 2002–2025 | 0.500 → 17/24 | 0.458 → 18/24 | 0.458 → 18/24 |
+| Zona da Mata | 2009–2025 | 0.412 → 14/17 | 0.529 → 13/17 | 0.412 → 14/17 |
+| Four-region total | 2009–2025 | 0.471 → 13/17 | 0.412 → 14/17 | 0.471 → 13/17 |
+| With frost, Sul / Triângulo / São Paulo / Zona da Mata / total | 2009–2025 | 13 / 13 / 14 / 14 / 13 | 13 / 13 / 13 / 13 / 14 | 13 / 13 / 13 / 14 / 13 |
+
+Each cell gives the share of positive condition anomalies, then the mark under the rule.
+
+**Disclosure:** these base rates are now known. Choosing the stage-1 variant after seeing them can
+move a mark by one season in either direction, depending on region. The variant should therefore
+be chosen on principle and the choice recorded, not chosen to fit the marks.
+
+### Decisions needed before `prereg-2`
+
+1. **Season sets.** Drop crop 2001 (Sul, Triângulo, São Paulo) and crop 2008 (Zona da Mata, total)
+   from the without-frost sets, giving 24 and 17 seasons, with coin-flip marks 17/24 and 13/17. This
+   changes a `prereg-1` item, for an arithmetic reason, and is logged as such.
+2. **Stage-1 estimation.** Which variant is registered.
+   - **Strict variants:** on the leave-one-season-out principle ("everything fitted is refitted
+     without the held-out season", §5 step 8), `joint_drop_S_S1` and `twostep_drop_S` are both
+     strict: the held-out yield enters no fit. `joint_drop_S` lets it in as the lagged regressor
+     of row S+1.
+   - **Between the strict two, the two-step reads §5 step 7 literally:** a coefficient on crop
+     S−1's anomaly from trend.
+   - **It also defines the trend explicitly,** which the second target, yield versus trend, needs.
+     The joint fit's coefficient on S is not the trend of yield.

@@ -1,0 +1,112 @@
+region,safra,yield_sc_ha,joint_drop_S,joint_drop_S_S1,twostep_drop_S,in_sample
+Sul e Centro-Oeste,2001,16.050,,,,
+Sul e Centro-Oeste,2002,21.340,4.314,2.906,4.402,3.636
+Sul e Centro-Oeste,2003,11.240,-8.848,-8.899,-8.116,-7.325
+Sul e Centro-Oeste,2004,18.420,0.266,-0.610,0.384,0.212
+Sul e Centro-Oeste,2005,13.590,-6.273,-5.886,-5.920,-5.618
+Sul e Centro-Oeste,2006,22.940,4.291,3.926,4.534,3.671
+Sul e Centro-Oeste,2007,14.340,-6.801,-6.735,-6.531,-6.098
+Sul e Centro-Oeste,2008,21.970,2.032,1.923,2.115,1.768
+Sul e Centro-Oeste,2009,19.250,-2.126,-1.944,-2.004,-1.991
+Sul e Centro-Oeste,2010,24.750,3.491,3.424,3.546,3.286
+Sul e Centro-Oeste,2011,20.670,-1.786,-1.621,-1.721,-1.667
+Sul e Centro-Oeste,2012,26.620,4.377,4.461,4.364,4.167
+Sul e Centro-Oeste,2013,25.620,2.441,2.303,2.438,2.265
+Sul e Centro-Oeste,2014,21.560,-2.285,-2.331,-2.232,-2.164
+Sul e Centro-Oeste,2015,22.610,-1.300,-0.868,-1.262,-1.230
+Sul e Centro-Oeste,2016,31.720,7.774,7.844,7.659,7.359
+Sul e Centro-Oeste,2017,27.560,2.391,3.372,2.811,2.050
+Sul e Centro-Oeste,2018,34.800,9.845,10.187,9.990,9.180
+Sul e Centro-Oeste,2019,28.150,1.943,3.237,2.414,1.518
+Sul e Centro-Oeste,2020,35.570,9.843,9.434,9.573,9.025
+Sul e Centro-Oeste,2021,23.900,-4.766,-5.165,-4.178,-3.671
+Sul e Centro-Oeste,2022,19.330,-8.960,-10.002,-9.304,-7.764
+Sul e Centro-Oeste,2023,25.340,-2.539,-3.847,-2.925,-1.832
+Sul e Centro-Oeste,2024,24.660,-4.084,-5.797,-4.376,-3.424
+Sul e Centro-Oeste,2025,23.110,-6.698,-6.698,-6.770,-5.352
+"Triângulo, Alto Paranaíba e Noroeste",2001,22.030,,,,
+"Triângulo, Alto Paranaíba e Noroeste",2002,28.810,2.896,1.941,3.585,2.427
+"Triângulo, Alto Paranaíba e Noroeste",2003,18.250,-6.231,-6.694,-6.448,-5.226
+"Triângulo, Alto Paranaíba e Noroeste",2004,26.170,-3.428,-4.552,-2.603,-2.833
+"Triângulo, Alto Paranaíba e Noroeste",2005,17.960,-8.473,-8.805,-8.536,-7.576
+"Triângulo, Alto Paranaíba e Noroeste",2006,27.830,-2.491,-2.890,-1.670,-2.092
+"Triângulo, Alto Paranaíba e Noroeste",2007,20.960,-4.957,-5.028,-4.929,-4.542
+"Triângulo, Alto Paranaíba e Noroeste",2008,28.560,-0.745,-0.845,-0.232,-0.670
+"Triângulo, Alto Paranaíba e Noroeste",2009,24.260,-1.768,-1.414,-1.696,-1.653
+"Triângulo, Alto Paranaíba e Noroeste",2010,34.840,6.859,6.901,7.276,6.448
+"Triângulo, Alto Paranaíba e Noroeste",2011,24.830,1.370,1.566,1.142,1.203
+"Triângulo, Alto Paranaíba e Noroeste",2012,36.990,8.540,8.658,8.792,8.097
+"Triângulo, Alto Paranaíba e Noroeste",2013,30.770,8.707,9.336,9.086,7.409
+"Triângulo, Alto Paranaíba e Noroeste",2014,33.060,6.630,6.573,6.900,6.291
+"Triângulo, Alto Paranaíba e Noroeste",2015,24.810,-1.332,-1.078,-1.484,-1.237
+"Triângulo, Alto Paranaíba e Noroeste",2016,40.430,10.684,10.699,11.364,9.979
+"Triângulo, Alto Paranaíba e Noroeste",2017,21.540,-2.160,-2.577,-3.087,-1.697
+"Triângulo, Alto Paranaíba e Noroeste",2018,37.730,5.686,5.700,6.506,4.915
+"Triângulo, Alto Paranaíba e Noroeste",2019,24.730,-0.694,-0.722,-0.784,-0.591
+"Triângulo, Alto Paranaíba e Noroeste",2020,30.960,-1.213,-1.642,-0.584,-1.076
+"Triângulo, Alto Paranaíba e Noroeste",2021,25.200,-4.612,-5.804,-4.503,-4.192
+"Triângulo, Alto Paranaíba e Noroeste",2022,23.110,-11.040,-10.481,-10.579,-9.474
+"Triângulo, Alto Paranaíba e Noroeste",2023,38.040,5.059,5.121,6.202,4.058
+"Triângulo, Alto Paranaíba e Noroeste",2024,27.430,0.414,-1.001,0.258,0.333
+"Triângulo, Alto Paranaíba e Noroeste",2025,24.350,-10.107,-10.107,-9.887,-8.300
+São Paulo (state total),2001,15.750,,,,
+São Paulo (state total),2002,25.780,4.095,3.658,5.567,3.371
+São Paulo (state total),2003,13.380,-3.835,-3.538,-4.642,-3.024
+São Paulo (state total),2004,28.680,4.584,4.567,6.198,3.687
+São Paulo (state total),2005,14.580,-1.283,-1.311,-1.356,-0.978
+São Paulo (state total),2006,21.070,-4.939,-5.611,-4.053,-4.173
+São Paulo (state total),2007,15.600,-6.447,-6.679,-6.304,-5.941
+São Paulo (state total),2008,23.450,-2.488,-2.614,-1.703,-2.174
+São Paulo (state total),2009,18.810,-2.390,-2.216,-2.261,-2.233
+São Paulo (state total),2010,28.050,3.736,3.723,4.339,3.473
+São Paulo (state total),2011,18.350,-0.819,-0.822,-1.053,-0.731
+São Paulo (state total),2012,30.590,5.066,4.929,5.244,4.673
+São Paulo (state total),2013,24.700,7.304,7.348,7.379,6.229
+São Paulo (state total),2014,22.980,0.167,-0.012,0.347,0.159
+São Paulo (state total),2015,20.420,-4.226,-4.050,-4.077,-4.037
+São Paulo (state total),2016,29.970,3.583,3.599,4.021,3.326
+São Paulo (state total),2017,21.990,1.161,1.307,0.916,1.036
+São Paulo (state total),2018,31.110,4.799,4.817,5.277,4.445
+São Paulo (state total),2019,21.550,0.344,0.446,-0.097,0.298
+São Paulo (state total),2020,30.670,3.001,2.861,3.660,2.679
+São Paulo (state total),2021,20.220,-2.719,-3.215,-2.776,-2.358
+São Paulo (state total),2022,21.960,-9.574,-10.338,-9.419,-7.938
+São Paulo (state total),2023,27.710,-1.874,-1.365,-1.322,-1.575
+São Paulo (state total),2024,29.250,3.700,3.519,3.831,3.187
+São Paulo (state total),2025,24.180,-1.675,-1.675,-2.239,-1.401
+"Zona da Mata, Rio Doce e Central",2008,20.500,,,,
+"Zona da Mata, Rio Doce e Central",2009,18.850,-3.557,-4.601,-3.611,-2.786
+"Zona da Mata, Rio Doce e Central",2010,20.730,-2.876,-2.679,-2.461,-2.277
+"Zona da Mata, Rio Doce e Central",2011,23.290,1.452,1.416,1.709,1.236
+"Zona da Mata, Rio Doce e Central",2012,20.270,-0.451,0.048,-0.658,-0.389
+"Zona da Mata, Rio Doce e Central",2013,27.010,4.583,4.579,4.955,4.081
+"Zona da Mata, Rio Doce e Central",2014,18.530,-0.348,-0.279,-0.537,-0.269
+"Zona da Mata, Rio Doce e Central",2015,22.930,-1.979,-1.954,-1.691,-1.704
+"Zona da Mata, Rio Doce e Central",2016,22.540,0.531,0.554,0.568,0.497
+"Zona da Mata, Rio Doce e Central",2017,22.880,0.318,0.614,0.384,0.300
+"Zona da Mata, Rio Doce e Central",2018,27.040,4.682,4.607,4.880,4.394
+"Zona da Mata, Rio Doce e Central",2019,19.040,-1.404,-1.548,-2.319,-1.171
+"Zona da Mata, Rio Doce e Central",2020,30.880,6.193,6.363,7.043,5.145
+"Zona da Mata, Rio Doce e Central",2021,17.780,-0.842,0.448,-0.139,-0.485
+"Zona da Mata, Rio Doce e Central",2022,23.190,-5.592,-6.386,-4.801,-3.939
+"Zona da Mata, Rio Doce e Central",2023,21.500,-2.776,-2.980,-2.905,-2.366
+"Zona da Mata, Rio Doce e Central",2024,24.930,-0.411,-0.416,0.084,-0.326
+"Zona da Mata, Rio Doce e Central",2025,23.360,0.075,0.075,-0.168,0.059
+Four-region total,2008,22.650,,,,
+Four-region total,2009,19.760,-6.108,-6.580,-5.813,-4.770
+Four-region total,2010,25.530,0.111,-0.438,0.672,0.083
+Four-region total,2011,21.640,-3.009,-2.806,-2.853,-2.533
+Four-region total,2012,26.930,1.869,2.145,2.074,1.591
+Four-region total,2013,26.610,2.777,2.588,2.850,2.425
+Four-region total,2014,22.820,-1.810,-2.017,-1.643,-1.632
+Four-region total,2015,22.640,-3.244,-2.764,-2.960,-2.962
+Four-region total,2016,30.730,5.370,5.370,5.530,4.899
+Four-region total,2017,24.560,0.734,1.072,0.611,0.593
+Four-region total,2018,32.850,7.636,7.674,7.832,7.137
+Four-region total,2019,24.310,0.721,0.945,0.262,0.508
+Four-region total,2020,32.940,7.486,7.376,7.752,6.790
+Four-region total,2021,22.050,-3.011,-2.768,-2.115,-2.101
+Four-region total,2022,21.350,-7.227,-8.301,-7.366,-5.747
+Four-region total,2023,26.770,-0.955,-1.124,-0.565,-0.695
+Four-region total,2024,25.840,-0.527,-1.594,-0.518,-0.433
+Four-region total,2025,23.540,-4.055,-4.055,-4.092,-3.153

@@ -1,0 +1,41 @@
+pass_mark,region,variant,seasons_registered,seasons_computable,first,positive,share_positive,registered_mark,coin_mark,coin_p,majority_mark,majority_p,mark_under_rule
+"without frost, Sul/Tri/SP",Sul e Centro-Oeste,joint_drop_S,25,24,2002,12,0.5,18/25,17/24,0.032,17/24,0.032,17/24
+"without frost, Sul/Tri/SP",Sul e Centro-Oeste,joint_drop_S_S1,25,24,2002,11,0.458,18/25,17/24,0.032,18/24,0.0304,18/24
+"without frost, Sul/Tri/SP",Sul e Centro-Oeste,twostep_drop_S,25,24,2002,12,0.5,18/25,17/24,0.032,17/24,0.032,17/24
+"without frost, Sul/Tri/SP",Sul e Centro-Oeste,in_sample,25,24,2002,12,0.5,18/25,17/24,0.032,17/24,0.032,17/24
+"without frost, Sul/Tri/SP","Triângulo, Alto Paranaíba e Noroeste",joint_drop_S,25,24,2002,10,0.417,18/25,17/24,0.032,19/24,0.0279,19/24
+"without frost, Sul/Tri/SP","Triângulo, Alto Paranaíba e Noroeste",joint_drop_S_S1,25,24,2002,9,0.375,18/25,17/24,0.032,20/24,0.0243,20/24
+"without frost, Sul/Tri/SP","Triângulo, Alto Paranaíba e Noroeste",twostep_drop_S,25,24,2002,10,0.417,18/25,17/24,0.032,19/24,0.0279,19/24
+"without frost, Sul/Tri/SP","Triângulo, Alto Paranaíba e Noroeste",in_sample,25,24,2002,10,0.417,18/25,17/24,0.032,19/24,0.0279,19/24
+"without frost, Sul/Tri/SP",São Paulo (state total),joint_drop_S,25,24,2002,12,0.5,18/25,17/24,0.032,17/24,0.032,17/24
+"without frost, Sul/Tri/SP",São Paulo (state total),joint_drop_S_S1,25,24,2002,11,0.458,18/25,17/24,0.032,18/24,0.0304,18/24
+"without frost, Sul/Tri/SP",São Paulo (state total),twostep_drop_S,25,24,2002,11,0.458,18/25,17/24,0.032,18/24,0.0304,18/24
+"without frost, Sul/Tri/SP",São Paulo (state total),in_sample,25,24,2002,12,0.5,18/25,17/24,0.032,17/24,0.032,17/24
+"without frost, ZM and total","Zona da Mata, Rio Doce e Central",joint_drop_S,18,17,2009,7,0.412,13/18,13/17,0.0245,14/17,0.0378,14/17
+"without frost, ZM and total","Zona da Mata, Rio Doce e Central",joint_drop_S_S1,18,17,2009,9,0.529,13/18,13/17,0.0245,13/17,0.0421,13/17
+"without frost, ZM and total","Zona da Mata, Rio Doce e Central",twostep_drop_S,18,17,2009,7,0.412,13/18,13/17,0.0245,14/17,0.0378,14/17
+"without frost, ZM and total","Zona da Mata, Rio Doce e Central",in_sample,18,17,2009,7,0.412,13/18,13/17,0.0245,14/17,0.0378,14/17
+"without frost, ZM and total",Four-region total,joint_drop_S,18,17,2009,8,0.471,13/18,13/17,0.0245,13/17,0.0421,13/17
+"without frost, ZM and total",Four-region total,joint_drop_S_S1,18,17,2009,7,0.412,13/18,13/17,0.0245,14/17,0.0378,14/17
+"without frost, ZM and total",Four-region total,twostep_drop_S,18,17,2009,8,0.471,13/18,13/17,0.0245,13/17,0.0421,13/17
+"without frost, ZM and total",Four-region total,in_sample,18,17,2009,8,0.471,13/18,13/17,0.0245,13/17,0.0421,13/17
+with frost,Sul e Centro-Oeste,joint_drop_S,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,Sul e Centro-Oeste,joint_drop_S_S1,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,Sul e Centro-Oeste,twostep_drop_S,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,Sul e Centro-Oeste,in_sample,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,"Triângulo, Alto Paranaíba e Noroeste",joint_drop_S,17,17,2009,9,0.529,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,"Triângulo, Alto Paranaíba e Noroeste",joint_drop_S_S1,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,"Triângulo, Alto Paranaíba e Noroeste",twostep_drop_S,17,17,2009,9,0.529,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,"Triângulo, Alto Paranaíba e Noroeste",in_sample,17,17,2009,9,0.529,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,São Paulo (state total),joint_drop_S,17,17,2009,10,0.588,13/17,13/17,0.0245,14/17,0.0378,14/17
+with frost,São Paulo (state total),joint_drop_S_S1,17,17,2009,9,0.529,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,São Paulo (state total),twostep_drop_S,17,17,2009,9,0.529,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,São Paulo (state total),in_sample,17,17,2009,10,0.588,13/17,13/17,0.0245,14/17,0.0378,14/17
+with frost,"Zona da Mata, Rio Doce e Central",joint_drop_S,17,17,2009,7,0.412,13/17,13/17,0.0245,14/17,0.0378,14/17
+with frost,"Zona da Mata, Rio Doce e Central",joint_drop_S_S1,17,17,2009,9,0.529,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,"Zona da Mata, Rio Doce e Central",twostep_drop_S,17,17,2009,7,0.412,13/17,13/17,0.0245,14/17,0.0378,14/17
+with frost,"Zona da Mata, Rio Doce e Central",in_sample,17,17,2009,7,0.412,13/17,13/17,0.0245,14/17,0.0378,14/17
+with frost,Four-region total,joint_drop_S,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,Four-region total,joint_drop_S_S1,17,17,2009,7,0.412,13/17,13/17,0.0245,14/17,0.0378,14/17
+with frost,Four-region total,twostep_drop_S,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
+with frost,Four-region total,in_sample,17,17,2009,8,0.471,13/17,13/17,0.0245,13/17,0.0421,13/17
