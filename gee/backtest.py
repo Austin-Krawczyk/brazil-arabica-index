@@ -15,9 +15,12 @@ everything fitted is refitted without S:
   - the column standardisation of the pooled inputs, the ridge penalty (inner leave-one-crop-out
     over the training crops, grid of prereg-1 item 13, lowest mean squared error, ties to the
     larger λ) and the four weights.
+  Crop S+1 is left out of training too: its expectation is built from crop S's detrended yield,
+  so its target carries y_S (independent review, 2026-10-15; the same rule as stage 1's pairs).
   Inner-loop simplification (stated, not registered): the inner loop that chooses λ reuses the
-  outer fold's inputs and stage-1 anomalies; it does not refit climatologies per inner crop. The
-  held-out crop S never enters it.
+  outer fold's inputs and stage-1 anomalies; it does not refit climatologies per inner crop. It
+  leaves out the inner crop k and crop k+1, for the same reason. The held-out crop S never enters
+  it.
 
 Model (§5 step 6):
   condition anomaly   a = actual / expectation − 1 (a share of the stage-1 expectation)
@@ -50,13 +53,28 @@ Sensitivities, reported beside the headline, not scored against pass marks:
   frost_without_unresolved  frost penalty without unresolved stations (Amendment 17b)
   third_survey              crops 2024–2025: crop S−1's anomaly from Conab's third survey of S−1
                             (§5 step 7), applied to the held-out expectation only
-Not run in this file, because their inputs are not in the manifest: the persistent-pixel mask and
-the VJ113A1 vegetation rerun (prereg-2 addenda). The pre-dawn night rule (Amendment 40) leaves the
-frost input for crops 2009–2026 unchanged (Week 0 report §19), so it needs no rerun.
+  no_filter and mapped_area change the four inputs only; the frost penalty stays the registered one
+  (computed on the filtered mask, its four-region total PAM-weighted).
+Not run in this file, because their inputs are not in the manifest:
+  - the persistent-pixel mask (§5 step 1; prereg-2 addendum 3);
+  - the VJ113A1 vegetation rerun (§4a, §5 step 1), which also needs a registered baseline rule: its
+    2018–2025 record is shorter than the 10-year municipal climatology minimum.
+The pre-dawn night rule (Amendment 40) changes no tier and no coldest night at any tiered station for
+crops 2009–2025, so the headline frost input is unchanged; it does resolve some stations, which can
+move the without-unresolved figures. It is registered as a frost-results sensitivity, not rerun here.
+Crop 2026 is absent: it is added when Conab publishes its final (§5 step 8).
+
+Information availability, stated: every vintage uses the full BDMEP conventional records; whether a
+conventional minimum was available by an early cut (for example 20 November 2011) is not established
+(§9). The Sul crop-2012 flag depends on conventional stations (its 17d flag is set).
 
 Also recorded per row: the prediction without the frost offset (double-counting check, §5 step 6),
-the surprise-test call for safras 2023–2025 (reported, not scored, Amendment 19b), and the fitted
-λ, intercept and weights.
+the surprise-test call for safras 2023–2025 (reported, not scored, Amendment 19b), the fitted λ,
+intercept and weights, the EVI composite count, the prelim substitution count, the frost station
+counts and observed coverage, flags for crop 2022 (in-sample) and crop 2023 (possible carryover),
+and the run's code commit, manifest SHA-256 and time. The run refuses to overwrite an existing
+results file. Summaries compare every sensitivity with the headline on identical crops (§9), and
+the with-frost version with the no-frost version on the crops they share (§5 step 4).
 
 Run:    .venv/Scripts/python gee/backtest.py
 Writes: data/derived/backtest_results_v1.csv (one row per sensitivity × version × model × vintage
@@ -98,8 +116,11 @@ PASS_MARKS = {
     ("with_frost", REGIONS[3]): (13, 17, 0.529), ("with_frost", REGIONS[2]): (14, 17, 0.412),
     ("with_frost", TOTAL): (13, 17, 0.471),
 }
-SENSITIVITIES = ["headline", "evi_from_sep", "ndvi", "no_filter", "mapped_area", "chirps_prelim",
-                 "frost_without_unresolved"]
+# Headline frost penalty: "with" keeps unresolved stations at their observed tiers, "without" leaves
+# them out (Amendment 17b reports both; the owner fixes which is the headline before the run).
+HEADLINE_FROST = "with"
+FROST_ALT = "frost_without_unresolved" if HEADLINE_FROST == "with" else "frost_with_unresolved"
+SENSITIVITIES = ["headline", "evi_from_sep", "ndvi", "no_filter", "mapped_area", "chirps_prelim", FROST_ALT]
 PRELIM_CROPS = range(2016, 2026)
 
 
@@ -201,7 +222,7 @@ def prelim_table(crop, vintage):
                 for d in days:
                     rain.at[i, f"d_{d:%m%d}"] = q / len(days) * rain.at[i, "w"]
         replaced += 1
-    return rain, replaced
+    return rain, replaced  # municipalities of crop S left on final (no prelim row): len(idx) − replaced
 
 
 COLS = ["region", "crop", "vintage", "input", "value"]
@@ -219,14 +240,19 @@ def fold_inputs(S, sens, cache):
         return cache[name]
 
     vkey = sens if sens in ("evi_from_sep", "ndvi") else "evi"
-    veg = part(("veg", vkey, mkey), lambda: wi.evi(exclude=S, start_month=9 if vkey == "evi_from_sep" else 5,
-                                                   index="NDVI" if vkey == "ndvi" else "EVI", mcfg=mcfg)
-               .assign(input="evi"))
+    vname = ("veg", vkey, mkey)
+    if vname not in cache:
+        v = wi.evi(exclude=S, start_month=9 if vkey == "evi_from_sep" else 5,
+                   index="NDVI" if vkey == "ndvi" else "EVI", mcfg=mcfg).assign(input="evi")
+        cache[vname] = v[COLS]
+        cache[vname + ("n",)] = v.set_index(["region", "crop", "vintage"]).n_composites
+    veg = cache[vname]
     if sens == "chirps_prelim":
         def prelim_rain():
             out = []
             for v in VINTAGES:
-                table, _ = prelim_table(S, v)
+                table, replaced = prelim_table(S, v)
+                cache[("prelim_substituted", v)] = replaced
                 out.append(wi.windowed("rain", wi.rain_total, "rain_flowering", exclude=S,
                                        vintages={v: wi.VINTAGES[v]}, mcfg=mcfg, table=table))
             return pd.concat(out, ignore_index=True)
@@ -238,7 +264,9 @@ def fold_inputs(S, sens, cache):
     heat = part(("heat", mkey), lambda: wi.windowed("heat", wi.heat_days, "heat_days", exclude=S, sd_floor=1.0,
                                                     mcfg=mcfg))
     x = pd.concat([veg, rain, soil, heat], ignore_index=True)
-    return x.pivot_table(index=["region", "crop", "vintage"], columns="input", values="value")[INPUTS]
+    X = x.pivot_table(index=["region", "crop", "vintage"], columns="input", values="value")[INPUTS]
+    X["evi_n_composites"] = cache[vname + ("n",)].reindex(X.index)
+    return X
 
 
 # ------------------------------------------------------------------ ridge
@@ -254,7 +282,7 @@ def choose_lambda(X, y, groups):
     for lam in LAMBDAS:
         errs = []
         for g in np.unique(groups):
-            tr = groups != g
+            tr = (groups != g) & (groups != g + 1)  # crop g+1's target carries y_g
             b0, w = ridge_fit(X[tr], y[tr], lam)
             errs.append(y[~tr] - b0 - X[~tr] @ w)
         mse = float(np.mean(np.concatenate(errs) ** 2))
@@ -276,8 +304,25 @@ def fit_predict(train, pred, cols):
 
 
 # ------------------------------------------------------------------ main loop
+def run_metadata(manifest_path):
+    """Refuse to run on uncommitted scoring code; return the commit, the manifest's SHA-256 and the time."""
+    import datetime as dt
+    import subprocess
+
+    dirty = subprocess.run(["git", "status", "--porcelain", "gee"], capture_output=True, text=True, cwd=ROOT).stdout
+    if dirty.strip():
+        raise SystemExit(f"uncommitted changes under gee/; commit the scoring code first:\n{dirty}")
+    commit = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, cwd=ROOT).stdout.strip()
+    return dict(run_commit=commit, manifest_sha256=sha256(manifest_path),
+                run_utc=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+
+
 def run():
+    if OUT.exists():
+        raise SystemExit(f"{OUT.name} exists: one run writes one results file; a corrected run is a new label")
+    meta = run_metadata(MANIFEST)
     guard_reads()
+    cov = pd.read_csv(ROOT / "docs" / "week0" / "station_coverage_frozen.csv").set_index(["region", "crop"])
     ys = yields()
     check_base_rates(ys)
     frost = pd.read_csv(D / "w2_frost_region_season.csv")
@@ -293,11 +338,11 @@ def run():
         for sens in SENSITIVITIES:
             if sens == "chirps_prelim" and S not in PRELIM_CROPS:
                 continue  # the prelim rerun covers held-out crops whose cuts fall in CHC's archive
-            X = fold_inputs(S, "headline" if sens == "frost_without_unresolved" else sens, cache)
+            X = fold_inputs(S, "headline" if sens == FROST_ALT else sens, cache)
             for version in ("no_frost", "with_frost"):
-                if version == "no_frost" and sens == "frost_without_unresolved":
+                if version == "no_frost" and sens == FROST_ALT:
                     continue
-                pens = pen["without" if sens == "frost_without_unresolved" else "with"]
+                pens = pen[HEADLINE_FROST if sens != FROST_ALT else ("without" if HEADLINE_FROST == "with" else "with")]
                 for v in VINTAGES:
                     recs = []
                     for r in REGIONS + [TOTAL]:
@@ -311,7 +356,7 @@ def run():
                             recs.append(dict(region=r, crop=c, a=ys[r][c] / e[c] - 1, p=p, E=e[c], T=trend[c],
                                              y=ys[r][c], **X.loc[(r, c, v)].to_dict()))
                     d = pd.DataFrame(recs).dropna(subset=INPUTS + ["p"])
-                    train = d[(d.crop != S) & d.region.isin(REGIONS)]
+                    train = d[(d.crop != S) & (d.crop != S + 1) & d.region.isin(REGIONS)]  # S+1 carries y_S
                     pred = d[d.crop == S]
                     if pred.empty:
                         continue
@@ -324,8 +369,11 @@ def run():
                                 region=q.region, crop=S, scored=S in SCORED[version][q.region],
                                 y=q.y, E=q.E, T=q["T"], a_actual=q.a, a_pred=c0 - q.p, a_pred_no_frost=c0,
                                 penalty=q.p, lam=lam, intercept=b0, n_train=len(train),
+                                train_crops=f"{train.crop.min()}-{train.crop.max()} less {S},{S + 1}",
                                 **{f"w_{k}": weights.get(k, np.nan) for k in INPUTS},
-                                **{f"x_{k}": q[k] for k in INPUTS}))
+                                **{f"x_{k}": q[k] for k in INPUTS},
+                                evi_n_composites=q.evi_n_composites,
+                                n_prelim_substituted=cache.get(("prelim_substituted", v)) if sens == "chirps_prelim" else np.nan))
                     if sens == "headline":
                         for _, q in pred.iterrows():
                             rows.append(dict(run=RUN_LABEL, sensitivity="headline", version=version, model="zero",
@@ -359,10 +407,19 @@ def run():
             res.at[i, "surprise_pred"] = np.sign(res.at[i, "a_pred"] - a_first)
             rev = ys[r][S] - y1[r]
             res.at[i, "surprise_actual"] = 0.0 if abs(rev) < 0.01 * y1[r] else np.sign(rev)
+    # frost station counts and observed coverage (§5 step 4), and the report flags
+    for col, src in (("automatic_stations", "automatic_stations"), ("conventional_stations", "conventional_stations"),
+                     ("observed_coverage_pct", "combined_coverage"), ("unflaggable", "unflaggable")):
+        res[col] = [cov[src].get((r, c), np.nan) for r, c in zip(res.region, res.crop)]
+    res["note_in_sample_2022"] = res.crop == 2022
+    res["note_carryover_2023"] = res.crop == 2023
     res["hit_condition"] = np.sign(res.a_pred) == np.sign(res.a_actual)
     res["yvt_actual"] = np.sign(res.y - res["T"])
     res["yvt_pred"] = np.sign(res.E * (1 + res.a_pred) - res["T"])
     res["hit_yield_vs_trend"] = res.yvt_pred == res.yvt_actual
+    for k, v in meta.items():
+        res[k] = v
+    res["headline_frost"] = HEADLINE_FROST
     res.to_csv(OUT, index=False, float_format="%.6f")
     return res
 
@@ -390,11 +447,35 @@ def summary(res):
             h = int(rec["hits_condition"])
             rec.update(mark=f"{mk[0]}/{mk[1]}", passed=h >= mk[0] and len(x) == mk[1],
                        p_coin=tail(h, len(x), 0.5), p_majority=tail(h, len(x), max(mk[2], 1 - mk[2])))
+        # identical observations (§9): the comparator on exactly this group's crops
+        if rec["sensitivity"] != "headline":
+            comp = dict(sensitivity="headline", version=rec["version"])
+        elif rec["version"] == "with_frost":
+            comp = dict(sensitivity="headline", version="no_frost")
+        else:
+            comp = None
+        if comp:
+            c = res[(res.sensitivity == comp["sensitivity"]) & (res.version == comp["version"])
+                    & (res.model == rec["model"]) & (res.vintage == rec["vintage"]) & (res.region == rec["region"])
+                    & res.crop.isin(x.crop)]
+            rec.update(comparator=f"{comp['sensitivity']}/{comp['version']}", comparator_n=len(c),
+                       comparator_hits_condition=np.nan if rec["model"] == "zero" else int(c.hit_condition.sum()),
+                       comparator_mae_pct=100 * (c.a_pred - c.a_actual).abs().mean())
         rows.append(rec)
     return pd.DataFrame(rows)
+
+
+def residuals(res):
+    """Per-region residuals under the pooled weights (owner requirement, not in the spec): the signed
+    mean and mean absolute residual of the condition anomaly, headline full model, scored crops."""
+    h = res[(res.sensitivity == "headline") & (res.model == "full") & res.scored].copy()
+    h["resid_pct"] = 100 * (h.a_actual - h.a_pred)
+    return (h.groupby(["version", "vintage", "region"]).resid_pct
+            .agg(n="size", mean_signed="mean", mean_abs=lambda v: v.abs().mean()).reset_index())
 
 
 if __name__ == "__main__":
     pd.set_option("display.width", 250)
     res = run()
     print(summary(res).to_string())
+    print(residuals(res).to_string())
