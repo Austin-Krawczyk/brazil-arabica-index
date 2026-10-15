@@ -19,7 +19,8 @@ Run:    .venv/Scripts/python gee/w1_reading_coverage.py
 Reads:  data/derived/w1_series_muni_<region>.csv, docs/week0/w1_filter_kept.csv,
         docs/week0/w1_filter_stable_membership.csv, docs/week0/proposed_region_membership.csv
 Writes: docs/week0/w1_member_share.csv (region × season), docs/week0/w1_covered_fraction.csv
-        (region × composite), docs/week0/w1_evi_above_0_9.csv
+        (region × composite), docs/week0/w1_evi_above_0_9.csv, docs/week0/members_by_season.csv
+        (municipality × season: PAM area, mapped coffee in MODIS pixels, kept, member)
 """
 import glob
 
@@ -100,6 +101,9 @@ def main():
         below_floor=lambda x: int((x < FLOOR).sum()))
     share = share.join(c, on=["region", "season"])
 
+    # the member table per season (Amendment 35), registered at prereg-2
+    pam[["code", "region", "season", "mask_year", "pam_ha", "pixels", "kept", "member"]].sort_values(
+        ["region", "code", "season"]).to_csv(WEEK0 / "members_by_season.csv", index=False, float_format="%.4f")
     out = pd.concat([share, tot], ignore_index=True)
     out.to_csv(WEEK0 / "w1_member_share.csv", index=False, float_format="%.4f")
     cov.to_csv(WEEK0 / "w1_covered_fraction.csv", index=False, float_format="%.4f")
