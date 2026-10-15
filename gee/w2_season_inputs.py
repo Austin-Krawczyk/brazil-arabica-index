@@ -62,12 +62,14 @@ def last_pentad_end(limit):
         d -= dt.timedelta(days=1)
 
 
-def members(filter_rule=True, weight="pam_ha"):
+def members(filter_rule=True, weight="pam_ha", mask="full"):
     """Members per season (Amendment 35) and their aggregation weight, returned as `pam_ha`.
     Registered sensitivities (Amendment 16d): filter_rule=False drops the stable filter (members are
     then every municipality with PAM area and at least one MODIS pixel of mapped coffee);
-    weight="pixels" aggregates by mapped coffee area instead of PAM area, same members."""
-    m = pd.read_csv(WEEK0 / "members_by_season.csv", dtype={"code": str})
+    weight="pixels" aggregates by mapped coffee area instead of PAM area, same members.
+    mask="persistent": members on the persistent-pixel mask (Amendment 41)."""
+    m = pd.read_csv(WEEK0 / ("members_by_season.csv" if mask == "full" else "members_by_season_persistent.csv"),
+                    dtype={"code": str})
     keep = m.member if filter_rule else (m.pam_ha > 0) & (m.pixels >= 1)
     return (m[keep][["code", "region", "season", weight]]
             .rename(columns={"season": "crop", weight: "pam_ha"}))
@@ -105,7 +107,8 @@ def zscore(r, clim_key, exclude=None, sd_floor=None, clim_year_col="clim_year"):
 
 # ---------------------------------------------------------------- EVI
 def evi(exclude=None, start_month=5, index="EVI", mcfg=None):
-    s = pd.concat([pd.read_csv(f, dtype={"code": str}) for f in sorted(glob.glob(str(D / "w1_series_muni_*.csv")))],
+    series = "w1_series_muni_*.csv" if (mcfg or {}).get("mask", "full") == "full" else "w1p_series_muni_*.csv"
+    s = pd.concat([pd.read_csv(f, dtype={"code": str}) for f in sorted(glob.glob(str(D / series)))],
                   ignore_index=True)
     s["start"] = pd.to_datetime(s.composite_start)
     s["period"] = s.start.dt.dayofyear
@@ -135,11 +138,12 @@ def evi(exclude=None, start_month=5, index="EVI", mcfg=None):
 
 
 # ---------------------------------------------------------------- weather tables
-def muni_table(product, table=None):
+def muni_table(product, table=None, mask="full"):
     """The municipal table, as coffee-weighted means. `table` replaces the file (the backtest's CHIRPS
     prelim sensitivity passes a copy with the held-out season's non-final months substituted)."""
     t = (table.copy() if table is not None else
-         pd.read_csv(D / f"w2_{product}_muni.csv", dtype={"code": str})).rename(columns={"season": "crop"})
+         pd.read_csv(D / f"w2_{product}_muni{'' if mask == 'full' else '_persistent'}.csv", dtype={"code": str})
+         ).rename(columns={"season": "crop"})
     bands = [c for c in t.columns if c[:2] in ("d_", "p_", "h_") or c == "sm"]
     t[bands] = t[bands].div(t.w, axis=0)  # coffee-weighted municipal means
     return t, bands
@@ -147,7 +151,7 @@ def muni_table(product, table=None):
 
 def windowed(product, total_fn, input_name, exclude=None, sd_floor=None, vintages=VINTAGES, mcfg=None,
              table=None):
-    t, bands = muni_table(product, table)
+    t, bands = muni_table(product, table, (mcfg or {}).get("mask", "full"))
     mem = members(**(mcfg or {}))
     rows = []
     for v in vintages:
@@ -202,7 +206,7 @@ def heat_days(row, crop, v):
 
 
 def soil(exclude=None, mcfg=None):
-    t, bands = muni_table("soil")
+    t, bands = muni_table("soil", mask=(mcfg or {}).get("mask", "full"))
     mem = members(**(mcfg or {}))
     x = t.merge(mem.drop(columns="region"), on=["code", "crop"], how="inner")
     x["value"], x["clim_year"], x["k"] = x.sm, x.crop - 1, 0

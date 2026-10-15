@@ -24,8 +24,9 @@ everything fitted is refitted without S:
 
 Model (§5 step 6):
   condition anomaly   a = actual / expectation − 1 (a share of the stage-1 expectation)
-  frost offset        p = the region's frost penalty for the crop (w2_frost_region_season.csv,
-                      unresolved stations at their observed tiers), a share of yield
+  frost offset        p = the region's frost penalty for the crop (w2_frost_region_season.csv;
+                      headline: unresolved stations left out of the observed area and tier shares,
+                      Amendment 41), a share of yield
   stage 2             ridge of (a + p) on the four inputs, pooled over the four regions, one set
                       of weights; prediction â = −p + b0 + w·x. Without frost, p = 0.
   inputs              evi, rain_flowering, soil_moisture, heat_days: the registered season values
@@ -50,15 +51,15 @@ Sensitivities, reported beside the headline, not scored against pass marks:
   chirps_prelim             held-out crops 2016–2025: CHC prelim for flowering months not yet final
                             at the cut (final for month M from the 1st of M+2), spread evenly over
                             each pentad's days (§9, Amendment 9)
-  frost_without_unresolved  frost penalty without unresolved stations (Amendment 17b)
+  frost_with_unresolved     frost penalty with unresolved stations at their observed tiers (17b)
+  persistent_pixel          all four inputs on the persistent-pixel mask (Amendments 16b, 41): its
+                            members, EVI series and weather tables; the registered frost penalty
   third_survey              crops 2024–2025: crop S−1's anomaly from Conab's third survey of S−1
                             (§5 step 7), applied to the held-out expectation only
-  no_filter and mapped_area change the four inputs only; the frost penalty stays the registered one
-  (computed on the filtered mask, its four-region total PAM-weighted).
-Not run in this file, because their inputs are not in the manifest:
-  - the persistent-pixel mask (§5 step 1; prereg-2 addendum 3);
-  - the VJ113A1 vegetation rerun (§4a, §5 step 1), which also needs a registered baseline rule: its
-    2018–2025 record is shorter than the 10-year municipal climatology minimum.
+  no_filter, mapped_area and persistent_pixel change the four inputs only; the frost penalty stays
+  the registered one (computed on the filtered full mask, its four-region total PAM-weighted).
+Not in this run: the VJ113A1 concordance check (Amendment 41: anomalies against its own climatology,
+five-year minimum, correlation and sign agreement with the MODIS inputs), a later labelled run.
 The pre-dawn night rule (Amendment 40) changes no tier and no coldest night at any tiered station for
 crops 2009–2025, so the headline frost input is unchanged; it does resolve some stations, which can
 move the without-unresolved figures. It is registered as a frost-results sensitivity, not rerun here.
@@ -75,6 +76,9 @@ counts and observed coverage, flags for crop 2022 (in-sample) and crop 2023 (pos
 and the run's code commit, manifest SHA-256 and time. The run refuses to overwrite an existing
 results file. Summaries compare every sensitivity with the headline on identical crops (§9), and
 the with-frost version with the no-frost version on the crops they share (§5 step 4).
+
+Pass marks (Amendment 41): the November vintage decides pass or fail; December and January are
+reported against the same marks and are not scored.
 
 Run:    .venv/Scripts/python gee/backtest.py
 Writes: data/derived/backtest_results_v1.csv (one row per sensitivity × version × model × vintage
@@ -118,9 +122,11 @@ PASS_MARKS = {
 }
 # Headline frost penalty: "with" keeps unresolved stations at their observed tiers, "without" leaves
 # them out (Amendment 17b reports both; the owner fixes which is the headline before the run).
-HEADLINE_FROST = "with"
+HEADLINE_FROST = "without"  # Amendment 41
 FROST_ALT = "frost_without_unresolved" if HEADLINE_FROST == "with" else "frost_with_unresolved"
-SENSITIVITIES = ["headline", "evi_from_sep", "ndvi", "no_filter", "mapped_area", "chirps_prelim", FROST_ALT]
+SENSITIVITIES = ["headline", "evi_from_sep", "ndvi", "no_filter", "mapped_area", "persistent_pixel", "chirps_prelim",
+                 FROST_ALT]
+GOVERNING_VINTAGE = "Nov"  # Amendment 41
 PRELIM_CROPS = range(2016, 2026)
 
 
@@ -231,8 +237,9 @@ COLS = ["region", "crop", "vintage", "input", "value"]
 def fold_inputs(S, sens, cache):
     """The four inputs for every region, crop and vintage, every fit without crop S. Components that a
     sensitivity does not change are shared with the headline through `cache` (one fold)."""
-    mkey = sens if sens in ("no_filter", "mapped_area") else "pam"
-    mcfg = {"no_filter": {"filter_rule": False}, "mapped_area": {"weight": "pixels"}}.get(mkey, {})
+    mkey = sens if sens in ("no_filter", "mapped_area", "persistent_pixel") else "pam"
+    mcfg = {"no_filter": {"filter_rule": False}, "mapped_area": {"weight": "pixels"},
+            "persistent_pixel": {"mask": "persistent"}}.get(mkey, {})
 
     def part(name, fn):
         if name not in cache:
@@ -447,7 +454,9 @@ def summary(res):
         mk = PASS_MARKS.get((rec["version"], rec["region"]))
         if rec["sensitivity"] == "headline" and rec["model"] == "full" and mk:
             h = int(rec["hits_condition"])
-            rec.update(mark=f"{mk[0]}/{mk[1]}", passed=h >= mk[0] and len(x) == mk[1],
+            verdict = ("pass" if h >= mk[0] and len(x) == mk[1] else "fail") if rec["vintage"] == GOVERNING_VINTAGE \
+                else "reported against the mark, not scored"
+            rec.update(mark=f"{mk[0]}/{mk[1]}", verdict=verdict,
                        p_coin=tail(h, len(x), 0.5), p_majority=tail(h, len(x), max(mk[2], 1 - mk[2])))
         # identical observations (§9): the comparator on exactly this group's crops
         if rec["sensitivity"] != "headline":
