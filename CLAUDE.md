@@ -267,9 +267,14 @@ most drift-affected, and it is the season every note reports.
     months 0.45. **The live vegetation fallback is therefore (b), VJ113A1.**
   - If triggered, the current-season anomaly is computed against the fallback's own baseline,
     never against MODIS's.
-  - The headline backtest stays on MODIS. The vegetation component is rerun on the fallback for
-    the crops its record covers, and the change in skill is reported beside the headline, as for
-    CHIRPS-prelim (§9).
+  - The headline backtest stays on MODIS.
+  - **VJ113A1 gets a concordance check, not a scored sensitivity (AMENDED 2026-10-15, Amendment
+    41).**
+    - Its anomalies are taken against its own climatology, with a five-year minimum per
+      municipality and period.
+    - They are compared with the MODIS inputs on the overlapping crops, per region, by
+      correlation and sign agreement.
+    - It is a later labelled run.
   - Resolution changes the Zona da Mata caveat: VJ113A1 at 500 m blurs smallholder terrain more
     than MODIS does, HLS at 30 m less. The note says which applies.
   - **Mid-season rule.** Trigger (b) is evaluated once, in Week 0, and binds for the whole season.
@@ -478,8 +483,9 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
    - This removes the young-planting part of the mismatch, not the post-frost pruning part:
      pruned trees stay class 46. The removal-report split above still applies.
    - The index itself stays on the full class-46 mask in v1. The backtest is reported once more
-     on the persistent-pixel mask, as a sensitivity beside the headline, like CHIRPS-prelim and
-     VIIRS.
+     on the persistent-pixel mask, as a sensitivity beside the headline, like CHIRPS-prelim. Its
+     inputs are computed under the watchdog and frozen before the backtest's single run
+     (Amendment 41).
    - Both masks are registered at `prereg-2`, with the filter rule and its sensitivities
      (Amendment 16d).
 2. **Vegetation anomalies (AMENDED 2026-10-15, Amendment 35).** From `MOD13Q1`, per 16-day
@@ -599,6 +605,10 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      counted as a non-frost night. If a station's missing nights could change its tier for a
      season, its tier for that season is reported as unresolved, and the region's tier shares
      are reported with and without it.
+     - **Headline (Amendment 41): unresolved stations are left out** of the observed area and the
+       tier shares. The figures with them are reported beside.
+     - **Both outcomes were visible before the choice** (Week 0 report §19). Leaving them out
+       flags Sul crop 2020 severe, which is consistent with the July 2019 frost.
      - **Pre-dawn sensitivity (Amendment 40), not scored:** a night also counts as observed
        when its 00:00–09:00 local hours are complete.
      - Registered as a `prereg-2` addendum and reported beside the frost results.
@@ -677,6 +687,8 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
        are reported with and without it.
    - In the regression, the frost penalty is a fixed offset. The fitted weights are estimated on
      the yield anomaly that remains after it.
+   - **Units (Amendment 41):** the condition anomaly is a share of the stage-1 expectation
+     (actual / expectation − 1), and the frost penalty is a share of yield.
    - **The crop 2022 call is in-sample.** The constants are being set by someone who knows what
      the July 2021 frost did, so the 2022 call is not evidence of skill. Say so wherever 2022
      appears: the backtest table, the notes and the README.
@@ -761,6 +773,9 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      | São Paulo | **18 of 24** (0.458; 0.0113, 0.0304) | **13 of 17** (0.529; 0.0245, 0.0421) |
      | Zona da Mata, Rio Doce e Central | **14 of 17** (0.412; 0.0064, 0.0378) | **14 of 17** (0.412; 0.0064, 0.0378) |
      | Four-region total | **13 of 17** (0.471; 0.0245, 0.0421) | **13 of 17** (0.471; 0.0245, 0.0421) |
+
+   - **The November vintage decides pass or fail (Amendment 41).** December and January are
+     reported against the same marks and are not scored.
 
    **Crop 2026** is added when Conab publishes its final, as an addendum reported with and
    without it. The pass marks above don't change. It is not a clean out-of-sample test, because

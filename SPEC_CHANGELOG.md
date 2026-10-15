@@ -1075,3 +1075,52 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   The frost rules for the backtest are unchanged.
 
   Approved by owner (2026-10-15).
+
+- 2026-10-15 — **AMENDMENT 41: backtest decisions before the single run.** Amends §4a, §5 steps 1,
+  4, 6 and 8. Owner decisions after an independent review of the scoring code (Week 0 report
+  §21), before any backtest result exists.
+
+  **Changes:**
+  1. **Persistent-pixel mask** (prereg-2 addendum 3): its inputs are computed under the watchdog
+     and frozen before the single run. It is a sensitivity in that run, as registered.
+  2. **VJ113A1 gets a concordance check, not a scored sensitivity.**
+     - Its anomalies are taken against its own climatology, with a five-year minimum per
+       municipality and period. Its 2018–2025 record is shorter than the 10-year minimum.
+     - They are compared with the MODIS inputs on the overlapping crops, per region, by
+       correlation and sign agreement.
+     - It is a later labelled run.
+  3. **Headline frost penalty: unresolved stations are left out** of the observed area and the
+     tier shares. The figures with them are reported beside.
+     - This is the reading that fits 17b's "a missing night is never a non-frost night".
+     - **Disclosure:** both outcomes were visible before the choice (Week 0 report §19). Leaving
+       them out flags Sul crop 2020 severe (penalty 0.186), which is consistent with the July
+       2019 frost.
+  4. **The November vintage decides pass or fail.** December and January are reported against
+     the same marks and are not scored.
+  5. **EVI availability confirmed.** "Ended at least 14 days before the cut" uses Earth Engine's
+     composite end date (start + 16 days), the reference from which the 14-day lag was measured.
+     The January vintage's composite count alternates 13 and 14 with leap years, because the
+     MODIS calendar is fixed by day of year.
+  6. **Text correction to `prereg-1` (logged, rule unchanged).** The flowering-rain row said "the
+     December and January cuts see the whole window". The registered rule in the same cell gives
+     1 Sep – 25 Nov at the 1 December cut; only the January cut sees the whole window. The code
+     follows the rule.
+  7. **Implementation choices confirmed** (the registration was silent):
+     - the condition anomaly as a share of the expectation, and the frost penalty as a share of
+       yield;
+     - the pooled inputs re-standardised within each fold on the training rows;
+     - the inner λ loop reuses the outer fold's inputs and leaves out crops k and k+1;
+     - the four-region total is predicted from its own inputs with the pooled weights and its own
+       stage 1;
+     - mapped-area aggregation keeps the same members;
+     - the third-survey sensitivity changes only the held-out expectation;
+     - the no-filter and mapped-area sensitivities keep the registered frost penalty.
+  8. **Caveat kept beside the Sul crop-2012 result:** conventional-station minima are assumed
+     available at every cut; that is not established.
+
+  **Also from the review, fixed in the code before any run (not registration changes):**
+  - crop S+1 is left out of training in fold S, because its expectation carries crop S's yield;
+  - the run is one-shot;
+  - comparisons use identical crops.
+
+  Approved by owner (2026-10-15).
