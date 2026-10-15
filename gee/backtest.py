@@ -25,8 +25,8 @@ everything fitted is refitted without S:
 Model (§5 step 6):
   condition anomaly   a = actual / expectation − 1 (a share of the stage-1 expectation)
   frost offset        p = the region's frost penalty for the crop (w2_frost_region_season.csv;
-                      headline: unresolved stations left out of the observed area and tier shares,
-                      Amendment 41), a share of yield
+                      headline: unresolved stations kept at their observed tiers, Amendment 41b;
+                      left out is the sensitivity), a share of yield
   stage 2             ridge of (a + p) on the four inputs, pooled over the four regions, one set
                       of weights; prediction â = −p + b0 + w·x. Without frost, p = 0.
   inputs              evi, rain_flowering, soil_moisture, heat_days: the registered season values
@@ -51,7 +51,7 @@ Sensitivities, reported beside the headline, not scored against pass marks:
   chirps_prelim             held-out crops 2016–2025: CHC prelim for flowering months not yet final
                             at the cut (final for month M from the 1st of M+2), spread evenly over
                             each pentad's days (§9, Amendment 9)
-  frost_with_unresolved     frost penalty with unresolved stations at their observed tiers (17b)
+  frost_without_unresolved  frost penalty with unresolved stations left out (17b; Amendment 41b)
   persistent_pixel          all four inputs on the persistent-pixel mask (Amendments 16b, 41): its
                             members, EVI series and weather tables; the registered frost penalty
   third_survey              crops 2024–2025: crop S−1's anomaly from Conab's third survey of S−1
@@ -122,7 +122,7 @@ PASS_MARKS = {
 }
 # Headline frost penalty: "with" keeps unresolved stations at their observed tiers, "without" leaves
 # them out (Amendment 17b reports both; the owner fixes which is the headline before the run).
-HEADLINE_FROST = "without"  # Amendment 41
+HEADLINE_FROST = "with"  # Amendment 41b (reversing 41)
 FROST_ALT = "frost_without_unresolved" if HEADLINE_FROST == "with" else "frost_with_unresolved"
 SENSITIVITIES = ["headline", "evi_from_sep", "ndvi", "no_filter", "mapped_area", "persistent_pixel", "chirps_prelim",
                  FROST_ALT]

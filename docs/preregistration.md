@@ -167,7 +167,7 @@ Owner decisions after an independent review of the scoring code, before any back
 |---|---|
 | Persistent-pixel mask | Inputs computed under the watchdog and frozen before the run; a sensitivity in the run |
 | VJ113A1 | Concordance check, not a scored sensitivity: anomalies against its own climatology (five-year minimum), correlation and sign agreement with the MODIS inputs on overlapping crops per region; a later labelled run |
-| Headline frost penalty | Unresolved stations left out of the observed area and tier shares; the figures with them reported beside. Both outcomes were visible before the choice (Week 0 report §19): Sul crop 2020 becomes severe-flagged, consistent with the July 2019 frost |
+| Headline frost penalty | **Reversed by Amendment 41b:** unresolved stations kept at their observed tiers, the coverage registered at `prereg-2` (Triângulo crop 2018 the only unflaggable region-season). Registered sensitivity: unresolved stations left out, which flags Sul crop 2020 severe (consistent with the July 2019 frost) and makes 18 of 68 region-seasons unflaggable. Both outcomes were visible before each choice |
 | Pass marks | The November vintage decides pass or fail; December and January reported against the same marks, not scored |
 | EVI availability | Composite end = Earth Engine's end date (start + 16 days), as in the lag measurement; confirmed |
 | Units | Condition anomaly as a share of the stage-1 expectation; frost penalty as a share of yield |
