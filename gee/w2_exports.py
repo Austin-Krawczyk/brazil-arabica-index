@@ -75,9 +75,12 @@ def iso(d):
     return d.isoformat() if isinstance(d, dt.datetime) else d.strftime("%Y-%m-%d")
 
 
+WEIGHTS_PREFIX = "w1_weights_meso_"  # "w1_pweights_meso_": the persistent-pixel mask (Amendment 41)
+
+
 def coffee_weight(project, mask_year, target_proj, max_pixels):
     mesos = sorted(meso_table().meso_code.unique())
-    assets = [ee.Image(f"projects/{project}/assets/w1_weights_meso_{m}") for m in mesos]
+    assets = [ee.Image(f"projects/{project}/assets/{WEIGHTS_PREFIX}{m}") for m in mesos]
     modis = assets[0].select("w_1998").projection()
     w = (ee.ImageCollection([a.select(f"w_{mask_year}") for a in assets]).mosaic()
          .unmask(0).setDefaultProjection(modis))
@@ -138,7 +141,11 @@ def main():
     a.add_argument("--estimate", type=float, required=True, help="cost estimate in EECU-seconds")
     a.add_argument("--start-session", type=float, help="start a new watchdog session with this cap")
     a.add_argument("--cap", type=float, help="set the session cap to this value, keeping the spend")
+    a.add_argument("--persistent", action="store_true", help="persistent-pixel weights (Amendment 41)")
     args = a.parse_args()
+    global WEIGHTS_PREFIX
+    if args.persistent:
+        WEIGHTS_PREFIX = "w1_pweights_meso_"
     project = init()
     if args.start_session:
         wd.set_session_cap("w2_inputs", args.start_session)
@@ -151,7 +158,8 @@ def main():
     fc, names = table(args.product, project, seasons,
                       PROBE_REGION if args.probe and not args.all_regions else None)
     band_names = names.getInfo()  # interactive: metadata (band names)
-    name = f"w2_{args.product}_muni" + ("_probe" if args.probe else "") + ("_all" if args.all_regions else "")
+    name = (f"w2_{args.product}_muni" + ("_persistent" if args.persistent else "") + ("_probe" if args.probe else "")
+            + ("_all" if args.all_regions else ""))
     t0 = time.time()
     df, used = wd.export_table_watched(fc, name, ["code", "region", "season", "w"] + band_names,
                                        args.estimate, prefix="w2")

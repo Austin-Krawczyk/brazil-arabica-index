@@ -111,25 +111,31 @@ def meso_table():
     return member[member.in_index][["code", "conab_region", "meso_code"]]
 
 
-def weights(project, meso_code, estimate_eecu_s):
+def weights(project, meso_code, estimate_eecu_s, persistent=False):
     """Full-mask coffee fraction of each MOD13Q1 pixel for every mask year 1998-2025 ("w_M"), for one
-    IBGE 1989 mesoregion (owner, 2026-10-14: option iii; mesoregion-bounded exports; persistent
-    mask deferred). Unfiltered: the 30% filter is applied at aggregation (Amendment 16d).
-    Started through the watchdog, cancelled at 2 × the estimate."""
+    IBGE 1989 mesoregion (owner, 2026-10-14: option iii; mesoregion-bounded exports). Unfiltered: the
+    30% filter is applied at aggregation (Amendment 16d). Started through the watchdog, cancelled at
+    2 × the estimate.
+    persistent=True (Amendment 41): the persistent-pixel mask instead, pixels classified 46 in M, M−1
+    and M−2 (Amendment 16b), saved as w1_pweights_meso_<code> with the same band names."""
     codes = meso_table().query("meso_code == @meso_code").code.tolist()
     munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}").filter(ee.Filter.inList("code", codes))
     proj = ee.ImageCollection("MODIS/061/MOD13Q1").first().select("EVI").projection()
-    bands = [coffee(m).unmask(0).reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
+    def mask(m):
+        return coffee(m).And(coffee(m - 1)).And(coffee(m - 2)) if persistent else coffee(m)
+
+    bands = [mask(m).unmask(0).reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
              .rename(f"w_{m}").toFloat() for m in MASK_YEARS]
+    name = f"w1_{'p' if persistent else ''}weights_meso_{meso_code}"
     img = ee.Image.cat(bands).clipToCollection(munis)
     p = proj.getInfo()  # interactive: metadata (projection)
     task = ee.batch.Export.image.toAsset(
-        image=img, description=f"w1_weights_meso_{meso_code}",
-        assetId=f"projects/{project}/assets/w1_weights_meso_{meso_code}",
+        image=img, description=name,
+        assetId=f"projects/{project}/assets/{name}",
         crs=p["crs"], crsTransform=p["transform"], region=munis.geometry().bounds(), maxPixels=1e11,
         pyramidingPolicy={".default": "mean"})
     state, used, wall = run_watched(task, estimate_eecu_s)
-    log_cost(f"weights_meso_{meso_code}", used, f", {state}, {wall:.0f} s wall, {len(bands)} bands")
+    log_cost(name.replace("w1_", "", 1), used, f", {state}, {wall:.0f} s wall, {len(bands)} bands")
     return state, used
 
 

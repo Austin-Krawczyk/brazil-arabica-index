@@ -134,8 +134,9 @@ def run(project, region, start, end):
 FULL_START, FULL_END = "2000-01-01", "2026-01-01"
 
 
-def run_full(project, region, start=FULL_START, end=FULL_END):
-    """Per municipality and composite (Amendment 16d): the filter is applied at aggregation."""
+def run_full(project, region, start=FULL_START, end=FULL_END, weights_prefix="w1_weights_meso_"):
+    """Per municipality and composite (Amendment 16d): the filter is applied at aggregation.
+    weights_prefix="w1_pweights_meso_" uses the persistent-pixel weights (Amendment 41)."""
     from w1_mask import meso_table
 
     col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(start, end)
@@ -143,7 +144,7 @@ def run_full(project, region, start=FULL_START, end=FULL_END):
     munis = (ee.FeatureCollection(f"projects/{project}/assets/w1_municipios_index")
              .filter(ee.Filter.eq("region", region)).select(["code", "region"]))
     mesos = sorted(meso_table().query("conab_region == @region").meso_code.unique())
-    weights = ee.ImageCollection([ee.Image(f"projects/{project}/assets/w1_weights_meso_{m}") for m in mesos]).mosaic()
+    weights = ee.ImageCollection([ee.Image(f"projects/{project}/assets/{weights_prefix}{m}") for m in mesos]).mosaic()
     reducer = (ee.Reducer.median().combine(ee.Reducer.mean(), sharedInputs=True)
                .combine(ee.Reducer.sum(), sharedInputs=True))
 
