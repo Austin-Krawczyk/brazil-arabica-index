@@ -1,0 +1,248 @@
+2026-10-15 04:08:58 UTC  session W1: cap 212,864 EECU-s
+2026-10-15 04:08:59 UTC  started w1_weights_meso_3109: estimate 1,626, cancel above 3,253 EECU-s, poll 60 s
+2026-10-15 04:09:59 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:11:00 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:12:00 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:13:01 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:14:01 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:15:02 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:16:03 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:17:04 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:18:04 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:19:05 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:20:06 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:21:06 UTC  running w1_weights_meso_3109: 0 of 3,253 EECU-s
+2026-10-15 04:22:07 UTC  running w1_weights_meso_3109: 13 of 3,253 EECU-s
+2026-10-15 04:23:07 UTC  running w1_weights_meso_3109: 1,927 of 3,253 EECU-s
+2026-10-15 04:24:08 UTC  running w1_weights_meso_3109: 1,927 of 3,253 EECU-s
+2026-10-15 04:25:08 UTC  completed w1_weights_meso_3109: 1,928 EECU-s, 970 s wall
+2026-10-15 04:25:09 UTC  started w1_weights_meso_3110: estimate 3,458, cancel above 6,916 EECU-s, poll 60 s
+2026-10-15 04:26:10 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:27:10 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:28:11 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:29:11 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:30:12 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:31:12 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:32:13 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:33:13 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:34:14 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:35:14 UTC  running w1_weights_meso_3110: 0 of 6,916 EECU-s
+2026-10-15 04:36:15 UTC  running w1_weights_meso_3110: 770 of 6,916 EECU-s
+2026-10-15 04:37:15 UTC  running w1_weights_meso_3110: 3,262 of 6,916 EECU-s
+2026-10-15 04:38:18 UTC  running w1_weights_meso_3110: 4,444 of 6,916 EECU-s
+2026-10-15 04:39:19 UTC  running w1_weights_meso_3110: 4,444 of 6,916 EECU-s
+2026-10-15 04:40:20 UTC  completed w1_weights_meso_3110: 4,445 EECU-s, 910 s wall
+2026-10-15 04:40:20 UTC  started w1_full_probe_sul_e_centro_oeste_2021: estimate 445, cancel above 890 EECU-s, poll 60 s
+2026-10-15 04:41:21 UTC  completed w1_full_probe_sul_e_centro_oeste_2021: 257 EECU-s, 60 s wall
+2026-10-15 04:41:22 UTC  probe check: 4232 rows, 23 composites, 185 municipalities, EVI median range 0.121-0.855 -> FAIL
+2026-10-15 04:42:21 UTC  probe check: 4232 rows, 23 composites, 185 municipalities, EVI median range 0.121-0.855, 19 empty (19 fully cloud-masked) -> PASS
+2026-10-15 04:42:29 UTC  resume: Sul weights 6,372 and probe 257 EECU-s reused, not rerun
+2026-10-15 04:42:29 UTC  probe check: 4232 rows, 23 composites, 185 municipalities, EVI median range 0.121-0.855, 19 empty (19 fully cloud-masked) -> PASS
+2026-10-15 04:42:29 UTC  estimates reset: weights rate 0.001472 EECU-s per km²-band; composites Sul e Cent 6,690, Triângulo, 13,905, Zona da Ma 14,664, São Paulo  22,551; session cap now 165,087 EECU-s (1.5 × 110,058)
+2026-10-15 04:42:29 UTC  started w1_series_muni_sul_e_centro_oeste: estimate 6,690, cancel above 13,380 EECU-s, poll 60 s
+2026-10-15 04:43:30 UTC  running w1_series_muni_sul_e_centro_oeste: 3,024 of 13,380 EECU-s
+2026-10-15 04:44:31 UTC  running w1_series_muni_sul_e_centro_oeste: 6,243 of 13,380 EECU-s
+2026-10-15 04:45:32 UTC  completed w1_series_muni_sul_e_centro_oeste: 6,254 EECU-s, 182 s wall
+2026-10-15 04:45:35 UTC  Sul e Centro-Oeste: 110,144 municipality-composites, 189 municipalities, 595 composites
+2026-10-15 04:45:36 UTC  started w1_weights_meso_3101: estimate 4,486, cancel above 8,972 EECU-s, poll 60 s
+2026-10-15 04:46:36 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:47:37 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:48:37 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:49:38 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:50:38 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:51:39 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:52:39 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:53:40 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:54:40 UTC  running w1_weights_meso_3101: 0 of 8,972 EECU-s
+2026-10-15 04:55:41 UTC  running w1_weights_meso_3101: 470 of 8,972 EECU-s
+2026-10-15 04:56:41 UTC  running w1_weights_meso_3101: 1,122 of 8,972 EECU-s
+2026-10-15 04:57:42 UTC  running w1_weights_meso_3101: 2,674 of 8,972 EECU-s
+2026-10-15 04:58:43 UTC  running w1_weights_meso_3101: 4,075 of 8,972 EECU-s
+2026-10-15 04:59:43 UTC  running w1_weights_meso_3101: 4,715 of 8,972 EECU-s
+2026-10-15 05:00:44 UTC  completed w1_weights_meso_3101: 4,715 EECU-s, 908 s wall
+2026-10-15 05:00:44 UTC  started w1_weights_meso_3105: estimate 6,582, cancel above 13,164 EECU-s, poll 60 s
+2026-10-15 05:01:45 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:02:46 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:03:46 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:04:47 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:05:47 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:06:48 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:07:48 UTC  running w1_weights_meso_3105: 0 of 13,164 EECU-s
+2026-10-15 05:08:48 UTC  running w1_weights_meso_3105: 418 of 13,164 EECU-s
+2026-10-15 05:09:49 UTC  running w1_weights_meso_3105: 2,744 of 13,164 EECU-s
+2026-10-15 05:10:49 UTC  running w1_weights_meso_3105: 4,838 of 13,164 EECU-s
+2026-10-15 05:11:50 UTC  running w1_weights_meso_3105: 5,705 of 13,164 EECU-s
+2026-10-15 05:12:50 UTC  completed w1_weights_meso_3105: 5,706 EECU-s, 726 s wall
+2026-10-15 05:12:51 UTC  started w1_series_muni_tri_ngulo_alto_paran: estimate 13,905, cancel above 27,810 EECU-s, poll 60 s
+2026-10-15 05:13:51 UTC  running w1_series_muni_tri_ngulo_alto_paran: 2,237 of 27,810 EECU-s
+2026-10-15 05:14:52 UTC  running w1_series_muni_tri_ngulo_alto_paran: 4,975 of 27,810 EECU-s
+2026-10-15 05:15:52 UTC  running w1_series_muni_tri_ngulo_alto_paran: 8,045 of 27,810 EECU-s
+2026-10-15 05:16:53 UTC  running w1_series_muni_tri_ngulo_alto_paran: 10,554 of 27,810 EECU-s
+2026-10-15 05:17:53 UTC  completed w1_series_muni_tri_ngulo_alto_paran: 11,895 EECU-s, 302 s wall
+2026-10-15 05:17:55 UTC  Triângulo, Alto Paranaíba e Noroeste: 38,123 municipality-composites, 68 municipalities, 595 composites
+2026-10-15 05:17:56 UTC  started w1_weights_meso_3106: estimate 2,930, cancel above 5,860 EECU-s, poll 60 s
+2026-10-15 05:18:56 UTC  running w1_weights_meso_3106: 0 of 5,860 EECU-s
+2026-10-15 05:19:56 UTC  running w1_weights_meso_3106: 0 of 5,860 EECU-s
+2026-10-15 05:20:57 UTC  running w1_weights_meso_3106: 215 of 5,860 EECU-s
+2026-10-15 05:21:57 UTC  running w1_weights_meso_3106: 1,370 of 5,860 EECU-s
+2026-10-15 05:22:58 UTC  running w1_weights_meso_3106: 2,442 of 5,860 EECU-s
+2026-10-15 05:23:58 UTC  running w1_weights_meso_3106: 3,107 of 5,860 EECU-s
+2026-10-15 05:24:59 UTC  completed w1_weights_meso_3106: 3,107 EECU-s, 423 s wall
+2026-10-15 05:24:59 UTC  started w1_weights_meso_3107: estimate 3,486, cancel above 6,972 EECU-s, poll 60 s
+2026-10-15 05:26:00 UTC  running w1_weights_meso_3107: 0 of 6,972 EECU-s
+2026-10-15 05:27:00 UTC  running w1_weights_meso_3107: 777 of 6,972 EECU-s
+2026-10-15 05:28:01 UTC  completed w1_weights_meso_3107: 1,963 EECU-s, 182 s wall
+2026-10-15 05:28:02 UTC  started w1_weights_meso_3108: estimate 2,807, cancel above 5,614 EECU-s, poll 60 s
+2026-10-15 05:29:02 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:30:03 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:31:03 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:32:04 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:33:04 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:34:05 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:35:05 UTC  running w1_weights_meso_3108: 0 of 5,614 EECU-s
+2026-10-15 05:36:06 UTC  running w1_weights_meso_3108: 457 of 5,614 EECU-s
+2026-10-15 05:37:06 UTC  running w1_weights_meso_3108: 1,056 of 5,614 EECU-s
+2026-10-15 05:38:07 UTC  running w1_weights_meso_3108: 1,932 of 5,614 EECU-s
+2026-10-15 05:39:08 UTC  running w1_weights_meso_3108: 2,680 of 5,614 EECU-s
+2026-10-15 05:40:08 UTC  running w1_weights_meso_3108: 2,680 of 5,614 EECU-s
+2026-10-15 05:41:09 UTC  completed w1_weights_meso_3108: 2,681 EECU-s, 787 s wall
+2026-10-15 05:41:09 UTC  started w1_weights_meso_3111: estimate 959, cancel above 1,918 EECU-s, poll 60 s
+2026-10-15 05:42:10 UTC  running w1_weights_meso_3111: 0 of 1,918 EECU-s
+2026-10-15 05:43:11 UTC  running w1_weights_meso_3111: 562 of 1,918 EECU-s
+2026-10-15 05:44:11 UTC  completed w1_weights_meso_3111: 754 EECU-s, 182 s wall
+2026-10-15 05:44:12 UTC  started w1_weights_meso_3112: estimate 3,210, cancel above 6,420 EECU-s, poll 60 s
+2026-10-15 05:45:13 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:46:14 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:47:14 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:48:15 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:49:15 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:50:16 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:51:16 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:52:17 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:53:17 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:54:18 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:55:18 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:56:19 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:57:19 UTC  running w1_weights_meso_3112: 0 of 6,420 EECU-s
+2026-10-15 05:58:20 UTC  running w1_weights_meso_3112: 1,369 of 6,420 EECU-s
+2026-10-15 05:59:22 UTC  running w1_weights_meso_3112: 2,794 of 6,420 EECU-s
+2026-10-15 06:00:23 UTC  running w1_weights_meso_3112: 3,220 of 6,420 EECU-s
+2026-10-15 06:01:23 UTC  completed w1_weights_meso_3112: 3,221 EECU-s, 1031 s wall
+2026-10-15 06:01:24 UTC  started w1_series_muni_zona_da_mata_rio_doc: estimate 14,664, cancel above 29,327 EECU-s, poll 60 s
+2026-10-15 06:02:24 UTC  running w1_series_muni_zona_da_mata_rio_doc: 2,604 of 29,327 EECU-s
+2026-10-15 06:03:25 UTC  running w1_series_muni_zona_da_mata_rio_doc: 5,274 of 29,327 EECU-s
+2026-10-15 06:04:25 UTC  running w1_series_muni_zona_da_mata_rio_doc: 7,826 of 29,327 EECU-s
+2026-10-15 06:05:26 UTC  running w1_series_muni_zona_da_mata_rio_doc: 10,269 of 29,327 EECU-s
+2026-10-15 06:06:26 UTC  running w1_series_muni_zona_da_mata_rio_doc: 13,482 of 29,327 EECU-s
+2026-10-15 06:07:27 UTC  running w1_series_muni_zona_da_mata_rio_doc: 15,127 of 29,327 EECU-s
+2026-10-15 06:08:27 UTC  completed w1_series_muni_zona_da_mata_rio_doc: 15,129 EECU-s, 423 s wall
+2026-10-15 06:08:32 UTC  Zona da Mata, Rio Doce e Central: 160,466 municipality-composites, 331 municipalities, 595 composites
+2026-10-15 06:08:33 UTC  started w1_weights_meso_3501: estimate 2,182, cancel above 4,364 EECU-s, poll 60 s
+2026-10-15 06:09:34 UTC  running w1_weights_meso_3501: 0 of 4,364 EECU-s
+2026-10-15 06:10:34 UTC  running w1_weights_meso_3501: 0 of 4,364 EECU-s
+2026-10-15 06:11:35 UTC  running w1_weights_meso_3501: 1,205 of 4,364 EECU-s
+2026-10-15 06:12:35 UTC  running w1_weights_meso_3501: 1,568 of 4,364 EECU-s
+2026-10-15 06:13:36 UTC  running w1_weights_meso_3501: 1,568 of 4,364 EECU-s
+2026-10-15 06:14:36 UTC  running w1_weights_meso_3501: 1,854 of 4,364 EECU-s
+2026-10-15 06:15:37 UTC  running w1_weights_meso_3501: 2,073 of 4,364 EECU-s
+2026-10-15 06:16:37 UTC  completed w1_weights_meso_3501: 2,073 EECU-s, 485 s wall
+2026-10-15 06:16:38 UTC  started w1_weights_meso_3502: estimate 1,628, cancel above 3,255 EECU-s, poll 60 s
+2026-10-15 06:17:39 UTC  running w1_weights_meso_3502: 0 of 3,255 EECU-s
+2026-10-15 06:18:39 UTC  running w1_weights_meso_3502: 374 of 3,255 EECU-s
+2026-10-15 06:19:40 UTC  running w1_weights_meso_3502: 807 of 3,255 EECU-s
+2026-10-15 06:20:40 UTC  running w1_weights_meso_3502: 1,020 of 3,255 EECU-s
+2026-10-15 06:21:41 UTC  completed w1_weights_meso_3502: 1,020 EECU-s, 303 s wall
+2026-10-15 06:21:42 UTC  started w1_weights_meso_3503: estimate 1,343, cancel above 2,686 EECU-s, poll 60 s
+2026-10-15 06:22:42 UTC  running w1_weights_meso_3503: 109 of 2,686 EECU-s
+2026-10-15 06:23:43 UTC  running w1_weights_meso_3503: 394 of 2,686 EECU-s
+2026-10-15 06:24:43 UTC  running w1_weights_meso_3503: 719 of 2,686 EECU-s
+2026-10-15 06:25:43 UTC  running w1_weights_meso_3503: 1,032 of 2,686 EECU-s
+2026-10-15 06:26:44 UTC  completed w1_weights_meso_3503: 1,252 EECU-s, 302 s wall
+2026-10-15 06:26:45 UTC  started w1_weights_meso_3504: estimate 2,700, cancel above 5,400 EECU-s, poll 60 s
+2026-10-15 06:27:45 UTC  running w1_weights_meso_3504: 0 of 5,400 EECU-s
+2026-10-15 06:28:46 UTC  running w1_weights_meso_3504: 0 of 5,400 EECU-s
+2026-10-15 06:29:46 UTC  running w1_weights_meso_3504: 0 of 5,400 EECU-s
+2026-10-15 06:30:47 UTC  running w1_weights_meso_3504: 0 of 5,400 EECU-s
+2026-10-15 06:31:47 UTC  running w1_weights_meso_3504: 0 of 5,400 EECU-s
+2026-10-15 06:32:48 UTC  running w1_weights_meso_3504: 0 of 5,400 EECU-s
+2026-10-15 06:33:49 UTC  running w1_weights_meso_3504: 320 of 5,400 EECU-s
+2026-10-15 06:34:50 UTC  running w1_weights_meso_3504: 1,775 of 5,400 EECU-s
+2026-10-15 06:35:51 UTC  running w1_weights_meso_3504: 2,707 of 5,400 EECU-s
+2026-10-15 06:36:51 UTC  running w1_weights_meso_3504: 2,707 of 5,400 EECU-s
+2026-10-15 06:37:52 UTC  completed w1_weights_meso_3504: 2,707 EECU-s, 667 s wall
+2026-10-15 06:37:52 UTC  started w1_weights_meso_3505: estimate 712, cancel above 1,424 EECU-s, poll 60 s
+2026-10-15 06:38:53 UTC  running w1_weights_meso_3505: 140 of 1,424 EECU-s
+2026-10-15 06:39:53 UTC  completed w1_weights_meso_3505: 405 EECU-s, 121 s wall
+2026-10-15 06:39:54 UTC  started w1_weights_meso_3506: estimate 682, cancel above 1,364 EECU-s, poll 60 s
+2026-10-15 06:40:55 UTC  running w1_weights_meso_3506: 76 of 1,364 EECU-s
+2026-10-15 06:41:55 UTC  running w1_weights_meso_3506: 325 of 1,364 EECU-s
+2026-10-15 06:42:56 UTC  completed w1_weights_meso_3506: 467 EECU-s, 182 s wall
+2026-10-15 06:42:57 UTC  started w1_weights_meso_3507: estimate 1,198, cancel above 2,395 EECU-s, poll 60 s
+2026-10-15 06:43:57 UTC  running w1_weights_meso_3507: 123 of 2,395 EECU-s
+2026-10-15 06:44:58 UTC  running w1_weights_meso_3507: 504 of 2,395 EECU-s
+2026-10-15 06:45:58 UTC  running w1_weights_meso_3507: 0 of 2,395 EECU-s
+2026-10-15 06:46:59 UTC  completed w1_weights_meso_3507: 924 EECU-s, 242 s wall
+2026-10-15 06:46:59 UTC  started w1_weights_meso_3508: estimate 1,947, cancel above 3,895 EECU-s, poll 60 s
+2026-10-15 06:48:00 UTC  running w1_weights_meso_3508: 0 of 3,895 EECU-s
+2026-10-15 06:49:00 UTC  running w1_weights_meso_3508: 0 of 3,895 EECU-s
+2026-10-15 06:50:01 UTC  running w1_weights_meso_3508: 0 of 3,895 EECU-s
+2026-10-15 06:51:02 UTC  running w1_weights_meso_3508: 0 of 3,895 EECU-s
+2026-10-15 06:52:02 UTC  running w1_weights_meso_3508: 306 of 3,895 EECU-s
+2026-10-15 06:53:03 UTC  running w1_weights_meso_3508: 1,766 of 3,895 EECU-s
+2026-10-15 06:54:04 UTC  running w1_weights_meso_3508: 1,885 of 3,895 EECU-s
+2026-10-15 06:55:04 UTC  completed w1_weights_meso_3508: 1,885 EECU-s, 485 s wall
+2026-10-15 06:55:05 UTC  started w1_weights_meso_3509: estimate 637, cancel above 1,274 EECU-s, poll 60 s
+2026-10-15 06:56:06 UTC  running w1_weights_meso_3509: 86 of 1,274 EECU-s
+2026-10-15 06:57:06 UTC  running w1_weights_meso_3509: 251 of 1,274 EECU-s
+2026-10-15 06:58:07 UTC  running w1_weights_meso_3509: 409 of 1,274 EECU-s
+2026-10-15 06:59:07 UTC  running w1_weights_meso_3509: 471 of 1,274 EECU-s
+2026-10-15 07:00:07 UTC  completed w1_weights_meso_3509: 471 EECU-s, 302 s wall
+2026-10-15 07:00:08 UTC  started w1_weights_meso_3510: estimate 1,500, cancel above 2,999 EECU-s, poll 60 s
+2026-10-15 07:01:09 UTC  running w1_weights_meso_3510: 0 of 2,999 EECU-s
+2026-10-15 07:02:09 UTC  running w1_weights_meso_3510: 261 of 2,999 EECU-s
+2026-10-15 07:03:10 UTC  running w1_weights_meso_3510: 661 of 2,999 EECU-s
+2026-10-15 07:04:11 UTC  completed w1_weights_meso_3510: 896 EECU-s, 242 s wall
+2026-10-15 07:04:11 UTC  started w1_weights_meso_3511: estimate 1,789, cancel above 3,578 EECU-s, poll 60 s
+2026-10-15 07:05:12 UTC  running w1_weights_meso_3511: 0 of 3,578 EECU-s
+2026-10-15 07:06:13 UTC  running w1_weights_meso_3511: 0 of 3,578 EECU-s
+2026-10-15 07:07:13 UTC  running w1_weights_meso_3511: 0 of 3,578 EECU-s
+2026-10-15 07:08:13 UTC  running w1_weights_meso_3511: 0 of 3,578 EECU-s
+2026-10-15 07:09:14 UTC  running w1_weights_meso_3511: 416 of 3,578 EECU-s
+2026-10-15 07:10:15 UTC  running w1_weights_meso_3511: 999 of 3,578 EECU-s
+2026-10-15 07:11:15 UTC  running w1_weights_meso_3511: 2,029 of 3,578 EECU-s
+2026-10-15 07:12:16 UTC  running w1_weights_meso_3511: 0 of 3,578 EECU-s
+2026-10-15 07:13:16 UTC  completed w1_weights_meso_3511: 2,029 EECU-s, 545 s wall
+2026-10-15 07:13:17 UTC  started w1_weights_meso_3512: estimate 1,384, cancel above 2,768 EECU-s, poll 60 s
+2026-10-15 07:14:18 UTC  running w1_weights_meso_3512: 85 of 2,768 EECU-s
+2026-10-15 07:15:18 UTC  running w1_weights_meso_3512: 290 of 2,768 EECU-s
+2026-10-15 07:16:19 UTC  running w1_weights_meso_3512: 504 of 2,768 EECU-s
+2026-10-15 07:17:19 UTC  running w1_weights_meso_3512: 746 of 2,768 EECU-s
+2026-10-15 07:18:20 UTC  running w1_weights_meso_3512: 921 of 2,768 EECU-s
+2026-10-15 07:19:20 UTC  completed w1_weights_meso_3512: 976 EECU-s, 363 s wall
+2026-10-15 07:19:21 UTC  started w1_weights_meso_3513: estimate 1,540, cancel above 3,079 EECU-s, poll 60 s
+2026-10-15 07:20:22 UTC  running w1_weights_meso_3513: 85 of 3,079 EECU-s
+2026-10-15 07:21:23 UTC  running w1_weights_meso_3513: 410 of 3,079 EECU-s
+2026-10-15 07:22:23 UTC  running w1_weights_meso_3513: 689 of 3,079 EECU-s
+2026-10-15 07:23:24 UTC  running w1_weights_meso_3513: 978 of 3,079 EECU-s
+2026-10-15 07:24:25 UTC  completed w1_weights_meso_3513: 1,100 EECU-s, 303 s wall
+2026-10-15 07:24:26 UTC  started w1_weights_meso_3514: estimate 1,278, cancel above 2,555 EECU-s, poll 60 s
+2026-10-15 07:25:26 UTC  running w1_weights_meso_3514: 0 of 2,555 EECU-s
+2026-10-15 07:26:27 UTC  running w1_weights_meso_3514: 209 of 2,555 EECU-s
+2026-10-15 07:27:27 UTC  running w1_weights_meso_3514: 511 of 2,555 EECU-s
+2026-10-15 07:28:28 UTC  running w1_weights_meso_3514: 996 of 2,555 EECU-s
+2026-10-15 07:29:29 UTC  running w1_weights_meso_3514: 1,303 of 2,555 EECU-s
+2026-10-15 07:30:29 UTC  running w1_weights_meso_3514: 1,618 of 2,555 EECU-s
+2026-10-15 07:31:30 UTC  running w1_weights_meso_3514: 1,988 of 2,555 EECU-s
+2026-10-15 07:32:31 UTC  running w1_weights_meso_3514: 0 of 2,555 EECU-s
+2026-10-15 07:33:31 UTC  completed w1_weights_meso_3514: 2,159 EECU-s, 546 s wall
+2026-10-15 07:33:32 UTC  started w1_weights_meso_3515: estimate 639, cancel above 1,277 EECU-s, poll 60 s
+2026-10-15 07:34:33 UTC  running w1_weights_meso_3515: 0 of 1,277 EECU-s
+2026-10-15 07:35:34 UTC  completed w1_weights_meso_3515: 408 EECU-s, 121 s wall
+2026-10-15 07:35:34 UTC  started w1_series_muni_s_o_paulo_state_tota: estimate 22,551, cancel above 45,103 EECU-s, poll 60 s
+2026-10-15 07:36:35 UTC  running w1_series_muni_s_o_paulo_state_tota: 5,738 of 45,103 EECU-s
+2026-10-15 07:37:35 UTC  running w1_series_muni_s_o_paulo_state_tota: 16,152 of 45,103 EECU-s
+2026-10-15 07:38:36 UTC  running w1_series_muni_s_o_paulo_state_tota: 24,995 of 45,103 EECU-s
+2026-10-15 07:39:36 UTC  running w1_series_muni_s_o_paulo_state_tota: 25,945 of 45,103 EECU-s
+2026-10-15 07:40:37 UTC  completed w1_series_muni_s_o_paulo_state_tota: 25,953 EECU-s, 303 s wall
+2026-10-15 07:40:43 UTC  São Paulo (state total): 194,288 municipality-composites, 361 municipalities, 595 composites
+2026-10-15 07:40:43 UTC  W1 done: session spend 106,779 EECU-s

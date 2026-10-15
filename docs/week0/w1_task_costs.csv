@@ -1,0 +1,30 @@
+time_utc,task,region,estimate_eecu_s,cancel_at_eecu_s,measured_eecu_s,state
+2026-10-15 04:25:08,w1_weights_meso_3109,Sul e Centro-Oeste,1626,3253,1927.6,COMPLETED
+2026-10-15 04:40:20,w1_weights_meso_3110,Sul e Centro-Oeste,3458,6916,4444.6,COMPLETED
+2026-10-15 04:41:22,w1_full_probe_sul_e_centro_oeste_2021,Sul e Centro-Oeste,445,890,257.3,COMPLETED
+2026-10-15 04:45:34,w1_series_muni_sul_e_centro_oeste,Sul e Centro-Oeste,6690,13380,6253.5,COMPLETED
+2026-10-15 05:00:44,w1_weights_meso_3101,"Triângulo, Alto Paranaíba e Noroeste",4486,8972,4715.1,COMPLETED
+2026-10-15 05:12:50,w1_weights_meso_3105,"Triângulo, Alto Paranaíba e Noroeste",6582,13164,5705.6,COMPLETED
+2026-10-15 05:17:55,w1_series_muni_tri_ngulo_alto_paran,"Triângulo, Alto Paranaíba e Noroeste",13905,27810,11895.0,COMPLETED
+2026-10-15 05:24:59,w1_weights_meso_3106,"Zona da Mata, Rio Doce e Central",2930,5860,3107.0,COMPLETED
+2026-10-15 05:28:01,w1_weights_meso_3107,"Zona da Mata, Rio Doce e Central",3486,6972,1963.0,COMPLETED
+2026-10-15 05:41:09,w1_weights_meso_3108,"Zona da Mata, Rio Doce e Central",2807,5614,2680.8,COMPLETED
+2026-10-15 05:44:11,w1_weights_meso_3111,"Zona da Mata, Rio Doce e Central",959,1918,753.6,COMPLETED
+2026-10-15 06:01:23,w1_weights_meso_3112,"Zona da Mata, Rio Doce e Central",3210,6420,3220.8,COMPLETED
+2026-10-15 06:08:31,w1_series_muni_zona_da_mata_rio_doc,"Zona da Mata, Rio Doce e Central",14664,29327,15128.8,COMPLETED
+2026-10-15 06:16:37,w1_weights_meso_3501,São Paulo (state total),2182,4364,2072.8,COMPLETED
+2026-10-15 06:21:41,w1_weights_meso_3502,São Paulo (state total),1628,3255,1020.1,COMPLETED
+2026-10-15 06:26:44,w1_weights_meso_3503,São Paulo (state total),1343,2686,1252.1,COMPLETED
+2026-10-15 06:37:52,w1_weights_meso_3504,São Paulo (state total),2700,5400,2707.1,COMPLETED
+2026-10-15 06:39:53,w1_weights_meso_3505,São Paulo (state total),712,1424,405.3,COMPLETED
+2026-10-15 06:42:56,w1_weights_meso_3506,São Paulo (state total),682,1364,466.8,COMPLETED
+2026-10-15 06:46:59,w1_weights_meso_3507,São Paulo (state total),1198,2395,924.0,COMPLETED
+2026-10-15 06:55:04,w1_weights_meso_3508,São Paulo (state total),1947,3895,1884.8,COMPLETED
+2026-10-15 07:00:07,w1_weights_meso_3509,São Paulo (state total),637,1274,471.5,COMPLETED
+2026-10-15 07:04:11,w1_weights_meso_3510,São Paulo (state total),1500,2999,896.4,COMPLETED
+2026-10-15 07:13:16,w1_weights_meso_3511,São Paulo (state total),1789,3578,2029.0,COMPLETED
+2026-10-15 07:19:20,w1_weights_meso_3512,São Paulo (state total),1384,2768,976.1,COMPLETED
+2026-10-15 07:24:25,w1_weights_meso_3513,São Paulo (state total),1540,3079,1100.4,COMPLETED
+2026-10-15 07:33:31,w1_weights_meso_3514,São Paulo (state total),1278,2555,2159.0,COMPLETED
+2026-10-15 07:35:34,w1_weights_meso_3515,São Paulo (state total),639,1277,408.4,COMPLETED
+2026-10-15 07:40:42,w1_series_muni_s_o_paulo_state_tota,São Paulo (state total),22551,45103,25952.5,COMPLETED

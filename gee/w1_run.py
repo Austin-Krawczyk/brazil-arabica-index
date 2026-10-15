@@ -10,13 +10,23 @@ Estimates:
               Sul's two measured mesoregion exports.
   composites  the measured Sul 2021 probe × (region area / Sul area) × 26 years.
 
-Run:    .venv/Scripts/python gee/w1_run.py
+Probe check: every non-empty EVI median lies in −0.2..1.0; every row has coffee weight; a median
+may be empty only where (almost) no coffee pixel is valid in that composite (valid weight under
+0.1% of the municipality's coffee weight, i.e. fully cloud-masked), and such rows are at most 5%.
+(The first version rejected any empty median and stopped the 2026-10-15 run on 19 cloud-masked
+municipality-composites; corrected the same day.)
+
+--resume reuses the measured Sul weights and probe (from docs/week0/w1_task_costs.csv and the saved
+probe table) and continues from the estimate reset, without rerunning them.
+
+Run:    .venv/Scripts/python gee/w1_run.py [--resume]
 Writes: docs/week0/w1_task_costs.csv (one row per task: estimate, cap, measured cost, state),
         data/derived/w1_series_muni_<region>.csv
 """
 import datetime as dt
 import json
 import math
+import sys
 
 import ee
 import pandas as pd
@@ -67,8 +77,22 @@ def record(task, region, estimate, state, used):
         raise SystemExit(f"stopping: {task} ended {state} at {used:,.0f} EECU-s")
 
 
+def probe_ok(df):
+    empty = df.f_q1_EVI_median.isna()
+    cloud = df.f_q1_w_valid_sum.fillna(0) < 0.001 * df.f_w_total_sum
+    ok = (len(df) > 0 and df.composite_start.nunique() == 23
+          and df.f_q1_EVI_median.dropna().between(-0.2, 1.0).all()
+          and (df.f_w_total_sum > 0).all() and (~empty | cloud).all() and empty.mean() <= 0.05)
+    wd._log(f"probe check: {len(df)} rows, {df.composite_start.nunique()} composites, "
+            f"{df.code.nunique()} municipalities, EVI median range "
+            f"{df.f_q1_EVI_median.min():.3f}-{df.f_q1_EVI_median.max():.3f}, {int(empty.sum())} empty "
+            f"({int((empty & cloud).sum())} fully cloud-masked) -> {'PASS' if ok else 'FAIL'}")
+    return ok
+
+
 def main():
     project = init()
+    resume = "--resume" in sys.argv
     member = w1_mask.meso_table()
     mesos = {r: sorted(member.query("conab_region == @r").meso_code.unique()) for r in REGIONS}
     box = meso_boxes()
@@ -76,28 +100,31 @@ def main():
     probe_est = 445.0
     comp_est = {r: probe_est * AREA_KM2[r] / AREA_KM2[REGIONS[0]] * YEARS for r in REGIONS}
     total = sum(box[m] * rate * BANDS for m in box) + probe_est + sum(comp_est.values())
-    wd.set_session_cap("W1", 1.5 * total)
-
-    # 1. Sul weights
     sul = REGIONS[0]
-    sul_cost = 0.0
-    for m in mesos[sul]:
-        est = box[m] * rate * BANDS
-        state, used = w1_mask.weights(project, m, est)
-        record(f"w1_weights_meso_{m}", sul, est, state, used)
-        sul_cost += used
+    probe_name = f"w1_full_probe_{evi.slug_of(sul)}_2021"
 
-    # 2. Sul 2021 probe, with a sanity check
-    fc = evi.run_full(project, sul, "2021-01-01", "2022-01-01")
-    df, used = wd.export_table_watched(fc, f"w1_full_probe_{evi.slug_of(sul)}_2021", evi.full_selectors(), probe_est)
-    record(f"w1_full_probe_{evi.slug_of(sul)}_2021", sul, probe_est, "COMPLETED" if df is not None else "FAILED", used)
-    df.to_csv(WEEK0 / f"w1_full_probe_{evi.slug_of(sul)}_2021.csv", index=False)
-    ok = (len(df) > 0 and df.composite_start.nunique() == 23 and df.f_q1_EVI_median.between(-0.2, 1.0).all()
-          and (df.f_w_total_sum > 0).all())
-    wd._log(f"probe check: {len(df)} rows, {df.composite_start.nunique()} composites, "
-            f"{df.code.nunique()} municipalities, EVI median range "
-            f"{df.f_q1_EVI_median.min():.3f}-{df.f_q1_EVI_median.max():.3f} -> {'PASS' if ok else 'FAIL'}")
-    if not ok:
+    if resume:
+        prior = pd.read_csv(COSTS)
+        _rows.extend(prior.to_dict("records"))
+        sul_cost = float(prior[prior.task.isin([f"w1_weights_meso_{m}" for m in mesos[sul]])].measured_eecu_s.sum())
+        used = float(prior[prior.task == probe_name].measured_eecu_s.iloc[-1])
+        df = pd.read_csv(WEEK0 / f"{probe_name}.csv", dtype={"code": str})
+        wd._log(f"resume: Sul weights {sul_cost:,.0f} and probe {used:,.0f} EECU-s reused, not rerun")
+    else:
+        wd.set_session_cap("W1", 1.5 * total)
+        # 1. Sul weights
+        sul_cost = 0.0
+        for m in mesos[sul]:
+            est = box[m] * rate * BANDS
+            state, u = w1_mask.weights(project, m, est)
+            record(f"w1_weights_meso_{m}", sul, est, state, u)
+            sul_cost += u
+        # 2. Sul 2021 probe
+        fc = evi.run_full(project, sul, "2021-01-01", "2022-01-01")
+        df, used = wd.export_table_watched(fc, probe_name, evi.full_selectors(), probe_est)
+        record(probe_name, sul, probe_est, "COMPLETED" if df is not None else "FAILED", used)
+        df.to_csv(WEEK0 / f"{probe_name}.csv", index=False)
+    if not probe_ok(df):
         raise SystemExit("stopping: probe output failed its sanity check")
 
     # 3. Reset estimates from the measured costs; recompute the session cap

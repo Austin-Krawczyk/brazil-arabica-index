@@ -1,0 +1,1 @@
+weights_meso_3504: 2,707 EECU-seconds (batch_eecu_usage_seconds), COMPLETED, 667 s wall, 28 bands

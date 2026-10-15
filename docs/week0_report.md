@@ -1628,3 +1628,75 @@ limit):
 
 It stops at the first cancellation, failure or cap breach. Per-task costs go to
 `docs/week0/w1_task_costs.csv`.
+
+## 13. W1 run (2026-10-15): **complete**
+
+The run went through the driver `gee/w1_run.py` and the watchdog: serial tasks, 60-second
+polling, cancellation at 2 × estimate, and the session cap.
+
+**What it computed:**
+- the full class-46 mask only (the persistent-pixel sensitivity is deferred);
+- `SummaryQA` 0–1;
+- weights per mesoregion;
+- every MOD13Q1 composite from 2000-02-18 to 2025-12-19 reduced per municipality: coffee-weighted
+  median and mean EVI and NDVI, plus valid and total coffee weight;
+- each composite assigned to its crop season (May of S−1 to April of S), with mask year S−2.
+
+**Sequence and a false stop:**
+- Sul's two mesoregion weights, then the Sul 2021 probe (257 EECU-seconds against an estimate of
+  445).
+- **The probe's sanity check stopped the first run, and the check was wrong.**
+  - It rejected any empty EVI median.
+  - All 19 empty medians in the probe (of 4,232 rows) are municipality-composites with no
+    cloud-free coffee pixel. One has a valid weight of 0.000031, a sliver of a pixel.
+  - The check now allows an empty median only where under 0.1% of the coffee weight is valid,
+    and at most 5% of rows. The probe passes.
+  - The run resumed from the estimate reset without rerunning anything (`--resume`).
+- **Estimates reset from the measured costs:**
+  - weights rate 0.001472 EECU-seconds per km²-band, against 0.001175 assumed;
+  - composites: Sul 6,690, Triângulo 13,905, Zona da Mata 14,664, São Paulo 22,551
+    EECU-seconds;
+  - session cap 165,087 EECU-seconds, 1.5 × the revised total.
+
+**Cost** (`docs/week0/w1_task_costs.csv`; 29 tasks, all completed, none cancelled):
+
+| Region | Weights: estimate / measured | Composites: estimate / measured |
+|---|---|---|
+| Sul e Centro-Oeste | 5,084 / 6,372 | 6,690 / 6,254 (probe 445 / 257) |
+| Triângulo, Alto Paranaíba e Noroeste | 11,068 / 10,421 | 13,905 / 11,895 |
+| Zona da Mata, Rio Doce e Central | 13,392 / 11,725 | 14,664 / 15,129 |
+| São Paulo | 21,159 / 18,774 | 22,551 / 25,952 |
+| **Total** | | **106,779 EECU-seconds (29.7 EECU-hours)** |
+
+- Each task cost between 0.56 and 1.69 times its estimate; none came near its cancel limit.
+- **October to date, from Cloud Monitoring (2026-10-15 07:41 UTC):** 480.0 EECU-hours including
+  cancelled work, 48.0% of the cap. Batch rose by 29.8, matching the measured 29.7.
+
+**Outputs** (gitignored for size; checksums for reproducibility):
+
+| File | Rows | Municipalities | Composites | Bytes | SHA-256 |
+|---|---|---|---|---|---|
+| `data/derived/w1_series_muni_sul_e_centro_oeste.csv` | 110,144 | 189 | 595 | 17,338,380 | `9ce74bad4c558c2bce92e55244e6729d511b1f316a94e701cc41486832dc78ab` |
+| `data/derived/w1_series_muni_tri_ngulo_alto_paran.csv` | 38,123 | 68 | 595 | 6,602,517 | `772e40d5074da88dcac5bff8b800479d8296c63fe5cb27b38f9abd7cfce7ff5d` |
+| `data/derived/w1_series_muni_zona_da_mata_rio_doc.csv` | 160,466 | 331 | 595 | 25,908,072 | `9bca52342f3f606c9153b8c3807598122454a1ec213c9c982e5901c1b78abc31` |
+| `data/derived/w1_series_muni_s_o_paulo_state_tota.csv` | 194,288 | 361 | 595 | 29,899,248 | `ba50a580f1cd193066f09875b6eb5f6d34aa40c534ff62a0adc740ba5aa81173` |
+
+**Checks:**
+- Every region has 595 composites, crop seasons 2000–2026 and mask years 1998–2024.
+- Every row has coffee weight.
+- EVI medians lie between 0.06 and 1.00.
+- **Empty medians:** Sul 0.4%, Triângulo 0.8%, São Paulo 0.8%, Zona da Mata 3.9%.
+  - Most are fully cloud-masked.
+  - **633 are not:** São Paulo 428 (5 municipalities), Zona da Mata 204 (10), Sul 1. All but one
+    belong to municipalities whose mapped coffee in that mask year is under one MODIS pixel,
+    typically 0.001 of a pixel. No EVI reading can come from such a sliver.
+- **The filter is not yet applied.** Stable membership (Amendment 16d) is applied when municipal
+  values are aggregated to regions, in W2.
+
+**Open, for the owner (W2 aggregation):**
+- **Municipalities with PAM area but no EVI reading.** Under PAM-area weighting, a municipality
+  can have PAM coffee area but no reading in a composite: fully cloud-masked, or mapped coffee
+  under one pixel. The rule for that case (renormalising the weights over the municipalities with
+  a reading, or another rule) is not yet decided.
+- **The aggregator itself.** Whether to use a PAM-weighted mean of municipal medians or a
+  weighted median across municipalities is still an OPEN `prereg-1` item.
