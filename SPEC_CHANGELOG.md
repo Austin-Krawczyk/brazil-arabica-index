@@ -758,3 +758,13 @@ Every change to scope, dated, with the reason. Newest at the bottom.
     the frozen mask before `prereg-2`, as already planned.
 
   Approved by owner.
+
+- 2026-10-14 — **Pre-registration, `prereg-1` item closed: the MODIS cloud/QA rule is
+  `SummaryQA` 0–1 (good or marginal).**
+  - **Reason (owner): rainy-season coverage.** Keeping marginal pixels keeps the November–March
+    composites usable; the strict variant (`SummaryQA` 0 only) is not computed.
+  - **Not an amendment:** the spec says "cloud-masked" (§5 step 2) without fixing the rule.
+  - **W1 scope set at the same time (option iii):** the full class-46 mask only; the
+    persistent-pixel sensitivity is deferred, not dropped (still registered, §5 step 1); weights
+    are exported per IBGE 1989 mesoregion.
+  - **Recorded in** `docs/preregistration.md`. Owner decision.
