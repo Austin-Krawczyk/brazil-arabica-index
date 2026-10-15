@@ -1124,3 +1124,30 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   - comparisons use identical crops.
 
   Approved by owner (2026-10-15).
+
+- 2026-10-15 — **AMENDMENT 41b: headline frost reversed to "unresolved stations kept at their
+  observed tiers"; "left out" is the registered sensitivity.** Amends §5 step 4 and Amendment 41
+  item 3. Before any backtest result.
+
+  **Reason (owner):**
+  - The `prereg-2` tag registered observed coverage with only Triângulo crop 2018 unflaggable.
+    That is the "kept" table.
+  - "Left out" would contradict the tag. A second review found it makes 18 of 68 region-seasons
+    in crops 2009–2025 unflaggable, against 1:
+    - São Paulo 2009, 2013, 2014, 2017, 2018, 2019, 2021, 2022, 2023, 2024;
+    - Sul e Centro-Oeste 2009, 2014, 2018, 2023;
+    - Triângulo, Alto Paranaíba e Noroeste 2009 and 2018;
+    - Zona da Mata, Rio Doce e Central 2017, 2025.
+  - Coverage falls by up to 44 points; the median fall is 4.
+  - No flag is lost. Sul crop 2020 gains a severe flag (penalty 0.186), consistent with the July
+    2019 frost.
+
+  **Disclosure:**
+  - Both outcomes, flags and coverage, were visible before this choice.
+  - The coverage effect was not in the description given before Amendment 41 (agent's omission,
+    reported 2026-10-15).
+
+  **Consequence:** the frozen W2 frost ranks (`w2_season_inputs.csv`) use the "kept" penalty, so
+  they match the headline.
+
+  Approved by owner (2026-10-15).

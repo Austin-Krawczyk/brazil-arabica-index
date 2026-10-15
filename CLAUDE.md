@@ -605,10 +605,13 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      counted as a non-frost night. If a station's missing nights could change its tier for a
      season, its tier for that season is reported as unresolved, and the region's tier shares
      are reported with and without it.
-     - **Headline (Amendment 41): unresolved stations are left out** of the observed area and the
-       tier shares. The figures with them are reported beside.
-     - **Both outcomes were visible before the choice** (Week 0 report §19). Leaving them out
-       flags Sul crop 2020 severe, which is consistent with the July 2019 frost.
+     - **Headline (Amendment 41b, reversing 41): unresolved stations are kept at their observed
+       tiers.** That is the coverage `prereg-2` registered, with Triângulo crop 2018 the only
+       unflaggable region-season.
+     - **Registered sensitivity: unresolved stations left out** of the observed area and the tier
+       shares. That variant flags Sul crop 2020 severe, consistent with the July 2019 frost, and
+       makes 18 of 68 region-seasons in crops 2009–2025 unflaggable.
+     - **Both outcomes were visible before each choice** (Week 0 report §19).
      - **Pre-dawn sensitivity (Amendment 40), not scored:** a night also counts as observed
        when its 00:00–09:00 local hours are complete.
      - Registered as a `prereg-2` addendum and reported beside the frost results.
