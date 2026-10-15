@@ -7,10 +7,17 @@ every running or pending Earth Engine task in the project the same way: a task w
 estimate is cancelled past CANCEL_FACTOR × its estimate, and one without an estimate past
 UNREGISTERED_LIMIT EECU-seconds (the project's 0.5 EECU-hour probe gate).
 
-Estimates and every cancellation are logged in docs/week0/ee_task_estimates.json and
-docs/week0/ee_watchdog_log.txt.
+Session cap (owner, 2026-10-14): run_watched() also refuses to start a task once the session's
+cumulative measured spend has passed the cap set with set_session_cap() — for W1, 1.5 × the total
+W1 estimate. Each finished or cancelled task's measured cost is added to the session ledger.
 
-Run (standalone): .venv/Scripts/python gee/ee_watchdog.py --watch [--poll 300]
+Tasks run serially: run_watched() starts one task and blocks until it ends; the next starts only
+after. sweep_once() starts nothing; it is a separate check on whatever is running.
+
+Estimates, the session ledger and every cancellation are logged in docs/week0/ee_task_estimates.json,
+docs/week0/ee_session_ledger.json and docs/week0/ee_watchdog_log.txt.
+
+Run (standalone): .venv/Scripts/python gee/ee_watchdog.py --watch [--poll 60]
 """
 import argparse
 import datetime as dt
@@ -21,11 +28,12 @@ import ee
 
 from common import WEEK0, init
 
-POLL_SECONDS = 300           # every five minutes (owner)
+POLL_SECONDS = 60            # every minute (owner, 2026-10-14; was five minutes)
 CANCEL_FACTOR = 2.0          # cancel at 2 × the probe estimate (owner)
 UNREGISTERED_LIMIT = 1800.0  # EECU-seconds, for a running task with no recorded estimate
 REGISTRY = WEEK0 / "ee_task_estimates.json"
 LOG = WEEK0 / "ee_watchdog_log.txt"
+LEDGER = WEEK0 / "ee_session_ledger.json"
 
 
 def _log(msg):
@@ -45,6 +53,28 @@ def register(description, estimate_eecu_s):
     REGISTRY.write_text(json.dumps(reg, indent=1, sort_keys=True), encoding="utf-8")
 
 
+def _ledger():
+    return json.loads(LEDGER.read_text(encoding="utf-8")) if LEDGER.exists() else {"cap": None, "spent": 0.0, "tasks": []}
+
+
+def set_session_cap(name, cap_eecu_s):
+    """Start (or reset) a session: no new task starts once measured spend passes the cap."""
+    LEDGER.write_text(json.dumps({"session": name, "cap": float(cap_eecu_s), "spent": 0.0, "tasks": []},
+                                 indent=1), encoding="utf-8")
+    _log(f"session {name}: cap {cap_eecu_s:,.0f} EECU-s")
+
+
+def session_spent():
+    return _ledger()["spent"]
+
+
+def _record(desc, state, used):
+    led = _ledger()
+    led["spent"] = led.get("spent", 0.0) + used
+    led.setdefault("tasks", []).append({"task": desc, "state": state, "eecu_s": round(used, 1)})
+    LEDGER.write_text(json.dumps(led, indent=1), encoding="utf-8")
+
+
 def _eecu(op):
     return float(op.get("metadata", {}).get("batchEecuUsageSeconds", 0) or 0)
 
@@ -54,6 +84,10 @@ def run_watched(task, estimate_eecu_s, poll=POLL_SECONDS):
     if not estimate_eecu_s or estimate_eecu_s <= 0:
         raise SystemExit(f"{task.config.get('description', 'task')}: no cost estimate, not started")
     desc = task.config.get("description", "task")
+    led = _ledger()
+    if led.get("cap") is not None and led.get("spent", 0.0) > led["cap"]:
+        raise SystemExit(f"{desc}: session spend {led['spent']:,.0f} EECU-s has passed the cap "
+                         f"{led['cap']:,.0f}; not started")
     limit = CANCEL_FACTOR * estimate_eecu_s
     register(desc, estimate_eecu_s)
     task.start()
@@ -67,10 +101,12 @@ def run_watched(task, estimate_eecu_s, poll=POLL_SECONDS):
         state = st["state"]
         if state in ("COMPLETED", "FAILED", "CANCELLED", "SUCCEEDED"):
             _log(f"{state.lower()} {desc}: {used:,.0f} EECU-s, {time.time() - t0:.0f} s wall")
+            _record(desc, state, used)
             return state, used, time.time() - t0
         if used > limit:
             task.cancel()
             _log(f"CANCELLED {desc}: {used:,.0f} EECU-s passed {limit:,.0f} (2 × estimate)")
+            _record(desc, "CANCELLED", used)
             return "CANCELLED", used, time.time() - t0
         _log(f"running {desc}: {used:,.0f} of {limit:,.0f} EECU-s")
 

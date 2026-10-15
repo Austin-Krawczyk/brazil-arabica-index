@@ -1580,3 +1580,51 @@ limit):
   - Sul's two mesoregion weights first;
   - then the Sul 2021 probe (estimate 445, cancelled at 890), which measures the four-band cost;
   - each region's estimate is reset from that probe before it runs.
+
+### Actual October compute usage, from Cloud Monitoring (2026-10-15): **far above the measured tally**
+
+**Method:**
+- The Cloud Monitoring API was enabled on the project on the owner's instruction, through the
+  Service Usage API with the project as quota project (`gee/ee_usage.py --enable`).
+- Two metrics, both from Google's list of Earth Engine metrics (BETA; EECU-seconds):
+  - `earthengine.googleapis.com/project/cpu/usage_time`: successful requests only;
+  - `project/cpu/in_progress_usage_time`: reported while requests run, so it also sees cancelled
+    and failed work.
+
+**Usage, 2026-10-01 to 2026-10-15 04:07 UTC:**
+
+| Metric | Interactive | Batch | Total | Share of the 1,000 EECU-hour cap |
+|---|---|---|---|---|
+| Completed (`usage_time`) | 404.8 | 23.9 | **428.6** | 42.9% |
+| In progress (`in_progress_usage_time`) | 408.2 | 42.0 | **450.2** | 45.0% |
+
+**Findings:**
+
+1. **Batch usage matches the measured batch costs:** about 42.0 against about 41.6 EECU-hours.
+   The per-task readings the watchdog uses are therefore reliable.
+2. **Interactive usage is 408 EECU-hours, almost all on 2026-10-13 between 10:00 and 14:00 UTC**:
+   127.5, 104.0, 88.0 and 36.2 EECU-hours in successive hours, plus 32.5 at 17:00.
+   - That window matches the provisional Terra drift check, which this report records as "not
+     measured".
+   - The likely mechanism is the per-request rebuild of the 30 m coffee weight found later in the
+     VJ113A1 and W1 probes. This is an inference from the timing, not established.
+   - **The earlier "measured spend about 91 EECU-hours" understated actual use by about
+     five times.** Unmeasured interactive runs dominated it.
+3. **Remaining this month:** about 550 EECU-hours until the quota renews on 1 November. The W1
+   estimate is 20–40 EECU-hours, all batch.
+
+**Watchdog changes (owner, 2026-10-14):**
+- **Polling:** every 60 seconds.
+- **Session cap:** no new task starts once the session's measured spend passes 1.5 × the total
+  W1 estimate.
+- **Serial:** tasks run one at a time through `run_watched()`, each blocking until it ends.
+  `sweep_once()` starts nothing; it only checks running tasks.
+
+**The driver,** `gee/w1_run.py`, runs in order:
+1. Sul's two mesoregion weights;
+2. the Sul 2021 probe, with a sanity check;
+3. estimates reset from the measured costs, and the session cap recomputed;
+4. each region in turn, weights then composites.
+
+It stops at the first cancellation, failure or cap breach. Per-task costs go to
+`docs/week0/w1_task_costs.csv`.
