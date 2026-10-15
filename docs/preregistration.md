@@ -139,7 +139,7 @@ including the three stations named in Amendment 39, which already have data (Ame
 (2) any reset-time, window or date detail from INMET's observer manual (Amendment 39); (3) the
 persistent-pixel index sensitivity, defined here and computed, with a watched probe, before the
 backtest's sensitivity runs; (4) crop 2027's members, by the registered rule, from its first
-composite under mask year 2025.
+composite under mask year 2025; (5) **frost night-rule sensitivity (Amendment 40), reported, not scored:** a night is also observed when its 00:00–09:00 local hours are complete (`docs/week0/w2_frost_night_rule_alternative.csv`); scoring keeps 17b.
 
 | Item | Value | Source | Status |
 |---|---|---|---|
