@@ -2433,3 +2433,68 @@ November vintage:
   - the frozen-mask pixel table.
   Each is regenerable by the script named in the manifest.
 - The backtest reads only files listed there, and checks their checksums first.
+
+## 21. Independent review of the scoring code (2026-10-15), before any result
+
+**Condition (owner):** before any backtest result exists, a separate agent reviews the scoring code
+against the tagged pre-registration. It was told to run nothing that reads the real inputs and
+produces a prediction or score. It ran toy-number checks only, and read two input files read-only
+(the Conab survey rows and the pre-dawn alternative file). Three rounds, each on a named commit.
+
+### Round 1, commit 4502913: not fit to run
+
+| # | Finding | Class | Outcome |
+|---|---|---|---|
+| 1 | **The held-out yield entered the stage-2 fit** through crop S+1's expectation (E_{S+1} uses resid_S). It would have flattered the result | BUG | **Fixed (039c416):** fold S drops crops S and S+1 from training; the inner λ loop drops k and k+1 |
+| 2 | The results file could be silently overwritten, with no run metadata | BUG | **Fixed (039c416):** refuses if the file exists or `gee/` is dirty; stamps commit, manifest SHA-256 and UTC time on every row |
+| 3 | Persistent-pixel sensitivity deferred, against prereg-2 addendum 3 | DEVIATION | **Owner (Amendment 41):** compute its inputs first under the watchdog, then one run (§22) |
+| 4 | Headline frost variant not registered | UNREGISTERED | **Owner:** Amendment 41 (unresolved left out), then **41b** (kept at observed tiers; left out is the sensitivity) |
+| 5 | Pass marks tested per vintage, 30 tests, no rule to read them together | UNREGISTERED | **Owner (Amendment 41):** November decides; December and January are reported against the marks, not scored |
+| 6 | Meaning of "ended" for EVI availability; leap-year 13/14 composite alternation in January | UNREGISTERED | **Owner (Amendment 41):** Earth Engine's exclusive `time_end`, as measured in §14; confirmed |
+| 7 | prereg-1 text said the December cut sees the whole rain window; its own rule gives 1 Sep–25 Nov | TEXT ERROR | **Logged (Amendment 41, 69e6313);** the code follows the rule |
+| 8 | Sensitivities compared on their own seasons, not identical ones (§9) | DEVIATION | **Fixed (039c416, 6be5e20):** comparator columns on the same model, vintage, region and crops, for condition hits, MAE and yield-versus-trend hits |
+| 9 | Docstring's "not run" list: VJ113A1 mis-cited, needs a baseline rule; pre-dawn claim too broad | DOC | **Fixed;** VJ113A1 is a later concordance check with a five-year minimum (Amendment 41) |
+| 10 | no_filter and mapped_area keep the registered frost penalty | UNREGISTERED | **Stated** in the docstring; confirmed by the owner (Amendment 41 item 7) |
+| 11 | Conventional-station minima assumed available at every cut; Sul crop 2012's flag depends on them | UNREGISTERED | **Stated;** the caveat sits beside the Sul 2012 result (owner) |
+| 12 | Minor gaps: per-region residuals, prelim counts, EVI composite counts, row flags for 2022, 2023 and unflaggable seasons | MINOR | **Fixed (039c416, 6be5e20)** |
+
+**Verified in round 1 without change:**
+- the manifest guard;
+- the pass marks and both exact p-values;
+- every climatology, z-score, trend, coefficient, standardisation, λ and weight refitted without S;
+- the four-region total is never a training row;
+- cut dates and windows, the ridge grid, tie rule and unpenalised intercept;
+- frost as a fixed offset on 2009+, the comparison models on the same folds, the surprise-test formula.
+
+### Round 2, commit 039c416
+
+- Findings 1, 2 and 9–12 closed.
+- **New, introduced by the fix for finding 1:** the inner λ loop scored both left-out crops, so
+  most crops were counted twice in the MSE. **Fixed (6be5e20):** errors are taken on crop k only.
+- Added the yield-versus-trend comparator and the count of municipalities left on final in the
+  prelim rerun (6be5e20).
+
+### Round 3, commit 30b0552 (after Amendment 41)
+
+- **Blocker:** the persistent-pixel files were not in the manifest, so the guard would have stopped
+  the run. **Fixed:** added to `gee/w2_manifest.py`, re-frozen once they exist (§22).
+- **Reporting bug:** the coverage and unflaggable columns described the other frost variant.
+  **Fixed (d137639):** they follow `HEADLINE_FROST`, with the alternative beside.
+- **Disclosure the owner had not seen:** leaving unresolved stations out makes 18 of 68
+  region-seasons unflaggable, against 1, including São Paulo crop 2022. **This was the agent's
+  omission before Amendment 41.** The owner reversed the headline (Amendment 41b): the tag
+  registered the "kept" coverage.
+- **Minor:** the frozen W2 frost ranks use the "kept" penalty. Under 41b they match the headline.
+
+### Implementation choices the registration does not fix, judged reasonable and confirmed by the owner (Amendment 41 item 7)
+
+- Condition anomaly as y/E − 1; frost penalty as a share of yield.
+- Inputs re-standardised within each fold on its training rows.
+- The inner λ loop does not refit climatologies per inner crop. This makes λ selection mildly
+  optimistic; it cannot reach the held-out crop.
+- The four-region total predicted from its own inputs with the pooled weights and its own stage 1.
+- The zero-anomaly model doubles as the biennial-only model.
+- Mapped-area aggregation keeps the same members and changes only the weights.
+- CHIRPS prelim pentads spread evenly over their days, substituted only in the held-out crop.
+- The third-survey sensitivity changes only the held-out expectation.
+- Triângulo's rain-only skill is its rows of the pooled rain-only model.

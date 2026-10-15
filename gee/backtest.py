@@ -74,7 +74,9 @@ the surprise-test call for safras 2023–2025 (reported, not scored, Amendment 1
 intercept and weights, the EVI composite count, the prelim substitution count, the frost station
 counts and observed coverage, flags for crop 2022 (in-sample) and crop 2023 (possible carryover),
 and the run's code commit, manifest SHA-256 and time. The run refuses to overwrite an existing
-results file. Summaries compare every sensitivity with the headline on identical crops (§9), and
+results file, and refuses unless the scoring code and the manifest are committed and unchanged at
+HEAD (the manifest's SHA-256 checked against the committed copy, line endings normalised) and the
+manifest lists the persistent-pixel inputs (owner, 2026-10-15). Summaries compare every sensitivity with the headline on identical crops (§9), and
 the with-frost version with the no-frost version on the crops they share (§5 step 4).
 
 Pass marks (Amendment 41): the November vintage decides pass or fail; December and January are
@@ -312,16 +314,41 @@ def fit_predict(train, pred, cols):
 
 
 # ------------------------------------------------------------------ main loop
+# The persistent-pixel inputs must be in the manifest (Amendment 41; owner, 2026-10-15)
+REQUIRED_IN_MANIFEST = ["data/derived/w1p_series_muni_*.csv", "data/derived/w2_rain_muni_persistent.csv",
+                        "data/derived/w2_soil_muni_persistent.csv", "data/derived/w2_heat_muni_persistent.csv",
+                        "docs/week0/members_by_season_persistent.csv"]
+
+
 def run_metadata(manifest_path):
-    """Refuse to run on uncommitted scoring code; return the commit, the manifest's SHA-256 and the time."""
+    """The one-shot check. Refuse unless the scoring code and the manifest are committed and unchanged at
+    HEAD, and the manifest lists the persistent-pixel inputs; return the commit, the manifest's SHA-256
+    (checked equal to the committed copy's) and the time."""
     import datetime as dt
+    import fnmatch
     import subprocess
 
-    dirty = subprocess.run(["git", "status", "--porcelain", "gee"], capture_output=True, text=True, cwd=ROOT).stdout
+    rel = manifest_path.relative_to(ROOT).as_posix()
+    dirty = subprocess.run(["git", "status", "--porcelain", "gee", rel], capture_output=True, text=True,
+                           cwd=ROOT).stdout
     if dirty.strip():
-        raise SystemExit(f"uncommitted changes under gee/; commit the scoring code first:\n{dirty}")
+        raise SystemExit(f"uncommitted changes in gee/ or the manifest; commit them first:\n{dirty}")
+    committed = subprocess.run(["git", "show", f"HEAD:{rel}"], capture_output=True, cwd=ROOT)
+    if committed.returncode != 0:
+        raise SystemExit(f"the manifest is not committed at HEAD: {rel}")
+    sha_committed = hashlib.sha256(committed.stdout.replace(b"\r\n", b"\n")).hexdigest()
+    with open(manifest_path, "rb") as f:
+        sha_file = hashlib.sha256(f.read().replace(b"\r\n", b"\n")).hexdigest()
+    if sha_committed != sha_file:
+        raise SystemExit(f"manifest differs from HEAD: file {sha_file}, committed {sha_committed}")
+    paths = list(pd.read_csv(manifest_path).path)
+    missing = [q for q in REQUIRED_IN_MANIFEST if not any(fnmatch.fnmatch(x, q) for x in paths)]
+    n_w1p = sum(fnmatch.fnmatch(x, REQUIRED_IN_MANIFEST[0]) for x in paths)
+    if missing or n_w1p != len(REGIONS):
+        raise SystemExit(f"manifest lacks the persistent-pixel inputs: {missing}; w1p series {n_w1p} of {len(REGIONS)}")
     commit = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, cwd=ROOT).stdout.strip()
-    return dict(run_commit=commit, manifest_sha256=sha256(manifest_path),
+    print(f"one-shot check passed: commit {commit}, manifest SHA-256 {sha_file}", flush=True)
+    return dict(run_commit=commit, manifest_sha256=sha_file,
                 run_utc=dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
 
 

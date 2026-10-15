@@ -40,4 +40,8 @@ data/derived/frozen_mask_pixels*.csv
 data/derived/w2_rain_muni.csv
 data/derived/w2_heat_muni.csv
 data/derived/w2_prelim_muni.csv
+# persistent-pixel sensitivity inputs (Amendment 41), same sizes as the full-mask tables
+data/derived/w1p_series_muni_*.csv
+data/derived/w2_rain_muni_persistent.csv
+data/derived/w2_heat_muni_persistent.csv
 data/derived/w2_*_probe*.csv

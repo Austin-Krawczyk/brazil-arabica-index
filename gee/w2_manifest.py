@@ -28,6 +28,17 @@ FILES = [
     ("docs/week0/station_set_frozen.csv", "frost station set", "gee/station_set_frozen.py"),
     ("docs/week0/station_coverage_frozen.csv", "frost observed coverage", "gee/station_set_frozen.py"),
     ("docs/week0/w1_filter_stable_membership.csv", "stable filter decisions (Amendment 16d)", "gee/w1_filter_stable.py"),
+    # persistent-pixel sensitivity (Amendments 16b, 41)
+    ("data/derived/w1p_series_muni_*.csv", "EVI/NDVI per municipality and composite, persistent-pixel mask",
+     "gee/persistent_run.py"),
+    ("data/derived/w2_rain_muni_persistent.csv", "CHIRPS final per municipality, persistent-pixel mask",
+     "gee/w2_exports.py rain --persistent"),
+    ("data/derived/w2_soil_muni_persistent.csv", "ERA5-Land soil moisture per municipality, persistent-pixel mask",
+     "gee/w2_exports.py soil --persistent"),
+    ("data/derived/w2_heat_muni_persistent.csv", "ERA5-Land days above 34 C per municipality, persistent-pixel mask",
+     "gee/w2_exports.py heat --persistent"),
+    ("docs/week0/members_by_season_persistent.csv", "members per season, persistent-pixel mask (Amendment 41)",
+     "gee/members_persistent.py"),
 ]
 
 
