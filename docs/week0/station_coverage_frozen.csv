@@ -1,15 +1,15 @@
 window,crop,region,coffee_pixel_equivalents,automatic_stations,conventional_stations,conventional_left_out_same_site,automatic_coverage,conventional_coverage,combined_coverage,unflaggable,combined_coverage_no_filter
 2008,2009,Sul e Centro-Oeste,61533,7,6,2,13.1,11.6,22.8,False,22.1
 2008,2009,"Triângulo, Alto Paranaíba e Noroeste",20836,8,2,1,19.5,6.2,23.4,False,23.3
-2008,2009,"Zona da Mata, Rio Doce e Central",24364,13,4,3,9.6,34.5,35.7,False,34.2
+2008,2009,"Zona da Mata, Rio Doce e Central",24364,12,4,3,9.6,34.5,35.7,False,34.2
 2008,2009,São Paulo (state total),12215,13,5,2,18.2,14.9,21.1,False,19.6
 2009,2010,Sul e Centro-Oeste,63322,6,8,1,12.9,11.7,22.8,False,22.1
 2009,2010,"Triângulo, Alto Paranaíba e Noroeste",21256,9,1,1,19.8,6.2,23.6,False,23.5
-2009,2010,"Zona da Mata, Rio Doce e Central",24962,13,5,3,9.8,34.7,35.8,False,34.4
+2009,2010,"Zona da Mata, Rio Doce e Central",24962,12,5,3,9.8,34.7,35.8,False,34.4
 2009,2010,São Paulo (state total),12496,12,7,1,5.0,16.6,21.4,False,20.0
 2010,2011,Sul e Centro-Oeste,64749,6,8,2,12.2,20.5,30.8,False,29.4
 2010,2011,"Triângulo, Alto Paranaíba e Noroeste",22005,9,2,1,19.8,6.1,23.5,False,23.5
-2010,2011,"Zona da Mata, Rio Doce e Central",25614,12,6,2,9.2,34.5,35.4,False,34.2
+2010,2011,"Zona da Mata, Rio Doce e Central",25614,11,6,2,9.2,34.5,35.4,False,34.1
 2010,2011,São Paulo (state total),12850,13,7,2,21.8,17.1,24.7,False,22.8
 2011,2012,Sul e Centro-Oeste,68157,7,7,2,12.6,18.4,29.1,False,27.9
 2011,2012,"Triângulo, Alto Paranaíba e Noroeste",23146,8,2,1,19.9,6.3,23.7,False,23.6

@@ -21,9 +21,10 @@ Rules, per frost window Jun–Aug of year y (crop y+1, mask year y−1):
   coffee area      pixel coffee fraction for the window's mask year; every share below is
                    coffee-area weighted (pixel centres within 25 km of a station count as inside)
   candidate        a station with frozen-mask coffee within 25 km in some mask year
-  elevation cut    per region and mask year: the coffee-area-weighted 95th percentile of SRTM
-                   elevation; a station is tested against the cut of each region whose coffee its
-                   circle holds
+  elevation cut    fixed once per region (owner, 2026-10-15; Amendment 39): the median, over mask
+                   years 2007–2025, of the region's coffee-area-weighted 95th percentile of SRTM
+                   elevation at pixel centres. Per-year values are reported beside it. A station is
+                   tested against the cut of each region whose coffee its circle holds
   qualifies        complete window (automatic ≥95% of hours, no gap > 48 h; conventional ≥88 of 92
                    days, no gap > 3 days), at or below the cut, and some of the region's coffee in
                    its circle that year
@@ -138,7 +139,19 @@ def main():
         if len(d) and d.min() <= SAME_SITE_KM:
             pairs[c.code] = au.code.values[int(d.argmin())]
 
-    cuts, rows, cov = [], [], []
+    cuts = []
+    for y in WINDOWS:
+        band = f"w_{y - 1}"
+        for rid, reg in REGIONS.items():
+            p = fro[(fro[band] > 0) & (fro.region_id == rid)]
+            cuts.append(dict(window=y, crop=y + 1, mask_year=y - 1, region=reg, pixels=len(p),
+                             coffee_pixel_equivalents=round(p[band].sum()),
+                             p95_elev_m=round(wquantile(p.elev_m.values.astype(float), p[band].values, 0.95), 1)))
+    cuts = pd.DataFrame(cuts)
+    fixed = cuts.groupby("region").p95_elev_m.median()
+    cuts["elev_cut_m"] = cuts.region.map(fixed)
+
+    rows, cov = [], []
     for y in WINDOWS:
         m_year = y - 1
         band = f"w_{m_year}"
@@ -146,9 +159,7 @@ def main():
             p = fro[(fro[band] > 0) & (fro.region_id == rid)]
             pu = pts[(pts[band] > 0) & (pts.region_id == rid)]
             w, wu = p[band].values, pu[band].values
-            cut = wquantile(p.elev_m.values.astype(float), w, 0.95)
-            cuts.append(dict(window=y, crop=y + 1, mask_year=m_year, region=reg, pixels=len(p),
-                             coffee_pixel_equivalents=round(w.sum()), elev_cut_m=round(cut, 1)))
+            cut = float(fixed[reg])
             qual = {"automatic": {}, "conventional": {}}
             for i, s in cand.iterrows():
                 inside = within(p, s.lat, s.lon)
@@ -185,18 +196,19 @@ def main():
                             combined_coverage=round(share(union, w), 1),
                             unflaggable=share(union, w) < FLOOR,
                             combined_coverage_no_filter=round(share(uni_u, wu), 1)))
-    pd.DataFrame(cuts).to_csv(WEEK0 / "elevation_cut_frozen.csv", index=False)
+    cuts.to_csv(WEEK0 / "elevation_cut_frozen.csv", index=False)
     pd.DataFrame(rows).to_csv(WEEK0 / "station_set_frozen.csv", index=False)
     cov = pd.DataFrame(cov)
     cov.to_csv(WEEK0 / "station_coverage_frozen.csv", index=False)
-    return cand, pd.DataFrame(cuts), pd.DataFrame(rows), cov, pairs
+    return cand, cuts, pd.DataFrame(rows), cov, pairs
 
 
 if __name__ == "__main__":
     pd.set_option("display.width", 250)
     cand, cuts, rows, cov, pairs = main()
     print(cand.groupby(["network", "windows_source"]).size().to_string())
-    print(cuts.pivot(index="crop", columns="region", values="elev_cut_m").to_string())
+    print(cuts.pivot(index="crop", columns="region", values="p95_elev_m").to_string())
+    print("fixed cut:", cuts.groupby("region").elev_cut_m.first().to_dict())
     print(cov.pivot(index="crop", columns="region", values="combined_coverage").to_string())
     print("unflaggable:", cov[cov.unflaggable][["crop", "region", "combined_coverage"]].to_string(index=False))
     print("same-site pairs:", pairs)

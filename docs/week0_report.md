@@ -2164,3 +2164,37 @@ the night ending on the morning of D into the minimum dated D:
 
 That is the rule's content, and the co-located check of §8 supports it. Only the exact window
 boundary, which the check could not resolve either, remains undocumented.
+
+### §17 addendum: elevation cut fixed once per region (Amendment 39, 2026-10-15)
+
+**Owner decisions:**
+- Pixel-centre elevation accepted.
+- The cut is fixed once per region, not per season, for the same stability reason as Amendment
+  16d.
+- The cut is the median, over mask years 2007–2025, of the per-year coffee-weighted 95th
+  percentile. The median was used because the persistent-pixel mask, the other option offered, is
+  a 30 m construct not yet computed.
+
+**Values:** Sul e Centro-Oeste 1,176 m; São Paulo 1,121 m; Triângulo, Alto Paranaíba e Noroeste
+1,194 m; Zona da Mata, Rio Doce e Central 1,140 m.
+
+**Effect against the per-season cuts:**
+- Three station-seasons change: Barbacena A502 (1,169 m) is now above the Zona da Mata cut in
+  crops 2009–2011, as in every other season. Its circle holds under 0.01% of the region's coffee.
+- Coverage is unchanged to one decimal in every region-season.
+- Triângulo crop 2018 (7.5%) is still the only unflaggable region-season.
+
+**Stations within 50 m of the fixed cut:** the two Barbacena stations only (A502 above it,
+83689 below it).
+
+**Updated outputs, with SHA-256:**
+
+| File | SHA-256 |
+|---|---|
+| `station_set_frozen.csv` | `99f06d84…` |
+| `station_coverage_frozen.csv` | `308f5725…` |
+| `elevation_cut_frozen.csv` | `ff548fa5…` (per-year values beside the fixed cut) |
+
+**BDMEP re-request:** the three operating conventional stations without BDMEP data were added to
+the mid-November reminder: Formoso 83334, Santo Antônio de Pádua 83805 and Mirante de Santana
+83781. Their 2026 windows, with the others', are a `prereg-2` addendum.
