@@ -1,0 +1,1 @@
+batch export frozen_mask_pixels: 491 EECU-seconds (batch), 617585 pixels, 24 mesoregion(s), 69 s wall

@@ -2034,3 +2034,133 @@ be chosen on principle and the choice recorded, not chosen to fit the marks.
      S−1's anomaly from trend.
    - **It also defines the trend explicitly,** which the second target, yield versus trend, needs.
      The joint fit's coefficient on S is not the trend of yield.
+
+## 17. Frost station set on the frozen mask (2026-10-15) — for `prereg-2`
+
+The registered station set replaces the provisional one (§8), as §8 required: it is recomputed
+on the frozen mask and built by committed scripts. No temperature was read and no frost night was
+counted. Only whether observations are present was used.
+
+### Compute (Amendments 32 and 32b)
+
+| Task | Estimate | Measured | State |
+|---|---|---|---|
+| `frozen_mask_sample_probe_2025`: 30 m stratified point sample, one mask year | 900 | 2,268 | **cancelled** by the watchdog at 2 × estimate |
+| `frozen_mask_pixels_probe_3109`: pixel table, one mesoregion | 300 | 13 | completed |
+| `frozen_mask_pixels`: pixel table, all 24 mesoregions | 332 (probe × export-box area) | 491 | completed |
+
+- **The 30 m point sample was abandoned.** One mask year cost more than 2,268 EECU-seconds, so 19
+  years would have cost far more.
+- **The pixel table reads the registered W1 weight assets instead.** These hold the frozen mask
+  itself: the Collection 11 class-46 fraction of each MOD13Q1 pixel per mask year.
+- **The table:** `data/derived/frozen_mask_pixels.csv`, gitignored, 617,585 pixels, SHA-256
+  `71a70aa6f5b6f1188148ef6bf1a4cde2479bbba54a1d384a69ec3ba63f292faa`. It is rebuilt by
+  `gee/frozen_mask_pixels.py`.
+- **Check against W1:** regional coffee totals match W1's per-municipality weights within 0.03%
+  for every mask year checked (2007, 2016, 2024), and the one-mesoregion probe within 0.2 pixels.
+
+### Method (`gee/station_set_frozen.py`)
+
+- **Coffee area:** each pixel's class-46 fraction for the window's mask year (S−2), in
+  municipalities kept by the stable filter. Shares are coffee-area weighted. A pixel counts as
+  inside a circle when its centre lies within 25 km.
+- **Candidates:**
+  - every station in INMET's automatic catalogue and BDMEP's conventional list, any state, with
+    frozen-mask coffee within 25 km in some mask year;
+  - automatic completeness comes from the raw archives under the existing rule, computed now for
+    13 stations new to the set.
+- **Elevation cut:** per region **and mask year**, the coffee-weighted 95th percentile of SRTM
+  elevation at the pixel centres.
+- **Qualifying stations and coverage:**
+  - a station qualifies with a complete window, at or below the cut, and coffee in its circle;
+  - same-site pairs (within 1 km): the automatic station governs where it qualifies (17d);
+  - coverage is the share of coffee inside the union of qualifying circles.
+- **Two implementation choices differ from the provisional set, for owner confirmation:**
+  1. **The cut changes by season,** with the frozen mask. The provisional set had one cut per
+     region.
+  2. **Elevation is SRTM at the 250 m pixel centre,** not at each 30 m coffee cell.
+
+### Results
+
+- **Candidates:**
+  - 75 automatic: 62 from the provisional set and 13 new, including stations in MG, SP and RJ that the
+    old 20,000-point sample missed. 7 provisional candidates have no frozen-mask coffee within
+    25 km.
+  - 54 conventional: 35 with BDMEP data and 19 without.
+  - 70 automatic and 31 conventional stations qualify in at least one region-season.
+- **Elevation cut (m), crop 2009 to crop 2027** (`elevation_cut_frozen.csv`):
+  - Sul e Centro-Oeste: 1,203 to 1,174;
+  - São Paulo: 1,129 to 1,120;
+  - Triângulo: 1,214 to 1,192;
+  - Zona da Mata: 1,179 to 1,132.
+  The fall fits coffee expanding at lower elevations; that is not tested. The provisional single
+  cuts were 1,216, 1,126, 1,192 and 1,136 m.
+- **Stations within 50 m of the cut:**
+  - Barbacena automatic (A502, 1,169 m): above the Zona da Mata cut in 16 of 19 seasons.
+  - Barbacena conventional (83689, 1,128 m): below the cut in every season.
+  - Each covers 0.01% of the region's coffee.
+- **Observed coverage** (`station_coverage_frozen.csv`): within −1.7 to +5.3 points of the
+  provisional figures (mean absolute difference 2.1). The largest change is Zona da Mata crop 2013,
+  52.2% against 46.9%.
+- **Unflaggable (under 15%):** **Triângulo, Alto Paranaíba e Noroeste, crop 2018 (7.5%)** only, as
+  provisionally.
+- **Crop 2027 (Jun–Aug 2026):** no conventional station qualifies yet, because BDMEP's 2026
+  windows are short. That is the mid-November addendum. On automatic stations alone, coverage is
+  Sul 19.2%, Triângulo 21.5%, Zona da Mata 21.5% and São Paulo 25.8%, all above the floor.
+- **The 19 conventional candidates without BDMEP data:**
+  - Two are above their region's cut and cannot qualify: Maria da Fé (1,281 m) and Campos do
+    Jordão (1,663 m).
+  - All 19 circles together hold 1.54% of Sul's coffee (almost all of it Maria da Fé's) and under
+    0.05% of each other region's. So their missing data cannot change any region's coverage by
+    more than that.
+  - Several still operate. They could be added to the mid-November BDMEP request.
+- **Same-site pairs:** 24, recomputed from the catalogues.
+  - Of the 19 in `colocated_pairs.csv`, 18 remain; 83738 has no frozen-mask coffee nearby.
+  - The 6 new pairs all involve conventional stations without BDMEP data, so no offsets and no
+    union role.
+
+**Outputs, with SHA-256:**
+
+| File | SHA-256 |
+|---|---|
+| `station_candidates_frozen.csv` | `620367de…` |
+| `inmet_completeness_frozen.csv` | `d26cb6c0…` |
+| `station_set_frozen.csv` | `38f5fe0d…` |
+| `station_coverage_frozen.csv` | `34ecf7cc…` |
+| `elevation_cut_frozen.csv` | `9b34b91c…` |
+
+Full hashes are in `docs/preregistration.md`.
+
+## 18. INMET citation for the conventional night rule (Amendment 17d) (2026-10-15)
+
+**Search:** a literature and documentation search, with the key passage re-read here from the PDF.
+
+**Citable INMET documentation:**
+- **INMET (2022),** *Normais Climatológicas do Brasil 1991–2020*, p. 22.
+- **Diniz, Ramos & Rebello (2018),** *Pesquisa Agropecuária Brasileira* 53(2):131–143, p. 140.
+  All three authors are at INMET, and the paper describes the 1981–2010 normals.
+- **What both say:** conventional stations observe at 12, 18 and 24 UTC, and the minimum
+  thermometer is read "usually" at 12 UTC, the maximum at 24 UTC.
+- **The precipitation rule (pp. 140–141):** a day's rain runs from 12 UTC the day before to 12 UTC
+  that day, and is dated to that day.
+
+**Not stated by any INMET source found:**
+- when the minimum thermometer is reset;
+- the 24-hour window the minimum covers;
+- the date the minimum is filed under.
+
+INMET's glossary says only "a 24-hour period". The *Manual de Observações Meteorológicas* and
+*A Estação Meteorológica e seu Observador* could not be read: one sits behind a viewer, and the
+other exceeds the fetch limit.
+
+**Contradiction (secondary):** Strassburger et al. (2011), *Revista Brasileira de Meteorologia*
+26(2), p. 275, used a 00–24 UTC day "per INMET methodology", with no INMET citation.
+
+**What the rule needs:** every reading consistent with these sources puts the pre-dawn minimum of
+the night ending on the morning of D into the minimum dated D:
+- a 12–12 UTC window;
+- a 00–24 UTC day;
+- a reset at 24 UTC with a reading at 12 UTC.
+
+That is the rule's content, and the co-located check of §8 supports it. Only the exact window
+boundary, which the check could not resolve either, remains undocumented.

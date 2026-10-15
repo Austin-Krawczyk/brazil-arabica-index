@@ -246,3 +246,15 @@
 2026-10-15 07:40:37 UTC  completed w1_series_muni_s_o_paulo_state_tota: 25,953 EECU-s, 303 s wall
 2026-10-15 07:40:43 UTC  São Paulo (state total): 194,288 municipality-composites, 361 municipalities, 595 composites
 2026-10-15 07:40:43 UTC  W1 done: session spend 106,779 EECU-s
+2026-10-15 17:21:30 UTC  session prereg2_frozen_sample: cap 2,700 EECU-s
+2026-10-15 17:21:31 UTC  started frozen_mask_sample_probe_2025: estimate 900, cancel above 1,800 EECU-s, poll 60 s
+2026-10-15 17:22:32 UTC  CANCELLED frozen_mask_sample_probe_2025: 2,268 EECU-s passed 1,800 (2 × estimate)
+2026-10-15 17:23:53 UTC  session prereg2_frozen_pixels: cap 900 EECU-s
+2026-10-15 17:23:53 UTC  started frozen_mask_pixels_probe_3109: estimate 300, cancel above 600 EECU-s, poll 60 s
+2026-10-15 17:24:54 UTC  running frozen_mask_pixels_probe_3109: 0 of 600 EECU-s
+2026-10-15 17:25:55 UTC  running frozen_mask_pixels_probe_3109: 0 of 600 EECU-s
+2026-10-15 17:26:55 UTC  running frozen_mask_pixels_probe_3109: 0 of 600 EECU-s
+2026-10-15 17:27:56 UTC  completed frozen_mask_pixels_probe_3109: 13 EECU-s, 242 s wall
+2026-10-15 17:28:19 UTC  session cap 518 EECU-s
+2026-10-15 17:28:20 UTC  started frozen_mask_pixels: estimate 332, cancel above 664 EECU-s, poll 60 s
+2026-10-15 17:29:20 UTC  completed frozen_mask_pixels: 491 EECU-s, 61 s wall

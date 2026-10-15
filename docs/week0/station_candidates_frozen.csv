@@ -1,0 +1,130 @@
+code,name,uf,status,lat,lon,altitude,network,frozen_pixels_25km,windows_source
+A657,AFONSO CLAUDIO,ES,Operante,-20.104167,-41.106944,507.48,automatic,120,inmet_completeness.csv
+A534,AIMORES,MG,Operante,-19.532778,-41.090833,301.0,automatic,340,inmet_completeness.csv
+A505,ARAXA,MG,Operante,-19.605833,-46.949722,1018.32,automatic,2912,inmet_completeness.csv
+A736,ARIRANHA,SP,Operante,-21.133056,-48.840556,525.44,automatic,61,inmet_completeness.csv
+A725,AVARE,SP,Operante,-23.101667,-48.941111,776.36,automatic,1068,inmet_completeness.csv
+A565,BAMBUI,MG,Operante,-20.031111,-46.008889,697.0,automatic,2282,inmet_completeness.csv
+A502,BARBACENA,MG,Pane,-21.228333,-43.767778,1168.76,automatic,36,inmet_completeness.csv
+A741,BARRA BONITA,SP,Operante,-22.471111,-48.5575,533.68,automatic,450,inmet_completeness.csv
+A748,BARRETOS,SP,Operante,-20.559167,-48.545,534.36,automatic,59,inmet_completeness.csv
+A755,BARUERI,SP,Pane,-23.523889,-46.869444,776.5,automatic,1,computed now
+A705,BAURU,SP,Operante,-22.358056,-49.028889,636.17,automatic,456,inmet_completeness.csv
+A764,BEBEDOURO,SP,Operante,-20.948056,-48.471389,542.0,automatic,121,inmet_completeness.csv
+F501,BELO HORIZONTE - CERCADINHO,MG,Operante,-19.98,-43.958611,1199.55,automatic,2,inmet_completeness.csv
+A521,BELO HORIZONTE - PAMPULHA,MG,Operante,-19.883889,-43.969444,854.02,automatic,3,inmet_completeness.csv
+A572,BELO HORIZONTE - SANTO AGOSTINHO,MG,Operante,-19.933889,-43.952222,915.47,automatic,2,inmet_completeness.csv
+A744,BRAGANCA PAULISTA,SP,Operante,-22.949167,-46.526111,891.0,automatic,237,inmet_completeness.csv
+A544,BURITIS,MG,Operante,-15.524167,-46.435556,894.0,automatic,104,inmet_completeness.csv
+A530,CALDAS,MG,Operante,-21.918056,-46.383056,1077.34,automatic,4936,inmet_completeness.csv
+A706,CAMPOS DO JORDAO,SP,Operante,-22.750278,-45.603889,1662.95,automatic,113,inmet_completeness.csv
+A541,CAPELINHA,MG,Operante,-17.705556,-42.389167,932.06,automatic,435,inmet_completeness.csv
+A554,CARATINGA,MG,Operante,-19.735833,-42.137222,609.25,automatic,11731,inmet_completeness.csv
+A629,CARMO,RJ,Operante,-21.938611,-42.600833,293.0,automatic,4,computed now
+A738,CASA BRANCA,SP,Operante,-21.780556,-47.075278,734.15,automatic,896,inmet_completeness.csv
+A557,CORONEL PACHECO,MG,Operante,-21.546667,-43.261111,411.14,automatic,9,inmet_completeness.csv
+A849,DIAMANTE DO NORTE,PR,Operante,-22.639444,-52.890278,368.22,automatic,57,inmet_completeness.csv
+A564,DIVINOPOLIS,MG,Operante,-20.173333,-44.875,796.0,automatic,14,inmet_completeness.csv
+A536,DORES DO INDAIA,MG,Pane,-19.481944,-45.593889,721.09,automatic,31,computed now
+A535,FLORESTAL,MG,Operante,-19.885278,-44.416944,753.5,automatic,112,inmet_completeness.csv
+A524,FORMIGA,MG,Operante,-20.455,-45.453889,878.14,automatic,554,inmet_completeness.csv
+A708,FRANCA,SP,Operante,-20.584444,-47.3825,1002.74,automatic,7802,inmet_completeness.csv
+A533,GUANHAES,MG,Operante,-18.786944,-42.943056,852.68,automatic,79,inmet_completeness.csv
+A546,GUARDA-MOR,MG,Operante,-17.561389,-47.199167,997.01,automatic,55,inmet_completeness.csv
+A737,IBITINGA,SP,Operante,-21.855556,-48.799722,496.75,automatic,99,inmet_completeness.csv
+A713,IPERO,SP,Operante,-23.426111,-47.585556,609.33,automatic,4,computed now
+A739,ITAPIRA,SP,Operante,-22.415,-46.805278,634.89,automatic,2854,inmet_completeness.csv
+A753,ITUVERAVA,SP,Operante,-20.359722,-47.775278,610.58,automatic,1605,inmet_completeness.csv
+A553,JOAO PINHEIRO,MG,Operante,-17.784444,-46.119444,877.05,automatic,44,computed now
+A735,JOSE BONIFACIO,SP,Operante,-21.085556,-49.920278,408.35,automatic,76,inmet_completeness.csv
+A518,JUIZ DE FORA,MG,Operante,-21.77,-43.364444,936.88,automatic,36,inmet_completeness.csv
+A727,LINS,SP,Operante,-21.666111,-49.734722,460.65,automatic,257,inmet_completeness.csv
+A567,MACHADO,MG,Operante,-21.680833,-45.944444,969.0,automatic,19373,inmet_completeness.csv
+A556,MANHUACU,MG,Operante,-20.263333,-42.182778,819.47,automatic,19980,inmet_completeness.csv
+A540,MANTENA,MG,Operante,-18.780556,-40.986389,254.91,automatic,383,inmet_completeness.csv
+A531,MARIA DA FE,MG,Operante,-22.314444,-45.373056,1281.43,automatic,6372,inmet_completeness.csv
+A763,MARILIA,SP,Operante,-22.235278,-49.965,660.0,automatic,2633,inmet_completeness.csv
+A517,MURIAE,MG,Operante,-21.105,-42.375833,282.79,automatic,1371,inmet_completeness.csv
+A570,OLIVEIRA,MG,Operante,-20.715,-44.864444,1025.0,automatic,8103,inmet_completeness.csv
+A716,OURINHOS,SP,Pane,-23.000556,-49.843333,500.0,automatic,268,inmet_completeness.csv
+A571,PARACATU,MG,Operante,-17.244444,-46.881667,705.0,automatic,21,computed now
+A529,PASSA QUATRO,MG,Operante,-22.395833,-44.961944,1017.1,automatic,38,inmet_completeness.csv
+A516,PASSOS,MG,Operante,-20.745278,-46.633889,781.7,automatic,2438,inmet_completeness.csv
+A562,PATOS DE MINAS,MG,Pane,-18.520556,-46.440556,950.0,automatic,2787,inmet_completeness.csv
+A523,PATROCINIO,MG,Operante,-18.996667,-46.985833,978.11,automatic,13133,inmet_completeness.csv
+A707,PRESIDENTE PRUDENTE,SP,Operante,-22.12,-51.408611,431.92,automatic,2,computed now
+A718,RANCHARIA,SP,Operante,-22.372778,-50.974722,398.75,automatic,150,inmet_completeness.csv
+A525,SACRAMENTO,MG,Operante,-19.875278,-47.434167,913.12,automatic,525,inmet_completeness.csv
+A711,SAO CARLOS,SP,Operante,-21.980278,-47.883889,859.29,automatic,231,inmet_completeness.csv
+A514,SAO JOAO DEL REI,MG,Operante,-21.106389,-44.250833,929.88,automatic,284,inmet_completeness.csv
+A740,SAO LUIZ DO PARAITINGA,SP,Operante,-23.228333,-45.416944,874.0,automatic,92,inmet_completeness.csv
+A771,SAO PAULO - INTERLAGOS,SP,Operante,-23.724444,-46.6775,771.0,automatic,1,computed now
+A701,SAO PAULO - MIRANTE,SP,Operante,-23.496289,-46.620067,785.64,automatic,3,computed now
+A561,SAO SEBASTIAO DO PARAISO,MG,Pane,-20.91,-47.114167,845.0,automatic,11729,inmet_completeness.csv
+A770,SAO SIMAO,SP,Operante,-21.461111,-47.579444,620.0,automatic,171,inmet_completeness.csv
+A569,SETE LAGOAS,MG,Operante,-19.455278,-44.173333,719.0,automatic,7,computed now
+A728,TAUBATE,SP,Operante,-23.041667,-45.520833,582.26,automatic,103,inmet_completeness.csv
+A527,TEOFILO OTONI,MG,Operante,-17.892778,-41.515556,467.17,automatic,8,computed now
+A511,TIMOTEO,MG,Operante,-19.573889,-42.6225,493.42,automatic,25,computed now
+A528,TRES MARIAS,MG,Operante,-18.200833,-45.459722,931.01,automatic,6,inmet_completeness.csv
+A625,TRES RIOS,RJ,Operante,-22.098333,-43.208333,295.0,automatic,8,inmet_completeness.csv
+A768,TUPA,SP,Operante,-21.927222,-50.490278,498.0,automatic,11,inmet_completeness.csv
+A568,UBERABA,MG,Operante,-19.71,-47.961944,778.0,automatic,33,computed now
+A507,UBERLANDIA,MG,Operante,-18.916944,-48.255556,874.77,automatic,359,inmet_completeness.csv
+A542,UNAI,MG,Operante,-16.554167,-46.881944,640.85,automatic,127,inmet_completeness.csv
+A515,VARGINHA,MG,Operante,-21.566389,-45.404167,949.78,automatic,18990,inmet_completeness.csv
+A510,VICOSA,MG,Operante,-20.7625,-42.863889,697.64,automatic,2810,inmet_completeness.csv
+83546,ECOPORANGA,ES,Desativada,-18.365694,-40.840656,253.95,conventional,45,no BDMEP data requested
+83595,AIMORES,MG,Desativada,-19.494872,-41.077647,79.93,conventional,373,bdmep_completeness.csv
+83579,ARAXA,MG,Operante,-19.60555555,-46.94972221,1018.28,conventional,2915,bdmep_completeness.csv
+83582,BAMBUI,MG,Desativada,-20.0311111,-46.00888888,684.43,conventional,2282,bdmep_completeness.csv
+83689,BARBACENA,MG,Desativada,-21.23972221,-43.78138888,1128.08,conventional,32,bdmep_completeness.csv
+83587,BELO HORIZONTE,MG,Operante,-19.93444444,-43.95222222,915.47,conventional,2,bdmep_completeness.csv
+83533,BOM DESPACHO,MG,Fechada,-19.71944443,-45.36749999,695.0,conventional,40,no BDMEP data requested
+83589,C. DO MATO DENTRO,MG,Fechada,-19.02027777,-43.43388888,663.02,conventional,8,bdmep_completeness.csv
+83681,CALDAS(P. DE CALDAS),MG,Desativada,-21.918139,-46.382977,1077.08,conventional,4933,bdmep_completeness.csv
+83639,CAPARAO,MG,Operante,-20.5261111,-41.90916666,836.25,conventional,17939,bdmep_completeness.csv
+83592,CARATINGA,MG,Fechada,-19.73583333,-42.13722221,609.56,conventional,11731,bdmep_completeness.csv
+83037,CORONEL PACHECO,MG,Desativada,-21.54666666,-43.26111111,411.03,conventional,9,bdmep_completeness.csv
+83635,DIVINOPOLIS,MG,Fechada,-20.17333332,-44.87472221,787.42,conventional,14,bdmep_completeness.csv
+83581,FLORESTAL,MG,Desativada,-19.885422,-44.416889,753.51,conventional,112,bdmep_completeness.csv
+83334,FORMOSO,MG,Operante,-14.949727,-46.235795,854.6,conventional,43,no BDMEP data requested
+83574,FRUTAL,MG,Desativada,-20.034803,-48.930435,547.09,conventional,9,bdmep_completeness.csv
+83591,JOAO MONLEVADE,MG,Fechada,-19.82388888,-43.14416666,859.84,conventional,7,bdmep_completeness.csv
+83481,JOAO PINHEIRO,MG,Desativada,-17.74027777,-46.17694443,759.62,conventional,94,bdmep_completeness.csv
+83692,JUIZ DE FORA,MG,Operante,-21.76999999,-43.36444444,936.9,conventional,36,bdmep_completeness.csv
+83032,LAMBARI,MG,Desativada,-21.944146,-45.317739,884.56,conventional,15509,bdmep_completeness.csv
+83687,LAVRAS,MG,Operante,-21.2261111,-44.97972221,916.19,conventional,6557,bdmep_completeness.csv
+83683,MACHADO,MG,Fechada,-21.68138888,-45.94083333,892.44,conventional,19382,bdmep_completeness.csv
+83015,MARIA DA FE,MG,Desativada,-22.31444444,-45.37305554,1281.36,conventional,6372,no BDMEP data requested
+83578,MATEUS LEME,MG,Desativada,-20.02,-44.35,768.0,conventional,98,no BDMEP data requested
+83637,OLIVEIRA,MG,Desativada,-20.699773,-44.819903,991.23,conventional,6803,bdmep_completeness.csv
+83479,PARACATU,MG,Fechada,-17.24416666,-46.88166666,711.41,conventional,21,no BDMEP data requested
+83737,PASSA QUATRO,MG,Operante,-22.38277777,-44.96694443,919.55,conventional,83,bdmep_completeness.csv
+83531,PATOS DE MINAS,MG,Fechada,-18.51972221,-46.43916666,947.68,conventional,2782,bdmep_completeness.csv
+83736,SAO LOURENCO,MG,Desativada,-22.12638888,-45.04333333,930.65,conventional,4904,bdmep_completeness.csv
+83631,SAO S.DO PARAISO,MG,Desativada,-20.91,-47.11416666,820.0,conventional,11729,bdmep_completeness.csv
+83586,SETE LAGOAS,MG,Desativada,-19.48454,-44.173798,753.68,conventional,7,no BDMEP data requested
+83492,TEOFILO OTONI,MG,Desativada,-17.86027777,-41.5075,349.11,conventional,8,no BDMEP data requested
+83577,UBERABA,MG,Fechada,-19.73722221,-47.94972221,753.41,conventional,18,no BDMEP data requested
+83642,VICOSA,MG,Fechada,-20.7625,-42.86388888,697.53,conventional,2810,bdmep_completeness.csv
+83807,CARMO,RJ,Desativada,-21.93583333,-42.60611111,342.19,conventional,4,no BDMEP data requested
+83805,SANTO ANTONIO DE PADUA,RJ,Operante,-21.53694444,-42.16083333,95.0,conventional,10,no BDMEP data requested
+83773,AVARE,SP,Desativada,-23.083579,-48.911718,831.96,conventional,977,bdmep_completeness.csv
+83714,CAMPOS DO JORDAO,SP,Desativada,-22.75027777,-45.60388888,1662.56,conventional,113,no BDMEP data requested
+83676,CATANDUVA,SP,Fechada,-21.12222221,-48.94694444,570.0,conventional,88,bdmep_completeness.csv
+83630,FRANCA,SP,Operante,-20.58444444,-47.38249999,1003.55,conventional,7802,bdmep_completeness.csv
+83075,GUARULHOS,SP,Desativada,-23.470981,-46.533559,746.51,conventional,9,no BDMEP data requested
+83824,ITU,SP,Desativada,-23.264627,-47.299742,616.0,conventional,8,bdmep_completeness.csv
+83674,LINS,SP,Desativada,-21.669223,-49.732678,469.08,conventional,261,bdmep_completeness.csv
+83716,PRESIDENTE PRUDENTE,SP,Desativada,-22.119874,-51.408624,431.97,conventional,2,no BDMEP data requested
+83084,PUC-SP,SP,Desativada,-23.53,-46.63,742.0,conventional,3,no BDMEP data requested
+83726,SAO CARLOS,SP,Fechada,-21.98027777,-47.88388888,859.77,conventional,231,bdmep_completeness.csv
+83781,SAO PAULO(MIR.de SANTANA),SP,Operante,-23.49638888,-46.61999999,785.16,conventional,3,no BDMEP data requested
+83669,SAO SIMAO,SP,Desativada,-21.46111111,-47.57944443,620.02,conventional,171,bdmep_completeness.csv
+83851,SOROCABA,SP,Desativada,-23.47999999,-47.42666666,597.58,conventional,8,no BDMEP data requested
+83651,SOROCABA,SP,Desativada,-23.47999999,-47.45,583.0,conventional,8,no BDMEP data requested
+83784,TAUBATE,SP,Desativada,-23.0388889,-45.5158333,581.0,conventional,108,bdmep_completeness.csv
+83786,UBATUBA,SP,Desativada,-23.416697,-45.114373,19.55,conventional,35,bdmep_completeness.csv
+83035,VILA DEODORO,SP,Desativada,-23.58,-46.6,789.0,conventional,3,no BDMEP data requested
+83623,VOTUPORANGA,SP,Fechada,-20.43972221,-49.9836111,510.41,conventional,68,bdmep_completeness.csv

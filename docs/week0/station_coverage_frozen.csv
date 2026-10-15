@@ -1,0 +1,77 @@
+window,crop,region,coffee_pixel_equivalents,automatic_stations,conventional_stations,conventional_left_out_same_site,automatic_coverage,conventional_coverage,combined_coverage,unflaggable,combined_coverage_no_filter
+2008,2009,Sul e Centro-Oeste,61533,7,6,2,13.1,11.6,22.8,False,22.1
+2008,2009,"Triângulo, Alto Paranaíba e Noroeste",20836,8,2,1,19.5,6.2,23.4,False,23.3
+2008,2009,"Zona da Mata, Rio Doce e Central",24364,13,4,3,9.6,34.5,35.7,False,34.2
+2008,2009,São Paulo (state total),12215,13,5,2,18.2,14.9,21.1,False,19.6
+2009,2010,Sul e Centro-Oeste,63322,6,8,1,12.9,11.7,22.8,False,22.1
+2009,2010,"Triângulo, Alto Paranaíba e Noroeste",21256,9,1,1,19.8,6.2,23.6,False,23.5
+2009,2010,"Zona da Mata, Rio Doce e Central",24962,13,5,3,9.8,34.7,35.8,False,34.4
+2009,2010,São Paulo (state total),12496,12,7,1,5.0,16.6,21.4,False,20.0
+2010,2011,Sul e Centro-Oeste,64749,6,8,2,12.2,20.5,30.8,False,29.4
+2010,2011,"Triângulo, Alto Paranaíba e Noroeste",22005,9,2,1,19.8,6.1,23.5,False,23.5
+2010,2011,"Zona da Mata, Rio Doce e Central",25614,12,6,2,9.2,34.5,35.4,False,34.2
+2010,2011,São Paulo (state total),12850,13,7,2,21.8,17.1,24.7,False,22.8
+2011,2012,Sul e Centro-Oeste,68157,7,7,2,12.6,18.4,29.1,False,27.9
+2011,2012,"Triângulo, Alto Paranaíba e Noroeste",23146,8,2,1,19.9,6.3,23.7,False,23.6
+2011,2012,"Zona da Mata, Rio Doce e Central",26216,12,5,2,10.0,34.1,35.2,False,34.0
+2011,2012,São Paulo (state total),13532,14,4,3,20.4,16.4,23.1,False,20.0
+2012,2013,Sul e Centro-Oeste,72393,6,5,2,12.0,13.7,23.8,False,23.2
+2012,2013,"Triângulo, Alto Paranaíba e Noroeste",25780,8,2,1,20.9,6.6,24.6,False,24.6
+2012,2013,"Zona da Mata, Rio Doce e Central",27130,14,4,2,31.3,33.7,52.2,False,50.4
+2012,2013,São Paulo (state total),14368,16,1,3,18.7,14.3,18.7,False,16.1
+2013,2014,Sul e Centro-Oeste,76576,7,6,2,11.8,15.3,25.4,False,24.7
+2013,2014,"Triângulo, Alto Paranaíba e Noroeste",27528,8,2,1,20.8,6.5,24.4,False,24.3
+2013,2014,"Zona da Mata, Rio Doce e Central",28197,15,4,3,30.9,33.2,51.6,False,49.9
+2013,2014,São Paulo (state total),15022,17,0,3,23.3,14.7,23.3,False,21.3
+2014,2015,Sul e Centro-Oeste,82160,7,6,2,11.7,15.3,25.2,False,24.6
+2014,2015,"Triângulo, Alto Paranaíba e Noroeste",30027,8,2,1,20.9,6.6,24.6,False,24.5
+2014,2015,"Zona da Mata, Rio Doce e Central",29276,13,5,3,30.2,33.1,50.6,False,49.1
+2014,2015,São Paulo (state total),15940,18,0,2,22.9,14.9,22.9,False,20.7
+2015,2016,Sul e Centro-Oeste,84347,6,6,1,11.1,13.6,24.5,False,24.1
+2015,2016,"Triângulo, Alto Paranaíba e Noroeste",31222,7,2,1,20.7,6.7,24.3,False,24.3
+2015,2016,"Zona da Mata, Rio Doce e Central",30124,16,6,3,31.0,33.2,51.1,False,49.6
+2015,2016,São Paulo (state total),16385,16,2,2,21.3,15.5,21.6,False,19.4
+2016,2017,Sul e Centro-Oeste,85897,6,6,2,5.0,13.5,18.4,False,17.8
+2016,2017,"Triângulo, Alto Paranaíba e Noroeste",34079,6,0,1,21.2,3.0,21.2,False,21.1
+2016,2017,"Zona da Mata, Rio Doce e Central",30467,15,6,4,30.7,33.1,50.5,False,49.2
+2016,2017,São Paulo (state total),16595,21,1,1,27.6,15.2,27.7,False,25.8
+2017,2018,Sul e Centro-Oeste,85983,8,4,2,16.5,10.4,26.7,False,26.1
+2017,2018,"Triângulo, Alto Paranaíba e Noroeste",34477,8,0,1,7.5,3.0,7.5,True,7.5
+2017,2018,"Zona da Mata, Rio Doce e Central",30193,12,4,4,10.8,33.0,33.6,False,32.9
+2017,2018,São Paulo (state total),16574,23,1,1,31.9,15.3,31.9,False,28.9
+2018,2019,Sul e Centro-Oeste,85034,11,3,2,27.4,10.4,29.3,False,28.7
+2018,2019,"Triângulo, Alto Paranaíba e Noroeste",34223,9,0,1,24.9,3.1,24.9,False,24.8
+2018,2019,"Zona da Mata, Rio Doce e Central",30378,13,6,1,22.3,31.4,50.3,False,48.7
+2018,2019,São Paulo (state total),16437,19,2,1,29.7,15.6,29.9,False,26.8
+2019,2020,Sul e Centro-Oeste,85182,9,3,2,26.1,10.4,28.1,False,27.6
+2019,2020,"Triângulo, Alto Paranaíba e Noroeste",34952,11,0,1,25.2,3.1,25.2,False,25.1
+2019,2020,"Zona da Mata, Rio Doce e Central",30691,14,3,2,11.5,30.9,33.4,False,32.3
+2019,2020,São Paulo (state total),16412,22,1,0,13.0,15.5,28.0,False,24.6
+2020,2021,Sul e Centro-Oeste,85487,10,2,2,26.3,2.0,28.1,False,27.5
+2020,2021,"Triângulo, Alto Paranaíba e Noroeste",35201,9,0,1,21.3,3.1,21.3,False,21.3
+2020,2021,"Zona da Mata, Rio Doce e Central",31308,11,5,1,21.9,30.6,49.1,False,47.7
+2020,2021,São Paulo (state total),16504,20,0,2,27.0,15.7,27.0,False,23.0
+2021,2022,Sul e Centro-Oeste,85700,9,2,1,21.9,2.0,23.7,False,23.3
+2021,2022,"Triângulo, Alto Paranaíba e Noroeste",35235,6,0,1,24.6,3.1,24.6,False,24.5
+2021,2022,"Zona da Mata, Rio Doce e Central",32149,12,4,2,30.8,30.4,48.9,False,47.5
+2021,2022,São Paulo (state total),16500,13,0,2,20.9,15.8,20.9,False,17.8
+2022,2023,Sul e Centro-Oeste,85644,10,1,1,21.1,1.3,22.2,False,21.6
+2022,2023,"Triângulo, Alto Paranaíba e Noroeste",35192,8,0,1,24.9,3.1,24.9,False,24.8
+2022,2023,"Zona da Mata, Rio Doce e Central",32079,12,3,1,29.0,27.3,44.1,False,42.7
+2022,2023,São Paulo (state total),16534,20,0,1,27.6,15.6,27.6,False,24.7
+2023,2024,Sul e Centro-Oeste,84723,11,2,1,26.9,2.0,28.7,False,28.1
+2023,2024,"Triângulo, Alto Paranaíba e Noroeste",35148,8,0,1,24.8,3.1,24.8,False,24.7
+2023,2024,"Zona da Mata, Rio Doce e Central",31380,16,3,1,30.6,21.7,48.9,False,47.4
+2023,2024,São Paulo (state total),16507,25,0,1,30.7,15.5,30.7,False,27.4
+2024,2025,Sul e Centro-Oeste,84795,10,3,0,26.1,2.0,28.1,False,27.3
+2024,2025,"Triângulo, Alto Paranaíba e Noroeste",35083,11,0,1,25.1,3.1,25.1,False,25.0
+2024,2025,"Zona da Mata, Rio Doce e Central",31825,16,3,1,30.2,21.9,48.7,False,47.2
+2024,2025,São Paulo (state total),16489,21,1,0,16.6,15.5,31.7,False,27.7
+2025,2026,Sul e Centro-Oeste,84707,8,2,0,20.7,0.9,21.6,False,21.0
+2025,2026,"Triângulo, Alto Paranaíba e Noroeste",35027,9,1,0,22.0,3.1,25.0,False,24.9
+2025,2026,"Zona da Mata, Rio Doce e Central",31797,14,3,1,30.0,21.9,48.5,False,47.0
+2025,2026,São Paulo (state total),16481,22,1,0,11.7,15.5,26.9,False,25.0
+2026,2027,Sul e Centro-Oeste,84740,9,0,1,19.2,0.2,19.2,False,18.6
+2026,2027,"Triângulo, Alto Paranaíba e Noroeste",34969,10,0,1,21.5,3.1,21.5,False,21.5
+2026,2027,"Zona da Mata, Rio Doce e Central",31853,14,0,1,21.5,0.0,21.5,False,20.8
+2026,2027,São Paulo (state total),16464,22,0,1,25.8,15.5,25.8,False,24.2

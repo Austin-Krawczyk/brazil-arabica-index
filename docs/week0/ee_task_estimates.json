@@ -1,4 +1,7 @@
 {
+ "frozen_mask_pixels": 332.0,
+ "frozen_mask_pixels_probe_3109": 300.0,
+ "frozen_mask_sample_probe_2025": 900.0,
  "w1_full_probe_sul_e_centro_oeste_2021": 445.0,
  "w1_series_muni_s_o_paulo_state_tota": 22551.339725804704,
  "w1_series_muni_sul_e_centro_oeste": 6689.8,

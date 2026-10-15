@@ -1,152 +1,17 @@
 {
- "session": "W1",
- "cap": 165086.58992277185,
- "spent": 106778.85220336914,
+ "session": "prereg2_frozen_pixels",
+ "cap": 517.868353843689,
+ "spent": 503.9182376861572,
  "tasks": [
   {
-   "task": "w1_weights_meso_3109",
+   "task": "frozen_mask_pixels_probe_3109",
    "state": "COMPLETED",
-   "eecu_s": 1927.6
+   "eecu_s": 13.2
   },
   {
-   "task": "w1_weights_meso_3110",
+   "task": "frozen_mask_pixels",
    "state": "COMPLETED",
-   "eecu_s": 4444.6
-  },
-  {
-   "task": "w1_full_probe_sul_e_centro_oeste_2021",
-   "state": "COMPLETED",
-   "eecu_s": 257.3
-  },
-  {
-   "task": "w1_series_muni_sul_e_centro_oeste",
-   "state": "COMPLETED",
-   "eecu_s": 6253.5
-  },
-  {
-   "task": "w1_weights_meso_3101",
-   "state": "COMPLETED",
-   "eecu_s": 4715.1
-  },
-  {
-   "task": "w1_weights_meso_3105",
-   "state": "COMPLETED",
-   "eecu_s": 5705.6
-  },
-  {
-   "task": "w1_series_muni_tri_ngulo_alto_paran",
-   "state": "COMPLETED",
-   "eecu_s": 11895.0
-  },
-  {
-   "task": "w1_weights_meso_3106",
-   "state": "COMPLETED",
-   "eecu_s": 3107.0
-  },
-  {
-   "task": "w1_weights_meso_3107",
-   "state": "COMPLETED",
-   "eecu_s": 1963.0
-  },
-  {
-   "task": "w1_weights_meso_3108",
-   "state": "COMPLETED",
-   "eecu_s": 2680.8
-  },
-  {
-   "task": "w1_weights_meso_3111",
-   "state": "COMPLETED",
-   "eecu_s": 753.6
-  },
-  {
-   "task": "w1_weights_meso_3112",
-   "state": "COMPLETED",
-   "eecu_s": 3220.8
-  },
-  {
-   "task": "w1_series_muni_zona_da_mata_rio_doc",
-   "state": "COMPLETED",
-   "eecu_s": 15128.8
-  },
-  {
-   "task": "w1_weights_meso_3501",
-   "state": "COMPLETED",
-   "eecu_s": 2072.8
-  },
-  {
-   "task": "w1_weights_meso_3502",
-   "state": "COMPLETED",
-   "eecu_s": 1020.1
-  },
-  {
-   "task": "w1_weights_meso_3503",
-   "state": "COMPLETED",
-   "eecu_s": 1252.1
-  },
-  {
-   "task": "w1_weights_meso_3504",
-   "state": "COMPLETED",
-   "eecu_s": 2707.1
-  },
-  {
-   "task": "w1_weights_meso_3505",
-   "state": "COMPLETED",
-   "eecu_s": 405.3
-  },
-  {
-   "task": "w1_weights_meso_3506",
-   "state": "COMPLETED",
-   "eecu_s": 466.8
-  },
-  {
-   "task": "w1_weights_meso_3507",
-   "state": "COMPLETED",
-   "eecu_s": 924.0
-  },
-  {
-   "task": "w1_weights_meso_3508",
-   "state": "COMPLETED",
-   "eecu_s": 1884.8
-  },
-  {
-   "task": "w1_weights_meso_3509",
-   "state": "COMPLETED",
-   "eecu_s": 471.5
-  },
-  {
-   "task": "w1_weights_meso_3510",
-   "state": "COMPLETED",
-   "eecu_s": 896.4
-  },
-  {
-   "task": "w1_weights_meso_3511",
-   "state": "COMPLETED",
-   "eecu_s": 2029.0
-  },
-  {
-   "task": "w1_weights_meso_3512",
-   "state": "COMPLETED",
-   "eecu_s": 976.1
-  },
-  {
-   "task": "w1_weights_meso_3513",
-   "state": "COMPLETED",
-   "eecu_s": 1100.4
-  },
-  {
-   "task": "w1_weights_meso_3514",
-   "state": "COMPLETED",
-   "eecu_s": 2159.0
-  },
-  {
-   "task": "w1_weights_meso_3515",
-   "state": "COMPLETED",
-   "eecu_s": 408.4
-  },
-  {
-   "task": "w1_series_muni_s_o_paulo_state_tota",
-   "state": "COMPLETED",
-   "eecu_s": 25952.5
+   "eecu_s": 490.7
   }
  ]
 }
