@@ -2306,3 +2306,23 @@ Every other region-season has no flag and no penalty. The four-region totals (PA
   - changes no regional flag in any season.
 - **It would be a change after `prereg-2`.** The frost input for the backtest seasons (crops
   2009–2026) is unchanged either way. The owner's choice decides only how note 1 reports Caldas.
+
+### §19 addendum: station-representativeness caveat on the frost version (owner, 2026-10-15)
+
+**The caveat, attached to every with-frost result:** the frost component sees frost only where
+screen-height stations see it, and the network mostly sits on plateaus and upper slopes.
+
+**What it means for July 2021 (crop 2022):**
+- In Sul and São Paulo, most qualifying stations had no night at or below 2 °C, or too few to meet
+  the three-night tier. Varginha had one night, at 0.8 °C; Machado's coldest night all window was
+  3.8 °C.
+- The damage concentrated in cold pools, which the network samples only at a few sites, such as
+  Caldas (−3.5 °C) and Passos (−1.4 °C).
+- So the with-frost version does not flag the 2021 frost in those regions.
+
+**Treatment:**
+- The rule is unchanged (owner).
+- MODIS night land-surface temperature is on the v2 list.
+- The 2021 Planet frost case study is now the first Planet task (Amendment 40).
+- The Jun–Aug 2026 reading at Caldas (−0.5 °C, 14 July) goes into note 1 as outside the rule and
+  not scored.
