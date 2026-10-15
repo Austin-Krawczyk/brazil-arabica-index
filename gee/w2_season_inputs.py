@@ -62,9 +62,15 @@ def last_pentad_end(limit):
         d -= dt.timedelta(days=1)
 
 
-def members():
+def members(filter_rule=True, weight="pam_ha"):
+    """Members per season (Amendment 35) and their aggregation weight, returned as `pam_ha`.
+    Registered sensitivities (Amendment 16d): filter_rule=False drops the stable filter (members are
+    then every municipality with PAM area and at least one MODIS pixel of mapped coffee);
+    weight="pixels" aggregates by mapped coffee area instead of PAM area, same members."""
     m = pd.read_csv(WEEK0 / "members_by_season.csv", dtype={"code": str})
-    return m[m.member][["code", "region", "season", "pam_ha"]].rename(columns={"season": "crop"})
+    keep = m.member if filter_rule else (m.pam_ha > 0) & (m.pixels >= 1)
+    return (m[keep][["code", "region", "season", weight]]
+            .rename(columns={"season": "crop", weight: "pam_ha"}))
 
 
 def regional(df, value, clim_key, exclude=None, extra_keys=()):
@@ -98,15 +104,15 @@ def zscore(r, clim_key, exclude=None, sd_floor=None, clim_year_col="clim_year"):
 
 
 # ---------------------------------------------------------------- EVI
-def evi(exclude=None, start_month=5):
+def evi(exclude=None, start_month=5, index="EVI", mcfg=None):
     s = pd.concat([pd.read_csv(f, dtype={"code": str}) for f in sorted(glob.glob(str(D / "w1_series_muni_*.csv")))],
                   ignore_index=True)
     s["start"] = pd.to_datetime(s.composite_start)
     s["period"] = s.start.dt.dayofyear
     s["clim_year"] = s.start.dt.year
     s = s.rename(columns={"season": "crop"})
-    s["value"] = np.where(s.f_q1_w_valid_sum >= 1, s.f_q1_EVI_median, np.nan)  # one cloud-free coffee pixel
-    mem = members()
+    s["value"] = np.where(s.f_q1_w_valid_sum >= 1, s[f"f_q1_{index}_median"], np.nan)  # one cloud-free coffee pixel
+    mem = members(**(mcfg or {}))
     s = s.merge(mem.drop(columns="region"), on=["code", "crop"], how="inner")
     r = regional(s, "value", ["period"], exclude, extra_keys=("composite_start", "period", "clim_year"))
     pam_all = pd.concat([mem.groupby(["region", "crop"]).pam_ha.sum().reset_index(),
@@ -122,22 +128,27 @@ def evi(exclude=None, start_month=5):
             cut = pd.Timestamp(cut_date(crop, v))
             sel = x[(pd.to_datetime(x.composite_start) >= pd.Timestamp(crop - 1, start_month, 1))
                     & (x.end <= cut - pd.Timedelta(days=14))]
-            rows.append(dict(region=reg, crop=crop, vintage=v, input="evi" if start_month == 5 else "evi_from_sep",
+            label = index.lower() + ("" if start_month == 5 else "_from_sep")
+            rows.append(dict(region=reg, crop=crop, vintage=v, input=label,
                              value=sel.z.mean() if len(sel) else np.nan, n_composites=len(sel)))
     return pd.DataFrame(rows)
 
 
 # ---------------------------------------------------------------- weather tables
-def muni_table(product):
-    t = pd.read_csv(D / f"w2_{product}_muni.csv", dtype={"code": str}).rename(columns={"season": "crop"})
+def muni_table(product, table=None):
+    """The municipal table, as coffee-weighted means. `table` replaces the file (the backtest's CHIRPS
+    prelim sensitivity passes a copy with the held-out season's non-final months substituted)."""
+    t = (table.copy() if table is not None else
+         pd.read_csv(D / f"w2_{product}_muni.csv", dtype={"code": str})).rename(columns={"season": "crop"})
     bands = [c for c in t.columns if c[:2] in ("d_", "p_", "h_") or c == "sm"]
     t[bands] = t[bands].div(t.w, axis=0)  # coffee-weighted municipal means
     return t, bands
 
 
-def windowed(product, total_fn, input_name, exclude=None, sd_floor=None, vintages=VINTAGES):
-    t, bands = muni_table(product)
-    mem = members()
+def windowed(product, total_fn, input_name, exclude=None, sd_floor=None, vintages=VINTAGES, mcfg=None,
+             table=None):
+    t, bands = muni_table(product, table)
+    mem = members(**(mcfg or {}))
     rows = []
     for v in vintages:
         x = t.copy()
@@ -190,9 +201,9 @@ def heat_days(row, crop, v):
     return sum(row[f"h_{d:%m%d}"] for d in pd.date_range(dt.date(crop - 1, 9, 1), end).date)
 
 
-def soil(exclude=None):
+def soil(exclude=None, mcfg=None):
     t, bands = muni_table("soil")
-    mem = members()
+    mem = members(**(mcfg or {}))
     x = t.merge(mem.drop(columns="region"), on=["code", "crop"], how="inner")
     x["value"], x["clim_year"], x["k"] = x.sm, x.crop - 1, 0
     r = regional(x, "value", ["k"], exclude, extra_keys=("k",))
