@@ -33,7 +33,7 @@ this tag is logged in `SPEC_CHANGELOG.md` and listed in the backtest report.
 | Flowering | Sep 1–Nov 30 of S−1 | §3a, §5 step 3 | decided |
 | Bean fill | Dec 1 of S−1 to Mar 31 of S | §3a, §5 step 3 | decided |
 | Harvest rain | May–Sep of S: not an input (falls after every note on crop S) | §5 step 3 | decided |
-| Backtest seasons | Without frost: Sul e Centro-Oeste, Triângulo and São Paulo, crops 2001–2025; Zona da Mata and the four-region total, crops 2008–2025. With frost: crops 2009–2025 | §5 step 8, Amendment 19b | decided |
+| Backtest seasons | **Changed after the tag (Amendment 38, 2026-10-15):** without frost, Sul e Centro-Oeste, Triângulo and São Paulo, crops 2002–2025; Zona da Mata and the four-region total, crops 2009–2025; with frost, crops 2009–2025. The biennial term needs crop S−1, so each series' first season has no stage-1 expectation. *Registered at `prereg-1`:* 2001–2025 and 2008–2025 | §5 step 8, Amendments 19b, 38 | decided; changed after `prereg-1` |
 | **Backtest cut dates per vintage** | Inputs are cut at: **November vintage, 20 November of S−1; December vintage, 1 December of S−1; January vintage, 1 January of S.** Production publishes within the first week after each cut, and note 1 in late November (§6) | §5 step 8, §6 | **decided 2026-10-15** (owner, item 1) |
 
 ### B. The four fitted inputs (stage 2, the cap of four; §5 step 6)
@@ -89,7 +89,7 @@ this tag is logged in `SPEC_CHANGELOG.md` and listed in the backtest report.
 
 | Item | Value | Status |
 |---|---|---|
-| Terms per region | Intercept, linear trend, and a coefficient on crop S−1's yield anomaly. Three per region; not counted toward the cap | decided |
+| Terms per region | Intercept, linear trend, and a coefficient on crop S−1's yield anomaly. Three per region; not counted toward the cap Fitted in two steps, each without the held-out season: a linear trend, then the coefficient of detrended yield on the previous crop's detrended yield, no intercept, leaving out every pair involving the held-out season (**added after the tag, Amendment 38**) | decided; estimation added after `prereg-1` |
 | Crop S−1's anomaly | Conab's **final figure** for crop S−1 in the current historical series (downloaded 2026-10-14). A declared leak: production at a November note has only the third survey. Third-to-final yield revisions for 2023–2025 average 1.9% in absolute size, with a largest of 8.4%. Sensitivity: recomputed from the third survey where one is on record (S−1 = 2023–2025), reported beside the headline | decided (Amendment 19b) |
 | Index reported relative to | This expectation, so off-years do not read as failures | decided |
 
@@ -126,7 +126,7 @@ this tag is logged in `SPEC_CHANGELOG.md` and listed in the backtest report.
 | Vintages | November, December, January, each using only inputs available at its cut date (A: 20 November, 1 December, 1 January) | decided |
 | Targets | Condition direction: the sign of actual yield minus the stage-1 expectation. Yield versus trend: the sign of actual yield minus trend | decided |
 | Comparison models | Zero anomaly; biennial only; rain only (expectation plus flowering rain deficit) | decided |
-| **Direction pass marks** | Rule: p < 0.05, one-sided; the exact p-value is reported beside every mark. Without frost: Sul, Triângulo and São Paulo, crops 2001–2025, **18 of 25** (p = 0.0216); Zona da Mata and the four-region total, crops 2008–2025, **13 of 18** (p = 0.0481). With frost, crops 2009–2025: **13 of 17** (p = 0.0245). If the share of positive anomalies is away from 50%, each mark becomes the larger of its value and the count that beats the majority share at p < 0.05 (computed at `prereg-2`) | decided (Amendment 19b) |
+| **Direction pass marks** | **Changed after the tag (Amendment 38, 2026-10-15).** p < 0.05, one-sided, against both a coin flip and the majority share of positive condition anomalies, whichever needs more; both exact p-values reported. Without frost: Sul 17/24, Triângulo 19/24, São Paulo 18/24 (crops 2002–2025); Zona da Mata 14/17, four-region total 13/17 (crops 2009–2025). With frost (crops 2009–2025): Sul 13/17, Triângulo 13/17, São Paulo 13/17, Zona da Mata 14/17, total 13/17. p-values and base rates in §5 step 8. *Registered at `prereg-1`:* 18 of 25, 13 of 18 and 13 of 17, with the majority-share rule to be applied at `prereg-2` | decided (Amendments 19b, 38); changed after `prereg-1` |
 | Target series | Conab's final figure for each safra in the current historical series, downloaded 2026-10-14. For 2001–2007, Sul, Triângulo and São Paulo take area, yield and production from the arabica-plus-conilon series (identical to arabica there in 2008–2025); Zona da Mata starts in 2008 | decided (Amendment 19b) |
 | Crop 2026 | Added as an addendum once Conab's final is out, with and without it; not a clean out-of-sample test | decided |
 | Surprise test | Rules as in §5 step 8 (revisions under 1% count as flat; skill against the base rate). **Reported for safras 2023–2025, not scored against a pass mark, until earlier vintages are found** | decided (Amendment 19b) |
