@@ -805,3 +805,29 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   Approved by owner with one change. Draft 2 proposed making mapped-area aggregation primary and
   changing §3; that was refused. PAM-area aggregation stays primary as registered, and
   mapped-area aggregation is the sensitivity.
+
+- 2026-10-15 — **AMENDMENT 32b: no interactive reductions.** Adds a §9 rule beside Amendment 32.
+
+  **Reason:**
+  - The watchdog (`gee/ee_watchdog.py`) sees only batch tasks.
+  - Cloud Monitoring shows about 356 EECU-hours of interactive use in the four hours of the
+    2026-10-13 provisional drift check (Week 0 report §12 addendum), which no measurement
+    recorded at the time.
+
+  **Change:** a new §9 bullet.
+  - Nothing larger than a few pixels is reduced through an interactive request.
+  - Every reduction over an area runs as a batch export through the watchdog, with an estimate
+    from a probe, and is cancelled at twice the estimate.
+  - Interactive calls are allowed only for metadata, single-pixel reads and vector geometry.
+    Each is tagged in the code, and `gee/check_interactive.py` enforces the rule.
+  - Cost is recorded from each batch task's reported EECU use.
+
+  **Already applied in code** on the owner's instruction, before the text was approved (commit
+  1ce4985):
+  - three scripts' interactive reductions converted to batch exports;
+  - six unwatched batch tasks routed through the watchdog;
+  - 16 remaining interactive calls tagged.
+
+  The converted scripts stay unrun until each has a watched probe (owner, 2026-10-15).
+
+  Approved by owner as written.

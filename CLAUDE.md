@@ -823,6 +823,13 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
   reason. Record each run's compute cost in EECU-seconds in the report, measured with Earth
   Engine's request profiling (`ee.profilePrinting`). This holds whatever the project's quota
   tier.
+- **No interactive reductions (decided 2026-10-15, Amendment 32b).** Nothing larger than a few
+  pixels is reduced through an interactive request. Every reduction over an area runs as a batch
+  export through `gee/ee_watchdog.py`, with a cost estimate from a probe, and is cancelled at twice
+  the estimate. Interactive calls are allowed only for metadata, single-pixel reads and vector
+  geometry, each tagged in the code, and `gee/check_interactive.py` enforces this. Cost is
+  recorded from each batch task's reported EECU use. Reason: the watchdog cannot see interactive
+  use, and the 2026-10-13 provisional drift check spent about 356 EECU-hours that way.
 - **Pre-registration, in two tagged commits (decided 2026-10-12).** Record every choice that could
   be tuned in `docs/preregistration.md`, and commit it at two points:
   - **Tag `prereg-1`, before W2 computes any season-level input.** It records:
