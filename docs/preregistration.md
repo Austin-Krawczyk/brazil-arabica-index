@@ -6,23 +6,22 @@ Amendment 15). Two tagged commits fix it:
 - **`prereg-1`**, before W2 computes any season-level input.
 - **`prereg-2`**, before the first backtest run: values that need data but not results.
 
-Entries are added as they are decided. **Neither tag has been applied yet.** Any change after an
+Entries are added as they are decided. **`prereg-1` was applied on 2026-10-15; `prereg-2` has not been.** Any change after an
 entry's tag is logged in `SPEC_CHANGELOG.md` and listed in the backtest report.
 
 **Status words.** "Decided" means the spec already fixes the value. "**OPEN**" means a decision
 the owner has not yet made; nothing here fills one in. Every OPEN item in prereg-1 must be
 decided before the tag.
 
-## prereg-1 — to be fixed before W2 (not yet tagged; draft of 2026-10-15)
+## prereg-1 — fixed before W2 (tagged `prereg-1`, 2026-10-15)
 
 Amendment 15's list: the feature list, with each input's source, window and standardisation;
 the weighting method and the terms counted toward the cap of four; the direction pass marks; the
 frost tier constant values.
 
-**Status, 2026-10-15: one item OPEN.** The frost loss on affected area (F), decided in substance by
-the owner on 2026-10-15 (a formula, not constants) and entered once Amendment 36's wording is
-approved. The 34 °C citation (B) is closed, provisional. The owner tags `prereg-1` when F is
-closed.
+**Status, 2026-10-15: no item OPEN; tagged `prereg-1`.** The frost loss on affected area (F) is
+fixed by formula (Amendment 36). The 34 °C citation (B) is closed, provisional. Any change after
+this tag is logged in `SPEC_CHANGELOG.md` and listed in the backtest report.
 
 ### A. Seasons, windows and note dates (§3a)
 
@@ -114,8 +113,8 @@ closed.
 | Radius and elevation cut | 25 km; stations above the 95th percentile of coffee-mask elevation in the region are left out (cut values at `prereg-2`) | decided |
 | Regional flag | Stations meeting a tier cover at least **25% of the region's observed coffee** | decided |
 | Coverage floor | **15%** observed coverage; registered at `prereg-2` with its statement | decided (value); registration at `prereg-2` |
-| Penalty form | Yield loss on affected area × the tier's share of observed coffee, applied as a fixed offset; assumes unobserved coffee behaves like observed coffee | decided |
-| **Penalty values per tier** | Yield loss on affected area for the 2 °C tier and for the severe tier | **OPEN.** Owner, 2026-10-15: two or three candidate values per tier from Embrapa, IAC and peer-reviewed work, with citations, for the owner to choose before the tag. Values set from what the July 2021 frost did to crop 2022 would be in-sample (values here; sources at `prereg-2`) |
+| Penalty form | For each tier, the loss on affected area summed over the coffee in that tier's share, divided by observed coffee; applied as a fixed offset in each flagged region (§5 step 6). Assumes unobserved coffee behaves like observed coffee. Tiers exclusive, severe over sensitive | decided (Amendments 17c, 36) |
+| **Loss on affected area** | **Fixed by formula, not fitted (Amendment 36).** Santos & Camargo (2006), *Bragantia* 65(1):173–183 (the Gaussian of Camargo et al. 2003): loss = 140.3445 × exp(−½((T + 2.9580)/1.7701)²) %, where T is the coldest observed Jun–Aug shelter minimum of the **station** whose 25 km circle covers the coffee; where circles overlap, the colder applies. **Zero above 2 °C; capped at 76.1%**, the formula's value at −1 °C (Vasconcellos et al. 2012: the uncapped formula overstated observed yields after −2.8 °C frosts). Sensitive tier 2.8–34.7%; severe tier 34.7–76.1%. **Provisional:** the three-night rule (no source keys loss to a count of nights) and the coefficients' calibration (not established). Equation reconstructed from a garbled PDF and verified against the paper's tabulated values. For transparency, the fixed constants that would otherwise have applied: 11.5% sensitive, 54% severe. Unresolved stations (Amendment 17b): reported with and without | **decided 2026-10-15** (owner; sources at `prereg-2`) |
 | Frost series | From crop 2009 (the Jun–Aug 2008 window); not filled before | decided |
 | Double counting and carryover | The 2022 call is in-sample. Crops 2022 and 2023, and any frost-flagged season, are reported with and without the frost component | decided |
 
@@ -144,4 +143,4 @@ closed.
 | Coverage floor statement | 15%, "chosen from coverage information only, before any frost night was counted" | Amendment 17c | to register at the tag |
 | Surprise-test pass mark | From Conab's base rate, once vintages beyond 2023–2025 exist; until then, the statement that the test is reported, not scored | Amendments 12, 19b | not computable yet |
 | Base-rate check on the direction pass marks | — | Amendment 19 | pending |
-| Frost tier constant sources | **Loss on affected area:** Santos & Camargo (2006), *Bragantia* 65(1):173–183, with the cap from Vasconcellos et al. (2012), XVII Congresso Brasileiro de Meteorologia (Amendment 36, pending). **Leaf damage:** Camargo & Salati (1966), *Bragantia* 25(2), Nota 14: damage from −2 °C, general below −3 °C. **Screen-to-leaf gap: provisional, no direct measurement** (owner, 2026-10-15). Sentelhas, Ortolani & Pezzopane (1995), *Bragantia* 54(2):437–445: shelter minus grass 4.1 °C on average (3.3–5.7) over 226 frost nights, and the 2 °C shelter minimum cited as coffee's damage onset. Astolpho, Camargo & Bardin (2004), *Bragantia* 63(1):141–147: shelter 2 °C and 1 °C ≈ leaf −3.6 °C and −4.6 °C. Both measure shelter minus grass, not shelter minus leaf | Amendment 15; Week 0 report §15 | entered 2026-10-15; registered at the tag |
+| Frost tier constant sources | **Loss on affected area:** Santos & Camargo (2006), *Bragantia* 65(1):173–183, with the cap from Vasconcellos et al. (2012), XVII Congresso Brasileiro de Meteorologia (Amendment 36). **Leaf damage:** Camargo & Salati (1966), *Bragantia* 25(2), Nota 14: damage from −2 °C, general below −3 °C. **Screen-to-leaf gap: provisional, no direct measurement** (owner, 2026-10-15). Sentelhas, Ortolani & Pezzopane (1995), *Bragantia* 54(2):437–445: shelter minus grass 4.1 °C on average (3.3–5.7) over 226 frost nights, and the 2 °C shelter minimum cited as coffee's damage onset. Astolpho, Camargo & Bardin (2004), *Bragantia* 63(1):141–147: shelter 2 °C and 1 °C ≈ leaf −3.6 °C and −4.6 °C. Both measure shelter minus grass, not shelter minus leaf | Amendment 15; Week 0 report §15 | entered 2026-10-15; registered at the tag |
