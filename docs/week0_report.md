@@ -1700,3 +1700,133 @@ polling, cancellation at 2 × estimate, and the session cap.
   a reading, or another rule) is not yet decided.
 - **The aggregator itself.** Whether to use a PAM-weighted mean of municipal medians or a
   weighted median across municipalities is still an OPEN `prereg-1` item.
+
+## 14. Before `prereg-1` (2026-10-15): reading coverage, high EVI, and no interactive reductions
+
+Computed locally from the W1 tables by `gee/w1_reading_coverage.py`; no Earth Engine compute.
+
+### PAM coffee area in municipalities with a reading (owner decision 1)
+
+**Definitions:**
+- **Region PAM:** PAM total coffee area for PAM year S−2, summed over all of the region's index
+  municipalities. Municipalities PAM marks missing are counted on neither side: 39–91 a year in
+  São Paulo, 2–48 elsewhere.
+- **Member** in season S: kept by the stable filter (16d), with PAM area, and with at least one
+  MODIS pixel of mapped coffee under season S's mask. That means a summed coffee fraction ≥ 1,
+  about 5.4 ha; the sum matches MapBiomas area within 1% on a check municipality.
+- **Member share:** members' PAM area divided by region PAM.
+- **Covered fraction:** per composite, the PAM area of members with an EVI median divided by
+  members' PAM area. This is the quantity the 50% floor applies to.
+
+**Results, crop seasons 2000–2026** (`docs/week0/w1_member_share.csv`,
+`docs/week0/w1_covered_fraction.csv`):
+
+| Region | Member share | Lost to the filter | Lost to under one pixel | Lowest covered fraction | Composites under 50% |
+|---|---|---|---|---|---|
+| Sul e Centro-Oeste | 0.980–0.984 | 0.016–0.020 | 0.000–0.001 | 0.885 | 0 of 595 |
+| Triângulo, Alto Paranaíba e Noroeste | 0.986–1.000 | 0.000–0.002 | 0.000–0.012 | 0.914 | 0 of 595 |
+| Zona da Mata, Rio Doce e Central | 0.912–0.995 | 0.001–0.013 | 0.003–0.075 | 0.617 (2005-12-03) | 0 of 595 |
+| São Paulo | 0.740–0.957 | 0.006–0.054 | 0.037–0.206 | 0.924 | 0 of 595 |
+| Four-region total | 0.919–0.984 | 0.009–0.023 | 0.006–0.058 | — | — |
+
+**Findings:**
+1. **The filter costs little PAM area.** It drops 0.6–5.4% of PAM coffee area in any region and
+   season. It removes far more mapped area (§12) because the municipalities it drops are mostly
+   ones where PAM records little coffee.
+2. **São Paulo's shortfall is under-one-pixel municipalities, and it shrinks over time.**
+   - These are municipalities with PAM area but less than one MODIS pixel of mapped coffee.
+   - They hold 16–21% of São Paulo's PAM area in crops 2000–2008, and 4% by 2025.
+   - Member share therefore rises from 0.74 (crop 2003) to 0.96 (crop 2025).
+   - Membership changes by season. Aggregating municipal anomalies rather than levels keeps a
+     municipality's entry from moving the regional value through its EVI level.
+3. **The 50% cloud floor never binds in 2000–2026.** The 5th percentile of the covered fraction is
+   at least 0.978 in every region.
+4. **Thin readings.**
+   - 3,640 member readings (1.32%) come from under one pixel of cloud-free coffee: Zona da Mata
+     2,937, São Paulo 441, Sul 140, Triângulo 122.
+   - Not counting them as readings would put one composite under the floor: Zona da Mata,
+     2005-12-03, at 0.478.
+5. **Climatology depth.**
+   - Members have a median of 26 years of readings for each 16-day period.
+   - Municipality-periods with fewer than 10 years hold at most 0.18% of member PAM weight in any
+     region. With fewer than 15 years, the most is 0.75%, in São Paulo.
+
+### EVI medians above 0.9 (`docs/week0/w1_evi_above_0_9.csv`)
+
+**27 of 494,429 non-empty rows.** All 27 are in November–March composites: November 1, December
+10, January 11, February 2, March 3.
+
+**21 belong to non-members:** municipalities with under one pixel of mapped coffee, dropped by the
+filter, or without PAM area.
+
+**6 belong to members:**
+
+| Municipality | Region | Composite | Mapped coffee (pixels) | Cloud-free coffee (pixels) | EVI median |
+|---|---|---|---|---|---|
+| Coronel Macedo | São Paulo | 2015-12-19 | 31.1 | 0.37 | 0.902 |
+| Guará | São Paulo | 2023-01-01 | 1.13 | 1.13 | 0.913 |
+| Cabeceira Grande | Triângulo | 2008-12-18 | 1.48 | 0.73 | 0.922 |
+| Lagamar | Triângulo | 2023-01-17 | 12.0 | 11.5 | 0.906 |
+| Quartel Geral | Zona da Mata | 2013-03-22 | 5.31 | 2.47 | 0.906 |
+| José Raydan | Zona da Mata | 2022-01-01 | 2.50 | 0.76 | 0.974 |
+
+- Three of the six rest on under one pixel of cloud-free coffee.
+- **Cause not established.** The pattern fits mixed pixels in cloud-thinned rainy-season
+  composites, for example dense non-coffee vegetation, or soy at its January peak around
+  Lagamar. That is an inference, not a test.
+
+### No interactive reductions (owner rule, 2026-10-15)
+
+**Why:** the watchdog sees only batch tasks. The provisional drift check of 2026-10-13 spent about
+356 EECU-hours interactively, unseen (§12 addendum).
+
+**What the search found:**
+- Every `getInfo`, `evaluate` and `reduceRegion` call outside an export, in every script in
+  `gee/`.
+- **Interactive area reductions** in three scripts:
+  - `week0_drift_provisional.py`: one request per six months over MG and SP, rebuilding the 30 m
+    weight in each;
+  - `week0_vj113a1_coverage.py`: one request per month;
+  - `week0_hls_test.py`: one request per month over 5,000 points.
+- **Batch tasks that bypassed the watchdog, with no estimate:**
+  - `week0_hls_test.export_and_fetch`, used by `w1_mask` (areas), `w1_modis_evi` (probe),
+    `w1_muni_probe` and the HLS sample;
+  - the image exports in `w1_mask` (municipalities), `w1_modis_evi` (weight) and
+    `week0_vj113a1_coverage` (weight).
+
+**Changes:**
+- **All of the above now run as batch exports through `run_watched()` or
+  `export_table_watched()`, with a required estimate,** and are cancelled at 2× the estimate.
+- `export_and_fetch` now delegates to the watchdog.
+- **The drift check now builds its coffee weight once per product grid as an asset, then reads
+  it.** That is the cost fix found in the VJ113A1 and W1 probes. Mask, states, QA, weights and
+  reducers are unchanged.
+- **The 16 interactive calls left are all tagged:**
+  - 13 metadata: projections, band names, feature counts, granule IDs, dates;
+  - 2 single-pixel point reads, in the CHC prelim and VJ113A1 value checks;
+  - 1 vector geometry, the AppEEARS request polygon, which reads no pixels.
+- **`gee/check_interactive.py`** fails on any untagged interactive call. It passes: 16 tagged,
+  0 untagged.
+
+**Verification, at no compute cost:**
+- A dry run built and serialised every converted batch task and started none: drift weights
+  (both grids) and a one-month table; VJ113A1 weight and probe; HLS probe; mask areas and
+  weights; W1 legacy probe and weight; municipal probe.
+- **Cloud Monitoring, 2026-10-15 14:15 UTC:** interactive usage unchanged at 408.2 EECU-hours
+  since 07:41 UTC. October in-progress total 480.0 EECU-hours, 48.0% of the cap.
+- **None of the converted scripts has been run for real since conversion.** Each needs a probe to
+  set its estimate before a full run.
+
+### Publication lags measured for `prereg-1` (metadata only, 2026-10-15)
+
+- **`MOD13Q1`.** The source-file timestamp (`google:max_source_file_timestamp`) is after the
+  composite's end date by:
+  - a median of 2.9–6.5 days a year in 2023–2026;
+  - 14 days or less for 76 of 86 composites;
+  - 35–48 days for four December–January composites;
+  - 162 and 194 days for two 2025 composites, probably reprocessed later rather than first
+    published late (not established).
+- **ERA5-Land in Earth Engine:** the hourly collection reaches 2026-10-09 20:00 UTC and the daily
+  aggregate 2026-10-06, 6 and 9 days behind.
+- **CHIRPS daily final** reaches 2026-08-31. That fits Amendment 9's rule: September's final is
+  counted as published from 1 November.
