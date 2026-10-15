@@ -204,7 +204,7 @@ def prelim_table(crop, vintage):
     cut = wi.cut_date(crop, vintage)
     months = [m for m in (9, 10, 11) if cut < dt.date(crop - 1 + (m + 2 > 12), (m + 2 - 1) % 12 + 1, 1)]
     if not months:
-        return None, 0
+        return None, (0, 0)
     pre = pre[pre.season == crop].set_index("code")
     idx = rain.index[rain.season == crop]
     replaced = 0
@@ -222,7 +222,7 @@ def prelim_table(crop, vintage):
                 for d in days:
                     rain.at[i, f"d_{d:%m%d}"] = q / len(days) * rain.at[i, "w"]
         replaced += 1
-    return rain, replaced  # municipalities of crop S left on final (no prelim row): len(idx) − replaced
+    return rain, (replaced, len(idx) - replaced)  # substituted; left on final (no prelim row)
 
 
 COLS = ["region", "crop", "vintage", "input", "value"]
@@ -251,8 +251,8 @@ def fold_inputs(S, sens, cache):
         def prelim_rain():
             out = []
             for v in VINTAGES:
-                table, replaced = prelim_table(S, v)
-                cache[("prelim_substituted", v)] = replaced
+                table, counts = prelim_table(S, v)
+                cache[("prelim_substituted", v)], cache[("prelim_left_final", v)] = counts
                 out.append(wi.windowed("rain", wi.rain_total, "rain_flowering", exclude=S,
                                        vintages={v: wi.VINTAGES[v]}, mcfg=mcfg, table=table))
             return pd.concat(out, ignore_index=True)
@@ -283,8 +283,9 @@ def choose_lambda(X, y, groups):
         errs = []
         for g in np.unique(groups):
             tr = (groups != g) & (groups != g + 1)  # crop g+1's target carries y_g
+            te = groups == g  # each crop validated once (the registered leave-one-year-out MSE)
             b0, w = ridge_fit(X[tr], y[tr], lam)
-            errs.append(y[~tr] - b0 - X[~tr] @ w)
+            errs.append(y[te] - b0 - X[te] @ w)
         mse = float(np.mean(np.concatenate(errs) ** 2))
         if mse < best_mse - 1e-15 or (abs(mse - best_mse) <= 1e-15 and lam > best_lam):
             best_lam, best_mse = lam, mse
@@ -373,7 +374,8 @@ def run():
                                 **{f"w_{k}": weights.get(k, np.nan) for k in INPUTS},
                                 **{f"x_{k}": q[k] for k in INPUTS},
                                 evi_n_composites=q.evi_n_composites,
-                                n_prelim_substituted=cache.get(("prelim_substituted", v)) if sens == "chirps_prelim" else np.nan))
+                                n_prelim_substituted=cache.get(("prelim_substituted", v)) if sens == "chirps_prelim" else np.nan,
+                                n_prelim_left_final=cache.get(("prelim_left_final", v)) if sens == "chirps_prelim" else np.nan))
                     if sens == "headline":
                         for _, q in pred.iterrows():
                             rows.append(dict(run=RUN_LABEL, sensitivity="headline", version=version, model="zero",
@@ -460,7 +462,8 @@ def summary(res):
                     & res.crop.isin(x.crop)]
             rec.update(comparator=f"{comp['sensitivity']}/{comp['version']}", comparator_n=len(c),
                        comparator_hits_condition=np.nan if rec["model"] == "zero" else int(c.hit_condition.sum()),
-                       comparator_mae_pct=100 * (c.a_pred - c.a_actual).abs().mean())
+                       comparator_mae_pct=100 * (c.a_pred - c.a_actual).abs().mean(),
+                       comparator_hits_yield_vs_trend=int(c.hit_yield_vs_trend.sum()))
         rows.append(rec)
     return pd.DataFrame(rows)
 
