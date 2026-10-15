@@ -526,6 +526,14 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      elevation in its region (DEM, §4; station elevation from INMET metadata). Register the
      station list per region and season, with counts, and the elevation cut at `prereg-2`, and
      report every station within 50 m of the cut.
+     - **The cut is fixed once per region (AMENDED 2026-10-15, Amendment 39):** the median, over
+       mask years 2007–2025, of the region's coffee-weighted 95th percentile of SRTM elevation at
+       MOD13Q1 pixel centres on the frozen mask. It is fixed for the same stability reason as the
+       filter's membership (Amendment 16d), and the median was used because the persistent-pixel
+       mask, a 30 m construct, is not yet computed.
+     - **Values:** Sul e Centro-Oeste 1,176 m; São Paulo 1,121 m; Triângulo, Alto Paranaíba e
+       Noroeste 1,194 m; Zona da Mata, Rio Doce e Central 1,140 m.
+     - Completeness is still judged per season.
    - **Conventional network (Amendment 17c, under evaluation).** Before `prereg-2`, INMET's
      conventional stations are evaluated as a second source: daily minimum temperature from BDMEP
      (§4), the same 25 km radius and elevation cut, and a station counts in a season when at
@@ -536,9 +544,17 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      networks are combined, with the network recorded per station; if they don't, the automatic
      network is used alone. For a conventional station a night is observed when its daily minimum
      is present.
-   - **Night rule for conventional stations (Amendment 17d), provisional until INMET's
-     documentation is cited.** INMET reads the conventional minimum at 12 UTC, covering the
-     preceding 24 hours, so a minimum dated D belongs to the night ending the morning of D.
+   - **Night rule for conventional stations (Amendment 17d); INMET documentation cited in part
+     (Amendment 39).** INMET reads the conventional minimum at 12 UTC, covering the preceding 24
+     hours, so a minimum dated D belongs to the night ending the morning of D.
+     - **Cited:** the 12 UTC reading, in INMET (2022), *Normais Climatológicas do Brasil
+       1991–2020*, p. 22, and Diniz, Ramos & Rebello (2018), *Pesquisa Agropecuária Brasileira*
+       53(2), p. 140 (INMET authors).
+     - **Not documented:** the reset time, the window and the date convention.
+     - Every reading the sources allow puts the pre-dawn minimum of the night ending the morning
+       of D on date D.
+     - Detail from INMET's observer manual, which the owner is obtaining, goes in as an
+       addendum.
      - **Checked 2026-10-14 against six same-site automatic stations,** all months 2008–2026: the
        night ending the morning of D agrees far better than the night ending the morning of D+1
        in all six. For the four pairs without an offset, the mean absolute difference is
@@ -934,8 +950,8 @@ backtest** (§1a) — it is the fourth region, the dashboard, or a note slipping
 | **§4c Conab granularity:** São Paulo resolved (state total, Amendment 34). Still open: whether surveys back to 2001 carry the Minas regional split (first, third and final surveys) in usable form | Week 0 | §4c, §5 step 7 |
 | Which IBGE units Conab's regional groupings are built from; municipality list per region | Week 0 | §3 |
 | INMET download route; daily minimum present for automatic stations; the 2026 archive includes Jun–Aug 2026 | Week 0; Jun–Aug 2026 by note 1 | §4, §5 step 4 |
-| INMET conventional network (BDMEP daily minima): completeness per season and observed-coverage lift (done 2026-10-14); the night rule's INMET citation (rule set provisionally, Amendment 17d) | `prereg-2` | §4, §5 step 4 |
-| Re-request BDMEP's 2026 conventional daily minima, and record whether the short 2026 windows filled in (Caparaó, Lavras, Juiz de Fora) | Mid-November 2026, before note 1 | §5 step 4 |
+| INMET conventional network (BDMEP daily minima): completeness per season and observed-coverage lift (done 2026-10-14); the night rule's INMET citation: cited in part (Amendment 39), with any detail from INMET's observer manual as an addendum | `prereg-2`; manual detail as an addendum | §4, §5 step 4 |
+| Re-request BDMEP's 2026 conventional daily minima, and record whether the short 2026 windows filled in (Caparaó, Lavras, Juiz de Fora). Add the three operating conventional stations with frozen-mask coffee within 25 km and no BDMEP data yet: Formoso (83334), Santo Antônio de Pádua (83805) and São Paulo Mirante de Santana (83781) (Amendment 39). The result is a `prereg-2` addendum, not a blocker | Mid-November 2026, before note 1 | §5 step 4 |
 | Whether CHIRPS ingests Brazilian stations (circularity) | Week 0 | §4b |
 | Build and check the CHC prelim ingestion (pentad and daily, MG/SP window) against the community asset; verify the unverified IDs: `MODIS/061/MYD13Q1`; `NASA/VIIRS/002/VNP13A1`; the live-fallback candidates VJ113A1 and HLS (HLSL30 + HLSS30); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1`. **Done:** VJ113A1 ingested and accepted (2026-10-14); `USGS/SRTMGL1_003` and `COPERNICUS/DEM/GLO30_2024_1` resolve (Week 0 report §1) | Week 0 | §4 |
 | CHC daily-prelim day split: **not established.** CHC's readme (dated 2019-08-22) describes splitting each pentad into days by cold cloud duration (CCD), with residuals placed on the wettest CFS-Reanalysis day; it does not mention IMERG. Either way, dry-day counts from daily prelim are not compared with final-CHIRPS counts until the gap is measured on overlapping months | Week 0 | §4, §9 |

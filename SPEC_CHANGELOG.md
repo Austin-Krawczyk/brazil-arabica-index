@@ -989,3 +989,34 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   All three variants are in `docs/week0/base_rate_check.csv`.
 
   Approved by owner (2026-10-15).
+
+- 2026-10-15 — **AMENDMENT 39: elevation cut fixed once per region; night rule cited in part;
+  three stations added to the BDMEP re-request.** Amends §5 step 4 and §10. Owner decisions on
+  the frozen-mask station set (Week 0 report §§17–18).
+
+  **Changes:**
+  1. **Elevation cut fixed once per region.** It is the median, over mask years 2007–2025, of the
+     region's coffee-weighted 95th percentile of SRTM elevation at MOD13Q1 pixel centres on the
+     frozen mask.
+     - **Values:** Sul 1,176 m, São Paulo 1,121 m, Triângulo 1,194 m, Zona da Mata 1,140 m.
+     - **Why fixed:** the owner chose a fixed cut over a per-season one for the same stability
+       reason as Amendment 16d.
+     - **Why the median:** the owner offered the persistent-pixel mask or the median across mask
+       years. The median was used because the persistent-pixel mask is a 30 m construct not yet
+       computed.
+     - **Pixel-centre elevation accepted** (owner).
+     - Completeness stays per season.
+     - **Effect against per-season cuts:** three station-seasons change. Barbacena A502 is above
+       the Zona da Mata cut in crops 2009–2011, holding under 0.01% of the region's coffee.
+       Coverage is unchanged to one decimal.
+  2. **Night rule: INMET documentation cited in part.**
+     - The 12 UTC reading is cited: INMET (2022), p. 22; Diniz, Ramos & Rebello (2018), p. 140.
+     - The reset time, the window and the date convention are not documented.
+     - Accepted for `prereg-2` by the owner. Detail from INMET's observer manual, which the owner
+       is obtaining, is an addendum.
+  3. **The mid-November BDMEP re-request adds three operating conventional stations** with
+     frozen-mask coffee within 25 km and no BDMEP data yet: Formoso (83334), Santo Antônio de
+     Pádua (83805) and São Paulo Mirante de Santana (83781). The 2026 windows are a `prereg-2`
+     addendum, not a blocker.
+
+  Approved by owner (2026-10-15).
