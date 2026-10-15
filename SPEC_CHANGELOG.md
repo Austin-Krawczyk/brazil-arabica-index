@@ -1020,3 +1020,34 @@ Every change to scope, dated, with the reason. Newest at the bottom.
      addendum, not a blocker.
 
   Approved by owner (2026-10-15).
+
+- 2026-10-15 — **AMENDMENT 39b (correction after `prereg-2`): the conventional stations already in
+  the BDMEP zip were left untested.** Corrects the registered station set and Amendment 39 item 3.
+  An error in the computation; the registered rules are unchanged. Listed in the backtest report as
+  a change after `prereg-2`.
+
+  **What happened:**
+  - `gee/station_set_frozen.py` took conventional completeness only from
+    `bdmep_completeness.csv`, which covers the 37 candidates requested on 2026-10-14.
+  - The owner's BDMEP zip of that date holds 105 stations of the Sudeste request.
+  - So 15 of the 19 frozen-mask conventional candidates labelled "no BDMEP data requested" had data
+    in hand and were never tested. That includes the three stations Amendment 39 added to the
+    November re-request "with no BDMEP data yet". That phrase was false.
+  - Found while computing the W2 frost input, which reads the zip directly.
+
+  **Correction:**
+  - Completeness is now computed from the zip for every candidate, by the same rule
+    (`bdmep_completeness_frozen.csv`). It reproduces all 665 windows of the 37 original candidates
+    exactly.
+  - 47 conventional candidates have data; 7 have none: six files have no values and one has no
+    minimum-temperature column.
+
+  **Effect on the registered station set:**
+  - 12 stations newly qualify in 94 station-region-seasons, each holding at most 0.02% of its
+    region's coffee.
+  - Observed coverage changes by at most 0.1 point in any region-season. Triângulo crop 2018 moves
+    from 7.5% to 7.6% and is still the only unflaggable region-season.
+  - Elevation cuts are unchanged.
+
+  **Spec text:** the §10 checklist row now says the three stations already have data, and the
+  re-request refreshes their 2026 windows with the others'.
