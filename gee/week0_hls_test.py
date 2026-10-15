@@ -29,8 +29,12 @@ Option C (owner decision 2026-10-13): 5,000 points, a seeded random subset of th
 sample (numpy default_rng(20261012)); HLSS30 for every month, HLSL30 for November-March months
 only, as information.
 
-Run:    .venv/Scripts/python gee/week0_hls_test.py --probe [--points N] [--month YYYY-MM]
-        .venv/Scripts/python gee/week0_hls_test.py --points 5000
+Batch only (owner rule 2026-10-15): the monthly statistics, formerly one interactive request per
+month, now run as one batch table export under gee/ee_watchdog.py with a required estimate. The
+interactive calls left are metadata (state count, granule IDs).
+
+Run:    .venv/Scripts/python gee/week0_hls_test.py --mode coverage --probe --estimate E [--month YYYY-MM]
+        .venv/Scripts/python gee/week0_hls_test.py --mode coverage --points 5000 --estimate E
 Writes: docs/week0/hls_monthly.csv, docs/week0/hls_coverage_test.csv,
         docs/week0/profiles/hls_<mode>_<utc>.txt
 """
@@ -44,9 +48,7 @@ import ee
 import numpy as np
 import pandas as pd
 
-from google.cloud import storage
-
-from common import ROOT, WEEK0, init, setting
+from common import ROOT, WEEK0, init
 
 MAPBIOMAS = ("projects/mapbiomas-public/assets/brazil/lulc/collection10/"
              "mapbiomas_brazil_collection10_integration_v1")
@@ -71,7 +73,7 @@ def region():
     fc = (ee.FeatureCollection("FAO/GAUL/2025/level1")
           .filter(ee.Filter.eq("GAUL0_NAME", "Brazil"))
           .filter(ee.Filter.inList("GAUL1_NAME", STATES)))
-    n = fc.size().getInfo()
+    n = fc.size().getInfo()  # interactive: metadata (feature count of a filtered table)
     if n != len(STATES):
         raise SystemExit(f"Expected {len(STATES)} state polygons, found {n}.")
     return fc
@@ -80,33 +82,24 @@ def region():
 BATCH_COSTS = []  # (task, EECU-seconds) for batch tasks, which request profiling does not see
 
 
-def export_and_fetch(fc, name, selectors):
-    """Run a table export to the bucket as a batch task (no interactive time limit) and fetch it."""
-    bucket = setting("GCS_BUCKET")
-    prefix = f"week0/{name}"
-    task = ee.batch.Export.table.toCloudStorage(collection=fc, description=name, bucket=bucket,
-                                                fileNamePrefix=prefix, fileFormat="CSV",
-                                                selectors=selectors)
-    task.start()
-    print(f"  batch task {name} started")
-    while True:
-        status = task.status()
-        if status["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
-            break
-        time.sleep(30)
-    if status["state"] != "COMPLETED":
-        raise SystemExit(f"Batch task {name} {status['state']}: {status.get('error_message', '')}")
-    BATCH_COSTS.append((name, float(status.get("batch_eecu_usage_seconds", 0) or 0)))
-    client = storage.Client(project=setting("EE_PROJECT"),
-                            credentials=ee.data.get_persistent_credentials())
-    blob = client.bucket(bucket).blob(prefix + ".csv")
-    return pd.read_csv(io.BytesIO(blob.download_as_bytes()))
+def export_and_fetch(fc, name, selectors, estimate_eecu_s):
+    """Run a table export to the bucket as a batch task under the watchdog (gee/ee_watchdog.py: a
+    cost estimate is required, and the task is cancelled at 2 x it) and fetch the result. Owner
+    rule 2026-10-15: no interactive reductions; every area reduction goes through here or through
+    export_table_watched()."""
+    from ee_watchdog import export_table_watched
+
+    df, used = export_table_watched(fc, name, selectors, estimate_eecu_s, prefix="week0")
+    BATCH_COSTS.append((name, used))
+    if df is None:
+        raise SystemExit(f"Batch task {name} did not complete ({used:,.0f} EECU-seconds); see the watchdog log")
+    return df
 
 
 SUBSET_SEED = 20261013  # draws the 500-point subset from the 5,000 (owner decision 2026-10-13)
 
 
-def sample_points(states, n_use, subset_of=None):
+def sample_points(states, n_use, subset_of=None, estimate_eecu_s=None):
     """Draw the sample once (a batch export), then reuse its coordinates for every month."""
     cache = CACHE / f"_tmp_hls_sample_{SEED}.csv"
     if cache.exists():
@@ -120,7 +113,7 @@ def sample_points(states, n_use, subset_of=None):
                                      tileScale=16)
         fc = fc.map(lambda f: f.set({"lon": f.geometry().coordinates().get(0),
                                      "lat": f.geometry().coordinates().get(1)}))
-        pts = export_and_fetch(fc, f"hls_sample_{SEED}", ["lon", "lat"])
+        pts = export_and_fetch(fc, f"hls_sample_{SEED}", ["lon", "lat"], estimate_eecu_s)
         CACHE.mkdir(parents=True, exist_ok=True)
         pts.to_csv(cache, index=False)
     # A seeded random subset of a random sample is itself a random sample. With subset_of, the
@@ -146,7 +139,7 @@ def point_tiles(asset, coords):
     tiles = set()
     for batch in np.array_split(coords, 10):
         mp = ee.Geometry.MultiPoint(batch.tolist())
-        ids = col.filterBounds(mp).aggregate_array("system:index").getInfo()
+        ids = col.filterBounds(mp).aggregate_array("system:index").getInfo()  # interactive: metadata (granule IDs)
         tiles |= {i.split("_")[0] for i in ids}
     print(f"  {asset.split('/')[-2]}: {len(tiles)} tiles contain sample points")
     return sorted(tiles)
@@ -196,32 +189,17 @@ def month_stats(asset, points, bounds, with_indices, tiles):
     return per_month
 
 
-def run(asset, months, points, bounds, with_indices, tiles, cache=None):
-    """One month per request (keeps each inside the interactive time limit); with a cache file,
-    each finished month is saved at once and skipped on a rerun."""
+def run(asset, months, points, bounds, with_indices, tiles, name, estimate_eecu_s):
+    """Every requested month in one batch table export under the watchdog (owner rule 2026-10-15:
+    no interactive reductions; until then this was one interactive request per month)."""
     product = asset.split("/")[-2]
-    done = pd.read_csv(cache, dtype={"month": str}) if cache is not None and cache.exists() else None
-    have = set() if done is None else set(done.loc[done["product"] == product, "month"])
     per_month = month_stats(asset, points, bounds, with_indices, tiles)
-    rows = [] if done is None else done[done["product"] == product].to_dict("records")
-    for m in months:
-        if m[:7] in have:
-            continue
-        for attempt in range(5):
-            try:
-                fc = ee.FeatureCollection(ee.List([m]).map(per_month)).getInfo()
-                break
-            except (ee.EEException, ConnectionError, OSError) as e:
-                if attempt == 4:
-                    raise
-                print(f"  {product} {m[:7]}: retry {attempt + 1} after {str(e)[:80]}")
-                time.sleep(30 * (attempt + 1))
-        new_rows = [dict(product=product, **f["properties"]) for f in fc["features"]]
-        rows += new_rows
-        if cache is not None:
-            pd.DataFrame(new_rows).to_csv(cache, mode="a", header=not cache.exists(), index=False)
-        print(f"  {product}: {m[:7]} done")
-    return rows
+    selectors = ["month", "images", "points_clear", "points_any", "obs_clear", "obs_any"]
+    if with_indices:
+        selectors += ["ndvi", "evi", "points_evi"]
+    df = export_and_fetch(ee.FeatureCollection(ee.List(months).map(per_month)), name, selectors, estimate_eecu_s)
+    df.insert(0, "product", product)
+    return df.to_dict("records")
 
 
 def eecu_seconds(profile_text):
@@ -264,6 +242,10 @@ def main():
     args.add_argument("--points", type=int, default=5000, help="points used")
     args.add_argument("--subset-of", type=int, default=None, help="draw --points from this subset")
     args.add_argument("--month", default="2024-01", help="probe month, YYYY-MM")
+    args.add_argument("--estimate", type=float, required=True,
+                      help="cost estimate in EECU-seconds for the monthly table (cancelled at 2 x)")
+    args.add_argument("--sample-estimate", type=float,
+                      help="cost estimate for drawing the sample, needed only if it is not cached")
     a = args.parse_args()
     init()
     tag = f"{a.mode}_{'probe' if a.probe else 'full'}_{a.points}pts"
@@ -272,15 +254,15 @@ def main():
     t0 = time.time()
     with ee.profilePrinting(destination=buf):
         states = region()
-        points, n_points, coords = sample_points(states, a.points, a.subset_of)
+        points, n_points, coords = sample_points(states, a.points, a.subset_of, a.sample_estimate)
         bounds = states.geometry().bounds()
         # Only granules on tiles containing a sample point (owner decision 2026-10-13): a granule
         # without a point contributes nothing to any point value, so results are unchanged.
         # HLSL30 dropped (owner decision 2026-10-13).
         tiles = point_tiles(S30, coords)
         months = [f"{a.month}-01"] if a.probe else months_for(a.mode)
-        cache = None if a.probe else CACHE / f"_tmp_hls_rows_{a.mode}_{a.points}.csv"
-        rows = run(S30, months, points, bounds, with_indices=with_indices, tiles=tiles, cache=cache)
+        rows = run(S30, months, points, bounds, with_indices=with_indices, tiles=tiles,
+                   name=f"hls_{tag}", estimate_eecu_s=a.estimate)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     prof_dir = WEEK0 / "profiles"
     prof_dir.mkdir(parents=True, exist_ok=True)

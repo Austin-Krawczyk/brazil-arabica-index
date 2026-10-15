@@ -13,16 +13,34 @@ Method, fixed in docs/week0_report.md before this ran:
   anomaly     z-score per calendar month against 2013-2025, per product
   compared    2018-01 to 2026-10
 
-Run:    .venv/Scripts/python gee/week0_drift_provisional.py
+Batch only (owner rule 2026-10-15). The 2026-10-13 run made one interactive request per six months
+and rebuilt the 30 m coffee weight inside every request; Cloud Monitoring puts about 356
+EECU-hours of interactive use in that run's window, which the watchdog could not see. Now, with
+the same mask, states, QA, weights and reducers:
+  1. --export-weight GRID --estimate E    the coffee weight, built once per product grid and saved
+                                          as an asset: "modis250" (MOD13Q1 and MYD13Q1 share the
+                                          MODIS 250 m sinusoidal grid; checked before use) and
+                                          "viirs500" (VNP13A1)
+  2. --product NAME --estimate E          that product's monthly sums: one batch table export
+                                          under gee/ee_watchdog.py, reading the weight asset;
+                                          saved to data/derived/_tmp_drift_<product>.csv
+  3. no arguments                         anomalies and summary from the saved tables; no Earth
+                                          Engine call
+Estimates come from a one-month probe (--first/--last on one month) scaled by the month count.
+
+Run:    .venv/Scripts/python gee/week0_drift_provisional.py --export-weight modis250 --estimate E
+        .venv/Scripts/python gee/week0_drift_provisional.py --product MOD13Q1 --estimate E
+        .venv/Scripts/python gee/week0_drift_provisional.py
 Writes: docs/week0/drift_provisional_monthly.csv, docs/week0/drift_provisional_summary.csv
 """
-import time
+import argparse
 
 import ee
 import numpy as np
 import pandas as pd
 
 from common import ROOT, WEEK0, init
+from week0_hls_test import export_and_fetch
 
 CACHE = ROOT / "data" / "derived"  # _tmp_* files there are gitignored
 
@@ -42,13 +60,15 @@ FIRST, LAST = "2013-01-01", "2026-10-01"  # month starts, inclusive
 COMPARE_FROM = "2018-01"
 TREND_FROM = "2024-01"
 PAIRS = [("MOD13Q1", "MYD13Q1"), ("MOD13Q1", "VNP13A1"), ("MYD13Q1", "VNP13A1")]
+GRID = {"MOD13Q1": "modis250", "MYD13Q1": "modis250", "VNP13A1": "viirs500"}
+SUMS = ["ndvi_w", "w_ndvi", "evi_w", "w_evi", "w"]
 
 
 def state_mask():
     fc = (ee.FeatureCollection("FAO/GAUL/2015/level1")
           .filter(ee.Filter.eq("ADM0_NAME", "Brazil"))
           .filter(ee.Filter.inList("ADM1_NAME", STATES)))
-    n = fc.size().getInfo()
+    n = fc.size().getInfo()  # interactive: metadata (feature count of a filtered table)
     if n != len(STATES):
         raise SystemExit(f"Expected {len(STATES)} state polygons, found {n}; check GAUL names.")
     return ee.Image.constant(1).clipToCollection(fc), fc.geometry().bounds()
@@ -88,38 +108,57 @@ def month_feature(col, qa_band, qa_max, w, geom, proj, res):
     return per_month
 
 
-def fetch(name):
+def weight_asset(project, grid):
+    return f"projects/{project}/assets/drift_coffee_weight_{grid}_mask{MASK_YEAR}"
+
+
+def grid_projection(grid):
+    """The product grid's projection. MOD13Q1 and MYD13Q1 must share one grid to share a weight."""
+    names = [n for n, g in GRID.items() if g == grid]
+    projs = [ee.ImageCollection(PRODUCTS[n][0]).first().select("NDVI").projection() for n in names]
+    info = [pr.getInfo() for pr in projs]  # interactive: metadata (projections)
+    if any(i != info[0] for i in info):
+        raise SystemExit(f"{grid}: {', '.join(names)} are not on one grid; build one weight per product")
+    return projs[0], info[0]
+
+
+def export_weight(project, grid, estimate_eecu_s):
+    """The coffee weight in the product grid, built once by a batch image export to an asset."""
+    from ee_watchdog import run_watched
+
+    proj, p = grid_projection(grid)
+    region, geom = state_mask()
+    w = coffee_weight(proj, region).toFloat()
+    task = ee.batch.Export.image.toAsset(
+        image=w, description=f"drift_weight_{grid}", assetId=weight_asset(project, grid),
+        crs=p["crs"], crsTransform=p["transform"], region=geom, maxPixels=1e11,
+        pyramidingPolicy={"w": "mean"})
+    state, used, wall = run_watched(task, estimate_eecu_s)
+    print(f"weight {grid}: {state}, {used:,.0f} EECU-seconds, {wall:.0f} s wall")
+
+
+def fetch(project, name, estimate_eecu_s, first=FIRST, last=LAST):
+    """One product's monthly sums as one batch table export under the watchdog."""
     asset, qa_band, qa_max, res = PRODUCTS[name]
     col = ee.ImageCollection(asset)
-    proj = col.first().select("NDVI").projection()
-    region, geom = state_mask()
-    w = coffee_weight(proj, region)
+    proj, _ = grid_projection(GRID[name])
+    _, geom = state_mask()
+    w = ee.Image(weight_asset(project, GRID[name])).select("w")
     per_month = month_feature(col, qa_band, qa_max, w, geom, proj, res)
-    months = pd.date_range(FIRST, LAST, freq="MS").strftime("%Y-%m-%d").tolist()
-    rows = []
-    for i in range(0, len(months), 6):  # small batches keep each request inside time limits
-        chunk = months[i:i + 6]
-        for attempt in range(5):
-            try:
-                fc = ee.FeatureCollection(ee.List(chunk).map(per_month)).getInfo()
-                break
-            except (ee.EEException, ConnectionError, OSError) as e:  # incl. transient DNS failures
-                if attempt == 4:
-                    raise
-                print(f"  {name} {chunk[0]}: retry {attempt + 1} after {type(e).__name__}: {str(e)[:80]}")
-                time.sleep(30 * (attempt + 1))
-        for f in fc["features"]:
-            p = f["properties"]
-            rows.append({
-                "product": name, "month": p["month"], "composites": p.get("composites"),
-                "ndvi": p["ndvi_w_sum"] / p["w_ndvi_sum"] if p.get("w_ndvi_sum") else np.nan,
-                "evi": p["evi_w_sum"] / p["w_evi_sum"] if p.get("w_evi_sum") else np.nan,
-                "coffee_pixels": p.get("w_count"),
-                "valid_ndvi_pixels": p.get("w_ndvi_count"),
-                "valid_evi_pixels": p.get("w_evi_count"),
-            })
-        print(f"  {name}: through {chunk[-1][:7]}")
-    return rows
+    months = pd.date_range(first, last, freq="MS").strftime("%Y-%m-%d").tolist()
+    selectors = ["month", "composites"] + [f"{b}_{r}" for b in SUMS for r in ("sum", "count")]
+    p = export_and_fetch(ee.FeatureCollection(ee.List(months).map(per_month)),
+                         f"drift_provisional_{name}_{months[0][:7]}_{months[-1][:7]}", selectors, estimate_eecu_s)
+    # a month with no composites has no sums: reported empty, not filled
+    ok_ndvi, ok_evi = p["w_ndvi_sum"].fillna(0) > 0, p["w_evi_sum"].fillna(0) > 0
+    return pd.DataFrame({
+        "product": name, "month": p["month"], "composites": p["composites"],
+        "ndvi": np.where(ok_ndvi, p["ndvi_w_sum"] / p["w_ndvi_sum"], np.nan),
+        "evi": np.where(ok_evi, p["evi_w_sum"] / p["w_evi_sum"], np.nan),
+        "coffee_pixels": p["w_count"],
+        "valid_ndvi_pixels": p["w_ndvi_count"],
+        "valid_evi_pixels": p["w_evi_count"],
+    })
 
 
 def anomalies(df):
@@ -157,19 +196,35 @@ def summarise(df):
 
 
 def main():
-    init()
-    frames = []
-    for name in PRODUCTS:
-        cache = CACHE / f"_tmp_drift_{name}.csv"
-        if cache.exists():  # a finished product is not refetched after a later failure
-            print(f"{name}: using saved results from {cache.name}")
-            frames.append(pd.read_csv(cache, dtype={"month": str}))
-            continue
-        print(f"{name}: fetching monthly coffee-weighted means")
-        df = pd.DataFrame(fetch(name))
+    a = argparse.ArgumentParser()
+    a.add_argument("--export-weight", choices=sorted(set(GRID.values())))
+    a.add_argument("--product", choices=list(PRODUCTS))
+    a.add_argument("--first", default=FIRST, help="first month (probe: set --first and --last to one month)")
+    a.add_argument("--last", default=LAST)
+    a.add_argument("--estimate", type=float, help="cost estimate in EECU-seconds; required for any task")
+    args = a.parse_args()
+    if args.export_weight or args.product:
+        if not args.estimate:
+            raise SystemExit("--estimate (EECU-seconds) is required for any Earth Engine task")
+        project = init()
+        if args.export_weight:
+            return export_weight(project, args.export_weight, args.estimate)
+        full = (args.first, args.last) == (FIRST, LAST)
+        cache = CACHE / (f"_tmp_drift_{args.product}.csv" if full else
+                         f"_tmp_drift_{args.product}_probe_{args.first[:7]}_{args.last[:7]}.csv")
+        if cache.exists():
+            raise SystemExit(f"{cache.name} exists; move it aside to refetch")
+        df = fetch(project, args.product, args.estimate, args.first, args.last)
         CACHE.mkdir(parents=True, exist_ok=True)
         df.to_csv(cache, index=False)
-        frames.append(df)
+        print(df.to_string(index=False) if not full else f"{args.product}: {len(df)} months saved to {cache.name}")
+        return
+    frames = []
+    for name in PRODUCTS:  # no Earth Engine call from here on
+        cache = CACHE / f"_tmp_drift_{name}.csv"
+        if not cache.exists():
+            raise SystemExit(f"{name}: no saved table; run --product {name} --estimate E first")
+        frames.append(pd.read_csv(cache, dtype={"month": str}))
     monthly = anomalies(pd.concat(frames, ignore_index=True))
     monthly.to_csv(WEEK0 / "drift_provisional_monthly.csv", index=False)
     summary = summarise(monthly)

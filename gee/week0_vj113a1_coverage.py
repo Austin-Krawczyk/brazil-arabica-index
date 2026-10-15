@@ -15,14 +15,18 @@ The coffee weight is the same for every month, and rebuilding it in each month's
 of the first probe's cost (2026-10-14). It is therefore built once, by a batch export to an asset
 in the VJ113A1 grid (owner decision 2026-10-14), and read from there. Same reducers, same weights.
 
-Run:    .venv/Scripts/python gee/week0_vj113a1_coverage.py --export-weight
-        .venv/Scripts/python gee/week0_vj113a1_coverage.py --probe --month 2024-01
-        .venv/Scripts/python gee/week0_vj113a1_coverage.py
+Batch only (owner rule 2026-10-15): the monthly sums, formerly one interactive request per month
+(the 2026-10-14 results were measured that way), now run as one batch table export, and the weight
+as one batch image export, both under gee/ee_watchdog.py with a required estimate. The measured
+costs to estimate from: weight export and 40 months in docs/week0/profiles/vj113a1_*.
+
+Run:    .venv/Scripts/python gee/week0_vj113a1_coverage.py --export-weight --estimate E
+        .venv/Scripts/python gee/week0_vj113a1_coverage.py --probe --month 2024-01 --estimate E
+        .venv/Scripts/python gee/week0_vj113a1_coverage.py --estimate E
 Writes: docs/week0/vj113a1_coverage.csv, docs/week0/profiles/vj113a1_<mode>_<utc>.txt
 """
 import argparse
 import datetime as dt
-import io
 import time
 
 import ee
@@ -30,7 +34,7 @@ import pandas as pd
 
 from common import WEEK0, init
 from vj113a1_ingest import COLLECTION
-from week0_hls_test import eecu_seconds
+from week0_hls_test import BATCH_COSTS, export_and_fetch
 
 MAPBIOMAS = ("projects/mapbiomas-public/assets/brazil/lulc/collection10/"
              "mapbiomas_brazil_collection10_integration_v1")
@@ -50,6 +54,7 @@ def main():
     a.add_argument("--probe", action="store_true")
     a.add_argument("--month", default="2024-01")
     a.add_argument("--export-weight", action="store_true", help="build the coffee weight asset once")
+    a.add_argument("--estimate", type=float, required=True, help="cost estimate in EECU-seconds (cancelled at 2 x)")
     args = a.parse_args()
     project = init()
     col = ee.ImageCollection(f"projects/{project}/assets/{COLLECTION}")
@@ -57,7 +62,7 @@ def main():
               .filter(ee.Filter.inList("GAUL1_NAME", STATES)))
     proj = col.first().select("pixel_reliability").projection()
     if args.export_weight:
-        export_weight(project, proj, states)
+        export_weight(project, proj, states, args.estimate)
         return
     w = ee.Image(f"projects/{project}/assets/{WEIGHT_ASSET}").select("w")
 
@@ -72,24 +77,23 @@ def main():
         return ee.Feature(None, sums).set("month", start.format("YYYY-MM"), "composites", rel.size())
 
     todo = [f"{args.month}-01"] if args.probe else months()
-    buf = io.StringIO()
-    rows, t0 = [], time.time()
-    with ee.profilePrinting(destination=buf):
-        for m in todo:
-            f = ee.Feature(per_month(m)).getInfo()["properties"]
-            f["coverage_good"] = f["w_good"] / f["w"] if f.get("w") else None
-            f["coverage_any"] = f["w_any"] / f["w"] if f.get("w") else None
-            rows.append(f)
-            print(f"  {f['month']}: {f['composites']} composites, good {f['coverage_good']:.1%}")
-    stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    t0 = time.time()
     mode = "probe" if args.probe else "full"
+    df = export_and_fetch(ee.FeatureCollection(ee.List(todo).map(per_month)), f"vj113a1_coverage_{mode}",
+                          ["month", "composites", "w_good", "w_any", "w"], args.estimate)
+    df["coverage_good"] = df["w_good"] / df["w"]
+    df["coverage_any"] = df["w_any"] / df["w"]
+    for _, f in df.iterrows():
+        print(f"  {f['month']}: {f['composites']} composites, good {f['coverage_good']:.1%}")
+    cost = BATCH_COSTS[-1][1]
+    stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     (WEEK0 / "profiles").mkdir(parents=True, exist_ok=True)
-    (WEEK0 / "profiles" / f"vj113a1_{mode}_{stamp}.txt").write_text(buf.getvalue(), encoding="utf-8")
-    cost = eecu_seconds(buf.getvalue())
+    (WEEK0 / "profiles" / f"vj113a1_{mode}_{stamp}.txt").write_text(
+        f"batch export vj113a1_coverage_{mode}: {cost:,.0f} EECU-seconds (batch), {len(df)} months, "
+        f"{time.time() - t0:.0f} s wall\n", encoding="utf-8")
     print(f"{mode}: {len(todo)} month(s), {time.time() - t0:.0f} s wall, {cost:,.0f} EECU-seconds")
     if args.probe:
         return
-    df = pd.DataFrame(rows)
     df.to_csv(WEEK0 / "vj113a1_coverage.csv", index=False)
     below = df[df["coverage_good"] < COVERAGE_MIN]
     verdict = "FAILS" if len(below) > MONTHS_ALLOWED else "passes"
@@ -97,32 +101,26 @@ def main():
           f"{COVERAGE_MIN:.0%}; allowed {MONTHS_ALLOWED}. VJ113A1 {verdict}.")
 
 
-def export_weight(project, proj, states):
+def export_weight(project, proj, states, estimate_eecu_s):
     """Coffee fraction of each VJ113A1 pixel inside MG/SP, as an asset in the VJ113A1 grid."""
+    from ee_watchdog import run_watched
+
     coffee = ee.Image(MAPBIOMAS).select("classification_2024").eq(46).unmask(0)
     w = (coffee.reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
          .updateMask(ee.Image.constant(1).clipToCollection(states)).rename("w"))
     w = w.updateMask(w.gt(0)).toFloat()
-    p = proj.getInfo()
+    p = proj.getInfo()  # interactive: metadata (projection)
     task = ee.batch.Export.image.toAsset(
         image=w, description=WEIGHT_ASSET, assetId=f"projects/{project}/assets/{WEIGHT_ASSET}",
         crs=p["crs"], crsTransform=p["transform"], region=states.geometry().bounds(),
         maxPixels=1e10, pyramidingPolicy={"w": "mean"})
-    task.start()
-    t0 = time.time()
-    while True:
-        status = task.status()
-        if status["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
-            break
-        time.sleep(30)
-    cost = float(status.get("batch_eecu_usage_seconds", 0) or 0)
+    state, cost, wall = run_watched(task, estimate_eecu_s)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     (WEEK0 / "profiles").mkdir(parents=True, exist_ok=True)
     (WEEK0 / "profiles" / f"vj113a1_weight_export_{stamp}.txt").write_text(
-        f"batch export {WEIGHT_ASSET}: {status['state']}, {cost:,.0f} EECU-seconds "
-        f"(batch_eecu_usage_seconds), {time.time() - t0:.0f} s wall\n", encoding="utf-8")
-    print(f"weight export {status['state']}: {cost:,.0f} EECU-seconds, {time.time() - t0:.0f} s wall"
-          + (f" | {status.get('error_message', '')}" if status["state"] != "COMPLETED" else ""))
+        f"batch export {WEIGHT_ASSET}: {state}, {cost:,.0f} EECU-seconds "
+        f"(batch_eecu_usage_seconds), {wall:.0f} s wall\n", encoding="utf-8")
+    print(f"weight export {state}: {cost:,.0f} EECU-seconds, {wall:.0f} s wall")
 
 
 if __name__ == "__main__":

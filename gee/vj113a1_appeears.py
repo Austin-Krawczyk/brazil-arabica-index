@@ -34,12 +34,12 @@ def area_geojson():
     states = (ee.FeatureCollection("FAO/GAUL/2025/level1")
               .filter(ee.Filter.eq("GAUL0_NAME", "Brazil"))
               .filter(ee.Filter.inList("GAUL1_NAME", ["Minas Gerais", "São Paulo"])))
-    if states.size().getInfo() != 2:
+    if states.size().getInfo() != 2:  # interactive: metadata (feature count)
         raise SystemExit("Expected 2 state polygons from GAUL 2025.")
     geom = states.geometry().simplify(maxError=500).buffer(1000, maxError=100)
     return {"type": "FeatureCollection",
             "features": [{"type": "Feature", "properties": {"name": "MG+SP"},
-                          "geometry": geom.getInfo()}]}
+                          "geometry": geom.getInfo()}]}  # interactive: vector geometry, no pixels
 
 
 def headers():

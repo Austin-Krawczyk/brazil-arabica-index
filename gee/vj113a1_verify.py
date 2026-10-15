@@ -40,7 +40,7 @@ def wait_for_tasks():
 def value_at(img, band, lon, lat):
     return (img.select(band).reduceRegion(ee.Reducer.first(), ee.Geometry.Point(lon, lat),
                                           crs=img.select(band).projection(), scale=463.3127)
-            .get(band).getInfo())
+            .get(band).getInfo())  # interactive: one pixel
 
 
 def main():
@@ -59,7 +59,7 @@ def main():
     col = ee.ImageCollection(f"projects/{project}/assets/{COLLECTION}")
     info = ee.Dictionary({"n": col.size(), "first": col.aggregate_min("system:time_start"),
                           "last": col.aggregate_max("system:time_start"),
-                          "bands": col.first().bandNames()}).getInfo()
+                          "bands": col.first().bandNames()}).getInfo()  # interactive: metadata
     day = lambda ms: (dt.datetime(1970, 1, 1) + dt.timedelta(milliseconds=ms)).date()
     say(f"collection loads: {info['n']} images, {day(info['first'])} to {day(info['last'])}, "
         f"bands {info['bands']}")

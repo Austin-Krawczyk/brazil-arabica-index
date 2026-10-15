@@ -70,7 +70,7 @@ def check_collection(asset_id, role):
             "last": last.get("system:time_start"),
             "bands": last.bandNames(),
             "n": n,
-        }).getInfo()
+        }).getInfo()  # interactive: metadata (dates, band names, image count)
         row.update(resolves="yes", first=_date(info["first"]), last=_date(info["last"]),
                    bands=" ".join(info["bands"]), n="" if info["n"] < 0 else info["n"],
                    note="ends found inside date windows at a Sul de Minas point" if asset_id in WINDOWS else "")
@@ -82,7 +82,7 @@ def check_collection(asset_id, role):
 def check_image(asset_id, role):
     row = {"id": asset_id, "role": role, "type": "Image"}
     try:
-        bands = ee.Image(asset_id).bandNames().getInfo()
+        bands = ee.Image(asset_id).bandNames().getInfo()  # interactive: metadata
         row.update(resolves="yes", bands=" ".join(bands))
     except Exception as e:
         row.update(resolves="NO", error=str(e)[:200])
@@ -117,7 +117,7 @@ def main():
         rows += search_folder(parent, fragments)
     for cand in VJ113A1_PROBES:
         try:
-            ee.ImageCollection(cand).limit(1).size().getInfo()
+            ee.ImageCollection(cand).limit(1).size().getInfo()  # interactive: metadata
             rows.append({"id": cand, "role": "VJ113A1 direct probe", "resolves": "yes"})
         except Exception as e:
             rows.append({"id": cand, "role": "VJ113A1 direct probe", "resolves": "NO", "error": str(e)[:120]})

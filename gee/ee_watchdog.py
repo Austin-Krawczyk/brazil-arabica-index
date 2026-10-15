@@ -14,6 +14,14 @@ W1 estimate. Each finished or cancelled task's measured cost is added to the ses
 Tasks run serially: run_watched() starts one task and blocks until it ends; the next starts only
 after. sweep_once() starts nothing; it is a separate check on whatever is running.
 
+No interactive reductions (owner rule, 2026-10-15): nothing larger than a few pixels is reduced
+through an interactive request (getInfo, evaluate, computeValue). The watchdog sees only batch
+tasks, and the 2026-10-13 provisional drift check spent about 356 EECU-hours interactively, unseen.
+Every reduction over an area runs as a batch export through run_watched() or
+export_table_watched(), with an estimate. Interactive calls left in gee/ are metadata (asset
+properties, band names, feature counts, projections) or single-pixel point reads, each tagged
+"# interactive:" with its reason; gee/check_interactive.py fails on any untagged call.
+
 Estimates, the session ledger and every cancellation are logged in docs/week0/ee_task_estimates.json,
 docs/week0/ee_session_ledger.json and docs/week0/ee_watchdog_log.txt.
 
@@ -111,7 +119,7 @@ def run_watched(task, estimate_eecu_s, poll=POLL_SECONDS):
         _log(f"running {desc}: {used:,.0f} of {limit:,.0f} EECU-s")
 
 
-def export_table_watched(fc, name, selectors, estimate_eecu_s):
+def export_table_watched(fc, name, selectors, estimate_eecu_s, prefix="w1"):
     """Batch table export to the project bucket under the watchdog; returns (DataFrame or None, cost)."""
     import io
 
@@ -122,13 +130,13 @@ def export_table_watched(fc, name, selectors, estimate_eecu_s):
 
     bucket = setting("GCS_BUCKET")
     task = ee.batch.Export.table.toCloudStorage(collection=fc, description=name, bucket=bucket,
-                                                fileNamePrefix=f"w1/{name}", fileFormat="CSV",
+                                                fileNamePrefix=f"{prefix}/{name}", fileFormat="CSV",
                                                 selectors=selectors)
     state, used, _ = run_watched(task, estimate_eecu_s)
     if state not in ("COMPLETED", "SUCCEEDED"):
         return None, used
     client = storage.Client(project=setting("EE_PROJECT"), credentials=ee.data.get_persistent_credentials())
-    return pd.read_csv(io.BytesIO(client.bucket(bucket).blob(f"w1/{name}.csv").download_as_bytes())), used
+    return pd.read_csv(io.BytesIO(client.bucket(bucket).blob(f"{prefix}/{name}.csv").download_as_bytes())), used
 
 
 def sweep_once():

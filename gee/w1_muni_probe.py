@@ -3,7 +3,9 @@ weight already saved (w1_coffee_weight_sul_e_centro_oeste_mask2024). The same st
 run (two mask variants × two QA candidates × EVI and NDVI, plus weights), reduced per municipality
 for one calendar year of composites. Measures cost only: both mask variants use the one weight.
 
-Run:    .venv/Scripts/python gee/w1_muni_probe.py --year 2021
+Batch under gee/ee_watchdog.py with a required estimate (owner rule 2026-10-15).
+
+Run:    .venv/Scripts/python gee/w1_muni_probe.py --year 2021 --estimate E
 """
 import argparse
 import datetime as dt
@@ -19,6 +21,7 @@ from week0_hls_test import BATCH_COSTS, export_and_fetch
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--year", type=int, default=2021)
+    a.add_argument("--estimate", type=float, required=True, help="cost estimate in EECU-seconds")
     args = a.parse_args()
     project = init()
     col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(f"{args.year}-01-01", f"{args.year + 1}-01-01")
@@ -48,7 +51,8 @@ def main():
 
     t0 = time.time()
     name = f"w1_muni_probe_sul_{args.year}"
-    df = export_and_fetch(ee.FeatureCollection(col.map(per_image)).flatten(), name, full_selectors())
+    df = export_and_fetch(ee.FeatureCollection(col.map(per_image)).flatten(), name, full_selectors(),
+                          args.estimate)
     cost = BATCH_COSTS[-1][1]
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     (WEEK0 / "profiles" / f"{name}_{stamp}.txt").write_text(

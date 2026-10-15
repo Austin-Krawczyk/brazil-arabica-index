@@ -37,8 +37,12 @@ OPEN prereg-1 item, so both candidates are stored: q0 = SummaryQA 0 (good), q1 =
 (good, marginal). One aggregation per composite; one batch table export per region; cost
 recorded per region. --full --probe does one calendar year of one region first.
 
-Run:    .venv/Scripts/python gee/w1_modis_evi.py --export-weight --region "Sul e Centro-Oeste"
-        .venv/Scripts/python gee/w1_modis_evi.py --probe --region "Sul e Centro-Oeste" --year 2021
+Every mode is a batch task under gee/ee_watchdog.py with a required estimate (owner rule
+2026-10-15). The --export-weight and --probe modes are the 2026-10-14 cost probes on Collection 10,
+kept for the record; the W1 series comes from --full (via gee/w1_run.py).
+
+Run:    .venv/Scripts/python gee/w1_modis_evi.py --export-weight --region "Sul e Centro-Oeste" --estimate E
+        .venv/Scripts/python gee/w1_modis_evi.py --probe --region "Sul e Centro-Oeste" --year 2021 --estimate E
 Writes: docs/week0/w1_probe_<region>_<year>.csv, docs/week0/profiles/w1_probe_<utc>.txt
 """
 import argparse
@@ -83,33 +87,27 @@ def weight_asset(project, region):
     return f"projects/{project}/assets/w1_coffee_weight_{slug_of(region)}_mask{MASK_YEAR}"
 
 
-def export_weight(project, region):
+def export_weight(project, region, estimate_eecu_s):
     """Coffee fraction of each MOD13Q1 pixel inside the region, saved once as an asset."""
+    from ee_watchdog import run_watched
+
     proj = ee.ImageCollection("MODIS/061/MOD13Q1").first().select("EVI").projection()
     geom = region_geometry(region)
     coffee = ee.Image(MAPBIOMAS).select(f"classification_{MASK_YEAR}").eq(46).unmask(0)
     w = (coffee.reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
          .clip(geom).rename("w"))
     w = w.updateMask(w.gt(0)).toFloat()
-    p = proj.getInfo()
+    p = proj.getInfo()  # interactive: metadata (projection)
     task = ee.batch.Export.image.toAsset(
         image=w, description=f"w1_weight_{slug_of(region)}", assetId=weight_asset(project, region),
         crs=p["crs"], crsTransform=p["transform"], region=geom.bounds(), maxPixels=1e10,
         pyramidingPolicy={"w": "mean"})
-    task.start()
-    t0 = time.time()
-    while True:
-        status = task.status()
-        if status["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
-            break
-        time.sleep(30)
-    cost = float(status.get("batch_eecu_usage_seconds", 0) or 0)
+    state, cost, wall = run_watched(task, estimate_eecu_s)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     (WEEK0 / "profiles" / f"w1_weight_export_{stamp}.txt").write_text(
-        f"batch export w1 weight {region}, mask {MASK_YEAR}: {status['state']}, {cost:,.0f} "
-        f"EECU-seconds (batch_eecu_usage_seconds), {time.time() - t0:.0f} s wall\n", encoding="utf-8")
-    print(f"weight export {status['state']}: {cost:,.0f} EECU-seconds, {time.time() - t0:.0f} s wall"
-          + (f" | {status.get('error_message', '')}" if status["state"] != "COMPLETED" else ""))
+        f"batch export w1 weight {region}, mask {MASK_YEAR}: {state}, {cost:,.0f} "
+        f"EECU-seconds (batch_eecu_usage_seconds), {wall:.0f} s wall\n", encoding="utf-8")
+    print(f"weight export {state}: {cost:,.0f} EECU-seconds, {wall:.0f} s wall")
 
 
 def run(project, region, start, end):
@@ -184,14 +182,15 @@ def main():
     a.add_argument("--probe", action="store_true", help="only the probe is run")
     a.add_argument("--export-weight", action="store_true", help="save the region's coffee weight once")
     a.add_argument("--full", action="store_true", help="the full W1 series for one region")
-    a.add_argument("--estimate", type=float, help="cost estimate in EECU-seconds (with --full; required)")
+    a.add_argument("--estimate", type=float, required=True,
+                   help="cost estimate in EECU-seconds (every mode; cancelled at 2 x)")
     a.add_argument("--region", default="Sul e Centro-Oeste", choices=list(REGIONS))
     a.add_argument("--year", type=int, default=2021)
     args = a.parse_args()
     project = init()
     (WEEK0 / "profiles").mkdir(parents=True, exist_ok=True)
     if args.export_weight:
-        return export_weight(project, args.region)
+        return export_weight(project, args.region, args.estimate)
     if args.full:
         from ee_watchdog import export_table_watched
 
@@ -222,7 +221,7 @@ def main():
     fc, n = run(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01")
     selectors = ["composite_start"] + [f"{b}_{r}" for b in ("EVI", "NDVI") for r in ("median", "mean")] + [
         "w_valid_sum", "w_total_sum"]
-    df = export_and_fetch(fc, f"w1_probe_{slug}_{args.year}", selectors)
+    df = export_and_fetch(fc, f"w1_probe_{slug}_{args.year}", selectors, args.estimate)
     cost = BATCH_COSTS[-1][1]
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     (WEEK0 / "profiles").mkdir(parents=True, exist_ok=True)

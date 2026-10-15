@@ -17,21 +17,24 @@ Steps (run in order; each is a separate batch job whose cost is recorded):
 The 30% filter itself and its removal report are computed locally by gee/w1_filter.py from the
 areas table and IBGE PAM.
 
-Run:    .venv/Scripts/python gee/w1_mask.py municipalities
-        .venv/Scripts/python gee/w1_mask.py areas --probe --year 2024
-        .venv/Scripts/python gee/w1_mask.py areas
+Every step runs as a batch task under gee/ee_watchdog.py with a required estimate (owner rule
+2026-10-15); measured costs to estimate from are in docs/week0/profiles/w1_mask_*.
+
+Run:    .venv/Scripts/python gee/w1_mask.py municipalities --estimate E
+        .venv/Scripts/python gee/w1_mask.py areas --probe --year 2024 --estimate E
+        .venv/Scripts/python gee/w1_mask.py areas --estimate E
         .venv/Scripts/python gee/w1_mask.py weights --meso 3110 --estimate 2600
 """
 import argparse
 import datetime as dt
 import json
 import re
-import time
 
 import ee
 import pandas as pd
 
 from common import ROOT, WEEK0, init
+from ee_watchdog import run_watched
 from week0_hls_test import BATCH_COSTS, export_and_fetch
 
 C11 = ("projects/mapbiomas-public/assets/brazil/lulc/collection11/"
@@ -52,16 +55,7 @@ def log_cost(name, cost, extra=""):
     print(f"{name}: {cost:,.0f} EECU-seconds{extra}")
 
 
-def wait(task):
-    t0 = time.time()
-    while True:
-        st = task.status()
-        if st["state"] in ("COMPLETED", "FAILED", "CANCELLED"):
-            return st, time.time() - t0
-        time.sleep(30)
-
-
-def municipalities(project):
+def municipalities(project, estimate_eecu_s):
     member = pd.read_csv(WEEK0 / "proposed_region_membership.csv", dtype={"code": str})
     member = member[member.in_index].set_index("code")
     feats = []
@@ -76,17 +70,15 @@ def municipalities(project):
     print(f"{len(feats)} index municipalities (membership lists {len(member)})")
     task = ee.batch.Export.table.toAsset(collection=ee.FeatureCollection(feats), description=MUNI_ASSET,
                                          assetId=f"projects/{project}/assets/{MUNI_ASSET}")
-    task.start()
-    st, wall = wait(task)
-    log_cost("municipalities", float(st.get("batch_eecu_usage_seconds", 0) or 0),
-             f", {st['state']}, {wall:.0f} s wall")
+    state, used, wall = run_watched(task, estimate_eecu_s)
+    log_cost("municipalities", used, f", {state}, {wall:.0f} s wall")
 
 
 def coffee(year):
     return ee.Image(C11).select(f"classification_{year}").eq(46)
 
 
-def areas(project, probe_year=None, sample_codes=None):
+def areas(project, estimate_eecu_s, probe_year=None, sample_codes=None):
     munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}")
     if sample_codes:
         munis = munis.filter(ee.Filter.inList("code", sample_codes))
@@ -103,9 +95,10 @@ def areas(project, probe_year=None, sample_codes=None):
                             scale=30, crs="EPSG:4326", tileScale=4)
     name = (f"w1_mask_areas_probe_{probe_year}" if probe_year else
             "w1_mask_areas_sample_probe" if sample_codes else "w1_mask_areas")
-    df = export_and_fetch(out, name, ["code", "region"] + img.bandNames().getInfo())
+    band_names = img.bandNames().getInfo()  # interactive: metadata (band names)
+    df = export_and_fetch(out, name, ["code", "region"] + band_names, estimate_eecu_s)
     cost = BATCH_COSTS[-1][1]
-    log_cost(name, cost, f", {len(df)} municipalities, {len(img.bandNames().getInfo())} bands")
+    log_cost(name, cost, f", {len(df)} municipalities, {len(band_names)} bands")
     df.to_csv(DERIVED / f"{name}.csv", index=False)
     return df, cost
 
@@ -123,15 +116,13 @@ def weights(project, meso_code, estimate_eecu_s):
     IBGE 1989 mesoregion (owner, 2026-10-14: option iii; mesoregion-bounded exports; persistent
     mask deferred). Unfiltered: the 30% filter is applied at aggregation (Amendment 16d).
     Started through the watchdog, cancelled at 2 × the estimate."""
-    from ee_watchdog import run_watched
-
     codes = meso_table().query("meso_code == @meso_code").code.tolist()
     munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}").filter(ee.Filter.inList("code", codes))
     proj = ee.ImageCollection("MODIS/061/MOD13Q1").first().select("EVI").projection()
     bands = [coffee(m).unmask(0).reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
              .rename(f"w_{m}").toFloat() for m in MASK_YEARS]
     img = ee.Image.cat(bands).clipToCollection(munis)
-    p = proj.getInfo()
+    p = proj.getInfo()  # interactive: metadata (projection)
     task = ee.batch.Export.image.toAsset(
         image=img, description=f"w1_weights_meso_{meso_code}",
         assetId=f"projects/{project}/assets/w1_weights_meso_{meso_code}",
@@ -150,14 +141,15 @@ def main():
     a.add_argument("--region")
     a.add_argument("--sample", help="file of municipality codes: all bands, those municipalities only")
     a.add_argument("--meso", help="IBGE 1989 mesoregion code (weights step)")
-    a.add_argument("--estimate", type=float, help="cost estimate in EECU-seconds (weights step; required)")
+    a.add_argument("--estimate", type=float, required=True,
+                   help="cost estimate in EECU-seconds (every step; cancelled at 2 x)")
     args = a.parse_args()
     project = init()
     if args.step == "municipalities":
-        municipalities(project)
+        municipalities(project, args.estimate)
     elif args.step == "areas":
         codes = open(args.sample).read().split() if args.sample else None
-        areas(project, args.year if args.probe and not codes else None, codes)
+        areas(project, args.estimate, args.year if args.probe and not codes else None, codes)
     else:
         weights(project, args.meso, args.estimate)
 

@@ -37,7 +37,7 @@ def wait_for(names):
 
 def value_at(img, lon, lat):
     return (img.reduceRegion(ee.Reducer.first(), ee.Geometry.Point(lon, lat), crs="EPSG:4326",
-                             scale=5565.97).get("precipitation").getInfo())
+                             scale=5565.97).get("precipitation").getInfo())  # interactive: one pixel
 
 
 def main():
