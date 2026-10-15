@@ -1362,8 +1362,11 @@ Paulo, in Zona da Mata and in early years. Region totals, full MapBiomas area ov
 | 2025 | 0.89 | 0.55 | 0.87 | 0.58 |
 
 Spot checks show the matching is right and the gap is real. Varginha agrees with PAM to within
-7–21% in 2005, 2015 and 2024; Patrocínio to within 1–5% from 2015. But Três Pontas has 5,100 ha in
-MapBiomas against PAM's 8,700 (2024), and Franca 4,700 against 9,480. **Only 18% of compared
+7–21% in 2005, 2015 and 2024; Patrocínio to within 1–5% from 2015. But Três Corações has 5,100 ha
+in MapBiomas against PAM's 8,700 (2024), and Franca 4,700 against 9,480. (Correction, 2026-10-14:
+an earlier version of this paragraph labelled the Três Corações figures as Três Pontas, a wrong
+code, 3169307 instead of 3169406. Três Pontas itself has 22,770 ha mapped against PAM's 17,571 in
+2024, so MapBiomas runs above PAM there.) **Only 18% of compared
 municipality-years agree within 30%; 67% differ by more than 50%.** So no small change of tolerance
 would alter the picture.
 
@@ -1415,3 +1418,78 @@ prereg-2 registration of the masks.
 
 **Compute 2026-10-14, added:** collection checks 14, areas probes 3,204 and 2,522, areas run
 45,202 EECU-seconds. The day's measured total is now 61,576 EECU-seconds (17.1 EECU-hours).
+
+### Owner decision (E) with conditions, and what checking them found (2026-10-14)
+
+**Decision:** the one-sided rule (E), with these conditions:
+- list the largest removals before locking;
+- drop municipalities with no PAM value if their mapped area is small;
+- reduce W1 per municipality, so the filter is applied at aggregation;
+- register the rule as Amendment 16d, with the representativeness caveat;
+- give an updated W1 cost estimate before the full run.
+
+- **Largest removals under (E)** (`docs/week0/w1_filter_E_top10_removed.csv`; ranked by mapped
+  area summed over the seasons removed):
+  - **Sul:** Campos Gerais (mean 23,600 ha mapped, removed in 7 seasons, 2015–2025, at 1.42 times
+    PAM), Três Pontas (22,900 ha, 6 seasons, 1.37) and Boa Esperança (16,600 ha, 4 seasons, 1.47).
+    These are large coffee municipalities where mapped expansion runs ahead of PAM's bearing area,
+    the case the filter was written for. Smaller ones such as Bocaina de Minas and Alagoa are
+    removed in most seasons, often with PAM recording zero.
+  - **São Paulo:** small municipalities (400–930 ha mapped), many with MapBiomas tens of times
+    PAM (Assis 106×, Monte Aprazível 59×). Likely classification error.
+  - **Triângulo:** Guimarânia (2,250 ha, 12 seasons); Ibiá, Coromandel and Perdizes (7,100–8,200 ha)
+    in only 1–2 seasons each.
+  - **Zona da Mata:** Simonésia (9,800 ha, 8 seasons, 1.64) and Nepomuceno (12,600 ha, 2 seasons);
+    the rest are small, often with PAM recording zero.
+- **Municipalities with no PAM value** (`docs/week0/w1_pam_missing_area.csv`): their mapped coffee
+  is at most **2.6%** of any region-year (Zona da Mata, 2010), at most 3,704 ha. On average it is
+  0.15% of Sul, 0.47% of São Paulo, 0.01% of Triângulo and 0.88% of Zona da Mata. Judged small, so
+  they are dropped and reported.
+- **Correction:** the Week 0 report's earlier spot check labelled Três Corações' figures as Três
+  Pontas (corrected in the text above).
+- **W1 restructured** (`gee/w1_mask.py weights`, `gee/w1_modis_evi.py --full`):
+  - weights per region, unfiltered, for every mask year, full and persistent;
+  - every composite reduced per municipality;
+  - the filter applied in Python at aggregation.
+- **Amendment 16d drafted** (spec and changelog in the working tree, not committed): it awaits
+  the owner's look at the largest removals.
+
+**Cost probes, and one that ran away:**
+
+- **Weights probe on the 5% municipality sample: CANCELLED at 27% done, after 64,779
+  EECU-seconds.**
+  - **Cause, a design error in the probe:** an image export covers the bounding box of its
+    region. The 57 sample municipalities are scattered, so their box covered almost all of MG and
+    SP, and the probe computed 56 bands across it. A sample of municipalities does not shrink an
+    image export.
+  - The cost is recorded as spent. Nothing usable came out of it.
+- **Per-municipality reduction probe**, Sul, 2021 (23 composites, 190 municipalities, 4,370
+  municipality-composites with coffee), using the existing single-band Sul weight:
+  **445 EECU-seconds**. The region-level reduction cost 195.
+
+**Updated W1 estimate** (extrapolated, not measured):
+
+- **Basis:**
+  - export cost scales with the region's bounding box; the four boxes total 1,369,719 km², 2.1
+    times the regions' area;
+  - one band costs 0.00117 EECU-seconds per km² (Sul's single-band export, 149 EECU-seconds over
+    a 126,827 km² box);
+  - a persistent band reads three years, so it costs about 3 times as much.
+- **Estimates:**
+
+  | Part | EECU-seconds | EECU-hours |
+  |---|---|---|
+  | Weights, full mask, 28 mask years | ≈ 45,000 | ≈ 12.5 |
+  | Weights, persistent mask, 28 mask years | ≈ 135,000 | ≈ 37.5 |
+  | Composites, per municipality, both masks and both QA candidates, 26 years × 4 regions (445 × 8.64 × 26) | ≈ 100,000 | ≈ 28 |
+  | **Total with the persistent mask** | **≈ 280,000** | **≈ 78** |
+  | **Total without it** (full-mask weights, and composites with the persistent bands dropped) | **≈ 115,000–145,000** | **≈ 32–40** |
+
+- **Levers, not applied:**
+  - export weights per mesoregion instead of per region, which shrinks the bounding boxes
+    (estimated up to about half the weights cost);
+  - decide the QA rule (an OPEN prereg-1 item) before the run, which halves the value bands;
+  - defer the persistent-pixel sensitivity, at 37.5 EECU-hours of weights.
+
+**Compute 2026-10-14, added:** cancelled weights probe 64,779 and per-municipality probe 445
+EECU-seconds. The day's measured total is now 126,800 EECU-seconds (35.2 EECU-hours).

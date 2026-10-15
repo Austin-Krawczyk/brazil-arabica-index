@@ -10,8 +10,9 @@ Steps (run in order; each is a separate batch job whose cost is recorded):
                    mask year M the area classified 46 in M, M−1 and M−2 ("persistent",
                    Amendment 16b), in hectares, at 30 m. --probe does one mask year only.
   weights          per region: coffee fraction of each MOD13Q1 pixel for each mask year, full and
-                   persistent, excluding the municipalities the 30% filter removed for that
-                   season. Saved once as a multi-band asset; W1 reads it.
+                   persistent, unfiltered (Amendment 16d: the filter is applied at aggregation).
+                   Saved once as a multi-band asset; W1 reads it. --sample: a municipality sample,
+                   for the cost probe.
 
 The 30% filter itself and its removal report are computed locally by gee/w1_filter.py from the
 areas table and IBGE PAM.
@@ -109,23 +110,25 @@ def areas(project, probe_year=None, sample_codes=None):
     return df, cost
 
 
-def weights(project, region):
-    kept = pd.read_csv(WEEK0 / "w1_filter_kept.csv", dtype={"code": str})  # code, mask_year, kept
-    munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}").filter(ee.Filter.eq("region", region))
-    codes = ee.Image().int().paint(munis, "code_int").rename("code")
+def weights(project, region=None, sample_codes=None):
+    """Coffee fraction of each MOD13Q1 pixel for every mask year, full ("w_M") and persistent
+    ("wp_M"), with NO municipality filter: the 30% filter is applied when municipal values are
+    aggregated to regions (Amendment 16d). One asset per region, clipped to its municipalities."""
+    munis = ee.FeatureCollection(f"projects/{project}/assets/{MUNI_ASSET}")
+    if sample_codes:
+        munis, slug = munis.filter(ee.Filter.inList("code", sample_codes)), "sample"
+    else:
+        munis = munis.filter(ee.Filter.eq("region", region))
+        slug = re.sub(r"[^a-z]+", "_", region.lower()).strip("_")[:20]
     proj = ee.ImageCollection("MODIS/061/MOD13Q1").first().select("EVI").projection()
     bands = []
     for m in MASK_YEARS:
-        keep = [int(c) for c in kept[(kept.mask_year == m) & kept.kept].code]
-        ok = codes.remap(keep, [1] * len(keep), 0).eq(1) if keep else ee.Image(0)
-        full = coffee(m).And(ok).unmask(0)
-        pers = coffee(m).And(coffee(m - 1)).And(coffee(m - 2)).And(ok).unmask(0)
+        full = coffee(m).unmask(0)
+        pers = coffee(m).And(coffee(m - 1)).And(coffee(m - 2)).unmask(0)
         for kind, img in (("w", full), ("wp", pers)):
             bands.append(img.reduceResolution(ee.Reducer.mean(), maxPixels=1024).reproject(proj)
                          .rename(f"{kind}_{m}").toFloat())
-    img = ee.Image.cat(bands).updateMask(codes.reduceResolution(ee.Reducer.count(), maxPixels=1024)
-                                         .reproject(proj).gt(0))
-    slug = re.sub(r"[^a-z]+", "_", region.lower()).strip("_")[:20]
+    img = ee.Image.cat(bands).clipToCollection(munis)
     p = proj.getInfo()
     task = ee.batch.Export.image.toAsset(
         image=img, description=f"w1_weights_{slug}", assetId=f"projects/{project}/assets/w1_weights_{slug}",
@@ -133,9 +136,10 @@ def weights(project, region):
         pyramidingPolicy={".default": "mean"})
     task.start()
     st, wall = wait(task)
-    log_cost(f"weights_{slug}", float(st.get("batch_eecu_usage_seconds", 0) or 0),
-             f", {st['state']}, {wall:.0f} s wall, {len(bands)} bands"
+    cost = float(st.get("batch_eecu_usage_seconds", 0) or 0)
+    log_cost(f"weights_{slug}", cost, f", {st['state']}, {wall:.0f} s wall, {len(bands)} bands"
              + (f" | {st.get('error_message', '')}" if st["state"] != "COMPLETED" else ""))
+    return cost
 
 
 def main():
@@ -153,7 +157,8 @@ def main():
         codes = open(args.sample).read().split() if args.sample else None
         areas(project, args.year if args.probe and not codes else None, codes)
     else:
-        weights(project, args.region)
+        codes = open(args.sample).read().split() if args.sample else None
+        weights(project, args.region, codes)
 
 
 if __name__ == "__main__":

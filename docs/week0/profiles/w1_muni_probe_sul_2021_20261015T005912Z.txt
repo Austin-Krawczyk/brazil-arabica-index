@@ -1,0 +1,1 @@
+batch export w1_muni_probe_sul_2021: 445 EECU-seconds (batch_eecu_usage_seconds), 4370 rows, 32 s wall

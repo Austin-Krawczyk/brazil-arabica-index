@@ -136,10 +136,17 @@ def run(project, region, start, end):
 FULL_START, FULL_END = "2000-01-01", "2026-01-01"
 
 
-def run_full(project, region, start=FULL_START, end=FULL_END):
+def run_full(project, region, start=FULL_START, end=FULL_END, sample_codes=None):
+    """Per municipality and composite (Amendment 16d): the filter is applied at aggregation."""
     col = ee.ImageCollection("MODIS/061/MOD13Q1").filterDate(start, end)
     proj = col.first().select("EVI").projection()
-    weights = ee.Image(f"projects/{project}/assets/w1_weights_{slug_of(region)}")
+    munis = ee.FeatureCollection(f"projects/{project}/assets/w1_municipios_index")
+    if sample_codes:
+        munis, wslug = munis.filter(ee.Filter.inList("code", sample_codes)), "sample"
+    else:
+        munis, wslug = munis.filter(ee.Filter.eq("region", region)), slug_of(region)
+    munis = munis.select(["code", "region"])
+    weights = ee.Image(f"projects/{project}/assets/w1_weights_{wslug}")
     reducer = (ee.Reducer.median().combine(ee.Reducer.mean(), sharedInputs=True)
                .combine(ee.Reducer.sum(), sharedInputs=True))
 
@@ -158,15 +165,17 @@ def run_full(project, region, start=FULL_START, end=FULL_END):
                 ok = qa.gte(0).And(qa.lte(qmax))
                 bands += [vi.updateMask(ok).updateMask(w).rename([f"{v}_{q}_EVI", f"{v}_{q}_NDVI"]),
                           w.updateMask(ok).rename(f"{v}_{q}_w_valid")]
-        stats = ee.Image.cat(bands).reduceRegion(reducer, crs=proj, scale=231.656, maxPixels=1e10, tileScale=4)
-        return ee.Feature(None, stats).set("composite_start", d.format("YYYY-MM-dd"), "season", season,
-                                           "mask_year", season.subtract(2))
+        per_muni = ee.Image.cat(bands).reduceRegions(collection=munis, reducer=reducer, crs=proj,
+                                                     scale=231.656, tileScale=4)
+        return (per_muni.filter(ee.Filter.gt("f_w_total_sum", 0))
+                .map(lambda f: f.set("composite_start", d.format("YYYY-MM-dd"), "season", season,
+                                     "mask_year", season.subtract(2))))
 
-    return ee.FeatureCollection(col.map(per_image))
+    return ee.FeatureCollection(col.map(per_image)).flatten()
 
 
 def full_selectors():
-    out = ["composite_start", "season", "mask_year"]
+    out = ["code", "region", "composite_start", "season", "mask_year"]
     for v in ("f", "p"):
         out.append(f"{v}_w_total_sum")
         for q in ("q0", "q1"):
@@ -180,6 +189,7 @@ def main():
     a.add_argument("--probe", action="store_true", help="only the probe is run")
     a.add_argument("--export-weight", action="store_true", help="save the region's coffee weight once")
     a.add_argument("--full", action="store_true", help="the full W1 series for one region")
+    a.add_argument("--sample", help="file of municipality codes (with --full --probe)")
     a.add_argument("--region", default="Sul e Centro-Oeste", choices=list(REGIONS))
     a.add_argument("--year", type=int, default=2021)
     args = a.parse_args()
@@ -190,11 +200,12 @@ def main():
     if args.full:
         t0 = time.time()
         slug = slug_of(args.region)
+        codes = open(args.sample).read().split() if args.sample else None
         if args.probe:
-            fc, name = run_full(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01"), \
-                f"w1_full_probe_{slug}_{args.year}"
+            fc = run_full(project, args.region, f"{args.year}-01-01", f"{args.year + 1}-01-01", codes)
+            name = f"w1_full_probe_{'sample' if codes else slug}_{args.year}"
         else:
-            fc, name = run_full(project, args.region), f"w1_series_{slug}"
+            fc, name = run_full(project, args.region), f"w1_series_muni_{slug}"
         df = export_and_fetch(fc, name, full_selectors())
         cost = BATCH_COSTS[-1][1]
         stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
