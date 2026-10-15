@@ -13,13 +13,16 @@ entry's tag is logged in `SPEC_CHANGELOG.md` and listed in the backtest report.
 the owner has not yet made; nothing here fills one in. Every OPEN item in prereg-1 must be
 decided before the tag.
 
-## prereg-1 — to be fixed before W2 (not yet tagged; draft of 2026-10-14)
+## prereg-1 — to be fixed before W2 (not yet tagged; draft of 2026-10-15)
 
 Amendment 15's list: the feature list, with each input's source, window and standardisation;
 the weighting method and the terms counted toward the cap of four; the direction pass marks; the
 frost tier constant values.
 
-### A. Seasons and windows (§3a)
+**Status, 2026-10-15: two items OPEN.** The frost penalty values per tier (F) and the citation for
+the 34 °C heat threshold (B). The owner tags `prereg-1` only when both are closed.
+
+### A. Seasons, windows and note dates (§3a)
 
 | Item | Value | Source | Status |
 |---|---|---|---|
@@ -30,34 +33,56 @@ frost tier constant values.
 | Bean fill | Dec 1 of S−1 to Mar 31 of S | §3a, §5 step 3 | decided |
 | Harvest rain | May–Sep of S: not an input (falls after every note on crop S) | §5 step 3 | decided |
 | Backtest seasons | Without frost: Sul e Centro-Oeste, Triângulo and São Paulo, crops 2001–2025; Zona da Mata and the four-region total, crops 2008–2025. With frost: crops 2009–2025 | §5 step 8, Amendment 19b | decided |
-| Note dates per vintage (November, December, January) in the backtest | The calendar date each vintage's inputs are cut at. Production: note 1 late November; index notes in the first week of each month; the post-survey note within five business days of Conab's first survey, or 1 February (§6) | §5 step 8, §6 | **OPEN: fixed calendar dates per vintage** |
+| **Backtest cut dates per vintage** | Inputs are cut at: **November vintage, 20 November of S−1; December vintage, 1 December of S−1; January vintage, 1 January of S.** Production publishes within the first week after each cut, and note 1 in late November (§6) | §5 step 8, §6 | **decided 2026-10-15** (owner, item 1) |
 
 ### B. The four fitted inputs (stage 2, the cap of four; §5 step 6)
 
-| Input | Source and band | Window | Aggregation | Standardisation | Status |
-|---|---|---|---|---|---|
-| **EVI anomaly** | `MODIS/061/MOD13Q1`, band `EVI` (× 0.0001), 250 m, 16-day | **OPEN:** which 16-day composites enter a season's reading at each vintage, and how they are combined into one value | Per 16-day window, area-weighted median over the mask, cloud-masked (§5 step 2). **QA: `SummaryQA` 0–1 (good or marginal)**, registered 2026-10-14 on rainy-season coverage grounds; the strict variant (0 only) is not computed | z-score against the same 16-day window across the baseline years (§5 step 2), refitted without the held-out season (§5 step 8) | Source, z-score and QA rule decided. **OPEN: the composite set per vintage** |
-| **Flowering rain deficit** | `UCSB-CHG/CHIRPS/DAILY` (final) for the backtest; CHC prelim (§4) for current months not yet final | Sep 1–Nov 30 of S−1 | Total over the mask | **OPEN:** z-score of the total, or deficit as a share of normal; and how a window still open at the note date is treated (to-date total against to-date normal?) | Source and window decided. **OPEN: deficit definition and to-date rule** |
-| **Dry-season root-zone soil moisture** | `ECMWF/ERA5_LAND/HOURLY`, `volumetric_soil_water_layer_1`–`_3`, weighted **0.07 / 0.21 / 0.72** by layer thickness (0–7, 7–28, 28–100 cm) | May–Aug of S−1 | Over the mask | Anomaly against the same window across the baseline years (§5 step 5). **OPEN: z-score or raw anomaly** | Source, layers, weights and window decided (Amendment 28) |
-| **Heat days in flowering** | `ECMWF/ERA5_LAND/HOURLY`, `temperature_2m` | Sep–Nov of S−1 | Days with maximum temperature above **34 °C**, over the mask | **OPEN:** standardisation; the day boundary for the daily maximum (UTC or local) | Threshold and window decided. **OPEN: day boundary; how the count is aggregated over the mask** |
+**Aggregation, all four inputs (Amendment 35; item 9).**
+- **Members:** in season S, the municipalities that are kept by the filter (Amendment 16d), have
+  PAM coffee area for PAM year S−2, and have at least one MODIS pixel of mapped coffee under season
+  S's mask. PAM weights are renormalised once per season over the members.
+- **Municipal value:** over the municipality's coffee-mask pixels.
+- **Municipal anomaly:** the value minus the municipality's own mean for the same window, in the
+  input's units. The mean comes from 2000–2025, in member seasons only, with at least 10 years;
+  otherwise the municipality has no anomaly. It is refitted without the held-out season in the
+  backtest.
+- **Regional anomaly:** the PAM-weighted mean of members' anomalies.
+- **Regional z-score:** against the same window across the baseline years, refitted without the
+  held-out season. This is the stage-2 input.
+- **EVI only:** cloud rules apply.
+  - A reading counts only with at least one pixel of cloud-free coffee.
+  - A regional composite is missing when members with an anomaly hold under 50% of the season's
+    member PAM weight.
+  - The covered-weight fraction is reported for every composite.
+- **Four-region total (item 10):** the PAM-weighted mean of all members' anomalies across the four
+  regions, z-scored the same way. Regions are weighted by their member PAM area (year S−2), not by
+  production. The four-region yield target that follows is Conab's four-unit production over
+  four-unit area.
+
+| Input | Source and band | Window, and what is available at a cut | Municipal value | Status |
+|---|---|---|---|---|
+| **EVI anomaly** | `MODIS/061/MOD13Q1`, band `EVI` (× 0.0001), 250 m, 16-day. **QA: `SummaryQA` 0–1** (registered 2026-10-14) | Every composite from **1 May of S−1** that is available at the cut. A composite is available if it **ended at least 14 days before the cut** (item 3: 76 of 86 composites in 2023–2026 were published within 14 days of their end; four December–January composites took 35–48 days). The season value is the **unweighted mean of those composites' regional z-scores**, with missing composites skipped and their count reported (item 2). **Sensitivity:** composites from 1 Sep of S−1 only | Coffee-weighted median per composite (Amendment 35) | **decided** (Amendment 35; items 2 and 3) |
+| **Flowering rain deficit** | `UCSB-CHG/CHIRPS/DAILY` (final) for the backtest; CHC prelim (§4) for current months not yet final, as in Amendment 9 | **From 1 Sep of S−1 to the earlier of 30 Nov and the end of the last pentad ending at least 5 days before the cut** (item 5). Pentads end on the 5th, 10th, 15th, 20th, 25th and last day of each month. At the 20 November cut that is 1 Sep–15 Nov; the December and January cuts see the whole window | To-date rainfall total; anomaly against the same calendar span. Standardised as a **z-score of the to-date total**, not a share of normal (item 6) | **decided** (items 5 and 6) |
+| **Dry-season root-zone soil moisture** | `ECMWF/ERA5_LAND/HOURLY`, `volumetric_soil_water_layer_1`–`_3`, weighted **0.07 / 0.21 / 0.72** by layer thickness | May–Aug of S−1. Closed before every cut | Mean of the layer-weighted moisture over the window. **z-score** (item 7) | **decided** (Amendment 28; item 7) |
+| **Heat days in flowering** | `ECMWF/ERA5_LAND/HOURLY`, `temperature_2m` | From 1 Sep of S−1 to the earlier of 30 Nov and 10 days before the cut (ERA5-Land availability, item 4) | Count of days whose maximum temperature exceeds **34 °C**. Each day is 00:00–24:00 at **UTC−3**, Brazil's standard time, in every year; daylight saving is ignored. Standardised as a **z-score with the standard deviation floored at 1 day**, because the count is mostly zero at coffee altitudes (item 8) | **decided, except the 34 °C citation: OPEN.** It must be cited to the same standard as the frost constants (owner, item 8). **Caveat recorded:** ERA5-Land's 9 km grid smooths the terrain, so in the hilly Sul e Centro-Oeste and Zona da Mata, Rio Doce e Central the grid-cell elevation can differ from the coffee fields' by hundreds of metres. Its 2 m temperature, and the count above 34 °C, may be biased there; no lapse-rate correction is applied, the bias is not measured, and it is stated beside heat-day results for those regions |
 
 | Item | Value | Source | Status |
 |---|---|---|---|
 | EVI as the single vegetation term | EVI, because NDVI saturates in dense coffee canopies and EVI was designed for that case | §5 step 6, Amendment 19 | decided |
-| Regional aggregation | §5 step 2 says area-weighted median over the mask; §3 says municipality values aggregated to region by IBGE PAM coffee area. These are two different estimators | §3, §5 step 2 | **OPEN: which one, or which applies to which input** |
-| Four-region total | Weighted by IBGE PAM harvested area or by production | §10 still-open item 2 | **OPEN** |
-| Cerrado irrigation adjustment | If adopted, a fixed multiplier on the rain inputs for Triângulo, not a parameter | §5 step 6, §10 still-open item 4 | **OPEN: adopted or not, and its value** |
+| Regional aggregation | As above: municipal anomalies against each municipality's own climatology, PAM-weighted, then a regional z-score | Amendment 35; item 9 | **decided 2026-10-15** |
+| Four-region total | PAM area (year S−2), as above | §10 still-open item 2; item 10 | **decided 2026-10-15** |
+| Cerrado irrigation adjustment | **Not adopted in v1.** It would be the only region-specific term and needs a Censo Agro value not yet obtained. Triângulo's rain-only skill is reported separately | §5 step 6, §10 still-open item 4; item 11 | **decided 2026-10-15** |
 | Vegetation product rules | `MOD13Q1` primary. Trigger (a): no composite ending within 32 days of a note date. Trigger (b): signed average EVI divergence from VIIRS above 0.5 SD over 2024–2026 (four-region total or two or more regions), evaluated once in Week 0. Fallback (b), VJ113A1, accepted 2026-10-14, with its anomaly against its own 2018–2025 baseline | §4a; Amendments 25, 26, 30, 31, 33 | decided; trigger (b) awaits the formal per-region drift run |
 | Rainfall product rules | Final CHIRPS for the baseline and the whole backtest. CHC prelim only for current-season months not yet final; final for month M counts as published from the 1st of M+2. Sensitivity rerun with prelim substituted | §9, Amendment 9 (revised) | decided |
-| Data availability at a note date, besides CHIRPS | Publication lags for `MOD13Q1` composites and ERA5-Land, used to cut each vintage's inputs | §5 step 8 ("only inputs available as of each note date") | **OPEN: the lag for each** |
+| Data availability at a cut, besides CHIRPS | `MOD13Q1`: a composite is available if it ended at least 14 days before the cut. ERA5-Land: data through 10 days before the cut. Measured 2026-10-15 (Week 0 report §14) | §5 step 8; items 3 and 4 | **decided 2026-10-15** |
 
 ### C. Computed and reported, not fitted (§5 step 6)
 
 | Item | Value | Status |
 |---|---|---|
 | NDVI anomaly | As EVI, in the sensitivity report only. The report states the 2024–26 NDVI drift of unresolved cause and that NDVI-based results are unreliable for those years (Amendment 33) | decided |
-| Consecutive dry days in flowering | CHIRPS. Daily prelim counts are not compared with final-CHIRPS counts until the gap is measured on overlapping months (Amendment 29) | decided; **OPEN: the dry-day rain threshold (mm)** |
-| Bean-fill rain to date | CHIRPS, Dec of S−1 to the note date | decided |
+| Consecutive dry days in flowering | CHIRPS. **A dry day has under 1 mm** (the ETCCDI consecutive-dry-days definition; item 12). Daily prelim counts are not compared with final-CHIRPS counts until the gap is measured on overlapping months (Amendment 29) | **decided 2026-10-15** |
+| Bean-fill rain to date | CHIRPS, Dec of S−1 to the cut, under the same pentad rule as flowering rain | decided |
 
 ### D. Stage 1, the expectation (§5 steps 6–7)
 
@@ -73,7 +98,7 @@ frost tier constant values.
 |---|---|---|
 | Method | Ridge regression of the stage-1 yield anomaly, after the frost offset, on the four standardised inputs in B. One set of weights shared by all four regions | decided |
 | Terms counted toward the cap of four | The four stage-2 weights only. Stage 1 and the frost offset do not count | decided |
-| Ridge penalty | Chosen by an inner leave-one-year-out loop inside each training set, from a fixed grid | method decided; **OPEN: the grid** |
+| **Ridge grid** | λ ∈ {0} ∪ {10^k : k = −2, −1.75, …, 3}: zero plus 21 log-spaced values from 0.01 to 1,000. Inputs standardised; intercept not penalised. The inner leave-one-year-out loop picks the λ with the lowest mean squared error; ties go to the larger λ (item 13) | **decided 2026-10-15** |
 
 ### F. Frost constants: values (§5 steps 4 and 6; Amendments 13, 17, 17b, 17c)
 
@@ -88,7 +113,7 @@ frost tier constant values.
 | Regional flag | Stations meeting a tier cover at least **25% of the region's observed coffee** | decided |
 | Coverage floor | **15%** observed coverage; registered at `prereg-2` with its statement | decided (value); registration at `prereg-2` |
 | Penalty form | Yield loss on affected area × the tier's share of observed coffee, applied as a fixed offset; assumes unobserved coffee behaves like observed coffee | decided |
-| **Penalty values per tier** | Yield loss on affected area for the 2 °C tier and for the severe tier | **OPEN** (values here; sources at `prereg-2`) |
+| **Penalty values per tier** | Yield loss on affected area for the 2 °C tier and for the severe tier | **OPEN.** Owner, 2026-10-15: two or three candidate values per tier from Embrapa, IAC and peer-reviewed work, with citations, for the owner to choose before the tag. Values set from what the July 2021 frost did to crop 2022 would be in-sample (values here; sources at `prereg-2`) |
 | Frost series | From crop 2009 (the Jun–Aug 2008 window); not filled before | decided |
 | Double counting and carryover | The 2022 call is in-sample. Crops 2022 and 2023, and any frost-flagged season, are reported with and without the frost component | decided |
 
@@ -97,7 +122,7 @@ frost tier constant values.
 | Item | Value | Status |
 |---|---|---|
 | Cross-validation | Leave one season out, in all four regions at once. Everything fitted is refitted without it: z-score means and SDs, trend, biennial coefficient, ridge penalty, weights | decided |
-| Vintages | November, December, January, each using only inputs available at its note date (dates: OPEN, see A) | decided |
+| Vintages | November, December, January, each using only inputs available at its cut date (A: 20 November, 1 December, 1 January) | decided |
 | Targets | Condition direction: the sign of actual yield minus the stage-1 expectation. Yield versus trend: the sign of actual yield minus trend | decided |
 | Comparison models | Zero anomaly; biennial only; rain only (expectation plus flowering rain deficit) | decided |
 | **Direction pass marks** | Rule: p < 0.05, one-sided; the exact p-value is reported beside every mark. Without frost: Sul, Triângulo and São Paulo, crops 2001–2025, **18 of 25** (p = 0.0216); Zona da Mata and the four-region total, crops 2008–2025, **13 of 18** (p = 0.0481). With frost, crops 2009–2025: **13 of 17** (p = 0.0245). If the share of positive anomalies is away from 50%, each mark becomes the larger of its value and the count that beats the majority share at p < 0.05 (computed at `prereg-2`) | decided (Amendment 19b) |
