@@ -1830,3 +1830,138 @@ filter, or without PAM area.
   aggregate 2026-10-06, 6 and 9 days behind.
 - **CHIRPS daily final** reaches 2026-08-31. That fits Amendment 9's rule: September's final is
   counted as published from 1 November.
+
+## 15. Frost penalty and heat-threshold sources: candidates for `prereg-1` (2026-10-15)
+
+The owner asked for two or three candidate values per frost tier and any citable heat threshold,
+from Embrapa, IAC and peer-reviewed work, before tagging `prereg-1`.
+
+**Method:**
+- Two literature searches, with every number traced to a source opened and read.
+- The load-bearing sources were then checked again here against their PDFs:
+  - Santos & Camargo 2006 (coefficients, conditions, 1994 values, the 34 °C clause);
+  - Assad et al. 2004, p. 1058;
+  - Nunes et al. 1968, p. 98.
+- Nothing is chosen here; the owner chooses.
+
+### The one temperature-keyed loss function
+
+**Santos, M.A. & Camargo, M.B.P. (2006).** Parametrização de modelo agrometeorológico de
+estimativa de produtividade do cafeeiro nas condições do Estado de São Paulo. *Bragantia*
+65(1):173–183 (IAC, peer-reviewed), pp. 176–179.
+
+- **What it gives:** the Gaussian penalty of Camargo et al. (2003), with
+  a1 = 140.3445, b1 = −2.9580 and c1 = 1.7701.
+- **Input:** the year's absolute minimum shelter temperature, applied only below 2 °C, in the year
+  before the harvest it cuts.
+- **Output:** the percentage of coffee trees damaged, used as a percentage cut in next-crop
+  yield. That matches "yield loss on affected area".
+- **Values:**
+
+  | Shelter minimum (°C) | 2.0 | 1.5 | 1.0 | 0.5 | 0.0 | −0.5 | −1.0 | ≤ −1.5 |
+  |---|---|---|---|---|---|---|---|---|
+  | Loss (%) | 2.8 | 5.9 | 11.5 | 20.8 | 34.7 | 53.5 | 76.1 | 100 |
+
+  Band averages: 14.0% over 0–2 °C, 54.2% over −1–0 °C, 74.1% over −2–0 °C.
+- **Its 1994 cases:** Fazenda Serra (Mococa) at 0.0 °C gives 34.7%; Fazenda São Carlos (Gália)
+  at −2.0 °C gives 100%.
+- **Limits:**
+  - The calibration behind the coefficients is not established: Camargo et al. (2003) is a
+    one-page abstract.
+  - The input is the single coldest night. No source found keys yield loss to a count of nights,
+    so the sensitive tier's three-night criterion has no yield source.
+  - A tier constant needs a representative minimum, which must be set by rule, not from station
+    data.
+- **Counter-evidence at the severe end:** Vasconcellos et al. (2012), XVII Congresso Brasileiro de
+  Meteorologia, Embrapa/IAC authors.
+  - At São Sebastião do Paraíso (MG, 965 m), the same IAC model gave 100% loss after −2.8 °C
+    minima in 1990 and 1994.
+  - Observed yields were higher; the authors attribute this to frost damaging the outer canopy
+    only. The model's R² was 0.15.
+  - They also restate Pereira, Camargo & Camargo (2008, IAC book, not opened): practically no loss
+    at 2 °C, a steep rise below it, total loss below −1 °C.
+
+### Class-based sources (not keyed to temperature)
+
+- **IBC estimates after the 1979 frost.** Nunes, E.P. (1979), *Revista Brasileira de Geografia*
+  41(4):100–104 (IBGE), pp. 102–103.
+  - In Mogiana, 300 of 700 million frost-hit trees were not expected to produce the next crop,
+    about 43% of hit trees.
+  - The IBC cut Minas Gerais's 1979/80 estimate from 7.1 to 4.1 million bags.
+  - These are ex-ante estimates for a leaf-burn frost, with no temperatures given.
+- **Expocacer, August 2025,** reported by Reuters/Forbes Brasil. Press, below the owner's source
+  standard.
+  - Loss of next-crop potential on frost-hit area: light damage 30%, moderate 60%, severe 90%,
+    average 55%.
+  - The classes are visual. The frost hit crop 2026, the addendum season, and the estimate
+    predates that crop's outcome.
+- **Not found:** a Procafé (Matiello) schedule of 20–40% loss for leaf burn and 50–70% for
+  moderate damage, attributed by a search summary. Five pages checked did not contain it.
+
+**In-sample check:** no candidate derives from the July 2021 frost. The 2021 material found
+(Embrapa COT-250, EPAMIG CT-360, Conab's preliminary figures) gives no rates by class or
+temperature, and it would be in-sample anyway.
+
+### Heat threshold, 34 °C
+
+**Citable:**
+- **Assad, Pinto, Zullo & Ávila (2004).** *Pesquisa Agropecuária Brasileira* 39(11):1057–1064
+  (Embrapa, peer-reviewed), p. 1058.
+  - Frequent maxima above 34 °C cause flower abortion and so loss of yield.
+  - It cites Camargo 1985, Pinto et al. 2001 and Sediyama et al. 2001.
+  - The same page notes that the zoning tolerates a monthly mean of up to 24 °C for flower
+    abortion.
+- **Santos & Camargo (2006),** *Bragantia* 65(1), as above.
+  - The same IAC model penalises absolute maxima above 34 °C during the first three ten-day
+    periods after full anthesis, with a Gompertz function from Camargo et al. (2003).
+  - It says a mean of 23 °C can stand in for the 34 °C maximum.
+- **Assad, Evangelista, Silva & Lopes (2000).** Embrapa Cerrados Comunicado Técnico 36, p. 2.
+  - October–November maxima reaching 34 °C can cause flower abortion.
+  - It credits an IAC zoning report of 1972 (not found).
+
+**Where the number comes from:**
+- **Nunes, Bierhuizen & Ploegman (1968).** *Acta Botanica Neerlandica* 17:93–102, p. 98.
+  - About 10% loss of dry matter per °C above 24 °C, so dry-matter production approaches zero
+    above 34 °C.
+  - That is a photosynthesis extrapolation on young plants in a chamber. It says nothing about
+    flowering.
+- The flower-abortion link rests on Camargo (1985, *Informe Agropecuário* 11(126)), which was
+  not found online.
+
+**Against or qualifying it:**
+- **Drinnan & Menzel (1995)**, *Journal of Horticultural Science* 70:25–34 (abstract only):
+  sustained 33/28 °C day/night stopped floral initiation, a different stage.
+- **Camargo & Camargo (2001)**, *Bragantia* 60(1), p. 67, and **DaMatta & Ramalho (2006)**:
+  flower damage from heat is tied to a concurrent water deficit.
+- **Zoning:** ZARC limits use mean temperatures, not daily maxima.
+
+**Reading:** 34 °C as a daily maximum is citable to Embrapa and IAC peer-reviewed work, but every
+statement of it is secondary. No source opened measures flower abortion or fruit set against
+daily maximum temperature. Under §5 step 4's rule, that is "provisional, no clean primary source"
+unless Camargo (1985) is found and shows a measurement.
+
+### ERA5-Land elevation caveat: sources
+
+- **Muñoz-Sabater et al. (2021).** *Earth System Science Data* 13:4349–4383, Sect. 2.3.
+  ERA5-Land's air temperature is lapse-rate corrected only to its own 9 km orography. Relief
+  within a grid cell is not corrected.
+- **Zhao, He, Ma & Wang (2023).** *Frontiers in Ecology and Evolution* 11:1135895.
+  - Qilian Mountains: ERA5-Land's daily-maximum bias is driven mainly by the elevation difference
+    between station and grid cell.
+  - It is a high-mountain study, not tropical hills.
+- **Direction at coffee fields:** where the grid cell lies lower than the fields, heat days at the
+  fields are overstated. That is an inference from the lapse rate, not a finding.
+
+### For `prereg-2`: frost offset and leaf-threshold sources
+
+- **Camargo & Salati (1966),** *Bragantia* 25(2), Nota 14: leaf damage begins at −2 °C and is
+  general below −3 °C. Thermometers were exposed beside the leaves, not sheltered.
+- **Sentelhas, Ortolani & Pezzopane (1995),** *Bragantia* 54(2):437–445.
+  - 226 frost nights at 10 São Paulo sites; shelter minus grass averages 4.1 °C (range 3.3–5.7).
+  - It defines a frost night as a shelter minimum ≤ 2 °C, citing that as coffee's damage onset.
+- **Astolpho, Camargo & Bardin (2004),** *Bragantia* 63(1):141–147. Shelter 2 °C and 1 °C are
+  equivalent to leaf temperatures of about −3.6 °C and −4.6 °C, using Fagnani & Pinto's
+  (1981) 5.6 °C difference.
+- **The spec's offset is not directly measured.** These sources give shelter minus *grass*
+  (4.1–5.6 °C). The spec's 3–4 °C shelter-minus-*leaf* figure is an interpolation and should be
+  marked provisional unless a direct measurement is found.
