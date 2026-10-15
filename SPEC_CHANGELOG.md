@@ -879,3 +879,54 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   days.
 
   Approved by owner with choices (a) to (d) as listed.
+
+- 2026-10-15 — **AMENDMENT 36: frost loss on affected area fixed by formula; screen-to-leaf
+  offset provisional.** Amends §5 steps 4 and 6.
+
+  **Reason:**
+  - §5 step 6 required the loss on affected area per tier to be registered at `prereg-1`, from
+    Embrapa, IAC or peer-reviewed work.
+  - A literature search (Week 0 report §15) found one source keyed to shelter temperature:
+    Santos & Camargo (2006), *Bragantia* 65(1):173–183. It parameterises the Gaussian of
+    Camargo et al. (2003), giving the percentage of trees damaged from the year's absolute
+    minimum shelter temperature below 2 °C, applied as a cut to the next crop.
+  - Vasconcellos et al. (2012) found the same IAC model's 100% loss overstated observed yields
+    after −2.8 °C minima at São Sebastião do Paraíso, MG.
+  - No source keys yield loss to a count of nights.
+
+  **Changes:**
+  1. **§5 step 6:** the loss on affected area is the Santos & Camargo (2006) damage fraction at
+     T, the coldest observed Jun–Aug shelter minimum of the station whose 25 km circle covers the
+     coffee. It is zero above 2 °C and capped at the formula's value at −1 °C (76.1%), citing
+     Vasconcellos et al. (2012). It is fixed by formula, not fitted.
+  2. **Per station, not per tier** (owner choice (b)). This is how the source applied it, it
+     matches the registered 25 km circle design, and it keeps one anomalous station from setting
+     the loss for a whole region.
+     - **Overlap rule:** where circles overlap, the colder applies, consistent with severe over
+       sensitive.
+     - **The arithmetic that follows:** a tier's penalty is the sum of loss over the coffee in
+       that tier's share, divided by observed coffee. Only stations meeting a tier contribute;
+       coffee covered only by stations meeting no tier has no penalty.
+  3. **Tiers, flag, shares and exclusivity are unchanged.** The three-night rule is marked
+     provisional.
+  4. **For transparency, the fixed constants that would otherwise have applied:** 11.5%
+     (sensitive; the formula at 1 °C) and 54% (severe; its average from 0 to −1 °C).
+  5. **§5 step 4: the screen-to-leaf offset is marked provisional,** as that step requires when no
+     clean source exists.
+     - The sources measure shelter minus grass: 4.1 °C (Sentelhas, Ortolani & Pezzopane 1995) and
+       5.6 °C (via Astolpho, Camargo & Bardin 2004).
+     - The 3–4 °C screen-to-leaf figure is an interpolation.
+
+  **Equation, disclosed:**
+  - The equation's layout in the source PDF is garbled. The form used,
+    140.3445 × exp(−½((T − b1)/c1)²) with b1 = −2.9580 and c1 = 1.7701, is a reconstruction.
+  - It was verified against the paper's tabulated values. 0.0 °C gives 34.7% and −2.0 °C gives
+    100% (capped), both checked in the text. The literature search reproduced all eight values in
+    the paper's Tables 2–3.
+  - The owner checked the anchors 2.78% at 2 °C, 34.7% at 0 °C and 76.1% at −1 °C.
+  - The alternative reading, with c1 not squared, gives 11.9% at 0 °C and does not reproduce the
+    table.
+
+  **In-sample check:** no value derives from the July 2021 frost.
+
+  Approved by owner as written, with choice (b).

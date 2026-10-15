@@ -569,6 +569,11 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      - leaf damage: Embrapa, IAC or peer-reviewed frost-physiology work;
      - the offset: a published screen-versus-leaf or screen-versus-ground study.
      If no clean source exists for the offset, say so here and mark it provisional.
+     **Offset provisional (Amendment 36):** no direct screen-versus-leaf measurement was found.
+     The sources measure screen minus *grass*: 4.1 °C on average over 226 São Paulo frost nights
+     (Sentelhas, Ortolani & Pezzopane 1995, which also cites a 2 °C screen minimum as the point
+     where coffee damage starts) and 5.6 °C (via Astolpho, Camargo & Bardin 2004). The 3–4 °C
+     screen-to-leaf figure is an interpolation.
    - **Station tiers.** A station meets the 2 °C tier with three or more nights ≤ 2 °C in
      Jun–Aug, and the severe tier with one or more nights ≤ 0 °C.
    - **Missing nights (Amendment 17b).** A night counts as observed only if every hour from
@@ -627,9 +632,25 @@ region and scored against Conab. **Keep it simple enough to explain in a 15-minu
      (Amendment 17c). The 25% flag therefore sets the floor, and the penalty grows with the
      tier's share. Tiers are exclusive: the severe-tier penalty applies to
      the share meeting the severe tier, and the 2 °C penalty to the share meeting the 2 °C tier
-     but not the severe tier. Penalty values are registered at `prereg-1` and their sources at
-     `prereg-2` (§9): Embrapa, IAC or peer-reviewed frost-damage work. Where no clean source
-     exists, say so and mark the value provisional.
+     but not the severe tier.
+   - **Loss on affected area (AMENDED 2026-10-15, Amendment 36): fixed by formula, not fitted.**
+     - The loss is the damage fraction from Santos & Camargo (2006, *Bragantia* 65(1):173–183),
+       based on the formula in Camargo et al. (2003): 140.3445 × exp(−½((T + 2.9580)/1.7701)²) %.
+       T is the coldest observed shelter minimum in Jun–Aug at the station whose 25 km circle
+       covers the coffee; where circles overlap, the colder applies.
+     - It is zero above 2 °C. It is capped at the formula's value at −1 °C, 76.1%, because the full
+       formula's 100% overstated real yields after −2.8 °C frosts at São Sebastião do Paraíso
+       (Vasconcellos et al. 2012).
+     - The sensitive tier's loss therefore falls between 2.8% and 34.7%, and the severe tier's
+       between 34.7% and 76.1%.
+     - **Provisional:** the formula uses the single coldest night. No source ties yield loss to a
+       count of nights, so the three-night rule is provisional. The calibration behind the
+       coefficients is not established.
+     - **For transparency, the fixed values that would otherwise have applied:** 11.5% for the
+       sensitive tier (the formula at 1 °C) and 54% for the severe tier (its average from 0 to
+       −1 °C).
+     - A station whose tier is unresolved (Amendment 17b) is handled as for tier shares: results
+       are reported with and without it.
    - In the regression, the frost penalty is a fixed offset. The fitted weights are estimated on
      the yield anomaly that remains after it.
    - **The crop 2022 call is in-sample.** The constants are being set by someone who knows what
