@@ -2326,3 +2326,110 @@ screen-height stations see it, and the network mostly sits on plateaus and upper
 - The 2021 Planet frost case study is now the first Planet task (Amendment 40).
 - The Jun–Aug 2026 reading at Caldas (−0.5 °C, 14 July) goes into note 1 as outside the rule and
   not scored.
+
+## 20. W2: season inputs computed and frozen (2026-10-15) — checkpoint
+
+**Order (owner):** frost (§19), rain, soil moisture and heat days, then EVI from the W1 tables.
+
+**Method:**
+- Every Earth Engine step was a watched batch export with a probe first (Amendment 32b).
+- The aggregation follows Amendment 35 and `prereg-1` items 1–9 (`gee/w2_season_inputs.py`): municipal
+  anomaly against the municipality's own climatology, PAM-weighted regional mean, then regional
+  z-score.
+- Every fit takes the held-out crop, so the backtest refits per fold with the same code. The figures
+  below are full-sample.
+
+### Exports (`gee/w2_exports.py`): per municipality, coffee-weighted at each product's native grid
+
+| Export | Probe (EECU-s) | Estimate | Measured | Rows |
+|---|---|---|---|---|
+| Rain: CHIRPS final, daily Sep–Nov and pentads Dec–Mar, crops 2001–2026 | 13 (Sul, crop 2022) | 2,920 | 2,177 | 23,915 |
+| Prelim: CHC prelim pentads Sep–Mar, crops 2016–2026 | 10 | 950 | 938 | 10,374 |
+| Soil moisture: ERA5-Land layers 1–3, May–Aug mean, crops 2001–2027 | 1 (Sul), then 212 (all regions) | 400, then 5,724 | **1,102, cancelled**; then 6,279 | 26,283 |
+| Heat days: ERA5-Land, days above 34 °C Sep–Nov, crops 2001–2026 | 40 (Sul), then 118 (all regions) | 3,068 | 2,732 | 25,274 |
+
+**Cost finding:**
+- The Sul soil-moisture probe reported 1 EECU-second, and the full run, estimated from it, was
+  cancelled by the watchdog at 1,102.
+- A one-season probe over all four regions measured 212, and the full run then cost 1.10× its
+  estimate.
+- The two probes' values agree exactly. So the first probe's cost report, not its computation, was
+  wrong.
+- ERA5-Land hourly cost follows the number of hourly images read more than the area. Its probes are
+  now run on a full season.
+
+**W2 Earth Engine total:** 13,622 EECU-seconds (3.8 EECU-hours), including the cancelled run.
+
+**Cloud Monitoring, 2026-10-15 18:56 UTC:**
+- October in-progress total 485.7 EECU-hours, 48.6% of the cap.
+- Interactive use unchanged at 408.2.
+
+**Sanity checks on the probes (Sul, crop 2022):**
+- Sep–Nov 2021 rain: municipal median 437 mm.
+- Dec–Mar rain: 795 mm.
+- May–Aug root-zone moisture: 0.32 m³/m³.
+- Days above 34 °C: median 0.4, maximum 9.4.
+
+### Prelim versus final CHIRPS, windows 2015–2025 (`docs/week0/w2_prelim_bias_*.csv`)
+
+Prelim minus final over 11 seasons, regional PAM-weighted means:
+
+| Region | Flowering, full window | Flowering, to Nov 15 (November vintage) | Bean fill, full window |
+|---|---|---|---|
+| Four-region total | +3.4% (mean absolute 5.7%) | +3.2% (7.0%) | +5.5% (6.4%) |
+| Sul e Centro-Oeste | +2.5% (6.1%) | +2.6% (5.9%) | +9.4% (10.0%) |
+| São Paulo | −3.3% (5.5%) | −2.5% (6.5%) | +5.2% (5.4%) |
+| Triângulo | +4.7% (9.5%) | +3.5% (10.8%) | +2.5% (6.0%) |
+| Zona da Mata | +11.0% (15.1%) | +11.3% (17.7%) | +1.9% (6.1%) |
+
+- Prelim reads wetter than final in every region but São Paulo, most in Zona da Mata.
+- No correction is applied (§9). The effect on hit rate and mean absolute error is measured in the
+  backtest's prelim rerun.
+
+### Season inputs (`data/derived/w2_season_inputs.csv`)
+
+- **Coverage:** 26 crops (2001–2026) × 4 regions and the four-region total, for each vintage, with
+  no gaps:
+  - EVI, and EVI from 1 Sep (sensitivity);
+  - flowering rain to date, dry days and bean-fill rain (January vintage);
+  - dry-season soil moisture;
+  - heat days.
+- **Frost:** crops 2009–2026.
+- **EVI composites per season value:** 11 (November vintage), 12 (December) and 13–14 (January),
+  as the 14-day availability rule implies.
+- **Crop 2027:** not yet computed. Its members, its Oct–Nov CHIRPS (prelim) and its Sep–Nov ERA5
+  are needed first; that is the production run.
+
+### The W2 check (§8): each season's rank on every input
+
+`docs/week0/w2_ranks.csv` has every rank. 1 = worst of the 25 backtest crops 2001–2025; "worst" is
+low for EVI, rain and soil moisture, and high for heat days, dry days and frost.
+
+November vintage:
+
+| Input | Crop 2022 (July 2021 frost) | Crop 2025 (2024 drought) |
+|---|---|---|
+| Dry-season soil moisture (May–Aug of S−1) | **1–2** in every region but Zona da Mata (8); total 2 | 2–6; total 3 |
+| EVI from 1 May | 4–8; total 4 | 4–10; total 6 |
+| EVI from 1 Sep (sensitivity) | 5–14; total 6 | **1 in São Paulo, Zona da Mata and the total**; 2–3 elsewhere |
+| Heat days (flowering) | 5–12; total 7 | **2–3**, Zona da Mata 9; total 2 |
+| Flowering rain to date | 21–25: among the wettest | 11–20 |
+| Frost penalty | Triângulo flagged (rank 1); Sul and São Paulo not flagged (§19) | no flag anywhere |
+
+**Findings:**
+- **Neither crop is the worst on every input, and nothing was changed to make it so (§8).**
+- **Crop 2022** reads as a dry-season drought crop: the worst root-zone moisture of the 25 years in
+  Sul and São Paulo. Its flowering was wet. The frost shows only in Triângulo.
+- **Crop 2025** reads as a hot, low-vegetation flowering crop: worst EVI from 1 Sep in São Paulo,
+  Zona da Mata and the total, and second-highest heat days. Its flowering rain is near normal.
+- **Driest flowering seasons:** crop 2021 (Sep–Nov 2020, the late onset), then 2026 and 2008.
+
+### Frozen (`data/derived/w2_inputs_manifest.csv`)
+
+- 17 input files, each with rows, bytes and SHA-256, and the code commit at the freeze.
+- **Tables gitignored for size:**
+  - the W1 EVI tables;
+  - rain, prelim and heat;
+  - the frozen-mask pixel table.
+  Each is regenerable by the script named in the manifest.
+- The backtest reads only files listed there, and checks their checksums first.
