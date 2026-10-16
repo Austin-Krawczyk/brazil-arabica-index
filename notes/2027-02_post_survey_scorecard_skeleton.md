@@ -34,7 +34,7 @@ lines, marked [FALLBACK] below, and a scorecard addendum follows the survey.
 | Made as of | 20 Nov 2026 | 1 Dec 2026 | {survey date} |
 | Published in the repo | {commit, date} | {commit, date} | — |
 | Four-region condition anomaly against the expectation | {+/−x.x%} | {+/−x.x%} | {+/−x.x%} (Conab first-survey yield against the same expectation) |
-| Direction | {up / down / within the prelim margin} | {…} | {up / down} |
+| Direction | {up / down / flat, within the preliminary-data margin} | {…} | {up / down} |
 | Sul de Minas · Cerrado Mineiro · Matas de Minas · São Paulo | {…} | {…} | {…} |
 | Vegetation product | {MOD13Q1 / VJ113A1} | {…} | — |
 | Rain months on CHIRPS-prelim | Oct, Nov 2026 | Nov 2026 | — |
@@ -84,6 +84,11 @@ arabica yields.
     and the four-region total; 13–14 of 17 seasons, 2009–2025).
   - Crop 2022, the July 2021 frost, is in-sample.
   - Matas de Minas failed in both versions.
+- **What the frost component did (§24 (2)):**
+  - In Sul de Minas, crop 2012 was a hit that the frost penalty turned into a miss: a 12.8% penalty
+    gave −7.9%, against an actual +19.6%.
+  - São Paulo's and the four-region total's extra hits in the frost version come from its refit on
+    crops with zero frost penalty (São Paulo 2017 and 2019, total 2017), not from frost.
 - **Against a zero-anomaly baseline,** the index's error is lower in four of five units (all but
   Matas de Minas).
 - **Not scored:** December and January vintages.
@@ -105,8 +110,9 @@ arabica yields.
    - The mask under-represents its smallholder and shaded coffee.
    - It failed its backtest pass mark.
 3. **Inputs:**
-   - Rain for {months} is CHIRPS-prelim. A reading within about 1 pp of zero is stated as "within
-     the prelim margin" (proposed in §24 (6), not registered).
+   - Rain for {months} is CHIRPS-prelim. A reading within 1 pp of zero is reported as "flat,
+     within the preliminary-data margin" (Amendment 42; exact text pending approval).
+     - Basis: 3 of 200 sign flips in the prelim rerun.
    - Vegetation: {product} for each reading.
    - Frost: INMET station observations, {coverage} of observed coffee.
 
@@ -121,6 +127,6 @@ arabica yields.
   in the region table.
 - **Planet:** a 3 m figure, labelled "not an input", may go in the LinkedIn post and the repo copy
   only, never in the emailed PDF (§4d).
-- **"Within the prelim margin":** this wording is a proposal from §24 (6). It needs the owner's
-  decision before it is used.
+- **"Flat, within the preliminary-data margin":** adopted by the owner on 2026-10-16 as a notes
+  convention. Its scope and text wait on Amendment 42.
 - **Outreach:** log every reply with name, firm, date and what was said (§6).
