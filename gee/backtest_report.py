@@ -277,9 +277,9 @@ def main(label="v1"):
     rows = [{"Region": SHORT[q.region], "Crop": int(q.crop), "Automatic": f(q.automatic_stations, 0),
              "Conventional": f(q.conventional_stations, 0), "Unresolved": f(q.unresolved_stations, 0),
              "Observed coverage, headline (%)": f(100 * q.observed_coverage, 1),
-             "Unflaggable, headline": q.unflaggable,
+             "Unflaggable, headline": "" if pd.isna(q.unflaggable) else q.unflaggable,
              "Observed coverage, other variant (%)": f(100 * q.observed_coverage_alt, 1),
-             "Unflaggable, other variant": q.unflaggable_alt, "Penalty (%)": f(100 * q.penalty)}
+             "Unflaggable, other variant": "" if pd.isna(q.unflaggable_alt) else q.unflaggable_alt, "Penalty (%)": f(100 * q.penalty)}
             for q in fr.sort_values(["region", "crop"], key=lambda c: c.map({v: i for i, v in enumerate(ORDER)})
                                     if c.name == "region" else c).itertuples()]
     L += ["### A5. Frost stations, observed coverage and penalty per region and crop (§5 step 4)", "",
