@@ -1,0 +1,1 @@
+batch export w2_heat_muni_persistent: 2,898 EECU-seconds (batch), 24768 rows, 26 season(s), 70 s wall

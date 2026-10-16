@@ -1,0 +1,37 @@
+time_utc,task,region,estimate_eecu_s,cancel_at_eecu_s,measured_eecu_s,state
+2026-10-15 20:58:31,w1_pweights_meso_3505,São Paulo (state total),608,1216,1417.9,CANCELLED
+2026-10-15 21:38:44,w1_pweights_meso_3505,São Paulo (state total),1800,3600,758.5,COMPLETED
+2026-10-15 21:42:18,w1_pweights_meso_3109,Sul e Centro-Oeste,3607,7215,1688.7,COMPLETED
+2026-10-15 21:49:26,w1_pweights_meso_3110,Sul e Centro-Oeste,8318,16636,3812.6,COMPLETED
+2026-10-15 21:50:29,w1p_full_probe_sul_e_centro_oeste_2021,Sul e Centro-Oeste,308,617,224.6,COMPLETED
+2026-10-15 21:52:33,w1p_series_muni_sul_e_centro_oeste,Sul e Centro-Oeste,5465,10930,5707.6,COMPLETED
+2026-10-15 22:01:39,w1_pweights_meso_3101,"Triângulo, Alto Paranaíba e Noroeste",8824,17648,7112.2,COMPLETED
+2026-10-15 22:17:48,w1_pweights_meso_3105,"Triângulo, Alto Paranaíba e Noroeste",10678,21356,6922.1,COMPLETED
+2026-10-15 22:19:51,w1p_series_muni_tri_ngulo_alto_paran,"Triângulo, Alto Paranaíba e Noroeste",10395,20791,11702.2,COMPLETED
+2026-10-15 22:28:56,w1_pweights_meso_3106,"Zona da Mata, Rio Doce e Central",5815,11629,3770.7,COMPLETED
+2026-10-15 22:45:06,w1_pweights_meso_3107,"Zona da Mata, Rio Doce e Central",3674,7347,5252.1,COMPLETED
+2026-10-15 22:54:12,w1_pweights_meso_3108,"Zona da Mata, Rio Doce e Central",5017,10034,2618.6,COMPLETED
+2026-10-15 22:59:16,w1_pweights_meso_3111,"Zona da Mata, Rio Doce e Central",1410,2821,1305.9,COMPLETED
+2026-10-15 23:04:20,w1_pweights_meso_3112,"Zona da Mata, Rio Doce e Central",6028,12055,3740.3,COMPLETED
+2026-10-15 23:07:25,w1p_series_muni_zona_da_mata_rio_doc,"Zona da Mata, Rio Doce e Central",13222,26443,14835.9,COMPLETED
+2026-10-15 23:23:36,w1_pweights_meso_3501,São Paulo (state total),3879,7758,3162.9,COMPLETED
+2026-10-15 23:32:47,w1_pweights_meso_3502,São Paulo (state total),1909,3818,1413.4,COMPLETED
+2026-10-15 23:39:51,w1_pweights_meso_3503,São Paulo (state total),2343,4686,1540.8,COMPLETED
+2026-10-15 23:57:03,w1_pweights_meso_3504,São Paulo (state total),5066,10132,4253.1,COMPLETED
+2026-10-16 00:01:07,w1_pweights_meso_3506,São Paulo (state total),874,1747,874.8,COMPLETED
+2026-10-16 00:05:10,w1_pweights_meso_3507,São Paulo (state total),1729,3458,1079.7,COMPLETED
+2026-10-16 00:15:17,w1_pweights_meso_3508,São Paulo (state total),3527,7055,2886.7,COMPLETED
+2026-10-16 00:18:20,w1_pweights_meso_3509,São Paulo (state total),882,1765,573.4,COMPLETED
+2026-10-16 00:22:23,w1_pweights_meso_3510,São Paulo (state total),1678,3355,1588.1,COMPLETED
+2026-10-16 00:39:38,w1_pweights_meso_3511,São Paulo (state total),3797,7594,2607.8,COMPLETED
+2026-10-16 00:44:42,w1_pweights_meso_3512,São Paulo (state total),1827,3653,1385.9,COMPLETED
+2026-10-16 00:52:47,w1_pweights_meso_3513,São Paulo (state total),2059,4119,1522.3,COMPLETED
+2026-10-16 01:02:54,w1_pweights_meso_3514,São Paulo (state total),4040,8081,1132.1,COMPLETED
+2026-10-16 01:05:56,w1_pweights_meso_3515,São Paulo (state total),764,1529,694.6,COMPLETED
+2026-10-16 01:08:07,w1p_series_muni_s_o_paulo_state_tota,São Paulo (state total),22681,45361,23264.4,COMPLETED
+2026-10-16 01:09:43,w2_rain_muni_persistent_probe_all,all regions,150,300,102.0,COMPLETED
+2026-10-16 01:11:54,w2_rain_muni_persistent,all regions,2652,5304,2333.0,COMPLETED
+2026-10-16 01:14:03,w2_soil_muni_persistent_probe_all,all regions,320,640,260.0,COMPLETED
+2026-10-16 01:20:12,w2_soil_muni_persistent,all regions,7020,14040,6406.0,COMPLETED
+2026-10-16 01:21:18,w2_heat_muni_persistent_probe_all,all regions,180,360,115.0,COMPLETED
+2026-10-16 01:22:27,w2_heat_muni_persistent,all regions,2990,5980,2898.0,COMPLETED

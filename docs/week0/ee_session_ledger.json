@@ -1,62 +1,187 @@
 {
- "session": "w2_inputs",
- "cap": 20100.0,
- "spent": 13621.536510705511,
+ "session": "persistent_pixel",
+ "cap": 203228.025136492,
+ "spent": 130963.59876861572,
  "tasks": [
   {
-   "task": "w2_rain_muni_probe",
-   "state": "COMPLETED",
-   "eecu_s": 12.8
-  },
-  {
-   "task": "w2_soil_muni_probe",
-   "state": "COMPLETED",
-   "eecu_s": 0.9
-  },
-  {
-   "task": "w2_heat_muni_probe",
-   "state": "COMPLETED",
-   "eecu_s": 39.8
-  },
-  {
-   "task": "w2_rain_muni",
-   "state": "COMPLETED",
-   "eecu_s": 2177.0
-  },
-  {
-   "task": "w2_prelim_muni_probe",
-   "state": "COMPLETED",
-   "eecu_s": 10.0
-  },
-  {
-   "task": "w2_prelim_muni",
-   "state": "COMPLETED",
-   "eecu_s": 938.3
-  },
-  {
-   "task": "w2_soil_muni",
+   "task": "w1_pweights_meso_3505",
    "state": "CANCELLED",
-   "eecu_s": 1101.6
+   "eecu_s": 1417.9
   },
   {
-   "task": "w2_soil_muni_probe_all",
+   "task": "w1_pweights_meso_3505",
    "state": "COMPLETED",
-   "eecu_s": 211.6
+   "eecu_s": 758.0
   },
   {
-   "task": "w2_heat_muni_probe_all",
+   "task": "w1_pweights_meso_3109",
    "state": "COMPLETED",
-   "eecu_s": 117.8
+   "eecu_s": 1688.7
   },
   {
-   "task": "w2_soil_muni",
+   "task": "w1_pweights_meso_3110",
    "state": "COMPLETED",
-   "eecu_s": 6279.4
+   "eecu_s": 3812.6
   },
   {
-   "task": "w2_heat_muni",
+   "task": "w1p_full_probe_sul_e_centro_oeste_2021",
    "state": "COMPLETED",
-   "eecu_s": 2732.3
+   "eecu_s": 224.6
+  },
+  {
+   "task": "w1p_series_muni_sul_e_centro_oeste",
+   "state": "COMPLETED",
+   "eecu_s": 5707.6
+  },
+  {
+   "task": "w1_pweights_meso_3101",
+   "state": "COMPLETED",
+   "eecu_s": 7112.2
+  },
+  {
+   "task": "w1_pweights_meso_3105",
+   "state": "COMPLETED",
+   "eecu_s": 6922.1
+  },
+  {
+   "task": "w1p_series_muni_tri_ngulo_alto_paran",
+   "state": "COMPLETED",
+   "eecu_s": 11702.2
+  },
+  {
+   "task": "w1_pweights_meso_3106",
+   "state": "COMPLETED",
+   "eecu_s": 3770.7
+  },
+  {
+   "task": "w1_pweights_meso_3107",
+   "state": "COMPLETED",
+   "eecu_s": 5252.1
+  },
+  {
+   "task": "w1_pweights_meso_3108",
+   "state": "COMPLETED",
+   "eecu_s": 2618.6
+  },
+  {
+   "task": "w1_pweights_meso_3111",
+   "state": "COMPLETED",
+   "eecu_s": 1305.9
+  },
+  {
+   "task": "w1_pweights_meso_3112",
+   "state": "COMPLETED",
+   "eecu_s": 3740.3
+  },
+  {
+   "task": "w1p_series_muni_zona_da_mata_rio_doc",
+   "state": "COMPLETED",
+   "eecu_s": 14835.9
+  },
+  {
+   "task": "w1_pweights_meso_3501",
+   "state": "COMPLETED",
+   "eecu_s": 3162.9
+  },
+  {
+   "task": "w1_pweights_meso_3502",
+   "state": "COMPLETED",
+   "eecu_s": 1413.4
+  },
+  {
+   "task": "w1_pweights_meso_3503",
+   "state": "COMPLETED",
+   "eecu_s": 1540.8
+  },
+  {
+   "task": "w1_pweights_meso_3504",
+   "state": "COMPLETED",
+   "eecu_s": 4253.1
+  },
+  {
+   "task": "w1_pweights_meso_3506",
+   "state": "COMPLETED",
+   "eecu_s": 874.8
+  },
+  {
+   "task": "w1_pweights_meso_3507",
+   "state": "COMPLETED",
+   "eecu_s": 1079.7
+  },
+  {
+   "task": "w1_pweights_meso_3508",
+   "state": "COMPLETED",
+   "eecu_s": 2886.7
+  },
+  {
+   "task": "w1_pweights_meso_3509",
+   "state": "COMPLETED",
+   "eecu_s": 573.4
+  },
+  {
+   "task": "w1_pweights_meso_3510",
+   "state": "COMPLETED",
+   "eecu_s": 1588.1
+  },
+  {
+   "task": "w1_pweights_meso_3511",
+   "state": "COMPLETED",
+   "eecu_s": 2607.8
+  },
+  {
+   "task": "w1_pweights_meso_3512",
+   "state": "COMPLETED",
+   "eecu_s": 1385.9
+  },
+  {
+   "task": "w1_pweights_meso_3513",
+   "state": "COMPLETED",
+   "eecu_s": 1522.3
+  },
+  {
+   "task": "w1_pweights_meso_3514",
+   "state": "COMPLETED",
+   "eecu_s": 1132.1
+  },
+  {
+   "task": "w1_pweights_meso_3515",
+   "state": "COMPLETED",
+   "eecu_s": 694.6
+  },
+  {
+   "task": "w1p_series_muni_s_o_paulo_state_tota",
+   "state": "COMPLETED",
+   "eecu_s": 23264.4
+  },
+  {
+   "task": "w2_rain_muni_persistent_probe_all",
+   "state": "COMPLETED",
+   "eecu_s": 102.2
+  },
+  {
+   "task": "w2_rain_muni_persistent",
+   "state": "COMPLETED",
+   "eecu_s": 2332.9
+  },
+  {
+   "task": "w2_soil_muni_persistent_probe_all",
+   "state": "COMPLETED",
+   "eecu_s": 259.6
+  },
+  {
+   "task": "w2_soil_muni_persistent",
+   "state": "COMPLETED",
+   "eecu_s": 6406.1
+  },
+  {
+   "task": "w2_heat_muni_persistent_probe_all",
+   "state": "COMPLETED",
+   "eecu_s": 114.8
+  },
+  {
+   "task": "w2_heat_muni_persistent",
+   "state": "COMPLETED",
+   "eecu_s": 2898.4
   }
  ]
 }

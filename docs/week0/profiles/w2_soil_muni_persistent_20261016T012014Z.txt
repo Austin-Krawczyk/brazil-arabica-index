@@ -1,0 +1,1 @@
+batch export w2_soil_muni_persistent: 6,406 EECU-seconds (batch), 25776 rows, 27 season(s), 366 s wall

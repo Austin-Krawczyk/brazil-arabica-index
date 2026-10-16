@@ -2498,3 +2498,80 @@ produces a prediction or score. It ran toy-number checks only, and read two inpu
 - CHIRPS prelim pentads spread evenly over their days, substituted only in the held-out crop.
 - The third-survey sensitivity changes only the held-out expectation.
 - Triângulo's rain-only skill is its rows of the pooled rain-only model.
+
+## 22. Persistent-pixel inputs computed and frozen (2026-10-15/16), before the single run
+
+**Owner decision (Amendment 41 item 1; 2026-10-15):** re-probe one mesoregion at a limit of about 1
+EECU-hour. The threshold was fixed before the projection: a full job at or under 100 EECU-hours runs,
+then the backtest; above 100, the backtest runs first, the order break is logged, and the
+persistent-pixel run becomes a labelled run in November.
+
+**Re-probe:**
+- `w1_pweights_meso_3505`: 758 EECU-s, against 405 for the full-mask weights (ratio 1.87).
+- The first probe, with a 608 estimate, was cancelled by the watchdog at 1,418.
+- Projection from the ratio:
+
+  | Component | EECU-s |
+  |---|---|
+  | weights | 88,446 |
+  | EVI composites | 59,230 |
+  | weather exports | 11,188 |
+  | **total** | **158,864 (44.1 EECU-hours)** |
+
+**Decision:** 44.1 is at or under 100, so the job ran in full, before the backtest.
+
+**Measured cost** (`docs/week0/persistent_task_costs.csv`; every task through the watchdog):
+
+| Task | Count | EECU-s |
+|---|---|---|
+| Persistent weights, mesoregions (the cancelled probe included) | 24 completed, 1 cancelled | 63,115 |
+| EVI probe, Sul 2021 | 1 | 225 |
+| EVI series, four regions | 4 | 55,510 |
+| Rain, soil and heat: probes over all regions, one season | 3 | 477 |
+| Rain, soil and heat: full runs | 3 | 11,637 |
+| **Total** | | **130,964 (36.4 EECU-hours)** |
+
+- No task was cancelled apart from the first probe.
+- The weights cost 0.69 of their estimates in total.
+- The four EVI series cost 1.03–1.13 of theirs.
+- The full weather runs cost 0.88–0.97 of probe × seasons.
+
+**Checks:**
+- **Persistent coffee weight:** 0.89–0.91 of the full mask's in each region, and never above the
+  full mask's in any municipality-season.
+- **EVI series:**
+  - Sul: 189 municipalities on both masks.
+  - Triângulo: 68 on both.
+  - Zona da Mata: 327 persistent against 331 full.
+  - São Paulo: 356 persistent against 361 full.
+  - Seasons 2000–2026 throughout.
+- **Members per season** (Amendment 35 rule, mask changed only): mean 454 on the persistent mask,
+  against 467 on the full mask (range 420–480 against 436–484).
+- **Weather tables** (rain, soil moisture, heat days): per municipality-season, the persistent and
+  full-mask values correlate at 0.9976–0.9997, with median relative differences of 0.03–0.25%.
+  ERA5-Land and CHIRPS cells are 5–9 km, so the two masks mostly weight the same cells.
+
+**Manifest re-frozen** (`data/derived/w2_inputs_manifest.csv`):
+- 25 files: the 17 previously frozen, with every SHA-256 unchanged, plus 8 persistent-pixel files:
+  - the four `w1p_series_muni_*` tables;
+  - `w2_{rain,soil,heat}_muni_persistent.csv`;
+  - `members_by_season_persistent.csv`.
+- The rain, heat and EVI persistent tables are gitignored for size, like their full-mask versions.
+
+**One-shot check (owner, 2026-10-15):**
+- The backtest starts only from the commit that holds this manifest.
+- It refuses unless the scoring code and the manifest are committed and unchanged. The manifest's
+  SHA-256 must equal the committed copy's, with line endings normalised; that hash is printed and
+  stamped on every results row.
+- It refuses unless the manifest lists the eight persistent-pixel files.
+- It refuses to overwrite an existing results file.
+
+**Report order (owner, 2026-10-15), fixed in `gee/backtest_report.py` before the run:**
+1. the five November verdicts against the pass marks;
+2. the frost version;
+3. the three comparison models on identical seasons;
+4. each sensitivity against the headline on the same crops;
+5. December and January beside November, not scored;
+6. appendix tables.
+
+Numbers and pass/fail only in the first report; no interpretation until the owner has read it.
