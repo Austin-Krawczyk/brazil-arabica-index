@@ -1167,3 +1167,23 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   No mark, input or verdict of v1 changes.
 
   Recorded on the owner's instruction (2026-10-16).
+
+- 2026-10-16 — **prereg-3: H1–H3 approved as drafted; H4 added; testing rule set.** No change to v1.
+  Owner decisions (2026-10-16), recorded in `docs/preregistration.md` (prereg-3 section, not
+  tagged):
+  1. **H1–H3** are approved as drafted.
+  2. **Testing rule:** all hypotheses are marked in-sample. They are tested only on crops 2027
+     onward and on held-out reruns of history.
+     - This replaces the draft's "crop 2026 onward" as the out-of-sample check.
+     - H3's row records that crop 2027's station readings, Caldas included, were known when H3
+       was formed.
+  3. **H4, flowering rain: timing and volume.**
+     - **Prediction (owner):** split into first-rain timing and total volume, timing carries the
+       expected sign and volume keeps the negative.
+     - **Test details are a draft, by the agent:** the event definition is fixed from a published
+       source at the tag, and censored cuts take the cut date.
+     - **Open before the tag:**
+       - the split makes five fitted inputs against v1's cap of four (§5 step 6);
+       - production onset dates depend on CHC's daily day split, which is not established
+         (Amendment 29).
+

@@ -180,15 +180,21 @@ Owner decisions after an independent review of the scoring code, before any back
 | Conventional-station availability | Assumed available at every cut; not established; caveat beside the Sul crop-2012 result |
 | Fixed in code from the review | Crop S+1 left out of training in fold S (its expectation carries crop S's yield); one-shot run; identical-crop comparisons |
 
-## prereg-3 (v2): hypotheses registered 2026-10-16, after the v1 backtest — draft, not tagged
+## prereg-3 (v2): hypotheses registered 2026-10-16, after the v1 backtest — not tagged
 
 **Status.** Registered on the owner's instruction after the v1 results were read (Week 0 report
 §24). Nothing in v1 changes: the marks, inputs and verdicts stand.
 - **When the tag is applied:** `prereg-3` is applied before any v2 computation. Until then, the
   items marked "draft" may still change, and each change is logged.
-- **In-sample caveat:** these hypotheses were formed after the v1 results were seen. Any v2 test on
-  crops 2002–2025 is therefore in-sample with respect to the hypothesis. The out-of-sample check is
-  crop 2026 onward.
+- **Approval (owner, 2026-10-16):**
+  - H1–H3 are approved as drafted.
+  - H4 was added the same day on the owner's statement of the hypothesis and prediction. Its
+    test details are a draft.
+- **Testing rule (owner, 2026-10-16):** every hypothesis is marked in-sample. It is tested only on
+  crops 2027 onward and on held-out (leave-one-season-out) reruns of history.
+  - The hypotheses were formed after the v1 results were seen. So every result on crops 2002–2026
+    is labelled in-sample, whatever the fold structure.
+  - Crops 2027 onward are the only out-of-sample test.
 - **Spec status:** the spec's §9 defines `prereg-1` and `prereg-2` only. Defining `prereg-3` in the
   spec is an amendment, drafted when v2 starts.
 
@@ -198,9 +204,9 @@ Owner decisions after an independent review of the scoring code, before any back
 |---|---|
 | Hypothesis | The target values for crops 2001–2007 in Sul e Centro-Oeste, Triângulo, Alto Paranaíba e Noroeste and São Paulo, taken from Conab's arabica-plus-conilon series (Amendment 19b), differ from Conab's arabica figures for those safras by enough to change stage 1 (the trend and the biennial coefficient) and the no-frost scores in those regions |
 | v1 facts behind it (Week 0 report §24 (5); §4c) | Sul's biennial coefficient is +0.076, against −0.25 to −0.66 in the other units. Biennial-only gets 7 of 24 on yield versus trend in Sul. Amendment 19b recorded these findings in the arabica series: 2004 regional production written as 0; Sul production above the arabica-plus-conilon total in 2002 and 2006 |
-| Planned test (draft) | (a) Extract Conab's arabica regional area, yield and production for safras 2001–2007 from final-survey bulletins, archived copies included. Record the URL, capture date and SHA-256 for each. (b) Compare them value by value with the series v1 used. (c) Refit stage 1 on the corrected series. (d) Report beside v1: the biennial coefficient per region, and the no-frost condition hits on crops 2002–2025 |
-| Registered prediction (draft) | On the corrected series, Sul's biennial coefficient is negative |
-| Out of sample | None: this is a data-quality check on history. A changed target series would be a new labelled backtest, not a rescore of v1 |
+| Planned test (approved 2026-10-16) | (a) Extract Conab's arabica regional area, yield and production for safras 2001–2007 from final-survey bulletins, archived copies included. Record the URL, capture date and SHA-256 for each. (b) Compare them value by value with the series v1 used. (c) Refit stage 1 on the corrected series. (d) Report beside v1: the biennial coefficient per region, and the no-frost condition hits on crops 2002–2025 |
+| Registered prediction (approved 2026-10-16) | On the corrected series, Sul's biennial coefficient is negative |
+| Testing | A held-out rerun on the corrected series, labelled in-sample. There is no out-of-sample test: this is a data-quality check on history. A changed target series is a new labelled backtest, not a rescore of v1 |
 
 ### H2. Zona da Mata mask representativeness
 
@@ -208,9 +214,9 @@ Owner decisions after an independent review of the scoring code, before any back
 |---|---|
 | Hypothesis | Zona da Mata, Rio Doce e Central fails because the mask under-represents its smallholder and shaded coffee. The vegetation signal tracks yield better where MapBiomas maps a larger share of the coffee area IBGE PAM records |
 | v1 facts behind it (Week 0 report §24 (4); §5 step 1) | Zona da Mata fails both versions (12 and 10 of 17, against 14). Its MAE is above zero anomaly's (10.3 and 10.8 against 9.9). Its mean signed residual is −3.0 and −3.8 pp. Its points-to-PAM-area ratio is 0.80. MapBiomas maps 0.19–0.63 of PAM's coffee area in Zona da Mata and São Paulo |
-| Planned test (draft) | Within Zona da Mata, with São Paulo as the second region: correlate each municipality's season EVI anomaly (the v1 municipal input, frozen mask) with its IBGE PAM yield anomaly. Report by tercile of the municipality's MapBiomas-to-PAM area ratio. PAM's arabica split exists only from 2012, so use arabica yield for 2012 onward and the total-coffee yield before, reported separately. Planet's mask validation (§4d task 2) gives the omission estimate beside it |
-| Registered prediction (draft) | The municipal correlation rises from the lowest to the highest coverage tercile |
-| Out of sample | The municipal relation was not examined in v1, but Zona da Mata's failure is known. Crops 2026 onward are the clean check |
+| Planned test (approved 2026-10-16) | Within Zona da Mata, with São Paulo as the second region: correlate each municipality's season EVI anomaly (the v1 municipal input, frozen mask) with its IBGE PAM yield anomaly. Report by tercile of the municipality's MapBiomas-to-PAM area ratio. PAM's arabica split exists only from 2012, so use arabica yield for 2012 onward and the total-coffee yield before, reported separately. Planet's mask validation (§4d task 2) gives the omission estimate beside it |
+| Registered prediction (approved 2026-10-16) | The municipal correlation rises from the lowest to the highest coverage tercile |
+| Testing | On history, held-out reruns only, labelled in-sample: the municipal relation was not examined in v1, but Zona da Mata's failure is known. Out of sample: crops 2027 onward |
 
 ### H3. Cold-pool frost detection
 
@@ -218,6 +224,17 @@ Owner decisions after an independent review of the scoring code, before any back
 |---|---|
 | Hypothesis | The screen-height station network misses frost that forms in cold-air pools on coffee land. MODIS night land-surface temperature over the coffee mask detects frost the stations miss, including the July 2021 frost in Sul e Centro-Oeste and São Paulo |
 | v1 facts behind it (Week 0 report §19, §24 (2); Amendment 40) | The station component did not flag the July 2021 frost in Sul or São Paulo: their crop-2022 penalty is zero. With frost, crop 2022 is predicted −13.9% and −13.7%, against actual −32.5% and −30.0%. Caldas (A530) read −0.5 °C on 14 July 2026 outside the registered night rule |
-| Planned test (draft) | Night LST for Jun–Aug of S−1, crops 2009–2026, on the frozen mask. Product IDs are verified in Earth Engine before use (§9); the candidates are `MODIS/061/MOD11A1` and `MODIS/061/MYD11A1`, not yet verified. A night-LST frost threshold is fixed from a published LST-versus-screen or LST-versus-leaf study before computing. Report the region-seasons LST flags against the station flags |
-| Registered prediction (draft) | (a) LST flags Sul and São Paulo for crop 2022. (b) LST flags no more than a number of region-seasons without a station flag or a public-record frost; that number is fixed at the `prereg-3` tag |
-| Out of sample | The July 2021 frost is known, so (a) is in-sample by construction. The Planet 2021 case study (§4d task 1) is the independent check. The out-of-sample test is the Jun–Aug 2027 window (crop 2028). Terra and Aqua are at end of mission, so the product's availability for 2027 is checked first |
+| Planned test (approved 2026-10-16) | Night LST for Jun–Aug of S−1, crops 2009–2026, on the frozen mask. Product IDs are verified in Earth Engine before use (§9); the candidates are `MODIS/061/MOD11A1` and `MODIS/061/MYD11A1`, not yet verified. A night-LST frost threshold is fixed from a published LST-versus-screen or LST-versus-leaf study before computing. Report the region-seasons LST flags against the station flags |
+| Registered prediction (approved 2026-10-16) | (a) LST flags Sul and São Paulo for crop 2022. (b) LST flags no more than a number of region-seasons without a station flag or a public-record frost; that number is fixed at the `prereg-3` tag |
+| Testing | On history, held-out reruns only, labelled in-sample. The July 2021 frost is known, so (a) is in-sample by construction, and the Planet 2021 case study (§4d task 1) is the independent check. Out of sample: crops 2027 onward. For crop 2027 (the Jun–Aug 2026 window), the station readings, Caldas included, were known when H3 was formed; the LST values and the crop's yield were not. Terra and Aqua are at end of mission, so the product's availability for each window is checked first |
+
+### H4. Flowering rain: timing and volume
+
+| Field | Entry |
+|---|---|
+| Hypothesis | The v1 flowering-rain input, a z-score of the to-date rainfall total, mixes two effects of opposite sign: when the first flowering rain falls, and how much rain falls in total. Split into the two, the timing term carries the expected sign and the volume term keeps the negative sign |
+| v1 facts behind it (Week 0 report §24 (3)) | In the full model the rain weight is negative in every fold and vintage: −0.021 to −0.051 per standard deviation in the November fits, −0.018 to −0.055 across all three vintages. More flowering rain predicts a lower condition anomaly, the opposite of the sign §5 step 3 anticipates. In the rain-only model the weight shrinks to near zero (at most 0.012 in absolute value) |
+| Registered prediction (owner, 2026-10-16) | (a) Timing has the expected sign: a later first-rain date predicts a lower condition anomaly. (b) Volume keeps the negative sign: with timing in the model, more to-date flowering rain still predicts a lower condition anomaly |
+| Planned test (draft) | Replace the v1 rain input with two inputs, both standardised as in prereg-1. **(i) First-rain date:** the first day after 1 Sep of S−1 that ends a flowering-trigger rain event, from daily CHIRPS. The event (an amount over a number of consecutive days) is fixed from a published coffee-flowering source at the `prereg-3` tag, before anything is computed. A cut that comes before any event takes the cut date, and the count of such censored region-crops is reported. **(ii) Volume:** the v1 to-date total, unchanged. Refit the v1 model with the same folds, vintages and ridge machinery, and report each weight's sign per fold |
+| Open before the tag | (1) **The cap of four (§5 step 6):** the split makes five fitted inputs. Raise the cap for v2 or drop an input, and decide which at the tag. (2) **Production timing:** a November or December reading needs the date from daily prelim. CHC's daily day split is not established (§10), and daily-prelim counts are not compared with final until the gap is measured (Amendment 29). The same applies to an onset date |
+| Testing | On history, held-out reruns only, labelled in-sample. Out of sample: crops 2027 onward |
