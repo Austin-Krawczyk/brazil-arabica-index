@@ -1151,3 +1151,19 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   they match the headline.
 
   Approved by owner (2026-10-15).
+
+- 2026-10-16 — **v2 hypotheses registered toward `prereg-3`; no change to v1.** After the owner read
+  the v1 backtest report (Week 0 report §23–§24), three hypotheses were recorded in
+  `docs/preregistration.md` (prereg-3 section, draft, not tagged):
+  - H1, Conab 2001–2007 series quality;
+  - H2, Zona da Mata mask representativeness;
+  - H3, cold-pool frost detection.
+
+  **Formed after the v1 results were seen,** so any v2 test on crops 2002–2025 is in-sample.
+
+  **Spec status:** §9 defines only `prereg-1` and `prereg-2`. A spec amendment defining `prereg-3`
+  is drafted when v2 starts.
+
+  No mark, input or verdict of v1 changes.
+
+  Recorded on the owner's instruction (2026-10-16).

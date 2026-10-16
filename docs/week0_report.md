@@ -2597,3 +2597,235 @@ Numbers and pass/fail only in the first report; no interpretation until the owne
   - every row's training label excludes S and S+1;
   - no scored row lacks a prediction.
 - **Interpretation:** none yet. The owner reads the report first.
+
+## 24. Backtest v1: interpretation (2026-10-16), after the owner read §23
+
+Everything here is read from the frozen results file (`backtest_results_v1.csv`, SHA-256 `a966877d…`).
+Nothing was rerun, and no mark changed.
+
+### (1) The registered verdict
+
+The November vintage decides. Each version has its own registered marks, and the registration
+defines no combined verdict.
+
+- **Without frost: 1 of 5 passes.**
+  - **Pass:** Sul e Centro-Oeste, 18 of 24 against a mark of 17 (p 0.0113 against a coin flip and
+    against the majority share).
+  - **Fail:**
+    - Triângulo, Alto Paranaíba e Noroeste, 18 of 24 against 19 (p 0.0113, 0.0705);
+    - Zona da Mata, Rio Doce e Central, 12 of 17 against 14 (p 0.0717, 0.2320);
+    - São Paulo, 17 of 24 against 18 (p 0.0320, 0.0746);
+    - the four-region total, 12 of 17 against 13 (p 0.0717, 0.1107).
+- **With frost (crops 2009–2025): 4 of 5 pass.**
+  - **Pass:**
+    - Sul e Centro-Oeste, 13 of 17 against a mark of 13 (p 0.0245, 0.0418);
+    - Triângulo, Alto Paranaíba e Noroeste, 14 of 17 against 13 (p 0.0064, 0.0120);
+    - São Paulo, 14 of 17 against 13 (p 0.0064, 0.0120);
+    - the four-region total, 13 of 17 against 13 (p 0.0245, 0.0418).
+  - **Fail:** Zona da Mata, Rio Doce e Central, 10 of 17 against 14 (p 0.3145, 0.6015).
+- **Crop 2022 is in-sample** for the frost version: the frost constants were set knowing what the
+  July 2021 frost did.
+
+### (2) What the frost version changes, crop by crop (November, crops 2009–2025)
+
+The with-frost version differs from the no-frost version in two ways.
+- **The frost offset**, non-zero only in four region-crops:
+
+  | Region-crop | Penalty |
+  |---|---|
+  | Sul crop 2012 | 12.8% |
+  | Triângulo crop 2022 | 29.5% |
+  | Four-region total crop 2012 | 5.6% |
+  | Four-region total crop 2022 | 5.1% |
+
+- **Its own fit:**
+  - It trains on crops 2009–2025 only: 60 rows a fold, against 81.
+  - Its λ runs 0.56–10, against 0–5.6.
+  - Its intercept runs +0.018 to +0.055, against −0.012 to +0.019.
+  - Its weights differ.
+
+| Unit | Hits with frost / without, same crops | Crops gained with frost | Crops lost with frost |
+|---|---|---|---|
+| São Paulo | 14 / 12 | 2017, 2019 | none |
+| Four-region total | 13 / 12 | 2017 | none |
+| Sul e Centro-Oeste | 13 / 14 | none | 2012 |
+| Triângulo | 14 / 14 | 2011 | 2015 |
+| Zona da Mata | 10 / 12 | none | 2009, 2015 |
+
+- **São Paulo and the total gain no hit from a frost penalty.**
+  - São Paulo's penalty is zero in every crop 2009–2025, and the total's is zero in 2017.
+  - The gains come from the frost version's different fit, on predictions near zero:
+
+    | Crop | Actual | Without frost | With frost |
+    |---|---|---|---|
+    | São Paulo 2017 | +4.3% | −0.4% | +2.2% |
+    | São Paulo 2019 | −0.45% | +0.02% | −0.18% |
+    | Four-region total 2017 | +2.5% | −0.4% | +1.3% |
+
+  - **Crop 2022 is not among them.** It is a hit in both versions, in São Paulo and in the total.
+- **The frost penalty cost Sul crop 2012**, Sul's only flagged crop.
+  - Actual +19.6%.
+  - Without frost, predicted +4.0%: a hit.
+  - With the 12.8% penalty, predicted −7.9%: a miss. Without the offset it would have been +4.9%.
+  - The Sul 2012 flag depends on conventional stations. Whether their minima were available by
+    20 November 2011 is not established.
+- **Triângulo crop 2022** (penalty 29.5%; in-sample) is a hit in both versions: −41.0% predicted
+  with frost, −11.5% without the offset, against −31.4% actual.
+
+### (3) The comparison models (November; identical crops in every comparison)
+
+| Unit | MAE (pp): full / zero anomaly / rain only | Condition hits: full / rain only | Yield vs trend hits: full / biennial only |
+|---|---|---|---|
+| *Without frost* | | | |
+| Sul | 15.5 / 19.6 / 19.4 | 18 / 13 of 24 | 18 / 7 of 24 |
+| Triângulo | 12.3 / 17.6 / 17.7 | 18 / 13 of 24 | 21 / 19 of 24 |
+| Zona da Mata | 10.3 / 9.9 / 10.0 | 12 / 8 of 17 | 12 / 10 of 17 |
+| São Paulo | 12.2 / 15.9 / 15.8 | 17 / 14 of 24 | 21 / 19 of 24 |
+| Total | 10.5 / 12.7 / 12.8 | 12 / 9 of 17 | 13 / 12 of 17 |
+| *With frost* | | | |
+| Sul | 14.8 / 17.9 / 19.1 | 13 / 7 | 13 / 5 |
+| Triângulo | 13.1 / 18.6 / 17.0 | 14 / 10 | 15 / 13 |
+| Zona da Mata | 10.8 / 9.9 / 11.0 | 10 / 7 | 11 / 10 |
+| São Paulo | 11.1 / 14.1 / 14.2 | 14 / 9 | 12 / 13 |
+| Total | 10.5 / 12.7 / 13.4 | 13 / 8 | 13 / 12 |
+
+- **Against zero anomaly:** the full model has the lower MAE in four of five units in both
+  versions. The exception is Zona da Mata, by 0.4 and 0.9 pp.
+- **Against rain only:**
+  - The full model has more condition hits in every unit in both versions (3–6 more).
+  - It has the lower MAE in every unit except Zona da Mata without frost (10.3 against 10.0).
+- **Against biennial only, on yield versus trend** (the comparison §5 step 8 names for the index
+  adding skill): the full model has more hits in every unit without frost, and in four of five
+  with frost. São Paulo with frost is the exception, 12 against 13.
+- **The rain term's sign.** Rain-only's MAE is within 0.2 pp of zero anomaly's without frost, and
+  within 1.6 pp with frost. Its ridge shrinks the rain weight to near zero: at most 0.005 in absolute
+  value per standard deviation of rain without frost, and 0.012 with frost.
+  - In the full model, the rain weight is **negative in every fold and vintage**: −0.021 to −0.051
+    per standard deviation of to-date flowering rain in the November fits, and −0.018 to −0.055
+    across all three vintages. More flowering rain predicts a lower condition anomaly,
+    holding the other three inputs fixed.
+  - That is the opposite of the sign §5 step 3 anticipates ("Flowering deficit is the single most
+    predictive input").
+  - The other weights, in every fold and vintage (November ranges given):
+    - EVI is positive, +0.069 to +0.173;
+    - heat days are negative, −0.023 to −0.052;
+    - soil moisture changes sign, −0.028 to +0.028.
+
+### (4) Zona da Mata, Rio Doce e Central: a failure
+
+**It fails both versions:** 12 of 17 without frost and 10 of 17 with frost, against 14.
+- **MAE:** it is the only unit where the full model's MAE is above zero anomaly's: 10.3 and 10.8
+  against 9.9.
+- **Bias:**
+  - Its mean signed residual (actual minus predicted) is −3.0 pp without frost and −3.8 pp with frost.
+  - 59–71% of its predictions are positive, against 41% of its actual anomalies.
+- **No later vintage reaches the mark:** December and January give 11 and 12 of 17 without frost,
+  and 10 and 9 with frost.
+- **Correlation:** its correlation of predicted with actual anomaly without frost (0.54) is close to
+  Sul's (0.56).
+- **Spread:** its actual anomalies have the smallest spread of the five units, a standard deviation
+  of 13.5 pp against 16.6–23.2. So zero anomaly is the hardest baseline to beat here.
+
+**Stated candidate explanation, descriptive only and not tested: the mask's representativeness
+(Amendment 16d; §5 step 1).**
+- **Share of coffee mapped:** MapBiomas maps 0.19–0.63 of IBGE PAM's coffee area in Zona da Mata
+  and São Paulo.
+- **Share of the index's points:** in the 20,000-point sample, Zona da Mata's share of the index's
+  points over its share of PAM arabica area is 0.80 (Sul 1.15).
+- **Filter removals:** the filter removed 84 of its municipalities.
+- **Resolution:** MODIS at 250 m blurs its steep smallholder terrain.
+- **Consequence:** the vegetation signal therefore comes from the coffee MapBiomas detects, biased
+  toward large sun-grown fields. That may not be the coffee that sets the region's yield.
+
+This is registered as v2 hypothesis H2 below. Zona da Mata stays in the index (§3), and every note
+states its failure beside its reading.
+
+### (5) Biennial only in Sul e Centro-Oeste
+
+On yield versus trend, the biennial-only model gets **7 of 24** Sul crops right without frost, and 5
+of 17 with frost.
+- **Sul's coefficient:** its biennial coefficient (detrended yield on the previous crop's) is
+  +0.076 on the full sample. Across folds it runs −0.067 to +0.167.
+- **Other units:** −0.48 in Triângulo, −0.66 in Zona da Mata, −0.65 in São Paulo and −0.25 for the
+  total.
+- **No alternation in Sul:**
+  - 12 of Sul's 24 consecutive pairs of detrended yields share a sign.
+  - So its stage-1 expectation sits within ±4.5% of trend in every crop, while actual yield ranges
+    from −41% to +40% of trend.
+  - The biennial-only call on yield versus trend is the sign of a small coefficient times last year's
+    residual, and it is wrong in 17 of 24 crops.
+- **The full model's yield-vs-trend skill in Sul comes from the condition prediction.**
+  - It gets 18 of 24 on yield versus trend.
+  - In 23 of 24 crops its yield-versus-trend call has the same sign as its condition call.
+- **Consequence:** in Sul the "expected off-year" in §1's benchmark line rests on a near-zero
+  coefficient. The Sul crops 2001–2007 come from the arabica-plus-conilon series (Amendment 19b);
+  see H1.
+
+### (6) Sensitivity stability, and what the prelim rerun means for production
+
+**Change against the headline on identical crops (November, condition hits / MAE in pp):**
+
+| Sensitivity | Without frost | With frost |
+|---|---|---|
+| No filter | hits 0 to +1; MAE −0.1 to 0.0 | hits 0; MAE −0.1 to 0.0 |
+| Mapped-area weights | hits 0 to +1; MAE −0.3 to +0.2 | hits −1 to +1; MAE −0.3 to +0.1 |
+| Persistent-pixel mask | hits 0 to +1; MAE −0.5 to +0.1 | hits 0; MAE −0.2 to +0.1 |
+| EVI from 1 Sep | hits −3 to +2; MAE +0.9 to +3.8 | hits −1 to +1; MAE −0.1 to +1.8 |
+| NDVI (2024–26 drift) | hits −2 to +2; MAE +0.4 to +2.0 | hits −3 to 0; MAE −0.1 to +1.5 |
+| Unresolved stations left out | — | hits −2 to 0; MAE −0.2 to +1.2 |
+
+- **The three mask sensitivities move no unit by more than one hit, and no MAE by more than 0.5 pp.**
+- **The vegetation window moves the results most.** The headline's EVI from 1 May has a lower MAE
+  than EVI from 1 Sep in every unit without frost.
+- **Leaving unresolved stations out:**
+  - It costs Sul two hits:
+    - crop 2020, which gains an 18.6% penalty and is predicted −7.0% against an actual +36.8%;
+    - crop 2024, a prediction near zero.
+  - It costs São Paulo one hit, crop 2019, also near zero.
+- **No sensitivity is scored, and none changes a registered verdict.** Persistent-pixel Triângulo
+  without frost reaches 19 of 24, the mark's count; it is a sensitivity and is not scored.
+
+**Prelim rerun:** crops 2016–2025; CHC prelim in place of final for the months not final at the cut;
+November and December.
+- **Hits:** they change by at most one in any unit and vintage: Triângulo −1 and São Paulo +1 in
+  November without frost; Zona da Mata −1 in December with frost.
+- **MAE:** it changes by −0.6 to +0.7 pp.
+- **Predicted condition anomaly:**
+  - Median absolute change 0.56 pp, maximum 5.27 pp.
+  - **3 of 200 predictions change sign, and all three were within 1.1 pp of zero.**
+- **Operational implication for the November and December notes:**
+  - The backtest's November figures were scored on final CHIRPS. Production uses prelim for October
+    and November rain (November note) and November rain (December note). On this evidence that
+    costs at most one hit per unit over ten crops.
+  - A reading within about 1 pp of zero can change direction when the month goes final.
+  - **Proposed, not registered:** the note states the direction of such a reading as "within the
+    prelim margin", alongside the prelim months it already names.
+
+### (7) December and January beside November (not scored)
+
+| Unit | Without frost: change in hits, Dec / Jan | With frost: change in hits, Dec / Jan |
+|---|---|---|
+| Triângulo | **+2 / +1** (to 20 and 19 of 24; mark 19) | 0 / **+1** (to 15 of 17) |
+| São Paulo | +1 / +1 (to 18 of 24; mark 18) | 0 / 0 |
+| Four-region total | +1 / +1 (to 13 of 17; mark 13) | −1 / −1 |
+| Sul | 0 / 0 | 0 / 0 |
+| Zona da Mata | −1 / 0 | 0 / −1 |
+
+- **Triângulo is the only unit where a later vintage adds more than one hit:** +2 in December
+  without frost.
+- **Elsewhere the later vintages change hits by at most one, in both directions.** São Paulo and the
+  total without frost reach their marks' counts in December and January. The total with frost drops
+  below its mark.
+- **MAE:** it changes by −1.0 to +0.5 pp.
+- **These vintages are reported against the marks and not scored (Amendment 41).** November's
+  verdicts stand.
+
+### v2 hypotheses, registered for `prereg-3`
+
+These are recorded in `docs/preregistration.md` (prereg-3 section). They were formed after the v1
+results were seen. Any v2 test on crops 2002–2025 is therefore in-sample; crop 2026 onward is the
+out-of-sample check.
+
+- **H1. Conab 2001–2007 series quality.**
+- **H2. Zona da Mata mask representativeness.**
+- **H3. Cold-pool frost detection.**
