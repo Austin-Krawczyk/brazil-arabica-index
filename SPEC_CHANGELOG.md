@@ -1208,3 +1208,12 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   - **Reason:** a January reading uses no prelim month, so the label would be false there.
 
   Approved by owner (2026-10-16).
+
+- 2026-10-16 — **prereg-3, H4: the input cap and the production onset source decided.** Owner
+  decisions, recorded in `docs/preregistration.md`; no change to v1.
+  1. **The cap of four is unchanged for the v2 headline.**
+     - H4 is a five-input diagnostic variant.
+     - The v2 pre-registration chooses the headline's four inputs before any v2 result.
+  2. **Production onset dates come from the ingested CHC prelim daily product.**
+     - Where a day is missing, onset is undefined for that season and is reported as such.
+     - Amendment 29's comparison rule still applies (the agent's cross-reference).
