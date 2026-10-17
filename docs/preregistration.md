@@ -190,6 +190,12 @@ Owner decisions after an independent review of the scoring code, before any back
   - H3's false-alarm number;
   - H4's flowering-trigger rain event.
   Any other change after the tag is logged in `SPEC_CHANGELOG.md`.
+- **Guard (owner, 2026-10-16):** the three values live in `docs/prereg3_addenda.csv`.
+  `gee/prereg3_guard.py` refuses any night-LST or onset computation unless the addenda are filled
+  in and committed at HEAD, and v2 scripts take the values from what it returns.
+  - Night LST needs all three values. Onset needs H3 (b) and H4's event.
+  - `gee/check_prereg3_guard.py` fails if a `gee/` script that refers to night LST or onset dates
+    does not call the guard.
 - **Approval (owner, 2026-10-16):**
   - H1–H3 are approved as drafted.
   - H4 was added the same day on the owner's statement of the hypothesis and prediction. Its

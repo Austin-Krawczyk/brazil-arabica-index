@@ -1234,3 +1234,17 @@ Every change to scope, dated, with the reason. Newest at the bottom.
 
   `prereg-3` was tagged on 2026-10-16, before any v2 computation. No change to v1.
 
+- 2026-10-16 — **prereg-3 guard: no night-LST or onset computation before the addenda.** Owner
+  instruction (2026-10-16).
+  - **The addenda file:** `docs/prereg3_addenda.csv` holds the values fixed after the tag. Each row
+    has a value, a source and a date; all are empty at the tag.
+  - **The guard:** `gee/prereg3_guard.py` refuses unless the required rows are filled in, the file
+    is committed at HEAD, and the working copy matches HEAD. It returns the committed values, so a
+    v2 script cannot hard-code different ones.
+  - **The check:** `gee/check_prereg3_guard.py` fails if a `gee/` script that refers to night LST
+    (MOD11A1, MYD11A1, LST_Night) or to onset or first-rain dates does not call the guard.
+  - **Beyond the owner's wording (agent):** "unless both addenda are committed" covers H3 (b) and
+    H4's event. A night-LST computation also needs H3's LST frost threshold, which the registered
+    text already says is fixed before computing.
+  - **Tested:** the guard on a throwaway repository, the check on mock v2 scripts.
+

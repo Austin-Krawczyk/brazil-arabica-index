@@ -1,0 +1,4 @@
+key,hypothesis,what,value,source,decided
+h3_lst_false_alarm_max,H3 (b),Most region-seasons night LST may flag without a station flag or a public-record frost,,,
+h4_onset_event,H4,Flowering-trigger rain event that dates first rain (amount in mm over a number of consecutive days),,,
+h3_lst_frost_threshold,H3,Night-LST frost threshold (from a published LST-versus-screen or LST-versus-leaf study),,,
