@@ -111,7 +111,8 @@ arabica yields.
    - It failed its backtest pass mark.
 3. **Inputs:**
    - Rain for {months} is CHIRPS-prelim. A reading within 1 pp of zero is reported as "flat,
-     within the preliminary-data margin" (Amendment 42; exact text pending approval).
+     within the preliminary-data margin" (§6, Amendment 42). This applies only to readings whose
+     rain input includes CHIRPS-prelim months.
      - Basis: 3 of 200 sign flips in the prelim rerun.
    - Vegetation: {product} for each reading.
    - Frost: INMET station observations, {coverage} of observed coffee.
@@ -127,6 +128,8 @@ arabica yields.
   in the region table.
 - **Planet:** a 3 m figure, labelled "not an input", may go in the LinkedIn post and the repo copy
   only, never in the emailed PDF (§4d).
-- **"Flat, within the preliminary-data margin":** adopted by the owner on 2026-10-16 as a notes
-  convention. Its scope and text wait on Amendment 42.
+- **"Flat, within the preliminary-data margin" (Amendment 42):** use it only for a reading whose
+  rain input includes CHIRPS-prelim months, which in practice means the November and December
+  readings. Use it when the condition anomaly is 1 pp or less from zero. Never use it for a reading
+  on final rain only.
 - **Outreach:** log every reply with name, firm, date and what was said (§6).
