@@ -1187,3 +1187,24 @@ Every change to scope, dated, with the reason. Newest at the bottom.
        - production onset dates depend on CHC's daily day split, which is not established
          (Amendment 29).
 
+- 2026-10-16 — **AMENDMENT 42: preliminary-data margin, a notes convention.** Amends §6 (crop
+  notes). Owner decision after reading the v1 backtest (Week 0 report §24 (6)); no backtest
+  scoring, pass mark or registered item changes.
+
+  **Convention:** a reading is reported as "flat, within the preliminary-data margin", not as up
+  or down, when its rain input includes CHIRPS-prelim months and its condition anomaly is 1 pp or
+  less from zero.
+
+  **Basis:** in the backtest's prelim rerun (crops 2016–2025, November and December), 3 of 200
+  predictions changed sign between prelim and final.
+  - Their prelim-based readings, which are what production sees, were −1.06, +0.04 and −0.02 pp.
+  - The 1 pp margin therefore covers two of the three. The owner kept 1 pp.
+
+  **Correction to the owner's wording (approved):**
+  - **The owner's text:** "readings within 1 pp of zero reported as 'flat, within the
+    preliminary-data margin'".
+  - **The amendment** limits it to readings whose rain input includes CHIRPS-prelim months: in
+    practice, the November and December notes.
+  - **Reason:** a January reading uses no prelim month, so the label would be false there.
+
+  Approved by owner (2026-10-16).

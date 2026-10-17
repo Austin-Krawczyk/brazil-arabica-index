@@ -851,6 +851,16 @@ frost the screen-height network misses; and a review of the frost night rule (§
    and what would change it; method and caveats in three lines, always including **"condition
    index, not a yield forecast"**, the Zona da Mata resolution caveat, and which months used
    CHIRPS-prelim.
+   - **Preliminary-data margin (AMENDED 2026-10-16, Amendment 42); a notes convention only.**
+     - **The convention:** a reading is reported as "flat, within the preliminary-data margin",
+       not as up or down, when both hold:
+       - its rain input includes CHIRPS-prelim months;
+       - its condition anomaly is 1 pp or less from zero.
+     - **Basis:** the backtest's prelim rerun (crops 2016–2025, November and December).
+       - 3 of 200 predictions changed sign between prelim and final.
+       - Their prelim-based readings were −1.06, +0.04 and −0.02 pp, so the 1 pp margin covers
+         two of the three.
+     - **What it does not change:** no backtest scoring, pass mark or registered item.
 2. **GitHub repo** (`brazil-arabica-index`). Public, MIT licence, README that lets someone rerun
    it in an afternoon. GEE scripts, the notebook that builds index and backtest, the mask rule and
    the live season's frozen mask, the backtest table, every note as PDF plus its chart data as CSV
