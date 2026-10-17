@@ -1217,3 +1217,20 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   2. **Production onset dates come from the ingested CHC prelim daily product.**
      - Where a day is missing, onset is undefined for that season and is reported as such.
      - Amendment 29's comparison rule still applies (the agent's cross-reference).
+
+- 2026-10-16 — **prereg-3 tagged; two values moved to pre-computation addenda.** Owner decision
+  (2026-10-16).
+
+  **The problem:** the approved text said two values were "fixed at the `prereg-3` tag", and
+  neither existed:
+  - H3 (b), the most region-seasons LST may flag without a station or public-record frost;
+  - H4's flowering-trigger rain event.
+
+  **The decision:** both are now fixed before any v2 computation, as logged prereg-3 addenda. That
+  is the pattern H3's night-LST threshold already used.
+
+  **Also:** H4's planned test, the agent's draft with the owner's decisions on the cap and the
+  onset source, is registered at the tag.
+
+  `prereg-3` was tagged on 2026-10-16, before any v2 computation. No change to v1.
+

@@ -180,12 +180,16 @@ Owner decisions after an independent review of the scoring code, before any back
 | Conventional-station availability | Assumed available at every cut; not established; caveat beside the Sul crop-2012 result |
 | Fixed in code from the review | Crop S+1 left out of training in fold S (its expectation carries crop S's yield); one-shot run; identical-crop comparisons |
 
-## prereg-3 (v2): hypotheses registered 2026-10-16, after the v1 backtest — not tagged
+## prereg-3 (v2): hypotheses registered 2026-10-16, after the v1 backtest (tagged `prereg-3`, 2026-10-16)
 
 **Status.** Registered on the owner's instruction after the v1 results were read (Week 0 report
 §24). Nothing in v1 changes: the marks, inputs and verdicts stand.
-- **When the tag is applied:** `prereg-3` is applied before any v2 computation. Until then, the
-  items marked "draft" may still change, and each change is logged.
+- **Tag:** `prereg-3` was applied on 2026-10-16, before any v2 computation. Three values are fixed
+  later, before any v2 computation, each as a logged prereg-3 addendum:
+  - H3's night-LST frost threshold;
+  - H3's false-alarm number;
+  - H4's flowering-trigger rain event.
+  Any other change after the tag is logged in `SPEC_CHANGELOG.md`.
 - **Approval (owner, 2026-10-16):**
   - H1–H3 are approved as drafted.
   - H4 was added the same day on the owner's statement of the hypothesis and prediction. Its
@@ -225,7 +229,7 @@ Owner decisions after an independent review of the scoring code, before any back
 | Hypothesis | The screen-height station network misses frost that forms in cold-air pools on coffee land. MODIS night land-surface temperature over the coffee mask detects frost the stations miss, including the July 2021 frost in Sul e Centro-Oeste and São Paulo |
 | v1 facts behind it (Week 0 report §19, §24 (2); Amendment 40) | The station component did not flag the July 2021 frost in Sul or São Paulo: their crop-2022 penalty is zero. With frost, crop 2022 is predicted −13.9% and −13.7%, against actual −32.5% and −30.0%. Caldas (A530) read −0.5 °C on 14 July 2026 outside the registered night rule |
 | Planned test (approved 2026-10-16) | Night LST for Jun–Aug of S−1, crops 2009–2026, on the frozen mask. Product IDs are verified in Earth Engine before use (§9); the candidates are `MODIS/061/MOD11A1` and `MODIS/061/MYD11A1`, not yet verified. A night-LST frost threshold is fixed from a published LST-versus-screen or LST-versus-leaf study before computing. Report the region-seasons LST flags against the station flags |
-| Registered prediction (approved 2026-10-16) | (a) LST flags Sul and São Paulo for crop 2022. (b) LST flags no more than a number of region-seasons without a station flag or a public-record frost; that number is fixed at the `prereg-3` tag |
+| Registered prediction (approved 2026-10-16) | (a) LST flags Sul and São Paulo for crop 2022. (b) LST flags no more than a number of region-seasons without a station flag or a public-record frost; that number is fixed before any v2 computation, as a logged prereg-3 addendum |
 | Testing | On history, held-out reruns only, labelled in-sample. The July 2021 frost is known, so (a) is in-sample by construction, and the Planet 2021 case study (§4d task 1) is the independent check. Out of sample: crops 2027 onward. For crop 2027 (the Jun–Aug 2026 window), the station readings, Caldas included, were known when H3 was formed; the LST values and the crop's yield were not. Terra and Aqua are at end of mission, so the product's availability for each window is checked first |
 
 ### H4. Flowering rain: timing and volume
@@ -235,6 +239,6 @@ Owner decisions after an independent review of the scoring code, before any back
 | Hypothesis | The v1 flowering-rain input, a z-score of the to-date rainfall total, mixes two effects of opposite sign: when the first flowering rain falls, and how much rain falls in total. Split into the two, the timing term carries the expected sign and the volume term keeps the negative sign |
 | v1 facts behind it (Week 0 report §24 (3)) | In the full model the rain weight is negative in every fold and vintage: −0.021 to −0.051 per standard deviation in the November fits, −0.018 to −0.055 across all three vintages. More flowering rain predicts a lower condition anomaly, the opposite of the sign §5 step 3 anticipates. In the rain-only model the weight shrinks to near zero (at most 0.012 in absolute value) |
 | Registered prediction (owner, 2026-10-16) | (a) Timing has the expected sign: a later first-rain date predicts a lower condition anomaly. (b) Volume keeps the negative sign: with timing in the model, more to-date flowering rain still predicts a lower condition anomaly |
-| Planned test (draft) | Replace the v1 rain input with two inputs, both standardised as in prereg-1. **(i) First-rain date:** the first day after 1 Sep of S−1 that ends a flowering-trigger rain event, from daily CHIRPS. The event (an amount over a number of consecutive days) is fixed from a published coffee-flowering source at the `prereg-3` tag, before anything is computed. A cut that comes before any event takes the cut date, and the count of such censored region-crops is reported. **(ii) Volume:** the v1 to-date total, unchanged. Fit the five-input diagnostic variant with v1's folds, vintages and ridge machinery, and report each weight's sign per fold |
+| Planned test (the agent's draft, registered at the tag) | Replace the v1 rain input with two inputs, both standardised as in prereg-1. **(i) First-rain date:** the first day after 1 Sep of S−1 that ends a flowering-trigger rain event, from daily CHIRPS. The event (an amount over a number of consecutive days) is fixed from a published coffee-flowering source before any v2 computation, as a logged prereg-3 addendum. A cut that comes before any event takes the cut date, and the count of such censored region-crops is reported. **(ii) Volume:** the v1 to-date total, unchanged. Fit the five-input diagnostic variant with v1's folds, vintages and ridge machinery, and report each weight's sign per fold |
 | Decided (owner, 2026-10-16) | (1) **The cap of four (§5 step 6) is unchanged for the v2 headline.** H4 is a five-input diagnostic variant reported beside it. The v2 pre-registration chooses the headline's four inputs before any v2 result. (2) **Production onset dates come from the ingested CHC prelim daily product.** Where a day in a season's window is missing, onset is undefined for that season and is reported as such. Amendment 29's rule still applies: onset from daily prelim is not compared with onset from final until the gap is measured on overlapping months |
 | Testing | On history, held-out reruns only, labelled in-sample. Out of sample: crops 2027 onward |
