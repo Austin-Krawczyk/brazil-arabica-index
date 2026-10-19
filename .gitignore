@@ -20,6 +20,9 @@ data/raw/chc_prelim/*
 data/raw/vj113a1/*
 !data/raw/vj113a1/SOURCE.md
 !data/raw/vj113a1/manifest.csv
+# ICE price data (prereg-4): never committed until ICE's redistribution terms are checked (§4)
+data/raw/ice/*
+!data/raw/ice/SOURCE.md
 
 # Regenerable derived caches; the small CSV tables ARE committed
 data/derived/*.tif
