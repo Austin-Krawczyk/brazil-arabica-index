@@ -21,10 +21,18 @@ Readings:
     whose anomaly is 1 pp or less from zero, is "flat, within the preliminary-data margin".
   - Backtest readings use final CHIRPS, so the margin never applies to them.
 
+Maps and the note 1 chart (owner, 2026-11-09) come from gee/dashboard_maps.py: a reading map, a frost
+map for the current winter and the coldest-night chart. Their inputs, each checked there, are:
+  - IBGE municipal meshes (raw, read-only; SHA-256 checked against data/raw/ibge/SOURCE.md);
+  - the registered station files in docs/week0/;
+  - the W2 frost files;
+  - the frozen mask pixels (SHA-256 checked against the manifest).
+
 The December note updates the page by running this script after the production file exists.
 
 Run:    .venv/Scripts/python gee/build_dashboard.py
-Writes: docs/index.html, docs/.nojekyll
+Writes: docs/index.html, docs/.nojekyll, and the note figures in notes/figures/ (SVG plus chart data
+        as CSV, §6)
 """
 import hashlib
 import html
@@ -36,6 +44,7 @@ import numpy as np
 import pandas as pd
 
 import backtest as bt
+import dashboard_maps as dm
 from common import ROOT
 
 REPO = "https://github.com/Austin-Krawczyk/brazil-arabica-index"
@@ -96,8 +105,11 @@ def check_frozen():
 
 
 def src(key):
+    """A link to the committed file that carries this source: the file itself, or, for a gitignored
+    file, the record that holds its checksum (the W2 manifest, or a raw folder's SOURCE.md)."""
     s = SOURCES[key]
-    return (f'<a class="src" href="{REPO}/blob/{s["commit"]}/{s["path"]}">'
+    cite = s.get("cite", s["path"])
+    return (f'<a class="src" href="{REPO}/blob/{s["commit"]}/{cite}">'
             f'{html.escape(s["label"])} @{s["commit"][:7]}</a>')
 
 
@@ -339,6 +351,16 @@ JS = r"""
       let i=idx<0?d.crops.length-1:idx+(e.key==='ArrowRight'?1:-1);i=Math.max(0,Math.min(d.crops.length-1,i));
       const b=svg.getBoundingClientRect();const x=b.left+xOf(d.crops[i])/d.geo.w*b.width;show(i,x,b.top+b.height*0.3);});
   });
+  document.querySelectorAll('[data-tip]').forEach(el=>{
+    el.addEventListener('pointermove',e=>{tip.replaceChildren();
+      el.dataset.tip.split('|').forEach((line,i)=>{const d=document.createElement('div');
+        if(i===0)d.className='h';d.textContent=line;tip.append(d);});
+      tip.style.display='block';const r=tip.getBoundingClientRect();
+      let left=e.clientX+14,top=e.clientY+14;if(left+r.width>innerWidth-8)left=e.clientX-r.width-14;
+      if(top+r.height>innerHeight-8)top=e.clientY-r.height-14;
+      tip.style.left=Math.max(8,left)+'px';tip.style.top=Math.max(8,top)+'px';});
+    el.addEventListener('pointerleave',()=>{tip.style.display='none';});
+  });
 })();
 """
 
@@ -352,8 +374,10 @@ def build():
     fr_total = dict(flags=int((ft[ft.region.isin(bt.REGIONS)][["flag_severe_with_unresolved",
                                                                 "flag_2c_with_unresolved"]].any(axis=1)).sum()),
                     penalty=float(ft[ft.region == bt.TOTAL].penalty_with_unresolved.fillna(0).iloc[0]))
-    for k, p in (("results", RESULTS), ("frost", FROST), ("report", REPORT)):
-        SOURCES[k]["commit"] = commit_of(p)
+    dm.check_inputs()
+    for k, s in SOURCES.items():
+        if k != "production":
+            SOURCES[k]["commit"] = commit_of(ROOT / s.get("cite", s["path"]))
     if prod is not None:
         SOURCES["production"] = dict(path=PRODUCTION.relative_to(ROOT).as_posix(), label=PRODUCTION.name,
                                      what="crop-2027 production readings", commit=commit_of(PRODUCTION))
@@ -365,7 +389,7 @@ def build():
            "<title>Brazil Arabica Condition Index</title>",
            '<meta name="description" content="Growing-condition index for four Brazilian arabica regions: '
            'backtest readings, their registered reliability, and current frost status. Condition index, not a '
-           'yield forecast.">', f"<style>{CSS}</style></head>", '<body data-version="no_frost"><main>']
+           'yield forecast.">', f"<style>{CSS}{dm.MAP_CSS}{map_vars()}</style></head>", '<body data-version="no_frost"><main>']
     out.append("<h1>Brazil arabica growing-condition index</h1>")
     out.append('<p class="sub">Four Conab arabica units in Minas Gerais and São Paulo. <b>A condition index, '
                "not a yield forecast.</b> No price data.</p>")
@@ -419,6 +443,21 @@ def build():
                "anomaly, as a % of the stage-1 expectation (trend plus the previous crop's carry-over). "
                "Crop 2026 has no reading: it is not in the backtest, because Conab's final is pending.</p>")
 
+    geo = dm.load_geometry()
+    out.append("<h2>Where conditions stand: the most recent reading by region</h2>")
+    for ver in VERSIONS:
+        vals, tot = reading_values(ser, prod, ver)
+        when = ("crop 2027" if prod is not None else "crop 2025, January vintage, the backtest's most recent "
+                "held-out reading (crop 2027 pending the November production run)")
+        svg = dm.reading_map(geo, vals, f"rm{ver}", f"Condition anomaly by region, {VERSIONS[ver].lower()}, {when}")
+        out.append(f'<div data-v="{ver}"><div class="card"><p class="muted" style="margin:0 0 6px">Condition anomaly '
+                   f"against the stage-1 expectation, {VERSIONS[ver].lower()}: {html.escape(when)}. Four-region "
+                   f"total: <b>{tot}</b>.</p>{svg}{dm.div_legend()}"
+                   f'<p class="muted">Readings: {src("production" if prod is not None else "results")}. Regions: '
+                   f'{src("membership")}, {src("ibge")}.</p></div></div>')
+        if ver == "no_frost":
+            FIGS[f"reading_map_{'crop2027' if prod is not None else 'backtest_latest'}.svg"] = dm.standalone(svg)
+
     out.append('<div class="cards">')
     for i, u in enumerate(UNITS):
         out.append(f'<section class="card" aria-label="{html.escape(NAME[u][0])}"><h3>{html.escape(NAME[u][0])}'
@@ -466,6 +505,29 @@ def build():
         out.append("</section>")
     out.append("</div>")
 
+    out.append("<h2>Frost this winter: June–August 2026, the 2027 crop's window</h2>")
+    fsvg, ftab = dm.frost_map(geo, 2026, "fm")
+    cs = dm.coldest_series()
+    csvg = dm.coldest_chart(cs, "cn")
+    out.append('<div class="cards"><div class="card"><h3>Counted stations and their coldest night</h3>'
+               '<p class="muted" style="margin:4px 0 6px">Stations counted under the registered rules, each '
+               "with its 25 km circle. The dot is the coldest observed night under the registered night rule. "
+               "A hollow ring means missing nights could change the station's tier. "
+               f"The coffee mask sits behind.</p>{fsvg}{dm.cold_legend()}"
+               f'<p class="muted">{src("stations")}, {src("station_set")}, {src("station_season")}, '
+               f'{src("nightalt")}, {src("mask")}, {src("ibge")}.</p></div>'
+               '<div class="card"><h3>Coldest observed night per region, each winter</h3>'
+               '<p class="muted" style="margin:4px 0 6px">The lines at 2 °C and 0 °C are the tier thresholds. A '
+               "station meets the 2 °C tier with three nights at or below 2 °C, and the severe tier with one "
+               "night at or below 0 °C. A region is flagged when tiered stations cover 25% of its observed "
+               f"coffee. Dark dots mark flagged winters.</p>{csvg}"
+               f'<p class="muted">{src("station_season")}, {src("station_set")}, {src("frost")}.</p>'
+               "</div></div>")
+    FIGS["note1_frost_map_2026.svg"] = dm.standalone(fsvg)
+    FIGS["note1_coldest_night.svg"] = dm.standalone(csvg)
+    CSVS["note1_frost_stations_2026.csv"] = ftab
+    CSVS["note1_coldest_night.csv"] = cs
+
     out.append("<h2>Limits</h2><ul class='notes'>"
                "<li>The index tracks growing conditions, not yield.</li>"
                "<li>The private trade houses have field crop tours and farm data that this project does not.</li>"
@@ -476,13 +538,50 @@ def build():
     out.append("<h2>Sources</h2><ul class='notes muted'>")
     for k, s in SOURCES.items():
         if "commit" in s:
-            out.append(f"<li>{src(k)}: {html.escape(s['what'])}. SHA-256 {sha256(ROOT / s['path'])[:16]}…</li>")
+            for path in s.get("files", [s["path"]]):
+                out.append(f"<li>{src(k)}: {html.escape(s['what'])} — <code>{html.escape(path)}</code>, SHA-256 "
+                           f"{sha256(ROOT / path)[:16]}…</li>")
     out.append("</ul><p class='muted'>Built by <code>gee/build_dashboard.py</code> from the files above. "
                f'Method, pre-registration and code: <a class="src" href="{REPO}">{REPO}</a>.</p>')
     out.append(f'</main><div id="tip" role="status" aria-live="polite"></div><script>{JS}</script></body></html>')
     OUT.write_text("\n".join(out), encoding="utf-8")
     (ROOT / "docs" / ".nojekyll").write_text("", encoding="utf-8")
+    figs = ROOT / "notes" / "figures"
+    figs.mkdir(parents=True, exist_ok=True)
+    for name, svg in FIGS.items():
+        (figs / name).write_text(svg, encoding="utf-8")
+    for name, df in CSVS.items():
+        df.to_csv(figs / name, index=False, float_format="%.2f")
     return OUT
+
+
+FIGS, CSVS = {}, {}
+
+
+def map_vars():
+    light = ";".join(f"{k}:{v}" for k, v in dm.VARS_LIGHT.items())
+    dark = ";".join(f"{k}:{v}" for k, v in dm.VARS_DARK.items())
+    return (f":root{{{light}}}@media (prefers-color-scheme:dark){{:root:not([data-theme=\"light\"]){{{dark}}}}}"
+            f":root[data-theme=\"dark\"]{{{dark}}}")
+
+
+def reading_values(ser, prod, ver):
+    """The most recent reading per region: crop 2027 when the production file exists, otherwise the
+    backtest's crop 2025 January reading. Returns the map values and the four-region total's label."""
+    vals = {}
+    for u in bt.REGIONS:
+        lp = latest_production(prod, ver, u)
+        if lp:
+            a, lab = lp["a"], f"crop 2027, {VLABEL[lp['vintage']]}: {pct(lp['a'])}, {direction(lp['a'], lp['prelim'])}"
+        else:
+            r = ser[(ver, u)]
+            a = r["Jan"][-1]
+            lab = f"crop {r['crops'][-1]}, January (backtest): {pct(a)}, {direction(a, False)}"
+        vals[u] = dict(a=a, label=lab, short=pct(a))
+    lp = latest_production(prod, ver, bt.TOTAL)
+    tot = (f"{pct(lp['a'])}, {direction(lp['a'], lp['prelim'])}" if lp else
+           f"{pct(ser[(ver, bt.TOTAL)]['Jan'][-1])}, {direction(ser[(ver, bt.TOTAL)]['Jan'][-1], False)}")
+    return vals, tot
 
 
 SOURCES = {
@@ -492,6 +591,22 @@ SOURCES = {
                   what="frozen W2 frost input; headline with unresolved stations kept at their observed tiers"),
     "report": dict(path="docs/week0_report.md", label="week0_report.md §24",
                    what="the interpretation of the backtest"),
+    "membership": dict(path="docs/week0/proposed_region_membership.csv", label="proposed_region_membership.csv",
+                       what="municipality to Conab region (prereg-2, provisional)"),
+    "ibge": dict(path="data/raw/ibge/malha_municipios_31_intermediaria.geojson", cite="data/raw/ibge/SOURCE.md",
+                 files=["data/raw/ibge/malha_municipios_31_intermediaria.geojson",
+                        "data/raw/ibge/malha_municipios_35_intermediaria.geojson"],
+                 label="IBGE municipal meshes (SOURCE.md)", what="IBGE mesh API v3, MG and SP, read-only"),
+    "stations": dict(path="docs/week0/station_candidates_frozen.csv", label="station_candidates_frozen.csv",
+                     what="INMET station locations (prereg-2)"),
+    "station_set": dict(path="docs/week0/station_set_frozen.csv", label="station_set_frozen.csv",
+                        what="qualifying stations per region and winter (prereg-2, Amendment 39b)"),
+    "station_season": dict(path="data/derived/w2_frost_station_season.csv", label="w2_frost_station_season.csv",
+                           what="frozen W2 frost input per station and winter"),
+    "nightalt": dict(path="docs/week0/w2_frost_night_rule_alternative.csv", label="w2_frost_night_rule_alternative.csv",
+                     what="pre-dawn night rule, reported and not scored (Amendment 40)"),
+    "mask": dict(path="data/derived/frozen_mask_pixels.csv", cite="data/derived/w2_inputs_manifest.csv",
+                 label="frozen_mask_pixels.csv (W2 manifest)", what="frozen coffee mask pixels, gitignored"),
 }
 
 if __name__ == "__main__":

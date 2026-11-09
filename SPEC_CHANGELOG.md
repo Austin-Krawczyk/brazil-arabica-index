@@ -1273,3 +1273,50 @@ Every change to scope, dated, with the reason. Newest at the bottom.
 
   **Prices:** none has been read. None is fetched until the owner says go.
 
+- 2026-11-09 — **Dashboard maps and the note 1 chart (agent decisions under the owner's standing
+  instructions, reversible; no Earth Engine; no registered item or frozen table changes).** Added
+  in `gee/dashboard_maps.py` and called by `gee/build_dashboard.py`. Figures and chart data go to
+  `notes/figures/`.
+
+  **Decisions:**
+  1. **Reading map.**
+     - The four regions are filled by each region's most recent reading: crop 2027 once the
+       production file exists, until then the backtest's crop 2025 January reading, labelled so.
+     - Seven diverging classes, with edges at ±3, ±10 and ±20% of the expectation: blue above,
+       red below, a gray neutral.
+     - Zona da Mata is hatched at 45°.
+     - Regions are dissolved from IBGE's municipal meshes (read-only, SHA-256 checked) with the
+       `prereg-2` membership, and simplified at 0.012°.
+  2. **Frost map** (winter 2026).
+     - Each counted station's dot is coloured by its coldest observed night under the registered
+       rule, in six ordinal classes split at 0, 2, 4, 6 and 8 °C.
+     - Unresolved stations are hollow rings.
+     - The 25 km circles are hairlines.
+     - The coffee mask (mask year 2025, kept municipalities) is drawn as 0.08° density cells.
+     - Caldas's −0.5 °C reading is labelled as outside the registered night rule and not scored
+       (Amendment 40).
+  3. **Note 1 chart.**
+     - The coldest observed night per region, as four small multiples, with the 2 °C and 0 °C
+       thresholds as lines and flagged winters marked.
+     - **It covers winters 2008–2026** (crops 2009–2027), the whole registered frost series. The
+       instruction said 2009–2026; winter 2008 is included because it is the first frost window
+       (crop 2009).
+  4. **Counted stations** use `gee/w2_frost.py`'s rule: the qualifying set, less any conventional
+     station within 1 km of a qualifying automatic one, with pairs computed from the frozen
+     candidates. They match the registered counts in all 76 region-winters.
+  5. **Sources on the page now include:**
+     - the registered station files;
+     - the IBGE meshes, cited through `data/raw/ibge/SOURCE.md`;
+     - the frozen mask, cited through the W2 manifest;
+     - the pre-dawn alternative file.
+
+  **Finding, not acted on (it is a stop point: a change to a registered table):**
+  - `docs/week0/colocated_pairs.csv`, the Amendment 17d offsets table, has 19 rows.
+  - The registered rule finds 24 same-site pairs, the number registered at `prereg-2`.
+    - Six pairs are missing from the table: 83015–A531, 83479–A571, 83807–A629, 83714–A706,
+      83716–A707 and 83781–A701.
+    - The table lists one station, 83738, that the rule does not pair.
+  - The table predates the Amendment 39b station correction.
+  - The frost results are unaffected, because `w2_frost.py` computes the pairs itself. Only the
+    offsets record is incomplete.
+

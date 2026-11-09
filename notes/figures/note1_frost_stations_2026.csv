@@ -1,0 +1,53 @@
+network,code,name,lat,lon,coldest_c,tier,unresolved
+automatic,A505,Araxa,-19.61,-46.95,10.10,none,False
+automatic,A507,Uberlandia,-18.92,-48.26,13.00,none,True
+automatic,A510,Vicosa,-20.76,-42.86,6.30,none,False
+automatic,A511,Timoteo,-19.57,-42.62,11.60,none,False
+automatic,A514,Sao Joao Del Rei,-21.11,-44.25,3.40,none,False
+automatic,A515,Varginha,-21.57,-45.40,5.90,none,False
+automatic,A518,Juiz De Fora,-21.77,-43.36,9.30,none,False
+automatic,A523,Patrocinio,-19.00,-46.99,4.80,none,True
+automatic,A524,Formiga,-20.45,-45.45,7.00,none,False
+automatic,A525,Sacramento,-19.88,-47.43,8.00,none,True
+automatic,A527,Teofilo Otoni,-17.89,-41.52,11.60,none,False
+automatic,A530,Caldas,-21.92,-46.38,2.90,none,True
+automatic,A534,Aimores,-19.53,-41.09,14.50,none,True
+automatic,A535,Florestal,-19.89,-44.42,4.00,none,True
+automatic,A536,Dores Do Indaia,-19.48,-45.59,9.10,none,True
+automatic,A540,Mantena,-18.78,-40.99,11.70,none,False
+automatic,A541,Capelinha,-17.71,-42.39,6.20,none,True
+automatic,A542,Unai,-16.55,-46.88,8.20,none,True
+automatic,A544,Buritis,-15.52,-46.44,10.30,none,True
+automatic,A546,Guarda-Mor,-17.56,-47.20,10.10,none,True
+automatic,A553,Joao Pinheiro,-17.78,-46.12,9.80,none,True
+automatic,A556,Manhuacu,-20.26,-42.18,5.60,none,True
+automatic,A564,Divinopolis,-20.17,-44.88,5.30,none,True
+automatic,A565,Bambui,-20.03,-46.01,4.20,none,True
+automatic,A567,Machado,-21.68,-45.94,6.70,none,True
+automatic,A568,Uberaba,-19.71,-47.96,7.50,none,True
+automatic,A571,Paracatu,-17.24,-46.88,10.80,none,True
+automatic,A572,Belo Horizonte - Santo Agostinho,-19.93,-43.95,12.40,none,True
+automatic,A625,Tres Rios,-22.10,-43.21,8.90,none,False
+automatic,A657,Afonso Claudio,-20.10,-41.11,10.10,none,True
+automatic,A701,Sao Paulo - Mirante,-23.50,-46.62,10.10,none,True
+automatic,A705,Bauru,-22.36,-49.03,6.30,none,False
+automatic,A708,Franca,-20.58,-47.38,8.90,none,True
+automatic,A711,Sao Carlos,-21.98,-47.88,8.60,none,True
+automatic,A713,Ipero,-23.43,-47.59,5.20,none,False
+automatic,A718,Rancharia,-22.37,-50.97,4.10,none,True
+automatic,A725,Avare,-23.10,-48.94,7.60,none,True
+automatic,A728,Taubate,-23.04,-45.52,5.50,none,False
+automatic,A735,Jose Bonifacio,-21.09,-49.92,6.10,none,True
+automatic,A736,Ariranha,-21.13,-48.84,6.70,none,False
+automatic,A737,Ibitinga,-21.86,-48.80,7.10,none,False
+automatic,A739,Itapira,-22.41,-46.81,3.20,none,True
+automatic,A740,Sao Luiz Do Paraitinga,-23.23,-45.42,3.40,none,False
+automatic,A741,Barra Bonita,-22.47,-48.56,8.40,none,True
+automatic,A744,Braganca Paulista,-22.95,-46.53,7.20,none,True
+automatic,A748,Barretos,-20.56,-48.55,7.00,none,True
+automatic,A763,Marilia,-22.24,-49.97,7.40,none,True
+automatic,A764,Bebedouro,-20.95,-48.47,6.40,none,True
+automatic,A770,Sao Simao,-21.46,-47.58,6.90,none,True
+automatic,A771,Sao Paulo - Interlagos,-23.72,-46.68,9.00,none,False
+automatic,A849,Diamante Do Norte,-22.64,-52.89,6.40,none,True
+conventional,83334,Formoso,-14.95,-46.24,13.00,none,True
