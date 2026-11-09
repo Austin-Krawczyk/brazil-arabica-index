@@ -1248,3 +1248,28 @@ Every change to scope, dated, with the reason. Newest at the bottom.
     text already says is fixed before computing.
   - **Tested:** the guard on a throwaway repository, the check on mock v2 scripts.
 
+- 2026-11-09 — **prereg-4 registered and tagged: the price test.** Recorded in
+  `docs/preregistration_4.md`. Nothing in v1, `prereg-1`, `prereg-2`, `prereg-3` or any frozen
+  file changes.
+
+  **Owner decisions:**
+  - **Sign:** H is negative, through the supply channel.
+  - **Primary sample:** the four-region total, crops 2009–2025, 17 observations.
+  - **Reported comparison:** Sul e Centro-Oeste, crops 2002–2025, 24 observations.
+  - **Other comparisons:** the with-frost version and the December vintage, each on 17
+    observations.
+
+  **The return:** ln(July KC settlement on the last trading day of May S ÷ the same contract's
+  settlement on the first trading day of December S−1).
+  - The July contract is used because the May contract stops trading before the end of May (ICE
+    Coffee "C" Rule 8.01).
+  - Source: ICE Futures U.S. settlement prices.
+
+  **Not in this test:** pass criterion, other specification, optimisation, trading rule.
+
+  **Scope:** §3 and §5 keep price work out of v1, so this test is registered outside v1.
+
+  **Guard:** `gee/prereg4_guard.py` (92a4ec8).
+
+  **Prices:** none has been read. None is fetched until the owner says go.
+
