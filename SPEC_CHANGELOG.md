@@ -1320,3 +1320,38 @@ Every change to scope, dated, with the reason. Newest at the bottom.
   - The frost results are unaffected, because `w2_frost.py` computes the pairs itself. Only the
     offsets record is incomplete.
 
+- 2026-11-10 — **AMENDMENT 39c (correction after `prereg-2`): the same-site pairs table
+  regenerated from the registered rule.** Corrects `docs/week0/colocated_pairs.csv`, the Amendment
+  17d offsets record. It is a record out of date, not an error in any result. The registered rules,
+  station set, coverage, frost inputs and backtest are unchanged. Owner decision (2026-11-10),
+  following the 39b pattern. Listed as a change after `prereg-2`.
+
+  **What happened:**
+  - The table was built on 2026-10-14 by `gee/bdmep_night_check.py --pairs-table`. It took its
+    conventional stations from `bdmep_candidates.csv` (the 37 requested) and its automatic
+    stations from INMET's full catalogue.
+  - The registered rule, as `gee/w2_frost.py` applies it, pairs stations within the frozen
+    candidates (`station_candidates_frozen.csv`), which Amendment 39b widened. It finds the 24
+    pairs registered at `prereg-2`.
+  - So the table had 19 rows:
+    - six pairs were missing: 83015–A531, 83479–A571, 83807–A629, 83714–A706, 83716–A707 and
+      83781–A701;
+    - one row, 83738–A609 (Resende), is not a pair under the rule, because A609 is not a frozen
+      candidate.
+  - Found on 2026-11-09 while checking the dashboard's station counts against the registered
+    table.
+
+  **Correction:**
+  - `gee/bdmep_night_check.py --pairs-table-frozen` builds the table from the frozen candidates by
+    the registered rule, with offsets computed exactly as before, from the 2026-10-14 BDMEP zip and
+    the INMET hourly archives. The 2026-10-14 builder stays in the script, marked as superseded.
+  - **Result:** 24 rows, identical to the pairs `gee/w2_frost.py` uses. All 18 pairs in both
+    tables reproduce exactly (km, n, mean absolute difference, median offset and both shares).
+  - **SHA-256:**
+    - before: `6b02ca389ea258c0066f4f3c2d38ded55fd488795ed962a04bfb25283a97ac73`;
+    - after: `d56d01092b6933aa12b045aeee669d0a4a443c595967eed355b34117d9588225`.
+  - The table is not in the W2 manifest, and no backtest input reads it.
+  - Offsets remain recorded and never applied (17d).
+
+  Approved by owner (2026-11-10).
+

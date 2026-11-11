@@ -214,7 +214,7 @@ def haversine_km(la1, lo1, la2, lo2):
 
 def same_site_pairs():
     """Conventional → automatic within 1 km in the frozen candidates, as gee/w2_frost.py pairs them
-    (Amendment 17d). docs/week0/colocated_pairs.csv predates Amendment 39b and is not used here."""
+    (Amendment 17d). docs/week0/colocated_pairs.csv lists the same 24 pairs since Amendment 39c."""
     cand = pd.read_csv(WEEK0 / "station_candidates_frozen.csv", dtype={"code": str})
     au, co = cand[cand.network == "automatic"], cand[cand.network == "conventional"]
     pairs = {}

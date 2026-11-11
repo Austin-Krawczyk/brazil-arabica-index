@@ -2829,3 +2829,36 @@ out-of-sample check.
 - **H1. Conab 2001–2007 series quality.**
 - **H2. Zona da Mata mask representativeness.**
 - **H3. Cold-pool frost detection.**
+
+## 25. Amendment 39c: the same-site pairs table regenerated (2026-11-10)
+
+`docs/week0/colocated_pairs.csv`, the Amendment 17d offsets record, was out of date.
+
+**The mismatch:**
+- It had 19 rows, built on 2026-10-14 from the 37 BDMEP-requested stations and INMET's full
+  automatic catalogue.
+- The registered rule, applied in `gee/w2_frost.py` over the frozen candidates, finds 24 same-site
+  pairs, the number registered at `prereg-2`.
+- **Missing:** 83015–A531 (Maria da Fé), 83479–A571 (Paracatu), 83807–A629 (Carmo), 83714–A706
+  (Campos do Jordão), 83716–A707 (Presidente Prudente) and 83781–A701 (São Paulo–Mirante).
+- **Not a pair under the rule:** 83738–A609 (Resende). A609 is not a frozen candidate.
+
+**What it affects:** no result. `gee/w2_frost.py` computes the pairs itself, so station sets,
+coverage, flags, penalties and the backtest stand.
+- It came to light because the dashboard first read the pairs from this table and counted one
+  station too many in 13 region-winters. With pairs computed by the rule, it matches the registered
+  counts in all 76.
+
+**Correction (owner, 39b pattern):**
+- Regenerated with `gee/bdmep_night_check.py --pairs-table-frozen`: 24 rows, identical to the
+  rule's pairs.
+- The 18 pairs common to both tables reproduce exactly.
+- **New pairs with offsets:**
+  - 83015–A531: median −0.2 °C (n 2,977);
+  - 83479–A571: −0.6 °C (n 1,146);
+  - 83807–A629: +0.6 °C (n 103);
+  - 83714–A706: −0.5 °C (n 2,557);
+  - 83716–A707: +0.5 °C (n 1,180);
+  - 83781–A701: 0.0 °C (n 5,874).
+- Offsets are recorded and never applied.
+

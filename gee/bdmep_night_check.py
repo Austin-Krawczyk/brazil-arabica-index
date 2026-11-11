@@ -16,10 +16,15 @@ difference, share within 0.5 and 1.0 degrees); no temperature or frost night is 
 --pairs-table (Amendment 17d) lists every conventional candidate with an automatic station within
 1 km in INMET's catalogues ("sharing a site"), with each pair's offset: the median and mean
 absolute difference, conventional minus automatic, over the rule window, on dates where both
-report. Offsets are recorded, never applied.
+report. Offsets are recorded, never applied. Superseded by --pairs-table-frozen (Amendment 39c).
 
-Run:    .venv/Scripts/python gee/bdmep_night_check.py <path to BDMEP zip> [--pairs-table]
-Writes: docs/week0/bdmep_night_check.csv, or docs/week0/colocated_pairs.csv with --pairs-table
+--pairs-table-frozen (Amendment 39c) builds the same table from the registered rule as
+gee/w2_frost.py applies it: every conventional station in docs/week0/station_candidates_frozen.csv
+paired with the nearest automatic station in the same file, when it lies within 1 km. Offsets are
+computed as above.
+
+Run:    .venv/Scripts/python gee/bdmep_night_check.py <path to BDMEP zip> [--pairs-table | --pairs-table-frozen]
+Writes: docs/week0/bdmep_night_check.csv, or docs/week0/colocated_pairs.csv with either pairs option
 """
 import re
 import sys
@@ -104,6 +109,36 @@ def colocated(zpath):
     return df
 
 
+def colocated_frozen(zpath):
+    """Amendment 39c: pairs by the registered rule over the frozen candidates (as gee/w2_frost.py)."""
+    cand = pd.read_csv(WEEK0 / "station_candidates_frozen.csv", dtype={"code": str})
+    au, co = cand[cand.network == "automatic"], cand[cand.network == "conventional"]
+    z = zipfile.ZipFile(zpath)
+    names = {re.search(r"dados_(\d+)_D_", n).group(1): n for n in z.namelist() if n.endswith(".csv")}
+    rows = []
+    for r in co.itertuples():
+        p1, p2 = np.radians(r.lat), np.radians(au.lat.values)
+        km = 2 * 6371.0088 * np.arcsin(np.sqrt(np.sin((p2 - p1) / 2) ** 2 + np.cos(p1) * np.cos(p2)
+                                                * np.sin(np.radians(au.lon.values - r.lon) / 2) ** 2))
+        if not len(km) or km.min() > SITE_KM:
+            continue
+        i = int(km.argmin())
+        auto_code = au.code.values[i]
+        row = dict(conventional=r.code, conventional_name=r.name, automatic=auto_code,
+                   automatic_name=au.name.values[i], km=round(float(km[i]), 2))
+        if r.code in names:
+            _, conv, _, _ = read_station(z.read(names[r.code]))
+            conv = conv.dropna()
+            if len(conv):
+                hourly = automatic_hourly(auto_code)
+                if len(hourly):
+                    row.update(stats(conv.values - window_min(hourly, conv.index + pd.Timedelta(hours=12))))
+        rows.append(row)
+    df = pd.DataFrame(rows).rename(columns={"median_diff": "offset_median_c", "mean_abs_diff": "mean_abs_diff_c"})
+    df.to_csv(WEEK0 / "colocated_pairs.csv", index=False)
+    return df
+
+
 def main(zpath):
     z = zipfile.ZipFile(zpath)
     names = {re.search(r"dados_(\d+)_D_", n).group(1): n for n in z.namelist() if n.endswith(".csv")}
@@ -128,7 +163,9 @@ def main(zpath):
 
 
 if __name__ == "__main__":
-    if "--pairs-table" in sys.argv:
+    if "--pairs-table-frozen" in sys.argv:
+        print(colocated_frozen(sys.argv[1]).to_string(index=False))
+    elif "--pairs-table" in sys.argv:
         print(colocated(sys.argv[1]).to_string(index=False))
     else:
         print(main(sys.argv[1]).to_string(index=False))
